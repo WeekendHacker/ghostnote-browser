@@ -7,37 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D8D10E7E1CC4816000A434F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D10E7D1CC4816000A434F6 /* AppDelegate.swift */; };
-		D8D10E801CC4816000A434F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8D10E7F1CC4816000A434F6 /* Assets.xcassets */; };
-		D8D10E831CC4816000A434F6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8D10E811CC4816000A434F6 /* MainMenu.xib */; };
-		D8D10E8E1CC4816000A434F6 /* Ghostnote_BrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D10E8D1CC4816000A434F6 /* Ghostnote_BrowserTests.swift */; };
-		D8D10E991CC4816000A434F6 /* Ghostnote_BrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D10E981CC4816000A434F6 /* Ghostnote_BrowserUITests.swift */; };
+		D84F16B91CC4A204005612BB /* GhostNote.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = D84F16B81CC4A204005612BB /* GhostNote.xcdatamodel */; };
+		D84F16BC1CC4A222005612BB /* GNNote+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16BA1CC4A222005612BB /* GNNote+CoreDataProperties.swift */; };
+		D84F16BD1CC4A222005612BB /* GNNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16BB1CC4A222005612BB /* GNNote.swift */; };
+		D8D10EC61CC48A9F00A434F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D10EC51CC48A9F00A434F6 /* AppDelegate.swift */; };
+		D8D10ECB1CC48A9F00A434F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8D10ECA1CC48A9F00A434F6 /* Assets.xcassets */; };
+		D8D10ECE1CC48A9F00A434F6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8D10ECC1CC48A9F00A434F6 /* MainMenu.xib */; };
+		D8D10ED91CC48A9F00A434F6 /* Ghostnote_BrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D10ED81CC48A9F00A434F6 /* Ghostnote_BrowserTests.swift */; };
+		D8D10EE41CC48A9F00A434F6 /* Ghostnote_BrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D10EE31CC48A9F00A434F6 /* Ghostnote_BrowserUITests.swift */; };
+		D8E659121CC499A8002CEA9B /* MagicalRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E659111CC499A8002CEA9B /* MagicalRecord.framework */; };
+		D8E659131CC49A40002CEA9B /* MagicalRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E659111CC499A8002CEA9B /* MagicalRecord.framework */; };
+		D8E659141CC49A40002CEA9B /* MagicalRecord.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8E659111CC499A8002CEA9B /* MagicalRecord.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D8D10E8A1CC4816000A434F6 /* PBXContainerItemProxy */ = {
+		D8D10ED51CC48A9F00A434F6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D8D10E721CC4816000A434F6 /* Project object */;
+			containerPortal = D8D10EBA1CC48A9F00A434F6 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D8D10E791CC4816000A434F6;
+			remoteGlobalIDString = D8D10EC11CC48A9F00A434F6;
 			remoteInfo = "Ghostnote Browser";
 		};
-		D8D10E951CC4816000A434F6 /* PBXContainerItemProxy */ = {
+		D8D10EE01CC48A9F00A434F6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D8D10E721CC4816000A434F6 /* Project object */;
+			containerPortal = D8D10EBA1CC48A9F00A434F6 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D8D10E791CC4816000A434F6;
+			remoteGlobalIDString = D8D10EC11CC48A9F00A434F6;
 			remoteInfo = "Ghostnote Browser";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		D8D10EA91CC4840600A434F6 /* Embed Frameworks */ = {
+		D8E659151CC49A40002CEA9B /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				D8E659141CC49A40002CEA9B /* MagicalRecord.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,36 +52,41 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D8D10E7A1CC4816000A434F6 /* Ghostnote Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ghostnote Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8D10E7D1CC4816000A434F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D8D10E7F1CC4816000A434F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D8D10E821CC4816000A434F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		D8D10E841CC4816000A434F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D8D10E891CC4816000A434F6 /* Ghostnote BrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ghostnote BrowserTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8D10E8D1CC4816000A434F6 /* Ghostnote_BrowserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ghostnote_BrowserTests.swift; sourceTree = "<group>"; };
-		D8D10E8F1CC4816000A434F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D8D10E941CC4816000A434F6 /* Ghostnote BrowserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ghostnote BrowserUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8D10E981CC4816000A434F6 /* Ghostnote_BrowserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ghostnote_BrowserUITests.swift; sourceTree = "<group>"; };
-		D8D10E9A1CC4816000A434F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D8D10EAB1CC4862300A434F6 /* Ghostnote Browser-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ghostnote Browser-Bridging-Header.h"; sourceTree = "<group>"; };
+		D84F16B81CC4A204005612BB /* GhostNote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GhostNote.xcdatamodel; sourceTree = "<group>"; };
+		D84F16BA1CC4A222005612BB /* GNNote+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "GNNote+CoreDataProperties.swift"; path = "Ghostnote Browser/CoreData/GNNote+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D84F16BB1CC4A222005612BB /* GNNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GNNote.swift; path = "Ghostnote Browser/CoreData/GNNote.swift"; sourceTree = "<group>"; };
+		D8D10EC21CC48A9F00A434F6 /* Ghostnote Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ghostnote Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8D10EC51CC48A9F00A434F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D8D10ECA1CC48A9F00A434F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D8D10ECD1CC48A9F00A434F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		D8D10ECF1CC48A9F00A434F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8D10ED41CC48A9F00A434F6 /* Ghostnote BrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ghostnote BrowserTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8D10ED81CC48A9F00A434F6 /* Ghostnote_BrowserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ghostnote_BrowserTests.swift; sourceTree = "<group>"; };
+		D8D10EDA1CC48A9F00A434F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8D10EDF1CC48A9F00A434F6 /* Ghostnote BrowserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ghostnote BrowserUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8D10EE31CC48A9F00A434F6 /* Ghostnote_BrowserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ghostnote_BrowserUITests.swift; sourceTree = "<group>"; };
+		D8D10EE51CC48A9F00A434F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8E659111CC499A8002CEA9B /* MagicalRecord.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MagicalRecord.framework; path = Carthage/Build/Mac/MagicalRecord.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D8D10E771CC4816000A434F6 /* Frameworks */ = {
+		D8D10EBF1CC48A9F00A434F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8E659131CC49A40002CEA9B /* MagicalRecord.framework in Frameworks */,
+				D8E659121CC499A8002CEA9B /* MagicalRecord.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8D10ED11CC48A9F00A434F6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D8D10E861CC4816000A434F6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D8D10E911CC4816000A434F6 /* Frameworks */ = {
+		D8D10EDC1CC48A9F00A434F6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -84,75 +96,70 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D8D10E711CC4816000A434F6 = {
+		D8D10EB91CC48A9F00A434F6 = {
 			isa = PBXGroup;
 			children = (
-				D8D10E7C1CC4816000A434F6 /* Ghostnote Browser */,
-				D8D10E8C1CC4816000A434F6 /* Ghostnote BrowserTests */,
-				D8D10E971CC4816000A434F6 /* Ghostnote BrowserUITests */,
-				D8D10E7B1CC4816000A434F6 /* Products */,
+				D84F16BA1CC4A222005612BB /* GNNote+CoreDataProperties.swift */,
+				D84F16BB1CC4A222005612BB /* GNNote.swift */,
+				D8E659111CC499A8002CEA9B /* MagicalRecord.framework */,
+				D8D10EC41CC48A9F00A434F6 /* Ghostnote Browser */,
+				D8D10ED71CC48A9F00A434F6 /* Ghostnote BrowserTests */,
+				D8D10EE21CC48A9F00A434F6 /* Ghostnote BrowserUITests */,
+				D8D10EC31CC48A9F00A434F6 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		D8D10E7B1CC4816000A434F6 /* Products */ = {
+		D8D10EC31CC48A9F00A434F6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D8D10E7A1CC4816000A434F6 /* Ghostnote Browser.app */,
-				D8D10E891CC4816000A434F6 /* Ghostnote BrowserTests.xctest */,
-				D8D10E941CC4816000A434F6 /* Ghostnote BrowserUITests.xctest */,
+				D8D10EC21CC48A9F00A434F6 /* Ghostnote Browser.app */,
+				D8D10ED41CC48A9F00A434F6 /* Ghostnote BrowserTests.xctest */,
+				D8D10EDF1CC48A9F00A434F6 /* Ghostnote BrowserUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D8D10E7C1CC4816000A434F6 /* Ghostnote Browser */ = {
+		D8D10EC41CC48A9F00A434F6 /* Ghostnote Browser */ = {
 			isa = PBXGroup;
 			children = (
-				D8D10EB21CC4862F00A434F6 /* ObjC */,
-				D8D10E7D1CC4816000A434F6 /* AppDelegate.swift */,
-				D8D10E7F1CC4816000A434F6 /* Assets.xcassets */,
-				D8D10E811CC4816000A434F6 /* MainMenu.xib */,
-				D8D10E841CC4816000A434F6 /* Info.plist */,
-				D8D10EAB1CC4862300A434F6 /* Ghostnote Browser-Bridging-Header.h */,
+				D84F16B81CC4A204005612BB /* GhostNote.xcdatamodel */,
+				D8D10EC51CC48A9F00A434F6 /* AppDelegate.swift */,
+				D8D10ECA1CC48A9F00A434F6 /* Assets.xcassets */,
+				D8D10ECC1CC48A9F00A434F6 /* MainMenu.xib */,
+				D8D10ECF1CC48A9F00A434F6 /* Info.plist */,
 			);
 			path = "Ghostnote Browser";
 			sourceTree = "<group>";
 		};
-		D8D10E8C1CC4816000A434F6 /* Ghostnote BrowserTests */ = {
+		D8D10ED71CC48A9F00A434F6 /* Ghostnote BrowserTests */ = {
 			isa = PBXGroup;
 			children = (
-				D8D10E8D1CC4816000A434F6 /* Ghostnote_BrowserTests.swift */,
-				D8D10E8F1CC4816000A434F6 /* Info.plist */,
+				D8D10ED81CC48A9F00A434F6 /* Ghostnote_BrowserTests.swift */,
+				D8D10EDA1CC48A9F00A434F6 /* Info.plist */,
 			);
 			path = "Ghostnote BrowserTests";
 			sourceTree = "<group>";
 		};
-		D8D10E971CC4816000A434F6 /* Ghostnote BrowserUITests */ = {
+		D8D10EE21CC48A9F00A434F6 /* Ghostnote BrowserUITests */ = {
 			isa = PBXGroup;
 			children = (
-				D8D10E981CC4816000A434F6 /* Ghostnote_BrowserUITests.swift */,
-				D8D10E9A1CC4816000A434F6 /* Info.plist */,
+				D8D10EE31CC48A9F00A434F6 /* Ghostnote_BrowserUITests.swift */,
+				D8D10EE51CC48A9F00A434F6 /* Info.plist */,
 			);
 			path = "Ghostnote BrowserUITests";
-			sourceTree = "<group>";
-		};
-		D8D10EB21CC4862F00A434F6 /* ObjC */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = ObjC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D8D10E791CC4816000A434F6 /* Ghostnote Browser */ = {
+		D8D10EC11CC48A9F00A434F6 /* Ghostnote Browser */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D8D10E9D1CC4816000A434F6 /* Build configuration list for PBXNativeTarget "Ghostnote Browser" */;
+			buildConfigurationList = D8D10EE81CC48A9F00A434F6 /* Build configuration list for PBXNativeTarget "Ghostnote Browser" */;
 			buildPhases = (
-				D8D10E761CC4816000A434F6 /* Sources */,
-				D8D10E771CC4816000A434F6 /* Frameworks */,
-				D8D10E781CC4816000A434F6 /* Resources */,
-				D8D10EA91CC4840600A434F6 /* Embed Frameworks */,
+				D8D10EBE1CC48A9F00A434F6 /* Sources */,
+				D8D10EBF1CC48A9F00A434F6 /* Frameworks */,
+				D8D10EC01CC48A9F00A434F6 /* Resources */,
+				D8E659151CC49A40002CEA9B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -160,70 +167,70 @@
 			);
 			name = "Ghostnote Browser";
 			productName = "Ghostnote Browser";
-			productReference = D8D10E7A1CC4816000A434F6 /* Ghostnote Browser.app */;
+			productReference = D8D10EC21CC48A9F00A434F6 /* Ghostnote Browser.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D8D10E881CC4816000A434F6 /* Ghostnote BrowserTests */ = {
+		D8D10ED31CC48A9F00A434F6 /* Ghostnote BrowserTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D8D10EA01CC4816000A434F6 /* Build configuration list for PBXNativeTarget "Ghostnote BrowserTests" */;
+			buildConfigurationList = D8D10EEB1CC48A9F00A434F6 /* Build configuration list for PBXNativeTarget "Ghostnote BrowserTests" */;
 			buildPhases = (
-				D8D10E851CC4816000A434F6 /* Sources */,
-				D8D10E861CC4816000A434F6 /* Frameworks */,
-				D8D10E871CC4816000A434F6 /* Resources */,
+				D8D10ED01CC48A9F00A434F6 /* Sources */,
+				D8D10ED11CC48A9F00A434F6 /* Frameworks */,
+				D8D10ED21CC48A9F00A434F6 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D8D10E8B1CC4816000A434F6 /* PBXTargetDependency */,
+				D8D10ED61CC48A9F00A434F6 /* PBXTargetDependency */,
 			);
 			name = "Ghostnote BrowserTests";
 			productName = "Ghostnote BrowserTests";
-			productReference = D8D10E891CC4816000A434F6 /* Ghostnote BrowserTests.xctest */;
+			productReference = D8D10ED41CC48A9F00A434F6 /* Ghostnote BrowserTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		D8D10E931CC4816000A434F6 /* Ghostnote BrowserUITests */ = {
+		D8D10EDE1CC48A9F00A434F6 /* Ghostnote BrowserUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D8D10EA31CC4816000A434F6 /* Build configuration list for PBXNativeTarget "Ghostnote BrowserUITests" */;
+			buildConfigurationList = D8D10EEE1CC48A9F00A434F6 /* Build configuration list for PBXNativeTarget "Ghostnote BrowserUITests" */;
 			buildPhases = (
-				D8D10E901CC4816000A434F6 /* Sources */,
-				D8D10E911CC4816000A434F6 /* Frameworks */,
-				D8D10E921CC4816000A434F6 /* Resources */,
+				D8D10EDB1CC48A9F00A434F6 /* Sources */,
+				D8D10EDC1CC48A9F00A434F6 /* Frameworks */,
+				D8D10EDD1CC48A9F00A434F6 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D8D10E961CC4816000A434F6 /* PBXTargetDependency */,
+				D8D10EE11CC48A9F00A434F6 /* PBXTargetDependency */,
 			);
 			name = "Ghostnote BrowserUITests";
 			productName = "Ghostnote BrowserUITests";
-			productReference = D8D10E941CC4816000A434F6 /* Ghostnote BrowserUITests.xctest */;
+			productReference = D8D10EDF1CC48A9F00A434F6 /* Ghostnote BrowserUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D8D10E721CC4816000A434F6 /* Project object */ = {
+		D8D10EBA1CC48A9F00A434F6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Ghostnnote HQ";
 				TargetAttributes = {
-					D8D10E791CC4816000A434F6 = {
+					D8D10EC11CC48A9F00A434F6 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = H37GZ9FGMS;
 					};
-					D8D10E881CC4816000A434F6 = {
+					D8D10ED31CC48A9F00A434F6 = {
 						CreatedOnToolsVersion = 7.3;
-						TestTargetID = D8D10E791CC4816000A434F6;
+						TestTargetID = D8D10EC11CC48A9F00A434F6;
 					};
-					D8D10E931CC4816000A434F6 = {
+					D8D10EDE1CC48A9F00A434F6 = {
 						CreatedOnToolsVersion = 7.3;
-						TestTargetID = D8D10E791CC4816000A434F6;
+						TestTargetID = D8D10EC11CC48A9F00A434F6;
 					};
 				};
 			};
-			buildConfigurationList = D8D10E751CC4816000A434F6 /* Build configuration list for PBXProject "Ghostnote Browser" */;
+			buildConfigurationList = D8D10EBD1CC48A9F00A434F6 /* Build configuration list for PBXProject "Ghostnote Browser" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -231,36 +238,36 @@
 				en,
 				Base,
 			);
-			mainGroup = D8D10E711CC4816000A434F6;
-			productRefGroup = D8D10E7B1CC4816000A434F6 /* Products */;
+			mainGroup = D8D10EB91CC48A9F00A434F6;
+			productRefGroup = D8D10EC31CC48A9F00A434F6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D8D10E791CC4816000A434F6 /* Ghostnote Browser */,
-				D8D10E881CC4816000A434F6 /* Ghostnote BrowserTests */,
-				D8D10E931CC4816000A434F6 /* Ghostnote BrowserUITests */,
+				D8D10EC11CC48A9F00A434F6 /* Ghostnote Browser */,
+				D8D10ED31CC48A9F00A434F6 /* Ghostnote BrowserTests */,
+				D8D10EDE1CC48A9F00A434F6 /* Ghostnote BrowserUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D8D10E781CC4816000A434F6 /* Resources */ = {
+		D8D10EC01CC48A9F00A434F6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8D10E801CC4816000A434F6 /* Assets.xcassets in Resources */,
-				D8D10E831CC4816000A434F6 /* MainMenu.xib in Resources */,
+				D8D10ECB1CC48A9F00A434F6 /* Assets.xcassets in Resources */,
+				D8D10ECE1CC48A9F00A434F6 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D8D10E871CC4816000A434F6 /* Resources */ = {
+		D8D10ED21CC48A9F00A434F6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D8D10E921CC4816000A434F6 /* Resources */ = {
+		D8D10EDD1CC48A9F00A434F6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -270,50 +277,53 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D8D10E761CC4816000A434F6 /* Sources */ = {
+		D8D10EBE1CC48A9F00A434F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8D10E7E1CC4816000A434F6 /* AppDelegate.swift in Sources */,
+				D84F16B91CC4A204005612BB /* GhostNote.xcdatamodel in Sources */,
+				D84F16BC1CC4A222005612BB /* GNNote+CoreDataProperties.swift in Sources */,
+				D84F16BD1CC4A222005612BB /* GNNote.swift in Sources */,
+				D8D10EC61CC48A9F00A434F6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D8D10E851CC4816000A434F6 /* Sources */ = {
+		D8D10ED01CC48A9F00A434F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8D10E8E1CC4816000A434F6 /* Ghostnote_BrowserTests.swift in Sources */,
+				D8D10ED91CC48A9F00A434F6 /* Ghostnote_BrowserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D8D10E901CC4816000A434F6 /* Sources */ = {
+		D8D10EDB1CC48A9F00A434F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8D10E991CC4816000A434F6 /* Ghostnote_BrowserUITests.swift in Sources */,
+				D8D10EE41CC48A9F00A434F6 /* Ghostnote_BrowserUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D8D10E8B1CC4816000A434F6 /* PBXTargetDependency */ = {
+		D8D10ED61CC48A9F00A434F6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D8D10E791CC4816000A434F6 /* Ghostnote Browser */;
-			targetProxy = D8D10E8A1CC4816000A434F6 /* PBXContainerItemProxy */;
+			target = D8D10EC11CC48A9F00A434F6 /* Ghostnote Browser */;
+			targetProxy = D8D10ED51CC48A9F00A434F6 /* PBXContainerItemProxy */;
 		};
-		D8D10E961CC4816000A434F6 /* PBXTargetDependency */ = {
+		D8D10EE11CC48A9F00A434F6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D8D10E791CC4816000A434F6 /* Ghostnote Browser */;
-			targetProxy = D8D10E951CC4816000A434F6 /* PBXContainerItemProxy */;
+			target = D8D10EC11CC48A9F00A434F6 /* Ghostnote Browser */;
+			targetProxy = D8D10EE01CC48A9F00A434F6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D8D10E811CC4816000A434F6 /* MainMenu.xib */ = {
+		D8D10ECC1CC48A9F00A434F6 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D8D10E821CC4816000A434F6 /* Base */,
+				D8D10ECD1CC48A9F00A434F6 /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -321,7 +331,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		D8D10E9B1CC4816000A434F6 /* Debug */ = {
+		D8D10EE61CC48A9F00A434F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -366,7 +376,7 @@
 			};
 			name = Debug;
 		};
-		D8D10E9C1CC4816000A434F6 /* Release */ = {
+		D8D10EE71CC48A9F00A434F6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -403,11 +413,10 @@
 			};
 			name = Release;
 		};
-		D8D10E9E1CC4816000A434F6 /* Debug */ = {
+		D8D10EE91CC48A9F00A434F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -418,16 +427,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ghostnote.Ghostnote-Browser";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		D8D10E9F1CC4816000A434F6 /* Release */ = {
+		D8D10EEA1CC48A9F00A434F6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -438,11 +444,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ghostnote.Ghostnote-Browser";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
-		D8D10EA11CC4816000A434F6 /* Debug */ = {
+		D8D10EEC1CC48A9F00A434F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -455,7 +460,7 @@
 			};
 			name = Debug;
 		};
-		D8D10EA21CC4816000A434F6 /* Release */ = {
+		D8D10EED1CC48A9F00A434F6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -468,7 +473,7 @@
 			};
 			name = Release;
 		};
-		D8D10EA41CC4816000A434F6 /* Debug */ = {
+		D8D10EEF1CC48A9F00A434F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -480,7 +485,7 @@
 			};
 			name = Debug;
 		};
-		D8D10EA51CC4816000A434F6 /* Release */ = {
+		D8D10EF01CC48A9F00A434F6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -495,40 +500,43 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D8D10E751CC4816000A434F6 /* Build configuration list for PBXProject "Ghostnote Browser" */ = {
+		D8D10EBD1CC48A9F00A434F6 /* Build configuration list for PBXProject "Ghostnote Browser" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D8D10E9B1CC4816000A434F6 /* Debug */,
-				D8D10E9C1CC4816000A434F6 /* Release */,
+				D8D10EE61CC48A9F00A434F6 /* Debug */,
+				D8D10EE71CC48A9F00A434F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D8D10E9D1CC4816000A434F6 /* Build configuration list for PBXNativeTarget "Ghostnote Browser" */ = {
+		D8D10EE81CC48A9F00A434F6 /* Build configuration list for PBXNativeTarget "Ghostnote Browser" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D8D10E9E1CC4816000A434F6 /* Debug */,
-				D8D10E9F1CC4816000A434F6 /* Release */,
+				D8D10EE91CC48A9F00A434F6 /* Debug */,
+				D8D10EEA1CC48A9F00A434F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		D8D10EA01CC4816000A434F6 /* Build configuration list for PBXNativeTarget "Ghostnote BrowserTests" */ = {
+		D8D10EEB1CC48A9F00A434F6 /* Build configuration list for PBXNativeTarget "Ghostnote BrowserTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D8D10EA11CC4816000A434F6 /* Debug */,
-				D8D10EA21CC4816000A434F6 /* Release */,
+				D8D10EEC1CC48A9F00A434F6 /* Debug */,
+				D8D10EED1CC48A9F00A434F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		D8D10EA31CC4816000A434F6 /* Build configuration list for PBXNativeTarget "Ghostnote BrowserUITests" */ = {
+		D8D10EEE1CC48A9F00A434F6 /* Build configuration list for PBXNativeTarget "Ghostnote BrowserUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D8D10EA41CC4816000A434F6 /* Debug */,
-				D8D10EA51CC4816000A434F6 /* Release */,
+				D8D10EEF1CC48A9F00A434F6 /* Debug */,
+				D8D10EF01CC48A9F00A434F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D8D10E721CC4816000A434F6 /* Project object */;
+	rootObject = D8D10EBA1CC48A9F00A434F6 /* Project object */;
 }

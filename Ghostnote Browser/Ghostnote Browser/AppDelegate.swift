@@ -16,12 +16,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
-            let pathString = "~/Library/Application Support/Ghostnote/GhostNote.sqlite" as NSString
+        NoteManager.shared
         
-            let gnURL = NSURL.fileURLWithPath(pathString.stringByExpandingTildeInPath)
-        MagicalRecord.setupCoreDataStackWithAutoMigratingSqliteStoreAtURL(gnURL)
-        
-        let all = GNNote.MR_findAll() as! [GNNote]
         
     }
 

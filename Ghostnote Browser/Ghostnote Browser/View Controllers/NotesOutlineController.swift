@@ -39,11 +39,13 @@ class NotesOutlineController:NSObject, NSOutlineViewDelegate, NSOutlineViewDataS
     func refreshApps() {
         apps = Array<App>()
         print("refreshing apps...")
-        for bundleID in NoteManager.shared.allAppBundleIDs() {
+        let bundleIDs = NoteManager.shared.allAppBundleIDs()
+        print("found \(bundleIDs)")
+        for bundleID in bundleIDs  {
             print(bundleID)
-            var note = NoteManager.shared.appNoteForApp(bundleID)
-            if !(note == nil)  {
-                let app = App(note:note!)
+            if let note = NoteManager.shared.appNoteForApp(bundleID) {
+                print("found note \(note)")
+                let app = App(note:note)
                 apps.append(app)
                 print("added \(app.bundleID)")
             }
@@ -71,8 +73,12 @@ class NotesOutlineController:NSObject, NSOutlineViewDelegate, NSOutlineViewDataS
     // NSOutlineViewDataSource
     
     func outlineView(outlineView: NSOutlineView, isItemExpandable item: AnyObject) -> Bool {
-        
-        return item is App
+        if let app = item as? App {
+            if appsAndDocsOutline[app]?.count > 0 {
+                return true
+            }
+        }
+        return false
     }
     
     func outlineView(outlineView: NSOutlineView, numberOfChildrenOfItem item: AnyObject?) -> Int {

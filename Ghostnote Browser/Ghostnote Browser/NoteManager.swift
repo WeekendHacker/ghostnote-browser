@@ -24,9 +24,10 @@ class NoteManager {
     
     func appNoteForApp(bundleID:String) -> GNNote? {
         var notes = Array<GNNote>()
+        print("getting app note for \(bundleID)")
         
         for note in GNNote.MR_findAllSortedBy("appBundleID", ascending: false) as! [GNNote] {
-            if note.isAppNote() && !note.isEmpty() {
+            if note.isAppNote() && !note.isEmpty() && (note.appBundleID == bundleID) {
                 notes.append(note)
             }
         }

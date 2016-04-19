@@ -14,6 +14,12 @@
 		D84F16C51CC54ED6005612BB /* AppIconProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16C21CC54ED6005612BB /* AppIconProvider.swift */; };
 		D84F16C61CC54ED6005612BB /* AppNameProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16C31CC54ED6005612BB /* AppNameProvider.swift */; };
 		D84F16C71CC54ED6005612BB /* DocumentIconProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16C41CC54ED6005612BB /* DocumentIconProvider.swift */; };
+		D84F16CB1CC55024005612BB /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16C91CC55024005612BB /* MainWindowController.swift */; };
+		D84F16CC1CC55024005612BB /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D84F16CA1CC55024005612BB /* MainWindowController.xib */; };
+		D84F16D11CC550C3005612BB /* NotesOutlineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16D01CC550C3005612BB /* NotesOutlineController.swift */; };
+		D84F16D41CC553B3005612BB /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16D31CC553B3005612BB /* App.swift */; };
+		D84F16D61CC553DC005612BB /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16D51CC553DC005612BB /* Document.swift */; };
+		D84F16DA1CC5E4E1005612BB /* WAYSourceListWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = D84F16D91CC5E4E1005612BB /* WAYSourceListWindow.m */; };
 		D8D10EC61CC48A9F00A434F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D10EC51CC48A9F00A434F6 /* AppDelegate.swift */; };
 		D8D10ECB1CC48A9F00A434F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8D10ECA1CC48A9F00A434F6 /* Assets.xcassets */; };
 		D8D10ECE1CC48A9F00A434F6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8D10ECC1CC48A9F00A434F6 /* MainMenu.xib */; };
@@ -63,6 +69,14 @@
 		D84F16C21CC54ED6005612BB /* AppIconProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIconProvider.swift; sourceTree = "<group>"; };
 		D84F16C31CC54ED6005612BB /* AppNameProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNameProvider.swift; sourceTree = "<group>"; };
 		D84F16C41CC54ED6005612BB /* DocumentIconProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentIconProvider.swift; sourceTree = "<group>"; };
+		D84F16C91CC55024005612BB /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainWindowController.swift; path = "Window Controllers/MainWindowController.swift"; sourceTree = "<group>"; };
+		D84F16CA1CC55024005612BB /* MainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainWindowController.xib; path = "Window Controllers/MainWindowController.xib"; sourceTree = "<group>"; };
+		D84F16D01CC550C3005612BB /* NotesOutlineController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotesOutlineController.swift; path = "View Controllers/NotesOutlineController.swift"; sourceTree = "<group>"; };
+		D84F16D31CC553B3005612BB /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = App.swift; path = Models/App.swift; sourceTree = "<group>"; };
+		D84F16D51CC553DC005612BB /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Document.swift; path = Models/Document.swift; sourceTree = "<group>"; };
+		D84F16D71CC5E4E1005612BB /* Ghostnote Browser-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ghostnote Browser-Bridging-Header.h"; sourceTree = "<group>"; };
+		D84F16D81CC5E4E1005612BB /* WAYSourceListWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAYSourceListWindow.h; sourceTree = "<group>"; };
+		D84F16D91CC5E4E1005612BB /* WAYSourceListWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAYSourceListWindow.m; sourceTree = "<group>"; };
 		D8D10EC21CC48A9F00A434F6 /* Ghostnote Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ghostnote Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8D10EC51CC48A9F00A434F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8D10ECA1CC48A9F00A434F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -123,6 +137,51 @@
 			name = Providers;
 			sourceTree = "<group>";
 		};
+		D84F16C81CC54FE5005612BB /* Menus */ = {
+			isa = PBXGroup;
+			children = (
+				D8D10ECC1CC48A9F00A434F6 /* MainMenu.xib */,
+			);
+			name = Menus;
+			sourceTree = "<group>";
+		};
+		D84F16CD1CC55035005612BB /* Window Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D84F16CE1CC55047005612BB /* Main */,
+			);
+			name = "Window Controllers";
+			sourceTree = "<group>";
+		};
+		D84F16CE1CC55047005612BB /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D84F16D81CC5E4E1005612BB /* WAYSourceListWindow.h */,
+				D84F16D91CC5E4E1005612BB /* WAYSourceListWindow.m */,
+				D84F16C91CC55024005612BB /* MainWindowController.swift */,
+				D84F16CA1CC55024005612BB /* MainWindowController.xib */,
+				D84F16D71CC5E4E1005612BB /* Ghostnote Browser-Bridging-Header.h */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		D84F16CF1CC550A4005612BB /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D84F16D01CC550C3005612BB /* NotesOutlineController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		D84F16D21CC5539D005612BB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D84F16D31CC553B3005612BB /* App.swift */,
+				D84F16D51CC553DC005612BB /* Document.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		D8D10EB91CC48A9F00A434F6 = {
 			isa = PBXGroup;
 			children = (
@@ -147,12 +206,15 @@
 		D8D10EC41CC48A9F00A434F6 /* Ghostnote Browser */ = {
 			isa = PBXGroup;
 			children = (
+				D84F16D21CC5539D005612BB /* Models */,
+				D84F16CF1CC550A4005612BB /* View Controllers */,
+				D84F16CD1CC55035005612BB /* Window Controllers */,
+				D84F16C81CC54FE5005612BB /* Menus */,
 				D84F16C11CC54E88005612BB /* Providers */,
 				D84F16BE1CC4A4AE005612BB /* CoreData */,
 				D84F16B81CC4A204005612BB /* GhostNote.xcdatamodel */,
 				D8D10EC51CC48A9F00A434F6 /* AppDelegate.swift */,
 				D8D10ECA1CC48A9F00A434F6 /* Assets.xcassets */,
-				D8D10ECC1CC48A9F00A434F6 /* MainMenu.xib */,
 				D8D10ECF1CC48A9F00A434F6 /* Info.plist */,
 				D84F16BF1CC4A4F8005612BB /* NoteManager.swift */,
 			);
@@ -284,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8D10ECB1CC48A9F00A434F6 /* Assets.xcassets in Resources */,
+				D84F16CC1CC55024005612BB /* MainWindowController.xib in Resources */,
 				D8D10ECE1CC48A9F00A434F6 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,12 +374,17 @@
 			files = (
 				D84F16C71CC54ED6005612BB /* DocumentIconProvider.swift in Sources */,
 				D84F16C61CC54ED6005612BB /* AppNameProvider.swift in Sources */,
+				D84F16D41CC553B3005612BB /* App.swift in Sources */,
+				D84F16DA1CC5E4E1005612BB /* WAYSourceListWindow.m in Sources */,
 				D84F16C01CC4A4F8005612BB /* NoteManager.swift in Sources */,
 				D84F16B91CC4A204005612BB /* GhostNote.xcdatamodel in Sources */,
 				D84F16BC1CC4A222005612BB /* GNNote+CoreDataProperties.swift in Sources */,
+				D84F16D11CC550C3005612BB /* NotesOutlineController.swift in Sources */,
 				D84F16BD1CC4A222005612BB /* GNNote.swift in Sources */,
+				D84F16D61CC553DC005612BB /* Document.swift in Sources */,
 				D8D10EC61CC48A9F00A434F6 /* AppDelegate.swift in Sources */,
 				D84F16C51CC54ED6005612BB /* AppIconProvider.swift in Sources */,
+				D84F16CB1CC55024005612BB /* MainWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +517,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -459,6 +528,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ghostnote.Ghostnote-Browser";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Ghostnote Browser/Ghostnote Browser-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -466,6 +537,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -476,6 +548,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ghostnote.Ghostnote-Browser";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Ghostnote Browser/Ghostnote Browser-Bridging-Header.h";
 			};
 			name = Release;
 		};

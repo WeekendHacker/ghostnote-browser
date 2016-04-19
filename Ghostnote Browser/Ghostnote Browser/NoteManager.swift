@@ -26,7 +26,7 @@ class NoteManager {
     func appNotes() -> [GNNote] {
         var notes = Array<GNNote>()
         
-        for note in GNNote.MR_findAll() as! [GNNote] {
+        for note in GNNote.MR_findAllSortedBy("appBundleID", ascending: false) as! [GNNote] {
             if note.isAppNote() && !note.isEmpty() {
                 notes.append(note)
             }
@@ -50,7 +50,7 @@ class NoteManager {
     func allAppBundleIDs() -> Array<String> {
         var bundleIDs = Array<String>()
         
-        for note in GNNote.MR_findAll() as! [GNNote] {
+        for note in GNNote.MR_findAllSortedBy("appBundleID", ascending: false) as! [GNNote] {
             if let bundleID = note.appBundleID {
                 if !bundleIDs.contains(bundleID) {
                     bundleIDs.append(bundleID)

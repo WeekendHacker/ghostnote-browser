@@ -11,8 +11,10 @@ import Foundation
 class Document {
     
     var path = ""
+    var note:GNNote
     
-    init(path:String) {
-        self.path = path
+    init(note:GNNote) {
+        self.note = note
+        self.path = note.documentPath!
     }
 }

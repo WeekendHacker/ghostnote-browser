@@ -20,6 +20,8 @@
 		D84F16D41CC553B3005612BB /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16D31CC553B3005612BB /* App.swift */; };
 		D84F16D61CC553DC005612BB /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16D51CC553DC005612BB /* Document.swift */; };
 		D84F16DA1CC5E4E1005612BB /* WAYSourceListWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = D84F16D91CC5E4E1005612BB /* WAYSourceListWindow.m */; };
+		D84F16DD1CC60EB6005612BB /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16DC1CC60EB6005612BB /* AppView.swift */; };
+		D84F16DF1CC60EEE005612BB /* DocCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16DE1CC60EEE005612BB /* DocCell.swift */; };
 		D8D10EC61CC48A9F00A434F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D10EC51CC48A9F00A434F6 /* AppDelegate.swift */; };
 		D8D10ECB1CC48A9F00A434F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8D10ECA1CC48A9F00A434F6 /* Assets.xcassets */; };
 		D8D10ECE1CC48A9F00A434F6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8D10ECC1CC48A9F00A434F6 /* MainMenu.xib */; };
@@ -77,6 +79,8 @@
 		D84F16D71CC5E4E1005612BB /* Ghostnote Browser-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ghostnote Browser-Bridging-Header.h"; sourceTree = "<group>"; };
 		D84F16D81CC5E4E1005612BB /* WAYSourceListWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAYSourceListWindow.h; sourceTree = "<group>"; };
 		D84F16D91CC5E4E1005612BB /* WAYSourceListWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAYSourceListWindow.m; sourceTree = "<group>"; };
+		D84F16DC1CC60EB6005612BB /* AppView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		D84F16DE1CC60EEE005612BB /* DocCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocCell.swift; sourceTree = "<group>"; };
 		D8D10EC21CC48A9F00A434F6 /* Ghostnote Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ghostnote Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8D10EC51CC48A9F00A434F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8D10ECA1CC48A9F00A434F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -182,6 +186,15 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		D84F16DB1CC60E9C005612BB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D84F16DC1CC60EB6005612BB /* AppView.swift */,
+				D84F16DE1CC60EEE005612BB /* DocCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		D8D10EB91CC48A9F00A434F6 = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +219,7 @@
 		D8D10EC41CC48A9F00A434F6 /* Ghostnote Browser */ = {
 			isa = PBXGroup;
 			children = (
+				D84F16DB1CC60E9C005612BB /* Views */,
 				D84F16D21CC5539D005612BB /* Models */,
 				D84F16CF1CC550A4005612BB /* View Controllers */,
 				D84F16CD1CC55035005612BB /* Window Controllers */,
@@ -374,6 +388,7 @@
 			files = (
 				D84F16C71CC54ED6005612BB /* DocumentIconProvider.swift in Sources */,
 				D84F16C61CC54ED6005612BB /* AppNameProvider.swift in Sources */,
+				D84F16DF1CC60EEE005612BB /* DocCell.swift in Sources */,
 				D84F16D41CC553B3005612BB /* App.swift in Sources */,
 				D84F16DA1CC5E4E1005612BB /* WAYSourceListWindow.m in Sources */,
 				D84F16C01CC4A4F8005612BB /* NoteManager.swift in Sources */,
@@ -382,6 +397,7 @@
 				D84F16D11CC550C3005612BB /* NotesOutlineController.swift in Sources */,
 				D84F16BD1CC4A222005612BB /* GNNote.swift in Sources */,
 				D84F16D61CC553DC005612BB /* Document.swift in Sources */,
+				D84F16DD1CC60EB6005612BB /* AppView.swift in Sources */,
 				D8D10EC61CC48A9F00A434F6 /* AppDelegate.swift in Sources */,
 				D84F16C51CC54ED6005612BB /* AppIconProvider.swift in Sources */,
 				D84F16CB1CC55024005612BB /* MainWindowController.swift in Sources */,

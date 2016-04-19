@@ -9,13 +9,19 @@
 import Foundation
 import Cocoa
 
+
+protocol NotesOutlineControllerObserver {
+    func selectedNote(note:GNNote)
+}
+
 class NotesOutlineController:NSObject, NSOutlineViewDelegate, NSOutlineViewDataSource {
+
+    var observer:NotesOutlineControllerObserver?
     
     weak var notesOutlineView:NSOutlineView? { didSet {
                 if let outlineView = notesOutlineView {
                     outlineView.setDelegate(self)
                     outlineView.setDataSource(self)
-                    reload()
                 }
         }
     }
@@ -32,27 +38,33 @@ class NotesOutlineController:NSObject, NSOutlineViewDelegate, NSOutlineViewDataS
     
     func refreshApps() {
         apps = Array<App>()
+        print("refreshing apps...")
         for bundleID in NoteManager.shared.allAppBundleIDs() {
-            let app = App(bundleID: bundleID)
-            apps.append(app)
+            print(bundleID)
+            var note = NoteManager.shared.appNoteForApp(bundleID)
+            if !(note == nil)  {
+                let app = App(note:note!)
+                apps.append(app)
+                print("added \(app.bundleID)")
+            }
         }
     }
     
     func refreshAppsAndDocsOutline() {
         
         appsAndDocsOutline = Dictionary<App, Array<Document>>()
+        
         for app in apps {
         
             let notes = NoteManager.shared.docNotesForApp(app.bundleID)
             var docs = Array<Document>()
             
             for note in notes {
-                let doc = Document(path: note.documentPath!)
+                let doc = Document(note: note)
                 docs.append(doc)
             }
             
             appsAndDocsOutline[app] = docs
-
         }
     }
     
@@ -102,4 +114,26 @@ class NotesOutlineController:NSObject, NSOutlineViewDelegate, NSOutlineViewDataS
         return view
     }
     
+    
+    // NSOutlineViewDelegate
+    
+    func outlineViewSelectionDidChange(notification: NSNotification) {
+        if let outlineView = notification.object as! NSOutlineView? {
+            if let selectedItem = outlineView.itemAtRow(outlineView.selectedRow) {
+                
+                if selectedItem is App {
+                    if let app = selectedItem as? App {
+                        observer?.selectedNote(app.note)
+                    }
+                }
+                
+                if selectedItem is Document {
+                    if let doc = selectedItem as? Document {
+                        observer?.selectedNote(doc.note)
+                    }
+                }
+                
+            }
+        }
+    }
 }

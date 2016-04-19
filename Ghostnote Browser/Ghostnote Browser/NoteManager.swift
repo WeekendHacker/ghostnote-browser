@@ -20,10 +20,9 @@ class NoteManager {
         
         let gnURL = NSURL.fileURLWithPath(pathString.stringByExpandingTildeInPath)
         MagicalRecord.setupCoreDataStackWithAutoMigratingSqliteStoreAtURL(gnURL)
-        print(allAppBundleIDs())
     }
     
-    func appNotes() -> [GNNote] {
+    func appNoteForApp(bundleID:String) -> GNNote? {
         var notes = Array<GNNote>()
         
         for note in GNNote.MR_findAllSortedBy("appBundleID", ascending: false) as! [GNNote] {
@@ -32,7 +31,7 @@ class NoteManager {
             }
         }
         
-        return notes
+        return notes.first
     }
     
     func docNotesForApp(bundleID:String) -> [GNNote] {
@@ -52,7 +51,7 @@ class NoteManager {
         
         for note in GNNote.MR_findAllSortedBy("appBundleID", ascending: false) as! [GNNote] {
             if let bundleID = note.appBundleID {
-                if !bundleIDs.contains(bundleID) {
+                if !bundleIDs.contains(bundleID) && !note.isEmpty() {
                     bundleIDs.append(bundleID)
                 }
             }
@@ -67,12 +66,6 @@ class NoteManager {
             if !note.isEmpty() {
                 print("found \(note.infoString())\n")
             }
-        }
-    }
-    
-    func logAppNoteInfo() {
-        for note in self.appNotes() {
-            print("found \(note.infoString())\n")
         }
     }
     

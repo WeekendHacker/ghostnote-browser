@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class MainWindowController: NSWindowController {
+class MainWindowController: NSWindowController, NotesOutlineControllerObserver {
 
     @IBOutlet weak var notesOutlineView:NSOutlineView?
     @IBOutlet var noteTextView:NSTextView?
@@ -19,8 +19,17 @@ class MainWindowController: NSWindowController {
     
     override func windowDidLoad() {
         super.windowDidLoad()
+
+        notesOutlineController.observer = self
         notesOutlineController.notesOutlineView = self.notesOutlineView
         notesOutlineController.reload()
     }
     
+    // NotesOutlineControllerObserver
+    
+    func selectedNote(note: GNNote) {
+        noteTextView?.string = ""
+        noteTextView?.textStorage?.appendAttributedString(note.content as! NSAttributedString)
+    }
+
 }

@@ -69,44 +69,20 @@
                                         </textFieldCell>
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
-                                            <tableCellView identifier="HeaderCell" id="VNW-s2-jYj">
+                                            <tableCellView identifier="DataCell" id="uok-Dt-gwJ">
                                                 <rect key="frame" x="1" y="1" width="256" height="17"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bdv-M8-LoJ">
-                                                        <rect key="frame" x="0.0" y="1" width="145" height="14"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="141" id="Ryk-Yz-FK6"/>
-                                                        </constraints>
-                                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="HEADER CELL" id="eMj-OF-mjR">
-                                                            <font key="font" metaFont="smallSystemBold"/>
-                                                            <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="bdv-M8-LoJ" firstAttribute="centerY" secondItem="VNW-s2-jYj" secondAttribute="centerY" id="LF4-rT-vYC"/>
-                                                    <constraint firstItem="bdv-M8-LoJ" firstAttribute="leading" secondItem="VNW-s2-jYj" secondAttribute="leading" constant="2" id="uSA-HE-MQp"/>
-                                                </constraints>
-                                                <connections>
-                                                    <outlet property="textField" destination="bdv-M8-LoJ" id="gGX-K2-hBD"/>
-                                                </connections>
-                                            </tableCellView>
-                                            <tableCellView identifier="DataCell" id="chr-kV-ryc">
-                                                <rect key="frame" x="1" y="20" width="256" height="17"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <subviews>
-                                                    <imageView translatesAutoresizingMaskIntoConstraints="NO" id="Mrb-gv-k5p">
+                                                    <imageView translatesAutoresizingMaskIntoConstraints="NO" id="IES-fs-sQB">
                                                         <rect key="frame" x="3" y="0.0" width="17" height="17"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="17" id="JeD-mY-yIj"/>
+                                                            <constraint firstAttribute="width" constant="17" id="Onl-ha-KdJ"/>
                                                         </constraints>
-                                                        <imageCell key="cell" refusesFirstResponder="YES" imageScaling="proportionallyDown" image="NSActionTemplate" id="hWM-Sr-a0c"/>
+                                                        <imageCell key="cell" refusesFirstResponder="YES" imageScaling="proportionallyDown" image="NSActionTemplate" id="14I-TC-A9Y"/>
                                                     </imageView>
-                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tFn-WK-egx">
+                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3xE-Sa-GbF">
                                                         <rect key="frame" x="25" y="0.0" width="230" height="17"/>
-                                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="nX3-rJ-H2i">
+                                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="R6c-JV-SPV">
                                                             <font key="font" metaFont="system"/>
                                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -114,17 +90,17 @@
                                                     </textField>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="tFn-WK-egx" secondAttribute="trailing" constant="3" id="BiA-Pt-NMg"/>
-                                                    <constraint firstItem="Mrb-gv-k5p" firstAttribute="leading" secondItem="chr-kV-ryc" secondAttribute="leading" constant="3" id="IIk-Pl-gQb"/>
-                                                    <constraint firstItem="Mrb-gv-k5p" firstAttribute="top" secondItem="tFn-WK-egx" secondAttribute="top" id="QQe-p4-73q"/>
-                                                    <constraint firstItem="tFn-WK-egx" firstAttribute="leading" secondItem="Mrb-gv-k5p" secondAttribute="trailing" constant="7" id="c0y-zO-pSg"/>
-                                                    <constraint firstItem="Mrb-gv-k5p" firstAttribute="centerY" secondItem="chr-kV-ryc" secondAttribute="centerY" id="jvX-b6-MgB"/>
-                                                    <constraint firstItem="tFn-WK-egx" firstAttribute="leading" secondItem="Mrb-gv-k5p" secondAttribute="trailing" constant="7" id="mcx-S9-YfD"/>
-                                                    <constraint firstItem="Mrb-gv-k5p" firstAttribute="bottom" secondItem="tFn-WK-egx" secondAttribute="bottom" id="vgt-nb-UFC"/>
+                                                    <constraint firstAttribute="trailing" secondItem="3xE-Sa-GbF" secondAttribute="trailing" constant="3" id="Gb2-AJ-g6L"/>
+                                                    <constraint firstItem="IES-fs-sQB" firstAttribute="leading" secondItem="uok-Dt-gwJ" secondAttribute="leading" constant="3" id="S50-1z-Eo9"/>
+                                                    <constraint firstItem="IES-fs-sQB" firstAttribute="centerY" secondItem="uok-Dt-gwJ" secondAttribute="centerY" id="UfK-ln-dJz"/>
+                                                    <constraint firstItem="3xE-Sa-GbF" firstAttribute="leading" secondItem="IES-fs-sQB" secondAttribute="trailing" constant="7" id="YDK-06-A7T"/>
+                                                    <constraint firstItem="IES-fs-sQB" firstAttribute="bottom" secondItem="3xE-Sa-GbF" secondAttribute="bottom" id="jjF-0v-lSw"/>
+                                                    <constraint firstItem="IES-fs-sQB" firstAttribute="top" secondItem="3xE-Sa-GbF" secondAttribute="top" id="kP2-uJ-m32"/>
+                                                    <constraint firstItem="3xE-Sa-GbF" firstAttribute="leading" secondItem="IES-fs-sQB" secondAttribute="trailing" constant="7" id="n1Y-W9-6K7"/>
                                                 </constraints>
                                                 <connections>
-                                                    <outlet property="imageView" destination="Mrb-gv-k5p" id="cTQ-mq-a0i"/>
-                                                    <outlet property="textField" destination="tFn-WK-egx" id="0iK-aD-XU4"/>
+                                                    <outlet property="imageView" destination="IES-fs-sQB" id="nZH-Au-Eav"/>
+                                                    <outlet property="textField" destination="3xE-Sa-GbF" id="nDz-DL-iRL"/>
                                                 </connections>
                                             </tableCellView>
                                         </prototypeCellViews>

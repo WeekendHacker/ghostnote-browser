@@ -106,6 +106,7 @@ class NotesOutlineController:NSObject, NSOutlineViewDelegate, NSOutlineViewDataS
     func outlineView(outlineView: NSOutlineView, viewForTableColumn tableColumn: NSTableColumn?, item: AnyObject) -> NSView? {
         
         let view = notesOutlineView?.makeViewWithIdentifier("DataCell", owner: nil) as! NSTableCellView
+        view.textField?.lineBreakMode = .ByTruncatingMiddle
         
         if item is App {
             let app = item as! App

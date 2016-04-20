@@ -40,11 +40,12 @@ class MainWindowController: NSWindowController, ButtonNavViewObserver {
     }
     
     func selectedTodos() {
-        
+        notesController?.view.removeFromSuperview()
     }
     
     func selectedGhostnotes() {
-        
+        notesController?.view.removeFromSuperview()
+
     }
 
 }

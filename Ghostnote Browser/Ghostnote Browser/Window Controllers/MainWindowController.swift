@@ -8,28 +8,32 @@
 
 import Cocoa
 
-class MainWindowController: NSWindowController, NotesOutlineControllerObserver {
+class MainWindowController: NSWindowController, ButtonNavViewObserver {
 
-    @IBOutlet weak var notesOutlineView:NSOutlineView?
-    @IBOutlet var noteTextView:NSTextView?
-    
-    
-    var notesOutlineController = NotesOutlineController()
-    
+    @IBOutlet weak var navView:ButtonNavView? { didSet {
+            navView?.observer = self
+        }
+    }
     
     override func windowDidLoad() {
         super.windowDidLoad()
-
-        notesOutlineController.observer = self
-        notesOutlineController.notesOutlineView = self.notesOutlineView
-        notesOutlineController.reload()
+        let appearance = NSAppearance(named: NSAppearanceNameVibrantLight)
+        window?.appearance = appearance
+        window?.contentView?.appearance = appearance
     }
     
-    // NotesOutlineControllerObserver
+    // ButtonNavViewObserver
     
-    func selectedNote(note: GNNote) {
-        noteTextView?.string = ""
-        noteTextView?.textStorage?.appendAttributedString(note.content as! NSAttributedString)
+    func selectedNotes() {
+        
+    }
+    
+    func selectedTodos() {
+        
+    }
+    
+    func selectedGhostnotes() {
+        
     }
 
 }

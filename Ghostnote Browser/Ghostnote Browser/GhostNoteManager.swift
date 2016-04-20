@@ -1,5 +1,5 @@
 //
-//  NoteManager.swift
+//  GhostNoteManager.swift
 //  Ghostnote Browser
 //
 //  Created by Jimmy Hough Jr on 4/18/16.
@@ -10,9 +10,9 @@ import Foundation
 import CoreData
 import MagicalRecord
 
-class NoteManager {
+class GhostNoteManager {
     
-    static let shared = NoteManager()
+    static let shared = GhostNoteManager()
     
     let pathString = "~/Library/Application Support/Ghostnote/GhostNote.sqlite" as NSString
     

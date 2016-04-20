@@ -10,7 +10,7 @@
 		D84F16B91CC4A204005612BB /* GhostNote.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = D84F16B81CC4A204005612BB /* GhostNote.xcdatamodel */; };
 		D84F16BC1CC4A222005612BB /* GNNote+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16BA1CC4A222005612BB /* GNNote+CoreDataProperties.swift */; };
 		D84F16BD1CC4A222005612BB /* GNNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16BB1CC4A222005612BB /* GNNote.swift */; };
-		D84F16C01CC4A4F8005612BB /* NoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16BF1CC4A4F8005612BB /* NoteManager.swift */; };
+		D84F16C01CC4A4F8005612BB /* GhostNoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16BF1CC4A4F8005612BB /* GhostNoteManager.swift */; };
 		D84F16C51CC54ED6005612BB /* AppIconProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16C21CC54ED6005612BB /* AppIconProvider.swift */; };
 		D84F16C61CC54ED6005612BB /* AppNameProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16C31CC54ED6005612BB /* AppNameProvider.swift */; };
 		D84F16C71CC54ED6005612BB /* DocumentIconProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16C41CC54ED6005612BB /* DocumentIconProvider.swift */; };
@@ -19,9 +19,15 @@
 		D84F16D11CC550C3005612BB /* NotesOutlineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16D01CC550C3005612BB /* NotesOutlineController.swift */; };
 		D84F16D41CC553B3005612BB /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16D31CC553B3005612BB /* App.swift */; };
 		D84F16D61CC553DC005612BB /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16D51CC553DC005612BB /* Document.swift */; };
-		D84F16DA1CC5E4E1005612BB /* WAYSourceListWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = D84F16D91CC5E4E1005612BB /* WAYSourceListWindow.m */; };
 		D84F16DD1CC60EB6005612BB /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16DC1CC60EB6005612BB /* AppView.swift */; };
 		D84F16DF1CC60EEE005612BB /* DocCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16DE1CC60EEE005612BB /* DocCell.swift */; };
+		D84F16E31CC70E9C005612BB /* ButtonNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16E21CC70E9C005612BB /* ButtonNavView.swift */; };
+		D84F16E61CC71215005612BB /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16E41CC71215005612BB /* NotesViewController.swift */; };
+		D84F16E71CC71215005612BB /* NotesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D84F16E51CC71215005612BB /* NotesViewController.xib */; };
+		D84F16EB1CC7123E005612BB /* TodosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16E91CC7123E005612BB /* TodosViewController.swift */; };
+		D84F16EC1CC7123E005612BB /* TodosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D84F16EA1CC7123E005612BB /* TodosViewController.xib */; };
+		D84F16F01CC71260005612BB /* GhostnotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16EE1CC71260005612BB /* GhostnotesViewController.swift */; };
+		D84F16F11CC71260005612BB /* GhostnotesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D84F16EF1CC71260005612BB /* GhostnotesViewController.xib */; };
 		D8D10EC61CC48A9F00A434F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D10EC51CC48A9F00A434F6 /* AppDelegate.swift */; };
 		D8D10ECB1CC48A9F00A434F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8D10ECA1CC48A9F00A434F6 /* Assets.xcassets */; };
 		D8D10ECE1CC48A9F00A434F6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8D10ECC1CC48A9F00A434F6 /* MainMenu.xib */; };
@@ -67,7 +73,7 @@
 		D84F16B81CC4A204005612BB /* GhostNote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GhostNote.xcdatamodel; sourceTree = "<group>"; };
 		D84F16BA1CC4A222005612BB /* GNNote+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "GNNote+CoreDataProperties.swift"; path = "CoreData/GNNote+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D84F16BB1CC4A222005612BB /* GNNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GNNote.swift; path = CoreData/GNNote.swift; sourceTree = "<group>"; };
-		D84F16BF1CC4A4F8005612BB /* NoteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteManager.swift; sourceTree = "<group>"; };
+		D84F16BF1CC4A4F8005612BB /* GhostNoteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GhostNoteManager.swift; sourceTree = "<group>"; };
 		D84F16C21CC54ED6005612BB /* AppIconProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIconProvider.swift; sourceTree = "<group>"; };
 		D84F16C31CC54ED6005612BB /* AppNameProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNameProvider.swift; sourceTree = "<group>"; };
 		D84F16C41CC54ED6005612BB /* DocumentIconProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentIconProvider.swift; sourceTree = "<group>"; };
@@ -77,10 +83,15 @@
 		D84F16D31CC553B3005612BB /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = App.swift; path = Models/App.swift; sourceTree = "<group>"; };
 		D84F16D51CC553DC005612BB /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Document.swift; path = Models/Document.swift; sourceTree = "<group>"; };
 		D84F16D71CC5E4E1005612BB /* Ghostnote Browser-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ghostnote Browser-Bridging-Header.h"; sourceTree = "<group>"; };
-		D84F16D81CC5E4E1005612BB /* WAYSourceListWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAYSourceListWindow.h; sourceTree = "<group>"; };
-		D84F16D91CC5E4E1005612BB /* WAYSourceListWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAYSourceListWindow.m; sourceTree = "<group>"; };
 		D84F16DC1CC60EB6005612BB /* AppView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		D84F16DE1CC60EEE005612BB /* DocCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocCell.swift; sourceTree = "<group>"; };
+		D84F16E21CC70E9C005612BB /* ButtonNavView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonNavView.swift; sourceTree = "<group>"; };
+		D84F16E41CC71215005612BB /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotesViewController.swift; path = "View Controllers/NotesViewController.swift"; sourceTree = "<group>"; };
+		D84F16E51CC71215005612BB /* NotesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotesViewController.xib; path = "View Controllers/NotesViewController.xib"; sourceTree = "<group>"; };
+		D84F16E91CC7123E005612BB /* TodosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TodosViewController.swift; path = "View Controllers/TodosViewController.swift"; sourceTree = "<group>"; };
+		D84F16EA1CC7123E005612BB /* TodosViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TodosViewController.xib; path = "View Controllers/TodosViewController.xib"; sourceTree = "<group>"; };
+		D84F16EE1CC71260005612BB /* GhostnotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GhostnotesViewController.swift; path = "View Controllers/GhostnotesViewController.swift"; sourceTree = "<group>"; };
+		D84F16EF1CC71260005612BB /* GhostnotesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GhostnotesViewController.xib; path = "View Controllers/GhostnotesViewController.xib"; sourceTree = "<group>"; };
 		D8D10EC21CC48A9F00A434F6 /* Ghostnote Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ghostnote Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8D10EC51CC48A9F00A434F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8D10ECA1CC48A9F00A434F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -160,8 +171,6 @@
 		D84F16CE1CC55047005612BB /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				D84F16D81CC5E4E1005612BB /* WAYSourceListWindow.h */,
-				D84F16D91CC5E4E1005612BB /* WAYSourceListWindow.m */,
 				D84F16C91CC55024005612BB /* MainWindowController.swift */,
 				D84F16CA1CC55024005612BB /* MainWindowController.xib */,
 				D84F16D71CC5E4E1005612BB /* Ghostnote Browser-Bridging-Header.h */,
@@ -172,7 +181,9 @@
 		D84F16CF1CC550A4005612BB /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D84F16D01CC550C3005612BB /* NotesOutlineController.swift */,
+				D84F16E81CC71220005612BB /* Notes */,
+				D84F16ED1CC71246005612BB /* Todos */,
+				D84F16F21CC7126A005612BB /* Ghostnotes */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -180,6 +191,7 @@
 		D84F16D21CC5539D005612BB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D84F16BF1CC4A4F8005612BB /* GhostNoteManager.swift */,
 				D84F16D31CC553B3005612BB /* App.swift */,
 				D84F16D51CC553DC005612BB /* Document.swift */,
 			);
@@ -191,8 +203,37 @@
 			children = (
 				D84F16DC1CC60EB6005612BB /* AppView.swift */,
 				D84F16DE1CC60EEE005612BB /* DocCell.swift */,
+				D84F16E21CC70E9C005612BB /* ButtonNavView.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		D84F16E81CC71220005612BB /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				D84F16D01CC550C3005612BB /* NotesOutlineController.swift */,
+				D84F16E41CC71215005612BB /* NotesViewController.swift */,
+				D84F16E51CC71215005612BB /* NotesViewController.xib */,
+			);
+			name = Notes;
+			sourceTree = "<group>";
+		};
+		D84F16ED1CC71246005612BB /* Todos */ = {
+			isa = PBXGroup;
+			children = (
+				D84F16E91CC7123E005612BB /* TodosViewController.swift */,
+				D84F16EA1CC7123E005612BB /* TodosViewController.xib */,
+			);
+			name = Todos;
+			sourceTree = "<group>";
+		};
+		D84F16F21CC7126A005612BB /* Ghostnotes */ = {
+			isa = PBXGroup;
+			children = (
+				D84F16EE1CC71260005612BB /* GhostnotesViewController.swift */,
+				D84F16EF1CC71260005612BB /* GhostnotesViewController.xib */,
+			);
+			name = Ghostnotes;
 			sourceTree = "<group>";
 		};
 		D8D10EB91CC48A9F00A434F6 = {
@@ -230,7 +271,6 @@
 				D8D10EC51CC48A9F00A434F6 /* AppDelegate.swift */,
 				D8D10ECA1CC48A9F00A434F6 /* Assets.xcassets */,
 				D8D10ECF1CC48A9F00A434F6 /* Info.plist */,
-				D84F16BF1CC4A4F8005612BB /* NoteManager.swift */,
 			);
 			path = "Ghostnote Browser";
 			sourceTree = "<group>";
@@ -359,6 +399,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D84F16F11CC71260005612BB /* GhostnotesViewController.xib in Resources */,
+				D84F16EC1CC7123E005612BB /* TodosViewController.xib in Resources */,
+				D84F16E71CC71215005612BB /* NotesViewController.xib in Resources */,
 				D8D10ECB1CC48A9F00A434F6 /* Assets.xcassets in Resources */,
 				D84F16CC1CC55024005612BB /* MainWindowController.xib in Resources */,
 				D8D10ECE1CC48A9F00A434F6 /* MainMenu.xib in Resources */,
@@ -390,12 +433,15 @@
 				D84F16C61CC54ED6005612BB /* AppNameProvider.swift in Sources */,
 				D84F16DF1CC60EEE005612BB /* DocCell.swift in Sources */,
 				D84F16D41CC553B3005612BB /* App.swift in Sources */,
-				D84F16DA1CC5E4E1005612BB /* WAYSourceListWindow.m in Sources */,
-				D84F16C01CC4A4F8005612BB /* NoteManager.swift in Sources */,
+				D84F16EB1CC7123E005612BB /* TodosViewController.swift in Sources */,
+				D84F16C01CC4A4F8005612BB /* GhostNoteManager.swift in Sources */,
 				D84F16B91CC4A204005612BB /* GhostNote.xcdatamodel in Sources */,
+				D84F16F01CC71260005612BB /* GhostnotesViewController.swift in Sources */,
 				D84F16BC1CC4A222005612BB /* GNNote+CoreDataProperties.swift in Sources */,
 				D84F16D11CC550C3005612BB /* NotesOutlineController.swift in Sources */,
 				D84F16BD1CC4A222005612BB /* GNNote.swift in Sources */,
+				D84F16E31CC70E9C005612BB /* ButtonNavView.swift in Sources */,
+				D84F16E61CC71215005612BB /* NotesViewController.swift in Sources */,
 				D84F16D61CC553DC005612BB /* Document.swift in Sources */,
 				D84F16DD1CC60EB6005612BB /* AppView.swift in Sources */,
 				D8D10EC61CC48A9F00A434F6 /* AppDelegate.swift in Sources */,

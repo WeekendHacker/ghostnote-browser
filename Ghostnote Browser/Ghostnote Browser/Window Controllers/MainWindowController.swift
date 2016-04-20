@@ -15,17 +15,28 @@ class MainWindowController: NSWindowController, ButtonNavViewObserver {
         }
     }
     
+    @IBOutlet weak var activityView:NSView?
+    
+    
+    var notesController:NotesViewController? { didSet {
+        
+        }
+    }
+    
     override func windowDidLoad() {
         super.windowDidLoad()
         let appearance = NSAppearance(named: NSAppearanceNameVibrantLight)
         window?.appearance = appearance
         window?.contentView?.appearance = appearance
+        
+        notesController = NotesViewController(nibName: "NotesViewController", bundle: nil)
     }
     
     // ButtonNavViewObserver
     
     func selectedNotes() {
-        
+        self.activityView?.addSubview((notesController?.view)!)
+        print("")
     }
     
     func selectedTodos() {

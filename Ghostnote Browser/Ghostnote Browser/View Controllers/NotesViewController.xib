@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NotesViewController" customModule="Ghostnote_Browser" customModuleProvider="target">
@@ -19,13 +20,13 @@
                 <splitView arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eHR-dP-hOW">
                     <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
                     <subviews>
-                        <customView fixedFrame="YES" id="BD5-KI-9E0">
+                        <customView id="BD5-KI-9E0">
                             <rect key="frame" x="0.0" y="0.0" width="236" height="272"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUQ-Bf-8jy">
+                                <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUQ-Bf-8jy">
                                     <rect key="frame" x="0.0" y="0.0" width="236" height="244"/>
-                                    <clipView key="contentView" ambiguous="YES" id="jgq-n9-Zh0">
+                                    <clipView key="contentView" id="jgq-n9-Zh0">
                                         <rect key="frame" x="1" y="1" width="234" height="242"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
@@ -81,7 +82,7 @@
                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </clipView>
                                     <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="iTy-7W-3pZ">
-                                        <rect key="frame" x="1" y="119" width="223" height="15"/>
+                                        <rect key="frame" x="1" y="-14" width="0.0" height="15"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </scroller>
                                     <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="ONE-Tk-bJ4">
@@ -89,21 +90,36 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                     </scroller>
                                 </scrollView>
-                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lg8-E8-2T3">
-                                    <rect key="frame" x="200" y="243" width="26" height="25"/>
+                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lg8-E8-2T3">
+                                    <rect key="frame" x="200" y="243" width="13" height="25"/>
                                     <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ckn-re-3DG">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
                                 </button>
-                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aCn-9F-Rml">
+                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aCn-9F-Rml">
                                     <rect key="frame" x="163" y="243" width="29" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="29" id="UTn-bx-as8"/>
+                                        <constraint firstAttribute="height" constant="23" id="Vg6-vN-Lq9"/>
+                                    </constraints>
                                     <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tUs-Du-8gC">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
                                 </button>
                             </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="wUQ-Bf-8jy" secondAttribute="trailing" id="D54-b0-rdH"/>
+                                <constraint firstItem="aCn-9F-Rml" firstAttribute="firstBaseline" secondItem="lg8-E8-2T3" secondAttribute="firstBaseline" id="DFW-Hj-Lx2"/>
+                                <constraint firstAttribute="bottom" secondItem="wUQ-Bf-8jy" secondAttribute="bottom" id="JFQ-du-vgU"/>
+                                <constraint firstItem="lg8-E8-2T3" firstAttribute="leading" secondItem="aCn-9F-Rml" secondAttribute="trailing" constant="8" symbolic="YES" id="T5s-rU-HsL"/>
+                                <constraint firstItem="wUQ-Bf-8jy" firstAttribute="leading" secondItem="BD5-KI-9E0" secondAttribute="leading" id="cu0-ma-Z1e"/>
+                                <constraint firstItem="aCn-9F-Rml" firstAttribute="baseline" secondItem="lg8-E8-2T3" secondAttribute="baseline" id="mQ5-Ba-SXo"/>
+                                <constraint firstAttribute="trailing" secondItem="aCn-9F-Rml" secondAttribute="trailing" constant="44" id="myh-0i-RDL"/>
+                                <constraint firstItem="aCn-9F-Rml" firstAttribute="top" secondItem="BD5-KI-9E0" secondAttribute="top" constant="5" id="rqH-cI-kYN"/>
+                                <constraint firstItem="wUQ-Bf-8jy" firstAttribute="top" secondItem="aCn-9F-Rml" secondAttribute="bottom" id="udw-4H-vPk"/>
+                            </constraints>
                         </customView>
                         <customView fixedFrame="YES" id="7L5-Ne-OCK">
                             <rect key="frame" x="246" y="0.0" width="234" height="272"/>
@@ -132,7 +148,7 @@
                                         <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </scroller>
-                                    <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="lrj-Ms-5Cg">
+                                    <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="lrj-Ms-5Cg">
                                         <rect key="frame" x="218" y="1" width="15" height="241"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </scroller>

@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="Ghostnote_Browser" customModuleProvider="target">
             <connections>
+                <outlet property="activityView" destination="MJM-jS-V3Y" id="e1D-OB-wF0"/>
                 <outlet property="navView" destination="IRO-af-T2N" id="xvb-lw-1sV"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
@@ -22,22 +23,25 @@
                 <rect key="frame" x="0.0" y="0.0" width="800" height="281"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <visualEffectView appearanceType="vibrantLight" fixedFrame="YES" blendingMode="behindWindow" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="FIB-LR-3qA">
+                    <visualEffectView appearanceType="vibrantLight" blendingMode="behindWindow" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="FIB-LR-3qA">
                         <rect key="frame" x="-5" y="0.0" width="805" height="288"/>
                     </visualEffectView>
-                    <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="hyk-V9-g2Q">
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="MJM-jS-V3Y">
+                        <rect key="frame" x="53" y="0.0" width="747" height="242"/>
+                    </customView>
+                    <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="hyk-V9-g2Q">
                         <rect key="frame" x="0.0" y="241" width="800" height="5"/>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <font key="titleFont" metaFont="system"/>
                     </box>
-                    <box horizontalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="NFi-ZK-6Qd">
+                    <box horizontalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="NFi-ZK-6Qd">
                         <rect key="frame" x="51" y="0.0" width="5" height="244"/>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <font key="titleFont" metaFont="system"/>
                     </box>
-                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IRO-af-T2N" customClass="ButtonNavView" customModule="Ghostnote_Browser" customModuleProvider="target">
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="IRO-af-T2N" customClass="ButtonNavView" customModule="Ghostnote_Browser" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="54" height="244"/>
                         <subviews>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="odd-35-5JN">
@@ -77,8 +81,11 @@
                             <outlet property="todosButton" destination="odd-35-5JN" id="DSI-RD-wjF"/>
                         </connections>
                     </customView>
-                    <searchField wantsLayer="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8E4-pX-hYh">
+                    <searchField wantsLayer="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8E4-pX-hYh">
                         <rect key="frame" x="669" y="250" width="125" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="125" id="nxU-MO-H29"/>
+                        </constraints>
                         <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="JEf-zr-Z7i">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -86,6 +93,28 @@
                         </searchFieldCell>
                     </searchField>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="MJM-jS-V3Y" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="39" id="0H5-iO-Mx9"/>
+                    <constraint firstAttribute="bottom" secondItem="MJM-jS-V3Y" secondAttribute="bottom" id="7kB-6x-End"/>
+                    <constraint firstItem="IRO-af-T2N" firstAttribute="top" secondItem="NFi-ZK-6Qd" secondAttribute="top" id="E9z-4Y-05l"/>
+                    <constraint firstItem="MJM-jS-V3Y" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="53" id="Gp9-3j-JzA"/>
+                    <constraint firstItem="MJM-jS-V3Y" firstAttribute="bottom" secondItem="NFi-ZK-6Qd" secondAttribute="bottom" id="OMh-sW-Nx8"/>
+                    <constraint firstItem="IRO-af-T2N" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="OpL-uh-aga"/>
+                    <constraint firstItem="MJM-jS-V3Y" firstAttribute="trailing" secondItem="FIB-LR-3qA" secondAttribute="trailing" id="Q3j-8Z-XWV"/>
+                    <constraint firstItem="MJM-jS-V3Y" firstAttribute="top" secondItem="hyk-V9-g2Q" secondAttribute="bottom" constant="1" id="Scr-M4-C6Z"/>
+                    <constraint firstItem="MJM-jS-V3Y" firstAttribute="trailing" secondItem="hyk-V9-g2Q" secondAttribute="trailing" id="UhS-l7-4w3"/>
+                    <constraint firstAttribute="trailing" secondItem="MJM-jS-V3Y" secondAttribute="trailing" id="Ul8-rc-3LF"/>
+                    <constraint firstItem="IRO-af-T2N" firstAttribute="leading" secondItem="hyk-V9-g2Q" secondAttribute="leading" id="XpI-ao-mpM"/>
+                    <constraint firstItem="MJM-jS-V3Y" firstAttribute="bottom" secondItem="FIB-LR-3qA" secondAttribute="bottom" id="ahb-UB-hFq"/>
+                    <constraint firstAttribute="trailing" secondItem="8E4-pX-hYh" secondAttribute="trailing" constant="6" id="c2I-yc-daE"/>
+                    <constraint firstItem="IRO-af-T2N" firstAttribute="trailing" secondItem="NFi-ZK-6Qd" secondAttribute="trailing" id="lkJ-48-uvm"/>
+                    <constraint firstItem="MJM-jS-V3Y" firstAttribute="top" secondItem="8E4-pX-hYh" secondAttribute="bottom" constant="8" symbolic="YES" id="m7z-nr-bR3"/>
+                    <constraint firstItem="MJM-jS-V3Y" firstAttribute="bottom" secondItem="IRO-af-T2N" secondAttribute="bottom" id="mVb-CL-8Qg"/>
+                    <constraint firstItem="MJM-jS-V3Y" firstAttribute="leading" secondItem="NFi-ZK-6Qd" secondAttribute="leading" id="om7-wR-u1a"/>
+                    <constraint firstItem="FIB-LR-3qA" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="-7" id="pNF-hG-eZa"/>
+                    <constraint firstItem="FIB-LR-3qA" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="-5" id="rTY-Vp-xKL"/>
+                    <constraint firstItem="IRO-af-T2N" firstAttribute="top" secondItem="hyk-V9-g2Q" secondAttribute="top" id="szo-bW-RsJ"/>
+                </constraints>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>

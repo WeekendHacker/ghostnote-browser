@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class TodosViewController: NSViewController {
+class TasksViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="9Ok-8j-dLu">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
+    </dependencies>
+    <scenes>
+        <!--Window Controller-->
+        <scene sceneID="FBz-qV-pI7">
+            <objects>
+                <customObject id="iXi-ay-h7e" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <windowController id="2RQ-so-Zfg" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="mpn-jD-yBO">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="425" y="461" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+                    </window>
+                    <connections>
+                        <segue destination="9Ok-8j-dLu" kind="relationship" relationship="window.shadowedContentViewController" id="D2P-oy-pwo"/>
+                    </connections>
+                </windowController>
+            </objects>
+            <point key="canvasLocation" x="150" y="272"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="bW2-ro-lGb">
+            <objects>
+                <viewController id="9Ok-8j-dLu" customClass="MainViewController" customModule="Ghostnote_Browser" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="IYF-Xy-PUJ">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="f0h-Br-TAI">
+                                <rect key="frame" x="0.0" y="0.0" width="75" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="NUo-FM-kgM"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="fDe-C1-fAu" kind="embed" id="fGZ-b5-jfd"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="f0h-Br-TAI" firstAttribute="top" secondItem="IYF-Xy-PUJ" secondAttribute="top" id="8n9-Gp-s0e"/>
+                            <constraint firstAttribute="bottom" secondItem="f0h-Br-TAI" secondAttribute="bottom" id="GXb-AB-cpi"/>
+                            <constraint firstItem="f0h-Br-TAI" firstAttribute="leading" secondItem="IYF-Xy-PUJ" secondAttribute="leading" id="uhW-Ck-ILD"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="06E-aE-oFM" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="786" y="267"/>
+        </scene>
+        <!--Button Nav View Controller-->
+        <scene sceneID="Tjc-3F-b1k">
+            <objects>
+                <viewController id="fDe-C1-fAu" customClass="ButtonNavViewController" customModule="Ghostnote_Browser" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="GvX-ba-hF9">
+                        <rect key="frame" x="0.0" y="0.0" width="75" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vQE-nD-EAJ">
+                                <rect key="frame" x="0.0" y="226" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="jRx-pd-ujB"/>
+                                </constraints>
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="iOo-c4-Qvm">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="vQE-nD-EAJ" firstAttribute="leading" secondItem="GvX-ba-hF9" secondAttribute="leading" id="FN6-21-BoD"/>
+                            <constraint firstItem="vQE-nD-EAJ" firstAttribute="top" secondItem="GvX-ba-hF9" secondAttribute="top" id="a8L-9g-1Kj"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="14M-4n-Y4N" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="591.5" y="725"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="NSAddTemplate" width="11" height="11"/>
+    </resources>
+</document>

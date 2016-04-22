@@ -13,9 +13,9 @@ class MainViewController: NSViewController, ButtonNavObserver {
     @IBOutlet var buttonNav:ButtonNavViewController?
     @IBOutlet var contentView:NSView?
     
-    @IBOutlet var notesController:NotesViewController?
-    @IBOutlet var tasksController:TasksViewController?
-    @IBOutlet var ghostnotesController:GhostnotesViewController?
+    var notesController:NotesViewController?
+    var tasksController:TasksViewController?
+    var ghostnotesController:GhostnotesViewController?
     
     var currentContentVC:NSViewController? { willSet {
             if let current = currentContentVC {
@@ -31,7 +31,7 @@ class MainViewController: NSViewController, ButtonNavObserver {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        buttonNav?.navObserver = self
+        performSegueWithIdentifier("EmbedButtonNav", sender: self)
     }
     
     // ButtonNavObserver

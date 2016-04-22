@@ -22,7 +22,8 @@
 		D84F16E61CC71215005612BB /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16E41CC71215005612BB /* NotesViewController.swift */; };
 		D84F16EB1CC7123E005612BB /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16E91CC7123E005612BB /* TasksViewController.swift */; };
 		D84F16F01CC71260005612BB /* GhostnotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16EE1CC71260005612BB /* GhostnotesViewController.swift */; };
-		D8CCD9A91CC8972600AC146F /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8CCD9A81CC8972600AC146F /* Storyboard.storyboard */; };
+		D88D93631CCA98FD00A6AED4 /* CrossfadeStoryboardSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88D93621CCA98FD00A6AED4 /* CrossfadeStoryboardSegue.swift */; };
+		D88D93651CCA996900A6AED4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D88D93641CCA996900A6AED4 /* Main.storyboard */; };
 		D8CCD9AB1CC89FE700AC146F /* ButtonNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CCD9AA1CC89FE700AC146F /* ButtonNavViewController.swift */; };
 		D8CCD9AD1CC8A0CB00AC146F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CCD9AC1CC8A0CB00AC146F /* MainViewController.swift */; };
 		D8CCD9AF1CC8AA4F00AC146F /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CCD9AE1CC8AA4F00AC146F /* EmptySegue.swift */; };
@@ -31,7 +32,6 @@
 		D8D10ECE1CC48A9F00A434F6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8D10ECC1CC48A9F00A434F6 /* MainMenu.xib */; };
 		D8D10ED91CC48A9F00A434F6 /* Ghostnote_BrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D10ED81CC48A9F00A434F6 /* Ghostnote_BrowserTests.swift */; };
 		D8D10EE41CC48A9F00A434F6 /* Ghostnote_BrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D10EE31CC48A9F00A434F6 /* Ghostnote_BrowserUITests.swift */; };
-		D8E659121CC499A8002CEA9B /* MagicalRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E659111CC499A8002CEA9B /* MagicalRecord.framework */; };
 		D8E659131CC49A40002CEA9B /* MagicalRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E659111CC499A8002CEA9B /* MagicalRecord.framework */; };
 		D8E659141CC49A40002CEA9B /* MagicalRecord.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8E659111CC499A8002CEA9B /* MagicalRecord.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -84,7 +84,8 @@
 		D84F16E41CC71215005612BB /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotesViewController.swift; path = "View Controllers/NotesViewController.swift"; sourceTree = "<group>"; };
 		D84F16E91CC7123E005612BB /* TasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TasksViewController.swift; path = "View Controllers/TasksViewController.swift"; sourceTree = "<group>"; };
 		D84F16EE1CC71260005612BB /* GhostnotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GhostnotesViewController.swift; path = "View Controllers/GhostnotesViewController.swift"; sourceTree = "<group>"; };
-		D8CCD9A81CC8972600AC146F /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		D88D93621CCA98FD00A6AED4 /* CrossfadeStoryboardSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossfadeStoryboardSegue.swift; sourceTree = "<group>"; };
+		D88D93641CCA996900A6AED4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D8CCD9AA1CC89FE700AC146F /* ButtonNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonNavViewController.swift; sourceTree = "<group>"; };
 		D8CCD9AC1CC8A0CB00AC146F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D8CCD9AE1CC8AA4F00AC146F /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptySegue.swift; sourceTree = "<group>"; };
@@ -108,7 +109,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8E659131CC49A40002CEA9B /* MagicalRecord.framework in Frameworks */,
-				D8E659121CC499A8002CEA9B /* MagicalRecord.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +175,7 @@
 				D84F16D31CC553B3005612BB /* App.swift */,
 				D84F16D51CC553DC005612BB /* Document.swift */,
 				D8CCD9AE1CC8AA4F00AC146F /* EmptySegue.swift */,
+				D88D93621CCA98FD00A6AED4 /* CrossfadeStoryboardSegue.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -248,7 +249,7 @@
 				D8D10ECA1CC48A9F00A434F6 /* Assets.xcassets */,
 				D8D10ECF1CC48A9F00A434F6 /* Info.plist */,
 				D84F16D71CC5E4E1005612BB /* Ghostnote Browser-Bridging-Header.h */,
-				D8CCD9A81CC8972600AC146F /* Storyboard.storyboard */,
+				D88D93641CCA996900A6AED4 /* Main.storyboard */,
 			);
 			path = "Ghostnote Browser";
 			sourceTree = "<group>";
@@ -377,9 +378,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D88D93651CCA996900A6AED4 /* Main.storyboard in Resources */,
 				D8D10ECB1CC48A9F00A434F6 /* Assets.xcassets in Resources */,
 				D8D10ECE1CC48A9F00A434F6 /* MainMenu.xib in Resources */,
-				D8CCD9A91CC8972600AC146F /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +422,7 @@
 				D84F16E61CC71215005612BB /* NotesViewController.swift in Sources */,
 				D84F16D61CC553DC005612BB /* Document.swift in Sources */,
 				D84F16DD1CC60EB6005612BB /* AppView.swift in Sources */,
+				D88D93631CCA98FD00A6AED4 /* CrossfadeStoryboardSegue.swift in Sources */,
 				D8D10EC61CC48A9F00A434F6 /* AppDelegate.swift in Sources */,
 				D84F16C51CC54ED6005612BB /* AppIconProvider.swift in Sources */,
 			);

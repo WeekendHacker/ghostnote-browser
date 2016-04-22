@@ -27,7 +27,7 @@
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2016 Ghostnnote HQ. All rights reserved.</string>
 	<key>NSMainStoryboardFile</key>
-	<string>Storyboard</string>
+	<string>Main</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 </dict>

@@ -10,13 +10,13 @@ import Foundation
 import Cocoa
 
 
-protocol NotesOutlineControllerObserver {
+protocol GhostnotesOutlineControllerObserver {
     func selectedNote(note:GNNote)
 }
 
-class NotesOutlineController:NSObject, NSOutlineViewDelegate, NSOutlineViewDataSource {
+class GhostnotesOutlineController:NSObject, NSOutlineViewDelegate, NSOutlineViewDataSource {
 
-    var observer:NotesOutlineControllerObserver?
+    var observer:GhostnotesOutlineControllerObserver?
     
     weak var notesOutlineView:NSOutlineView? { didSet {
                 if let outlineView = notesOutlineView {

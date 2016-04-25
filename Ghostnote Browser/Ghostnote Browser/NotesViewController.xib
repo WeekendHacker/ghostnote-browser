@@ -7,7 +7,11 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NotesViewController" customModule="Ghostnote_Browser" customModuleProvider="target">
             <connections>
+                <outlet property="addNoteButton" destination="Qw8-LE-1Op" id="w7f-iR-KzX"/>
+                <outlet property="deleteNoteButton" destination="aA7-Hi-noj" id="ECh-AI-upU"/>
                 <outlet property="noteTextView" destination="KGG-x5-Z5H" id="1yL-nf-qPk"/>
+                <outlet property="notesTableView" destination="0a4-fP-4um" id="POb-UV-VvF"/>
+                <outlet property="searchField" destination="fnM-km-QpZ" id="DJl-aH-QJj"/>
                 <outlet property="view" destination="c22-O7-iKe" id="BfV-nq-59Y"/>
             </connections>
         </customObject>
@@ -18,13 +22,13 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ww9-6P-b0r">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="272"/>
+                    <rect key="frame" x="0.0" y="23" width="240" height="249"/>
                     <clipView key="contentView" id="FWw-IE-rqF">
-                        <rect key="frame" x="1" y="1" width="238" height="270"/>
+                        <rect key="frame" x="1" y="1" width="238" height="247"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="0a4-fP-4um">
-                                <rect key="frame" x="0.0" y="0.0" width="238" height="270"/>
+                                <rect key="frame" x="0.0" y="0.0" width="238" height="247"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -43,12 +47,12 @@
                                         </textFieldCell>
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
-                                            <tableCellView id="fJ7-XF-9mx">
+                                            <tableCellView identifier="NoteCell" id="fJ7-XF-9mx" customClass="NoteCell" customModule="Ghostnote_Browser" customModuleProvider="target">
                                                 <rect key="frame" x="1" y="1" width="116" height="17"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CS2-ig-HDO">
-                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="17"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="17"/>
                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="sz9-6U-zto">
                                                             <font key="font" metaFont="system"/>
                                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -107,16 +111,58 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Qw8-LE-1Op">
+                    <rect key="frame" x="0.0" y="-1" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="Vj4-fB-LlC"/>
+                        <constraint firstAttribute="height" constant="22" id="vEr-nf-fMP"/>
+                    </constraints>
+                    <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7NI-VV-zuz">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <searchField wantsLayer="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fnM-km-QpZ">
+                    <rect key="frame" x="44" y="1" width="196" height="22"/>
+                    <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="search notes" usesSingleLineMode="YES" bezelStyle="round" id="aaj-6J-q1b">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </searchFieldCell>
+                </searchField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aA7-Hi-noj">
+                    <rect key="frame" x="20" y="-1" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="C14-0i-Zxe"/>
+                        <constraint firstAttribute="height" constant="22" id="iRV-fF-uCL"/>
+                    </constraints>
+                    <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ONf-pM-ukC">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
             </subviews>
             <constraints>
+                <constraint firstItem="iCC-Ca-ktP" firstAttribute="leading" secondItem="fnM-km-QpZ" secondAttribute="trailing" id="0Nc-JP-ynf"/>
                 <constraint firstItem="Ww9-6P-b0r" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="0mG-TU-j4k"/>
                 <constraint firstAttribute="trailing" secondItem="iCC-Ca-ktP" secondAttribute="trailing" id="1TP-gH-5bc"/>
+                <constraint firstItem="aA7-Hi-noj" firstAttribute="leading" secondItem="Qw8-LE-1Op" secondAttribute="trailing" constant="-4" id="1cR-XA-2DI"/>
                 <constraint firstAttribute="bottom" secondItem="iCC-Ca-ktP" secondAttribute="bottom" id="7rx-DN-w0a"/>
+                <constraint firstItem="fnM-km-QpZ" firstAttribute="top" secondItem="Ww9-6P-b0r" secondAttribute="bottom" id="GdA-Ao-S7g"/>
+                <constraint firstItem="Qw8-LE-1Op" firstAttribute="top" secondItem="Ww9-6P-b0r" secondAttribute="bottom" constant="1" id="Kuh-D4-9Az"/>
                 <constraint firstItem="iCC-Ca-ktP" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="XWq-Y2-ZXt"/>
-                <constraint firstAttribute="bottom" secondItem="Ww9-6P-b0r" secondAttribute="bottom" id="f1J-V0-LeL"/>
+                <constraint firstAttribute="bottom" secondItem="Ww9-6P-b0r" secondAttribute="bottom" constant="23" id="f1J-V0-LeL"/>
+                <constraint firstItem="Qw8-LE-1Op" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="gkP-15-oKA"/>
                 <constraint firstItem="Ww9-6P-b0r" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="h5D-Yf-G6A"/>
+                <constraint firstItem="aA7-Hi-noj" firstAttribute="top" secondItem="Ww9-6P-b0r" secondAttribute="bottom" constant="1" id="hPA-Sk-yDB"/>
+                <constraint firstItem="fnM-km-QpZ" firstAttribute="leading" secondItem="aA7-Hi-noj" secondAttribute="trailing" id="nPW-El-TY9"/>
+                <constraint firstAttribute="bottom" secondItem="fnM-km-QpZ" secondAttribute="bottom" constant="1" id="vkl-1P-eVe"/>
                 <constraint firstItem="iCC-Ca-ktP" firstAttribute="leading" secondItem="Ww9-6P-b0r" secondAttribute="trailing" id="zDG-Wb-joq"/>
             </constraints>
         </customView>
     </objects>
+    <resources>
+        <image name="NSAddTemplate" width="11" height="11"/>
+        <image name="NSRemoveTemplate" width="11" height="11"/>
+    </resources>
 </document>

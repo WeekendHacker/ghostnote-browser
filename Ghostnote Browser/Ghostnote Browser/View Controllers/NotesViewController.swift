@@ -10,26 +10,28 @@ import Cocoa
 
 class NotesViewController: NSViewController, ButtonNavigable {
 
+    var notesTableController = NotesTableViewController()
     
-// ButtonNavigable
-
     @IBOutlet var noteTextView:NSTextView?
+    
+    @IBOutlet var notesTableView:NSTableView? { didSet {
+            if let tv = notesTableView {
+                tv.setDelegate(notesTableController)
+                tv.setDataSource(notesTableController)
+            }
+        }
+    }
+    
+    @IBOutlet weak var addNoteButton:NSButton?
+    @IBOutlet weak var deleteNoteButton:NSButton?
+    @IBOutlet weak var searchField:NSSearchField?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.wantsLayer = true
-        view.layer?.backgroundColor = NSColor.redColor().CGColor
-        
+
         view.autoresizingMask = [.ViewWidthSizable, .ViewHeightSizable]
     }
-    
-    
-    override func viewWillAppear() {
-        
 
-    }
-    
-    
     override func viewDidAppear() {
         super.viewDidAppear()
         sizeForContainer()
@@ -41,5 +43,14 @@ class NotesViewController: NSViewController, ButtonNavigable {
         noteTextView?.usesInspectorBar = false
     }
     
+    // Actions
+    
+    @IBAction func addNoteButtonClicked(sender:AnyObject?) {
+        
+    }
+    
+    @IBAction func delteNoteButtonClicked(sender:AnyObject) {
+        
+    }
     
 }

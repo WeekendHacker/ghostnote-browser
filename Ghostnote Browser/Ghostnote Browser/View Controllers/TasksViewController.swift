@@ -12,7 +12,7 @@ class TasksViewController: NSViewController, ButtonNavigable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+        view.autoresizingMask = [.ViewWidthSizable, .ViewHeightSizable]
     }
     
 }

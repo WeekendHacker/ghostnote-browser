@@ -8,11 +8,10 @@
 
 import Cocoa
 
-class GhostnotesViewController: NSViewController {
+class GhostnotesViewController: NSViewController, ButtonNavigable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
     }
-    
 }

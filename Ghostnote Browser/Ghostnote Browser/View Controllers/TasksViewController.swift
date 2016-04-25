@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class TasksViewController: NSViewController {
+class TasksViewController: NSViewController, ButtonNavigable {
 
     override func viewDidLoad() {
         super.viewDidLoad()

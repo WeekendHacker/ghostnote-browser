@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ButtonNavViewController" customModule="Ghostnote_Browser" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="Mzz-Rk-AFp" id="ZhT-76-EVq"/>
+                <outlet property="ghostnotesButton" destination="7b9-bd-oQZ" id="tt3-hr-U9H"/>
+                <outlet property="navView" destination="yLv-HR-lB4" id="g5f-sX-7SO"/>
+                <outlet property="notesButton" destination="sty-WD-ANQ" id="uSw-iv-V6X"/>
+                <outlet property="tasksButton" destination="Ghf-cK-mjZ" id="ZMy-jy-ly8"/>
+                <outlet property="view" destination="c22-O7-iKe" id="oud-D3-BLt"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="559" height="272"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="yLv-HR-lB4">
+                    <rect key="frame" x="0.0" y="0.0" width="75" height="272"/>
+                    <subviews>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sty-WD-ANQ">
+                            <rect key="frame" x="0.0" y="196" width="75" height="77"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="75" id="LWw-4f-kKB"/>
+                                <constraint firstAttribute="height" constant="75" id="U3W-9E-9a5"/>
+                            </constraints>
+                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YcS-K7-2bq">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="notesButtonClicked:" target="-2" id="T3q-0O-0rI"/>
+                            </connections>
+                        </button>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7b9-bd-oQZ">
+                            <rect key="frame" x="0.0" y="46" width="75" height="77"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="75" id="7SX-6e-oKq"/>
+                                <constraint firstAttribute="height" constant="75" id="yH9-ai-POo"/>
+                            </constraints>
+                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="B20-IR-vE5">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="ghostnotesButtonClicked:" target="-2" id="vwC-ly-U8g"/>
+                            </connections>
+                        </button>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ghf-cK-mjZ">
+                            <rect key="frame" x="0.0" y="121" width="75" height="77"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="75" id="6hV-zZ-sWe"/>
+                                <constraint firstAttribute="height" constant="75" id="UtA-K8-X5G"/>
+                            </constraints>
+                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="F8H-5e-ImW">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="tasksButtonClicked:" target="-2" id="e0r-Dw-KfU"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="7b9-bd-oQZ" firstAttribute="leading" secondItem="yLv-HR-lB4" secondAttribute="leading" id="1JL-PW-1jW"/>
+                        <constraint firstItem="7b9-bd-oQZ" firstAttribute="top" secondItem="Ghf-cK-mjZ" secondAttribute="bottom" id="2Pg-iF-0R3"/>
+                        <constraint firstItem="sty-WD-ANQ" firstAttribute="leading" secondItem="yLv-HR-lB4" secondAttribute="leading" id="Lc5-1A-0v0"/>
+                        <constraint firstItem="Ghf-cK-mjZ" firstAttribute="top" secondItem="sty-WD-ANQ" secondAttribute="bottom" id="PgR-DB-0ZF"/>
+                        <constraint firstItem="Ghf-cK-mjZ" firstAttribute="leading" secondItem="yLv-HR-lB4" secondAttribute="leading" id="SSF-gL-tON"/>
+                        <constraint firstItem="sty-WD-ANQ" firstAttribute="top" secondItem="yLv-HR-lB4" secondAttribute="top" id="jsN-Ie-6vJ"/>
+                        <constraint firstAttribute="width" constant="75" id="wXx-zj-7Wu"/>
+                    </constraints>
+                </customView>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="Mzz-Rk-AFp">
+                    <rect key="frame" x="74" y="0.0" width="485" height="272"/>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Mzz-Rk-AFp" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="4jW-mr-xxo"/>
+                <constraint firstAttribute="bottom" secondItem="Mzz-Rk-AFp" secondAttribute="bottom" id="6zq-Tx-IrT"/>
+                <constraint firstItem="Mzz-Rk-AFp" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="74" id="8QP-R9-Tgw"/>
+                <constraint firstItem="yLv-HR-lB4" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="MI6-rd-va4"/>
+                <constraint firstAttribute="bottom" secondItem="yLv-HR-lB4" secondAttribute="bottom" id="POH-NU-W1s"/>
+                <constraint firstItem="yLv-HR-lB4" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="p4f-Rt-jZx"/>
+                <constraint firstAttribute="trailing" secondItem="Mzz-Rk-AFp" secondAttribute="trailing" id="yvh-iL-Q8h"/>
+            </constraints>
+            <point key="canvasLocation" x="371.5" y="173"/>
+        </customView>
+    </objects>
+</document>

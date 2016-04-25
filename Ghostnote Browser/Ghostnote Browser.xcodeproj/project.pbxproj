@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D81281881CCD97F2001749E9 /* ButtonNavViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D81281871CCD97F2001749E9 /* ButtonNavViewController.xib */; };
+		D812818A1CCD98C0001749E9 /* ButtonNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81281891CCD98C0001749E9 /* ButtonNavViewController.swift */; };
+		D812818D1CCD9AA3001749E9 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D812818B1CCD9AA3001749E9 /* MainWindowController.swift */; };
+		D812818E1CCD9AA3001749E9 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D812818C1CCD9AA3001749E9 /* MainWindowController.xib */; };
+		D81281901CCD9BEC001749E9 /* NotesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D812818F1CCD9BEC001749E9 /* NotesViewController.xib */; };
+		D81281921CCDB9CE001749E9 /* TasksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D81281911CCDB9CE001749E9 /* TasksViewController.xib */; };
+		D81281941CCDB9DC001749E9 /* GhostnotesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D81281931CCDB9DC001749E9 /* GhostnotesViewController.xib */; };
 		D84F16B91CC4A204005612BB /* GhostNote.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = D84F16B81CC4A204005612BB /* GhostNote.xcdatamodel */; };
 		D84F16BC1CC4A222005612BB /* GNNote+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16BA1CC4A222005612BB /* GNNote+CoreDataProperties.swift */; };
 		D84F16BD1CC4A222005612BB /* GNNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16BB1CC4A222005612BB /* GNNote.swift */; };
@@ -22,11 +29,6 @@
 		D84F16E61CC71215005612BB /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16E41CC71215005612BB /* NotesViewController.swift */; };
 		D84F16EB1CC7123E005612BB /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16E91CC7123E005612BB /* TasksViewController.swift */; };
 		D84F16F01CC71260005612BB /* GhostnotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16EE1CC71260005612BB /* GhostnotesViewController.swift */; };
-		D88D93631CCA98FD00A6AED4 /* CrossfadeStoryboardSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88D93621CCA98FD00A6AED4 /* CrossfadeStoryboardSegue.swift */; };
-		D88D93651CCA996900A6AED4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D88D93641CCA996900A6AED4 /* Main.storyboard */; };
-		D8CCD9AB1CC89FE700AC146F /* ButtonNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CCD9AA1CC89FE700AC146F /* ButtonNavViewController.swift */; };
-		D8CCD9AD1CC8A0CB00AC146F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CCD9AC1CC8A0CB00AC146F /* MainViewController.swift */; };
-		D8CCD9AF1CC8AA4F00AC146F /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CCD9AE1CC8AA4F00AC146F /* EmptySegue.swift */; };
 		D8D10EC61CC48A9F00A434F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D10EC51CC48A9F00A434F6 /* AppDelegate.swift */; };
 		D8D10ECB1CC48A9F00A434F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8D10ECA1CC48A9F00A434F6 /* Assets.xcassets */; };
 		D8D10ECE1CC48A9F00A434F6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8D10ECC1CC48A9F00A434F6 /* MainMenu.xib */; };
@@ -68,6 +70,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D81281871CCD97F2001749E9 /* ButtonNavViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ButtonNavViewController.xib; path = Views/ButtonNavViewController.xib; sourceTree = "<group>"; };
+		D81281891CCD98C0001749E9 /* ButtonNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonNavViewController.swift; path = "View Controllers/ButtonNavViewController.swift"; sourceTree = "<group>"; };
+		D812818B1CCD9AA3001749E9 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		D812818C1CCD9AA3001749E9 /* MainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
+		D812818F1CCD9BEC001749E9 /* NotesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotesViewController.xib; sourceTree = "<group>"; };
+		D81281911CCDB9CE001749E9 /* TasksViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TasksViewController.xib; sourceTree = "<group>"; };
+		D81281931CCDB9DC001749E9 /* GhostnotesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GhostnotesViewController.xib; sourceTree = "<group>"; };
 		D84F16B81CC4A204005612BB /* GhostNote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GhostNote.xcdatamodel; sourceTree = "<group>"; };
 		D84F16BA1CC4A222005612BB /* GNNote+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "GNNote+CoreDataProperties.swift"; path = "CoreData/GNNote+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D84F16BB1CC4A222005612BB /* GNNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GNNote.swift; path = CoreData/GNNote.swift; sourceTree = "<group>"; };
@@ -84,11 +93,6 @@
 		D84F16E41CC71215005612BB /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotesViewController.swift; path = "View Controllers/NotesViewController.swift"; sourceTree = "<group>"; };
 		D84F16E91CC7123E005612BB /* TasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TasksViewController.swift; path = "View Controllers/TasksViewController.swift"; sourceTree = "<group>"; };
 		D84F16EE1CC71260005612BB /* GhostnotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GhostnotesViewController.swift; path = "View Controllers/GhostnotesViewController.swift"; sourceTree = "<group>"; };
-		D88D93621CCA98FD00A6AED4 /* CrossfadeStoryboardSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossfadeStoryboardSegue.swift; sourceTree = "<group>"; };
-		D88D93641CCA996900A6AED4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		D8CCD9AA1CC89FE700AC146F /* ButtonNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonNavViewController.swift; sourceTree = "<group>"; };
-		D8CCD9AC1CC8A0CB00AC146F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		D8CCD9AE1CC8AA4F00AC146F /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptySegue.swift; sourceTree = "<group>"; };
 		D8D10EC21CC48A9F00A434F6 /* Ghostnote Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ghostnote Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8D10EC51CC48A9F00A434F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8D10ECA1CC48A9F00A434F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -129,6 +133,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D81281861CCD7AC3001749E9 /* Nav */ = {
+			isa = PBXGroup;
+			children = (
+				D81281871CCD97F2001749E9 /* ButtonNavViewController.xib */,
+				D81281891CCD98C0001749E9 /* ButtonNavViewController.swift */,
+			);
+			name = Nav;
+			sourceTree = "<group>";
+		};
 		D84F16BE1CC4A4AE005612BB /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,11 +172,10 @@
 		D84F16CF1CC550A4005612BB /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D81281861CCD7AC3001749E9 /* Nav */,
 				D84F16E81CC71220005612BB /* Notes */,
 				D84F16ED1CC71246005612BB /* Todos */,
 				D84F16F21CC7126A005612BB /* Ghostnotes */,
-				D8CCD9AA1CC89FE700AC146F /* ButtonNavViewController.swift */,
-				D8CCD9AC1CC8A0CB00AC146F /* MainViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -174,8 +186,6 @@
 				D84F16BF1CC4A4F8005612BB /* GhostNoteManager.swift */,
 				D84F16D31CC553B3005612BB /* App.swift */,
 				D84F16D51CC553DC005612BB /* Document.swift */,
-				D8CCD9AE1CC8AA4F00AC146F /* EmptySegue.swift */,
-				D88D93621CCA98FD00A6AED4 /* CrossfadeStoryboardSegue.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -194,6 +204,7 @@
 			children = (
 				D84F16D01CC550C3005612BB /* NotesOutlineController.swift */,
 				D84F16E41CC71215005612BB /* NotesViewController.swift */,
+				D812818F1CCD9BEC001749E9 /* NotesViewController.xib */,
 			);
 			name = Notes;
 			sourceTree = "<group>";
@@ -202,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				D84F16E91CC7123E005612BB /* TasksViewController.swift */,
+				D81281911CCDB9CE001749E9 /* TasksViewController.xib */,
 			);
 			name = Todos;
 			sourceTree = "<group>";
@@ -210,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				D84F16EE1CC71260005612BB /* GhostnotesViewController.swift */,
+				D81281931CCDB9DC001749E9 /* GhostnotesViewController.xib */,
 			);
 			name = Ghostnotes;
 			sourceTree = "<group>";
@@ -249,7 +262,8 @@
 				D8D10ECA1CC48A9F00A434F6 /* Assets.xcassets */,
 				D8D10ECF1CC48A9F00A434F6 /* Info.plist */,
 				D84F16D71CC5E4E1005612BB /* Ghostnote Browser-Bridging-Header.h */,
-				D88D93641CCA996900A6AED4 /* Main.storyboard */,
+				D812818B1CCD9AA3001749E9 /* MainWindowController.swift */,
+				D812818C1CCD9AA3001749E9 /* MainWindowController.xib */,
 			);
 			path = "Ghostnote Browser";
 			sourceTree = "<group>";
@@ -378,9 +392,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D88D93651CCA996900A6AED4 /* Main.storyboard in Resources */,
+				D81281881CCD97F2001749E9 /* ButtonNavViewController.xib in Resources */,
 				D8D10ECB1CC48A9F00A434F6 /* Assets.xcassets in Resources */,
+				D81281941CCDB9DC001749E9 /* GhostnotesViewController.xib in Resources */,
+				D812818E1CCD9AA3001749E9 /* MainWindowController.xib in Resources */,
 				D8D10ECE1CC48A9F00A434F6 /* MainMenu.xib in Resources */,
+				D81281901CCD9BEC001749E9 /* NotesViewController.xib in Resources */,
+				D81281921CCDB9CE001749E9 /* TasksViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,25 +424,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				D84F16C71CC54ED6005612BB /* DocumentIconProvider.swift in Sources */,
-				D8CCD9AB1CC89FE700AC146F /* ButtonNavViewController.swift in Sources */,
 				D84F16C61CC54ED6005612BB /* AppNameProvider.swift in Sources */,
 				D84F16DF1CC60EEE005612BB /* DocCell.swift in Sources */,
-				D8CCD9AF1CC8AA4F00AC146F /* EmptySegue.swift in Sources */,
 				D84F16D41CC553B3005612BB /* App.swift in Sources */,
-				D8CCD9AD1CC8A0CB00AC146F /* MainViewController.swift in Sources */,
 				D84F16EB1CC7123E005612BB /* TasksViewController.swift in Sources */,
 				D84F16C01CC4A4F8005612BB /* GhostNoteManager.swift in Sources */,
 				D84F16B91CC4A204005612BB /* GhostNote.xcdatamodel in Sources */,
 				D84F16F01CC71260005612BB /* GhostnotesViewController.swift in Sources */,
+				D812818D1CCD9AA3001749E9 /* MainWindowController.swift in Sources */,
 				D84F16BC1CC4A222005612BB /* GNNote+CoreDataProperties.swift in Sources */,
 				D84F16D11CC550C3005612BB /* NotesOutlineController.swift in Sources */,
 				D84F16BD1CC4A222005612BB /* GNNote.swift in Sources */,
 				D84F16E61CC71215005612BB /* NotesViewController.swift in Sources */,
 				D84F16D61CC553DC005612BB /* Document.swift in Sources */,
 				D84F16DD1CC60EB6005612BB /* AppView.swift in Sources */,
-				D88D93631CCA98FD00A6AED4 /* CrossfadeStoryboardSegue.swift in Sources */,
 				D8D10EC61CC48A9F00A434F6 /* AppDelegate.swift in Sources */,
 				D84F16C51CC54ED6005612BB /* AppIconProvider.swift in Sources */,
+				D812818A1CCD98C0001749E9 /* ButtonNavViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

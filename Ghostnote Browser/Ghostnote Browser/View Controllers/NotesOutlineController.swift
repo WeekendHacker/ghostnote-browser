@@ -93,7 +93,6 @@ class NotesOutlineController:NSObject, NSOutlineViewDelegate, NSOutlineViewDataS
     
     func outlineView(outlineView: NSOutlineView, child index: Int, ofItem item: AnyObject?) -> AnyObject {
         
-        
         if item == nil {
             return apps[index]
         }

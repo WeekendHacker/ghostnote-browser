@@ -8,17 +8,31 @@
 
 import Cocoa
 
-class NotesViewController: NSViewController {
+class NotesViewController: NSViewController, ButtonNavigable {
 
     
+// ButtonNavigable
+
     @IBOutlet var noteTextView:NSTextView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.wantsLayer = true
+        view.layer?.backgroundColor = NSColor.redColor().CGColor
+        
+        view.autoresizingMask = [.ViewWidthSizable, .ViewHeightSizable]
     }
+    
+    
+    override func viewWillAppear() {
+        
+
+    }
+    
     
     override func viewDidAppear() {
         super.viewDidAppear()
+        sizeForContainer()
         noteTextView?.usesInspectorBar = true
     }
     
@@ -26,4 +40,6 @@ class NotesViewController: NSViewController {
         super.viewWillDisappear()
         noteTextView?.usesInspectorBar = false
     }
+    
+    
 }

@@ -12,8 +12,15 @@ import MagicalRecord
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
 
+    var windowController = MainWindowController(windowNibName: "MainWindowController")
+    
+    var buttonNavViewController:ButtonNavViewController?
+    
+    func applicationDidFinishLaunching(aNotification: NSNotification) {
+        buttonNavViewController = ButtonNavViewController(nibName: "ButtonNavViewController", bundle: nil)
+        windowController.window?.contentView = buttonNavViewController?.view
+        windowController.showWindow(self);
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {

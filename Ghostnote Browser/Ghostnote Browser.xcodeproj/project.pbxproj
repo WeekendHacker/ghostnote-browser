@@ -16,6 +16,7 @@
 		D81281941CCDB9DC001749E9 /* GhostnotesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D81281931CCDB9DC001749E9 /* GhostnotesViewController.xib */; };
 		D81281961CCDCE6C001749E9 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81281951CCDCE6C001749E9 /* NoteCell.swift */; };
 		D81281991CCDCFD8001749E9 /* NotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81281981CCDCFD8001749E9 /* NotesTableViewController.swift */; };
+		D812819B1CCDDE93001749E9 /* GNTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D812819A1CCDDE93001749E9 /* GNTheme.swift */; };
 		D84F16B91CC4A204005612BB /* GhostNote.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = D84F16B81CC4A204005612BB /* GhostNote.xcdatamodel */; };
 		D84F16BC1CC4A222005612BB /* GNNote+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16BA1CC4A222005612BB /* GNNote+CoreDataProperties.swift */; };
 		D84F16BD1CC4A222005612BB /* GNNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16BB1CC4A222005612BB /* GNNote.swift */; };
@@ -81,6 +82,7 @@
 		D81281931CCDB9DC001749E9 /* GhostnotesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GhostnotesViewController.xib; sourceTree = "<group>"; };
 		D81281951CCDCE6C001749E9 /* NoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteCell.swift; path = Views/NoteCell.swift; sourceTree = "<group>"; };
 		D81281981CCDCFD8001749E9 /* NotesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesTableViewController.swift; sourceTree = "<group>"; };
+		D812819A1CCDDE93001749E9 /* GNTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GNTheme.swift; path = Models/GNTheme.swift; sourceTree = "<group>"; };
 		D84F16B81CC4A204005612BB /* GhostNote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GhostNote.xcdatamodel; sourceTree = "<group>"; };
 		D84F16BA1CC4A222005612BB /* GNNote+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "GNNote+CoreDataProperties.swift"; path = "CoreData/GNNote+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D84F16BB1CC4A222005612BB /* GNNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GNNote.swift; path = CoreData/GNNote.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 		D81281971CCDCFB2001749E9 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D81281981CCDCFD8001749E9 /* NotesTableViewController.swift */,
 				D84F16E41CC71215005612BB /* NotesViewController.swift */,
 				D812818F1CCD9BEC001749E9 /* NotesViewController.xib */,
 			);
@@ -199,6 +202,7 @@
 				D84F16BF1CC4A4F8005612BB /* GhostNoteManager.swift */,
 				D84F16D31CC553B3005612BB /* App.swift */,
 				D84F16D51CC553DC005612BB /* Document.swift */,
+				D812819A1CCDDE93001749E9 /* GNTheme.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -217,7 +221,6 @@
 			isa = PBXGroup;
 			children = (
 				D81281971CCDCFB2001749E9 /* View Controller */,
-				D81281981CCDCFD8001749E9 /* NotesTableViewController.swift */,
 			);
 			name = Notes;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				D84F16C01CC4A4F8005612BB /* GhostNoteManager.swift in Sources */,
 				D84F16B91CC4A204005612BB /* GhostNote.xcdatamodel in Sources */,
 				D84F16F01CC71260005612BB /* GhostnotesViewController.swift in Sources */,
+				D812819B1CCDDE93001749E9 /* GNTheme.swift in Sources */,
 				D812818D1CCD9AA3001749E9 /* MainWindowController.swift in Sources */,
 				D81281991CCDCFD8001749E9 /* NotesTableViewController.swift in Sources */,
 				D84F16BC1CC4A222005612BB /* GNNote+CoreDataProperties.swift in Sources */,

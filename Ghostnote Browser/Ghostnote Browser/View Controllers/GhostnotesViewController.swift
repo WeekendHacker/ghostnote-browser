@@ -46,6 +46,14 @@ class GhostnotesViewController: NSViewController, ButtonNavigable, GhostnotesOut
     // GhostnotesOutlineControllerObserver
     // need to bring some theme management into this
     func selectedNote(note: GNNote) {
+        if let themeName = note.themeName {
+            if let theme = GNTheme.themesByName[themeName] {
+                noteTextView?.backgroundColor = theme.backgroundColor
+            }
+        }else {
+            noteTextView?.backgroundColor = NSColor.whiteColor()
+        }
+        
         noteTextView?.textStorage?.mutableString.setString("")
         noteTextView?.textStorage?.appendAttributedString(note.content as! NSAttributedString)
     }

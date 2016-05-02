@@ -36,15 +36,15 @@ class GhostnotesViewController: NSViewController, ButtonNavigable, GhostnotesOut
         sizeForContainer()
         notesOutlineController.reload()
         noteTextView?.usesInspectorBar = true
+        
     }
     
     override func viewWillDisappear() {
         super.viewWillDisappear()
-        noteTextView?.usesInspectorBar = false
+//        noteTextView?.usesInspectorBar = false
     }
     
     // GhostnotesOutlineControllerObserver
-    // need to bring some theme management into this
     func selectedNote(note: GNNote) {
         if let themeName = note.themeName {
             if let theme = GNTheme.themesByName[themeName] {

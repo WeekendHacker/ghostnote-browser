@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D80001AE1CD7F98A00255E54 /* NoteNameValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80001AD1CD7F98A00255E54 /* NoteNameValidator.swift */; };
+		D80001B11CD801EB00255E54 /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80001AF1CD801EB00255E54 /* NewNoteViewController.swift */; };
+		D80001B21CD801EB00255E54 /* NewNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D80001B01CD801EB00255E54 /* NewNoteViewController.xib */; };
 		D81281881CCD97F2001749E9 /* ButtonNavViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D81281871CCD97F2001749E9 /* ButtonNavViewController.xib */; };
 		D812818A1CCD98C0001749E9 /* ButtonNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81281891CCD98C0001749E9 /* ButtonNavViewController.swift */; };
 		D812818D1CCD9AA3001749E9 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D812818B1CCD9AA3001749E9 /* MainWindowController.swift */; };
@@ -17,6 +20,12 @@
 		D81281961CCDCE6C001749E9 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81281951CCDCE6C001749E9 /* NoteCell.swift */; };
 		D81281991CCDCFD8001749E9 /* NotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81281981CCDCFD8001749E9 /* NotesTableViewController.swift */; };
 		D812819B1CCDDE93001749E9 /* GNTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D812819A1CCDDE93001749E9 /* GNTheme.swift */; };
+		D81281A11CCEB36F001749E9 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D812819F1CCEB36F001749E9 /* RealmSwift.framework */; };
+		D81281A21CCEB37E001749E9 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D812819E1CCEB36F001749E9 /* Realm.framework */; };
+		D81281A31CCEB37E001749E9 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D812819E1CCEB36F001749E9 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D81281A51CCEB37E001749E9 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D812819F1CCEB36F001749E9 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D81281A81CCEB3B2001749E9 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81281A71CCEB3B2001749E9 /* Note.swift */; };
+		D81281AA1CCEB60B001749E9 /* NoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81281A91CCEB60B001749E9 /* NoteManager.swift */; };
 		D84F16B91CC4A204005612BB /* GhostNote.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = D84F16B81CC4A204005612BB /* GhostNote.xcdatamodel */; };
 		D84F16BC1CC4A222005612BB /* GNNote+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16BA1CC4A222005612BB /* GNNote+CoreDataProperties.swift */; };
 		D84F16BD1CC4A222005612BB /* GNNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16BB1CC4A222005612BB /* GNNote.swift */; };
@@ -65,7 +74,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				D81281A31CCEB37E001749E9 /* Realm.framework in Embed Frameworks */,
 				D8E659141CC49A40002CEA9B /* MagicalRecord.framework in Embed Frameworks */,
+				D81281A51CCEB37E001749E9 /* RealmSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,6 +84,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D80001A51CD7EC8000255E54 /* FileKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FileKit.framework; path = Carthage/Build/Mac/FileKit.framework; sourceTree = "<group>"; };
+		D80001AD1CD7F98A00255E54 /* NoteNameValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteNameValidator.swift; path = Models/NoteNameValidator.swift; sourceTree = "<group>"; };
+		D80001AF1CD801EB00255E54 /* NewNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewNoteViewController.swift; path = "View Controllers/NewNoteViewController.swift"; sourceTree = "<group>"; };
+		D80001B01CD801EB00255E54 /* NewNoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewNoteViewController.xib; path = "View Controllers/NewNoteViewController.xib"; sourceTree = "<group>"; };
 		D81281871CCD97F2001749E9 /* ButtonNavViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ButtonNavViewController.xib; path = Views/ButtonNavViewController.xib; sourceTree = "<group>"; };
 		D81281891CCD98C0001749E9 /* ButtonNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonNavViewController.swift; path = "View Controllers/ButtonNavViewController.swift"; sourceTree = "<group>"; };
 		D812818B1CCD9AA3001749E9 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
@@ -83,6 +98,10 @@
 		D81281951CCDCE6C001749E9 /* NoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteCell.swift; path = Views/NoteCell.swift; sourceTree = "<group>"; };
 		D81281981CCDCFD8001749E9 /* NotesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesTableViewController.swift; sourceTree = "<group>"; };
 		D812819A1CCDDE93001749E9 /* GNTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GNTheme.swift; path = Models/GNTheme.swift; sourceTree = "<group>"; };
+		D812819E1CCEB36F001749E9 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/Mac/Realm.framework; sourceTree = "<group>"; };
+		D812819F1CCEB36F001749E9 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/Mac/RealmSwift.framework; sourceTree = "<group>"; };
+		D81281A71CCEB3B2001749E9 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		D81281A91CCEB60B001749E9 /* NoteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteManager.swift; sourceTree = "<group>"; };
 		D84F16B81CC4A204005612BB /* GhostNote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GhostNote.xcdatamodel; sourceTree = "<group>"; };
 		D84F16BA1CC4A222005612BB /* GNNote+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "GNNote+CoreDataProperties.swift"; path = "CoreData/GNNote+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D84F16BB1CC4A222005612BB /* GNNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GNNote.swift; path = CoreData/GNNote.swift; sourceTree = "<group>"; };
@@ -118,7 +137,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D81281A21CCEB37E001749E9 /* Realm.framework in Frameworks */,
 				D8E659131CC49A40002CEA9B /* MagicalRecord.framework in Frameworks */,
+				D81281A11CCEB36F001749E9 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +177,23 @@
 				D812818F1CCD9BEC001749E9 /* NotesViewController.xib */,
 			);
 			name = "View Controller";
+			sourceTree = "<group>";
+		};
+		D81281A61CCEB3A0001749E9 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				D81281A71CCEB3B2001749E9 /* Note.swift */,
+			);
+			name = Realm;
+			sourceTree = "<group>";
+		};
+		D81281AB1CCEB660001749E9 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D81281A91CCEB60B001749E9 /* NoteManager.swift */,
+				D84F16BF1CC4A4F8005612BB /* GhostNoteManager.swift */,
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 		D84F16BE1CC4A4AE005612BB /* CoreData */ = {
@@ -199,10 +237,11 @@
 		D84F16D21CC5539D005612BB /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D84F16BF1CC4A4F8005612BB /* GhostNoteManager.swift */,
+				D81281AB1CCEB660001749E9 /* Managers */,
 				D84F16D31CC553B3005612BB /* App.swift */,
 				D84F16D51CC553DC005612BB /* Document.swift */,
 				D812819A1CCDDE93001749E9 /* GNTheme.swift */,
+				D80001AD1CD7F98A00255E54 /* NoteNameValidator.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -220,6 +259,8 @@
 		D84F16E81CC71220005612BB /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				D80001AF1CD801EB00255E54 /* NewNoteViewController.swift */,
+				D80001B01CD801EB00255E54 /* NewNoteViewController.xib */,
 				D81281971CCDCFB2001749E9 /* View Controller */,
 			);
 			name = Notes;
@@ -247,6 +288,9 @@
 		D8D10EB91CC48A9F00A434F6 = {
 			isa = PBXGroup;
 			children = (
+				D80001A51CD7EC8000255E54 /* FileKit.framework */,
+				D812819E1CCEB36F001749E9 /* Realm.framework */,
+				D812819F1CCEB36F001749E9 /* RealmSwift.framework */,
 				D8E659111CC499A8002CEA9B /* MagicalRecord.framework */,
 				D8D10EC41CC48A9F00A434F6 /* Ghostnote Browser */,
 				D8D10ED71CC48A9F00A434F6 /* Ghostnote BrowserTests */,
@@ -268,6 +312,7 @@
 		D8D10EC41CC48A9F00A434F6 /* Ghostnote Browser */ = {
 			isa = PBXGroup;
 			children = (
+				D81281A61CCEB3A0001749E9 /* Realm */,
 				D84F16DB1CC60E9C005612BB /* Views */,
 				D84F16D21CC5539D005612BB /* Models */,
 				D84F16CF1CC550A4005612BB /* View Controllers */,
@@ -410,6 +455,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D81281881CCD97F2001749E9 /* ButtonNavViewController.xib in Resources */,
+				D80001B21CD801EB00255E54 /* NewNoteViewController.xib in Resources */,
 				D8D10ECB1CC48A9F00A434F6 /* Assets.xcassets in Resources */,
 				D81281941CCDB9DC001749E9 /* GhostnotesViewController.xib in Resources */,
 				D812818E1CCD9AA3001749E9 /* MainWindowController.xib in Resources */,
@@ -442,6 +488,9 @@
 			files = (
 				D84F16C71CC54ED6005612BB /* DocumentIconProvider.swift in Sources */,
 				D84F16C61CC54ED6005612BB /* AppNameProvider.swift in Sources */,
+				D80001AE1CD7F98A00255E54 /* NoteNameValidator.swift in Sources */,
+				D80001B11CD801EB00255E54 /* NewNoteViewController.swift in Sources */,
+				D81281A81CCEB3B2001749E9 /* Note.swift in Sources */,
 				D84F16DF1CC60EEE005612BB /* DocCell.swift in Sources */,
 				D84F16D41CC553B3005612BB /* App.swift in Sources */,
 				D84F16EB1CC7123E005612BB /* TasksViewController.swift in Sources */,
@@ -452,6 +501,7 @@
 				D812818D1CCD9AA3001749E9 /* MainWindowController.swift in Sources */,
 				D81281991CCDCFD8001749E9 /* NotesTableViewController.swift in Sources */,
 				D84F16BC1CC4A222005612BB /* GNNote+CoreDataProperties.swift in Sources */,
+				D81281AA1CCEB60B001749E9 /* NoteManager.swift in Sources */,
 				D84F16D11CC550C3005612BB /* GhostnotesOutlineController.swift in Sources */,
 				D84F16BD1CC4A222005612BB /* GNNote.swift in Sources */,
 				D84F16E61CC71215005612BB /* NotesViewController.swift in Sources */,

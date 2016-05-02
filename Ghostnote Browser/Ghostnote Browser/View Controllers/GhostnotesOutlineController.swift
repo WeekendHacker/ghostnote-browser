@@ -40,14 +40,11 @@ class GhostnotesOutlineController:NSObject, NSOutlineViewDelegate, NSOutlineView
         apps = Array<App>()
         print("refreshing apps...")
         let bundleIDs = GhostNoteManager.shared.allAppBundleIDs()
-        print("found \(bundleIDs)")
         for bundleID in bundleIDs  {
             print(bundleID)
             if let note = GhostNoteManager.shared.appNoteForApp(bundleID) {
-                print("found note \(note)")
                 let app = App(note:note)
                 apps.append(app)
-                print("added \(app.bundleID)")
             }
         }
     }

@@ -15,6 +15,7 @@ class GhostNoteManager {
     static let shared = GhostNoteManager()
     
     let pathString = "~/Library/Application Support/Ghostnote/GhostNote.sqlite" as NSString
+    var ghostnotesContext:NSManagedObjectContext? = nil
     
     init() {
         

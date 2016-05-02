@@ -8,9 +8,10 @@
 
 import Cocoa
 
-class NotesViewController: NSViewController, ButtonNavigable {
+class NotesViewController: NSViewController, ButtonNavigable, NewNoteViewControllerClient {
 
     var notesTableController = NotesTableViewController()
+    var newNoteController:NewNoteViewController?
     
     @IBOutlet var noteTextView:NSTextView?
     
@@ -47,10 +48,29 @@ class NotesViewController: NSViewController, ButtonNavigable {
     
     @IBAction func addNoteButtonClicked(sender:AnyObject?) {
         
+        newNoteController = NewNoteViewController(nibName: nil, bundle: nil)
+        newNoteController?.client = self
+        
+        self.presentViewController(newNoteController!, asPopoverRelativeToRect: addNoteButton!.frame, ofView: addNoteButton!, preferredEdge: NSRectEdge.MaxY, behavior: NSPopoverBehavior.Transient)
+        
     }
     
-    @IBAction func delteNoteButtonClicked(sender:AnyObject) {
+    @IBAction func deleteNoteButtonClicked(sender:AnyObject) {
         
+    }
+    
+    // NewNoteWindowControllerClient
+    
+    func choseName(name: String) {
+        print(name)
+        
+        dismissViewController(newNoteController!)
+        newNoteController = nil
+    }
+    
+    func canceled() {
+        dismissViewController(newNoteController!)
+        newNoteController = nil
     }
     
 }

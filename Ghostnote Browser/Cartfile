@@ -1,1 +1,3 @@
 github "MagicalPanda/MagicalRecord"
+github "realm/realm-cocoa"
+github "nvzqz/FileKit"

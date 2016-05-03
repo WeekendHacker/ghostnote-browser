@@ -31,6 +31,11 @@ class NotesViewController: NSViewController, ButtonNavigable, NewNoteViewControl
         super.viewDidLoad()
 
         view.autoresizingMask = [.ViewWidthSizable, .ViewHeightSizable]
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(selectedNoteChanged), name: "SelectedNoteChanged", object: nil)
+        
+        deleteNoteButton?.enabled = false
+        
     }
 
     override func viewDidAppear() {
@@ -51,12 +56,25 @@ class NotesViewController: NSViewController, ButtonNavigable, NewNoteViewControl
         newNoteController = NewNoteViewController(nibName: nil, bundle: nil)
         newNoteController?.client = self
         
-        self.presentViewController(newNoteController!, asPopoverRelativeToRect: addNoteButton!.frame, ofView: addNoteButton!, preferredEdge: NSRectEdge.MaxY, behavior: NSPopoverBehavior.Transient)
+        self.presentViewController(newNoteController!, asPopoverRelativeToRect: addNoteButton!.frame, ofView: addNoteButton!, preferredEdge: NSRectEdge.MaxX, behavior: NSPopoverBehavior.Transient)
         
     }
     
-    @IBAction func deleteNoteButtonClicked(sender:AnyObject) {
+    @IBAction func deleteNoteButtonClicked(sender:AnyObject?) {
         
+        // need to make this use the extension
+        // and handle multiple selection deletes i think
+
+        if notesTableView!.hasSelection() {
+            for index in notesTableView!.selectedRowIndexes {
+                if let view = notesTableView?.viewAtColumn(0, row: index, makeIfNecessary: false) as? NoteCell {
+                    NoteManager.shared.deleteNote(view.note!)
+                }
+            }
+        }
+        
+        notesTableView?.reloadData()
+        deleteNoteButton?.enabled = false
     }
     
     // NewNoteWindowControllerClient
@@ -64,13 +82,31 @@ class NotesViewController: NSViewController, ButtonNavigable, NewNoteViewControl
     func choseName(name: String) {
         print(name)
         
+        NoteManager.shared.createNoteWithName(name)
         dismissViewController(newNoteController!)
         newNoteController = nil
+        notesTableView?.reloadData()
     }
     
     func canceled() {
         dismissViewController(newNoteController!)
         newNoteController = nil
+    }
+    
+    // handlers
+    
+    func selectedNoteChanged(notif:NSNotification) {
+        
+        if notesTableView!.hasSelection() {
+            deleteNoteButton?.enabled = true
+            if let row = notesTableView?.selectedRowIndexes.firstIndex {
+                let view = notesTableView?.viewAtColumn(0, row: row, makeIfNecessary: false) as? NoteCell
+                
+                if let selectedNote = view?.note {
+                    print("selected \(selectedNote)")
+                }
+            }
+        }
     }
     
 }

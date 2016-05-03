@@ -11,10 +11,12 @@ import Foundation
 import RealmSwift
 
 class NoteManager {
+    
     static let shared = NoteManager()
     
     let store = try! Realm()
-    
+    var appSupportDir = NSSearchPathForDirectoriesInDomains(.ApplicationSupportDirectory, .AllDomainsMask, true)
+
     var notes:Results<Note> {
         get {
             return store.objects(Note)
@@ -23,28 +25,82 @@ class NoteManager {
     
     func createNoteWithName(name:String) {
         
+        let note = Note()
+        let fileURL = createFileForNoteNamed(name)
+        // this should maybe bail if the file cant be created
         
+        do {
+            try store.write({ 
+                note.name = name
+                note.creationDate = NSDate()
+                note.filePath = fileURL.path!
+                store.add(note)
+                print(note)
+            })
+        }
+        catch {
+            print(error)
+        }
     }
     
     func deleteNote(note:Note) {
         
-        removeFileForNote(note)
+        // this shouldmaybe bail if file cant be created
+        removeFileForNoteNamed(note.name)
+        
         do {
             try store.write({ 
                 store.delete(note)
             })
         }
         catch {
-            
+            print(error)
         }
         
     }
-    // file methods
-    func createFileForNote(note:Note) throws  -> NSURL {
-        return NSURL()
+    
+    func createNotesFolderIfNeeded() {
+        let path = appSupportDir.first!
+        let docsURL = NSURL(fileURLWithPath: path).URLByAppendingPathComponent("com.ghostnoteapp.Ghostnote-Browser").URLByAppendingPathComponent("Notes", isDirectory: true)
+        
+        if !NSFileManager.defaultManager().fileExistsAtPath(docsURL.path!, isDirectory: nil) {
+            do {
+                try NSFileManager.defaultManager().createDirectoryAtURL(docsURL, withIntermediateDirectories: true, attributes: nil)
+            }
+            catch {
+                print(error)
+            }
+
+        }
     }
     
-    func removeFileForNote(note:Note) {
+    // file methods
+    private func createFileForNoteNamed(name:String) -> NSURL {
+        createNotesFolderIfNeeded()
+        let path = appSupportDir.first!
+        
+        let docsURL = NSURL(fileURLWithPath: path).URLByAppendingPathComponent("com.ghostnoteapp.Ghostnote-Browser").URLByAppendingPathComponent("Notes", isDirectory: true)
+        
+        let fileURL = docsURL.URLByAppendingPathComponent(name).URLByAppendingPathExtension("rtf")
+        let seed = NSAttributedString(string: "", attributes: nil)
+        
+        do  {
+            let seedData = try seed.dataFromRange(NSRange(location: 0, length: seed.length), documentAttributes: [NSDocumentTypeDocumentAttribute : NSRTFTextDocumentType])
+            
+            let created = NSFileManager.defaultManager().createFileAtPath(fileURL.path!, contents: seedData, attributes:nil)
+            if !created {
+                print("failed to create file \(fileURL)")
+            }
+            
+        }
+        catch {
+            print(error)
+        }
 
+        return fileURL
+    }
+    
+    private func removeFileForNoteNamed(name:String) {
+        
     }
 }

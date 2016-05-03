@@ -10,10 +10,13 @@ import Cocoa
 
 class NoteCell: NSTableCellView {
 
-    override func drawRect(dirtyRect: NSRect) {
-        super.drawRect(dirtyRect)
-
-        // Drawing code here.
+    var note:Note? { didSet {
+     
+            if let myNote = note {
+                textField?.stringValue = myNote.name
+            }
+        }
     }
+    
     
 }

@@ -18,6 +18,7 @@ class NewNoteViewController: NSViewController {
     var client:NewNoteViewControllerClient?
     
     @IBOutlet weak var nameTextField:NSTextField?
+    @IBOutlet weak var errorTextField:NSTextField?
     @IBOutlet weak var cancelButton:NSButton?
     @IBOutlet weak var createButton:NSButton?
     
@@ -26,7 +27,9 @@ class NewNoteViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createButton?.enabled = false
-        
+        nameTextField?.target = self
+        nameTextField?.action = #selector(self.validateAndSubmit)
+        errorTextField?.hidden = true
     }
     
     override func viewDidAppear() {
@@ -40,16 +43,17 @@ class NewNoteViewController: NSViewController {
         if let name = nameTextField?.stringValue {
             
             if (nameTextField!.stringValue.isEmpty) {
-                nameTextField?.stringValue = ""
-                nameTextField?.placeholderAttributedString = NSAttributedString(string: "Name can't be blank!", attributes: [NSForegroundColorAttributeName : NSColor.redColor()])
+                errorTextField?.hidden = false
+                errorTextField?.stringValue = "Can't be blank!"
                 createButton?.enabled = false
                 
             }else {
                 if NoteNameValidator.nameExists(name) {
-                    nameTextField?.stringValue = ""
-                    nameTextField?.placeholderAttributedString = NSAttributedString(string: "Name exists!", attributes: [NSForegroundColorAttributeName : NSColor.redColor()])
+                    errorTextField?.hidden = false
+                    errorTextField?.stringValue = "Must be unique!"
                     createButton?.enabled = false
                 }else {
+                    errorTextField?.hidden = true
                     createButton?.enabled = true
                 }
             }
@@ -59,6 +63,13 @@ class NewNoteViewController: NSViewController {
     
     
     // Actions
+    
+    @IBAction func validateAndSubmit(sender:AnyObject?) {
+        validateName()
+        if createButton!.enabled {
+            createButton?.performClick(self)
+        }
+    }
     
     @IBAction func createClicked(sender:AnyObject?) {
         client?.choseName(nameTextField!.stringValue)
@@ -71,7 +82,9 @@ class NewNoteViewController: NSViewController {
     // NSTextFieldDelegate
     
     override func controlTextDidChange(obj: NSNotification) {
+        errorTextField?.hidden = true
         validateName()
     }
 
+    
 }

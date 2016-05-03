@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 class Note:Object {
-    dynamic var name = ""
+    dynamic var name = "Empty Note"
     dynamic var creationDate = NSDate()
     dynamic var filePath:String = ""
     

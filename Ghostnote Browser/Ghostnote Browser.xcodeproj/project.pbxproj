@@ -652,7 +652,7 @@
 				);
 				INFOPLIST_FILE = "Ghostnote Browser/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ghostnote.Ghostnote-Browser";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ghostnoteapp.Ghostnote-Browser";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Ghostnote Browser/Ghostnote Browser-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -672,7 +672,7 @@
 				);
 				INFOPLIST_FILE = "Ghostnote Browser/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ghostnote.Ghostnote-Browser";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ghostnoteapp.Ghostnote-Browser";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Ghostnote Browser/Ghostnote Browser-Bridging-Header.h";
 			};

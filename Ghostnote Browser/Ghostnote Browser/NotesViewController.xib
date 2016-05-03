@@ -144,7 +144,7 @@
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
-                        <action selector="delteNoteButtonClicked:" target="-2" id="gC0-OA-7hI"/>
+                        <action selector="deleteNoteButtonClicked:" target="-2" id="934-g7-7dw"/>
                     </connections>
                 </button>
             </subviews>

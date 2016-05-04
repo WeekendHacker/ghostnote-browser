@@ -81,17 +81,20 @@ class NoteManager {
         
         let docsURL = NSURL(fileURLWithPath: path).URLByAppendingPathComponent("com.ghostnoteapp.Ghostnote-Browser").URLByAppendingPathComponent("Notes", isDirectory: true)
         
-        let fileURL = docsURL.URLByAppendingPathComponent(name).URLByAppendingPathExtension("rtf")
+        let fileURL = docsURL.URLByAppendingPathComponent(name).URLByAppendingPathExtension("rtfd")
         let seed = NSAttributedString(string: "", attributes: nil)
         
         do  {
-            let seedData = try seed.dataFromRange(NSRange(location: 0, length: seed.length), documentAttributes: [NSDocumentTypeDocumentAttribute : NSRTFTextDocumentType])
             
-            let created = NSFileManager.defaultManager().createFileAtPath(fileURL.path!, contents: seedData, attributes:nil)
-            if !created {
-                print("failed to create file \(fileURL)")
+           let wrapper = try  seed.fileWrapperFromRange(NSRange(location: 0, length: seed.length), documentAttributes: [NSDocumentTypeDocumentAttribute : NSRTFTextDocumentType])
+
+            do {
+                 try wrapper.writeToURL(fileURL, options: .Atomic, originalContentsURL: nil)
             }
-            
+            catch{
+                print(error)
+            }
+           
         }
         catch {
             print(error)

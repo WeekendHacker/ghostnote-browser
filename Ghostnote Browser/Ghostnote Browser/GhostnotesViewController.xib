@@ -21,20 +21,20 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCC-Ca-ktP">
+                <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCC-Ca-ktP">
                     <rect key="frame" x="240" y="0.0" width="240" height="272"/>
                     <clipView key="contentView" id="zjH-Wn-HZC">
-                        <rect key="frame" x="1" y="1" width="223" height="270"/>
+                        <rect key="frame" x="1" y="1" width="238" height="270"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="KGG-x5-Z5H">
-                                <rect key="frame" x="0.0" y="0.0" width="223" height="270"/>
+                                <rect key="frame" x="0.0" y="0.0" width="238" height="270"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="minSize" width="223" height="270"/>
+                                <size key="minSize" width="238" height="270"/>
                                 <size key="maxSize" width="463" height="10000000"/>
                                 <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                <size key="minSize" width="223" height="270"/>
+                                <size key="minSize" width="238" height="270"/>
                                 <size key="maxSize" width="463" height="10000000"/>
                             </textView>
                         </subviews>
@@ -44,7 +44,7 @@
                         <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="LRm-MV-AsL">
+                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="LRm-MV-AsL">
                         <rect key="frame" x="224" y="1" width="15" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
@@ -89,7 +89,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="heb-BA-ZtM" id="PRf-Vr-7vp">
-                                <rect key="frame" x="0.0" y="0.0" width="238" height="248"/>
+                                <rect key="frame" x="0.0" y="0.0" width="238" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>

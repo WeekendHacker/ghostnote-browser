@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-protocol NewNoteViewControllerClient {
+protocol NewNamedItemViewControllerClient {
     func choseName(name:String)
     func canceled()
 }
@@ -15,7 +15,8 @@ protocol NewNoteViewControllerClient {
 class NewNoteViewController: NSViewController {
 
     
-    var client:NewNoteViewControllerClient?
+    var client:NewNamedItemViewControllerClient?
+    var validator:NamedItemValidator?
     
     @IBOutlet weak var nameTextField:NSTextField?
     @IBOutlet weak var errorTextField:NSTextField?
@@ -32,12 +33,8 @@ class NewNoteViewController: NSViewController {
         errorTextField?.hidden = true
     }
     
-    override func viewDidAppear() {
-        super.viewDidAppear()
 
-    }
-    // Validation logic
-    
+    // Validation UI logic
     
     func validateName() {
         if let name = nameTextField?.stringValue {
@@ -48,13 +45,16 @@ class NewNoteViewController: NSViewController {
                 createButton?.enabled = false
                 
             }else {
-                if NoteNameValidator.nameExists(name) {
-                    errorTextField?.hidden = false
-                    errorTextField?.stringValue = "Must be unique!"
-                    createButton?.enabled = false
-                }else {
-                    errorTextField?.hidden = true
-                    createButton?.enabled = true
+                
+                if let v = validator {
+                    if v.nameExists(name) {
+                        errorTextField?.hidden = false
+                        errorTextField?.stringValue = "Must be unique!"
+                        createButton?.enabled = false
+                    }else {
+                        errorTextField?.hidden = true
+                        createButton?.enabled = true
+                    }
                 }
             }
             
@@ -85,6 +85,4 @@ class NewNoteViewController: NSViewController {
         errorTextField?.hidden = true
         validateName()
     }
-
-    
 }

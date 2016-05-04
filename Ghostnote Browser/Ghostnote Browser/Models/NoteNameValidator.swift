@@ -7,10 +7,13 @@
 //
 
 import Cocoa
+import RealmSwift
 
-class NoteNameValidator: NSObject {
+class NoteNameValidator: NSObject, NamedItemValidator {
 
-    static func nameExists(name:String) -> Bool {
+    static let shared = NoteNameValidator()
+    
+    func nameExists(name:String) -> Bool {
         
         var exists = false
         // unique name check

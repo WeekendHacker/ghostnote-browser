@@ -8,10 +8,11 @@
 
 import Cocoa
 
-class NotesViewController: NSViewController, ButtonNavigable, NewNoteViewControllerClient {
+class NotesViewController: NSViewController, ButtonNavigable, NewNamedItemViewControllerClient {
 
     var notesTableController = NotesTableViewController()
     var newNoteController:NewNoteViewController?
+    var noteTextViewController:NoteTextViewController = NoteTextViewController()
     
     @IBOutlet var noteTextView:NSTextView?
     
@@ -35,7 +36,7 @@ class NotesViewController: NSViewController, ButtonNavigable, NewNoteViewControl
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(selectedNoteChanged), name: "SelectedNoteChanged", object: nil)
         
         deleteNoteButton?.enabled = false
-        
+        noteTextViewController.noteTextView = noteTextView
     }
 
     override func viewDidAppear() {
@@ -55,6 +56,7 @@ class NotesViewController: NSViewController, ButtonNavigable, NewNoteViewControl
         
         newNoteController = NewNoteViewController(nibName: nil, bundle: nil)
         newNoteController?.client = self
+        newNoteController?.validator = NoteNameValidator.shared
         
         self.presentViewController(newNoteController!, asPopoverRelativeToRect: addNoteButton!.frame, ofView: addNoteButton!, preferredEdge: NSRectEdge.MaxX, behavior: NSPopoverBehavior.Transient)
         
@@ -104,9 +106,9 @@ class NotesViewController: NSViewController, ButtonNavigable, NewNoteViewControl
                 
                 if let selectedNote = view?.note {
                     print("selected \(selectedNote)")
+                    noteTextViewController.currentNote = selectedNote
                 }
             }
         }
     }
-    
 }

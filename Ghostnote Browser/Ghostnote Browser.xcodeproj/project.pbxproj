@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		D80001AE1CD7F98A00255E54 /* NoteNameValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80001AD1CD7F98A00255E54 /* NoteNameValidator.swift */; };
-		D80001B11CD801EB00255E54 /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80001AF1CD801EB00255E54 /* NewNoteViewController.swift */; };
+		D80001B11CD801EB00255E54 /* NewNamedItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80001AF1CD801EB00255E54 /* NewNamedItemViewController.swift */; };
 		D80001B21CD801EB00255E54 /* NewNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D80001B01CD801EB00255E54 /* NewNoteViewController.xib */; };
+		D80001B41CD88BDC00255E54 /* NoteTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80001B31CD88BDC00255E54 /* NoteTextViewController.swift */; };
+		D80001B61CD957C200255E54 /* TaskListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80001B51CD957C200255E54 /* TaskListController.swift */; };
 		D81281881CCD97F2001749E9 /* ButtonNavViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D81281871CCD97F2001749E9 /* ButtonNavViewController.xib */; };
 		D812818A1CCD98C0001749E9 /* ButtonNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81281891CCD98C0001749E9 /* ButtonNavViewController.swift */; };
 		D812818D1CCD9AA3001749E9 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D812818B1CCD9AA3001749E9 /* MainWindowController.swift */; };
@@ -26,6 +28,13 @@
 		D81281A51CCEB37E001749E9 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D812819F1CCEB36F001749E9 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D81281A81CCEB3B2001749E9 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81281A71CCEB3B2001749E9 /* Note.swift */; };
 		D81281AA1CCEB60B001749E9 /* NoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81281A91CCEB60B001749E9 /* NoteManager.swift */; };
+		D83E5B401CDA737A0044F7A3 /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B3F1CDA737A0044F7A3 /* TaskList.swift */; };
+		D83E5B421CDA74180044F7A3 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B411CDA74180044F7A3 /* Task.swift */; };
+		D83E5B441CDA74BD0044F7A3 /* TaskListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B431CDA74BD0044F7A3 /* TaskListManager.swift */; };
+		D83E5B471CDA76400044F7A3 /* TaskListNameValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B461CDA76400044F7A3 /* TaskListNameValidator.swift */; };
+		D83E5B4A1CDA78920044F7A3 /* NewTaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B481CDA78920044F7A3 /* NewTaskListViewController.swift */; };
+		D83E5B4B1CDA78920044F7A3 /* NewTaskListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83E5B491CDA78920044F7A3 /* NewTaskListViewController.xib */; };
+		D83E5B4D1CDA7A430044F7A3 /* NamedItemValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B4C1CDA7A430044F7A3 /* NamedItemValidator.swift */; };
 		D84F16B91CC4A204005612BB /* GhostNote.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = D84F16B81CC4A204005612BB /* GhostNote.xcdatamodel */; };
 		D84F16BC1CC4A222005612BB /* GNNote+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16BA1CC4A222005612BB /* GNNote+CoreDataProperties.swift */; };
 		D84F16BD1CC4A222005612BB /* GNNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16BB1CC4A222005612BB /* GNNote.swift */; };
@@ -86,8 +95,10 @@
 /* Begin PBXFileReference section */
 		D80001A51CD7EC8000255E54 /* FileKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FileKit.framework; path = Carthage/Build/Mac/FileKit.framework; sourceTree = "<group>"; };
 		D80001AD1CD7F98A00255E54 /* NoteNameValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteNameValidator.swift; path = Models/NoteNameValidator.swift; sourceTree = "<group>"; };
-		D80001AF1CD801EB00255E54 /* NewNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewNoteViewController.swift; path = "View Controllers/NewNoteViewController.swift"; sourceTree = "<group>"; };
+		D80001AF1CD801EB00255E54 /* NewNamedItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewNamedItemViewController.swift; path = "View Controllers/NewNamedItemViewController.swift"; sourceTree = "<group>"; };
 		D80001B01CD801EB00255E54 /* NewNoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewNoteViewController.xib; path = "View Controllers/NewNoteViewController.xib"; sourceTree = "<group>"; };
+		D80001B31CD88BDC00255E54 /* NoteTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteTextViewController.swift; path = "View Controllers/NoteTextViewController.swift"; sourceTree = "<group>"; };
+		D80001B51CD957C200255E54 /* TaskListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskListController.swift; path = "View Controllers/TaskListController.swift"; sourceTree = "<group>"; };
 		D81281871CCD97F2001749E9 /* ButtonNavViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ButtonNavViewController.xib; path = Views/ButtonNavViewController.xib; sourceTree = "<group>"; };
 		D81281891CCD98C0001749E9 /* ButtonNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonNavViewController.swift; path = "View Controllers/ButtonNavViewController.swift"; sourceTree = "<group>"; };
 		D812818B1CCD9AA3001749E9 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
@@ -102,6 +113,13 @@
 		D812819F1CCEB36F001749E9 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/Mac/RealmSwift.framework; sourceTree = "<group>"; };
 		D81281A71CCEB3B2001749E9 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		D81281A91CCEB60B001749E9 /* NoteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteManager.swift; sourceTree = "<group>"; };
+		D83E5B3F1CDA737A0044F7A3 /* TaskList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskList.swift; path = Models/TaskList.swift; sourceTree = "<group>"; };
+		D83E5B411CDA74180044F7A3 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		D83E5B431CDA74BD0044F7A3 /* TaskListManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskListManager.swift; path = Models/TaskListManager.swift; sourceTree = "<group>"; };
+		D83E5B461CDA76400044F7A3 /* TaskListNameValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListNameValidator.swift; sourceTree = "<group>"; };
+		D83E5B481CDA78920044F7A3 /* NewTaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewTaskListViewController.swift; path = "View Controllers/NewTaskListViewController.swift"; sourceTree = "<group>"; };
+		D83E5B491CDA78920044F7A3 /* NewTaskListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewTaskListViewController.xib; path = "View Controllers/NewTaskListViewController.xib"; sourceTree = "<group>"; };
+		D83E5B4C1CDA7A430044F7A3 /* NamedItemValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamedItemValidator.swift; sourceTree = "<group>"; };
 		D84F16B81CC4A204005612BB /* GhostNote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GhostNote.xcdatamodel; sourceTree = "<group>"; };
 		D84F16BA1CC4A222005612BB /* GNNote+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "GNNote+CoreDataProperties.swift"; path = "CoreData/GNNote+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D84F16BB1CC4A222005612BB /* GNNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GNNote.swift; path = CoreData/GNNote.swift; sourceTree = "<group>"; };
@@ -175,6 +193,7 @@
 				D81281981CCDCFD8001749E9 /* NotesTableViewController.swift */,
 				D84F16E41CC71215005612BB /* NotesViewController.swift */,
 				D812818F1CCD9BEC001749E9 /* NotesViewController.xib */,
+				D80001B31CD88BDC00255E54 /* NoteTextViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -192,8 +211,19 @@
 			children = (
 				D81281A91CCEB60B001749E9 /* NoteManager.swift */,
 				D84F16BF1CC4A4F8005612BB /* GhostNoteManager.swift */,
+				D83E5B431CDA74BD0044F7A3 /* TaskListManager.swift */,
 			);
 			name = Managers;
+			sourceTree = "<group>";
+		};
+		D83E5B451CDA761E0044F7A3 /* Validators */ = {
+			isa = PBXGroup;
+			children = (
+				D80001AD1CD7F98A00255E54 /* NoteNameValidator.swift */,
+				D83E5B461CDA76400044F7A3 /* TaskListNameValidator.swift */,
+				D83E5B4C1CDA7A430044F7A3 /* NamedItemValidator.swift */,
+			);
+			name = Validators;
 			sourceTree = "<group>";
 		};
 		D84F16BE1CC4A4AE005612BB /* CoreData */ = {
@@ -237,11 +267,13 @@
 		D84F16D21CC5539D005612BB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D83E5B451CDA761E0044F7A3 /* Validators */,
 				D81281AB1CCEB660001749E9 /* Managers */,
 				D84F16D31CC553B3005612BB /* App.swift */,
 				D84F16D51CC553DC005612BB /* Document.swift */,
 				D812819A1CCDDE93001749E9 /* GNTheme.swift */,
-				D80001AD1CD7F98A00255E54 /* NoteNameValidator.swift */,
+				D83E5B3F1CDA737A0044F7A3 /* TaskList.swift */,
+				D83E5B411CDA74180044F7A3 /* Task.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -259,7 +291,7 @@
 		D84F16E81CC71220005612BB /* Notes */ = {
 			isa = PBXGroup;
 			children = (
-				D80001AF1CD801EB00255E54 /* NewNoteViewController.swift */,
+				D80001AF1CD801EB00255E54 /* NewNamedItemViewController.swift */,
 				D80001B01CD801EB00255E54 /* NewNoteViewController.xib */,
 				D81281971CCDCFB2001749E9 /* View Controller */,
 			);
@@ -271,6 +303,9 @@
 			children = (
 				D84F16E91CC7123E005612BB /* TasksViewController.swift */,
 				D81281911CCDB9CE001749E9 /* TasksViewController.xib */,
+				D80001B51CD957C200255E54 /* TaskListController.swift */,
+				D83E5B481CDA78920044F7A3 /* NewTaskListViewController.swift */,
+				D83E5B491CDA78920044F7A3 /* NewTaskListViewController.xib */,
 			);
 			name = Todos;
 			sourceTree = "<group>";
@@ -455,6 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D81281881CCD97F2001749E9 /* ButtonNavViewController.xib in Resources */,
+				D83E5B4B1CDA78920044F7A3 /* NewTaskListViewController.xib in Resources */,
 				D80001B21CD801EB00255E54 /* NewNoteViewController.xib in Resources */,
 				D8D10ECB1CC48A9F00A434F6 /* Assets.xcassets in Resources */,
 				D81281941CCDB9DC001749E9 /* GhostnotesViewController.xib in Resources */,
@@ -486,11 +522,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D83E5B421CDA74180044F7A3 /* Task.swift in Sources */,
+				D83E5B401CDA737A0044F7A3 /* TaskList.swift in Sources */,
 				D84F16C71CC54ED6005612BB /* DocumentIconProvider.swift in Sources */,
+				D83E5B4D1CDA7A430044F7A3 /* NamedItemValidator.swift in Sources */,
 				D84F16C61CC54ED6005612BB /* AppNameProvider.swift in Sources */,
+				D80001B61CD957C200255E54 /* TaskListController.swift in Sources */,
 				D80001AE1CD7F98A00255E54 /* NoteNameValidator.swift in Sources */,
-				D80001B11CD801EB00255E54 /* NewNoteViewController.swift in Sources */,
+				D80001B11CD801EB00255E54 /* NewNamedItemViewController.swift in Sources */,
 				D81281A81CCEB3B2001749E9 /* Note.swift in Sources */,
+				D83E5B471CDA76400044F7A3 /* TaskListNameValidator.swift in Sources */,
+				D83E5B441CDA74BD0044F7A3 /* TaskListManager.swift in Sources */,
 				D84F16DF1CC60EEE005612BB /* DocCell.swift in Sources */,
 				D84F16D41CC553B3005612BB /* App.swift in Sources */,
 				D84F16EB1CC7123E005612BB /* TasksViewController.swift in Sources */,
@@ -499,8 +541,10 @@
 				D84F16F01CC71260005612BB /* GhostnotesViewController.swift in Sources */,
 				D812819B1CCDDE93001749E9 /* GNTheme.swift in Sources */,
 				D812818D1CCD9AA3001749E9 /* MainWindowController.swift in Sources */,
+				D83E5B4A1CDA78920044F7A3 /* NewTaskListViewController.swift in Sources */,
 				D81281991CCDCFD8001749E9 /* NotesTableViewController.swift in Sources */,
 				D84F16BC1CC4A222005612BB /* GNNote+CoreDataProperties.swift in Sources */,
+				D80001B41CD88BDC00255E54 /* NoteTextViewController.swift in Sources */,
 				D81281AA1CCEB60B001749E9 /* NoteManager.swift in Sources */,
 				D84F16D11CC550C3005612BB /* GhostnotesOutlineController.swift in Sources */,
 				D84F16BD1CC4A222005612BB /* GNNote.swift in Sources */,

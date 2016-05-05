@@ -21,7 +21,7 @@ class TaskListManager: NSObject {
     }
     
     func createTaskList(name:String) {
-        
+        print("creating task list named \(name)")
         let newList = TaskList()
         
         do {

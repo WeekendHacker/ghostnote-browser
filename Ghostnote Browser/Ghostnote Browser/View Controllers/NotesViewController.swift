@@ -65,19 +65,16 @@ class NotesViewController: NSViewController, ButtonNavigable, NewNamedItemViewCo
     
     @IBAction func deleteNoteButtonClicked(sender:AnyObject?) {
         
-        // need to make this use the extension
-        // and handle multiple selection deletes i think
-
         if notesTableView!.hasSelection() {
             for index in notesTableView!.selectedRowIndexes {
                 if let view = notesTableView?.viewAtColumn(0, row: index, makeIfNecessary: false) as? NoteCell {
                     NoteManager.shared.deleteNote(view.note!)
+                    notesTableView?.reloadData()
+                    deleteNoteButton?.enabled = false
                 }
             }
         }
         
-        notesTableView?.reloadData()
-        deleteNoteButton?.enabled = false
     }
     
     // NewNoteWindowControllerClient
@@ -114,6 +111,8 @@ class NotesViewController: NSViewController, ButtonNavigable, NewNamedItemViewCo
                     noteTextViewController.currentNote = selectedNote
                 }
             }
+        }else {
+            deleteNoteButton?.enabled = false
         }
     }
 }

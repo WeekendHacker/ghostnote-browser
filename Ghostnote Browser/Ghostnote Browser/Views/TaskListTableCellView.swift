@@ -10,6 +10,12 @@ import Cocoa
 
 class TaskListTableCellView: NSTableCellView {
 
-    var taskList:TaskList?
+    var taskList:TaskList? {
+        didSet {
+            if let list = taskList {
+                self.textField?.stringValue = list.listName
+            }
+        }
+    }
     
 }

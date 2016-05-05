@@ -16,6 +16,7 @@ class NewNamedItemViewController: NSViewController {
     
     var client:NewNamedItemViewControllerClient?
     var validator:NamedItemValidator?
+    var canceled:Bool = false
     
     @IBOutlet weak var nameTextField:NSTextField?
     @IBOutlet weak var errorTextField:NSTextField?
@@ -27,7 +28,7 @@ class NewNamedItemViewController: NSViewController {
         super.viewDidLoad()
         createButton?.enabled = false
         nameTextField?.target = self
-        nameTextField?.action = #selector(self.validateAndSubmit)
+        nameTextField?.action = #selector(NewNamedItemViewController.validateAndSubmit)
         errorTextField?.hidden = true
     }
     
@@ -63,9 +64,11 @@ class NewNamedItemViewController: NSViewController {
     // Actions
     
     @IBAction func validateAndSubmit(sender:AnyObject?) {
-        validateName()
-        if createButton!.enabled {
-            createButton?.performClick(self)
+        if !canceled {
+            validateName()
+            if createButton!.enabled {
+                createButton?.performClick(self)
+            }
         }
     }
     
@@ -74,13 +77,16 @@ class NewNamedItemViewController: NSViewController {
     }
     
     @IBAction func cancelClicked(sender:AnyObject?) {
+        canceled = true
         client?.canceled()
     }
     
     // NSTextFieldDelegate
     
     override func controlTextDidChange(obj: NSNotification) {
-        errorTextField?.hidden = true
-        validateName()
+        if !canceled {
+            errorTextField?.hidden = true
+            validateName()
+        }
     }
 }

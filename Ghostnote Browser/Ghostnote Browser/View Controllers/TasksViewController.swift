@@ -37,6 +37,7 @@ class TasksViewController: NSViewController, ButtonNavigable, NewNamedItemViewCo
        
         view.autoresizingMask = [.ViewWidthSizable, .ViewHeightSizable]
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(taskListSelected(_:)), name: "SelectedTaskChanged", object: nil)
+        deleteTaskListButton?.enabled = false
     }
     
     override func viewDidAppear() {
@@ -55,6 +56,16 @@ class TasksViewController: NSViewController, ButtonNavigable, NewNamedItemViewCo
     
     @IBAction func deleteTaskClicked(sender:AnyObject?)  {
         
+        if let row = taskListTableView?.selectedRowIndexes.firstIndex {
+            let view = taskListTableView?.viewAtColumn(0, row: row, makeIfNecessary: false) as? TaskListTableCellView
+            
+            if let selectedTaskList = view?.taskList {
+                print("selected \(selectedTaskList) to delete.")
+                TaskListManager.shared.deleteTaskList(selectedTaskList.listName)
+                taskListTableView?.reloadData()
+                deleteTaskListButton?.enabled = false
+            }
+        }
     }
     
     // NewNamedItemViewControllerClient
@@ -63,19 +74,37 @@ class TasksViewController: NSViewController, ButtonNavigable, NewNamedItemViewCo
         print("chose \(name)")
         TaskListManager.shared.createTaskList(name)
         taskListTableView?.reloadData()
+        dismissNewNamedItemController()
     }
     
     func canceled() {
+        print("canceled")
+       dismissNewNamedItemController()
+    }
+    
+    func dismissNewNamedItemController() {
         if let vc = newTaskController {
-            dismissController(vc)
+            dismissViewController(vc)
             newTaskController = nil
         }
     }
-    
     // Notification Handlers
     
     func taskListSelected(notif:NSNotification) {
-        taskController.selectedTaskList = 
+        
+        if taskListTableView!.hasSelection() {
+            deleteTaskListButton?.enabled = true
+            if let row = taskListTableView?.selectedRowIndexes.firstIndex {
+                let view = taskListTableView?.viewAtColumn(0, row: row, makeIfNecessary: false) as? TaskListTableCellView
+                
+                if let selectedTaskList = view?.taskList {
+                    print("selected \(selectedTaskList)")
+                    taskController.selectedTaskList = selectedTaskList
+                }
+            }
+        }else {
+            deleteTaskListButton?.enabled = false
+        }
     }
     
 }

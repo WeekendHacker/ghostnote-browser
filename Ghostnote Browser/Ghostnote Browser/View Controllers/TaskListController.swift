@@ -28,9 +28,8 @@ class TaskListTableViewController: NSObject, NSTableViewDelegate, NSTableViewDat
         
         let taskList = TaskListManager.shared.taskLists[row]
         
-        let view = taskListTableView?.makeViewWithIdentifier("TaskListCell", owner: nil) as? NSTableCellView
-        view?.textField?.stringValue = taskList.listName
-        
+        let view = taskListTableView?.makeViewWithIdentifier("TaskListCell", owner: nil) as? TaskListTableCellView
+        view?.taskList = taskList
         return view
     }
     

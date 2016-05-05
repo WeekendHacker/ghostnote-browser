@@ -12,8 +12,7 @@ protocol NewNamedItemViewControllerClient {
     func canceled()
 }
 
-class NewNoteViewController: NSViewController {
-
+class NewNamedItemViewController: NSViewController {
     
     var client:NewNamedItemViewControllerClient?
     var validator:NamedItemValidator?
@@ -22,7 +21,6 @@ class NewNoteViewController: NSViewController {
     @IBOutlet weak var errorTextField:NSTextField?
     @IBOutlet weak var cancelButton:NSButton?
     @IBOutlet weak var createButton:NSButton?
-    
     
     
     override func viewDidLoad() {

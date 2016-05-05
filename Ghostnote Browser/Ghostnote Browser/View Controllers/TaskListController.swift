@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
+class TaskListTableViewController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
 
     weak var taskListTableView:NSTableView? {
         didSet {
@@ -18,10 +18,6 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
             }
         }
     }
-    
-    weak var addListButton:NSButton?
-    weak var deleteListButton:NSButton?
-    
     
     // NSTableViewDatasource
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
@@ -36,6 +32,14 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
         view?.textField?.stringValue = taskList.listName
         
         return view
-        
     }
+    
+    
+    // NSTableViewDelegate 
+    
+    func tableViewSelectionDidChange(notification: NSNotification) {
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("SelectedTaskChanged", object: notification.object)
+    }
+    
 }

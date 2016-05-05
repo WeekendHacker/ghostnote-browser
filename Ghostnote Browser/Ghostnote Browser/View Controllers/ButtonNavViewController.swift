@@ -48,13 +48,9 @@ class ButtonNavViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        view.wantsLayer = true
-//        view.layer?.backgroundColor = NSColor.darkGrayColor().CGColor
-//        navView?.wantsLayer = true
-//        navView?.layer?.backgroundColor = NSColor.greenColor().CGColor
+
         updateNaveButtonState()
     }
-    
     
     @IBAction func notesButtonClicked(sender:AnyObject?) {
         

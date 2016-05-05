@@ -11,7 +11,7 @@ import Cocoa
 class NotesViewController: NSViewController, ButtonNavigable, NewNamedItemViewControllerClient {
 
     var notesTableController = NotesTableViewController()
-    var newNoteController:NewNoteViewController?
+    var newNoteController:NewNamedItemViewController?
     var noteTextViewController:NoteTextViewController = NoteTextViewController()
     
     @IBOutlet var noteTextView:NSTextView?
@@ -54,9 +54,10 @@ class NotesViewController: NSViewController, ButtonNavigable, NewNamedItemViewCo
     
     @IBAction func addNoteButtonClicked(sender:AnyObject?) {
         
-        newNoteController = NewNoteViewController(nibName: nil, bundle: nil)
+        newNoteController = NewNamedItemViewController(nibName: nil, bundle: nil)
         newNoteController?.client = self
         newNoteController?.validator = NoteNameValidator.shared
+        newNoteController?.nameTextField?.placeholderString = "New Note Name"
         
         self.presentViewController(newNoteController!, asPopoverRelativeToRect: addNoteButton!.frame, ofView: addNoteButton!, preferredEdge: NSRectEdge.MaxX, behavior: NSPopoverBehavior.Transient)
         
@@ -91,8 +92,12 @@ class NotesViewController: NSViewController, ButtonNavigable, NewNamedItemViewCo
     }
     
     func canceled() {
-        dismissViewController(newNoteController!)
-        newNoteController = nil
+        
+        if let vc = newNoteController {
+            dismissViewController(vc)
+            newNoteController = nil
+        }
+        
     }
     
     // handlers

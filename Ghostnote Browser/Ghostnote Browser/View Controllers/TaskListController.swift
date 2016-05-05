@@ -41,6 +41,7 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource, 
     }
     
     
+    
     // NSTableViewDatasource
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
         return TaskListManager.shared.taskLists.count

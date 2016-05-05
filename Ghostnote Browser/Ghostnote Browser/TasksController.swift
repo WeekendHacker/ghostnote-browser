@@ -27,6 +27,25 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate {
         }
     }
     
+    weak var addTaskButton:NSButton? {
+        didSet {
+            if let button = addTaskButton {
+                button.target = self
+                button.action = #selector(TasksController.addTaskButtonClicked(_:))
+            }
+        }
+    }
+    
+    weak var deleteTaskButton:NSButton? {
+        didSet {
+            if let button = deleteTaskButton {
+                button.target = self
+                button.action = #selector(TasksController.deleteTaskButtonClicked(_:))
+            }
+        }
+    }
+    
+    // NSTableViewDatasource
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
         var rows = 0
         
@@ -45,4 +64,14 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate {
         return view
     }
  
+    
+    // Actions
+    
+    func addTaskButtonClicked(sender:AnyObject?) {
+        print("add task clicked")
+    }
+    
+    func deleteTaskButtonClicked(sender:AnyObject?) {
+        print("delete task clicked")
+    }
 }

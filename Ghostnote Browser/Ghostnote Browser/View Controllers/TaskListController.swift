@@ -10,7 +10,7 @@ import Cocoa
 
 class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource, NewNamedItemViewControllerClient {
 
-    var newTaskController:NewNamedItemViewController?
+    var newTaskListController:NewNamedItemViewController?
     var clientViewController:NSViewController?
     
     weak var taskListTableView:NSTableView? {
@@ -67,12 +67,12 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource, 
     // Actions
     
     @IBAction func addTaskListClicked(sender:AnyObject?) {
-        newTaskController = NewNamedItemViewController(nibName: nil, bundle: nil)
-        newTaskController?.client = self
-        newTaskController?.validator = TaskListNameValidator.shared
-        newTaskController?.nameTextField?.placeholderString = "New Task List Name"
+        newTaskListController = NewNamedItemViewController(nibName: nil, bundle: nil)
+        newTaskListController?.client = self
+        newTaskListController?.validator = TaskListNameValidator.shared
+        newTaskListController?.nameTextField?.placeholderString = "New Task List Name"
         
-        clientViewController?.presentViewController(newTaskController!, asPopoverRelativeToRect: addTaskListButton!.frame, ofView: addTaskListButton!, preferredEdge: NSRectEdge.MaxX, behavior: NSPopoverBehavior.Transient)
+        clientViewController?.presentViewController(newTaskListController!, asPopoverRelativeToRect: addTaskListButton!.frame, ofView: addTaskListButton!, preferredEdge: NSRectEdge.MaxX, behavior: NSPopoverBehavior.Transient)
     }
     
     @IBAction func deleteTaskClicked(sender:AnyObject?)  {
@@ -105,9 +105,9 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource, 
     }
     
     func dismissNewNamedItemController() {
-        if let vc = newTaskController {
+        if let vc = newTaskListController {
             clientViewController?.dismissViewController(vc)
-            newTaskController = nil
+            newTaskListController = nil
         }
     }
 }

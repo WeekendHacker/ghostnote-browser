@@ -28,7 +28,7 @@
 		D81281A51CCEB37E001749E9 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D812819F1CCEB36F001749E9 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D81281A81CCEB3B2001749E9 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81281A71CCEB3B2001749E9 /* Note.swift */; };
 		D81281AA1CCEB60B001749E9 /* NoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81281A91CCEB60B001749E9 /* NoteManager.swift */; };
-		D8265A611CDB15F00054AF57 /* TaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8265A601CDB15F00054AF57 /* TaskTableViewController.swift */; };
+		D8265A611CDB15F00054AF57 /* TasksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8265A601CDB15F00054AF57 /* TasksController.swift */; };
 		D8265A631CDB18760054AF57 /* TaskListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8265A621CDB18760054AF57 /* TaskListCell.swift */; };
 		D8265A651CDBE37E0054AF57 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8265A641CDBE37E0054AF57 /* TaskCell.swift */; };
 		D83E5B401CDA737A0044F7A3 /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B3F1CDA737A0044F7A3 /* TaskList.swift */; };
@@ -114,7 +114,7 @@
 		D812819F1CCEB36F001749E9 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/Mac/RealmSwift.framework; sourceTree = "<group>"; };
 		D81281A71CCEB3B2001749E9 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		D81281A91CCEB60B001749E9 /* NoteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteManager.swift; sourceTree = "<group>"; };
-		D8265A601CDB15F00054AF57 /* TaskTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewController.swift; sourceTree = "<group>"; };
+		D8265A601CDB15F00054AF57 /* TasksController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksController.swift; sourceTree = "<group>"; };
 		D8265A621CDB18760054AF57 /* TaskListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskListCell.swift; path = Views/TaskListCell.swift; sourceTree = "<group>"; };
 		D8265A641CDBE37E0054AF57 /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		D83E5B3F1CDA737A0044F7A3 /* TaskList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskList.swift; path = Models/TaskList.swift; sourceTree = "<group>"; };
@@ -308,7 +308,7 @@
 				D84F16E91CC7123E005612BB /* TasksViewController.swift */,
 				D81281911CCDB9CE001749E9 /* TasksViewController.xib */,
 				D80001B51CD957C200255E54 /* TaskListController.swift */,
-				D8265A601CDB15F00054AF57 /* TaskTableViewController.swift */,
+				D8265A601CDB15F00054AF57 /* TasksController.swift */,
 			);
 			name = Todos;
 			sourceTree = "<group>";
@@ -551,7 +551,7 @@
 				D84F16BD1CC4A222005612BB /* GNNote.swift in Sources */,
 				D84F16E61CC71215005612BB /* NotesViewController.swift in Sources */,
 				D84F16D61CC553DC005612BB /* Document.swift in Sources */,
-				D8265A611CDB15F00054AF57 /* TaskTableViewController.swift in Sources */,
+				D8265A611CDB15F00054AF57 /* TasksController.swift in Sources */,
 				D8265A631CDB18760054AF57 /* TaskListCell.swift in Sources */,
 				D8265A651CDBE37E0054AF57 /* TaskCell.swift in Sources */,
 				D84F16DD1CC60EB6005612BB /* AppCell.swift in Sources */,

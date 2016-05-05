@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class TaskTableViewController: NSObject, NSTableViewDataSource, NSTableViewDelegate {
+class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate {
 
     weak var selectedTaskList:TaskList? {
         didSet {
@@ -27,5 +27,22 @@ class TaskTableViewController: NSObject, NSTableViewDataSource, NSTableViewDeleg
         }
     }
     
+    func numberOfRowsInTableView(tableView: NSTableView) -> Int {
+        var rows = 0
+        
+        if let selected = selectedTaskList {
+            rows = selected.tasks.count
+        }
+        return rows
+    }
+    
+    func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        let view = tableView.makeViewWithIdentifier("TaskCell", owner: nil) as? TaskCell
+        if let taskList = selectedTaskList {
+            let task = taskList.tasks[row]
+            view?.task = task
+        }
+        return view
+    }
  
 }

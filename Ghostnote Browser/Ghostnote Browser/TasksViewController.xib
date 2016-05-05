@@ -7,9 +7,12 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="TasksViewController" customModule="Ghostnote_Browser" customModuleProvider="target">
             <connections>
+                <outlet property="addTaskButton" destination="qxw-w5-y9K" id="4uk-A3-SJa"/>
                 <outlet property="addTaskListButton" destination="cdi-ni-qLu" id="yZO-2b-iU1"/>
-                <outlet property="deleteTaskListButton" destination="kwg-5E-g9M" id="Uv9-pI-AnT"/>
+                <outlet property="deleteTaskButton" destination="jcD-hS-T2T" id="8MX-be-yZZ"/>
+                <outlet property="deleteTaskListButton" destination="kwg-5E-g9M" id="6rU-sr-MZq"/>
                 <outlet property="taskListTableView" destination="x0l-7o-FYP" id="Mzp-ut-uua"/>
+                <outlet property="tasksTableView" destination="nAc-ib-V75" id="Wgo-vB-fgV"/>
                 <outlet property="view" destination="c22-O7-iKe" id="OhC-hG-c1j"/>
             </connections>
         </customObject>
@@ -19,7 +22,7 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <scrollView autohidesScrollers="YES" horizontalLineScroll="32" horizontalPageScroll="10" verticalLineScroll="32" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWG-dT-Hi3">
+                <scrollView autohidesScrollers="YES" horizontalLineScroll="32" horizontalPageScroll="10" verticalLineScroll="32" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWG-dT-Hi3" userLabel="Bordered Scroll View - Task List Table View">
                     <rect key="frame" x="0.0" y="20" width="251" height="252"/>
                     <clipView key="contentView" id="f1N-Sx-kqn">
                         <rect key="frame" x="1" y="1" width="249" height="250"/>
@@ -45,7 +48,7 @@
                                         </textFieldCell>
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
-                                            <tableCellView identifier="TaskListCell" id="fvN-AT-dYw" customClass="TaskListTableCellView" customModule="Ghostnote_Browser" customModuleProvider="target">
+                                            <tableCellView identifier="TaskListCell" id="fvN-AT-dYw" customClass="TaskListCell" customModule="Ghostnote_Browser" customModuleProvider="target">
                                                 <rect key="frame" x="1" y="1" width="246" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
@@ -96,9 +99,6 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
-                    <connections>
-                        <action selector="addTaskClicked:" target="-2" id="oqs-hA-FYX"/>
-                    </connections>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qxw-w5-y9K">
                     <rect key="frame" x="251" y="0.0" width="19" height="21"/>
@@ -117,7 +117,7 @@
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <font key="titleFont" metaFont="system"/>
                 </box>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kwg-5E-g9M">
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kwg-5E-g9M" userLabel="Delete Task Button">
                     <rect key="frame" x="20" y="0.0" width="19" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="19" id="fBK-tY-2d5"/>
@@ -127,9 +127,6 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
-                    <connections>
-                        <action selector="deleteTaskClicked:" target="-2" id="nAc-wi-q5f"/>
-                    </connections>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jcD-hS-T2T">
                     <rect key="frame" x="273" y="0.0" width="19" height="21"/>
@@ -137,7 +134,7 @@
                         <constraint firstAttribute="width" constant="19" id="4xh-4Q-V1B"/>
                         <constraint firstAttribute="height" constant="19" id="lAt-ur-gGS"/>
                     </constraints>
-                    <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wwp-1a-GFS">
+                    <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wwp-1a-GFS">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>

@@ -8,13 +8,13 @@
 
 import Cocoa
 
-class TasksViewController: NSViewController, ButtonNavigable, NewNamedItemViewControllerClient {
+class TasksViewController: NSViewController, ButtonNavigable {
 
-    var taskListController = TaskListTableViewController()
-    var taskController = TaskTableViewController()
+    var taskListController = TaskListController()
+    var taskController = TasksController()
     
     var newTaskController:NewNamedItemViewController?
-    
+
     @IBOutlet weak var taskListTableView:NSTableView? {
         didSet {
             if let tv = taskListTableView {
@@ -29,8 +29,21 @@ class TasksViewController: NSViewController, ButtonNavigable, NewNamedItemViewCo
         }
     }
     
-    @IBOutlet weak var addTaskListButton:NSButton?
-    @IBOutlet weak var deleteTaskListButton:NSButton?
+    @IBOutlet weak var addTaskListButton:NSButton? {
+        didSet {
+            taskListController.addTaskListButton = addTaskListButton
+        }
+    }
+    
+    @IBOutlet weak var deleteTaskListButton:NSButton? {
+        didSet {
+            taskListController.deleteTaskListButton = deleteTaskListButton
+        }
+    }
+    
+    
+    @IBOutlet weak var addTaskButton:NSButton?
+    @IBOutlet weak var deleteTaskButton:NSButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,52 +55,10 @@ class TasksViewController: NSViewController, ButtonNavigable, NewNamedItemViewCo
     
     override func viewDidAppear() {
         super.viewDidAppear()
+        taskListController.clientViewController = self
         sizeForContainer()
     }
     
-    @IBAction func addTaskClicked(sender:AnyObject?) {
-        newTaskController = NewNamedItemViewController(nibName: nil, bundle: nil)
-        newTaskController?.client = self
-        newTaskController?.validator = TaskListNameValidator.shared
-        newTaskController?.nameTextField?.placeholderString = "New Task List Name"
-        
-        self.presentViewController(newTaskController!, asPopoverRelativeToRect: addTaskListButton!.frame, ofView: addTaskListButton!, preferredEdge: NSRectEdge.MaxX, behavior: NSPopoverBehavior.Transient)
-    }
-    
-    @IBAction func deleteTaskClicked(sender:AnyObject?)  {
-        
-        if let row = taskListTableView?.selectedRowIndexes.firstIndex {
-            let view = taskListTableView?.viewAtColumn(0, row: row, makeIfNecessary: false) as? TaskListTableCellView
-            
-            if let selectedTaskList = view?.taskList {
-                print("selected \(selectedTaskList) to delete.")
-                TaskListManager.shared.deleteTaskList(selectedTaskList.listName)
-                taskListTableView?.reloadData()
-                deleteTaskListButton?.enabled = false
-            }
-        }
-    }
-    
-    // NewNamedItemViewControllerClient
-    
-    func choseName(name: String) {
-        print("chose \(name)")
-        TaskListManager.shared.createTaskList(name)
-        taskListTableView?.reloadData()
-        dismissNewNamedItemController()
-    }
-    
-    func canceled() {
-        print("canceled")
-       dismissNewNamedItemController()
-    }
-    
-    func dismissNewNamedItemController() {
-        if let vc = newTaskController {
-            dismissViewController(vc)
-            newTaskController = nil
-        }
-    }
     // Notification Handlers
     
     func taskListSelected(notif:NSNotification) {
@@ -95,7 +66,7 @@ class TasksViewController: NSViewController, ButtonNavigable, NewNamedItemViewCo
         if taskListTableView!.hasSelection() {
             deleteTaskListButton?.enabled = true
             if let row = taskListTableView?.selectedRowIndexes.firstIndex {
-                let view = taskListTableView?.viewAtColumn(0, row: row, makeIfNecessary: false) as? TaskListTableCellView
+                let view = taskListTableView?.viewAtColumn(0, row: row, makeIfNecessary: false) as? TaskListCell
                 
                 if let selectedTaskList = view?.taskList {
                     print("selected \(selectedTaskList)")

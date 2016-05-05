@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class TaskListTableCellView: NSTableCellView {
+class TaskListCell: NSTableCellView {
 
     var taskList:TaskList? {
         didSet {

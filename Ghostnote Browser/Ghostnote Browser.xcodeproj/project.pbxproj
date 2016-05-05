@@ -29,7 +29,8 @@
 		D81281A81CCEB3B2001749E9 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81281A71CCEB3B2001749E9 /* Note.swift */; };
 		D81281AA1CCEB60B001749E9 /* NoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81281A91CCEB60B001749E9 /* NoteManager.swift */; };
 		D8265A611CDB15F00054AF57 /* TaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8265A601CDB15F00054AF57 /* TaskTableViewController.swift */; };
-		D8265A631CDB18760054AF57 /* TaskListTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8265A621CDB18760054AF57 /* TaskListTableCellView.swift */; };
+		D8265A631CDB18760054AF57 /* TaskListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8265A621CDB18760054AF57 /* TaskListCell.swift */; };
+		D8265A651CDBE37E0054AF57 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8265A641CDBE37E0054AF57 /* TaskCell.swift */; };
 		D83E5B401CDA737A0044F7A3 /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B3F1CDA737A0044F7A3 /* TaskList.swift */; };
 		D83E5B421CDA74180044F7A3 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B411CDA74180044F7A3 /* Task.swift */; };
 		D83E5B441CDA74BD0044F7A3 /* TaskListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B431CDA74BD0044F7A3 /* TaskListManager.swift */; };
@@ -114,7 +115,8 @@
 		D81281A71CCEB3B2001749E9 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		D81281A91CCEB60B001749E9 /* NoteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteManager.swift; sourceTree = "<group>"; };
 		D8265A601CDB15F00054AF57 /* TaskTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewController.swift; sourceTree = "<group>"; };
-		D8265A621CDB18760054AF57 /* TaskListTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskListTableCellView.swift; path = Views/TaskListTableCellView.swift; sourceTree = "<group>"; };
+		D8265A621CDB18760054AF57 /* TaskListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskListCell.swift; path = Views/TaskListCell.swift; sourceTree = "<group>"; };
+		D8265A641CDBE37E0054AF57 /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		D83E5B3F1CDA737A0044F7A3 /* TaskList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskList.swift; path = Models/TaskList.swift; sourceTree = "<group>"; };
 		D83E5B411CDA74180044F7A3 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		D83E5B431CDA74BD0044F7A3 /* TaskListManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskListManager.swift; path = Models/TaskListManager.swift; sourceTree = "<group>"; };
@@ -286,7 +288,8 @@
 				D84F16DC1CC60EB6005612BB /* AppCell.swift */,
 				D84F16DE1CC60EEE005612BB /* DocCell.swift */,
 				D81281951CCDCE6C001749E9 /* NoteCell.swift */,
-				D8265A621CDB18760054AF57 /* TaskListTableCellView.swift */,
+				D8265A621CDB18760054AF57 /* TaskListCell.swift */,
+				D8265A641CDBE37E0054AF57 /* TaskCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -549,7 +552,8 @@
 				D84F16E61CC71215005612BB /* NotesViewController.swift in Sources */,
 				D84F16D61CC553DC005612BB /* Document.swift in Sources */,
 				D8265A611CDB15F00054AF57 /* TaskTableViewController.swift in Sources */,
-				D8265A631CDB18760054AF57 /* TaskListTableCellView.swift in Sources */,
+				D8265A631CDB18760054AF57 /* TaskListCell.swift in Sources */,
+				D8265A651CDBE37E0054AF57 /* TaskCell.swift in Sources */,
 				D84F16DD1CC60EB6005612BB /* AppCell.swift in Sources */,
 				D81281961CCDCE6C001749E9 /* NoteCell.swift in Sources */,
 				D8D10EC61CC48A9F00A434F6 /* AppDelegate.swift in Sources */,

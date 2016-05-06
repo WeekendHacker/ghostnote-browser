@@ -63,6 +63,8 @@ class TasksViewController: NSViewController, ButtonNavigable {
         view.autoresizingMask = [.ViewWidthSizable, .ViewHeightSizable]
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(taskListSelected(_:)), name: "SelectedTaskChanged", object: nil)
         deleteTaskListButton?.enabled = false
+        let nib = NSNib(nibNamed: "TaskCell", bundle: nil)
+        tasksTableView?.registerNib(nib, forIdentifier: "TaskCell")
     }
     
     override func viewDidAppear() {

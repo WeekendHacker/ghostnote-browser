@@ -57,6 +57,7 @@
 		D8D10ECE1CC48A9F00A434F6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8D10ECC1CC48A9F00A434F6 /* MainMenu.xib */; };
 		D8D10ED91CC48A9F00A434F6 /* Ghostnote_BrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D10ED81CC48A9F00A434F6 /* Ghostnote_BrowserTests.swift */; };
 		D8D10EE41CC48A9F00A434F6 /* Ghostnote_BrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D10EE31CC48A9F00A434F6 /* Ghostnote_BrowserUITests.swift */; };
+		D8E380EC1CDC21000028D161 /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E380EB1CDC21000028D161 /* TaskCell.xib */; };
 		D8E659131CC49A40002CEA9B /* MagicalRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E659111CC499A8002CEA9B /* MagicalRecord.framework */; };
 		D8E659141CC49A40002CEA9B /* MagicalRecord.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8E659111CC499A8002CEA9B /* MagicalRecord.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -151,6 +152,7 @@
 		D8D10EDF1CC48A9F00A434F6 /* Ghostnote BrowserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ghostnote BrowserUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8D10EE31CC48A9F00A434F6 /* Ghostnote_BrowserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ghostnote_BrowserUITests.swift; sourceTree = "<group>"; };
 		D8D10EE51CC48A9F00A434F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8E380EB1CDC21000028D161 /* TaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TaskCell.xib; path = Views/TaskCell.xib; sourceTree = "<group>"; };
 		D8E659111CC499A8002CEA9B /* MagicalRecord.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MagicalRecord.framework; path = Carthage/Build/Mac/MagicalRecord.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -293,6 +295,7 @@
 				D81281951CCDCE6C001749E9 /* NoteCell.swift */,
 				D8265A621CDB18760054AF57 /* TaskListCell.swift */,
 				D8265A641CDBE37E0054AF57 /* TaskCell.swift */,
+				D8E380EB1CDC21000028D161 /* TaskCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D81281881CCD97F2001749E9 /* ButtonNavViewController.xib in Resources */,
+				D8E380EC1CDC21000028D161 /* TaskCell.xib in Resources */,
 				D80001B21CD801EB00255E54 /* NewNamedItemViewController.xib in Resources */,
 				D8D10ECB1CC48A9F00A434F6 /* Assets.xcassets in Resources */,
 				D81281941CCDB9DC001749E9 /* GhostnotesViewController.xib in Resources */,

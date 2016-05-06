@@ -19,4 +19,32 @@ class Task: Object {
     override class func primaryKey() -> String {
         return "title"  
     }
+    
+    func complete() {
+        let db = try! Realm()
+        
+        do {
+            try db.write({ 
+                self.completionDate = NSDate()
+                db.add(self, update: true)
+            })
+        }
+        catch {
+            print(error)
+        }
+    }
+    
+    func incomplete() {
+        let db = try! Realm()
+        
+        do {
+            try db.write({
+                self.completionDate = nil
+                db.add(self, update: true)
+            })
+        }
+        catch {
+            print(error)
+        }
+    }
 }

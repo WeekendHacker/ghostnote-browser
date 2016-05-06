@@ -10,11 +10,30 @@ import Cocoa
 
 class TaskCell: NSTableCellView {
 
+    @IBOutlet weak var checkbox:NSButton?
+    
     var task:Task? {
         didSet {
             if let t = task {
-                self.textField?.stringValue = t.title
+                if let cb = checkbox {
+                    checkbox?.title = t.title
+                    
+                    if t.completionDate != nil {
+                        cb.state = NSOnState
+                    }else {
+                        cb.state = NSOffState
+                    }
+                }
             }
+        }
+    }
+    
+    @IBAction func checkboxChecked(sender:AnyObject?) {
+        
+        if task?.completionDate != nil {
+            task?.incomplete()
+        }else {
+            task?.complete()
         }
     }
     

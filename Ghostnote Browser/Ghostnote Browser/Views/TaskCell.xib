@@ -29,6 +29,7 @@
             </subviews>
             <constraints>
                 <constraint firstItem="oJg-uP-G2E" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="NIo-PZ-5ky"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oJg-uP-G2E" secondAttribute="trailing" constant="20" id="RmZ-DK-S9M"/>
                 <constraint firstItem="oJg-uP-G2E" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="19" id="jFW-dD-fvy"/>
             </constraints>
             <connections>

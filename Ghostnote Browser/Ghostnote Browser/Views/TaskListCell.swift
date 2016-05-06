@@ -13,7 +13,7 @@ class TaskListCell: NSTableCellView {
     var taskList:TaskList? {
         didSet {
             if let list = taskList {
-                self.textField?.stringValue = list.listName
+                self.textField?.stringValue = list.title
             }
         }
     }

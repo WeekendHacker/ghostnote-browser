@@ -7,10 +7,10 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="TasksViewController" customModule="Ghostnote_Browser" customModuleProvider="target">
             <connections>
-                <outlet property="addTaskButton" destination="qxw-w5-y9K" id="4uk-A3-SJa"/>
+                <outlet property="addTaskButton" destination="qxw-w5-y9K" id="lD2-cS-aMt"/>
                 <outlet property="addTaskListButton" destination="cdi-ni-qLu" id="yZO-2b-iU1"/>
-                <outlet property="deleteTaskButton" destination="jcD-hS-T2T" id="8MX-be-yZZ"/>
-                <outlet property="deleteTaskListButton" destination="kwg-5E-g9M" id="6rU-sr-MZq"/>
+                <outlet property="deleteTaskButton" destination="jcD-hS-T2T" id="h47-cB-Ryg"/>
+                <outlet property="deleteTaskListButton" destination="kwg-5E-g9M" id="nFt-nj-Zg5"/>
                 <outlet property="taskListTableView" destination="x0l-7o-FYP" id="Mzp-ut-uua"/>
                 <outlet property="tasksTableView" destination="nAc-ib-V75" id="Wgo-vB-fgV"/>
                 <outlet property="view" destination="c22-O7-iKe" id="OhC-hG-c1j"/>
@@ -29,7 +29,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="30" rowSizeStyle="automatic" viewBased="YES" id="x0l-7o-FYP">
-                                <rect key="frame" x="0.0" y="0.0" width="249" height="250"/>
+                                <rect key="frame" x="0.0" y="0.0" width="249" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -117,7 +117,7 @@
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <font key="titleFont" metaFont="system"/>
                 </box>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kwg-5E-g9M" userLabel="Delete Task Button">
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kwg-5E-g9M" userLabel="Delete Task List Button">
                     <rect key="frame" x="20" y="0.0" width="19" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="19" id="fBK-tY-2d5"/>
@@ -139,14 +139,14 @@
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                 </button>
-                <scrollView autohidesScrollers="YES" horizontalLineScroll="32" horizontalPageScroll="10" verticalLineScroll="32" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rY5-qe-uih">
+                <scrollView autohidesScrollers="YES" horizontalLineScroll="32" horizontalPageScroll="10" verticalLineScroll="32" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rY5-qe-uih" userLabel="Bordered Scroll View - Tasks Table View">
                     <rect key="frame" x="250" y="20" width="230" height="252"/>
                     <clipView key="contentView" id="yN7-RW-9fP">
                         <rect key="frame" x="1" y="1" width="228" height="250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="30" rowSizeStyle="automatic" viewBased="YES" id="nAc-ib-V75">
-                                <rect key="frame" x="0.0" y="0.0" width="228" height="250"/>
+                                <rect key="frame" x="0.0" y="0.0" width="228" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -165,7 +165,7 @@
                                         </textFieldCell>
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
-                                            <tableCellView id="Qzq-sg-8fg">
+                                            <tableCellView identifier="TaskCell" id="Qzq-sg-8fg" customClass="TaskCell" customModule="Ghostnote_Browser" customModuleProvider="target">
                                                 <rect key="frame" x="1" y="1" width="225" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
@@ -186,7 +186,7 @@
                                                     <constraint firstItem="WSC-ea-FfX" firstAttribute="leading" secondItem="Qzq-sg-8fg" secondAttribute="leading" constant="2" id="hXN-QU-W8i"/>
                                                 </constraints>
                                                 <connections>
-                                                    <outlet property="textField" destination="WSC-ea-FfX" id="NKP-Wq-PYD"/>
+                                                    <outlet property="textField" destination="WSC-ea-FfX" id="RIX-W3-dKN"/>
                                                 </connections>
                                             </tableCellView>
                                         </prototypeCellViews>

@@ -16,4 +16,7 @@ class Task: Object {
     dynamic var completionDate:NSDate?
     dynamic var isComplete:Bool = false
     
+    override class func primaryKey() -> String {
+        return "title"  
+    }
 }

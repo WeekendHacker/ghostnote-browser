@@ -13,8 +13,6 @@ class TasksViewController: NSViewController, ButtonNavigable {
     var taskListController = TaskListController()
     var taskController = TasksController()
     
-    var newTaskController:NewNamedItemViewController?
-
     @IBOutlet weak var taskListTableView:NSTableView? {
         didSet {
             if let tv = taskListTableView {
@@ -70,7 +68,14 @@ class TasksViewController: NSViewController, ButtonNavigable {
     override func viewDidAppear() {
         super.viewDidAppear()
         taskListController.clientViewController = self
+        taskController.clientViewController = self
         sizeForContainer()
+    }
+    
+    override func presentViewController(viewController: NSViewController, asPopoverRelativeToRect positioningRect: NSRect, ofView positioningView: NSView, preferredEdge: NSRectEdge, behavior: NSPopoverBehavior) {
+        print("SHIT")
+        super.presentViewController(viewController, asPopoverRelativeToRect: positioningRect, ofView: positioningView, preferredEdge: preferredEdge, behavior: behavior)
+        print("fuck this")
     }
     
     // Notification Handlers
@@ -91,5 +96,4 @@ class TasksViewController: NSViewController, ButtonNavigable {
             deleteTaskListButton?.enabled = false
         }
     }
-    
 }

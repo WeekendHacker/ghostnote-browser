@@ -10,8 +10,29 @@ import Cocoa
 import RealmSwift
 
 class TaskList: Object {
-    dynamic var listName = "New List"
+    dynamic var title = "New List"
     var tasks = List<Task>()
     dynamic var creationDate:NSDate?
     
+    override class func primaryKey() ->String {
+        return "title"
+    }
+    
+    func addTask(named:String) {
+        let db = try! Realm()
+        
+        let task = Task()
+        
+        do {
+            try db.write({ 
+                task.creationDate = NSDate()
+                task.title = named
+                self.tasks.append(task)
+                db.add(self, update: true)
+            })
+        }
+        catch {
+            print(error)
+        }
+    }
 }

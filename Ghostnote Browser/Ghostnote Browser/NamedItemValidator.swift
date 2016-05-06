@@ -9,6 +9,7 @@
 import Cocoa
 import RealmSwift
 
-protocol NamedItemValidator {
-    func nameExists(name:String) -> Bool
+@objc protocol NamedItemValidator {
+    optional func nameExists(name:String) -> Bool
+    optional func nameExists(name:String, taskList:TaskList) -> Bool
 }

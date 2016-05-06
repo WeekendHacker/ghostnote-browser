@@ -31,6 +31,7 @@
 		D8265A611CDB15F00054AF57 /* TasksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8265A601CDB15F00054AF57 /* TasksController.swift */; };
 		D8265A631CDB18760054AF57 /* TaskListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8265A621CDB18760054AF57 /* TaskListCell.swift */; };
 		D8265A651CDBE37E0054AF57 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8265A641CDBE37E0054AF57 /* TaskCell.swift */; };
+		D8265A671CDC10210054AF57 /* TaskNameValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8265A661CDC10210054AF57 /* TaskNameValidator.swift */; };
 		D83E5B401CDA737A0044F7A3 /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B3F1CDA737A0044F7A3 /* TaskList.swift */; };
 		D83E5B421CDA74180044F7A3 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B411CDA74180044F7A3 /* Task.swift */; };
 		D83E5B441CDA74BD0044F7A3 /* TaskListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B431CDA74BD0044F7A3 /* TaskListManager.swift */; };
@@ -117,6 +118,7 @@
 		D8265A601CDB15F00054AF57 /* TasksController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksController.swift; sourceTree = "<group>"; };
 		D8265A621CDB18760054AF57 /* TaskListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskListCell.swift; path = Views/TaskListCell.swift; sourceTree = "<group>"; };
 		D8265A641CDBE37E0054AF57 /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		D8265A661CDC10210054AF57 /* TaskNameValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskNameValidator.swift; sourceTree = "<group>"; };
 		D83E5B3F1CDA737A0044F7A3 /* TaskList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskList.swift; path = Models/TaskList.swift; sourceTree = "<group>"; };
 		D83E5B411CDA74180044F7A3 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		D83E5B431CDA74BD0044F7A3 /* TaskListManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskListManager.swift; path = Models/TaskListManager.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				D80001AD1CD7F98A00255E54 /* NoteNameValidator.swift */,
 				D83E5B461CDA76400044F7A3 /* TaskListNameValidator.swift */,
 				D83E5B4C1CDA7A430044F7A3 /* NamedItemValidator.swift */,
+				D8265A661CDC10210054AF57 /* TaskNameValidator.swift */,
 			);
 			name = Validators;
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 				D80001B41CD88BDC00255E54 /* NoteTextViewController.swift in Sources */,
 				D81281AA1CCEB60B001749E9 /* NoteManager.swift in Sources */,
 				D84F16D11CC550C3005612BB /* GhostnotesOutlineController.swift in Sources */,
+				D8265A671CDC10210054AF57 /* TaskNameValidator.swift in Sources */,
 				D84F16BD1CC4A222005612BB /* GNNote.swift in Sources */,
 				D84F16E61CC71215005612BB /* NotesViewController.swift in Sources */,
 				D84F16D61CC553DC005612BB /* Document.swift in Sources */,

@@ -15,7 +15,7 @@ class TaskListNameValidator: NSObject, NamedItemValidator {
     func nameExists(name:String) -> Bool {
         var exists = false
         // unique name check
-        let predicate = NSPredicate(format: "listName == %@", argumentArray: [name])
+        let predicate = NSPredicate(format: "title == %@", argumentArray: [name])
         if (TaskListManager.shared.taskLists.filter(predicate).count > 0) {
             exists = true
         }

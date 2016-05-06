@@ -8,8 +8,12 @@
 
 import Cocoa
 
-class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate {
+class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, NewNamedItemViewControllerClient {
 
+    var newTaskController: NewNamedItemViewController?
+    var clientViewController: NSViewController?
+    
+    
     weak var selectedTaskList:TaskList? {
         didSet {
             if selectedTaskList != nil {
@@ -69,9 +73,40 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate {
     
     func addTaskButtonClicked(sender:AnyObject?) {
         print("add task clicked")
+        
+        newTaskController = NewNamedItemViewController(nibName: nil, bundle: nil)
+        newTaskController?.client = self
+        newTaskController?.validator = TaskNameValidator.shared
+        TaskNameValidator.shared.taskList = selectedTaskList
+        newTaskController?.nameTextField?.placeholderString = "New Task List Name"
+        
+        clientViewController?.presentViewController(newTaskController!, asPopoverRelativeToRect: newTaskController!.view.frame, ofView: addTaskButton!, preferredEdge: NSRectEdge.MaxX, behavior: NSPopoverBehavior.Transient)
+        
     }
     
     func deleteTaskButtonClicked(sender:AnyObject?) {
         print("delete task clicked")
+    }
+    
+    // NewNamedItemViewControllerClient
+    
+    func choseName(name: String) {
+       
+        if let selected = selectedTaskList {
+            selected.addTask(name)
+            tasksTableView?.reloadData()
+            dismissNewNamedItemController()
+        }
+    }
+    
+    func canceled() {
+       dismissNewNamedItemController()
+    }
+    
+    func dismissNewNamedItemController() {
+        if let vc = newTaskController {
+            clientViewController?.dismissViewController(vc)
+            newTaskController = nil
+        }
     }
 }

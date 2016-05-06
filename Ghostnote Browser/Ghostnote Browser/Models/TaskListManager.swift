@@ -26,7 +26,7 @@ class TaskListManager: NSObject {
         
         do {
             try db.write({
-                newList.listName = name
+                newList.title = name
                 newList.creationDate = NSDate()
                 db.add(newList)
             })

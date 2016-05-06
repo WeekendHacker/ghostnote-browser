@@ -35,7 +35,7 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource, 
         didSet {
             if let button = deleteTaskListButton {
                 button.target = self
-                button.action = #selector(TaskListController.deleteTaskClicked(_:))
+                button.action = #selector(TaskListController.deleteTaskListClicked(_:))
             }
         }
     }
@@ -73,17 +73,17 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource, 
         newTaskListController?.validator = TaskListNameValidator.shared
         newTaskListController?.nameTextField?.placeholderString = "New Task List Name"
         
-        clientViewController?.presentViewController(newTaskListController!, asPopoverRelativeToRect: addTaskListButton!.frame, ofView: addTaskListButton!, preferredEdge: NSRectEdge.MaxX, behavior: NSPopoverBehavior.Transient)
+        clientViewController?.presentViewController(newTaskListController!, asPopoverRelativeToRect: newTaskListController!.view.frame, ofView: addTaskListButton!, preferredEdge: NSRectEdge.MaxX, behavior: NSPopoverBehavior.Transient)
     }
     
-    @IBAction func deleteTaskClicked(sender:AnyObject?)  {
+    @IBAction func deleteTaskListClicked(sender:AnyObject?)  {
         
         if let row = taskListTableView?.selectedRowIndexes.firstIndex {
             let view = taskListTableView?.viewAtColumn(0, row: row, makeIfNecessary: false) as? TaskListCell
             
             if let selectedTaskList = view?.taskList {
                 print("selected \(selectedTaskList) to delete.")
-                TaskListManager.shared.deleteTaskList(selectedTaskList.listName)
+                TaskListManager.shared.deleteTaskList(selectedTaskList.title)
                 taskListTableView?.reloadData()
                 deleteTaskListButton?.enabled = false
             }

@@ -26,6 +26,7 @@ class NewNamedItemViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("loaded")
         createButton?.enabled = false
         nameTextField?.target = self
         nameTextField?.action = #selector(NewNamedItemViewController.validateAndSubmit)
@@ -33,6 +34,10 @@ class NewNamedItemViewController: NSViewController {
     }
     
 
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        print("Fuck")   
+    }
     // Validation UI logic
     
     func validateName() {
@@ -46,7 +51,7 @@ class NewNamedItemViewController: NSViewController {
             }else {
                 
                 if let v = validator {
-                    if v.nameExists(name) {
+                    if v.nameExists!(name) {
                         errorTextField?.hidden = false
                         errorTextField?.stringValue = "Must be unique!"
                         createButton?.enabled = false

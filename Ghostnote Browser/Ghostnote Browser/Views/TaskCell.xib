@@ -16,8 +16,8 @@
             <rect key="frame" x="0.0" y="0.0" width="250" height="40"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <button misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oJg-uP-G2E">
-                    <rect key="frame" x="17" y="8" width="215" height="24"/>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="oJg-uP-G2E">
+                    <rect key="frame" x="17" y="11" width="61" height="18"/>
                     <buttonCell key="cell" type="check" title="Check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="J9H-RH-rAx">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>

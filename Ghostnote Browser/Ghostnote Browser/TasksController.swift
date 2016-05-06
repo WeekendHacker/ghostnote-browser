@@ -85,7 +85,18 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, New
     }
     
     func deleteTaskButtonClicked(sender:AnyObject?) {
-        print("delete task clicked")
+        if let row = tasksTableView?.selectedRowIndexes.firstIndex {
+            let view = tasksTableView?.viewAtColumn(0, row: row, makeIfNecessary: false) as? TaskCell
+            
+            if let selectedTask = view?.task {
+                
+                if let taskList = selectedTaskList {
+                    taskList.removeTask(selectedTask)
+                }
+                tasksTableView?.reloadData()
+                deleteTaskButton?.enabled = false
+            }
+        }
     }
     
     // NewNamedItemViewControllerClient

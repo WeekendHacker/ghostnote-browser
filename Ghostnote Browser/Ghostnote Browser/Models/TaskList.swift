@@ -35,4 +35,19 @@ class TaskList: Object {
             print(error)
         }
     }
+    
+    func removeTask(task:Task) {
+        let db = try! Realm()
+        
+        
+        do {
+            try db.write({
+                db.delete(task)
+            })
+        }
+        catch {
+            print(error)
+        }
+
+    }
 }

@@ -16,9 +16,9 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, New
     
     weak var selectedTaskList:TaskList? {
         didSet {
-            if selectedTaskList != nil {
+//            if selectedTaskList != nil {
                 tasksTableView?.reloadData()
-            }
+//            }
         }
     }
     
@@ -45,6 +45,7 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, New
             if let button = deleteTaskButton {
                 button.target = self
                 button.action = #selector(TasksController.deleteTaskButtonClicked(_:))
+                button.enabled = false
             }
         }
     }
@@ -118,6 +119,18 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, New
         if let vc = newTaskController {
             clientViewController?.dismissViewController(vc)
             newTaskController = nil
+        }
+    }
+    
+    // 
+    
+    func tableViewSelectionDidChange(notification: NSNotification) {
+        if let tv = notification.object as? NSTableView {
+            if tv.hasSelection() {
+                deleteTaskButton?.enabled = true
+            }else {
+                deleteTaskButton?.enabled = false
+            }
         }
     }
 }

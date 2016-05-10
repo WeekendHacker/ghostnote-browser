@@ -38,7 +38,7 @@ class TaskListManager: NSObject {
     
     func deleteTaskList(name:String) {
         
-        let namePredicate = NSPredicate(format: "listName == %@", argumentArray: [name])
+        let namePredicate = NSPredicate(format: "title == %@", argumentArray: [name])
         if let listToDelete = db.objects(TaskList).filter(namePredicate).first {
             
             do {

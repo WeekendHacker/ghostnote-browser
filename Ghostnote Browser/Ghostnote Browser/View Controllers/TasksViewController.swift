@@ -72,12 +72,11 @@ class TasksViewController: NSViewController, ButtonNavigable {
         taskListController.clientViewController = self
         taskController.clientViewController = self
         sizeForContainer()
+        deleteTaskButton?.enabled = false
     }
     
     override func presentViewController(viewController: NSViewController, asPopoverRelativeToRect positioningRect: NSRect, ofView positioningView: NSView, preferredEdge: NSRectEdge, behavior: NSPopoverBehavior) {
-        print("SHIT")
         super.presentViewController(viewController, asPopoverRelativeToRect: positioningRect, ofView: positioningView, preferredEdge: preferredEdge, behavior: behavior)
-        print("fuck this")
     }
     
     // Notification Handlers
@@ -95,7 +94,22 @@ class TasksViewController: NSViewController, ButtonNavigable {
                 }
             }
         }else {
+            taskController.selectedTaskList = nil
+
             deleteTaskListButton?.enabled = false
         }
     }
+    
+    func taskSelected(notif:NSNotification) {
+        
+        if let tv = tasksTableView {
+            if tv.hasSelection() {
+                deleteTaskButton?.enabled = true
+            }else {
+                deleteTaskButton?.enabled = false
+            }
+
+        }
+    }
+        
 }

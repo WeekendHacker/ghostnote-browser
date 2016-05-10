@@ -22,10 +22,6 @@
 		D81281961CCDCE6C001749E9 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81281951CCDCE6C001749E9 /* NoteCell.swift */; };
 		D81281991CCDCFD8001749E9 /* NotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81281981CCDCFD8001749E9 /* NotesTableViewController.swift */; };
 		D812819B1CCDDE93001749E9 /* GNTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D812819A1CCDDE93001749E9 /* GNTheme.swift */; };
-		D81281A11CCEB36F001749E9 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D812819F1CCEB36F001749E9 /* RealmSwift.framework */; };
-		D81281A21CCEB37E001749E9 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D812819E1CCEB36F001749E9 /* Realm.framework */; };
-		D81281A31CCEB37E001749E9 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D812819E1CCEB36F001749E9 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D81281A51CCEB37E001749E9 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D812819F1CCEB36F001749E9 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D81281A81CCEB3B2001749E9 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81281A71CCEB3B2001749E9 /* Note.swift */; };
 		D81281AA1CCEB60B001749E9 /* NoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81281A91CCEB60B001749E9 /* NoteManager.swift */; };
 		D8265A611CDB15F00054AF57 /* TasksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8265A601CDB15F00054AF57 /* TasksController.swift */; };
@@ -52,14 +48,21 @@
 		D84F16E61CC71215005612BB /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16E41CC71215005612BB /* NotesViewController.swift */; };
 		D84F16EB1CC7123E005612BB /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16E91CC7123E005612BB /* TasksViewController.swift */; };
 		D84F16F01CC71260005612BB /* GhostnotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16EE1CC71260005612BB /* GhostnotesViewController.swift */; };
+		D884C1A21CE27600003E15D2 /* MagicalRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D884C19F1CE27600003E15D2 /* MagicalRecord.framework */; };
+		D884C1A31CE27600003E15D2 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D884C1A01CE27600003E15D2 /* Realm.framework */; };
+		D884C1A41CE27600003E15D2 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D884C1A11CE27600003E15D2 /* RealmSwift.framework */; };
+		D884C1A51CE2760A003E15D2 /* MagicalRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D884C19F1CE27600003E15D2 /* MagicalRecord.framework */; };
+		D884C1A61CE2760A003E15D2 /* MagicalRecord.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D884C19F1CE27600003E15D2 /* MagicalRecord.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D884C1A71CE2760A003E15D2 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D884C1A01CE27600003E15D2 /* Realm.framework */; };
+		D884C1A81CE2760A003E15D2 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D884C1A01CE27600003E15D2 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D884C1A91CE2760A003E15D2 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D884C1A11CE27600003E15D2 /* RealmSwift.framework */; };
+		D884C1AA1CE2760A003E15D2 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D884C1A11CE27600003E15D2 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D8D10EC61CC48A9F00A434F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D10EC51CC48A9F00A434F6 /* AppDelegate.swift */; };
 		D8D10ECB1CC48A9F00A434F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8D10ECA1CC48A9F00A434F6 /* Assets.xcassets */; };
 		D8D10ECE1CC48A9F00A434F6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8D10ECC1CC48A9F00A434F6 /* MainMenu.xib */; };
 		D8D10ED91CC48A9F00A434F6 /* Ghostnote_BrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D10ED81CC48A9F00A434F6 /* Ghostnote_BrowserTests.swift */; };
 		D8D10EE41CC48A9F00A434F6 /* Ghostnote_BrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D10EE31CC48A9F00A434F6 /* Ghostnote_BrowserUITests.swift */; };
 		D8E380EC1CDC21000028D161 /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E380EB1CDC21000028D161 /* TaskCell.xib */; };
-		D8E659131CC49A40002CEA9B /* MagicalRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E659111CC499A8002CEA9B /* MagicalRecord.framework */; };
-		D8E659141CC49A40002CEA9B /* MagicalRecord.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8E659111CC499A8002CEA9B /* MagicalRecord.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,9 +89,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D81281A31CCEB37E001749E9 /* Realm.framework in Embed Frameworks */,
-				D8E659141CC49A40002CEA9B /* MagicalRecord.framework in Embed Frameworks */,
-				D81281A51CCEB37E001749E9 /* RealmSwift.framework in Embed Frameworks */,
+				D884C1A81CE2760A003E15D2 /* Realm.framework in Embed Frameworks */,
+				D884C1A61CE2760A003E15D2 /* MagicalRecord.framework in Embed Frameworks */,
+				D884C1AA1CE2760A003E15D2 /* RealmSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,7 +99,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D80001A51CD7EC8000255E54 /* FileKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FileKit.framework; path = Carthage/Build/Mac/FileKit.framework; sourceTree = "<group>"; };
 		D80001AD1CD7F98A00255E54 /* NoteNameValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteNameValidator.swift; path = Models/NoteNameValidator.swift; sourceTree = "<group>"; };
 		D80001AF1CD801EB00255E54 /* NewNamedItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewNamedItemViewController.swift; path = "View Controllers/NewNamedItemViewController.swift"; sourceTree = "<group>"; };
 		D80001B01CD801EB00255E54 /* NewNamedItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewNamedItemViewController.xib; path = "View Controllers/NewNamedItemViewController.xib"; sourceTree = "<group>"; };
@@ -112,8 +114,6 @@
 		D81281951CCDCE6C001749E9 /* NoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteCell.swift; path = Views/NoteCell.swift; sourceTree = "<group>"; };
 		D81281981CCDCFD8001749E9 /* NotesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesTableViewController.swift; sourceTree = "<group>"; };
 		D812819A1CCDDE93001749E9 /* GNTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GNTheme.swift; path = Models/GNTheme.swift; sourceTree = "<group>"; };
-		D812819E1CCEB36F001749E9 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/Mac/Realm.framework; sourceTree = "<group>"; };
-		D812819F1CCEB36F001749E9 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/Mac/RealmSwift.framework; sourceTree = "<group>"; };
 		D81281A71CCEB3B2001749E9 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		D81281A91CCEB60B001749E9 /* NoteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteManager.swift; sourceTree = "<group>"; };
 		D8265A601CDB15F00054AF57 /* TasksController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksController.swift; sourceTree = "<group>"; };
@@ -141,6 +141,9 @@
 		D84F16E41CC71215005612BB /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotesViewController.swift; path = "View Controllers/NotesViewController.swift"; sourceTree = "<group>"; };
 		D84F16E91CC7123E005612BB /* TasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TasksViewController.swift; path = "View Controllers/TasksViewController.swift"; sourceTree = "<group>"; };
 		D84F16EE1CC71260005612BB /* GhostnotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GhostnotesViewController.swift; path = "View Controllers/GhostnotesViewController.swift"; sourceTree = "<group>"; };
+		D884C19F1CE27600003E15D2 /* MagicalRecord.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MagicalRecord.framework; path = Carthage/Build/Mac/MagicalRecord.framework; sourceTree = "<group>"; };
+		D884C1A01CE27600003E15D2 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/Mac/Realm.framework; sourceTree = "<group>"; };
+		D884C1A11CE27600003E15D2 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/Mac/RealmSwift.framework; sourceTree = "<group>"; };
 		D8D10EC21CC48A9F00A434F6 /* Ghostnote Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ghostnote Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8D10EC51CC48A9F00A434F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8D10ECA1CC48A9F00A434F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -153,7 +156,6 @@
 		D8D10EE31CC48A9F00A434F6 /* Ghostnote_BrowserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ghostnote_BrowserUITests.swift; sourceTree = "<group>"; };
 		D8D10EE51CC48A9F00A434F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8E380EB1CDC21000028D161 /* TaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TaskCell.xib; path = Views/TaskCell.xib; sourceTree = "<group>"; };
-		D8E659111CC499A8002CEA9B /* MagicalRecord.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MagicalRecord.framework; path = Carthage/Build/Mac/MagicalRecord.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,9 +163,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D81281A21CCEB37E001749E9 /* Realm.framework in Frameworks */,
-				D8E659131CC49A40002CEA9B /* MagicalRecord.framework in Frameworks */,
-				D81281A11CCEB36F001749E9 /* RealmSwift.framework in Frameworks */,
+				D884C1A51CE2760A003E15D2 /* MagicalRecord.framework in Frameworks */,
+				D884C1A31CE27600003E15D2 /* Realm.framework in Frameworks */,
+				D884C1A91CE2760A003E15D2 /* RealmSwift.framework in Frameworks */,
+				D884C1A21CE27600003E15D2 /* MagicalRecord.framework in Frameworks */,
+				D884C1A41CE27600003E15D2 /* RealmSwift.framework in Frameworks */,
+				D884C1A71CE2760A003E15D2 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,10 +337,9 @@
 		D8D10EB91CC48A9F00A434F6 = {
 			isa = PBXGroup;
 			children = (
-				D80001A51CD7EC8000255E54 /* FileKit.framework */,
-				D812819E1CCEB36F001749E9 /* Realm.framework */,
-				D812819F1CCEB36F001749E9 /* RealmSwift.framework */,
-				D8E659111CC499A8002CEA9B /* MagicalRecord.framework */,
+				D884C19F1CE27600003E15D2 /* MagicalRecord.framework */,
+				D884C1A01CE27600003E15D2 /* Realm.framework */,
+				D884C1A11CE27600003E15D2 /* RealmSwift.framework */,
 				D8D10EC41CC48A9F00A434F6 /* Ghostnote Browser */,
 				D8D10ED71CC48A9F00A434F6 /* Ghostnote BrowserTests */,
 				D8D10EE21CC48A9F00A434F6 /* Ghostnote BrowserUITests */,

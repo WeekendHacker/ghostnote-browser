@@ -42,9 +42,14 @@ class TaskListManager: NSObject {
         if let listToDelete = db.objects(TaskList).filter(namePredicate).first {
             
             do {
-                try db.write({ 
+                try db.write({
+                    listToDelete.tasks.forEach({ (task) in
+                        db.delete(task)
+                    })
                     db.delete(listToDelete)
                 })
+                NSNotificationCenter.defaultCenter().postNotificationName("DeletedTaskList", object: listToDelete)
+
             }
             catch {
                 print(error)

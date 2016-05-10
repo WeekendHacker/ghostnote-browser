@@ -14,11 +14,21 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, New
     var clientViewController: NSViewController?
     
     
+    override init() {
+         super.init()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TasksController.handleTaskListDeleted(_:)), name: "DeletedTaskList", object: nil)
+        
+    }
+    
     weak var selectedTaskList:TaskList? {
         didSet {
-//            if selectedTaskList != nil {
-                tasksTableView?.reloadData()
-//            }
+            tasksTableView?.reloadData()
+            if selectedTaskList == nil {
+                addTaskButton?.enabled = false
+                deleteTaskButton?.enabled = false
+            }else {
+                addTaskButton?.enabled = true
+            }
         }
     }
     
@@ -36,6 +46,7 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, New
             if let button = addTaskButton {
                 button.target = self
                 button.action = #selector(TasksController.addTaskButtonClicked(_:))
+                button.enabled = false
             }
         }
     }
@@ -73,6 +84,7 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, New
     // Actions
     
     func addTaskButtonClicked(sender:AnyObject?) {
+
         print("add task clicked")
         
         newTaskController = NewNamedItemViewController(nibName: nil, bundle: nil)
@@ -132,5 +144,15 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, New
                 deleteTaskButton?.enabled = false
             }
         }
+    }
+    
+    
+    // notification handlers
+    
+    func handleTaskListDeleted(notif:NSNotification) {
+        
+            selectedTaskList = nil
+            tasksTableView?.reloadData()
+        
     }
 }

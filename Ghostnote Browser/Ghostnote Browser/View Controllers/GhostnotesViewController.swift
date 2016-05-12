@@ -18,6 +18,7 @@ class GhostnotesViewController: NSViewController, ButtonNavigable, GhostnotesOut
             if let ov = notesOutlineView {
                 notesOutlineController.notesOutlineView = ov
                 notesOutlineController.observer = self
+                ov.wantsLayer = true
             }
         }
     }

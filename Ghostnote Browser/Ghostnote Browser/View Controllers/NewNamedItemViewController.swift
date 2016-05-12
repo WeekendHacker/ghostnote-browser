@@ -32,12 +32,7 @@ class NewNamedItemViewController: NSViewController {
         nameTextField?.action = #selector(NewNamedItemViewController.validateAndSubmit)
         errorTextField?.hidden = true
     }
-    
 
-    override func viewWillAppear() {
-        super.viewWillAppear()
-        print("Fuck")   
-    }
     // Validation UI logic
     
     func validateName() {

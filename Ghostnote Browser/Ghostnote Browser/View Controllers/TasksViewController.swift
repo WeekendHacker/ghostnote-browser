@@ -17,7 +17,7 @@ class TasksViewController: NSViewController, ButtonNavigable {
         didSet {
             if let tv = taskListTableView {
                 taskListController.taskListTableView = tv
-            }
+           }
         }
     }
     

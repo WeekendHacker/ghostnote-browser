@@ -29,6 +29,7 @@ class NoteTextViewController: NSObject, NSTextViewDelegate {
     
     var noteTextView:NSTextView? { didSet {
             noteTextView?.delegate = self
+            noteTextView?.wantsLayer = true
         }
     }
     

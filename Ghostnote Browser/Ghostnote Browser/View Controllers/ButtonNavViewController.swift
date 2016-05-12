@@ -49,7 +49,19 @@ class ButtonNavViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        notesButton?.wantsLayer = true
+        tasksButton?.wantsLayer = true
+        ghostnotesButton?.wantsLayer = true
+        
+        notesButton?.layer?.backgroundColor = NSColor.clearColor().CGColor
+        tasksButton?.layer?.backgroundColor = NSColor.clearColor().CGColor
+        ghostnotesButton?.layer?.backgroundColor = NSColor.clearColor().CGColor
+        
+        
         updateNaveButtonState()
+        view.subviews.forEach { (view) in
+            view.wantsLayer  = true
+        }
     }
     
     @IBAction func notesButtonClicked(sender:AnyObject?) {

@@ -20,23 +20,40 @@ class NotesViewController: NSViewController, ButtonNavigable, NewNamedItemViewCo
             if let tv = notesTableView {
                 tv.setDelegate(notesTableController)
                 tv.setDataSource(notesTableController)
+                tv.wantsLayer = true
             }
         }
     }
     
-    @IBOutlet weak var addNoteButton:NSButton?
-    @IBOutlet weak var deleteNoteButton:NSButton?
-    @IBOutlet weak var searchField:NSSearchField?
+    @IBOutlet weak var addNoteButton:NSButton? {
+        didSet {
+            addNoteButton?.wantsLayer = true
+        }
+    }
+    @IBOutlet weak var deleteNoteButton:NSButton? {
+        didSet {
+            deleteNoteButton?.wantsLayer = true
+        }
+    }
+    @IBOutlet weak var searchField:NSSearchField? {
+        didSet {
+            searchField?.wantsLayer = true
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.autoresizingMask = [.ViewWidthSizable, .ViewHeightSizable]
+        view.wantsLayer = true
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(selectedNoteChanged), name: "SelectedNoteChanged", object: nil)
         
         deleteNoteButton?.enabled = false
         noteTextViewController.noteTextView = noteTextView
+        noteTextView?.wantsLayer = true
+        
+        
     }
 
     override func viewDidAppear() {

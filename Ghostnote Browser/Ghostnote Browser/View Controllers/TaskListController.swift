@@ -18,6 +18,7 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource, 
             if let tv = taskListTableView {
                 tv.setDelegate(self)
                 tv.setDataSource(self)
+                tv.wantsLayer = true
             }
         }
     }

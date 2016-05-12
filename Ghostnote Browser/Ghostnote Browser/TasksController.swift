@@ -37,6 +37,7 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, New
             if let tv = tasksTableView {
                 tv.setDelegate(self)
                 tv.setDataSource(self)
+                tv.wantsLayer = true
             }
         }
     }

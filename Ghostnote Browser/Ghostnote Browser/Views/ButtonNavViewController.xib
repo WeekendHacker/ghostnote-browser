@@ -17,20 +17,20 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customView id="c22-O7-iKe">
-            <rect key="frame" x="0.0" y="0.0" width="559" height="226"/>
+        <customView id="c22-O7-iKe" customClass="NSVisualEffectView">
+            <rect key="frame" x="0.0" y="0.0" width="559" height="291"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="yLv-HR-lB4">
-                    <rect key="frame" x="0.0" y="0.0" width="75" height="226"/>
+                    <rect key="frame" x="0.0" y="0.0" width="75" height="241"/>
                     <subviews>
                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sty-WD-ANQ">
-                            <rect key="frame" x="0.0" y="150" width="75" height="77"/>
+                            <rect key="frame" x="0.0" y="166" width="75" height="75"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="75" id="LWw-4f-kKB"/>
                                 <constraint firstAttribute="height" constant="75" id="U3W-9E-9a5"/>
                             </constraints>
-                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YcS-K7-2bq">
+                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="YcS-K7-2bq">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
@@ -39,12 +39,12 @@
                             </connections>
                         </button>
                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7b9-bd-oQZ">
-                            <rect key="frame" x="0.0" y="0.0" width="75" height="77"/>
+                            <rect key="frame" x="0.0" y="16" width="75" height="75"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="75" id="7SX-6e-oKq"/>
                                 <constraint firstAttribute="height" constant="75" id="yH9-ai-POo"/>
                             </constraints>
-                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="B20-IR-vE5">
+                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="B20-IR-vE5">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
@@ -53,12 +53,12 @@
                             </connections>
                         </button>
                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ghf-cK-mjZ">
-                            <rect key="frame" x="0.0" y="75" width="75" height="77"/>
+                            <rect key="frame" x="0.0" y="91" width="75" height="75"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="75" id="6hV-zZ-sWe"/>
                                 <constraint firstAttribute="height" constant="75" id="UtA-K8-X5G"/>
                             </constraints>
-                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="F8H-5e-ImW">
+                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="F8H-5e-ImW">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
@@ -78,19 +78,19 @@
                     </constraints>
                 </customView>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="Mzz-Rk-AFp">
-                    <rect key="frame" x="74" y="0.0" width="485" height="226"/>
+                    <rect key="frame" x="74" y="0.0" width="485" height="241"/>
                 </customView>
             </subviews>
             <constraints>
-                <constraint firstItem="Mzz-Rk-AFp" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="4jW-mr-xxo"/>
+                <constraint firstItem="Mzz-Rk-AFp" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="50" id="4jW-mr-xxo"/>
                 <constraint firstItem="Mzz-Rk-AFp" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="74" id="8QP-R9-Tgw"/>
                 <constraint firstItem="yLv-HR-lB4" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="MI6-rd-va4"/>
                 <constraint firstAttribute="bottom" secondItem="yLv-HR-lB4" secondAttribute="bottom" id="POH-NU-W1s"/>
                 <constraint firstItem="Mzz-Rk-AFp" firstAttribute="bottom" secondItem="yLv-HR-lB4" secondAttribute="bottom" id="bGP-mW-KTP"/>
-                <constraint firstItem="yLv-HR-lB4" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="p4f-Rt-jZx"/>
+                <constraint firstItem="yLv-HR-lB4" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="50" id="p4f-Rt-jZx"/>
                 <constraint firstAttribute="trailing" secondItem="Mzz-Rk-AFp" secondAttribute="trailing" id="yvh-iL-Q8h"/>
             </constraints>
-            <point key="canvasLocation" x="371.5" y="150"/>
+            <point key="canvasLocation" x="371.5" y="182.5"/>
         </customView>
     </objects>
 </document>

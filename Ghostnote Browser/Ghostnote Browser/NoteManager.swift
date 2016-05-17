@@ -104,6 +104,17 @@ class NoteManager {
     }
     
     private func removeFileForNoteNamed(name:String) {
+        let path = appSupportDir.first!
         
+        let docsURL = NSURL(fileURLWithPath: path).URLByAppendingPathComponent("com.ghostnoteapp.Ghostnote-Browser").URLByAppendingPathComponent("Notes", isDirectory: true)
+        
+        let fileURL = docsURL.URLByAppendingPathComponent(name).URLByAppendingPathExtension("rtfd")
+        
+        do {
+            try NSFileManager.defaultManager().removeItemAtURL(fileURL)
+        }
+        catch {
+            print(error)
+        }
     }
 }

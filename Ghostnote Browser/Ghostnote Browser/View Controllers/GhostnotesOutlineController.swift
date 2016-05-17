@@ -11,7 +11,7 @@ import Cocoa
 
 
 protocol GhostnotesOutlineControllerObserver {
-    func selectedNote(note:GNNote)
+    func selectedNote(note:GhostNote)
 }
 
 class GhostnotesOutlineController:NSObject, NSOutlineViewDelegate, NSOutlineViewDataSource {
@@ -22,6 +22,7 @@ class GhostnotesOutlineController:NSObject, NSOutlineViewDelegate, NSOutlineView
                 if let outlineView = notesOutlineView {
                     outlineView.setDelegate(self)
                     outlineView.setDataSource(self)
+                    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.handleContextSave), name: NSManagedObjectContextDidSaveNotification, object: nil)
                 }
         }
     }
@@ -29,6 +30,9 @@ class GhostnotesOutlineController:NSObject, NSOutlineViewDelegate, NSOutlineView
     var appsAndDocsOutline = Dictionary<App,Array<Document>>()
     var apps = Array<App>()
     
+    @objc func handleContextSave() {
+        reload()
+    }
     
     func reload() {
         refreshApps()

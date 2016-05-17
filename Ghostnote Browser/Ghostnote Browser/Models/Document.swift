@@ -11,10 +11,10 @@ import Foundation
 class Document {
     
     var path = ""
-    var note:GNNote
+    var note:GhostNote
     
-    init(note:GNNote) {
+    init(note:GhostNote) {
         self.note = note
-        self.path = note.documentPath!
+        self.path = note.docID
     }
 }

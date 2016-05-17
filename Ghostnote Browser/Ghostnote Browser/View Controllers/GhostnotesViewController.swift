@@ -46,16 +46,15 @@ class GhostnotesViewController: NSViewController, ButtonNavigable, GhostnotesOut
     }
     
     // GhostnotesOutlineControllerObserver
-    func selectedNote(note: GNNote) {
-        if let themeName = note.themeName {
-            if let theme = GNTheme.themesByName[themeName] {
+    func selectedNote(note: GhostNote) {
+            if let theme = GNTheme.themesByName[note.themeName] {
                 noteTextView?.backgroundColor = theme.backgroundColor
             }
-        }else {
-            noteTextView?.backgroundColor = NSColor.whiteColor()
-        }
+            else {
+                noteTextView?.backgroundColor = NSColor.whiteColor()
+            }
         
-        noteTextView?.textStorage?.mutableString.setString("")
-        noteTextView?.textStorage?.appendAttributedString(note.content as! NSAttributedString)
+        noteTextView?.readRTFDFromFile(note.filePath)
+
     }
 }

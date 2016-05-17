@@ -12,12 +12,12 @@
 import Foundation
 import CoreData
 
-extension GNNote {
-
-    @NSManaged var appBundleID: String?
-    @NSManaged var appName: String?
-    @NSManaged var content: NSObject?
-    @NSManaged var documentPath: String?
-    @NSManaged var themeName: String?
-
-}
+//extension GNNote {
+//
+//    @NSManaged var appBundleID: String?
+//    @NSManaged var appName: String?
+//    @NSManaged var content: NSObject?
+//    @NSManaged var documentPath: String?
+//    @NSManaged var themeName: String?
+//
+//}

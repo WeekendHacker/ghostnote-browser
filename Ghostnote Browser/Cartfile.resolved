@@ -1,3 +1,2 @@
-github "nvzqz/FileKit" "v2.0.0"
 github "MagicalPanda/MagicalRecord" "v2.3.3"
-github "realm/realm-cocoa" "v0.102.0"
+github "realm/realm-cocoa" "v0.102.1"

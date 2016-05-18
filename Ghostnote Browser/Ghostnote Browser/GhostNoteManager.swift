@@ -64,7 +64,7 @@ class GhostNoteManager: NSObject {
         
         for note in store.objects(GhostNote) {
             if note.appBundleID == bundleID {
-                if note.docID == bundleID {
+                if note.docID == AppNameProvider.displayNameForBundleID(bundleID) {
                     return note
                 }
             }

@@ -63,12 +63,12 @@ class ButtonNavViewController: NSViewController {
             notesButtonClicked(self)
         }else if selectedTab == 1 {
             tasksButtonClicked(self)
-            
         }else if selectedTab == 2 {
             ghostnotesButtonClicked(self)
         }else {
             notesButtonClicked(self)
         }
+        
         updateNaveButtonState()
         view.subviews.forEach { (view) in
             view.wantsLayer  = true

@@ -10,6 +10,9 @@ import Cocoa
 
 class DocCell: NSTableCellView {
 
-    var doc:Document?
+    var doc:Document? { didSet {
+            self.toolTip = doc?.path
+        }
+    }
     
 }

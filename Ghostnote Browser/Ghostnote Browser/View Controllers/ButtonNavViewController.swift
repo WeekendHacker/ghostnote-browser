@@ -57,7 +57,18 @@ class ButtonNavViewController: NSViewController {
         tasksButton?.layer?.backgroundColor = NSColor.clearColor().CGColor
         ghostnotesButton?.layer?.backgroundColor = NSColor.clearColor().CGColor
         
+        let selectedTab = NSUserDefaults.standardUserDefaults().integerForKey("selectedTab")
         
+        if selectedTab == 0 {
+            notesButtonClicked(self)
+        }else if selectedTab == 1 {
+            tasksButtonClicked(self)
+            
+        }else if selectedTab == 2 {
+            ghostnotesButtonClicked(self)
+        }else {
+            notesButtonClicked(self)
+        }
         updateNaveButtonState()
         view.subviews.forEach { (view) in
             view.wantsLayer  = true
@@ -74,6 +85,7 @@ class ButtonNavViewController: NSViewController {
         }
         
         updateNaveButtonState()
+        NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "selectedTab")
     }
     
     @IBAction func tasksButtonClicked(sender:AnyObject?) {
@@ -86,6 +98,7 @@ class ButtonNavViewController: NSViewController {
         }
         
         updateNaveButtonState()
+        NSUserDefaults.standardUserDefaults().setInteger(1, forKey: "selectedTab")
 
     }
     
@@ -99,6 +112,7 @@ class ButtonNavViewController: NSViewController {
         }
         
         updateNaveButtonState()
+        NSUserDefaults.standardUserDefaults().setInteger(2, forKey: "selectedTab")
 
     }
 

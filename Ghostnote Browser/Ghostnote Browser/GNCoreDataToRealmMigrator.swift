@@ -22,8 +22,8 @@ class GNCoreDataToRealmMigrator: NSObject {
     
     func migrate(noteManager:NoteManager) {
         
-        let coreDataNotes =  GNNote.MR_findAll() ?? []
-            
+//        let coreDataNotes =  GNNote.MR_findAll() ?? []
+        
 //        for case let note as GNNote in coreDataNotes {
 //
 //            if let bundleID = note.appBundleID, docPath = note.documentPath, content = note.content where !content.string.isEmpty {

@@ -12,13 +12,14 @@ class AppNameProvider: NSObject {
 
     static func displayNameForBundleID(bundleID:String) -> String {
         
-        let appPath = NSWorkspace().absolutePathForAppBundleWithIdentifier(bundleID)
         var name = bundleID.componentsSeparatedByString(".").last!
 
-        if let bundle = NSBundle(path: appPath!) {
-            
-            if let betterName = bundle.infoDictionary!["CFBundleName"] {
-                name = betterName as! String
+        if let appPath = NSWorkspace().absolutePathForAppBundleWithIdentifier(bundleID) {
+            if let bundle = NSBundle(path: appPath) {
+                
+                if let betterName = bundle.infoDictionary!["CFBundleName"] {
+                    name = betterName as! String
+                }
             }
         }
 

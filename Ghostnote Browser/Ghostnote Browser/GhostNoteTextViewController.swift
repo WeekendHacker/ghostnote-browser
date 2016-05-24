@@ -17,13 +17,7 @@ class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
     }
     
     var currentNote:GhostNote? {
-        
-        willSet {
-            if let note = currentNote {
-                noteTextView!.writeRTFDToFile(note.filePath, atomically: true)
-            }
-        }
-        
+
         didSet {
             
             if let note = currentNote {

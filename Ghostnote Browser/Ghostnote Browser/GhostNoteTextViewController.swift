@@ -8,9 +8,13 @@
 
 import Cocoa
 
-class GhostNoteTextViewController: NSObject {
+class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
 
-    @IBOutlet var noteTextView:NSTextView?
+    @IBOutlet var noteTextView:NSTextView? {
+        didSet {
+            noteTextView?.delegate = self
+        }
+    }
     
     var currentNote:GhostNote? {
         
@@ -26,6 +30,12 @@ class GhostNoteTextViewController: NSObject {
                 noteTextView?.readRTFDFromFile(note.filePath)
             }
             
+        }
+    }
+    
+    func textDidChange(notification: NSNotification) {
+        if let note = currentNote {
+            noteTextView!.writeRTFDToFile(note.filePath, atomically: true)
         }
     }
 }

@@ -11,8 +11,15 @@ import Cocoa
 class GhostnotesViewController: NSViewController, ButtonNavigable, GhostnotesOutlineControllerObserver {
 
     var notesOutlineController = GhostnotesOutlineController()
+    var noteTextViewController = GhostNoteTextViewController()
     
-    @IBOutlet var noteTextView:NSTextView?
+    @IBOutlet var noteTextView:NSTextView? {
+        didSet {
+            if let tv = noteTextView {
+                noteTextViewController.noteTextView = tv
+            }
+        }
+    }
     
     @IBOutlet var notesOutlineView:NSOutlineView? { didSet {
             if let ov = notesOutlineView {
@@ -47,14 +54,14 @@ class GhostnotesViewController: NSViewController, ButtonNavigable, GhostnotesOut
     
     // GhostnotesOutlineControllerObserver
     func selectedNote(note: GhostNote) {
-            if let theme = GNTheme.themesByName[note.themeName] {
-                noteTextView?.backgroundColor = theme.backgroundColor
-            }
-            else {
-                noteTextView?.backgroundColor = NSColor.whiteColor()
-            }
+        if let theme = GNTheme.themesByName[note.themeName] {
+            noteTextView?.backgroundColor = theme.backgroundColor
+        }
+        else {
+            noteTextView?.backgroundColor = NSColor.whiteColor()
+        }
         
-        noteTextView?.readRTFDFromFile(note.filePath)
-
+        noteTextViewController.currentNote = note
+        
     }
 }

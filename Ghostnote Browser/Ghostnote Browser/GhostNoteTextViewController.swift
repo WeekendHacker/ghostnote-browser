@@ -13,6 +13,7 @@ class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
     @IBOutlet var noteTextView:NSTextView? {
         didSet {
             noteTextView?.delegate = self
+            NSDistributedNotificationCenter.defaultCenter().addObserver(self, selector: #selector(reloadCurrentNote), name: "GhostnoteChangedNote", object: nil)
         }
     }
     
@@ -20,9 +21,18 @@ class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
 
         didSet {
             
-            if let note = currentNote {
-                noteTextView?.readRTFDFromFile(note.filePath)
-            }
+            reloadCurrentNote()
+            
+        }
+    }
+    
+    func reloadCurrentNote() {
+        
+        if let note = currentNote {
+            
+            noteTextView?.backgroundColor = NSColor.whiteColor()
+            noteTextView?.textColor = NSColor.blackColor()
+            noteTextView?.readRTFDFromFile(note.filePath)
             
         }
     }
@@ -30,6 +40,12 @@ class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
     func textDidChange(notification: NSNotification) {
         if let note = currentNote {
             noteTextView!.writeRTFDToFile(note.filePath, atomically: true)
+            NSDistributedNotificationCenter.defaultCenter().postNotificationName("GhostnoteBrowserChangedNote",
+                                                                                 object: nil,
+                                                                                 userInfo: nil,
+                                                                                 deliverImmediately: true)
+            
+//            NSDistributedNotificationCenter.defaultCenter().postNotificationName("GhostnoteBrowserChangedNote", object: nil)
         }
     }
 }

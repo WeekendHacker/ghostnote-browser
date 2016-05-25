@@ -54,13 +54,7 @@ class GhostnotesViewController: NSViewController, ButtonNavigable, GhostnotesOut
     
     // GhostnotesOutlineControllerObserver
     func selectedNote(note: GhostNote) {
-        if let theme = GNTheme.themesByName[note.themeName] {
-            noteTextView?.backgroundColor = theme.backgroundColor
-        }
-        else {
-            noteTextView?.backgroundColor = NSColor.whiteColor()
-        }
-        
+
         noteTextViewController.currentNote = note
         
     }

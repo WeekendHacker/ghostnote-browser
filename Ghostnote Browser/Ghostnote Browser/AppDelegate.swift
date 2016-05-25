@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import MagicalRecord
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {

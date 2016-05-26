@@ -51,7 +51,6 @@
 		D8CC00AD1CE6793300D13331 /* GhostNoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC00AC1CE6793300D13331 /* GhostNoteManager.swift */; };
 		D8CC00AF1CE6798600D13331 /* GhostNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC00AE1CE6798600D13331 /* GhostNote.swift */; };
 		D8CC00B11CE67B6D00D13331 /* GhostNoteTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC00B01CE67B6D00D13331 /* GhostNoteTextViewController.swift */; };
-		D8CC00B31CEA387300D13331 /* GNCoreDataToRealmMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC00B21CEA387300D13331 /* GNCoreDataToRealmMigrator.swift */; };
 		D8D10EC61CC48A9F00A434F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D10EC51CC48A9F00A434F6 /* AppDelegate.swift */; };
 		D8D10ECB1CC48A9F00A434F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8D10ECA1CC48A9F00A434F6 /* Assets.xcassets */; };
 		D8D10ECE1CC48A9F00A434F6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8D10ECC1CC48A9F00A434F6 /* MainMenu.xib */; };
@@ -136,7 +135,6 @@
 		D8CC00AC1CE6793300D13331 /* GhostNoteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GhostNoteManager.swift; sourceTree = "<group>"; };
 		D8CC00AE1CE6798600D13331 /* GhostNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GhostNote.swift; sourceTree = "<group>"; };
 		D8CC00B01CE67B6D00D13331 /* GhostNoteTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GhostNoteTextViewController.swift; sourceTree = "<group>"; };
-		D8CC00B21CEA387300D13331 /* GNCoreDataToRealmMigrator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GNCoreDataToRealmMigrator.swift; sourceTree = "<group>"; };
 		D8D10EC21CC48A9F00A434F6 /* Ghostnote Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ghostnote Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8D10EC51CC48A9F00A434F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8D10ECA1CC48A9F00A434F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -308,7 +306,6 @@
 		D84F16F21CC7126A005612BB /* Ghostnotes */ = {
 			isa = PBXGroup;
 			children = (
-				D8CC00B21CEA387300D13331 /* GNCoreDataToRealmMigrator.swift */,
 				D84F16D01CC550C3005612BB /* GhostnotesOutlineController.swift */,
 				D84F16EE1CC71260005612BB /* GhostnotesViewController.swift */,
 				D81281931CCDB9DC001749E9 /* GhostnotesViewController.xib */,
@@ -516,7 +513,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D83E5B421CDA74180044F7A3 /* Task.swift in Sources */,
-				D8CC00B31CEA387300D13331 /* GNCoreDataToRealmMigrator.swift in Sources */,
 				D83E5B401CDA737A0044F7A3 /* TaskList.swift in Sources */,
 				D84F16C71CC54ED6005612BB /* DocumentIconProvider.swift in Sources */,
 				D83E5B4D1CDA7A430044F7A3 /* NamedItemValidator.swift in Sources */,

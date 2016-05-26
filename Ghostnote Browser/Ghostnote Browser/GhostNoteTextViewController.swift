@@ -32,7 +32,11 @@ class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
             
             noteTextView?.backgroundColor = NSColor.whiteColor()
             noteTextView?.textColor = NSColor.blackColor()
-            noteTextView?.readRTFDFromFile(note.filePath)
+             let read = noteTextView?.readRTFDFromFile(note.filePath)
+            if !read! {
+                
+                noteTextView?.textStorage?.setAttributedString(NSAttributedString())
+            }
             
         }
     }
@@ -45,7 +49,7 @@ class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
                                                                                  userInfo: nil,
                                                                                  deliverImmediately: true)
             
-//            NSDistributedNotificationCenter.defaultCenter().postNotificationName("GhostnoteBrowserChangedNote", object: nil)
+
         }
     }
 }

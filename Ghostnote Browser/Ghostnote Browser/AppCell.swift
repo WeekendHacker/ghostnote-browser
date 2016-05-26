@@ -8,8 +8,17 @@
 
 import Cocoa
 
-class AppView: NSTableCellView {
+class AppCell: NSTableCellView {
 
-    var app:App?
+    var app:App? {
+        didSet {
+            if let myApp = app {
+                textField?.lineBreakMode = .ByTruncatingMiddle
+                textField?.stringValue = AppNameProvider.displayNameForBundleID(myApp.bundleID)
+                toolTip = myApp.bundleID
+                imageView?.image = AppIconProvider.iconImagefor(myApp.bundleID)
+            }
+        }
+    }
     
 }

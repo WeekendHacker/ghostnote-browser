@@ -107,7 +107,7 @@
                                         </textFieldCell>
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
-                                            <tableCellView identifier="DataCell" id="RKA-f5-RxW">
+                                            <tableCellView identifier="AppCell" id="RKA-f5-RxW" customClass="AppCell" customModule="Ghostnote_Browser" customModuleProvider="target">
                                                 <rect key="frame" x="1" y="1" width="235" height="17"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
@@ -138,6 +138,39 @@
                                                 <connections>
                                                     <outlet property="imageView" destination="YpN-Fl-Wrd" id="sYR-lB-iql"/>
                                                     <outlet property="textField" destination="2fh-Sg-y6X" id="cAU-9h-6o3"/>
+                                                </connections>
+                                            </tableCellView>
+                                            <tableCellView identifier="DocCell" id="bSL-lZ-KhE" customClass="DocCell" customModule="Ghostnote_Browser" customModuleProvider="target">
+                                                <rect key="frame" x="1" y="20" width="235" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="gG9-CB-BE8">
+                                                        <rect key="frame" x="42" y="0.0" width="177" height="17"/>
+                                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="A9q-Ld-SGY">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WPP-0f-bCL">
+                                                        <rect key="frame" x="3" y="-5" width="16" height="27"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="27" id="2hs-dc-yke"/>
+                                                            <constraint firstAttribute="width" constant="16" id="2wY-aD-7JQ"/>
+                                                        </constraints>
+                                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="spO-Wo-ZbN"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="WPP-0f-bCL" firstAttribute="centerY" secondItem="bSL-lZ-KhE" secondAttribute="centerY" id="Q0J-hV-RBJ"/>
+                                                    <constraint firstItem="gG9-CB-BE8" firstAttribute="centerY" secondItem="bSL-lZ-KhE" secondAttribute="centerY" id="YNa-Iq-XA4"/>
+                                                    <constraint firstAttribute="trailing" secondItem="gG9-CB-BE8" secondAttribute="trailing" constant="18" id="hbA-RX-FbQ"/>
+                                                    <constraint firstItem="WPP-0f-bCL" firstAttribute="leading" secondItem="bSL-lZ-KhE" secondAttribute="leading" constant="3" id="hg3-17-3NE"/>
+                                                    <constraint firstItem="gG9-CB-BE8" firstAttribute="leading" secondItem="WPP-0f-bCL" secondAttribute="trailing" constant="25" id="v3Y-aB-uHd"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="imageView" destination="WPP-0f-bCL" id="ds9-4f-0Ik"/>
+                                                    <outlet property="textField" destination="gG9-CB-BE8" id="3v7-Wg-pXH"/>
                                                 </connections>
                                             </tableCellView>
                                         </prototypeCellViews>

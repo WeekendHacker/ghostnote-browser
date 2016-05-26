@@ -56,10 +56,7 @@ class GhostNoteManager: NSObject {
         for note in store.objects(GhostNote) {
             if note.appBundleID == bundleID {
                 if !note.isAppNote() {
-                    if bundleID == "com.ghostnoteapp.Ghostnote-Browser" {
-                        print("foo")
-                    }
-                    
+                                        
                     notes.append(note)
                 }
             }

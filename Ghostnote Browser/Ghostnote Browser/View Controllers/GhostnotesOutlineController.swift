@@ -22,7 +22,7 @@ class GhostnotesOutlineController:NSObject, NSOutlineViewDelegate, NSOutlineView
                 if let outlineView = notesOutlineView {
                     outlineView.setDelegate(self)
                     outlineView.setDataSource(self)
-                    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.handleContextSave), name: NSManagedObjectContextDidSaveNotification, object: nil)
+                    
                 }
         }
     }
@@ -87,6 +87,7 @@ class GhostnotesOutlineController:NSObject, NSOutlineViewDelegate, NSOutlineView
         if item == nil {
             return apps.count
         }
+        
         let app = item as! App
 
         return appsAndDocsOutline[app]!.count
@@ -105,17 +106,18 @@ class GhostnotesOutlineController:NSObject, NSOutlineViewDelegate, NSOutlineView
     
     func outlineView(outlineView: NSOutlineView, viewForTableColumn tableColumn: NSTableColumn?, item: AnyObject) -> NSView? {
         
-        let view = notesOutlineView?.makeViewWithIdentifier("DataCell", owner: nil) as! NSTableCellView
-        view.textField?.lineBreakMode = .ByTruncatingMiddle
+        var view:NSView = NSView()
+        
         
         if item is App {
             let app = item as! App
-            view.textField?.stringValue = app.bundleID
-            view.imageView?.image = AppIconProvider.iconImagefor(app.bundleID)
+            view = notesOutlineView?.makeViewWithIdentifier("AppCell", owner: nil) as! AppCell
+            (view as! AppCell).app = app
+            
         }else if item is Document {
             let doc = item as! Document
-            view.textField?.stringValue = doc.path
-            view.imageView?.image = DocumentIconProvider.iconImageForDocumentPath(doc.path)
+            view = notesOutlineView?.makeViewWithIdentifier("DocCell", owner: nil) as! DocCell
+            (view as! DocCell).doc = doc
         }
         
         return view

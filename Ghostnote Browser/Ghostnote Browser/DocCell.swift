@@ -10,8 +10,14 @@ import Cocoa
 
 class DocCell: NSTableCellView {
 
-    var doc:Document? { didSet {
-            self.toolTip = doc?.path
+    var doc:Document? {
+        didSet {
+            if let  myDoc = doc {
+                textField?.lineBreakMode = .ByTruncatingMiddle
+                textField?.stringValue = myDoc.path
+                toolTip = myDoc.path
+                imageView?.image = DocumentIconProvider.iconImageForDocumentPath(myDoc.path)
+            }
         }
     }
     

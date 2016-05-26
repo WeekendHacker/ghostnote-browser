@@ -17,7 +17,7 @@ class GhostNoteManager: NSObject {
     override init() {
         var  config = Realm.Configuration()
         
-        config.fileURL =  NSURL(fileURLWithPath: appSupportDir.first!).URLByAppendingPathComponent("com.ghostnoteapp.Ghostnote/Default.realm")
+        config.fileURL =  NSURL(fileURLWithPath: appSupportDir.first!).URLByAppendingPathComponent("com.ghostnoteapp.Ghostnote-Paddle/Default.realm")
         store = try! Realm(configuration: config)
     }
     
@@ -72,7 +72,7 @@ class GhostNoteManager: NSObject {
         
         for note in store.objects(GhostNote) {
             if note.appBundleID == bundleID {
-                if note.docID == AppNameProvider.displayNameForBundleID(bundleID) {
+                if note.docID == bundleID {
                     return note
                 }
             }

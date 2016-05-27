@@ -30,7 +30,7 @@ class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
         
         if let note = currentNote {
             
-            noteTextView?.backgroundColor = NSColor.whiteColor()
+            noteTextView?.backgroundColor = NSColor.clearColor()
             noteTextView?.textColor = NSColor.blackColor()
              let read = noteTextView?.readRTFDFromFile(note.filePath)
             if !read! {

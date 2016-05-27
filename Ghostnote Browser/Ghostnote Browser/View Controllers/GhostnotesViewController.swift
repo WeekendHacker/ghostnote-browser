@@ -43,13 +43,11 @@ class GhostnotesViewController: NSViewController, ButtonNavigable, GhostnotesOut
         super.viewDidAppear()
         sizeForContainer()
         notesOutlineController.reload()
-        noteTextView?.usesInspectorBar = true
         
     }
     
     override func viewWillDisappear() {
         super.viewWillDisappear()
-        noteTextView?.usesInspectorBar = false
     }
     
     // GhostnotesOutlineControllerObserver

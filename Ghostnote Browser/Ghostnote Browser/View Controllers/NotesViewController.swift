@@ -59,12 +59,10 @@ class NotesViewController: NSViewController, ButtonNavigable, NewNamedItemViewCo
     override func viewDidAppear() {
         super.viewDidAppear()
         sizeForContainer()
-        noteTextView?.usesInspectorBar = true
     }
     
     override func viewWillDisappear() {
         super.viewWillDisappear()
-        noteTextView?.usesInspectorBar = false
     }
     
     // Actions

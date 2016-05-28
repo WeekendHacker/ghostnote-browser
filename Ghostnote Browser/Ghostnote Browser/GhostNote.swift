@@ -25,6 +25,6 @@ class GhostNote: Object {
     }
     
     func isAppNote() -> Bool {
-        return AppNameProvider.displayNameForBundleID(appBundleID) == docID
+        return appBundleID == docID
     }
 }

@@ -12,6 +12,7 @@ import Cocoa
 
 protocol GhostnotesOutlineControllerObserver {
     func selectedNote(note:GhostNote)
+    func selectedNothing()
 }
 
 class GhostnotesOutlineController:NSObject, NSOutlineViewDelegate, NSOutlineViewDataSource {
@@ -134,18 +135,21 @@ class GhostnotesOutlineController:NSObject, NSOutlineViewDelegate, NSOutlineView
     // NSOutlineViewDelegate
     
     func outlineViewSelectionDidChange(notification: NSNotification) {
+        
         if let outlineView = notification.object as! NSOutlineView? {
+            
             if let selectedItem = outlineView.itemAtRow(outlineView.selectedRow) {
                 
                 if selectedItem is App {
                     if let app = selectedItem as? App {
                         if let note = app.note {
                             observer?.selectedNote(note)
+                        }else {
+                            observer?.selectedNothing()
                         }
                     }
                 }
-                
-                if selectedItem is Document {
+                else if selectedItem is Document {
                     if let doc = selectedItem as? Document {
                         observer?.selectedNote(doc.note)
                     }

@@ -39,6 +39,9 @@ class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
             }
             
         }
+        else {
+            noteTextView?.string = ""
+        }
     }
     
     func textDidChange(notification: NSNotification) {

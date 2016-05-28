@@ -56,4 +56,9 @@ class GhostnotesViewController: NSViewController, ButtonNavigable, GhostnotesOut
         noteTextViewController.currentNote = note
         
     }
+    
+    func selectedNothing() {
+        noteTextViewController.currentNote = nil;
+        
+    }
 }

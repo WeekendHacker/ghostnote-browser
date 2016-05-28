@@ -40,6 +40,10 @@ class GhostnotesOutlineController:NSObject, NSOutlineViewDelegate, NSOutlineView
         notesOutlineView?.reloadData()
     }
     
+    
+    // this needs reworked to handle doc notes in an app
+    // that have no app note
+    
     func refreshApps() {
         apps = Array<App>()
         print("refreshing apps...")
@@ -47,7 +51,10 @@ class GhostnotesOutlineController:NSObject, NSOutlineViewDelegate, NSOutlineView
         for bundleID in bundleIDs  {
             print(bundleID)
             if let note = GhostNoteManager.shared.appNoteForApp(bundleID) {
-                let app = App(note:note)
+                let app = App(bundleID: bundleID, note:note)
+                apps.append(app)
+            }else {
+                let app = App(bundleID: bundleID, note: nil)
                 apps.append(app)
             }
         }
@@ -132,7 +139,9 @@ class GhostnotesOutlineController:NSObject, NSOutlineViewDelegate, NSOutlineView
                 
                 if selectedItem is App {
                     if let app = selectedItem as? App {
-                        observer?.selectedNote(app.note)
+                        if let note = app.note {
+                            observer?.selectedNote(note)
+                        }
                     }
                 }
                 

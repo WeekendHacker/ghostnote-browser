@@ -16,11 +16,11 @@ func ==(lhs:App, rhs:App) -> Bool {
 
 class App:Hashable, Equatable {
     var bundleID = ""
-    var note:GhostNote
+    var note:GhostNote?
     
-    init(note:GhostNote) {
+    init(bundleID:String, note:GhostNote?) {
         self.note = note
-        bundleID = note.appBundleID
+        self.bundleID = bundleID
     }
     
     // Hashable

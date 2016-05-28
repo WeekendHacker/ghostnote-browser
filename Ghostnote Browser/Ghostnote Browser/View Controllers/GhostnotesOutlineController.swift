@@ -24,6 +24,15 @@ class GhostnotesOutlineController:NSObject, NSOutlineViewDelegate, NSOutlineView
                     outlineView.setDelegate(self)
                     outlineView.setDataSource(self)
                     
+                    NSDistributedNotificationCenter.defaultCenter().addObserver(self,
+                                                                                selector: #selector(handleNoteCreation),
+                                                                                name: "GhostnoteCreatedNote",
+                                                                                object: nil)
+                    
+                    NSDistributedNotificationCenter.defaultCenter().addObserver(self,
+                                                                                selector: #selector(handleNoteDeletion),
+                                                                                name: "GhostnoteDeletedNote",
+                                                                                object: nil)
                 }
         }
     }
@@ -31,7 +40,14 @@ class GhostnotesOutlineController:NSObject, NSOutlineViewDelegate, NSOutlineView
     var appsAndDocsOutline = Dictionary<App,Array<Document>>()
     var apps = Array<App>()
     
-    @objc func handleContextSave() {
+    
+    func handleNoteCreation() {
+        print("Note created")
+        reload()
+    }
+    
+    func handleNoteDeletion() {
+        print("Note deleted")
         reload()
     }
     
@@ -40,11 +56,7 @@ class GhostnotesOutlineController:NSObject, NSOutlineViewDelegate, NSOutlineView
         refreshAppsAndDocsOutline()
         notesOutlineView?.reloadData()
     }
-    
-    
-    // this needs reworked to handle doc notes in an app
-    // that have no app note
-    
+
     func refreshApps() {
         apps = Array<App>()
         print("refreshing apps...")

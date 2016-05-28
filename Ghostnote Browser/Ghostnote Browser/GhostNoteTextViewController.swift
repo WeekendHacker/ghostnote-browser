@@ -30,9 +30,14 @@ class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
         
         if let note = currentNote {
             
+            noteTextView?.hidden = false
+
+
+            let read = noteTextView?.readRTFDFromFile(note.filePath)
+            
             noteTextView?.backgroundColor = NSColor.clearColor()
             noteTextView?.textColor = NSColor.blackColor()
-             let read = noteTextView?.readRTFDFromFile(note.filePath)
+            
             if !read! {
                 
                 noteTextView?.textStorage?.setAttributedString(NSAttributedString())
@@ -41,6 +46,7 @@ class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
         }
         else {
             noteTextView?.string = ""
+            noteTextView?.hidden = true
         }
     }
     

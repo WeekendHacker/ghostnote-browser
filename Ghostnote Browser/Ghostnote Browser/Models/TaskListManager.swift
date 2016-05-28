@@ -34,6 +34,7 @@ class TaskListManager: NSObject {
         catch {
             print(error)
         }
+        
     }
     
     func deleteTaskList(name:String) {

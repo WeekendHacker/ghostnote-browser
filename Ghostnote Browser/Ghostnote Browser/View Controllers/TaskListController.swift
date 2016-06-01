@@ -19,6 +19,7 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource, 
                 tv.setDelegate(self)
                 tv.setDataSource(self)
                 tv.wantsLayer = true
+                tv.selectionHighlightStyle = .None
             }
         }
     }
@@ -62,8 +63,25 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource, 
     
     func tableViewSelectionDidChange(notification: NSNotification) {
         
+        let tv = notification.object as? NSTableView
+        
+        
+        tv?.enumerateAvailableRowViewsUsingBlock({ (view, row) in
+            
+            let cell = view.subviews.first as? TaskListCell
+            if view.selected == true {
+                cell?.textField?.textColor = NSColor.blueColor()
+                
+            }else {
+                cell?.textField?.textColor = NSColor.blackColor()
+                
+                
+            }
+            
+        })
         NSNotificationCenter.defaultCenter().postNotificationName("SelectedTaskChanged", object: notification.object)
     }
+
     
     
     // Actions

@@ -17,11 +17,7 @@ class NotesViewController: NSViewController, ButtonNavigable, NewNamedItemViewCo
     @IBOutlet var noteTextView:NSTextView?
     
     @IBOutlet var notesTableView:NSTableView? { didSet {
-            if let tv = notesTableView {
-                tv.setDelegate(notesTableController)
-                tv.setDataSource(notesTableController)
-                tv.wantsLayer = true
-            }
+            notesTableController.notesTableView = notesTableView
         }
     }
     

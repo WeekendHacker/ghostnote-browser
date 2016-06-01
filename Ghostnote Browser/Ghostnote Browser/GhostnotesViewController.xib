@@ -6,11 +6,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="GhostnotesViewController" customModule="Ghostnote_Browser" customModuleProvider="target">
             <connections>
-                <outlet property="addNoteButton" destination="Qw8-LE-1Op" id="w7f-iR-KzX"/>
-                <outlet property="deleteNoteButton" destination="aA7-Hi-noj" id="ECh-AI-upU"/>
                 <outlet property="noteTextView" destination="KGG-x5-Z5H" id="1yL-nf-qPk"/>
                 <outlet property="notesOutlineView" destination="PRf-Vr-7vp" id="VnO-2A-PYV"/>
-                <outlet property="searchField" destination="fnM-km-QpZ" id="DJl-aH-QJj"/>
                 <outlet property="view" destination="c22-O7-iKe" id="BfV-nq-59Y"/>
             </connections>
         </customObject>
@@ -48,47 +45,14 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
-                <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qw8-LE-1Op">
-                    <rect key="frame" x="0.0" y="-1" width="24" height="24"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="24" id="Vj4-fB-LlC"/>
-                        <constraint firstAttribute="height" constant="22" id="vEr-nf-fMP"/>
-                    </constraints>
-                    <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="7NI-VV-zuz">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                </button>
-                <searchField wantsLayer="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fnM-km-QpZ">
-                    <rect key="frame" x="44" y="1" width="196" height="22"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="196" id="VtE-Sh-eb8"/>
-                    </constraints>
-                    <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="search ghostnotes" usesSingleLineMode="YES" bezelStyle="round" id="aaj-6J-q1b">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
-                    </searchFieldCell>
-                </searchField>
-                <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aA7-Hi-noj">
-                    <rect key="frame" x="20" y="-1" width="24" height="24"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="24" id="C14-0i-Zxe"/>
-                        <constraint firstAttribute="height" constant="22" id="iRV-fF-uCL"/>
-                    </constraints>
-                    <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="ONf-pM-ukC">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                </button>
                 <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQo-O0-lbS">
-                    <rect key="frame" x="0.0" y="22" width="240" height="250"/>
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="272"/>
                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="Jkq-6I-wQv">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="250"/>
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="272"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" typeSelect="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="heb-BA-ZtM" id="PRf-Vr-7vp">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="250"/>
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="272"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
@@ -181,7 +145,7 @@
                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
                     </clipView>
                     <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="nYC-ZN-Rha">
-                        <rect key="frame" x="1" y="119" width="223" height="15"/>
+                        <rect key="frame" x="0.0" y="257" width="0.0" height="15"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="lVG-HA-ZAK">
@@ -191,26 +155,16 @@
                 </scrollView>
             </subviews>
             <constraints>
-                <constraint firstItem="iCC-Ca-ktP" firstAttribute="leading" secondItem="fnM-km-QpZ" secondAttribute="trailing" id="0Nc-JP-ynf"/>
                 <constraint firstAttribute="trailing" secondItem="iCC-Ca-ktP" secondAttribute="trailing" id="1TP-gH-5bc"/>
-                <constraint firstItem="aA7-Hi-noj" firstAttribute="leading" secondItem="Qw8-LE-1Op" secondAttribute="trailing" constant="-4" id="1cR-XA-2DI"/>
                 <constraint firstItem="iCC-Ca-ktP" firstAttribute="leading" secondItem="gQo-O0-lbS" secondAttribute="trailing" id="4cF-t9-mkn"/>
                 <constraint firstAttribute="bottom" secondItem="iCC-Ca-ktP" secondAttribute="bottom" id="7rx-DN-w0a"/>
                 <constraint firstItem="gQo-O0-lbS" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="C7m-uT-bPW"/>
-                <constraint firstItem="Qw8-LE-1Op" firstAttribute="baseline" secondItem="aA7-Hi-noj" secondAttribute="baseline" id="Sok-hM-iSW"/>
-                <constraint firstAttribute="bottom" secondItem="gQo-O0-lbS" secondAttribute="bottom" constant="22" id="W0e-QB-Mjb"/>
+                <constraint firstItem="iCC-Ca-ktP" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="240" id="QK7-2z-mlc"/>
+                <constraint firstAttribute="bottom" secondItem="gQo-O0-lbS" secondAttribute="bottom" id="W0e-QB-Mjb"/>
                 <constraint firstItem="iCC-Ca-ktP" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="XWq-Y2-ZXt"/>
                 <constraint firstItem="gQo-O0-lbS" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="b5u-1r-DWi"/>
-                <constraint firstItem="Qw8-LE-1Op" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="gkP-15-oKA"/>
-                <constraint firstItem="fnM-km-QpZ" firstAttribute="leading" secondItem="aA7-Hi-noj" secondAttribute="trailing" id="nPW-El-TY9"/>
-                <constraint firstAttribute="bottom" secondItem="fnM-km-QpZ" secondAttribute="bottom" constant="1" id="vkl-1P-eVe"/>
-                <constraint firstItem="Qw8-LE-1Op" firstAttribute="bottom" secondItem="iCC-Ca-ktP" secondAttribute="bottom" id="xH0-a5-5DE"/>
             </constraints>
             <point key="canvasLocation" x="131" y="186"/>
         </customView>
     </objects>
-    <resources>
-        <image name="NSAddTemplate" width="11" height="11"/>
-        <image name="NSRemoveTemplate" width="11" height="11"/>
-    </resources>
 </document>

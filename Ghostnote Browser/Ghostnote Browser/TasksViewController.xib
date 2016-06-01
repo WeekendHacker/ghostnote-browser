@@ -6,10 +6,6 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="TasksViewController" customModule="Ghostnote_Browser" customModuleProvider="target">
             <connections>
-                <outlet property="addTaskButton" destination="qxw-w5-y9K" id="lD2-cS-aMt"/>
-                <outlet property="addTaskListButton" destination="cdi-ni-qLu" id="yZO-2b-iU1"/>
-                <outlet property="deleteTaskButton" destination="jcD-hS-T2T" id="h47-cB-Ryg"/>
-                <outlet property="deleteTaskListButton" destination="kwg-5E-g9M" id="nFt-nj-Zg5"/>
                 <outlet property="taskListTableView" destination="x0l-7o-FYP" id="Mzp-ut-uua"/>
                 <outlet property="tasksTableView" destination="nAc-ib-V75" id="Wgo-vB-fgV"/>
                 <outlet property="view" destination="c22-O7-iKe" id="OhC-hG-c1j"/>
@@ -22,13 +18,13 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="32" horizontalPageScroll="10" verticalLineScroll="32" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWG-dT-Hi3" userLabel="Bordered Scroll View - Task List Table View">
-                    <rect key="frame" x="0.0" y="20" width="251" height="252"/>
+                    <rect key="frame" x="0.0" y="9" width="251" height="263"/>
                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="f1N-Sx-kqn">
-                        <rect key="frame" x="0.0" y="0.0" width="251" height="252"/>
+                        <rect key="frame" x="0.0" y="0.0" width="251" height="263"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="30" rowSizeStyle="automatic" viewBased="YES" id="x0l-7o-FYP">
-                                <rect key="frame" x="0.0" y="0.0" width="251" height="252"/>
+                                <rect key="frame" x="0.0" y="0.0" width="251" height="263"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
@@ -88,58 +84,14 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cdi-ni-qLu">
-                    <rect key="frame" x="0.0" y="1" width="19" height="19"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="19" id="QIH-ao-XL2"/>
-                        <constraint firstAttribute="width" constant="19" id="dip-FE-IeH"/>
-                    </constraints>
-                    <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="qVp-9p-iob">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                </button>
-                <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qxw-w5-y9K">
-                    <rect key="frame" x="251" y="1" width="19" height="19"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="19" id="bMT-U5-IDX"/>
-                        <constraint firstAttribute="width" constant="19" id="nFX-Bf-2Ci"/>
-                    </constraints>
-                    <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="ot4-6o-utt">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                </button>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kwg-5E-g9M" userLabel="Delete Task List Button">
-                    <rect key="frame" x="20" y="1" width="19" height="19"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="19" id="fBK-tY-2d5"/>
-                        <constraint firstAttribute="height" constant="19" id="twU-c2-wdW"/>
-                    </constraints>
-                    <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="fIc-2m-2HS">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                </button>
-                <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jcD-hS-T2T">
-                    <rect key="frame" x="273" y="1" width="19" height="19"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="19" id="4xh-4Q-V1B"/>
-                        <constraint firstAttribute="height" constant="19" id="lAt-ur-gGS"/>
-                    </constraints>
-                    <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="wwp-1a-GFS">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                </button>
                 <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="32" horizontalPageScroll="10" verticalLineScroll="32" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rY5-qe-uih" userLabel="Bordered Scroll View - Tasks Table View">
-                    <rect key="frame" x="250" y="20" width="230" height="252"/>
+                    <rect key="frame" x="250" y="0.0" width="230" height="272"/>
                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="yN7-RW-9fP">
-                        <rect key="frame" x="0.0" y="0.0" width="230" height="252"/>
+                        <rect key="frame" x="0.0" y="0.0" width="230" height="272"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="30" rowSizeStyle="automatic" viewBased="YES" id="nAc-ib-V75">
-                                <rect key="frame" x="0.0" y="0.0" width="230" height="0.0"/>
+                                <rect key="frame" x="0.0" y="0.0" width="230" height="272"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
@@ -200,29 +152,16 @@
                 </scrollView>
             </subviews>
             <constraints>
-                <constraint firstItem="kwg-5E-g9M" firstAttribute="leading" secondItem="cdi-ni-qLu" secondAttribute="trailing" constant="1" id="1Dj-Nw-p1l"/>
-                <constraint firstItem="qxw-w5-y9K" firstAttribute="leading" secondItem="nAc-ib-V75" secondAttribute="leading" id="2hO-l4-L31"/>
-                <constraint firstItem="cdi-ni-qLu" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="6Pp-Rc-joz"/>
-                <constraint firstItem="kwg-5E-g9M" firstAttribute="leading" secondItem="cdi-ni-qLu" secondAttribute="trailing" constant="1" id="6Qj-1a-lfa"/>
-                <constraint firstItem="kwg-5E-g9M" firstAttribute="top" secondItem="rWG-dT-Hi3" secondAttribute="bottom" id="WlW-75-6Mx"/>
-                <constraint firstItem="jcD-hS-T2T" firstAttribute="leading" secondItem="qxw-w5-y9K" secondAttribute="trailing" constant="3" id="bAh-EP-Me9"/>
+                <constraint firstAttribute="bottom" secondItem="rWG-dT-Hi3" secondAttribute="bottom" constant="9" id="Rwd-q1-0Do"/>
+                <constraint firstItem="rY5-qe-uih" firstAttribute="top" secondItem="rWG-dT-Hi3" secondAttribute="top" id="Y5O-uX-np1"/>
                 <constraint firstAttribute="trailing" secondItem="rY5-qe-uih" secondAttribute="trailing" id="cuB-R3-qoD"/>
-                <constraint firstItem="jcD-hS-T2T" firstAttribute="top" secondItem="rY5-qe-uih" secondAttribute="bottom" id="dcF-gy-THO"/>
-                <constraint firstItem="jcD-hS-T2T" firstAttribute="top" secondItem="rY5-qe-uih" secondAttribute="bottom" id="f7w-fk-ewo"/>
-                <constraint firstAttribute="bottom" secondItem="cdi-ni-qLu" secondAttribute="bottom" constant="1" id="fMr-fR-cfc"/>
                 <constraint firstItem="rWG-dT-Hi3" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="grF-mt-Pgz"/>
+                <constraint firstAttribute="bottom" secondItem="rY5-qe-uih" secondAttribute="bottom" id="hv6-yv-UHz"/>
                 <constraint firstItem="rY5-qe-uih" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="250" id="l3L-LO-elB"/>
-                <constraint firstItem="qxw-w5-y9K" firstAttribute="baseline" secondItem="kwg-5E-g9M" secondAttribute="baseline" id="mCD-wf-s7U"/>
-                <constraint firstItem="qxw-w5-y9K" firstAttribute="top" secondItem="rY5-qe-uih" secondAttribute="bottom" id="tjb-Lg-9Wf"/>
                 <constraint firstItem="rY5-qe-uih" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="wHS-GH-iMV"/>
-                <constraint firstAttribute="bottom" secondItem="kwg-5E-g9M" secondAttribute="bottom" constant="1" id="wMS-nb-uUg"/>
                 <constraint firstItem="rWG-dT-Hi3" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="xY9-x7-TSh"/>
             </constraints>
             <point key="canvasLocation" x="116" y="294"/>
         </customView>
     </objects>
-    <resources>
-        <image name="NSAddTemplate" width="11" height="11"/>
-        <image name="NSRemoveTemplate" width="11" height="11"/>
-    </resources>
 </document>

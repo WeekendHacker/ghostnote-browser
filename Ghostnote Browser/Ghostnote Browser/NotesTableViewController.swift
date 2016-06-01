@@ -42,6 +42,9 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
             let view = tableView.makeViewWithIdentifier("ButtonTableCellView", owner: nil) as? ButtonTableCellView
             let title = NSAttributedString(string: "+ Add New Note", attributes: [NSForegroundColorAttributeName : NSColor.blueColor()])
             view?.button?.attributedTitle = title
+            view?.button?.target = self
+            view?.button?.action = #selector(addNoteClicked(_:))
+            
             return view
         }
         
@@ -55,5 +58,10 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
     func tableViewSelectionDidChange(notification: NSNotification) {
         
         NSNotificationCenter.defaultCenter().postNotificationName("SelectedNoteChanged", object: notification.object)
+    }
+    
+    // func 
+    func addNoteClicked(sender:AnyObject?) {
+        NSNotificationCenter.defaultCenter().postNotificationName("AddNoteClicked", object: nil)
     }
 }

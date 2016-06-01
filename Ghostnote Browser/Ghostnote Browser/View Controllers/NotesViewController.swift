@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class NotesViewController: NSViewController, ButtonNavigable, NewNamedItemViewControllerClient {
+class NotesViewController: NSViewController, ButtonNavigable {
 
     var notesTableController = NotesTableViewController()
     var newNoteController:NewNamedItemViewController?
@@ -21,22 +21,6 @@ class NotesViewController: NSViewController, ButtonNavigable, NewNamedItemViewCo
         }
     }
     
-    @IBOutlet weak var addNoteButton:NSButton? {
-        didSet {
-            addNoteButton?.wantsLayer = true
-        }
-    }
-    @IBOutlet weak var deleteNoteButton:NSButton? {
-        didSet {
-            deleteNoteButton?.wantsLayer = true
-        }
-    }
-    @IBOutlet weak var searchField:NSSearchField? {
-        didSet {
-            searchField?.wantsLayer = true
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,8 +28,9 @@ class NotesViewController: NSViewController, ButtonNavigable, NewNamedItemViewCo
         view.wantsLayer = true
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(selectedNoteChanged), name: "SelectedNoteChanged", object: nil)
+
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(addNoteButtonClicked), name: "AddNoteClicked", object: nil)
         
-        deleteNoteButton?.enabled = false
         noteTextViewController.noteTextView = noteTextView
         noteTextView?.wantsLayer = true
         
@@ -57,63 +42,19 @@ class NotesViewController: NSViewController, ButtonNavigable, NewNamedItemViewCo
         sizeForContainer()
     }
     
-    override func viewWillDisappear() {
-        super.viewWillDisappear()
-    }
-    
     // Actions
     
     @IBAction func addNoteButtonClicked(sender:AnyObject?) {
-        
-        newNoteController = NewNamedItemViewController(nibName: nil, bundle: nil)
-        newNoteController?.client = self
-        newNoteController?.validator = NoteNameValidator.shared
-        newNoteController?.nameTextField?.placeholderString = "New Note Name"
-        
-        self.presentViewController(newNoteController!, asPopoverRelativeToRect: addNoteButton!.frame, ofView: addNoteButton!, preferredEdge: NSRectEdge.MaxX, behavior: NSPopoverBehavior.Transient)
-        
-    }
-    
-    @IBAction func deleteNoteButtonClicked(sender:AnyObject?) {
-        
-        if notesTableView!.hasSelection() {
-            for index in notesTableView!.selectedRowIndexes {
-                if let view = notesTableView?.viewAtColumn(0, row: index, makeIfNecessary: false) as? NoteCell {
-                    NoteManager.shared.deleteNote(view.note!)
-                    notesTableView?.reloadData()
-                    deleteNoteButton?.enabled = false
-                }
-            }
-        }
-        
-    }
-    
-    // NewNoteWindowControllerClient
-    
-    func choseName(name: String) {
-        print(name)
-        
-        NoteManager.shared.createNoteWithName(name)
-        dismissViewController(newNoteController!)
-        newNoteController = nil
+        NoteManager.shared.createNoteWithName("New Note")
         notesTableView?.reloadData()
     }
     
-    func canceled() {
-        
-        if let vc = newNoteController {
-            dismissViewController(vc)
-            newNoteController = nil
-        }
-        
-    }
-    
+
     // handlers
     
     func selectedNoteChanged(notif:NSNotification) {
         
         if notesTableView!.hasSelection() {
-            deleteNoteButton?.enabled = true
             if let row = notesTableView?.selectedRowIndexes.firstIndex {
                 let view = notesTableView?.viewAtColumn(0, row: row, makeIfNecessary: false) as? NoteCell
                 
@@ -122,8 +63,6 @@ class NotesViewController: NSViewController, ButtonNavigable, NewNamedItemViewCo
                     noteTextViewController.currentNote = selectedNote
                 }
             }
-        }else {
-            deleteNoteButton?.enabled = false
         }
     }
 }

@@ -12,6 +12,8 @@
 		D80001B21CD801EB00255E54 /* NewNamedItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D80001B01CD801EB00255E54 /* NewNamedItemViewController.xib */; };
 		D80001B41CD88BDC00255E54 /* NoteTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80001B31CD88BDC00255E54 /* NoteTextViewController.swift */; };
 		D80001B61CD957C200255E54 /* TaskListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80001B51CD957C200255E54 /* TaskListController.swift */; };
+		D81175011CFEA463004133E4 /* ButtonTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D81175001CFEA463004133E4 /* ButtonTableCellView.xib */; };
+		D81175031CFEA5C4004133E4 /* ButtonTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81175021CFEA5C4004133E4 /* ButtonTableCellView.swift */; };
 		D81281881CCD97F2001749E9 /* ButtonNavViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D81281871CCD97F2001749E9 /* ButtonNavViewController.xib */; };
 		D812818A1CCD98C0001749E9 /* ButtonNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81281891CCD98C0001749E9 /* ButtonNavViewController.swift */; };
 		D812818D1CCD9AA3001749E9 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D812818B1CCD9AA3001749E9 /* MainWindowController.swift */; };
@@ -97,6 +99,8 @@
 		D80001B01CD801EB00255E54 /* NewNamedItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewNamedItemViewController.xib; path = "View Controllers/NewNamedItemViewController.xib"; sourceTree = "<group>"; };
 		D80001B31CD88BDC00255E54 /* NoteTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteTextViewController.swift; path = "View Controllers/NoteTextViewController.swift"; sourceTree = "<group>"; };
 		D80001B51CD957C200255E54 /* TaskListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskListController.swift; path = "View Controllers/TaskListController.swift"; sourceTree = "<group>"; };
+		D81175001CFEA463004133E4 /* ButtonTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonTableCellView.xib; sourceTree = "<group>"; };
+		D81175021CFEA5C4004133E4 /* ButtonTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonTableCellView.swift; sourceTree = "<group>"; };
 		D81281871CCD97F2001749E9 /* ButtonNavViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ButtonNavViewController.xib; path = Views/ButtonNavViewController.xib; sourceTree = "<group>"; };
 		D81281891CCD98C0001749E9 /* ButtonNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonNavViewController.swift; path = "View Controllers/ButtonNavViewController.swift"; sourceTree = "<group>"; };
 		D812818B1CCD9AA3001749E9 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
@@ -280,6 +284,8 @@
 				D8265A621CDB18760054AF57 /* TaskListCell.swift */,
 				D8265A641CDBE37E0054AF57 /* TaskCell.swift */,
 				D8E380EB1CDC21000028D161 /* TaskCell.xib */,
+				D81175001CFEA463004133E4 /* ButtonTableCellView.xib */,
+				D81175021CFEA5C4004133E4 /* ButtonTableCellView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -484,6 +490,7 @@
 				D80001B21CD801EB00255E54 /* NewNamedItemViewController.xib in Resources */,
 				D8D10ECB1CC48A9F00A434F6 /* Assets.xcassets in Resources */,
 				D81281941CCDB9DC001749E9 /* GhostnotesViewController.xib in Resources */,
+				D81175011CFEA463004133E4 /* ButtonTableCellView.xib in Resources */,
 				D812818E1CCD9AA3001749E9 /* MainWindowController.xib in Resources */,
 				D8D10ECE1CC48A9F00A434F6 /* MainMenu.xib in Resources */,
 				D81281901CCD9BEC001749E9 /* NotesViewController.xib in Resources */,
@@ -547,6 +554,7 @@
 				D8D10EC61CC48A9F00A434F6 /* AppDelegate.swift in Sources */,
 				D84F16C51CC54ED6005612BB /* AppIconProvider.swift in Sources */,
 				D812818A1CCD98C0001749E9 /* ButtonNavViewController.swift in Sources */,
+				D81175031CFEA5C4004133E4 /* ButtonTableCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

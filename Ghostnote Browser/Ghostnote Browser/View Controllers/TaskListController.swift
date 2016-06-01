@@ -20,6 +20,9 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource, 
                 tv.setDataSource(self)
                 tv.wantsLayer = true
                 tv.selectionHighlightStyle = .None
+                
+                let buttonNib = NSNib(nibNamed: "ButtonTableCellView", bundle: nil)
+                tv.registerNib(buttonNib, forIdentifier: "ButtonTableCellView"  )
             }
         }
     }
@@ -46,12 +49,20 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource, 
     
     // NSTableViewDatasource
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
-        return TaskListManager.shared.taskLists.count
+        return TaskListManager.shared.taskLists.count + 1
     }
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
-        let taskList = TaskListManager.shared.taskLists[row]
+        if row == 0 {
+            
+            let view = taskListTableView?.makeViewWithIdentifier("ButtonTableCellView", owner: nil) as? ButtonTableCellView
+            let title = NSAttributedString(string: "+ Add Task List", attributes: [NSForegroundColorAttributeName : NSColor.blueColor()])
+            view?.button?.attributedTitle = title
+            return view
+        }
+        
+        let taskList = TaskListManager.shared.taskLists[row - 1]
         
         let view = taskListTableView?.makeViewWithIdentifier("TaskListCell", owner: nil) as? TaskListCell
         view?.taskList = taskList

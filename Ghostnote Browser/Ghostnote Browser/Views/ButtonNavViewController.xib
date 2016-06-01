@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
     <objects>
@@ -22,10 +21,10 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="yLv-HR-lB4">
-                    <rect key="frame" x="0.0" y="0.0" width="75" height="241"/>
+                    <rect key="frame" x="0.0" y="0.0" width="75" height="271"/>
                     <subviews>
                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sty-WD-ANQ">
-                            <rect key="frame" x="0.0" y="166" width="75" height="75"/>
+                            <rect key="frame" x="0.0" y="196" width="75" height="75"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="75" id="LWw-4f-kKB"/>
                                 <constraint firstAttribute="height" constant="75" id="U3W-9E-9a5"/>
@@ -39,7 +38,7 @@
                             </connections>
                         </button>
                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7b9-bd-oQZ">
-                            <rect key="frame" x="0.0" y="16" width="75" height="75"/>
+                            <rect key="frame" x="0.0" y="46" width="75" height="75"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="75" id="7SX-6e-oKq"/>
                                 <constraint firstAttribute="height" constant="75" id="yH9-ai-POo"/>
@@ -53,7 +52,7 @@
                             </connections>
                         </button>
                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ghf-cK-mjZ">
-                            <rect key="frame" x="0.0" y="91" width="75" height="75"/>
+                            <rect key="frame" x="0.0" y="121" width="75" height="75"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="75" id="6hV-zZ-sWe"/>
                                 <constraint firstAttribute="height" constant="75" id="UtA-K8-X5G"/>
@@ -78,16 +77,16 @@
                     </constraints>
                 </customView>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="Mzz-Rk-AFp">
-                    <rect key="frame" x="74" y="0.0" width="485" height="241"/>
+                    <rect key="frame" x="74" y="0.0" width="485" height="271"/>
                 </customView>
             </subviews>
             <constraints>
-                <constraint firstItem="Mzz-Rk-AFp" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="50" id="4jW-mr-xxo"/>
+                <constraint firstItem="Mzz-Rk-AFp" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="20" id="4jW-mr-xxo"/>
                 <constraint firstItem="Mzz-Rk-AFp" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="74" id="8QP-R9-Tgw"/>
                 <constraint firstItem="yLv-HR-lB4" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="MI6-rd-va4"/>
                 <constraint firstAttribute="bottom" secondItem="yLv-HR-lB4" secondAttribute="bottom" id="POH-NU-W1s"/>
                 <constraint firstItem="Mzz-Rk-AFp" firstAttribute="bottom" secondItem="yLv-HR-lB4" secondAttribute="bottom" id="bGP-mW-KTP"/>
-                <constraint firstItem="yLv-HR-lB4" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="50" id="p4f-Rt-jZx"/>
+                <constraint firstItem="yLv-HR-lB4" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="20" id="p4f-Rt-jZx"/>
                 <constraint firstAttribute="trailing" secondItem="Mzz-Rk-AFp" secondAttribute="trailing" id="yvh-iL-Q8h"/>
             </constraints>
             <point key="canvasLocation" x="371.5" y="182.5"/>

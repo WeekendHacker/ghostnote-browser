@@ -7,16 +7,34 @@
 //
 
 import Cocoa
+import RealmSwift
 
-class NoteCell: NSTableCellView {
+class NoteCell: NSTableCellView, NSTextFieldDelegate {
 
+    
     var note:Note? { didSet {
      
             if let myNote = note {
                 textField?.stringValue = myNote.name
+                textField?.delegate = self
             }
         }
     }
     
+    // NSTextFieldDelegate
     
+    override func controlTextDidEndEditing(obj: NSNotification) {
+        if let editedField = obj.object as? NSTextField {
+            
+            if !editedField.stringValue.isEmpty {
+                
+                if NoteManager.shared.canName(editedField.stringValue) == true {
+                    NoteManager.shared.renameNote(note!, toName: editedField.stringValue)
+                }else {
+                    editedField.stringValue = (note?.name)!
+                }
+              
+            }
+        }
+    }
 }

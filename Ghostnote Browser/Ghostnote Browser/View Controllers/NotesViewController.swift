@@ -45,7 +45,10 @@ class NotesViewController: NSViewController, ButtonNavigable {
     // Actions
     
     @IBAction func addNoteButtonClicked(sender:AnyObject?) {
-        NoteManager.shared.createNoteWithName("New Note")
+        let date = NSDate()
+        
+        let uniquePart = "\(date.timeIntervalSince1970)"
+        NoteManager.shared.createNoteWithName("New Note \(uniquePart)")
         notesTableView?.reloadData()
     }
     

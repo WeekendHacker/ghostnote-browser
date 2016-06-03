@@ -10,9 +10,15 @@ import Foundation
 import RealmSwift
 
 class Note:Object {
+    dynamic var id = NSUUID().UUIDString
     dynamic var name = "Empty Note"
     dynamic var creationDate = NSDate()
     dynamic var filePath:String = ""
+    
+    override class func primaryKey() -> String? {
+        return "id"
+    }
+    
     
     func urlForFilePath() -> NSURL? {
     
@@ -21,4 +27,6 @@ class Note:Object {
         }
         return NSURL(fileURLWithPath: self.filePath)
     }
+    
+    
 }

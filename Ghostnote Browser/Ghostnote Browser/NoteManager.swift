@@ -59,6 +59,23 @@ class NoteManager {
         
     }
     
+    func renameNote(note:Note, toName:String) {
+        
+        let newPath = renameNoteFileForNote(note, to: toName)
+    
+        do {
+            try store.write({ 
+                note.filePath = newPath.path!
+                note.name = toName
+                
+                store.add(note, update: true)
+            })
+        }
+        catch {
+            
+        }
+    }
+    
     func createNotesFolderIfNeeded() {
         let path = appSupportDir.first!
         let docsURL = NSURL(fileURLWithPath: path).URLByAppendingPathComponent("com.ghostnoteapp.Ghostnote-Browser").URLByAppendingPathComponent("Notes", isDirectory: true)
@@ -76,6 +93,7 @@ class NoteManager {
     
     // file methods
     private func createFileForNoteNamed(name:String) -> NSURL {
+        
         createNotesFolderIfNeeded()
         let path = appSupportDir.first!
         
@@ -103,6 +121,32 @@ class NoteManager {
         return fileURL
     }
     
+    private func renameNoteFileForNote(note:Note, to:String) -> NSURL {
+        
+        
+        let fileManager = NSFileManager.defaultManager()
+        
+        let currentName = note.filePath as NSString
+        
+        let file = currentName.stringByDeletingPathExtension as NSString
+        let path = file.stringByDeletingLastPathComponent
+        
+        let newPath = path.stringByAppendingString("/").stringByAppendingString(to).stringByAppendingString(".rtfd")
+//            path
+        
+        if fileManager.fileExistsAtPath(newPath) == true {
+            
+        }
+        
+        do {
+            try fileManager.moveItemAtPath(note.filePath, toPath: newPath )
+        }
+        catch {
+            print(error)
+        }
+        return NSURL(fileURLWithPath: newPath)
+    }
+    
     private func removeFileForNoteNamed(name:String) {
         let path = appSupportDir.first!
         
@@ -117,4 +161,20 @@ class NoteManager {
             print(error)
         }
     }
+    
+    func canName(name:String) -> Bool {
+        let fileManager = NSFileManager.defaultManager()
+        
+        let path = appSupportDir.first!
+        
+        let docsURL = NSURL(fileURLWithPath: path).URLByAppendingPathComponent("com.ghostnoteapp.Ghostnote-Browser").URLByAppendingPathComponent("Notes", isDirectory: true)
+        
+        let filePath = docsURL.path
+        
+        let newPath = filePath!.stringByAppendingString("/").stringByAppendingString(name).stringByAppendingString(".rtfd")
+        //            path
+        
+        return !fileManager.fileExistsAtPath(newPath)
+    }
+
 }

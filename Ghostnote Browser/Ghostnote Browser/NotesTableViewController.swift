@@ -25,6 +25,8 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
                 
                 let buttonNib = NSNib(nibNamed: "ButtonTableCellView", bundle: nil)
                 tv.registerNib(buttonNib, forIdentifier: "ButtonTableCellView")
+                let noteCellNib = NSNib(nibNamed: "NoteCell", bundle: nil)
+                tv.registerNib(noteCellNib, forIdentifier: "NoteCell")
             }
         }
     }

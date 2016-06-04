@@ -78,11 +78,7 @@
                     </constraints>
                 </customView>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="Mzz-Rk-AFp">
-                    <rect key="frame" x="49" y="-20" width="512" height="271"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="512" id="6oi-p2-4bf"/>
-                        <constraint firstAttribute="height" constant="271" id="gBM-eb-858"/>
-                    </constraints>
+                    <rect key="frame" x="49" y="0.0" width="510" height="251"/>
                 </customView>
                 <box horizontalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Kem-GO-56r">
                     <rect key="frame" x="46" y="0.0" width="5" height="251"/>
@@ -115,6 +111,7 @@
                 <constraint firstItem="yLv-HR-lB4" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="25" id="AUC-jA-xXV"/>
                 <constraint firstItem="Lxa-LO-AQF" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="25" id="KhH-3j-CEY"/>
                 <constraint firstItem="Kem-GO-56r" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="48" id="MVR-wE-nkG"/>
+                <constraint firstAttribute="trailing" secondItem="Mzz-Rk-AFp" secondAttribute="trailing" id="MX6-ci-SeM"/>
                 <constraint firstAttribute="trailing" secondItem="Lxa-LO-AQF" secondAttribute="trailing" id="YD9-NA-YPX"/>
                 <constraint firstItem="Mzz-Rk-AFp" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="49" id="Z0O-as-SYc"/>
                 <constraint firstItem="Lxa-LO-AQF" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="Zcj-QN-mUV"/>
@@ -122,6 +119,7 @@
                 <constraint firstItem="Mzz-Rk-AFp" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="25" id="e5H-iR-rPo"/>
                 <constraint firstAttribute="trailing" secondItem="kAs-e4-AG9" secondAttribute="trailing" constant="10" id="hdB-Zq-Ms1"/>
                 <constraint firstItem="kAs-e4-AG9" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="2" id="tnM-KI-tXY"/>
+                <constraint firstAttribute="bottom" secondItem="Mzz-Rk-AFp" secondAttribute="bottom" id="yQL-5R-ZNb"/>
             </constraints>
             <point key="canvasLocation" x="371.5" y="175"/>
         </customView>

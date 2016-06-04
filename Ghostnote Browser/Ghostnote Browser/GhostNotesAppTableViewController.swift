@@ -33,6 +33,8 @@ class GhostNotesAppTableViewController: NSObject , NSTableViewDelegate , NSTable
     
     var apps = Array<App>()
 
+    var currentAppNote:GhostNote?
+    
     func reload() {
         refreshApps()
         appsTableView?.reloadData()

@@ -19,6 +19,7 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
     weak var notesTableView:DeletableTableView? {
         didSet {
             if let tv = notesTableView {
+                
                 tv.setDelegate(self)
                 tv.setDataSource(self)
                 tv.wantsLayer = true

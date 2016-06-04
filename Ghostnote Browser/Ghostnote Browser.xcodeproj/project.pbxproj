@@ -62,6 +62,7 @@
 		D8D10EE41CC48A9F00A434F6 /* Ghostnote_BrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D10EE31CC48A9F00A434F6 /* Ghostnote_BrowserUITests.swift */; };
 		D8D30DAD1D02A1BD004009F7 /* GhostNotesAppTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D30DAC1D02A1BD004009F7 /* GhostNotesAppTableViewController.swift */; };
 		D8D30DAF1D02A1D3004009F7 /* GhostNotesNoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D30DAE1D02A1D3004009F7 /* GhostNotesNoteTableViewController.swift */; };
+		D8D30DB11D02A73D004009F7 /* AppCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8D30DB01D02A73D004009F7 /* AppCell.xib */; };
 		D8E380EC1CDC21000028D161 /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E380EB1CDC21000028D161 /* TaskCell.xib */; };
 /* End PBXBuildFile section */
 
@@ -158,6 +159,7 @@
 		D8D10EE51CC48A9F00A434F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8D30DAC1D02A1BD004009F7 /* GhostNotesAppTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GhostNotesAppTableViewController.swift; sourceTree = "<group>"; };
 		D8D30DAE1D02A1D3004009F7 /* GhostNotesNoteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GhostNotesNoteTableViewController.swift; sourceTree = "<group>"; };
+		D8D30DB01D02A73D004009F7 /* AppCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppCell.xib; sourceTree = "<group>"; };
 		D8E380EB1CDC21000028D161 /* TaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TaskCell.xib; path = Views/TaskCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -239,6 +241,7 @@
 				D81175001CFEA463004133E4 /* ButtonTableCellView.xib */,
 				D81175021CFEA5C4004133E4 /* ButtonTableCellView.swift */,
 				D8151CC11D00C2CC00F04C24 /* NoteCell.xib */,
+				D8D30DB01D02A73D004009F7 /* AppCell.xib */,
 			);
 			name = "Table Cells";
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				D80001B21CD801EB00255E54 /* NewNamedItemViewController.xib in Resources */,
 				D8D10ECB1CC48A9F00A434F6 /* Assets.xcassets in Resources */,
 				D81281941CCDB9DC001749E9 /* GhostnotesViewController.xib in Resources */,
+				D8D30DB11D02A73D004009F7 /* AppCell.xib in Resources */,
 				D81175011CFEA463004133E4 /* ButtonTableCellView.xib in Resources */,
 				D812818E1CCD9AA3001749E9 /* MainWindowController.xib in Resources */,
 				D8151CC21D00C2CC00F04C24 /* NoteCell.xib in Resources */,

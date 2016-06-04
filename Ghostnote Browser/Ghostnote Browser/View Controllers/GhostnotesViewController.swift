@@ -8,9 +8,10 @@
 
 import Cocoa
 
-class GhostnotesViewController: NSViewController, ButtonNavigable, GhostnotesOutlineControllerObserver {
+class GhostnotesViewController: NSViewController, ButtonNavigable {
 
-    var notesOutlineController = GhostnotesOutlineController()
+    var appsTableViewController = GhostNotesAppTableViewController()
+    var docsTableViewController = GhostNotesDocTableViewController()
     var noteTextViewController = GhostNoteTextViewController()
     
     @IBOutlet var noteTextView:NSTextView? {
@@ -21,19 +22,27 @@ class GhostnotesViewController: NSViewController, ButtonNavigable, GhostnotesOut
         }
     }
     
-    @IBOutlet var notesOutlineView:NSOutlineView? { didSet {
-            if let ov = notesOutlineView {
-                notesOutlineController.notesOutlineView = ov
-                notesOutlineController.observer = self
-                ov.wantsLayer = true
+    
+    @IBOutlet weak var appsTableView:NSTableView? {
+        didSet {
+            if let tv = appsTableView {
+                appsTableViewController.appsTableView = tv
+                tv.wantsLayer = true
             }
         }
     }
     
-    @IBOutlet weak var addNoteButton:NSButton?
-    @IBOutlet weak var deleteNoteButton:NSButton?
-    @IBOutlet weak var searchField:NSSearchField?
+    @IBOutlet weak var docsTableView:NSTableView? {
+        didSet {
+            if let tv = docsTableView {
+                docsTableViewController.docsTableView = tv
+                tv.wantsLayer = true
+            }
+        }
+    }
     
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.autoresizingMask = [.ViewWidthSizable, .ViewHeightSizable]
@@ -42,7 +51,7 @@ class GhostnotesViewController: NSViewController, ButtonNavigable, GhostnotesOut
     override func viewDidAppear() {
         super.viewDidAppear()
         sizeForContainer()
-        notesOutlineController.reload()
+        appsTableViewController.reload()
         
     }
     

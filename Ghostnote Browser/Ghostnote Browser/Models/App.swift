@@ -28,7 +28,5 @@ class App:Hashable, Equatable {
     var hashValue: Int {
         return bundleID.hashValue
     }
-    
-
-    
+   
 }

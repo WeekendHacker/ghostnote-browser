@@ -10,11 +10,21 @@ import Cocoa
 
 class NoteTextViewController: NSObject, NSTextViewDelegate {
 
+    override init() {
+        super.init()
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(handleDeletedNote(_:)),
+                                                         name: "DeletedNote",
+                                                         object: nil)
+    }
+    
     var currentNote:Note? {
         
         willSet {
             if let note = currentNote {
-                noteTextView!.writeRTFDToFile(note.filePath, atomically: true)
+                if !note.invalidated  == true {
+                    noteTextView!.writeRTFDToFile(note.filePath, atomically: true)
+                }
             }
         }
         
@@ -23,11 +33,14 @@ class NoteTextViewController: NSObject, NSTextViewDelegate {
             if let note = currentNote {
                 noteTextView?.readRTFDFromFile(note.filePath)
             }
-            
+            else {
+                noteTextView?.string = ""
+            }
         }
     }
     
-    var noteTextView:NSTextView? { didSet {
+    var noteTextView:NSTextView? {
+        didSet {
             noteTextView?.delegate = self
             noteTextView?.wantsLayer = true
         }
@@ -39,6 +52,13 @@ class NoteTextViewController: NSObject, NSTextViewDelegate {
             if let note = currentNote {
                 noteTextView!.writeRTFDToFile(note.filePath, atomically: true)
             }
+        }
+    }
+    
+    func handleDeletedNote(notif:NSNotification) {
+        
+        if currentNote?.invalidated == true {
+            noteTextView?.string = ""
         }
     }
 }

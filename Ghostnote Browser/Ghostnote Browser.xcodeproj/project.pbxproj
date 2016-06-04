@@ -27,6 +27,7 @@
 		D81281A81CCEB3B2001749E9 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81281A71CCEB3B2001749E9 /* Note.swift */; };
 		D81281AA1CCEB60B001749E9 /* NoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81281A91CCEB60B001749E9 /* NoteManager.swift */; };
 		D8151CC21D00C2CC00F04C24 /* NoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8151CC11D00C2CC00F04C24 /* NoteCell.xib */; };
+		D8151CC41D027F6A00F04C24 /* DeletableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8151CC31D027F6A00F04C24 /* DeletableTableView.swift */; };
 		D8265A611CDB15F00054AF57 /* TasksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8265A601CDB15F00054AF57 /* TasksController.swift */; };
 		D8265A631CDB18760054AF57 /* TaskListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8265A621CDB18760054AF57 /* TaskListCell.swift */; };
 		D8265A651CDBE37E0054AF57 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8265A641CDBE37E0054AF57 /* TaskCell.swift */; };
@@ -115,6 +116,7 @@
 		D81281A71CCEB3B2001749E9 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		D81281A91CCEB60B001749E9 /* NoteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteManager.swift; sourceTree = "<group>"; };
 		D8151CC11D00C2CC00F04C24 /* NoteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteCell.xib; sourceTree = "<group>"; };
+		D8151CC31D027F6A00F04C24 /* DeletableTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeletableTableView.swift; sourceTree = "<group>"; };
 		D8265A601CDB15F00054AF57 /* TasksController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksController.swift; sourceTree = "<group>"; };
 		D8265A621CDB18760054AF57 /* TaskListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskListCell.swift; path = Views/TaskListCell.swift; sourceTree = "<group>"; };
 		D8265A641CDBE37E0054AF57 /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				D81175001CFEA463004133E4 /* ButtonTableCellView.xib */,
 				D81175021CFEA5C4004133E4 /* ButtonTableCellView.swift */,
 				D8151CC11D00C2CC00F04C24 /* NoteCell.xib */,
+				D8151CC31D027F6A00F04C24 /* DeletableTableView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 				D81281991CCDCFD8001749E9 /* NotesTableViewController.swift in Sources */,
 				D80001B41CD88BDC00255E54 /* NoteTextViewController.swift in Sources */,
 				D81281AA1CCEB60B001749E9 /* NoteManager.swift in Sources */,
+				D8151CC41D027F6A00F04C24 /* DeletableTableView.swift in Sources */,
 				D84F16D11CC550C3005612BB /* GhostnotesOutlineController.swift in Sources */,
 				D8265A671CDC10210054AF57 /* TaskNameValidator.swift in Sources */,
 				D84F16E61CC71215005612BB /* NotesViewController.swift in Sources */,

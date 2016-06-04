@@ -14,19 +14,21 @@ extension NSTableView {
     }
 }
 
-class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDelegate {
+class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDelegate, DeleteRowDelegate {
     
-    weak var notesTableView:NSTableView? {
+    weak var notesTableView:DeletableTableView? {
         didSet {
             if let tv = notesTableView {
                 tv.setDelegate(self)
                 tv.setDataSource(self)
                 tv.wantsLayer = true
-                
+                tv.deleteDelegate = self
                 let buttonNib = NSNib(nibNamed: "ButtonTableCellView", bundle: nil)
                 tv.registerNib(buttonNib, forIdentifier: "ButtonTableCellView")
                 let noteCellNib = NSNib(nibNamed: "NoteCell", bundle: nil)
                 tv.registerNib(noteCellNib, forIdentifier: "NoteCell")
+                
+                
             }
         }
     }
@@ -62,8 +64,17 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
         NSNotificationCenter.defaultCenter().postNotificationName("SelectedNoteChanged", object: notification.object)
     }
     
-    // func 
+    // func
     func addNoteClicked(sender:AnyObject?) {
         NSNotificationCenter.defaultCenter().postNotificationName("AddNoteClicked", object: nil)
+    }
+    
+    // DeleteRowDelegate
+    
+    func deleteRow(row: Int) {
+        let noteToDelete = NoteManager.shared.notes[row - 1]
+        NoteManager.shared.deleteNote(noteToDelete)
+        notesTableView?.reloadData()
+        NSNotificationCenter.defaultCenter().postNotificationName("DeletedNote", object: noteToDelete)
     }
 }

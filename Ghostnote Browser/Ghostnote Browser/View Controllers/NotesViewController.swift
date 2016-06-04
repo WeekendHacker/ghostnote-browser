@@ -16,7 +16,7 @@ class NotesViewController: NSViewController, ButtonNavigable {
     
     @IBOutlet var noteTextView:NSTextView?
     
-    @IBOutlet var notesTableView:NSTableView? { didSet {
+    @IBOutlet var notesTableView:DeletableTableView? { didSet {
             notesTableController.notesTableView = notesTableView
         }
     }
@@ -58,13 +58,14 @@ class NotesViewController: NSViewController, ButtonNavigable {
     func selectedNoteChanged(notif:NSNotification) {
         
         if notesTableView!.hasSelection() {
-            if let row = notesTableView?.selectedRowIndexes.firstIndex {
+            if let row = notesTableView?.selectedRowIndexes.firstIndex where row != 0 {
                 let view = notesTableView?.viewAtColumn(0, row: row, makeIfNecessary: false) as? NoteCell
                 
                 if let selectedNote = view?.note {
                     print("selected \(selectedNote)")
                     noteTextViewController.currentNote = selectedNote
                 }
+               
             }
         }
     }

@@ -18,6 +18,8 @@ class GhostnotesViewController: NSViewController, ButtonNavigable {
         didSet {
             if let tv = noteTextView {
                 noteTextViewController.noteTextView = tv
+                tv.wantsLayer = true
+                tv.backgroundColor = NSColor.clearColor()
             }
         }
     }
@@ -28,6 +30,7 @@ class GhostnotesViewController: NSViewController, ButtonNavigable {
             if let tv = appsTableView {
                 appsTableViewController.appsTableView = tv
                 tv.wantsLayer = true
+                tv.backgroundColor = NSColor.clearColor()
             }
         }
     }
@@ -37,6 +40,7 @@ class GhostnotesViewController: NSViewController, ButtonNavigable {
             if let tv = docsTableView {
                 docsTableViewController.docsTableView = tv
                 tv.wantsLayer = true
+                tv.backgroundColor = NSColor.clearColor()
             }
         }
     }

@@ -27,9 +27,15 @@ class NotesViewController: NSViewController, ButtonNavigable {
         view.autoresizingMask = [.ViewWidthSizable, .ViewHeightSizable]
         view.wantsLayer = true
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(selectedNoteChanged), name: "SelectedNoteChanged", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(selectedNoteChanged),
+                                                         name: "SelectedNoteChanged",
+                                                         object: nil)
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(addNoteButtonClicked), name: "AddNoteClicked", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(addNoteButtonClicked),
+                                                         name: "AddNoteClicked",
+                                                         object: nil)
         
         noteTextViewController.noteTextView = noteTextView
         noteTextView?.wantsLayer = true

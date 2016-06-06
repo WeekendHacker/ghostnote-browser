@@ -59,7 +59,7 @@ class GhostnotesOutlineController:NSObject, NSOutlineViewDelegate, NSOutlineView
 
     func refreshApps() {
         apps = Array<App>()
-        print("refreshing apps...")
+
         let bundleIDs = GhostNoteManager.shared.allAppBundleIDs()
         for bundleID in bundleIDs  {
             print(bundleID)

@@ -48,6 +48,7 @@
 		D84F16E61CC71215005612BB /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16E41CC71215005612BB /* NotesViewController.swift */; };
 		D84F16EB1CC7123E005612BB /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16E91CC7123E005612BB /* TasksViewController.swift */; };
 		D84F16F01CC71260005612BB /* GhostnotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16EE1CC71260005612BB /* GhostnotesViewController.swift */; };
+		D86DC3831D0407E30013DFC8 /* DocCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D86DC3821D0407E30013DFC8 /* DocCell.xib */; };
 		D884C1A31CE27600003E15D2 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D884C1A01CE27600003E15D2 /* Realm.framework */; };
 		D884C1A81CE2760A003E15D2 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D884C1A01CE27600003E15D2 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D884C1A91CE2760A003E15D2 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D884C1A11CE27600003E15D2 /* RealmSwift.framework */; };
@@ -61,7 +62,7 @@
 		D8D10ED91CC48A9F00A434F6 /* Ghostnote_BrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D10ED81CC48A9F00A434F6 /* Ghostnote_BrowserTests.swift */; };
 		D8D10EE41CC48A9F00A434F6 /* Ghostnote_BrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D10EE31CC48A9F00A434F6 /* Ghostnote_BrowserUITests.swift */; };
 		D8D30DAD1D02A1BD004009F7 /* GhostNotesAppTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D30DAC1D02A1BD004009F7 /* GhostNotesAppTableViewController.swift */; };
-		D8D30DAF1D02A1D3004009F7 /* GhostNotesNoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D30DAE1D02A1D3004009F7 /* GhostNotesNoteTableViewController.swift */; };
+		D8D30DAF1D02A1D3004009F7 /* GhostNotesDocTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D30DAE1D02A1D3004009F7 /* GhostNotesDocTableViewController.swift */; };
 		D8D30DB11D02A73D004009F7 /* AppCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8D30DB01D02A73D004009F7 /* AppCell.xib */; };
 		D8E380EC1CDC21000028D161 /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E380EB1CDC21000028D161 /* TaskCell.xib */; };
 /* End PBXBuildFile section */
@@ -141,6 +142,7 @@
 		D84F16E41CC71215005612BB /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotesViewController.swift; path = "View Controllers/NotesViewController.swift"; sourceTree = "<group>"; };
 		D84F16E91CC7123E005612BB /* TasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TasksViewController.swift; path = "View Controllers/TasksViewController.swift"; sourceTree = "<group>"; };
 		D84F16EE1CC71260005612BB /* GhostnotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GhostnotesViewController.swift; path = "View Controllers/GhostnotesViewController.swift"; sourceTree = "<group>"; };
+		D86DC3821D0407E30013DFC8 /* DocCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocCell.xib; sourceTree = "<group>"; };
 		D884C1A01CE27600003E15D2 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/Mac/Realm.framework; sourceTree = "<group>"; };
 		D884C1A11CE27600003E15D2 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/Mac/RealmSwift.framework; sourceTree = "<group>"; };
 		D8CC00AC1CE6793300D13331 /* GhostNoteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GhostNoteManager.swift; sourceTree = "<group>"; };
@@ -158,7 +160,7 @@
 		D8D10EE31CC48A9F00A434F6 /* Ghostnote_BrowserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ghostnote_BrowserUITests.swift; sourceTree = "<group>"; };
 		D8D10EE51CC48A9F00A434F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8D30DAC1D02A1BD004009F7 /* GhostNotesAppTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GhostNotesAppTableViewController.swift; sourceTree = "<group>"; };
-		D8D30DAE1D02A1D3004009F7 /* GhostNotesNoteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GhostNotesNoteTableViewController.swift; sourceTree = "<group>"; };
+		D8D30DAE1D02A1D3004009F7 /* GhostNotesDocTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GhostNotesDocTableViewController.swift; sourceTree = "<group>"; };
 		D8D30DB01D02A73D004009F7 /* AppCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppCell.xib; sourceTree = "<group>"; };
 		D8E380EB1CDC21000028D161 /* TaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TaskCell.xib; path = Views/TaskCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -242,6 +244,7 @@
 				D81175021CFEA5C4004133E4 /* ButtonTableCellView.swift */,
 				D8151CC11D00C2CC00F04C24 /* NoteCell.xib */,
 				D8D30DB01D02A73D004009F7 /* AppCell.xib */,
+				D86DC3821D0407E30013DFC8 /* DocCell.xib */,
 			);
 			name = "Table Cells";
 			sourceTree = "<group>";
@@ -338,7 +341,7 @@
 				D81281931CCDB9DC001749E9 /* GhostnotesViewController.xib */,
 				D8CC00B01CE67B6D00D13331 /* GhostNoteTextViewController.swift */,
 				D8D30DAC1D02A1BD004009F7 /* GhostNotesAppTableViewController.swift */,
-				D8D30DAE1D02A1D3004009F7 /* GhostNotesNoteTableViewController.swift */,
+				D8D30DAE1D02A1D3004009F7 /* GhostNotesDocTableViewController.swift */,
 			);
 			name = Ghostnotes;
 			sourceTree = "<group>";
@@ -512,6 +515,7 @@
 				D8E380EC1CDC21000028D161 /* TaskCell.xib in Resources */,
 				D80001B21CD801EB00255E54 /* NewNamedItemViewController.xib in Resources */,
 				D8D10ECB1CC48A9F00A434F6 /* Assets.xcassets in Resources */,
+				D86DC3831D0407E30013DFC8 /* DocCell.xib in Resources */,
 				D81281941CCDB9DC001749E9 /* GhostnotesViewController.xib in Resources */,
 				D8D30DB11D02A73D004009F7 /* AppCell.xib in Resources */,
 				D81175011CFEA463004133E4 /* ButtonTableCellView.xib in Resources */,
@@ -572,7 +576,7 @@
 				D8265A671CDC10210054AF57 /* TaskNameValidator.swift in Sources */,
 				D84F16E61CC71215005612BB /* NotesViewController.swift in Sources */,
 				D84F16D61CC553DC005612BB /* Document.swift in Sources */,
-				D8D30DAF1D02A1D3004009F7 /* GhostNotesNoteTableViewController.swift in Sources */,
+				D8D30DAF1D02A1D3004009F7 /* GhostNotesDocTableViewController.swift in Sources */,
 				D8265A611CDB15F00054AF57 /* TasksController.swift in Sources */,
 				D8265A631CDB18760054AF57 /* TaskListCell.swift in Sources */,
 				D8265A651CDBE37E0054AF57 /* TaskCell.swift in Sources */,

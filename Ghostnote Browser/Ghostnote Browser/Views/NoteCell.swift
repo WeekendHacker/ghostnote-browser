@@ -15,8 +15,8 @@ class NoteCell: NSTableCellView, NSTextFieldDelegate {
     var note:Note? { didSet {
      
             if let myNote = note {
-                textField?.stringValue = myNote.name
-                textField?.delegate = self
+                textField?.attributedStringValue = NSAttributedString(string: myNote.name, attributes: [NSForegroundColorAttributeName : NSColor.blackColor()])
+                    textField?.delegate = self
             }
         }
     }

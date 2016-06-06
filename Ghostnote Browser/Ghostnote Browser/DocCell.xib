@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="DocCell" customModule="Ghostnote_Browser" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView" destination="aiG-pR-YtO" id="Eww-eb-469"/>
+                <outlet property="textField" destination="uDO-a2-eGT" id="NfP-fP-29b"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="36"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aiG-pR-YtO">
+                    <rect key="frame" x="0.0" y="7" width="23" height="20"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="XaU-Cf-ajB"/>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uDO-a2-eGT">
+                    <rect key="frame" x="18" y="10" width="464" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="qc6-TN-eVK">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="aiG-pR-YtO" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="0Ea-1R-sLp"/>
+                <constraint firstItem="uDO-a2-eGT" firstAttribute="leading" secondItem="aiG-pR-YtO" secondAttribute="trailing" constant="-3" id="2Ds-TR-NSa"/>
+                <constraint firstItem="uDO-a2-eGT" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="KcL-7f-TBh"/>
+                <constraint firstAttribute="trailing" secondItem="uDO-a2-eGT" secondAttribute="trailing" id="Orb-Ug-GbH"/>
+                <constraint firstItem="aiG-pR-YtO" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="rhZ-jl-wev"/>
+            </constraints>
+            <point key="canvasLocation" x="317" y="79"/>
+        </customView>
+    </objects>
+</document>

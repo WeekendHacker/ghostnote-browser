@@ -18,23 +18,27 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
     
     weak var notesTableView:DeletableTableView? {
         didSet {
+            
             if let tv = notesTableView {
                 
                 tv.setDelegate(self)
                 tv.setDataSource(self)
                 tv.wantsLayer = true
                 tv.deleteDelegate = self
+                tv.selectionHighlightStyle = .None
+                
                 let buttonNib = NSNib(nibNamed: "ButtonTableCellView", bundle: nil)
                 tv.registerNib(buttonNib, forIdentifier: "ButtonTableCellView")
                 let noteCellNib = NSNib(nibNamed: "NoteCell", bundle: nil)
                 tv.registerNib(noteCellNib, forIdentifier: "NoteCell")
                 
+                tv.target = self
+                tv.action = #selector(tvAction(_:))
                 
             }
         }
     }
     
-
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
         return NoteManager.shared.notes.count + 1
     }
@@ -60,15 +64,15 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
         return view
     }
     
-    func tableViewSelectionDidChange(notification: NSNotification) {
-        
-        NSNotificationCenter.defaultCenter().postNotificationName("SelectedNoteChanged", object: notification.object)
-    }
-    
     // func
     func addNoteClicked(sender:AnyObject?) {
         NSNotificationCenter.defaultCenter().postNotificationName("AddNoteClicked", object: nil)
     }
+    
+    func tvAction(foo:AnyObject?) {
+        NSNotificationCenter.defaultCenter().postNotificationName("SelectedNoteChanged", object: foo)
+    }
+    
     
     // DeleteRowDelegate
     

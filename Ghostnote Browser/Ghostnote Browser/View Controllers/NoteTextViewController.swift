@@ -50,7 +50,9 @@ class NoteTextViewController: NSObject, NSTextViewDelegate {
     func textDidChange(notification: NSNotification) {
         if notification.object as? NSTextView == noteTextView {
             if let note = currentNote {
-                noteTextView!.writeRTFDToFile(note.filePath, atomically: true)
+                if !note.invalidated {
+                    noteTextView!.writeRTFDToFile(note.filePath, atomically: true)
+                }
             }
         }
     }

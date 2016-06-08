@@ -32,6 +32,8 @@ class GhostNotesDocTableViewController: NSObject, NSTableViewDelegate, NSTableVi
                 tv.setDelegate(self)
                 tv.setDataSource(self)
                 
+                tv.selectionHighlightStyle = .None
+                
                 let nib =  NSNib(nibNamed: "DocCell",bundle: nil)
                 tv.registerNib(nib, forIdentifier: "DocCell")
                 tv.wantsLayer = true

@@ -22,10 +22,13 @@ class GhostNotesAppTableViewController: NSObject , NSTableViewDelegate , NSTable
         didSet {
             appsTableView?.setDelegate(self)
             appsTableView?.setDataSource(self)
-            
+            appsTableView?.selectionHighlightStyle = .None
             if let appCellNib = NSNib(nibNamed: "AppCell", bundle: nil) {
                 appsTableView?.registerNib(appCellNib, forIdentifier: "AppCell")
             }
+            
+            appsTableView?.target = self
+            appsTableView?.action = #selector(rowClicked(_:))
             
             NSDistributedNotificationCenter.defaultCenter().addObserver(self,
                                                                         selector: #selector(handleNoteCreation),
@@ -85,9 +88,10 @@ class GhostNotesAppTableViewController: NSObject , NSTableViewDelegate , NSTable
         return view
     }
     
-    func tableViewSelectionDidChange(notification: NSNotification) {
-        
-        if let tv = notification.object as? NSTableView! {
+    
+    
+    func rowClicked(sender:AnyObject?) {
+        if let tv = sender as? NSTableView! {
             
             if tv.hasSelection() {
                 let selectedApp = apps[tv.selectedRow]

@@ -34,7 +34,8 @@ class TaskListManager: NSObject {
         catch {
             print(error)
         }
-        
+        let uniquePart = NSDate().timeIntervalSince1970
+        newList.addTask("New Task <!\(uniquePart)>")
     }
     
     func deleteTaskList(name:String) {
@@ -57,5 +58,18 @@ class TaskListManager: NSObject {
             }
         }
         
+    }
+    
+    func changeTask(task:Task, to:String) {
+        
+        do {
+            try db.write({
+                task.title = to
+                db.add(task, update: true)
+            })
+        }
+        catch {
+            print(error)
+        }
     }
 }

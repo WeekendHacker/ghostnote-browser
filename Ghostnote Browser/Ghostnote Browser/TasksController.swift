@@ -8,12 +8,8 @@
 
 import Cocoa
 
-class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, NewNamedItemViewControllerClient {
+class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate {
 
-    var newTaskController: NewNamedItemViewController?
-    var clientViewController: NSViewController?
-    
-    
     override init() {
          super.init()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TasksController.handleTaskListDeleted(_:)), name: "DeletedTaskList", object: nil)
@@ -62,6 +58,10 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, New
         }
     }
     
+    func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+        return 72.0
+    }
+    
     // NSTableViewDatasource
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
         var rows = 0
@@ -88,13 +88,7 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, New
 
         print("add task clicked")
         
-        newTaskController = NewNamedItemViewController(nibName: nil, bundle: nil)
-        newTaskController?.client = self
-        newTaskController?.validator = TaskNameValidator.shared
-        TaskNameValidator.shared.taskList = selectedTaskList
-        newTaskController?.nameTextField?.placeholderString = "New Task List Name"
-        
-        clientViewController?.presentViewController(newTaskController!, asPopoverRelativeToRect: newTaskController!.view.frame, ofView: addTaskButton!, preferredEdge: NSRectEdge.MaxX, behavior: NSPopoverBehavior.Transient)
+ 
         
     }
     
@@ -120,33 +114,14 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, New
         if let selected = selectedTaskList {
             selected.addTask(name)
             tasksTableView?.reloadData()
-            dismissNewNamedItemController()
         }
     }
     
     func canceled() {
-       dismissNewNamedItemController()
     }
     
-    func dismissNewNamedItemController() {
-        if let vc = newTaskController {
-            clientViewController?.dismissViewController(vc)
-            newTaskController = nil
-        }
-    }
-    
+
     // 
-    
-    func tableViewSelectionDidChange(notification: NSNotification) {
-        if let tv = notification.object as? NSTableView {
-            if tv.hasSelection() {
-                deleteTaskButton?.enabled = true
-            }else {
-                deleteTaskButton?.enabled = false
-            }
-        }
-    }
-    
     
     // notification handlers
     

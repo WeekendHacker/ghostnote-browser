@@ -21,4 +21,14 @@ class DocCell: NSTableCellView {
         }
     }
     
+    override var backgroundStyle: NSBackgroundStyle {
+        didSet {
+            if self.backgroundStyle == .Light {
+                self.textField?.textColor = NSColor.controlTextColor()
+            } else if self.backgroundStyle == .Dark {
+                self.textField?.textColor = NSColor.alternateSelectedControlTextColor()
+            }
+        }
+    }
+    
 }

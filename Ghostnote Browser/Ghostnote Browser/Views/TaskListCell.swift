@@ -13,7 +13,9 @@ class TaskListCell: NSTableCellView {
     var taskList:TaskList? {
         didSet {
             if let list = taskList {
-                self.textField?.stringValue = list.title
+                let title = list.title
+                let displayTitle = title.componentsSeparatedByString("<!").first
+                self.textField?.stringValue = displayTitle!
             }
         }
     }

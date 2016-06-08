@@ -10,12 +10,13 @@ import Cocoa
 import RealmSwift
 
 class TaskList: Object {
+    dynamic var id = NSUUID().UUIDString
     dynamic var title = "New List"
     var tasks = List<Task>()
     dynamic var creationDate:NSDate?
     
     override class func primaryKey() ->String {
-        return "title"
+        return "id"
     }
     
     func addTask(named:String) {

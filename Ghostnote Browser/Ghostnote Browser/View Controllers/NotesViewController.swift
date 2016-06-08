@@ -11,7 +11,6 @@ import Cocoa
 class NotesViewController: NSViewController, ButtonNavigable {
 
     var notesTableController = NotesTableViewController()
-    var newNoteController:NewNamedItemViewController?
     var noteTextViewController:NoteTextViewController = NoteTextViewController()
     
     @IBOutlet var noteTextView:NSTextView?
@@ -54,7 +53,7 @@ class NotesViewController: NSViewController, ButtonNavigable {
         let date = NSDate()
         
         let uniquePart = "\(date.timeIntervalSince1970)"
-        NoteManager.shared.createNoteWithName("New Note \(uniquePart)")
+        NoteManager.shared.createNoteWithName("New Note <!\(uniquePart)>")
         notesTableView?.reloadData()
     }
     
@@ -71,8 +70,9 @@ class NotesViewController: NSViewController, ButtonNavigable {
                     print("selected \(selectedNote)")
                     noteTextViewController.currentNote = selectedNote
                 }
-               
             }
+        }else {
+            noteTextViewController.currentNote = nil
         }
     }
 }

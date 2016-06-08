@@ -14,8 +14,20 @@ class NoteCell: NSTableCellView, NSTextFieldDelegate {
     var note:Note? { didSet {
      
             if let myNote = note {
-                textField?.stringValue = myNote.name
+                let title = myNote.name
+                let displayTitle = title.componentsSeparatedByString("<!").first
+                textField?.stringValue = displayTitle!
                 textField?.delegate = self
+            }
+        }
+    }
+    
+    override var backgroundStyle: NSBackgroundStyle {
+        didSet {
+            if self.backgroundStyle == .Light {
+                self.textField?.textColor = NSColor.controlTextColor()
+            } else if self.backgroundStyle == .Dark {
+                self.textField?.textColor = NSColor.alternateSelectedControlTextColor()
             }
         }
     }

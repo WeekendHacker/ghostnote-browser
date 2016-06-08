@@ -7,7 +7,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="DocCell" customModule="Ghostnote_Browser" customModuleProvider="target">
             <connections>
                 <outlet property="imageView" destination="aiG-pR-YtO" id="Eww-eb-469"/>
-                <outlet property="textField" destination="uDO-a2-eGT" id="NfP-fP-29b"/>
+                <outlet property="textField" destination="uDO-a2-eGT" id="dkN-Ox-KXo"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
@@ -31,7 +31,7 @@
                     </constraints>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="qc6-TN-eVK">
                         <font key="font" metaFont="system"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
@@ -45,7 +45,7 @@
             </constraints>
             <connections>
                 <outlet property="imageView" destination="aiG-pR-YtO" id="3PP-1n-qpt"/>
-                <outlet property="textField" destination="uDO-a2-eGT" id="Yfd-dq-8hA"/>
+                <outlet property="textField" destination="uDO-a2-eGT" id="BaJ-Hr-yBv"/>
             </connections>
             <point key="canvasLocation" x="317" y="75"/>
         </customView>

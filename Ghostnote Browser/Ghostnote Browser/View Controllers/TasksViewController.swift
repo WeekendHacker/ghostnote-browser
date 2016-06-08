@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class TasksViewController: NSViewController, ButtonNavigable {
+class TasksViewController: NSViewController, ButtonNavigable, TaskListControllerObserver {
 
     var taskListController = TaskListController()
     var taskController = TasksController()
@@ -17,6 +17,7 @@ class TasksViewController: NSViewController, ButtonNavigable {
         didSet {
             if let tv = taskListTableView {
                 taskListController.taskListTableView = tv
+                taskListController.observer = self
            }
         }
     }
@@ -53,7 +54,6 @@ class TasksViewController: NSViewController, ButtonNavigable {
         super.viewDidLoad()
        
         view.autoresizingMask = [.ViewWidthSizable, .ViewHeightSizable]
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(taskListSelected(_:)), name: "SelectedTaskChanged", object: nil)
 
         let nib = NSNib(nibNamed: "TaskCell", bundle: nil)
         tasksTableView?.registerNib(nib, forIdentifier: "TaskCell")
@@ -62,14 +62,11 @@ class TasksViewController: NSViewController, ButtonNavigable {
     override func viewDidAppear() {
         super.viewDidAppear()
         sizeForContainer()
-        deleteTaskButton?.enabled = false
     }
     
-
+    // TaskListControllerObserver
     
-    // Notification Handlers
-    
-    func taskListSelected(notif:NSNotification) {
+    func selectedList(taskList: TaskList) {
         
         if taskListTableView!.hasSelection() {
             if let row = taskListTableView?.selectedRowIndexes.firstIndex {
@@ -81,21 +78,16 @@ class TasksViewController: NSViewController, ButtonNavigable {
                 }
             }
         }else {
-            taskController.selectedTaskList = nil
-
+            selectedNoList()
         }
     }
     
-    func taskSelected(notif:NSNotification) {
-        
-        if let tv = tasksTableView {
-            if tv.hasSelection() {
-                deleteTaskButton?.enabled = true
-            }else {
-                deleteTaskButton?.enabled = false
-            }
-
-        }
+    func selectedNoList() {
+        taskController.selectedTaskList = nil
     }
-        
+    
+    func currentListChanged() {
+        tasksTableView?.reloadData()
+    }
+    
 }

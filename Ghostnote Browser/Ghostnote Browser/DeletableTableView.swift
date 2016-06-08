@@ -12,9 +12,14 @@ protocol DeleteRowDelegate :NSTableViewDelegate {
     func deleteRow(row:Int)
 }
 
+protocol KeyboardCreationDelegate :NSTableViewDelegate {
+    func createKeyPressed(row:Int)
+}
+
 class DeletableTableView: NSTableView {
 
     weak var deleteDelegate:DeleteRowDelegate?
+    weak var createDelegate:KeyboardCreationDelegate?
     
     override func keyDown(theEvent: NSEvent) {
 
@@ -22,9 +27,12 @@ class DeletableTableView: NSTableView {
             if hasSelection() == true {
                 let selectionToDelete = selectedRow
                 deleteDelegate?.deleteRow(selectionToDelete)
-            }else {
+            }
+            else {
                 NSBeep()
             }
+        }else if theEvent.keyCode == 48 {
+            createDelegate?.createKeyPressed(selectedRow)
         }
       
     }

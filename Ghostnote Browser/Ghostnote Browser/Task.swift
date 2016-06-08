@@ -11,13 +11,14 @@ import RealmSwift
 
 class Task: Object {
 
+    dynamic var id = NSUUID().UUIDString
     dynamic var title = "New Task"
     dynamic var creationDate:NSDate?
     dynamic var completionDate:NSDate?
     dynamic var isComplete:Bool = false
     
     override class func primaryKey() -> String {
-        return "title"  
+        return "id"  
     }
     
     func complete() {

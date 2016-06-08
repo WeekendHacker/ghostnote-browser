@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
     <objects>
@@ -13,12 +12,12 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView identifier="TaskCell" id="c22-O7-iKe" customClass="TaskCell" customModule="Ghostnote_Browser" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="250" height="40"/>
+            <rect key="frame" x="0.0" y="0.0" width="250" height="72"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="oJg-uP-G2E">
-                    <rect key="frame" x="17" y="11" width="61" height="18"/>
-                    <buttonCell key="cell" type="check" title="Check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="J9H-RH-rAx">
+                    <rect key="frame" x="18" y="27" width="22" height="18"/>
+                    <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="J9H-RH-rAx">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -26,16 +25,67 @@
                         <action selector="checkboxChecked:" target="c22-O7-iKe" id="wRP-AH-v4i"/>
                     </connections>
                 </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ClR-vJ-MEJ">
+                    <rect key="frame" x="35" y="28" width="217" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="17" id="agj-8x-vHc"/>
+                        <constraint firstAttribute="width" constant="213" id="fjG-j3-VAq"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" alignment="left" title="Label" id="pb0-pF-sxg">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="1Ug-qe-Orn">
+                    <rect key="frame" x="7" y="6" width="235" height="5"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Xng-re-Nvw">
+                    <rect key="frame" x="8" y="61" width="234" height="5"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <box horizontalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Tg6-7M-WSi">
+                    <rect key="frame" x="239" y="8" width="5" height="56"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <box horizontalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="GpL-v2-LKi">
+                    <rect key="frame" x="6" y="8" width="5" height="56"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
             </subviews>
             <constraints>
+                <constraint firstItem="GpL-v2-LKi" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="7WB-zQ-eI2"/>
+                <constraint firstItem="Tg6-7M-WSi" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="8fG-4B-baF"/>
+                <constraint firstItem="Xng-re-Nvw" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="AxX-xq-M0Y"/>
+                <constraint firstItem="ClR-vJ-MEJ" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="ClG-xG-dfX"/>
+                <constraint firstItem="GpL-v2-LKi" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="8" id="EWf-oB-nDb"/>
+                <constraint firstItem="1Ug-qe-Orn" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="7" id="HcA-v5-Bfh"/>
+                <constraint firstItem="Xng-re-Nvw" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="8" id="LCd-KL-iF5"/>
+                <constraint firstAttribute="trailing" secondItem="1Ug-qe-Orn" secondAttribute="trailing" constant="8" id="LS9-DQ-Uc1"/>
                 <constraint firstItem="oJg-uP-G2E" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="NIo-PZ-5ky"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oJg-uP-G2E" secondAttribute="trailing" constant="20" id="RmZ-DK-S9M"/>
-                <constraint firstItem="oJg-uP-G2E" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="19" id="jFW-dD-fvy"/>
+                <constraint firstAttribute="trailing" secondItem="Xng-re-Nvw" secondAttribute="trailing" constant="8" id="Tca-nI-R6a"/>
+                <constraint firstAttribute="trailing" secondItem="Tg6-7M-WSi" secondAttribute="trailing" constant="8" id="cd7-nt-q00"/>
+                <constraint firstAttribute="bottom" secondItem="Tg6-7M-WSi" secondAttribute="bottom" constant="8" id="fnG-DB-i1g"/>
+                <constraint firstAttribute="bottom" secondItem="GpL-v2-LKi" secondAttribute="bottom" constant="8" id="g3E-AL-bkg"/>
+                <constraint firstItem="ClR-vJ-MEJ" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="37" id="hKj-Xd-16Q"/>
+                <constraint firstItem="oJg-uP-G2E" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="jFW-dD-fvy"/>
+                <constraint firstAttribute="bottom" secondItem="1Ug-qe-Orn" secondAttribute="bottom" constant="8" id="lXp-7R-b7q"/>
             </constraints>
             <connections>
                 <outlet property="checkbox" destination="oJg-uP-G2E" id="0Ob-x5-Xjr"/>
+                <outlet property="textField" destination="ClR-vJ-MEJ" id="qrR-Tj-epr"/>
             </connections>
-            <point key="canvasLocation" x="250" y="82"/>
+            <point key="canvasLocation" x="250" y="98"/>
         </customView>
     </objects>
 </document>

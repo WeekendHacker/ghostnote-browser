@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import RealmSwift
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -15,8 +16,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var windowController = MainWindowController(windowNibName: "MainWindowController")
     
     var buttonNavViewController:ButtonNavViewController?
+    var realm:Realm? = nil
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
+        var config = Realm.Configuration()
+        config.deleteRealmIfMigrationNeeded = true
+        realm = try! Realm(configuration: config)
+        
         buttonNavViewController = ButtonNavViewController(nibName: "ButtonNavViewController", bundle: nil)
         windowController.window?.contentView = buttonNavViewController?.view
         windowController.showWindow(self);

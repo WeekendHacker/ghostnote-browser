@@ -8,9 +8,17 @@
 
 import Cocoa
 
-class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource, DeleteRowDelegate {
+protocol TaskListControllerObserver {
+    func selectedList(taskList:TaskList)
+    func selectedNoList()
+    func currentListChanged()
+}
 
+class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
+                          DeleteRowDelegate, KeyboardCreationDelegate {
     
+    var observer:TaskListControllerObserver?
+
     weak var taskListTableView:DeletableTableView? {
         didSet {
             if let tv = taskListTableView {
@@ -19,22 +27,19 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource, 
                 tv.wantsLayer = true
                 tv.selectionHighlightStyle = .Regular
                 tv.deleteDelegate = self
+                tv.createDelegate = self
+                tv.target = self
+                tv.action = #selector(selected)
+            
                 let buttonNib = NSNib(nibNamed: "ButtonTableCellView", bundle: nil)
                 tv.registerNib(buttonNib, forIdentifier: "ButtonTableCellView"  )
             }
         }
     }
-    
 
-    
-
-    
-    
-    
     // NSTableViewDatasource
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
         let count = TaskListManager.shared.taskLists.count + 1
-        print("returning \(count)")
         return count
     }
     
@@ -64,40 +69,32 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource, 
         return true
     }
     
-    // NSTableViewDelegate 
-    
- 
-
     // Actions
-    
-    @IBAction func addTaskListClicked(sender:AnyObject?) {
-        newTaskList()
-    }
-    
-    @IBAction func deleteTaskListClicked(sender:AnyObject?)  {
-        
-        if let row = taskListTableView?.selectedRowIndexes.firstIndex {
-            let view = taskListTableView?.viewAtColumn(0, row: row, makeIfNecessary: false) as? TaskListCell
-            
-            if let selectedTaskList = view?.taskList {
-                print("selected \(selectedTaskList) to delete.")
-                TaskListManager.shared.deleteTaskList(selectedTaskList.title)
-                taskListTableView?.reloadData()
-            }
-        }
-    }
-    
-    func newTaskList() {
+    func addTaskListClicked(sender:AnyObject?) {
         let uniquePart = "\(NSDate().timeIntervalSince1970)"
-        TaskListManager.shared.createTaskList("New Task List" + " \(uniquePart)")
+        TaskListManager.shared.createTaskList("New Task List" + "<!\(uniquePart)>")
         taskListTableView?.reloadData()
     }
 
+    // DeleteRowDelegate
     func deleteRow(row: Int) {
         let selectedList = TaskListManager.shared.taskLists[row - 1]
         TaskListManager.shared.deleteTaskList(selectedList.title)
         taskListTableView?.reloadData()
     }
     
+    // KeyboardCreationDelegate
+    func createKeyPressed(row: Int) {
+        let selectedList = TaskListManager.shared.taskLists[row - 1]
+        let uniquePart = NSDate().timeIntervalSince1970
+        selectedList.addTask("New Task <!\(uniquePart)>")
+        observer?.currentListChanged()
+    }
     
+    func selected(sender:AnyObject?) {
+        if let row = taskListTableView?.selectedRow {
+            let selectedTaskList = TaskListManager.shared.taskLists[row - 1]
+            observer?.selectedList(selectedTaskList)
+        }
+    }
 }

@@ -11,14 +11,14 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="34"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cop-jp-sCR">
-                    <rect key="frame" x="6" y="7" width="103" height="21"/>
+                <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cop-jp-sCR">
+                    <rect key="frame" x="6" y="3" width="103" height="25"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="udu-5e-9J3"/>
                     </constraints>
-                    <buttonCell key="cell" type="bevel" title="Add Task List" bezelStyle="rounded" image="Add Button" imagePosition="left" alignment="left" imageScaling="proportionallyDown" inset="2" id="8Ac-zR-Yf3">
+                    <buttonCell key="cell" type="roundTextured" title="Add Task List" bezelStyle="texturedRounded" image="Add Button" imagePosition="left" alignment="left" imageScaling="proportionallyDown" inset="2" id="8Ac-zR-Yf3">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="systemThin" size="13"/>
                     </buttonCell>
                 </button>
             </subviews>

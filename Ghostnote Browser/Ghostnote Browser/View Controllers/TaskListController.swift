@@ -34,11 +34,18 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
             
                 let buttonNib = NSNib(nibNamed: "ButtonTableCellView", bundle: nil)
                 tv.registerNib(buttonNib, forIdentifier: "ButtonTableCellView"  )
+                let cellNib = NSNib(nibNamed: "TaskListCell", bundle: nil)
+                tv.registerNib(cellNib, forIdentifier: "TaskListCell")
             }
         }
     }
 
     // NSTableViewDatasource
+    
+    func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+        return 30.0
+    }
+    
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
         let count = TaskListManager.shared.taskLists.count + 1
         return count

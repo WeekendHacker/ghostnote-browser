@@ -81,6 +81,10 @@ class GhostNotesAppTableViewController: NSObject , NSTableViewDelegate , NSTable
         return apps.count
     }
     
+    func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+        return 30.0
+    }
+    
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let app = apps[row]
         let view = appsTableView?.makeViewWithIdentifier("AppCell", owner: nil) as! AppCell

@@ -57,6 +57,9 @@ class GhostNotesDocTableViewController: NSObject, NSTableViewDelegate, NSTableVi
         return ghostnotes.count
     }
     
+    func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+        return 30.0
+    }
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
         

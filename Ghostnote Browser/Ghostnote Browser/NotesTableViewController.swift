@@ -25,7 +25,7 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
                 tv.setDataSource(self)
                 tv.wantsLayer = true
                 tv.deleteDelegate = self
-//                tv.selectionHighlightStyle = .None
+                tv.selectionHighlightStyle = .Regular
                 
                 let buttonNib = NSNib(nibNamed: "ButtonTableCellView", bundle: nil)
                 tv.registerNib(buttonNib, forIdentifier: "ButtonTableCellView")
@@ -63,6 +63,14 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
         view!.note = NoteManager.shared.notes[row - 1]
         return view
     }
+    
+    func tableView(tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
+        if row == 0 {
+            return false
+        }
+        return true
+    }
+    
     
     // func
     func addNoteClicked(sender:AnyObject?) {

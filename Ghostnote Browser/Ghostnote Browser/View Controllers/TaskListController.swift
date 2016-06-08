@@ -19,7 +19,7 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource, 
                 tv.setDelegate(self)
                 tv.setDataSource(self)
                 tv.wantsLayer = true
-//                tv.selectionHighlightStyle = .None
+                tv.selectionHighlightStyle = .Regular
                 
                 let buttonNib = NSNib(nibNamed: "ButtonTableCellView", bundle: nil)
                 tv.registerNib(buttonNib, forIdentifier: "ButtonTableCellView"  )
@@ -69,6 +69,12 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource, 
         return view
     }
     
+    func tableView(tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
+        if row == 0 {
+            return false
+        }
+        return true
+    }
     
     // NSTableViewDelegate 
     

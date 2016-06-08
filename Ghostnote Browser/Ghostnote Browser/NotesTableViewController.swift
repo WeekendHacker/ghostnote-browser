@@ -25,7 +25,7 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
                 tv.setDataSource(self)
                 tv.wantsLayer = true
                 tv.deleteDelegate = self
-                tv.selectionHighlightStyle = .None
+//                tv.selectionHighlightStyle = .None
                 
                 let buttonNib = NSNib(nibNamed: "ButtonTableCellView", bundle: nil)
                 tv.registerNib(buttonNib, forIdentifier: "ButtonTableCellView")

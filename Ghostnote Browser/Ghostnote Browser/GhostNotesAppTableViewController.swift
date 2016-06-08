@@ -22,7 +22,7 @@ class GhostNotesAppTableViewController: NSObject , NSTableViewDelegate , NSTable
         didSet {
             appsTableView?.setDelegate(self)
             appsTableView?.setDataSource(self)
-            appsTableView?.selectionHighlightStyle = .None
+//            appsTableView?.selectionHighlightStyle = .None
             if let appCellNib = NSNib(nibNamed: "AppCell", bundle: nil) {
                 appsTableView?.registerNib(appCellNib, forIdentifier: "AppCell")
             }

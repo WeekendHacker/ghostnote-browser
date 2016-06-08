@@ -27,8 +27,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uDO-a2-eGT">
                     <rect key="frame" x="32" y="5" width="451" height="17"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="447" id="33j-YI-AgX"/>
-                        <constraint firstAttribute="height" constant="17" id="br6-yU-Duu"/>
+                        <constraint firstAttribute="height" constant="17" id="wLH-dq-0po"/>
                     </constraints>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="qc6-TN-eVK">
                         <font key="font" metaFont="system"/>
@@ -38,9 +37,10 @@
                 </textField>
             </subviews>
             <constraints>
+                <constraint firstItem="uDO-a2-eGT" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="4h6-EX-xWk"/>
+                <constraint firstAttribute="trailing" secondItem="uDO-a2-eGT" secondAttribute="trailing" constant="-1" id="5jF-Ds-QUS"/>
                 <constraint firstItem="aiG-pR-YtO" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="BCc-lh-ALE"/>
-                <constraint firstItem="uDO-a2-eGT" firstAttribute="leading" secondItem="aiG-pR-YtO" secondAttribute="trailing" constant="8" id="Qjo-rz-ofc"/>
-                <constraint firstItem="uDO-a2-eGT" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="SJd-yz-IfU"/>
+                <constraint firstItem="uDO-a2-eGT" firstAttribute="leading" secondItem="aiG-pR-YtO" secondAttribute="trailing" constant="8" id="NIK-Kl-cO8"/>
                 <constraint firstItem="aiG-pR-YtO" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="i8S-K9-b8E"/>
             </constraints>
             <connections>

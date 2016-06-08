@@ -19,7 +19,7 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource, 
                 tv.setDelegate(self)
                 tv.setDataSource(self)
                 tv.wantsLayer = true
-                tv.selectionHighlightStyle = .None
+//                tv.selectionHighlightStyle = .None
                 
                 let buttonNib = NSNib(nibNamed: "ButtonTableCellView", bundle: nil)
                 tv.registerNib(buttonNib, forIdentifier: "ButtonTableCellView"  )

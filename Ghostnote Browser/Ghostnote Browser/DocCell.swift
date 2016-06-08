@@ -14,8 +14,8 @@ class DocCell: NSTableCellView {
         didSet {
             if let  myDoc = doc {
                 textField?.lineBreakMode = .ByTruncatingMiddle
-                textField?.stringValue = myDoc.path
-                toolTip = myDoc.path
+                textField?.stringValue = myDoc.note.docID
+                toolTip = myDoc.note.docID
                 imageView?.image = DocumentIconProvider.iconImageForDocumentPath(myDoc.path)
             }
         }

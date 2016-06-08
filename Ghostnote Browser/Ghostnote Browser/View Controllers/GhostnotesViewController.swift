@@ -8,7 +8,8 @@
 
 import Cocoa
 
-class GhostnotesViewController: NSViewController, ButtonNavigable {
+class GhostnotesViewController: NSViewController, ButtonNavigable,
+                                GhostNotesAppTableViewControllerObserver, GhostNotesDocTableViewControllerObserver {
 
     var appsTableViewController = GhostNotesAppTableViewController()
     var docsTableViewController = GhostNotesDocTableViewController()
@@ -29,6 +30,7 @@ class GhostnotesViewController: NSViewController, ButtonNavigable {
         didSet {
             if let tv = appsTableView {
                 appsTableViewController.appsTableView = tv
+                appsTableViewController.observer = self
                 tv.wantsLayer = true
                 tv.backgroundColor = NSColor.clearColor()
             }
@@ -39,6 +41,7 @@ class GhostnotesViewController: NSViewController, ButtonNavigable {
         didSet {
             if let tv = docsTableView {
                 docsTableViewController.docsTableView = tv
+                docsTableViewController.observer = self
                 tv.wantsLayer = true
                 tv.backgroundColor = NSColor.clearColor()
             }
@@ -56,22 +59,25 @@ class GhostnotesViewController: NSViewController, ButtonNavigable {
         super.viewDidAppear()
         sizeForContainer()
         appsTableViewController.reload()
-        
     }
-    
-    override func viewWillDisappear() {
-        super.viewWillDisappear()
-    }
-    
-    // GhostnotesOutlineControllerObserver
-    func selectedNote(note: GhostNote) {
 
-        noteTextViewController.currentNote = note
-        
+    // GhostNotesAppTableViewControllerObserver
+    func selectedApp(app: App) {
+        print("selected \(app)")
+        noteTextViewController.currentNote = app.note
+        docsTableViewController.currentApp = app
     }
     
     func selectedNothing() {
-        noteTextViewController.currentNote = nil;
-        
+        print("selected nothing")
     }
+    
+    // GhostNotesDocTableViewControllerObserver
+    
+    func selectedNote(note: GhostNote) {
+        noteTextViewController.currentNote = note
+    }
+    
+
+
 }

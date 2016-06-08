@@ -8,11 +8,19 @@
 
 import Cocoa
 
+protocol GhostNotesDocTableViewControllerObserver {
+    func selectedNote(note:GhostNote)
+    func selectedNothing()
+}
+
+
 class GhostNotesDocTableViewController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
 
+    var observer:GhostNotesDocTableViewControllerObserver?
+    
     var currentApp:App? {
         didSet {
-            docsTableView?.reloadData()
+            reload()
         }
     }
     
@@ -28,6 +36,7 @@ class GhostNotesDocTableViewController: NSObject, NSTableViewDelegate, NSTableVi
                 tv.registerNib(nib, forIdentifier: "DocCell")
                 tv.wantsLayer = true
                 tv.backgroundColor = NSColor.clearColor()
+
             }
         }
     }
@@ -36,6 +45,7 @@ class GhostNotesDocTableViewController: NSObject, NSTableViewDelegate, NSTableVi
         if let app = currentApp {
             ghostnotes = GhostNoteManager.shared.docNotesForApp(app.bundleID)
         }
+        docsTableView?.reloadData()
 
     }
     
@@ -51,7 +61,20 @@ class GhostNotesDocTableViewController: NSObject, NSTableViewDelegate, NSTableVi
         view!.doc =  Document(note:gn)
 
         return view
+    }
+    
+    //
+    func tableViewSelectionDidChange(notification: NSNotification) {
         
+        if let tv = notification.object as? NSTableView! {
+            
+            if tv.hasSelection() {
+                let selectedNote = ghostnotes[tv.selectedRow]
+                observer?.selectedNote(selectedNote)
+            }else {
+                observer?.selectedNothing()
+            }
+        }
     }
 }
  

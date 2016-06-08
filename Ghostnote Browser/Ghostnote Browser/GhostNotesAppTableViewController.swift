@@ -7,9 +7,17 @@
 //
 
 import Cocoa
+protocol GhostNotesAppTableViewControllerObserver {
+
+    func selectedApp(app:App)
+    func selectedNothing()
+}
 
 class GhostNotesAppTableViewController: NSObject , NSTableViewDelegate , NSTableViewDataSource {
 
+    
+    var observer:GhostNotesAppTableViewControllerObserver?
+    
     @IBOutlet weak var appsTableView:NSTableView? {
         didSet {
             appsTableView?.setDelegate(self)
@@ -33,8 +41,6 @@ class GhostNotesAppTableViewController: NSObject , NSTableViewDelegate , NSTable
     
     var apps = Array<App>()
 
-    var currentAppNote:GhostNote?
-    
     func reload() {
         refreshApps()
         appsTableView?.reloadData()
@@ -77,5 +83,18 @@ class GhostNotesAppTableViewController: NSObject , NSTableViewDelegate , NSTable
         let view = appsTableView?.makeViewWithIdentifier("AppCell", owner: nil) as! AppCell
         view.app = app
         return view
+    }
+    
+    func tableViewSelectionDidChange(notification: NSNotification) {
+        
+        if let tv = notification.object as? NSTableView! {
+            
+            if tv.hasSelection() {
+                let selectedApp = apps[tv.selectedRow]
+                observer?.selectedApp(selectedApp)
+            }else {
+                observer?.selectedNothing()
+            }
+        }
     }
 }

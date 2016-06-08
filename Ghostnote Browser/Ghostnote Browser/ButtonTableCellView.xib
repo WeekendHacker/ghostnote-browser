@@ -12,20 +12,19 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cop-jp-sCR">
-                    <rect key="frame" x="0.0" y="7" width="98" height="21"/>
+                    <rect key="frame" x="6" y="7" width="103" height="21"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="21" id="5EU-Uc-hpR"/>
-                        <constraint firstAttribute="width" constant="98" id="cTg-Pc-y5E"/>
+                        <constraint firstAttribute="height" constant="21" id="udu-5e-9J3"/>
                     </constraints>
-                    <buttonCell key="cell" type="bevel" title="+ Add Task List" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="8Ac-zR-Yf3">
+                    <buttonCell key="cell" type="bevel" title="Add Task List" bezelStyle="rounded" image="Add Button" imagePosition="left" alignment="left" imageScaling="proportionallyDown" inset="2" id="8Ac-zR-Yf3">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                 </button>
             </subviews>
             <constraints>
-                <constraint firstItem="cop-jp-sCR" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="RHu-Cj-eUB"/>
-                <constraint firstItem="cop-jp-sCR" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="V7g-EZ-3V6"/>
+                <constraint firstItem="cop-jp-sCR" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="84V-kO-Gfz"/>
+                <constraint firstItem="cop-jp-sCR" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="6" id="D31-d0-RfH"/>
             </constraints>
             <connections>
                 <outlet property="button" destination="cop-jp-sCR" id="6A8-h0-3W1"/>
@@ -33,4 +32,7 @@
             <point key="canvasLocation" x="535" y="99"/>
         </customView>
     </objects>
+    <resources>
+        <image name="Add Button" width="17" height="17"/>
+    </resources>
 </document>

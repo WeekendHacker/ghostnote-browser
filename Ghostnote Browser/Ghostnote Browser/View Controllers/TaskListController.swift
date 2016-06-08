@@ -26,6 +26,7 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
                 tv.setDataSource(self)
                 tv.wantsLayer = true
                 tv.selectionHighlightStyle = .Regular
+                
                 tv.deleteDelegate = self
                 tv.createDelegate = self
                 tv.target = self
@@ -48,7 +49,7 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
         if row == 0 {
             
             let view = taskListTableView?.makeViewWithIdentifier("ButtonTableCellView", owner: nil) as? ButtonTableCellView
-            let title = NSAttributedString(string: "+ Add Task List", attributes: [NSForegroundColorAttributeName : NSColor.blueColor()])
+            let title = NSAttributedString(string: "Add Task List", attributes: [NSForegroundColorAttributeName : NSColor.blueColor()])
             view?.button?.attributedTitle = title
             view?.button?.target = self
             view?.button?.action = #selector(addTaskListClicked)

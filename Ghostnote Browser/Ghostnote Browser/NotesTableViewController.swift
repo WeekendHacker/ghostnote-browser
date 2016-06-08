@@ -49,7 +49,7 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
         if row == 0 {
             
             let view = tableView.makeViewWithIdentifier("ButtonTableCellView", owner: nil) as? ButtonTableCellView
-            let title = NSAttributedString(string: "+ Add New Note", attributes: [NSForegroundColorAttributeName : NSColor.blueColor()])
+            let title = NSAttributedString(string: "Add New Note", attributes: [NSForegroundColorAttributeName : NSColor.blueColor()])
             view?.button?.attributedTitle = title
             view?.button?.target = self
             view?.button?.action = #selector(addNoteClicked(_:))

@@ -8,48 +8,34 @@
 
 import Cocoa
 
-class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource, NewNamedItemViewControllerClient {
+class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource, DeleteRowDelegate {
 
-    var newTaskListController:NewNamedItemViewController?
-    var clientViewController:NSViewController?
     
-    weak var taskListTableView:NSTableView? {
+    weak var taskListTableView:DeletableTableView? {
         didSet {
             if let tv = taskListTableView {
                 tv.setDelegate(self)
                 tv.setDataSource(self)
                 tv.wantsLayer = true
                 tv.selectionHighlightStyle = .Regular
-                
+                tv.deleteDelegate = self
                 let buttonNib = NSNib(nibNamed: "ButtonTableCellView", bundle: nil)
                 tv.registerNib(buttonNib, forIdentifier: "ButtonTableCellView"  )
             }
         }
     }
     
-    weak var addTaskListButton:NSButton? {
-        didSet {
-            if let button = addTaskListButton {
-                button.target = self
-                button.action = #selector(TaskListController.addTaskListClicked(_:))
-            }
-        }
-    }
+
     
-    weak var deleteTaskListButton:NSButton? {
-        didSet {
-            if let button = deleteTaskListButton {
-                button.target = self
-                button.action = #selector(TaskListController.deleteTaskListClicked(_:))
-            }
-        }
-    }
+
     
     
     
     // NSTableViewDatasource
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
-        return TaskListManager.shared.taskLists.count + 1
+        let count = TaskListManager.shared.taskLists.count + 1
+        print("returning \(count)")
+        return count
     }
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
@@ -59,6 +45,8 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource, 
             let view = taskListTableView?.makeViewWithIdentifier("ButtonTableCellView", owner: nil) as? ButtonTableCellView
             let title = NSAttributedString(string: "+ Add Task List", attributes: [NSForegroundColorAttributeName : NSColor.blueColor()])
             view?.button?.attributedTitle = title
+            view?.button?.target = self
+            view?.button?.action = #selector(addTaskListClicked)
             return view
         }
         
@@ -78,38 +66,12 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource, 
     
     // NSTableViewDelegate 
     
-    func tableViewSelectionDidChange(notification: NSNotification) {
-        
-        let tv = notification.object as? NSTableView
-        
-        
-        tv?.enumerateAvailableRowViewsUsingBlock({ (view, row) in
-            
-            let cell = view.subviews.first as? TaskListCell
-            if view.selected == true {
-                cell?.textField?.textColor = NSColor.blueColor()
-                
-            }else {
-                cell?.textField?.textColor = NSColor.blackColor()
-                
-                
-            }
-            
-        })
-        NSNotificationCenter.defaultCenter().postNotificationName("SelectedTaskChanged", object: notification.object)
-    }
+ 
 
-    
-    
     // Actions
     
     @IBAction func addTaskListClicked(sender:AnyObject?) {
-        newTaskListController = NewNamedItemViewController(nibName: nil, bundle: nil)
-        newTaskListController?.client = self
-        newTaskListController?.validator = TaskListNameValidator.shared
-        newTaskListController?.nameTextField?.placeholderString = "New Task List Name"
-        
-        clientViewController?.presentViewController(newTaskListController!, asPopoverRelativeToRect: newTaskListController!.view.frame, ofView: addTaskListButton!, preferredEdge: NSRectEdge.MaxX, behavior: NSPopoverBehavior.Transient)
+        newTaskList()
     }
     
     @IBAction func deleteTaskListClicked(sender:AnyObject?)  {
@@ -121,30 +83,21 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource, 
                 print("selected \(selectedTaskList) to delete.")
                 TaskListManager.shared.deleteTaskList(selectedTaskList.title)
                 taskListTableView?.reloadData()
-                deleteTaskListButton?.enabled = false
             }
         }
     }
     
-    
-    // NewNamedItemViewControllerClient
-    
-    func choseName(name: String) {
-        print("chose \(name)")
-        TaskListManager.shared.createTaskList(name)
+    func newTaskList() {
+        let uniquePart = "\(NSDate().timeIntervalSince1970)"
+        TaskListManager.shared.createTaskList("New Task List" + " \(uniquePart)")
         taskListTableView?.reloadData()
-        dismissNewNamedItemController()
+    }
+
+    func deleteRow(row: Int) {
+        let selectedList = TaskListManager.shared.taskLists[row - 1]
+        TaskListManager.shared.deleteTaskList(selectedList.title)
+        taskListTableView?.reloadData()
     }
     
-    func canceled() {
-        print("canceled")
-        dismissNewNamedItemController()
-    }
     
-    func dismissNewNamedItemController() {
-        if let vc = newTaskListController {
-            clientViewController?.dismissViewController(vc)
-            newTaskListController = nil
-        }
-    }
 }

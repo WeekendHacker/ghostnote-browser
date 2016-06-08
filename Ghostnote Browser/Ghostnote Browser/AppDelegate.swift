@@ -17,7 +17,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var buttonNavViewController:ButtonNavViewController?
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-//        GNCoreDataToRealmMigrator.shared.migrate(GhostNoteManager.shared)
         buttonNavViewController = ButtonNavViewController(nibName: "ButtonNavViewController", bundle: nil)
         windowController.window?.contentView = buttonNavViewController?.view
         windowController.showWindow(self);

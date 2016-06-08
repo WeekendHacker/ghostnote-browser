@@ -13,7 +13,7 @@ class TasksViewController: NSViewController, ButtonNavigable {
     var taskListController = TaskListController()
     var taskController = TasksController()
     
-    @IBOutlet weak var taskListTableView:NSTableView? {
+    @IBOutlet weak var taskListTableView:DeletableTableView? {
         didSet {
             if let tv = taskListTableView {
                 taskListController.taskListTableView = tv
@@ -21,23 +21,15 @@ class TasksViewController: NSViewController, ButtonNavigable {
         }
     }
     
-    @IBOutlet weak var tasksTableView:NSTableView? {
+    @IBOutlet weak var tasksTableView:DeletableTableView? {
         didSet {
             taskController.tasksTableView = tasksTableView
         }
     }
     
-    @IBOutlet weak var addTaskListButton:NSButton? {
-        didSet {
-            taskListController.addTaskListButton = addTaskListButton
-        }
-    }
+ 
     
-    @IBOutlet weak var deleteTaskListButton:NSButton? {
-        didSet {
-            taskListController.deleteTaskListButton = deleteTaskListButton
-        }
-    }
+
     
     
     @IBOutlet weak var addTaskButton:NSButton? {
@@ -62,29 +54,24 @@ class TasksViewController: NSViewController, ButtonNavigable {
        
         view.autoresizingMask = [.ViewWidthSizable, .ViewHeightSizable]
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(taskListSelected(_:)), name: "SelectedTaskChanged", object: nil)
-        deleteTaskListButton?.enabled = false
+
         let nib = NSNib(nibNamed: "TaskCell", bundle: nil)
         tasksTableView?.registerNib(nib, forIdentifier: "TaskCell")
     }
     
     override func viewDidAppear() {
         super.viewDidAppear()
-        taskListController.clientViewController = self
-        taskController.clientViewController = self
         sizeForContainer()
         deleteTaskButton?.enabled = false
     }
     
-    override func presentViewController(viewController: NSViewController, asPopoverRelativeToRect positioningRect: NSRect, ofView positioningView: NSView, preferredEdge: NSRectEdge, behavior: NSPopoverBehavior) {
-        super.presentViewController(viewController, asPopoverRelativeToRect: positioningRect, ofView: positioningView, preferredEdge: preferredEdge, behavior: behavior)
-    }
+
     
     // Notification Handlers
     
     func taskListSelected(notif:NSNotification) {
         
         if taskListTableView!.hasSelection() {
-            deleteTaskListButton?.enabled = true
             if let row = taskListTableView?.selectedRowIndexes.firstIndex {
                 let view = taskListTableView?.viewAtColumn(0, row: row, makeIfNecessary: false) as? TaskListCell
                 
@@ -96,7 +83,6 @@ class TasksViewController: NSViewController, ButtonNavigable {
         }else {
             taskController.selectedTaskList = nil
 
-            deleteTaskListButton?.enabled = false
         }
     }
     

@@ -11,7 +11,6 @@ import RealmSwift
 
 class NoteCell: NSTableCellView, NSTextFieldDelegate {
 
-    
     var note:Note? { didSet {
      
             if let myNote = note {
@@ -34,7 +33,6 @@ class NoteCell: NSTableCellView, NSTextFieldDelegate {
                     editedField.stringValue = (note?.name)!
                 }
                 
-              
             }
         }
     }

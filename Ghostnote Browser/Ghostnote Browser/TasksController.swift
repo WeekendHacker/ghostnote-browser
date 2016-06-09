@@ -19,12 +19,6 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate {
     weak var selectedTaskList:TaskList? {
         didSet {
             tasksTableView?.reloadData()
-            if selectedTaskList == nil {
-                addTaskButton?.enabled = false
-                deleteTaskButton?.enabled = false
-            }else {
-                addTaskButton?.enabled = true
-            }
         }
     }
     
@@ -37,27 +31,7 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate {
             }
         }
     }
-    
-    weak var addTaskButton:NSButton? {
-        didSet {
-            if let button = addTaskButton {
-                button.target = self
-                button.action = #selector(TasksController.addTaskButtonClicked(_:))
-                button.enabled = false
-            }
-        }
-    }
-    
-    weak var deleteTaskButton:NSButton? {
-        didSet {
-            if let button = deleteTaskButton {
-                button.target = self
-                button.action = #selector(TasksController.deleteTaskButtonClicked(_:))
-                button.enabled = false
-            }
-        }
-    }
-    
+
     func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
         return 72.0
     }

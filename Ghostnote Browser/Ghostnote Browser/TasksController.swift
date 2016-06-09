@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate {
+class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, DeleteRowDelegate {
 
     override init() {
          super.init()
@@ -22,12 +22,13 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate {
         }
     }
     
-    weak var tasksTableView:NSTableView? {
+    weak var tasksTableView:DeletableTableView? {
         didSet {
             if let tv = tasksTableView {
                 tv.setDelegate(self)
                 tv.setDataSource(self)
                 tv.wantsLayer = true
+                tv.deleteDelegate = self
             }
         }
     }
@@ -58,15 +59,7 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate {
     
     // Actions
     
-    func addTaskButtonClicked(sender:AnyObject?) {
-
-        print("add task clicked")
-        
- 
-        
-    }
-    
-    func deleteTaskButtonClicked(sender:AnyObject?) {
+    func deleteRow(row: Int) {
         if let row = tasksTableView?.selectedRowIndexes.firstIndex {
             let view = tasksTableView?.viewAtColumn(0, row: row, makeIfNecessary: false) as? TaskCell
             
@@ -76,27 +69,11 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate {
                     taskList.removeTask(selectedTask)
                 }
                 tasksTableView?.reloadData()
-                deleteTaskButton?.enabled = false
             }
         }
-    }
-    
-    // NewNamedItemViewControllerClient
-    
-    func choseName(name: String) {
-       
-        if let selected = selectedTaskList {
-            selected.addTask(name)
-            tasksTableView?.reloadData()
-        }
-    }
-    
-    func canceled() {
-    }
-    
 
-    // 
-    
+    }
+
     // notification handlers
     
     func handleTaskListDeleted(notif:NSNotification) {

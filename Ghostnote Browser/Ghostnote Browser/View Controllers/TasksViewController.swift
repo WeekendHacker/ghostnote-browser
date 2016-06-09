@@ -27,28 +27,7 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
             taskController.tasksTableView = tasksTableView
         }
     }
-    
  
-    
-
-    
-    
-    @IBOutlet weak var addTaskButton:NSButton? {
-        didSet {
-            if let button = addTaskButton {
-                taskController.addTaskButton = button
-            }
-        }
-    }
-    
-    @IBOutlet weak var deleteTaskButton:NSButton? {
-        
-        didSet {
-            if let button = deleteTaskButton {
-                taskController.deleteTaskButton = button
-            }
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

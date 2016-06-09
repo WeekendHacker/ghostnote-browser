@@ -85,8 +85,6 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
         NSNotificationCenter.defaultCenter().postNotificationName("SelectedNoteChanged", object: foo)
     }
     
-    
-    
     // DeleteRowDelegate
     func deleteRow(row: Int) {
         let noteToDelete = NoteManager.shared.notes[row - 1]

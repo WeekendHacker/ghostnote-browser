@@ -27,6 +27,7 @@ class Task: Object {
         do {
             try db.write({ 
                 self.completionDate = NSDate()
+                isComplete = true
                 db.add(self, update: true)
             })
         }
@@ -41,6 +42,7 @@ class Task: Object {
         do {
             try db.write({
                 self.completionDate = nil
+                isComplete = false
                 db.add(self, update: true)
             })
         }

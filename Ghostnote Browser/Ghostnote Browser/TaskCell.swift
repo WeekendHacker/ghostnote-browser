@@ -44,20 +44,18 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate
     
     @IBAction func checkboxChecked(sender:AnyObject?) {
         
-        if task?.completionDate != nil {
-            task?.incomplete()
-            
-            let string = textField?.attributedStringValue.mutableCopy() as? NSMutableAttributedString
-            string?.removeAttribute(NSStrikethroughStyleAttributeName, range: NSRange(location: 0, length: string!.length))
-            textField?.attributedStringValue = string!
-            
-        }else {
-            task?.complete()
-            
+        if checkbox?.state == NSOnState {
             let string = textField?.attributedStringValue.mutableCopy() as? NSMutableAttributedString
             string?.addAttributes([NSStrikethroughStyleAttributeName : true], range: NSRange(location: 0, length: string!.length))
             textField?.attributedStringValue = string!
+            task?.complete()
+        }else if checkbox?.state == NSOffState {
+            let string = textField?.attributedStringValue.mutableCopy() as? NSMutableAttributedString
+            string?.removeAttribute(NSStrikethroughStyleAttributeName, range: NSRange(location: 0, length: string!.length))
+            textField?.attributedStringValue = string!
+            task?.incomplete()
         }
+ 
     }
     
     // NSTextFieldDelegate

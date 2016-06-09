@@ -15,7 +15,13 @@ protocol TaskListControllerObserver {
 }
 
 class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
-                          DeleteRowDelegate, KeyboardCreationDelegate {
+                          DeleteRowDelegate {
+    
+    override init() {
+        super.init()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(handleTaskListCreation), name: "CreatedTaskList", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(handleTaskListCreation), name: "DeletedTaskList", object: nil)
+    }
     
     var observer:TaskListControllerObserver?
 
@@ -28,7 +34,7 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
                 tv.selectionHighlightStyle = .Regular
                 
                 tv.deleteDelegate = self
-                tv.createDelegate = self
+
                 tv.target = self
                 tv.action = #selector(selected)
             
@@ -81,28 +87,40 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
     func addTaskListClicked(sender:AnyObject?) {
         let uniquePart = "\(NSDate().timeIntervalSince1970)"
         TaskListManager.shared.createTaskList("New Task List" + "<!\(uniquePart)>")
-        taskListTableView?.reloadData()
     }
 
     // DeleteRowDelegate
     func deleteRow(row: Int) {
         let selectedList = TaskListManager.shared.taskLists[row - 1]
         TaskListManager.shared.deleteTaskList(selectedList.title)
-        taskListTableView?.reloadData()
     }
     
-    // KeyboardCreationDelegate
-    func createKeyPressed(row: Int) {
-        let selectedList = TaskListManager.shared.taskLists[row - 1]
-        let uniquePart = NSDate().timeIntervalSince1970
-        selectedList.addTask("New Task <!\(uniquePart)>")
-        observer?.currentListChanged()
-    }
+//    // KeyboardCreationDelegate
+//    func createKeyPressed(row: Int) {
+//        let selectedList = TaskListManager.shared.taskLists[row - 1]
+//        let uniquePart = NSDate().timeIntervalSince1970
+//        selectedList.addTask("New Task <!\(uniquePart)>")
+//        observer?.currentListChanged()
+//    }
     
     func selected(sender:AnyObject?) {
-        if let row = taskListTableView?.selectedRow {
+        if let row = taskListTableView?.selectedRow where row >= 1 {
             let selectedTaskList = TaskListManager.shared.taskLists[row - 1]
             observer?.selectedList(selectedTaskList)
         }
+    }
+    
+    func tableViewSelectionDidChange(notification: NSNotification) {
+        selected(self)
+    }
+    
+    // Notification Handlers
+    
+    func handleTaskListCreation() {
+        taskListTableView?.reloadData()
+    }
+    
+    func handleTaskListDeletion() {
+        taskListTableView?.reloadData()
     }
 }

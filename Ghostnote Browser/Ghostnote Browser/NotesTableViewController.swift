@@ -34,7 +34,6 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
                 
                 tv.target = self
                 tv.action = #selector(tvAction(_:))
-                
             }
         }
     }
@@ -49,7 +48,6 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
-        
         if row == 0 {
             
             let view = tableView.makeViewWithIdentifier("ButtonTableCellView", owner: nil) as? ButtonTableCellView
@@ -60,7 +58,6 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
             
             return view
         }
-        
         
         let view = tableView.makeViewWithIdentifier("NoteCell", owner: nil) as? NoteCell
         
@@ -75,6 +72,9 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
         return true
     }
     
+    func tableViewSelectionDidChange(notification: NSNotification) {
+        tvAction(notesTableView!)
+    }
     
     // func
     func addNoteClicked(sender:AnyObject?) {
@@ -86,8 +86,8 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
     }
     
     
-    // DeleteRowDelegate
     
+    // DeleteRowDelegate
     func deleteRow(row: Int) {
         let noteToDelete = NoteManager.shared.notes[row - 1]
         NoteManager.shared.deleteNote(noteToDelete)

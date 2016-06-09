@@ -34,7 +34,7 @@ class DeletableTableView: NSTableView {
         }else if theEvent.keyCode == 48 {
             createDelegate?.createKeyPressed(selectedRow)
         }
-      
+        super.keyDown(theEvent)
     }
     
 }

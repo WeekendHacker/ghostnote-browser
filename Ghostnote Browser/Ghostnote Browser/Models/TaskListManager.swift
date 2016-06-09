@@ -36,6 +36,8 @@ class TaskListManager: NSObject {
         }
         let uniquePart = NSDate().timeIntervalSince1970
         newList.addTask("New Task <!\(uniquePart)>")
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("CreatedTaskList", object: nil)
     }
     
     func deleteTaskList(name:String) {

@@ -34,8 +34,6 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
        
         view.autoresizingMask = [.ViewWidthSizable, .ViewHeightSizable]
 
-        let nib = NSNib(nibNamed: "TaskCell", bundle: nil)
-        tasksTableView?.registerNib(nib, forIdentifier: "TaskCell")
     }
     
     override func viewDidAppear() {
@@ -52,7 +50,6 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
                 let view = taskListTableView?.viewAtColumn(0, row: row, makeIfNecessary: false) as? TaskListCell
                 
                 if let selectedTaskList = view?.taskList {
-                    print("selected \(selectedTaskList)")
                     taskController.selectedTaskList = selectedTaskList
                 }
             }

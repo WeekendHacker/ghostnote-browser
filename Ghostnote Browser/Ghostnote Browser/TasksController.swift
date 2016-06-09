@@ -11,8 +11,28 @@ import Cocoa
 class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, DeleteRowDelegate {
 
     override init() {
-         super.init()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TasksController.handleTaskListDeleted(_:)), name: "DeletedTaskList", object: nil)
+        
+        super.init()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(TasksController.handleTaskListDeleted(_:)),
+                                                         name: "DeletedTaskList",
+                                                         object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(handleNewTaskAction),
+                                                         name: "NewTaskAction",
+                                                         object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(handleTaskDeleted),
+                                                         name: "TaskDeleted",
+                                                         object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(handleTaskAdded),
+                                                         name: "TaskAdded",
+                                                         object: nil)
         
     }
     
@@ -29,6 +49,9 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
                 tv.setDataSource(self)
                 tv.wantsLayer = true
                 tv.deleteDelegate = self
+                if let nib = NSNib(nibNamed: "TaskCell", bundle: nil) {
+                    tv.registerNib(nib, forIdentifier: "TaskCell")
+                }
             }
         }
     }
@@ -75,11 +98,26 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
     }
 
     // notification handlers
+    func handleNewTaskAction() {
+        if let tl = selectedTaskList {
+            let uniquePart = NSDate().timeIntervalSince1970
+            
+            tl.addTask("New Task <!\(uniquePart)")
+        }
+    }
     
     func handleTaskListDeleted(notif:NSNotification) {
         
             selectedTaskList = nil
             tasksTableView?.reloadData()
         
+    }
+    
+    func handleTaskDeleted() {
+        tasksTableView?.reloadData()
+    }
+    
+    func handleTaskAdded() {
+        tasksTableView?.reloadData()
     }
 }

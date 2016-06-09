@@ -31,6 +31,7 @@ class TaskList: Object {
                 self.tasks.append(task)
                 db.add(self, update: true)
             })
+            NSNotificationCenter.defaultCenter().postNotificationName("TaskAdded", object: nil)
         }
         catch {
             print(error)
@@ -45,6 +46,8 @@ class TaskList: Object {
             try db.write({
                 db.delete(task)
             })
+            NSNotificationCenter.defaultCenter().postNotificationName("TaskDeleted", object: nil)
+
         }
         catch {
             print(error)

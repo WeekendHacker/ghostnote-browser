@@ -25,6 +25,12 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
     
     var observer:TaskListControllerObserver?
 
+    var currentTaskList:TaskList? {
+        didSet {
+            NSNotificationCenter.defaultCenter().postNotificationName("CurrentTaskListChanged", object: currentTaskList)
+        }
+    }
+    
     weak var taskListTableView:DeletableTableView? {
         didSet {
             if let tv = taskListTableView {
@@ -94,19 +100,14 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
         let selectedList = TaskListManager.shared.taskLists[row - 1]
         TaskListManager.shared.deleteTaskList(selectedList.title)
     }
-    
-//    // KeyboardCreationDelegate
-//    func createKeyPressed(row: Int) {
-//        let selectedList = TaskListManager.shared.taskLists[row - 1]
-//        let uniquePart = NSDate().timeIntervalSince1970
-//        selectedList.addTask("New Task <!\(uniquePart)>")
-//        observer?.currentListChanged()
-//    }
-    
+
     func selected(sender:AnyObject?) {
         if let row = taskListTableView?.selectedRow where row >= 1 {
             let selectedTaskList = TaskListManager.shared.taskLists[row - 1]
             observer?.selectedList(selectedTaskList)
+            currentTaskList = selectedTaskList
+        }else {
+            currentTaskList = nil
         }
     }
     

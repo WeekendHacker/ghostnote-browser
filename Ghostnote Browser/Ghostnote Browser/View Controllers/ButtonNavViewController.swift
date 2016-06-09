@@ -46,6 +46,21 @@ class ButtonNavViewController: NSViewController {
     var tasksController = TasksViewController()
     var ghostnotesController = GhostnotesViewController()
     
+    var currentController:NSViewController? {
+        didSet {
+            var id = ""
+            if currentController == notesController {
+                id = "notes"
+            }else if currentController == tasksController {
+                id = "tasks"
+            }else if currentController == ghostnotesController {
+                id = "ghostnotes"
+            }
+            NSNotificationCenter.defaultCenter().postNotificationName("ControllerChanged", object: id)
+
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -83,6 +98,7 @@ class ButtonNavViewController: NSViewController {
         if !notesController.isActive() {
             contentView?.addSubview(notesController.view)
         }
+        currentController = notesController
         
         updateNaveButtonState()
         NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "selectedTab")
@@ -96,7 +112,7 @@ class ButtonNavViewController: NSViewController {
         if !tasksController.isActive() {
             contentView?.addSubview(tasksController.view)
         }
-        
+        currentController = tasksController
         updateNaveButtonState()
         NSUserDefaults.standardUserDefaults().setInteger(1, forKey: "selectedTab")
 
@@ -110,7 +126,7 @@ class ButtonNavViewController: NSViewController {
         if !ghostnotesController.isActive() {
             contentView?.addSubview(ghostnotesController.view)
         }
-        
+        currentController = ghostnotesController
         updateNaveButtonState()
         NSUserDefaults.standardUserDefaults().setInteger(2, forKey: "selectedTab")
 

@@ -12,11 +12,11 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView identifier="TaskCell" id="c22-O7-iKe" customClass="TaskCell" customModule="Ghostnote_Browser" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="250" height="72"/>
+            <rect key="frame" x="0.0" y="0.0" width="250" height="32"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="oJg-uP-G2E">
-                    <rect key="frame" x="18" y="27" width="22" height="18"/>
+                    <rect key="frame" x="18" y="7" width="22" height="18"/>
                     <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="J9H-RH-rAx">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
@@ -26,9 +26,9 @@
                     </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ClR-vJ-MEJ">
-                    <rect key="frame" x="35" y="28" width="217" height="17"/>
+                    <rect key="frame" x="35" y="8" width="217" height="19"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="17" id="agj-8x-vHc"/>
+                        <constraint firstAttribute="height" constant="19" id="agj-8x-vHc"/>
                         <constraint firstAttribute="width" constant="213" id="fjG-j3-VAq"/>
                     </constraints>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" alignment="left" title="Label" id="pb0-pF-sxg">
@@ -44,19 +44,19 @@
                     <font key="titleFont" metaFont="system"/>
                 </box>
                 <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Xng-re-Nvw">
-                    <rect key="frame" x="8" y="61" width="234" height="5"/>
+                    <rect key="frame" x="8" y="21" width="234" height="5"/>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <font key="titleFont" metaFont="system"/>
                 </box>
                 <box horizontalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Tg6-7M-WSi">
-                    <rect key="frame" x="239" y="8" width="5" height="56"/>
+                    <rect key="frame" x="239" y="8" width="5" height="16"/>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <font key="titleFont" metaFont="system"/>
                 </box>
                 <box horizontalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="GpL-v2-LKi">
-                    <rect key="frame" x="6" y="8" width="5" height="56"/>
+                    <rect key="frame" x="6" y="8" width="5" height="16"/>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <font key="titleFont" metaFont="system"/>
@@ -66,7 +66,7 @@
                 <constraint firstItem="GpL-v2-LKi" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="7WB-zQ-eI2"/>
                 <constraint firstItem="Tg6-7M-WSi" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="8fG-4B-baF"/>
                 <constraint firstItem="Xng-re-Nvw" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="AxX-xq-M0Y"/>
-                <constraint firstItem="ClR-vJ-MEJ" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="ClG-xG-dfX"/>
+                <constraint firstItem="ClR-vJ-MEJ" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" constant="-1.5" id="ClG-xG-dfX"/>
                 <constraint firstItem="GpL-v2-LKi" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="8" id="EWf-oB-nDb"/>
                 <constraint firstItem="1Ug-qe-Orn" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="7" id="HcA-v5-Bfh"/>
                 <constraint firstItem="Xng-re-Nvw" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="8" id="LCd-KL-iF5"/>

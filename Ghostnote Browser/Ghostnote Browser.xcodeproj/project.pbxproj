@@ -63,6 +63,8 @@
 		D8D30DB11D02A73D004009F7 /* AppCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8D30DB01D02A73D004009F7 /* AppCell.xib */; };
 		D8E380EC1CDC21000028D161 /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E380EB1CDC21000028D161 /* TaskCell.xib */; };
 		D8FF02351D08C516004AE6E2 /* TaskListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8FF02341D08C516004AE6E2 /* TaskListCell.xib */; };
+		D8FF023C1D0A6CC9004AE6E2 /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8FF023B1D0A6CC9004AE6E2 /* HeaderCell.xib */; };
+		D8FF023E1D0A6D6C004AE6E2 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FF023D1D0A6D6C004AE6E2 /* HeaderCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +161,8 @@
 		D8D30DB01D02A73D004009F7 /* AppCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppCell.xib; sourceTree = "<group>"; };
 		D8E380EB1CDC21000028D161 /* TaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TaskCell.xib; path = Views/TaskCell.xib; sourceTree = "<group>"; };
 		D8FF02341D08C516004AE6E2 /* TaskListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskListCell.xib; sourceTree = "<group>"; };
+		D8FF023B1D0A6CC9004AE6E2 /* HeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
+		D8FF023D1D0A6D6C004AE6E2 /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +236,7 @@
 		D8151CC51D028B1C00F04C24 /* Table Cells */ = {
 			isa = PBXGroup;
 			children = (
+				D8FF023A1D0A6CB2004AE6E2 /* Header Cell */,
 				D8FF022D1D07D511004AE6E2 /* App Cell */,
 				D8FF022E1D07D51F004AE6E2 /* Doc Cell */,
 				D8FF022F1D07D52B004AE6E2 /* Note Cell */,
@@ -455,6 +460,15 @@
 			name = "Task List Cell";
 			sourceTree = "<group>";
 		};
+		D8FF023A1D0A6CB2004AE6E2 /* Header Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D8FF023B1D0A6CC9004AE6E2 /* HeaderCell.xib */,
+				D8FF023D1D0A6D6C004AE6E2 /* HeaderCell.swift */,
+			);
+			name = "Header Cell";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -563,6 +577,7 @@
 			files = (
 				D81281881CCD97F2001749E9 /* ButtonNavViewController.xib in Resources */,
 				D8E380EC1CDC21000028D161 /* TaskCell.xib in Resources */,
+				D8FF023C1D0A6CC9004AE6E2 /* HeaderCell.xib in Resources */,
 				D8D10ECB1CC48A9F00A434F6 /* Assets.xcassets in Resources */,
 				D86DC3831D0407E30013DFC8 /* DocCell.xib in Resources */,
 				D81281941CCDB9DC001749E9 /* GhostnotesViewController.xib in Resources */,
@@ -626,6 +641,7 @@
 				D84F16D61CC553DC005612BB /* Document.swift in Sources */,
 				D8D30DAF1D02A1D3004009F7 /* GhostNotesDocTableViewController.swift in Sources */,
 				D8265A611CDB15F00054AF57 /* TasksController.swift in Sources */,
+				D8FF023E1D0A6D6C004AE6E2 /* HeaderCell.swift in Sources */,
 				D8265A631CDB18760054AF57 /* TaskListCell.swift in Sources */,
 				D8265A651CDBE37E0054AF57 /* TaskCell.swift in Sources */,
 				D84F16DD1CC60EB6005612BB /* AppCell.swift in Sources */,

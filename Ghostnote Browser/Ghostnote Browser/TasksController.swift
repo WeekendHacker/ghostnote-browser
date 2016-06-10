@@ -49,15 +49,26 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
                 tv.setDataSource(self)
                 tv.wantsLayer = true
                 tv.deleteDelegate = self
-                if let nib = NSNib(nibNamed: "TaskCell", bundle: nil) {
-                    tv.registerNib(nib, forIdentifier: "TaskCell")
+                
+                
+                if let headerNib = NSNib(nibNamed:"HeaderCell", bundle: nil) {
+                    tv.registerNib(headerNib, forIdentifier: "HeaderCell")
+                }
+                
+                if let taskNib = NSNib(nibNamed: "TaskCell", bundle: nil) {
+                    tv.registerNib(taskNib, forIdentifier: "TaskCell")
                 }
             }
         }
     }
 
     func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        return 72.0
+        
+        if row == 0 {
+            return 36.0
+        }
+        return 53.0
+ 
     }
     
     // NSTableViewDatasource
@@ -65,18 +76,26 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
         var rows = 0
         
         if let selected = selectedTaskList {
-            rows = selected.tasks.count
+            rows = selected.tasks.count + 1
         }
         return rows
     }
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        let view = tableView.makeViewWithIdentifier("TaskCell", owner: nil) as? TaskCell
+        
         if let taskList = selectedTaskList {
-            let task = taskList.tasks[row]
-            view?.task = task
+            if row == 0 {
+                let view = tableView.makeViewWithIdentifier("HeaderCell", owner: nil) as? HeaderCell
+                view?.title = taskList.title
+                return view
+            }else {
+                let view = tableView.makeViewWithIdentifier("TaskCell", owner: nil) as? TaskCell
+                let task = taskList.tasks[row - 1]
+                view?.task = task
+                return view
+            }
         }
-        return view
+        return nil
     }
  
     
@@ -91,10 +110,8 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
                 if let taskList = selectedTaskList {
                     taskList.removeTask(selectedTask)
                 }
-                tasksTableView?.reloadData()
             }
         }
-
     }
 
     // notification handlers

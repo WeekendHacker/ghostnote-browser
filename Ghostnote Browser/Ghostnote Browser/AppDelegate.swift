@@ -75,10 +75,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             currentControllerID = controllerID
             if controllerID == "notes" {
                 newMenuItem?.title = "New Note"
+                newMenuItem?.keyEquivalent = "n"
                 enableNewMenuItem()
             }else if controllerID == "tasks" {
                 if buttonNavViewController?.tasksController.taskListController.currentTaskList != nil {
                     newMenuItem?.title = "New Task"
+                    newMenuItem?.keyEquivalent = "t"
                     enableNewMenuItem()
                 }else {
                     disableNewMenuItem()

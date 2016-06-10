@@ -22,16 +22,6 @@ class NoteCell: NSTableCellView, NSTextFieldDelegate {
         }
     }
     
-    override var backgroundStyle: NSBackgroundStyle {
-        didSet {
-            if self.backgroundStyle == .Light {
-                self.textField?.textColor = NSColor.controlTextColor()
-            } else if self.backgroundStyle == .Dark {
-                self.textField?.textColor = NSColor.alternateSelectedControlTextColor()
-            }
-        }
-    }
-    
     // NSTextFieldDelegate
     
     override func controlTextDidEndEditing(obj: NSNotification) {

@@ -61,9 +61,4 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
     func selectedNoList() {
         taskController.selectedTaskList = nil
     }
-    
-//    func currentListChanged() {
-//        tasksTableView?.reloadData()
-//    }
-    
 }

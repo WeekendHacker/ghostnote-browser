@@ -62,6 +62,19 @@ class TaskListManager: NSObject {
         
     }
     
+    func renameTaskList(taskList:TaskList, to:String) {
+        do {
+            try db.write({
+                taskList.title = to
+                db.add(taskList, update: true)
+            })
+        }
+        catch {
+            print(error)
+        }
+        NSNotificationCenter.defaultCenter().postNotificationName("TaskListRenamed", object: taskList)
+    }
+    
     func changeTask(task:Task, to:String) {
         
         do {

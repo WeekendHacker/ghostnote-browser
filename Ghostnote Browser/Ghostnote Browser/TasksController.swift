@@ -34,6 +34,11 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
                                                          name: "TaskAdded",
                                                          object: nil)
         
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(handleTaskListRenamed(_:)),
+                                                         name: "TaskListRenamed",
+                                                         object: nil)
+        
     }
     
     weak var selectedTaskList:TaskList? {
@@ -138,6 +143,14 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
             
             tl.addTask("New Task <!\(uniquePart)")
         }
+    }
+    
+    func handleTaskListRenamed(notif:NSNotification) {
+        if let tl = selectedTaskList {
+            let view = tasksTableView?.viewAtColumn(0, row: 0, makeIfNecessary: false) as? HeaderCell
+            view?.title = tl.title
+        }
+
     }
     
     func handleTaskListDeleted(notif:NSNotification) {

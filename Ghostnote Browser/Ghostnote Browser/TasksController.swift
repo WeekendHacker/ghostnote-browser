@@ -81,6 +81,13 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
         return rows
     }
     
+    func tableView(tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
+        if row == 0 {
+            return false
+        }
+        return true
+    }
+    
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
         if let taskList = selectedTaskList {
@@ -98,7 +105,17 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
         return nil
     }
  
-    
+//    func tableView(tableView: NSTableView, shouldTypeSelectForEvent event: NSEvent, withCurrentSearchString searchString: String?) -> Bool {
+//        return event.keyCode != 0x31   
+//    }
+//    
+//    
+//    func tableViewSelectionDidChange(notification: NSNotification) {
+//        if let row = tasksTableView?.selectedRowIndexes.firstIndex {
+//            let view = tasksTableView?.viewAtColumn(0, row: row, makeIfNecessary: false) as? TaskCell
+//            view?.becomeFirstResponder()
+//        }
+//    }
     // Actions
     
     func deleteRow(row: Int) {

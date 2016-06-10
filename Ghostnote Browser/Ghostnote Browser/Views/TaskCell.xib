@@ -16,8 +16,8 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="oJg-uP-G2E">
-                    <rect key="frame" x="18" y="7" width="22" height="18"/>
-                    <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="J9H-RH-rAx">
+                    <rect key="frame" x="18" y="7" width="18" height="18"/>
+                    <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="only" state="on" inset="2" id="J9H-RH-rAx">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -25,18 +25,6 @@
                         <action selector="checkboxChecked:" target="c22-O7-iKe" id="wRP-AH-v4i"/>
                     </connections>
                 </button>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ClR-vJ-MEJ">
-                    <rect key="frame" x="35" y="8" width="217" height="19"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="19" id="agj-8x-vHc"/>
-                        <constraint firstAttribute="width" constant="213" id="fjG-j3-VAq"/>
-                    </constraints>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" alignment="left" title="Label" id="pb0-pF-sxg">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
                 <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="1Ug-qe-Orn">
                     <rect key="frame" x="7" y="6" width="235" height="5"/>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
@@ -61,12 +49,24 @@
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <font key="titleFont" metaFont="system"/>
                 </box>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ClR-vJ-MEJ">
+                    <rect key="frame" x="40" y="7" width="217" height="19"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="19" id="agj-8x-vHc"/>
+                        <constraint firstAttribute="width" constant="213" id="fjG-j3-VAq"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" alignment="left" title="Label" id="pb0-pF-sxg">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <constraints>
                 <constraint firstItem="GpL-v2-LKi" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="7WB-zQ-eI2"/>
                 <constraint firstItem="Tg6-7M-WSi" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="8fG-4B-baF"/>
                 <constraint firstItem="Xng-re-Nvw" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="AxX-xq-M0Y"/>
-                <constraint firstItem="ClR-vJ-MEJ" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" constant="-1.5" id="ClG-xG-dfX"/>
+                <constraint firstItem="ClR-vJ-MEJ" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="ClG-xG-dfX"/>
                 <constraint firstItem="GpL-v2-LKi" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="8" id="EWf-oB-nDb"/>
                 <constraint firstItem="1Ug-qe-Orn" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="7" id="HcA-v5-Bfh"/>
                 <constraint firstItem="Xng-re-Nvw" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="8" id="LCd-KL-iF5"/>
@@ -77,9 +77,9 @@
                 <constraint firstAttribute="trailing" secondItem="Tg6-7M-WSi" secondAttribute="trailing" constant="8" id="cd7-nt-q00"/>
                 <constraint firstAttribute="bottom" secondItem="Tg6-7M-WSi" secondAttribute="bottom" constant="8" id="fnG-DB-i1g"/>
                 <constraint firstAttribute="bottom" secondItem="GpL-v2-LKi" secondAttribute="bottom" constant="8" id="g3E-AL-bkg"/>
-                <constraint firstItem="ClR-vJ-MEJ" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="37" id="hKj-Xd-16Q"/>
                 <constraint firstItem="oJg-uP-G2E" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="jFW-dD-fvy"/>
                 <constraint firstAttribute="bottom" secondItem="1Ug-qe-Orn" secondAttribute="bottom" constant="8" id="lXp-7R-b7q"/>
+                <constraint firstItem="ClR-vJ-MEJ" firstAttribute="leading" secondItem="oJg-uP-G2E" secondAttribute="trailing" constant="8" id="wOK-b1-FZQ"/>
             </constraints>
             <connections>
                 <outlet property="checkbox" destination="oJg-uP-G2E" id="0Ob-x5-Xjr"/>

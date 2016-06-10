@@ -37,4 +37,6 @@ class DeletableTableView: NSTableView {
         super.keyDown(theEvent)
     }
     
+    
+    
 }

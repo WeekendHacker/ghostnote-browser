@@ -11,7 +11,7 @@ import Cocoa
 protocol TaskListControllerObserver {
     func selectedList(taskList:TaskList)
     func selectedNoList()
-    func currentListChanged()
+//    func currentListChanged()
 }
 
 class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,

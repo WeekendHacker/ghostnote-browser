@@ -24,8 +24,10 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate
                 if let cb = checkbox {
                     if t.isComplete == true {
                         cb.state = NSOnState
+                        applyStrikethrough()
                     }else {
                         cb.state = NSOffState
+                        removeStrikethrough()
                     }
                 }
             }
@@ -45,22 +47,30 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate
     @IBAction func checkboxChecked(sender:AnyObject?) {
         
         if checkbox?.state == NSOnState {
-            let string = textField?.attributedStringValue.mutableCopy() as? NSMutableAttributedString
-            string?.addAttributes([NSStrikethroughStyleAttributeName : true], range: NSRange(location: 0, length: string!.length))
-            textField?.attributedStringValue = string!
+
             task?.complete()
+            applyStrikethrough()
         }else if checkbox?.state == NSOffState {
-            let string = textField?.attributedStringValue.mutableCopy() as? NSMutableAttributedString
-            string?.removeAttribute(NSStrikethroughStyleAttributeName, range: NSRange(location: 0, length: string!.length))
-            textField?.attributedStringValue = string!
+
             task?.incomplete()
+            removeStrikethrough()
         }
- 
+    }
+    
+    func applyStrikethrough() {
+        let string = textField?.attributedStringValue.mutableCopy() as? NSMutableAttributedString
+        string?.addAttributes([NSStrikethroughStyleAttributeName : true], range: NSRange(location: 0, length: string!.length))
+        textField?.attributedStringValue = string!
+    }
+    
+    func removeStrikethrough() {
+        let string = textField?.attributedStringValue.mutableCopy() as? NSMutableAttributedString
+        string?.removeAttribute(NSStrikethroughStyleAttributeName, range: NSRange(location: 0, length: string!.length))
+        textField?.attributedStringValue = string!
     }
     
     // NSTextFieldDelegate
-    
-    
+
     override func controlTextDidBeginEditing(obj: NSNotification) {
         if let editingTextField = obj.object as? NSTextField {
             editingTextField.textColor = NSColor.blackColor()
@@ -75,6 +85,10 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate
             }
         }
     }
-
     
+//    override func keyDown(theEvent: NSEvent) {
+//        NSBeep()
+//        super.keyDown(theEvent)
+//
+//    }
 }

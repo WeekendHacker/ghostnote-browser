@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="TaskListCell" customModule="Ghostnote_Browser" customModuleProvider="target">
@@ -12,11 +12,11 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="c22-O7-iKe" customClass="TaskListCell" customModule="Ghostnote_Browser" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="480" height="30"/>
+            <rect key="frame" x="0.0" y="0.0" width="480" height="32"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField focusRingType="exterior" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dWS-os-lET">
-                    <rect key="frame" x="6" y="7" width="468" height="17"/>
+                <textField focusRingType="exterior" horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dWS-os-lET">
+                    <rect key="frame" x="0.0" y="7" width="468" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="exterior" alignment="left" title="Label" id="Uvt-XK-LFL">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -26,7 +26,7 @@
             </subviews>
             <constraints>
                 <constraint firstItem="dWS-os-lET" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="8" id="2aS-Nu-nVh"/>
-                <constraint firstAttribute="trailing" secondItem="dWS-os-lET" secondAttribute="trailing" constant="8" id="uXk-QC-W9B"/>
+                <constraint firstAttribute="trailing" secondItem="dWS-os-lET" secondAttribute="trailing" id="uXk-QC-W9B"/>
                 <constraint firstItem="dWS-os-lET" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="uuP-JQ-xfe"/>
             </constraints>
             <connections>

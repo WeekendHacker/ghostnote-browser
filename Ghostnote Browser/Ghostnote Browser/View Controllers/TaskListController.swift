@@ -67,7 +67,9 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
         if row == 0 {
             
             let view = taskListTableView?.makeViewWithIdentifier("ButtonTableCellView", owner: nil) as? ButtonTableCellView
-            let title = NSAttributedString(string: "Add Task List", attributes: nil)
+            let buttonColor = NSColor(netHex: 0x4A90E2)
+            let title = NSAttributedString(string: "Add Task List", attributes: [NSForegroundColorAttributeName : buttonColor])
+            
             view?.button?.attributedTitle = title
             view?.button?.target = self
             view?.button?.action = #selector(addTaskListClicked)

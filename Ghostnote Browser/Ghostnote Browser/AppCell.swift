@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class AppCell: NSTableCellView {
+class AppCell: NSTableCellView, SelectableCell {
 
     var app:App? {
         didSet {

@@ -63,13 +63,11 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
 
     // GhostNotesAppTableViewControllerObserver
     func selectedApp(app: App) {
-        print("selected \(app)")
         noteTextViewController.currentNote = app.note
         docsTableViewController.currentApp = app
     }
     
     func selectedNothing() {
-        print("selected no app")
     }
     
     // GhostNotesDocTableViewControllerObserver
@@ -79,7 +77,6 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
     }
     
     func selectedNoNote() {
-        print("selected no note")
         noteTextViewController.currentNote = nil
     }
 }

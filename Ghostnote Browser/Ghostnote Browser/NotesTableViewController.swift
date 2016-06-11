@@ -25,7 +25,7 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
                 tv.setDataSource(self)
                 tv.wantsLayer = true
                 tv.deleteDelegate = self
-                tv.selectionHighlightStyle = .Regular
+                tv.selectionHighlightStyle = .None
                 
                 let buttonNib = NSNib(nibNamed: "ButtonTableCellView", bundle: nil)
                 tv.registerNib(buttonNib, forIdentifier: "ButtonTableCellView")
@@ -51,7 +51,7 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
         if row == 0 {
             
             let view = tableView.makeViewWithIdentifier("ButtonTableCellView", owner: nil) as? ButtonTableCellView
-            let title = NSAttributedString(string: "Add New Note", attributes: [NSForegroundColorAttributeName : NSColor.blueColor()])
+            let title = NSAttributedString(string: "Add New Note", attributes: nil)
             view?.button?.attributedTitle = title
             view?.button?.target = self
             view?.button?.action = #selector(addNoteClicked(_:))
@@ -81,8 +81,20 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
         NSNotificationCenter.defaultCenter().postNotificationName("AddNoteClicked", object: nil)
     }
     
-    func tvAction(foo:AnyObject?) {
-        NSNotificationCenter.defaultCenter().postNotificationName("SelectedNoteChanged", object: foo)
+    func tvAction(tv:AnyObject?) {
+        if let tableView = tv as? DeletableTableView {
+
+                tableView.enumerateAvailableRowViewsUsingBlock({ (rowView, row) in
+                    if row != 0 {
+                        if let selectedCell = rowView.viewAtColumn(0) as? SelectableCell {
+                            selectedCell.select(rowView.selected)
+                        }
+                    }
+                })
+                NSNotificationCenter.defaultCenter().postNotificationName("SelectedNoteChanged", object: nil)
+        }
+
+        
     }
     
     // DeleteRowDelegate

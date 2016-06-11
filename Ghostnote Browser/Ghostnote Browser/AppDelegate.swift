@@ -59,7 +59,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // notifcation handlers
     
     func handleTaskListChanged(notification:NSNotification) {
-        print(notification.object)
         if notification.object != nil {
             newMenuItem?.title = "New Task"
             enableNewMenuItem()
@@ -69,7 +68,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func handleControllerChanged(notification:NSNotification) {
-        print(notification)
         
         if let controllerID = notification.object as? String {
             currentControllerID = controllerID

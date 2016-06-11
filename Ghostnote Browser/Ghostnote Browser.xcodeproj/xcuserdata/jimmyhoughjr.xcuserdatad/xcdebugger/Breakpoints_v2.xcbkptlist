@@ -2,4 +2,54 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ghostnote Browser/TasksController.swift"
+            timestampString = "487319810.193949"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "handleTaskAdded(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ghostnote_Browser.TasksController.handleTaskAdded (__ObjC.NSNotification) -&gt; ()"
+                  moduleName = "Ghostnote Browser"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jimmyhoughjr/workspace/ghostnote-browser/Ghostnote%20Browser/Ghostnote%20Browser/TasksController.swift"
+                  timestampString = "487319932.644716"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "162"
+                  endingLineNumber = "162"
+                  offsetFromSymbolStart = "946">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ghostnote_Browser.TasksController.(handleTaskAdded (__ObjC.NSNotification) -&gt; ()).(closure #1)"
+                  moduleName = "Ghostnote Browser"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jimmyhoughjr/workspace/ghostnote-browser/Ghostnote%20Browser/Ghostnote%20Browser/TasksController.swift"
+                  timestampString = "487319932.644811"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "163"
+                  endingLineNumber = "163"
+                  offsetFromSymbolStart = "30">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

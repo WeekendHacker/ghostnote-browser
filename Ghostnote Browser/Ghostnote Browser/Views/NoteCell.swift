@@ -9,8 +9,9 @@
 import Cocoa
 import RealmSwift
 
-class NoteCell: NSTableCellView, NSTextFieldDelegate {
+class NoteCell: NSTableCellView, NSTextFieldDelegate, SelectableCell {
 
+       
     var note:Note? { didSet {
      
             if let myNote = note {

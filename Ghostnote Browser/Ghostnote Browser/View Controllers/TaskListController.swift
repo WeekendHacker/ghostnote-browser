@@ -11,7 +11,6 @@ import Cocoa
 protocol TaskListControllerObserver {
     func selectedList(taskList:TaskList)
     func selectedNoList()
-//    func currentListChanged()
 }
 
 class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
@@ -37,7 +36,7 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
                 tv.setDelegate(self)
                 tv.setDataSource(self)
                 tv.wantsLayer = true
-                tv.selectionHighlightStyle = .Regular
+                tv.selectionHighlightStyle = .None
                 
                 tv.deleteDelegate = self
 
@@ -68,7 +67,7 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
         if row == 0 {
             
             let view = taskListTableView?.makeViewWithIdentifier("ButtonTableCellView", owner: nil) as? ButtonTableCellView
-            let title = NSAttributedString(string: "Add Task List", attributes: [NSForegroundColorAttributeName : NSColor.blueColor()])
+            let title = NSAttributedString(string: "Add Task List", attributes: nil)
             view?.button?.attributedTitle = title
             view?.button?.target = self
             view?.button?.action = #selector(addTaskListClicked)
@@ -102,6 +101,7 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
     }
 
     func selected(sender:AnyObject?) {
+        
         if let row = taskListTableView?.selectedRow where row >= 1 {
             let selectedTaskList = TaskListManager.shared.taskLists[row - 1]
             observer?.selectedList(selectedTaskList)
@@ -109,6 +109,14 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
         }else {
             currentTaskList = nil
         }
+        
+        taskListTableView?.enumerateAvailableRowViewsUsingBlock({ (rowView, row) in
+            if row > 0 {
+                if let cell = rowView.viewAtColumn(0) as? SelectableCell {
+                    cell.select(rowView.selected)
+                }
+            }
+        })
     }
     
     func tableViewSelectionDidChange(notification: NSNotification) {

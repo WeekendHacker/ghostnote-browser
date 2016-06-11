@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class TaskListCell: NSTableCellView, NSTextFieldDelegate {
+class TaskListCell: NSTableCellView, NSTextFieldDelegate, SelectableCell {
 
     var taskList:TaskList? {
         didSet {

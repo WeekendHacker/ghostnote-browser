@@ -39,7 +39,6 @@ class NotesViewController: NSViewController, ButtonNavigable {
         noteTextViewController.noteTextView = noteTextView
         noteTextView?.wantsLayer = true
         
-        
     }
 
     override func viewDidAppear() {
@@ -67,7 +66,6 @@ class NotesViewController: NSViewController, ButtonNavigable {
                 let view = notesTableView?.viewAtColumn(0, row: row, makeIfNecessary: false) as? NoteCell
                 
                 if let selectedNote = view?.note {
-                    print("selected \(selectedNote)")
                     noteTextViewController.currentNote = selectedNote
                 }
             }

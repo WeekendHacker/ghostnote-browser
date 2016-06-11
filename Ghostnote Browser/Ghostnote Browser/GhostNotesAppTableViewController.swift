@@ -22,7 +22,7 @@ class GhostNotesAppTableViewController: NSObject , NSTableViewDelegate , NSTable
         didSet {
             appsTableView?.setDelegate(self)
             appsTableView?.setDataSource(self)
-            appsTableView?.selectionHighlightStyle = .Regular
+            appsTableView?.selectionHighlightStyle = .None
             if let appCellNib = NSNib(nibNamed: "AppCell", bundle: nil) {
                 appsTableView?.registerNib(appCellNib, forIdentifier: "AppCell")
             }
@@ -54,7 +54,6 @@ class GhostNotesAppTableViewController: NSObject , NSTableViewDelegate , NSTable
 
         let bundleIDs = GhostNoteManager.shared.allAppBundleIDs()
         for bundleID in bundleIDs  {
-            print(bundleID)
             if let note = GhostNoteManager.shared.appNoteForApp(bundleID) {
                 let app = App(bundleID: bundleID, note:note)
                 apps.append(app)
@@ -67,12 +66,10 @@ class GhostNotesAppTableViewController: NSObject , NSTableViewDelegate , NSTable
     
     // Notification Handlers
     func handleNoteCreation() {
-        print("Note created")
         reload()
     }
     
     func handleNoteDeletion() {
-        print("Note deleted")
         reload()
     }
     
@@ -103,6 +100,14 @@ class GhostNotesAppTableViewController: NSObject , NSTableViewDelegate , NSTable
             }else {
                 observer?.selectedNothing()
             }
+            
+            tv.enumerateAvailableRowViewsUsingBlock({ (rowView, row) in
+                
+                if let cell = tv.viewAtColumn(0, row: row, makeIfNecessary: false) as? SelectableCell {
+                    cell.select(rowView.selected)
+                }
+                
+            })
         }
     }
 }

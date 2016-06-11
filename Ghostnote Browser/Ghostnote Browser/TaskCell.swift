@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class TaskCell: NSTableCellView, NSTextFieldDelegate
+class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
 {
 
     @IBOutlet weak var checkbox:NSButton?

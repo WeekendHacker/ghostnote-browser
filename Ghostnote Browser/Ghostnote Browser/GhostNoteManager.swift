@@ -77,49 +77,6 @@ class GhostNoteManager: NSObject {
         return nil
     }
     
-    func createNote(bundleID:String, docID:String, content:NSAttributedString?) {
-        print("Creating note for \(bundleID), \(docID), content \(content)")
-        // attributes should come from somehwere else!
-        
-        if docID.isEmpty {
-            return
-        }
-        
-        let seed = content ?? NSAttributedString(string: "", attributes: nil)
-        
-        let fileURL = createFileFor(bundleID, docID:docID, content:seed)
-        let note = GhostNote()
-        
-        // this should maybe bail if the file cant be created
-        
-        do {
-            try store.write({
-                note.appBundleID = bundleID
-                note.docID = docID
-                note.filePath = fileURL.path!
-                store.add(note)
-                print(note)
-            })
-        }
-        catch {
-            print(error)
-        }
-    }
-    
-    func deleteNote(note:GhostNote) {
-        
-        // this shouldmaybe bail if file cant be created
-        removeFileForNote(note.appBundleID, docID: note.docID)
-        
-        do {
-            try store.write({
-                store.delete(note)
-            })
-        }
-        catch {
-            print(error)
-        }
-    }
     
     // file methods
     
@@ -158,8 +115,6 @@ class GhostNoteManager: NSObject {
             print("empty docID for \(bundleID)")
             
         }
-        print("fileURL = \(fileURL)")
-        
         
         do  {
             
@@ -178,7 +133,51 @@ class GhostNoteManager: NSObject {
         
         return fileURL
     }
+    // kruft
     
+    //    func createNote(bundleID:String, docID:String, content:NSAttributedString?) {
+    //        print("Creating note for \(bundleID), \(docID), content \(content)")
+    //        // attributes should come from somehwere else!
+    //
+    //        if docID.isEmpty {
+    //            return
+    //        }
+    //
+    //        let seed = content ?? NSAttributedString(string: "", attributes: nil)
+    //
+    //        let fileURL = createFileFor(bundleID, docID:docID, content:seed)
+    //        let note = GhostNote()
+    //
+    //        // this should maybe bail if the file cant be created
+    //
+    //        do {
+    //            try store.write({
+    //                note.appBundleID = bundleID
+    //                note.docID = docID
+    //                note.filePath = fileURL.path!
+    //                store.add(note)
+    //            })
+    //        }
+    //        catch {
+    //            print(error)
+    //        }
+    //    }
+    //
+    //    func deleteNote(note:GhostNote) {
+    //
+    //        // this shouldmaybe bail if file cant be created
+    //        removeFileForNote(note.appBundleID, docID: note.docID)
+    //
+    //        do {
+    //            try store.write({
+    //                store.delete(note)
+    //            })
+    //        }
+    //        catch {
+    //            print(error)
+    //        }
+    //    }
+
     private func removeFileForNote(bundleID:String, docID:String) {
         
     }

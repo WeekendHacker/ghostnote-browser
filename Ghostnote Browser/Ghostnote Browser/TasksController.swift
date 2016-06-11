@@ -30,7 +30,7 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
                                                          object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: #selector(handleTaskAdded),
+                                                         selector: #selector(handleTaskAdded(_:)),
                                                          name: "TaskAdded",
                                                          object: nil)
         
@@ -54,7 +54,7 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
                 tv.setDataSource(self)
                 tv.wantsLayer = true
                 tv.deleteDelegate = self
-                
+                tv.selectionHighlightStyle = .None
                 
                 if let headerNib = NSNib(nibNamed:"HeaderCell", bundle: nil) {
                     tv.registerNib(headerNib, forIdentifier: "HeaderCell")
@@ -110,17 +110,6 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
         return nil
     }
  
-//    func tableView(tableView: NSTableView, shouldTypeSelectForEvent event: NSEvent, withCurrentSearchString searchString: String?) -> Bool {
-//        return event.keyCode != 0x31   
-//    }
-//    
-//    
-//    func tableViewSelectionDidChange(notification: NSNotification) {
-//        if let row = tasksTableView?.selectedRowIndexes.firstIndex {
-//            let view = tasksTableView?.viewAtColumn(0, row: row, makeIfNecessary: false) as? TaskCell
-//            view?.becomeFirstResponder()
-//        }
-//    }
     // Actions
     
     func deleteRow(row: Int) {
@@ -163,7 +152,28 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
         tasksTableView?.reloadData()
     }
     
-    func handleTaskAdded() {
+    func handleTaskAdded(notif:NSNotification) {
         tasksTableView?.reloadData()
+
+        if let addedTask = notif.object as? Task {
+        print("added task \(addedTask)")
+            print("done reloading")
+            
+            tasksTableView?.enumerateAvailableRowViewsUsingBlock({ (rowView, row) in
+                print("enumerating")
+                if row > 0 {
+                    if let view = rowView.viewAtColumn(0) as? TaskCell {
+                        print(view)
+                        if let viewTask = view.task {
+                            if viewTask.id == addedTask.id {
+                                view.textField?.becomeFirstResponder()
+                            }
+                        }
+                    }
+
+                }
+            })
+            print("should have enumerated")
+        }
     }
 }

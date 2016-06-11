@@ -32,7 +32,7 @@ class GhostNotesDocTableViewController: NSObject, NSTableViewDelegate, NSTableVi
                 tv.setDelegate(self)
                 tv.setDataSource(self)
                 
-                tv.selectionHighlightStyle = .Regular
+                tv.selectionHighlightStyle = .None
                 
                 if let nib =  NSNib(nibNamed: "DocCell",bundle: nil) {
                     tv.registerNib(nib, forIdentifier: "DocCell")
@@ -81,6 +81,14 @@ class GhostNotesDocTableViewController: NSObject, NSTableViewDelegate, NSTableVi
             }else {
                 observer?.selectedNothing()
             }
+            
+            tv.enumerateAvailableRowViewsUsingBlock({ (rowView, row) in
+                
+                if let cell = tv.viewAtColumn(0, row: row, makeIfNecessary: false) as? SelectableCell {
+                    cell.select(rowView.selected)
+                }
+                
+            })
         }
     }
 }

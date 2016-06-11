@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class DocCell: NSTableCellView {
+class DocCell: NSTableCellView, SelectableCell {
 
     var doc:Document? {
         didSet {

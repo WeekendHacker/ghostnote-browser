@@ -11,8 +11,8 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="34"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cop-jp-sCR">
-                    <rect key="frame" x="6" y="3" width="103" height="25"/>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cop-jp-sCR">
+                    <rect key="frame" x="6" y="7" width="101" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="udu-5e-9J3"/>
                     </constraints>

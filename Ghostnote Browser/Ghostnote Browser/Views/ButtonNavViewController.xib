@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="ButtonNavViewController" customModule="Ghostnote_Browser" customModuleProvider="target">
@@ -93,7 +93,7 @@
                     <font key="titleFont" metaFont="system"/>
                 </box>
                 <searchField wantsLayer="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kAs-e4-AG9">
-                    <rect key="frame" x="415" y="295" width="134" height="22"/>
+                    <rect key="frame" x="411" y="283" width="134" height="22"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="22" id="qSO-Oj-yxk"/>
                         <constraint firstAttribute="width" constant="134" id="wIf-IL-dMG"/>
@@ -117,8 +117,8 @@
                 <constraint firstItem="Lxa-LO-AQF" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="Zcj-QN-mUV"/>
                 <constraint firstItem="yLv-HR-lB4" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="bFw-yu-2fV"/>
                 <constraint firstItem="Mzz-Rk-AFp" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="48" id="e5H-iR-rPo"/>
-                <constraint firstAttribute="trailing" secondItem="kAs-e4-AG9" secondAttribute="trailing" constant="10" id="hdB-Zq-Ms1"/>
-                <constraint firstItem="kAs-e4-AG9" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="2" id="tnM-KI-tXY"/>
+                <constraint firstAttribute="trailing" secondItem="kAs-e4-AG9" secondAttribute="trailing" constant="14" id="hdB-Zq-Ms1"/>
+                <constraint firstItem="kAs-e4-AG9" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="14" id="tnM-KI-tXY"/>
                 <constraint firstAttribute="bottom" secondItem="Mzz-Rk-AFp" secondAttribute="bottom" id="yQL-5R-ZNb"/>
             </constraints>
             <point key="canvasLocation" x="371.5" y="196.5"/>

@@ -150,7 +150,6 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
             let view = tasksTableView?.viewAtColumn(0, row: 0, makeIfNecessary: false) as? HeaderCell
             view?.title = tl.title
         }
-
     }
     
     func handleTaskListDeleted(notif:NSNotification) {

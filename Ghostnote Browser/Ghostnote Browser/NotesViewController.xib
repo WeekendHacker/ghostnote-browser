@@ -86,19 +86,19 @@
                     </scroller>
                 </scrollView>
                 <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCC-Ca-ktP">
-                    <rect key="frame" x="240" y="0.0" width="240" height="272"/>
+                    <rect key="frame" x="240" y="0.0" width="240" height="264"/>
                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="zjH-Wn-HZC">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="272"/>
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="264"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView drawsBackground="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="KGG-x5-Z5H">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="272"/>
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="264"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="minSize" width="240" height="272"/>
+                                <size key="minSize" width="240" height="264"/>
                                 <size key="maxSize" width="463" height="10000000"/>
                                 <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                <size key="minSize" width="240" height="272"/>
+                                <size key="minSize" width="240" height="264"/>
                                 <size key="maxSize" width="463" height="10000000"/>
                             </textView>
                         </subviews>
@@ -118,7 +118,7 @@
                 <constraint firstItem="Ww9-6P-b0r" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="0mG-TU-j4k"/>
                 <constraint firstAttribute="trailing" secondItem="iCC-Ca-ktP" secondAttribute="trailing" id="1TP-gH-5bc"/>
                 <constraint firstAttribute="bottom" secondItem="iCC-Ca-ktP" secondAttribute="bottom" id="7rx-DN-w0a"/>
-                <constraint firstItem="iCC-Ca-ktP" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="XWq-Y2-ZXt"/>
+                <constraint firstItem="iCC-Ca-ktP" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="XWq-Y2-ZXt"/>
                 <constraint firstAttribute="bottom" secondItem="Ww9-6P-b0r" secondAttribute="bottom" id="f1J-V0-LeL"/>
                 <constraint firstItem="Ww9-6P-b0r" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="h5D-Yf-G6A"/>
                 <constraint firstItem="iCC-Ca-ktP" firstAttribute="leading" secondItem="Ww9-6P-b0r" secondAttribute="trailing" id="zDG-Wb-joq"/>

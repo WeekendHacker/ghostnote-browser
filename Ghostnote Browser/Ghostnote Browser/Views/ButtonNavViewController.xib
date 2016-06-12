@@ -92,14 +92,23 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </searchFieldCell>
                 </searchField>
+                <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="lLd-ZU-04Z">
+                    <rect key="frame" x="0.0" y="277" width="559" height="5"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
             </subviews>
             <constraints>
                 <constraint firstItem="yLv-HR-lB4" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="48" id="AUC-jA-xXV"/>
+                <constraint firstAttribute="trailing" secondItem="lLd-ZU-04Z" secondAttribute="trailing" id="Cjt-M3-le0"/>
                 <constraint firstAttribute="trailing" secondItem="Mzz-Rk-AFp" secondAttribute="trailing" id="MX6-ci-SeM"/>
                 <constraint firstItem="Mzz-Rk-AFp" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="80" id="Z0O-as-SYc"/>
                 <constraint firstItem="yLv-HR-lB4" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="bFw-yu-2fV"/>
+                <constraint firstItem="lLd-ZU-04Z" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="39" id="bHv-Sc-l11"/>
                 <constraint firstItem="Mzz-Rk-AFp" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="48" id="e5H-iR-rPo"/>
                 <constraint firstAttribute="trailing" secondItem="kAs-e4-AG9" secondAttribute="trailing" constant="14" id="hdB-Zq-Ms1"/>
+                <constraint firstItem="lLd-ZU-04Z" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="r9w-Z3-fwo"/>
                 <constraint firstItem="kAs-e4-AG9" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="14" id="tnM-KI-tXY"/>
                 <constraint firstAttribute="bottom" secondItem="Mzz-Rk-AFp" secondAttribute="bottom" id="yQL-5R-ZNb"/>
             </constraints>

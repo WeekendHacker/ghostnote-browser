@@ -24,7 +24,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="80" height="271"/>
                     <subviews>
                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7b9-bd-oQZ">
-                            <rect key="frame" x="16" y="163" width="18" height="20"/>
+                            <rect key="frame" x="16" y="159" width="18" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="3tz-kW-gHe"/>
                                 <constraint firstAttribute="width" constant="18" id="Ki7-OI-rRd"/>
@@ -38,7 +38,7 @@
                             </connections>
                         </button>
                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ghf-cK-mjZ">
-                            <rect key="frame" x="16" y="207" width="18" height="20"/>
+                            <rect key="frame" x="16" y="203" width="18" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="18" id="7P5-Ln-AGd"/>
                                 <constraint firstAttribute="height" constant="20" id="ZcS-yU-P8K"/>
@@ -52,7 +52,7 @@
                             </connections>
                         </button>
                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sty-WD-ANQ">
-                            <rect key="frame" x="16" y="251" width="18" height="20"/>
+                            <rect key="frame" x="16" y="247" width="18" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="EsO-Ei-MbK"/>
                                 <constraint firstAttribute="width" constant="18" id="Ydl-jx-vUA"/>
@@ -71,7 +71,7 @@
                         <constraint firstItem="7b9-bd-oQZ" firstAttribute="top" secondItem="Ghf-cK-mjZ" secondAttribute="bottom" constant="24" id="NhA-hs-34r"/>
                         <constraint firstItem="sty-WD-ANQ" firstAttribute="leading" secondItem="yLv-HR-lB4" secondAttribute="leading" constant="16" id="RBY-4c-CAi"/>
                         <constraint firstItem="Ghf-cK-mjZ" firstAttribute="leading" secondItem="yLv-HR-lB4" secondAttribute="leading" constant="16" id="feI-45-jQE"/>
-                        <constraint firstItem="sty-WD-ANQ" firstAttribute="top" secondItem="yLv-HR-lB4" secondAttribute="top" id="gaE-ef-Wv1"/>
+                        <constraint firstItem="sty-WD-ANQ" firstAttribute="top" secondItem="yLv-HR-lB4" secondAttribute="top" constant="4" id="gaE-ef-Wv1"/>
                         <constraint firstAttribute="height" constant="271" id="hSB-7p-2u8"/>
                         <constraint firstItem="Ghf-cK-mjZ" firstAttribute="top" secondItem="sty-WD-ANQ" secondAttribute="bottom" constant="24" id="nZf-n9-3KV"/>
                         <constraint firstAttribute="width" constant="80" id="tLi-KF-lfY"/>

@@ -8,11 +8,11 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="c22-O7-iKe" customClass="NoteCell" customModule="Ghostnote_Browser" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="262" height="30"/>
+            <rect key="frame" x="0.0" y="0.0" width="262" height="32"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sk9-um-Gbj">
-                    <rect key="frame" x="8" y="7" width="250" height="16"/>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Sk9-um-Gbj">
+                    <rect key="frame" x="6" y="8" width="250" height="16"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" id="xOW-G4-Wj4">
                         <font key="font" metaFont="systemThin" size="12"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -28,7 +28,7 @@
             <connections>
                 <outlet property="textField" destination="Sk9-um-Gbj" id="d2k-aP-BUr"/>
             </connections>
-            <point key="canvasLocation" x="238" y="30.5"/>
+            <point key="canvasLocation" x="238" y="31"/>
         </customView>
     </objects>
 </document>

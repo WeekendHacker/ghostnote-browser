@@ -116,18 +116,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
-                <box horizontalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="NvX-KY-tZ3">
-                    <rect key="frame" x="238" y="0.0" width="5" height="271"/>
-                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <font key="titleFont" metaFont="system"/>
-                </box>
-                <box horizontalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="KLV-Vb-L5L">
-                    <rect key="frame" x="479" y="0.0" width="5" height="271"/>
-                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <font key="titleFont" metaFont="system"/>
-                </box>
                 <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHk-mr-Wyj" userLabel="Scroll View - Docs Table View">
                     <rect key="frame" x="241" y="0.0" width="240" height="271"/>
                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="N0L-Gi-ZvX">
@@ -199,19 +187,13 @@
                 </scrollView>
             </subviews>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="NvX-KY-tZ3" secondAttribute="bottom" id="3w1-lo-wf5"/>
-                <constraint firstItem="KLV-Vb-L5L" firstAttribute="top" secondItem="aHk-mr-Wyj" secondAttribute="top" id="5FO-Sb-bYm"/>
+                <constraint firstItem="aHk-mr-Wyj" firstAttribute="leading" secondItem="VHJ-Oh-rD8" secondAttribute="trailing" constant="1" id="1pD-zu-ncv"/>
+                <constraint firstItem="iCC-Ca-ktP" firstAttribute="leading" secondItem="aHk-mr-Wyj" secondAttribute="trailing" constant="5" id="6za-kG-i4X"/>
                 <constraint firstItem="iCC-Ca-ktP" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="8zI-q7-2SH"/>
-                <constraint firstItem="NvX-KY-tZ3" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="CKc-H4-wn5"/>
-                <constraint firstItem="aHk-mr-Wyj" firstAttribute="leading" secondItem="NvX-KY-tZ3" secondAttribute="trailing" id="Cu0-m2-rgm"/>
                 <constraint firstAttribute="bottom" secondItem="aHk-mr-Wyj" secondAttribute="bottom" id="Fur-dS-yoS"/>
                 <constraint firstItem="VHJ-Oh-rD8" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="HNa-Fr-FCD"/>
-                <constraint firstItem="KLV-Vb-L5L" firstAttribute="leading" secondItem="aHk-mr-Wyj" secondAttribute="trailing" id="HTb-sj-FrI"/>
-                <constraint firstItem="KLV-Vb-L5L" firstAttribute="bottom" secondItem="iCC-Ca-ktP" secondAttribute="bottom" id="RfF-p3-lUv"/>
                 <constraint firstAttribute="bottom" secondItem="VHJ-Oh-rD8" secondAttribute="bottom" id="bkC-dI-QFM"/>
-                <constraint firstItem="NvX-KY-tZ3" firstAttribute="leading" secondItem="VHJ-Oh-rD8" secondAttribute="trailing" id="jhT-ld-SCV"/>
                 <constraint firstItem="VHJ-Oh-rD8" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="pVH-Lt-v27"/>
-                <constraint firstItem="iCC-Ca-ktP" firstAttribute="leading" secondItem="KLV-Vb-L5L" secondAttribute="trailing" constant="4" id="qRb-t9-1W1"/>
                 <constraint firstAttribute="bottom" secondItem="iCC-Ca-ktP" secondAttribute="bottom" id="tKP-wd-WgQ"/>
                 <constraint firstItem="aHk-mr-Wyj" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="tdR-Wr-3Dv"/>
             </constraints>

@@ -8,10 +8,12 @@
 
 import Cocoa
 
-class TasksViewController: NSViewController, ButtonNavigable, TaskListControllerObserver, TextEditingVCClient {
+class TasksViewController: NSViewController, ButtonNavigable, TaskListControllerObserver {
 
     var taskListController = TaskListController()
     var taskController = TasksController()
+    let taskEditingController = TaskNameEditorController()
+    
     
     @IBOutlet weak var taskListTableView:DeletableTableView? {
         didSet {
@@ -27,16 +29,13 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
             taskController.tasksTableView = tasksTableView
         }
     }
- 
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
         view.autoresizingMask = [.ViewWidthSizable, .ViewHeightSizable]
-        NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: #selector(handleEditTaskTitle(_:)),
-                                                         name: "EditTaskTitle",
-                                                         object: nil)
+        taskEditingController.hostingViewController = self
     }
     
     override func viewDidAppear() {
@@ -65,31 +64,5 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
         taskController.selectedTaskList = nil
     }
     
-    // Notifcation HAndlers
-    
-    func handleEditTaskTitle(notifcation:NSNotification) {
-        
-        if let taskCell = notifcation.object as? TaskCell {
-            if let task = taskCell.task {
-                if let editButton = taskCell.editButton {
-                    
-                    let editVC = TextEditingVC(nibName: "TextEditingVC",
-                                               bundle: nil)
-                    editVC?.client = self
-                    editVC?.currentTitle = task.title
-                    
-                    presentViewController(editVC!,
-                                          asPopoverRelativeToRect: editButton.bounds,
-                                          ofView: editButton,
-                                          preferredEdge: .MaxY,
-                                          behavior: .ApplicationDefined)
-                }
 
-            }
-        }
-    }
-    
-    func choseText(text: String) {
-        print("chose \(text)")
-    }
 }

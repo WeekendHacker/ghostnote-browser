@@ -38,6 +38,10 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
                                                          selector: #selector(handleTaskListRenamed(_:)),
                                                          name: "TaskListRenamed",
                                                          object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(handleTaskRenamed(_:)),
+                                                         name: "TaskRenamed",
+                                                         object: nil)
         
     }
     
@@ -154,26 +158,9 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
     
     func handleTaskAdded(notif:NSNotification) {
         tasksTableView?.reloadData()
-
-        if let addedTask = notif.object as? Task {
-        print("added task \(addedTask)")
-            print("done reloading")
-            
-            tasksTableView?.enumerateAvailableRowViewsUsingBlock({ (rowView, row) in
-                print("enumerating")
-                if row > 0 {
-                    if let view = rowView.viewAtColumn(0) as? TaskCell {
-                        print(view)
-                        if let viewTask = view.task {
-                            if viewTask.id == addedTask.id {
-                                view.textField?.becomeFirstResponder()
-                            }
-                        }
-                    }
-
-                }
-            })
-            print("should have enumerated")
-        }
+    }
+    
+    func handleTaskRenamed(notification:NSNotification) {
+        tasksTableView?.reloadData()
     }
 }

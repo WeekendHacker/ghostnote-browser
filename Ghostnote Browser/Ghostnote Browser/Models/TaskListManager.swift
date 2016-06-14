@@ -80,6 +80,7 @@ class TaskListManager: NSObject {
                 task.title = to
                 db.add(task, update: true)
             })
+            NSNotificationCenter.defaultCenter().postNotificationName("TaskRenamed", object: nil)
         }
         catch {
             print(error)

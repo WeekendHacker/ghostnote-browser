@@ -55,6 +55,9 @@
 Gw
 </string>
                     </buttonCell>
+                    <connections>
+                        <action selector="cancelButtonClicked:" target="-2" id="hSZ-Ee-Ea6"/>
+                    </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iWn-nz-9i3">
                     <rect key="frame" x="252" y="42" width="82" height="32"/>
@@ -62,6 +65,9 @@ Gw
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="doneButtonClicked:" target="-2" id="A00-JL-Tcj"/>
+                    </connections>
                 </button>
             </subviews>
             <point key="canvasLocation" x="483.5" y="319"/>

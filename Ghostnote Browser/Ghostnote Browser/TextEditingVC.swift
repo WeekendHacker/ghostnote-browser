@@ -10,6 +10,7 @@ import Cocoa
 
 protocol TextEditingVCClient {
     func choseText(text:String)
+    func canceled()
 }
 
 class TextEditingVC: NSViewController {
@@ -22,12 +23,14 @@ class TextEditingVC: NSViewController {
     
     var currentTitle:String = ""
     
-    @IBAction func cancelButton(sender:AnyObject) {
-        presentingViewController?.dismissController(self)
+    @IBAction func cancelButtonClicked(sender:AnyObject) {
+        client?.canceled()
     }
     
     @IBAction func doneButtonClicked(sender:AnyObject) {
-        
+        if let text = textView?.string {
+            client?.choseText(text)
+        }
     }
     
     override func viewDidAppear() {

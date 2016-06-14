@@ -30,6 +30,7 @@
 		D8265A631CDB18760054AF57 /* TaskListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8265A621CDB18760054AF57 /* TaskListCell.swift */; };
 		D8265A651CDBE37E0054AF57 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8265A641CDBE37E0054AF57 /* TaskCell.swift */; };
 		D8265A671CDC10210054AF57 /* TaskNameValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8265A661CDC10210054AF57 /* TaskNameValidator.swift */; };
+		D82F61A41D1087B200721EB6 /* TaskNameEditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82F61A31D1087B200721EB6 /* TaskNameEditorController.swift */; };
 		D83E5B401CDA737A0044F7A3 /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B3F1CDA737A0044F7A3 /* TaskList.swift */; };
 		D83E5B421CDA74180044F7A3 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B411CDA74180044F7A3 /* Task.swift */; };
 		D83E5B441CDA74BD0044F7A3 /* TaskListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B431CDA74BD0044F7A3 /* TaskListManager.swift */; };
@@ -126,6 +127,7 @@
 		D8265A621CDB18760054AF57 /* TaskListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskListCell.swift; path = Views/TaskListCell.swift; sourceTree = "<group>"; };
 		D8265A641CDBE37E0054AF57 /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		D8265A661CDC10210054AF57 /* TaskNameValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskNameValidator.swift; sourceTree = "<group>"; };
+		D82F61A31D1087B200721EB6 /* TaskNameEditorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskNameEditorController.swift; sourceTree = "<group>"; };
 		D83E5B3F1CDA737A0044F7A3 /* TaskList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskList.swift; path = Models/TaskList.swift; sourceTree = "<group>"; };
 		D83E5B411CDA74180044F7A3 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		D83E5B431CDA74BD0044F7A3 /* TaskListManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskListManager.swift; path = Models/TaskListManager.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 				D81281AB1CCEB660001749E9 /* Managers */,
 				D8FF02321D07D5AD004AE6E2 /* View Models */,
 				D812819A1CCDDE93001749E9 /* GNTheme.swift */,
+				D82F61A31D1087B200721EB6 /* TaskNameEditorController.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -636,6 +639,7 @@
 				D8CC00AD1CE6793300D13331 /* GhostNoteManager.swift in Sources */,
 				D84F16DF1CC60EEE005612BB /* DocCell.swift in Sources */,
 				D84F16D41CC553B3005612BB /* App.swift in Sources */,
+				D82F61A41D1087B200721EB6 /* TaskNameEditorController.swift in Sources */,
 				D84F16EB1CC7123E005612BB /* TasksViewController.swift in Sources */,
 				D84F16F01CC71260005612BB /* GhostnotesViewController.swift in Sources */,
 				D8CC00B11CE67B6D00D13331 /* GhostNoteTextViewController.swift in Sources */,

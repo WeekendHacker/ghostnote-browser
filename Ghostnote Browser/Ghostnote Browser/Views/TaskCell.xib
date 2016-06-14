@@ -100,7 +100,7 @@
                 <outlet property="editButton" destination="arn-5e-sIn" id="pVx-bm-lpm"/>
                 <outlet property="textField" destination="ClR-vJ-MEJ" id="qrR-Tj-epr"/>
             </connections>
-            <point key="canvasLocation" x="42" y="52"/>
+            <point key="canvasLocation" x="42" y="51.5"/>
         </customView>
         <viewController nibName="TextEditingVC" id="Bnh-Te-NRR" userLabel="Popover View Controller"/>
         <popover id="kc5-fG-NOc">

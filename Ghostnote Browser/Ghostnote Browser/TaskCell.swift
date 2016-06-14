@@ -12,6 +12,7 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
 {
 
     @IBOutlet weak var checkbox:NSButton?
+    @IBOutlet weak var editButton:NSButton?
 
     var task:Task? {
         didSet {
@@ -77,9 +78,7 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
         }
     }
     
-//    override func keyDown(theEvent: NSEvent) {
-//        NSBeep()
-//        super.keyDown(theEvent)
-//
-//    }
+    @IBAction func editButtonClicked(sender:AnyObject?) {
+        NSNotificationCenter.defaultCenter().postNotificationName("EditTaskTitle", object: self)
+    }
 }

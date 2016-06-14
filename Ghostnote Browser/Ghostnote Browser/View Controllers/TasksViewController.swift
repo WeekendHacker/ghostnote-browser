@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class TasksViewController: NSViewController, ButtonNavigable, TaskListControllerObserver {
+class TasksViewController: NSViewController, ButtonNavigable, TaskListControllerObserver, TextEditingVCClient {
 
     var taskListController = TaskListController()
     var taskController = TasksController()
@@ -33,7 +33,10 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
         super.viewDidLoad()
        
         view.autoresizingMask = [.ViewWidthSizable, .ViewHeightSizable]
-
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(handleEditTaskTitle(_:)),
+                                                         name: "EditTaskTitle",
+                                                         object: nil)
     }
     
     override func viewDidAppear() {
@@ -60,5 +63,33 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
     
     func selectedNoList() {
         taskController.selectedTaskList = nil
+    }
+    
+    // Notifcation HAndlers
+    
+    func handleEditTaskTitle(notifcation:NSNotification) {
+        
+        if let taskCell = notifcation.object as? TaskCell {
+            if let task = taskCell.task {
+                if let editButton = taskCell.editButton {
+                    
+                    let editVC = TextEditingVC(nibName: "TextEditingVC",
+                                               bundle: nil)
+                    editVC?.client = self
+                    editVC?.currentTitle = task.title
+                    
+                    presentViewController(editVC!,
+                                          asPopoverRelativeToRect: editButton.bounds,
+                                          ofView: editButton,
+                                          preferredEdge: .MaxY,
+                                          behavior: .ApplicationDefined)
+                }
+
+            }
+        }
+    }
+    
+    func choseText(text: String) {
+        print("chose \(text)")
     }
 }

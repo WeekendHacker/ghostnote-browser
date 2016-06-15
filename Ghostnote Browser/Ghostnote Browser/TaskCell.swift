@@ -31,6 +31,15 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
                         removeStrikethrough()
                     }
                 }
+                
+                let editbuttonContraint = NSLayoutConstraint(item: editButton!,
+                                                             attribute: .Top,
+                                                             relatedBy: .Equal,
+                                                             toItem: textField!,
+                                                             attribute: .Top,
+                                                             multiplier: 1.0, constant: 0.0)
+                addConstraint(editbuttonContraint)
+                updateConstraints()
             }
         }
     }
@@ -80,5 +89,12 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
     
     @IBAction func editButtonClicked(sender:AnyObject?) {
         NSNotificationCenter.defaultCenter().postNotificationName("EditTaskTitle", object: self)
+    }
+    
+    
+    override func drawRect(dirtyRect: NSRect) {
+        super.drawRect(dirtyRect)
+        
+        
     }
 }

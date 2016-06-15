@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
     <objects>
@@ -29,40 +30,16 @@
                         <action selector="checkboxChecked:" target="c22-O7-iKe" id="wRP-AH-v4i"/>
                     </connections>
                 </button>
-                <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="1Ug-qe-Orn">
-                    <rect key="frame" x="7" y="6" width="235" height="5"/>
-                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <font key="titleFont" metaFont="system"/>
-                </box>
-                <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Xng-re-Nvw">
-                    <rect key="frame" x="8" y="42" width="234" height="5"/>
-                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <font key="titleFont" metaFont="system"/>
-                </box>
-                <box horizontalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Tg6-7M-WSi">
-                    <rect key="frame" x="239" y="8" width="5" height="37"/>
-                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <font key="titleFont" metaFont="system"/>
-                </box>
-                <box horizontalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="GpL-v2-LKi">
-                    <rect key="frame" x="6" y="8" width="5" height="37"/>
-                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <font key="titleFont" metaFont="system"/>
-                </box>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ClR-vJ-MEJ">
-                    <rect key="frame" x="40" y="18" width="174" height="17"/>
+                    <rect key="frame" x="40" y="17" width="183" height="17"/>
                     <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" alignment="left" title="Label" id="pb0-pF-sxg">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="arn-5e-sIn">
-                    <rect key="frame" x="220" y="16" width="13" height="21"/>
+                <button verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="arn-5e-sIn">
+                    <rect key="frame" x="229" y="14" width="13" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="13" id="96B-Ic-NC0"/>
                         <constraint firstAttribute="height" constant="19" id="tl2-XK-xgK"/>
@@ -77,27 +54,12 @@
                 </button>
             </subviews>
             <constraints>
-                <constraint firstItem="arn-5e-sIn" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="2N1-zG-G65"/>
-                <constraint firstItem="GpL-v2-LKi" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="7WB-zQ-eI2"/>
-                <constraint firstItem="Tg6-7M-WSi" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="8fG-4B-baF"/>
-                <constraint firstItem="Xng-re-Nvw" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="AxX-xq-M0Y"/>
-                <constraint firstItem="ClR-vJ-MEJ" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="ClG-xG-dfX"/>
-                <constraint firstItem="GpL-v2-LKi" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="8" id="EWf-oB-nDb"/>
-                <constraint firstItem="1Ug-qe-Orn" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="7" id="HcA-v5-Bfh"/>
-                <constraint firstItem="Xng-re-Nvw" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="8" id="LCd-KL-iF5"/>
-                <constraint firstAttribute="trailing" secondItem="1Ug-qe-Orn" secondAttribute="trailing" constant="8" id="LS9-DQ-Uc1"/>
-                <constraint firstItem="oJg-uP-G2E" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="NIo-PZ-5ky"/>
-                <constraint firstItem="arn-5e-sIn" firstAttribute="leading" secondItem="ClR-vJ-MEJ" secondAttribute="trailing" constant="8" id="PzV-Jw-JgQ"/>
+                <constraint firstItem="oJg-uP-G2E" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="19" id="CHP-sT-nZQ"/>
+                <constraint firstAttribute="trailing" secondItem="arn-5e-sIn" secondAttribute="trailing" constant="8" id="Ghi-OS-SGo"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oJg-uP-G2E" secondAttribute="trailing" constant="20" id="RmZ-DK-S9M"/>
-                <constraint firstAttribute="trailing" secondItem="Xng-re-Nvw" secondAttribute="trailing" constant="8" id="Tca-nI-R6a"/>
-                <constraint firstItem="arn-5e-sIn" firstAttribute="top" secondItem="Xng-re-Nvw" secondAttribute="bottom" constant="8" id="Vb6-Zw-c1z"/>
-                <constraint firstAttribute="trailing" secondItem="Tg6-7M-WSi" secondAttribute="trailing" constant="8" id="cd7-nt-q00"/>
-                <constraint firstAttribute="bottom" secondItem="Tg6-7M-WSi" secondAttribute="bottom" constant="8" id="fnG-DB-i1g"/>
-                <constraint firstAttribute="bottom" secondItem="GpL-v2-LKi" secondAttribute="bottom" constant="8" id="g3E-AL-bkg"/>
+                <constraint firstItem="oJg-uP-G2E" firstAttribute="top" secondItem="ClR-vJ-MEJ" secondAttribute="top" id="iFB-DN-dHc"/>
                 <constraint firstItem="oJg-uP-G2E" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="jFW-dD-fvy"/>
-                <constraint firstAttribute="bottom" secondItem="1Ug-qe-Orn" secondAttribute="bottom" constant="8" id="lXp-7R-b7q"/>
-                <constraint firstItem="Tg6-7M-WSi" firstAttribute="leading" secondItem="arn-5e-sIn" secondAttribute="trailing" constant="8" id="pNf-Cb-XWJ"/>
-                <constraint firstItem="ClR-vJ-MEJ" firstAttribute="top" secondItem="Xng-re-Nvw" secondAttribute="bottom" constant="9" id="sYF-2R-90r"/>
+                <constraint firstItem="arn-5e-sIn" firstAttribute="leading" secondItem="ClR-vJ-MEJ" secondAttribute="trailing" constant="8" id="mC2-T2-PKg"/>
                 <constraint firstItem="ClR-vJ-MEJ" firstAttribute="leading" secondItem="oJg-uP-G2E" secondAttribute="trailing" constant="8" id="wOK-b1-FZQ"/>
             </constraints>
             <connections>

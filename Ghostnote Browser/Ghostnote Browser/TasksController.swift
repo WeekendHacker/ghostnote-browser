@@ -73,6 +73,7 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
 
     func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
         
+        let task = selectedTaskList!
         if row == 0 {
             return 36.0
         }

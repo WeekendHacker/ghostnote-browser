@@ -73,6 +73,7 @@ class TaskNameEditorController: NSObject, TextEditingVCClient {
             cleanUp()
         }
     }
+    
     func cleanUp() {
         editVC = nil
         editingTask = nil

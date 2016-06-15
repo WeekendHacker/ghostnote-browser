@@ -15,8 +15,12 @@
             <rect key="frame" x="0.0" y="0.0" width="250" height="53"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <button misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oJg-uP-G2E">
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="oJg-uP-G2E">
                     <rect key="frame" x="18" y="18" width="18" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="14" id="Dnt-wf-eAU"/>
+                        <constraint firstAttribute="width" constant="14" id="NV4-HT-yaZ"/>
+                    </constraints>
                     <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="only" state="on" inset="2" id="J9H-RH-rAx">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
@@ -49,8 +53,8 @@
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <font key="titleFont" metaFont="system"/>
                 </box>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ClR-vJ-MEJ">
-                    <rect key="frame" x="40" y="17" width="174" height="19"/>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ClR-vJ-MEJ">
+                    <rect key="frame" x="40" y="18" width="174" height="17"/>
                     <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" alignment="left" title="Label" id="pb0-pF-sxg">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -93,6 +97,7 @@
                 <constraint firstItem="oJg-uP-G2E" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="jFW-dD-fvy"/>
                 <constraint firstAttribute="bottom" secondItem="1Ug-qe-Orn" secondAttribute="bottom" constant="8" id="lXp-7R-b7q"/>
                 <constraint firstItem="Tg6-7M-WSi" firstAttribute="leading" secondItem="arn-5e-sIn" secondAttribute="trailing" constant="8" id="pNf-Cb-XWJ"/>
+                <constraint firstItem="ClR-vJ-MEJ" firstAttribute="top" secondItem="Xng-re-Nvw" secondAttribute="bottom" constant="9" id="sYF-2R-90r"/>
                 <constraint firstItem="ClR-vJ-MEJ" firstAttribute="leading" secondItem="oJg-uP-G2E" secondAttribute="trailing" constant="8" id="wOK-b1-FZQ"/>
             </constraints>
             <connections>

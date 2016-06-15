@@ -92,8 +92,7 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
     
     // Actions
     func addTaskListClicked(sender:AnyObject?) {
-        let uniquePart = "\(NSDate().timeIntervalSince1970)"
-        TaskListManager.shared.createTaskList("New Task List" + "<!\(uniquePart)>")
+        TaskListManager.shared.createTaskList("New Task List")
     }
 
     // DeleteRowDelegate

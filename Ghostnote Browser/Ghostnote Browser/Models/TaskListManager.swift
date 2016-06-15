@@ -25,7 +25,9 @@ class TaskListManager: NSObject {
         
         do {
             try db.write({
-                newList.title = name
+                let uniquePart = NSDate().timeIntervalSince1970
+                
+                newList.title = name.stringByAppendingString(" <!\(uniquePart)>")
                 newList.creationDate = NSDate()
                 db.add(newList)
             })
@@ -33,8 +35,8 @@ class TaskListManager: NSObject {
         catch {
             print(error)
         }
-        let uniquePart = NSDate().timeIntervalSince1970
-        newList.addTask("New Task <!\(uniquePart)>")
+
+        newList.addTask("New Task")
         
         NSNotificationCenter.defaultCenter().postNotificationName("CreatedTaskList", object: nil)
     }
@@ -63,7 +65,9 @@ class TaskListManager: NSObject {
     func renameTaskList(taskList:TaskList, to:String) {
         do {
             try db.write({
-                taskList.title = to
+                let uniquePart = NSDate().timeIntervalSince1970
+
+                taskList.title = to.stringByAppendingString(" <!\(uniquePart)>")
                 db.add(taskList, update: true)
             })
         }
@@ -77,7 +81,10 @@ class TaskListManager: NSObject {
         
         do {
             try db.write({
-                task.title = to
+                let uniquePart = NSDate().timeIntervalSince1970
+                
+                task.title = to.stringByAppendingString(" <!\(uniquePart)>")
+                
                 db.add(task, update: true)
             })
             NSNotificationCenter.defaultCenter().postNotificationName("TaskRenamed", object: nil)

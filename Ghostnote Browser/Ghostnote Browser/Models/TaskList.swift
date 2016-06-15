@@ -27,7 +27,9 @@ class TaskList: Object {
         do {
             try db.write({ 
                 task.creationDate = NSDate()
-                task.title = named
+                let uniquePart = NSDate().timeIntervalSince1970
+                
+                task.title = named.stringByAppendingString(" <!\(uniquePart)>")
                 self.tasks.append(task)
                 db.add(self, update: true)
             })

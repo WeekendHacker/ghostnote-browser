@@ -134,7 +134,7 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
         if let tl = selectedTaskList {
             let uniquePart = NSDate().timeIntervalSince1970
             
-            tl.addTask("New Task <!\(uniquePart)")
+            tl.addTask("New Task")
         }
     }
     

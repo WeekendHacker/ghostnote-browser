@@ -35,7 +35,10 @@ class TextEditingVC: NSViewController {
     
     override func viewDidAppear() {
         super.viewDidAppear()
-        let string = NSAttributedString(string: currentTitle)
+        
+        let comps = currentTitle.componentsSeparatedByString("<!")
+        
+        let string = NSAttributedString(string: comps.first!)
         textView?.textStorage?.appendAttributedString(string)
     }
 }

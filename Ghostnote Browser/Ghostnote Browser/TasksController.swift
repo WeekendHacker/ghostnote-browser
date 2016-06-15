@@ -76,7 +76,7 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
         if row == 0 {
             return 36.0
         }
-        return 53.0
+        return 100.0
  
     }
     
@@ -132,7 +132,6 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
     // notification handlers
     func handleNewTaskAction() {
         if let tl = selectedTaskList {
-            let uniquePart = NSDate().timeIntervalSince1970
             
             tl.addTask("New Task")
         }

@@ -78,11 +78,11 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
     // NSTableViewDatasource
     
     func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        return 100.0
-    }
-    
-    func tableView(tableView: NSTableView, didAddRowView rowView: NSTableRowView, forRow row: Int) {
         
+        if row > 0 {
+            return 91.0
+        }
+        return 30.0
     }
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {

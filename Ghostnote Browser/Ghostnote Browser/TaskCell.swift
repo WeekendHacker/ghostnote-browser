@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import QuartzCore
 
 class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
 {
@@ -95,6 +96,21 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
     override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
         
-        
+        if let ctx = NSGraphicsContext.currentContext()?.CGContext {
+            
+            let width = bounds.size.width
+            let height = bounds.size.height
+            let insetDistance:CGFloat = 4.0
+            let doubleInset:CGFloat = 2.0 * insetDistance
+            
+            CGContextSetGrayStrokeColor(ctx, 0.0, 0.8)
+            let origin = CGPoint(x: insetDistance, y: insetDistance)
+            let size = CGSize(width: width - doubleInset, height: height - doubleInset)
+            CGContextAddRect(ctx, CGRect(origin: origin, size: size))
+
+            CGContextStrokePath(ctx)
+            
+            
+        }
     }
 }

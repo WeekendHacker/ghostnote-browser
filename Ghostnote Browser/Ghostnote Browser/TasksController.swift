@@ -10,6 +10,9 @@ import Cocoa
 
 class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, DeleteRowDelegate {
 
+    
+    
+    
     override init() {
         
         super.init()
@@ -71,17 +74,17 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
         }
     }
 
+
+    // NSTableViewDatasource
+    
     func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        
-        let task = selectedTaskList!
-        if row == 0 {
-            return 36.0
-        }
         return 100.0
- 
     }
     
-    // NSTableViewDatasource
+    func tableView(tableView: NSTableView, didAddRowView rowView: NSTableRowView, forRow row: Int) {
+        
+    }
+    
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
         var rows = 0
         

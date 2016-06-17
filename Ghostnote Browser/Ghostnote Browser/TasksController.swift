@@ -70,6 +70,9 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
                 if let taskNib = NSNib(nibNamed: "TaskCell", bundle: nil) {
                     tv.registerNib(taskNib, forIdentifier: "TaskCell")
                 }
+                
+                tv.target = self
+                tv.action = #selector(tvAction(_:))
             }
         }
     }
@@ -78,11 +81,7 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
     // NSTableViewDatasource
     
     func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        
-        if row > 0 {
-            return 91.0
-        }
-        return 30.0
+        return 50.0
     }
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
@@ -116,6 +115,24 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
             }
         }
         return nil
+    }
+    
+    
+    func tvAction(tv:AnyObject?) {
+        if let tableView = tv as? DeletableTableView {
+            
+            tableView.enumerateAvailableRowViewsUsingBlock({ (rowView, row) in
+                if row != 0 {
+                    if let selectedCell = rowView.viewAtColumn(0) as? SelectableCell {
+                        selectedCell.select(rowView.selected)
+                    }
+                }
+            })
+            
+            NSNotificationCenter.defaultCenter().postNotificationName("SelectedTaskChanged", object: nil)
+        }
+        
+        
     }
  
     // Actions

@@ -27,10 +27,13 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
                 tv.deleteDelegate = self
                 tv.selectionHighlightStyle = .None
                 
-                let buttonNib = NSNib(nibNamed: "ButtonTableCellView", bundle: nil)
-                tv.registerNib(buttonNib, forIdentifier: "ButtonTableCellView")
-                let noteCellNib = NSNib(nibNamed: "NoteCell", bundle: nil)
-                tv.registerNib(noteCellNib, forIdentifier: "NoteCell")
+                if let buttonNib = NSNib(nibNamed: "ButtonTableCellView", bundle: nil) {
+                    tv.registerNib(buttonNib, forIdentifier: "ButtonTableCellView")
+                }
+                
+                if let noteCellNib = NSNib(nibNamed: "NoteCell", bundle: nil) {
+                    tv.registerNib(noteCellNib, forIdentifier: "NoteCell")
+                }
                 
                 tv.target = self
                 tv.action = #selector(tvAction(_:))

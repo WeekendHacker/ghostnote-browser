@@ -10,8 +10,7 @@ import Cocoa
 import RealmSwift
 
 class NoteCell: NSTableCellView, NSTextFieldDelegate, SelectableCell {
-
-       
+    
     var note:Note? { didSet {
      
             if let myNote = note {
@@ -23,7 +22,17 @@ class NoteCell: NSTableCellView, NSTextFieldDelegate, SelectableCell {
         }
     }
     
+    
+    
     // NSTextFieldDelegate
+    
+    func control(control: NSControl, textShouldEndEditing fieldEditor: NSText) -> Bool {
+        if textField!.stringValue.isEmpty {
+            NSBeep()
+            return false
+        }
+        return true
+    }
     
     override func controlTextDidEndEditing(obj: NSNotification) {
         if let editedField = obj.object as? NSTextField {
@@ -35,7 +44,6 @@ class NoteCell: NSTableCellView, NSTextFieldDelegate, SelectableCell {
                 }else {
                     editedField.stringValue = (note?.name)!
                 }
-                
             }
         }
     }

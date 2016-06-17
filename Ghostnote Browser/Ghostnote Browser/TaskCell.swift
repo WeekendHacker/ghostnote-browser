@@ -9,6 +9,10 @@
 import Cocoa
 import QuartzCore
 
+
+extension NSTextField {
+    
+}
 class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
 {
 
@@ -18,76 +22,45 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
     var task:Task? {
         didSet {
             if let t = task {
-                let title = t.title
-                let displayTitle = title.componentsSeparatedByString("<!").first
-                textField?.stringValue = displayTitle!
-                textField?.delegate = self
                 
+                if let displayTitle = t.title.componentsSeparatedByString("<!").first {
+                    textField?.delegate = self
+                    textField?.lineBreakMode = .ByTruncatingMiddle
+                    textField?.stringValue = displayTitle
+                    textField?.toolTip = displayTitle
+                }
+
                 if let cb = checkbox {
                     if t.isComplete == true {
                         cb.state = NSOnState
-                        applyStrikethrough()
+                        textField?.applyStrikethrough()
                     }else {
                         cb.state = NSOffState
-                        removeStrikethrough()
+                        textField?.removeStrikethrough()
                     }
                 }
-                
-                let editbuttonContraint = NSLayoutConstraint(item: editButton!,
-                                                             attribute: .Top,
-                                                             relatedBy: .Equal,
-                                                             toItem: textField!,
-                                                             attribute: .Top,
-                                                             multiplier: 1.0, constant: 0.0)
-                addConstraint(editbuttonContraint)
-                updateConstraints()
             }
         }
     }
     
+    override func controlTextDidBeginEditing(obj: NSNotification) {
+        select(true)
+    }
     
     @IBAction func checkboxChecked(sender:AnyObject?) {
         
         if checkbox?.state == NSOnState {
-
+            
             task?.complete()
-            applyStrikethrough()
+            textField?.applyStrikethrough()
+            
         }else if checkbox?.state == NSOffState {
 
             task?.incomplete()
-            removeStrikethrough()
+            textField?.removeStrikethrough()
         }
     }
-    
-    func applyStrikethrough() {
-        let string = textField?.attributedStringValue.mutableCopy() as? NSMutableAttributedString
-        string?.addAttributes([NSStrikethroughStyleAttributeName : true], range: NSRange(location: 0, length: string!.length))
-        textField?.attributedStringValue = string!
-    }
-    
-    func removeStrikethrough() {
-        let string = textField?.attributedStringValue.mutableCopy() as? NSMutableAttributedString
-        string?.removeAttribute(NSStrikethroughStyleAttributeName, range: NSRange(location: 0, length: string!.length))
-        textField?.attributedStringValue = string!
-    }
-    
-    // NSTextFieldDelegate
 
-    override func controlTextDidBeginEditing(obj: NSNotification) {
-        if let editingTextField = obj.object as? NSTextField {
-            editingTextField.textColor = NSColor.blackColor()
-        }
-    }
-    
-    override func controlTextDidEndEditing(obj: NSNotification) {
-        if let editedField = obj.object as? NSTextField {
-            
-            if !editedField.stringValue.isEmpty {
-                TaskListManager.shared.changeTask(task!, to: editedField.stringValue)
-            }
-        }
-    }
-    
     @IBAction func editButtonClicked(sender:AnyObject?) {
         NSNotificationCenter.defaultCenter().postNotificationName("EditTaskTitle", object: self)
     }
@@ -109,8 +82,7 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
             CGContextAddRect(ctx, CGRect(origin: origin, size: size))
 
             CGContextStrokePath(ctx)
-            
-            
+
         }
     }
 }

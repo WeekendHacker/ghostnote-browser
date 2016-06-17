@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="32"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField focusRingType="exterior" horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dWS-os-lET">
+                <textField focusRingType="exterior" horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dWS-os-lET">
                     <rect key="frame" x="0.0" y="7" width="468" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="exterior" alignment="left" title="Label" id="Uvt-XK-LFL">
                         <font key="font" metaFont="system"/>
@@ -26,7 +26,7 @@
             </subviews>
             <constraints>
                 <constraint firstItem="dWS-os-lET" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="8" id="2aS-Nu-nVh"/>
-                <constraint firstAttribute="trailing" secondItem="dWS-os-lET" secondAttribute="trailing" id="uXk-QC-W9B"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dWS-os-lET" secondAttribute="trailing" id="uXk-QC-W9B"/>
                 <constraint firstItem="dWS-os-lET" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="uuP-JQ-xfe"/>
             </constraints>
             <connections>

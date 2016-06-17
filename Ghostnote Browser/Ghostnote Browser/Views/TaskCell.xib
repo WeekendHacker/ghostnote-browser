@@ -12,11 +12,11 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView identifier="TaskCell" id="c22-O7-iKe" customClass="TaskCell" customModule="Ghostnote_Browser" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="250" height="53"/>
+            <rect key="frame" x="0.0" y="0.0" width="250" height="36"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="oJg-uP-G2E">
-                    <rect key="frame" x="18" y="17" width="18" height="18"/>
+                    <rect key="frame" x="18" y="9" width="18" height="18"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="14" id="Dnt-wf-eAU"/>
                         <constraint firstAttribute="width" constant="14" id="NV4-HT-yaZ"/>
@@ -30,15 +30,15 @@
                     </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ClR-vJ-MEJ">
-                    <rect key="frame" x="40" y="16" width="183" height="17"/>
-                    <textFieldCell key="cell" truncatesLastVisibleLine="YES" selectable="YES" sendsActionOnEndEditing="YES" alignment="left" title="Label" id="pb0-pF-sxg">
+                    <rect key="frame" x="40" y="8" width="183" height="17"/>
+                    <textFieldCell key="cell" lineBreakMode="truncatingTail" truncatesLastVisibleLine="YES" selectable="YES" sendsActionOnEndEditing="YES" alignment="left" title="Label" id="pb0-pF-sxg">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="arn-5e-sIn">
-                    <rect key="frame" x="229" y="13" width="13" height="21"/>
+                    <rect key="frame" x="229" y="5" width="13" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="13" id="96B-Ic-NC0"/>
                         <constraint firstAttribute="height" constant="19" id="tl2-XK-xgK"/>
@@ -53,29 +53,26 @@
                 </button>
             </subviews>
             <constraints>
+                <constraint firstItem="oJg-uP-G2E" firstAttribute="top" relation="greaterThanOrEqual" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="8Hm-MV-baE"/>
                 <constraint firstAttribute="trailing" secondItem="arn-5e-sIn" secondAttribute="trailing" constant="8" id="Ghi-OS-SGo"/>
-                <constraint firstItem="ClR-vJ-MEJ" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="20" id="PPJ-0B-haB"/>
+                <constraint firstItem="arn-5e-sIn" firstAttribute="top" relation="greaterThanOrEqual" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="QDp-nP-x0s"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oJg-uP-G2E" secondAttribute="trailing" constant="20" id="RmZ-DK-S9M"/>
-                <constraint firstItem="oJg-uP-G2E" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="20" id="WfQ-j8-PFZ"/>
                 <constraint firstItem="arn-5e-sIn" firstAttribute="top" secondItem="oJg-uP-G2E" secondAttribute="top" id="aqH-3e-XV3"/>
+                <constraint firstAttribute="bottom" secondItem="ClR-vJ-MEJ" secondAttribute="bottom" constant="8" id="cdp-09-2Ly"/>
                 <constraint firstItem="oJg-uP-G2E" firstAttribute="top" secondItem="ClR-vJ-MEJ" secondAttribute="top" id="iFB-DN-dHc"/>
                 <constraint firstItem="oJg-uP-G2E" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="jFW-dD-fvy"/>
+                <constraint firstItem="oJg-uP-G2E" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="liT-t4-qXC"/>
                 <constraint firstItem="arn-5e-sIn" firstAttribute="leading" secondItem="ClR-vJ-MEJ" secondAttribute="trailing" constant="8" id="mC2-T2-PKg"/>
                 <constraint firstItem="ClR-vJ-MEJ" firstAttribute="leading" secondItem="oJg-uP-G2E" secondAttribute="trailing" constant="8" id="wOK-b1-FZQ"/>
+                <constraint firstItem="ClR-vJ-MEJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="zgp-Dq-zQM"/>
             </constraints>
             <connections>
                 <outlet property="checkbox" destination="oJg-uP-G2E" id="0Ob-x5-Xjr"/>
                 <outlet property="editButton" destination="arn-5e-sIn" id="pVx-bm-lpm"/>
                 <outlet property="textField" destination="ClR-vJ-MEJ" id="qrR-Tj-epr"/>
             </connections>
-            <point key="canvasLocation" x="42" y="51.5"/>
+            <point key="canvasLocation" x="193" y="56"/>
         </customView>
-        <viewController nibName="TextEditingVC" id="Bnh-Te-NRR" userLabel="Popover View Controller"/>
-        <popover id="kc5-fG-NOc">
-            <connections>
-                <outlet property="contentViewController" destination="Bnh-Te-NRR" id="SYu-aZ-gKx"/>
-            </connections>
-        </popover>
     </objects>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>

@@ -11,9 +11,9 @@
             <rect key="frame" x="0.0" y="0.0" width="262" height="32"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Sk9-um-Gbj">
-                    <rect key="frame" x="6" y="8" width="250" height="16"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" id="xOW-G4-Wj4">
+                <textField verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sk9-um-Gbj">
+                    <rect key="frame" x="6" y="8" width="34" height="16"/>
+                    <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" alignment="left" id="xOW-G4-Wj4">
                         <font key="font" metaFont="systemThin" size="12"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
@@ -22,7 +22,7 @@
             </subviews>
             <constraints>
                 <constraint firstItem="Sk9-um-Gbj" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="8" id="1yz-AA-uUV"/>
-                <constraint firstAttribute="trailing" secondItem="Sk9-um-Gbj" secondAttribute="trailing" constant="8" id="Q5O-tp-xft"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Sk9-um-Gbj" secondAttribute="trailing" constant="8" id="Q5O-tp-xft"/>
                 <constraint firstItem="Sk9-um-Gbj" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="gVC-sa-ght"/>
             </constraints>
             <connections>

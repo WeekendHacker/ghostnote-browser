@@ -18,25 +18,27 @@ extension SelectableCell {
     
     func select(isSelected:Bool)  {
         
-        if isSelected {
+        if let tf = textField {
             
-            let text:NSMutableAttributedString = (textField?.attributedStringValue.mutableCopy())! as! NSMutableAttributedString
-            
-            let range = NSRange(location: 0, length: text.length)
-            text.applyFontTraits(.BoldFontMask,
-                                 range: range)
-
-            textField?.attributedStringValue = text
-            
-        }else {
-            let text:NSMutableAttributedString = (textField?.attributedStringValue.mutableCopy())! as! NSMutableAttributedString
-            
-            let range = NSRange(location: 0, length: text.length)
-            
-            text.applyFontTraits(.UnboldFontMask,
-                                 range: range)
-
-            textField?.attributedStringValue = text
+            if let text = (tf.attributedStringValue.mutableCopy()) as? NSMutableAttributedString {
+                if isSelected {
+                    
+                    let range = NSRange(location: 0, length: text.length)
+                    text.applyFontTraits(.BoldFontMask,
+                                         range: range)
+                    
+                    tf.attributedStringValue = text
+                    
+                }else {
+ 
+                    let range = NSRange(location: 0, length: text.length)
+                    
+                    text.applyFontTraits(.UnboldFontMask,
+                                         range: range)
+                    
+                    tf.attributedStringValue = text
+                }
+            }
         }
     }
 }

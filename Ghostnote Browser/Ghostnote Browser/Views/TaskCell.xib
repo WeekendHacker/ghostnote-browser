@@ -30,7 +30,7 @@
                     </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ClR-vJ-MEJ">
-                    <rect key="frame" x="40" y="8" width="183" height="17"/>
+                    <rect key="frame" x="40" y="8" width="37" height="17"/>
                     <textFieldCell key="cell" lineBreakMode="truncatingTail" truncatesLastVisibleLine="YES" selectable="YES" sendsActionOnEndEditing="YES" alignment="left" title="Label" id="pb0-pF-sxg">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -62,7 +62,7 @@
                 <constraint firstItem="oJg-uP-G2E" firstAttribute="top" secondItem="ClR-vJ-MEJ" secondAttribute="top" id="iFB-DN-dHc"/>
                 <constraint firstItem="oJg-uP-G2E" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="jFW-dD-fvy"/>
                 <constraint firstItem="oJg-uP-G2E" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="liT-t4-qXC"/>
-                <constraint firstItem="arn-5e-sIn" firstAttribute="leading" secondItem="ClR-vJ-MEJ" secondAttribute="trailing" constant="8" id="mC2-T2-PKg"/>
+                <constraint firstItem="arn-5e-sIn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ClR-vJ-MEJ" secondAttribute="trailing" constant="8" id="mC2-T2-PKg"/>
                 <constraint firstItem="ClR-vJ-MEJ" firstAttribute="leading" secondItem="oJg-uP-G2E" secondAttribute="trailing" constant="8" id="wOK-b1-FZQ"/>
                 <constraint firstItem="ClR-vJ-MEJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="zgp-Dq-zQM"/>
             </constraints>

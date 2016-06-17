@@ -25,9 +25,10 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
                 
                 if let displayTitle = t.title.componentsSeparatedByString("<!").first {
                     textField?.delegate = self
-                    textField?.lineBreakMode = .ByTruncatingMiddle
+                    textField?.lineBreakMode = .ByTruncatingTail
                     textField?.stringValue = displayTitle
                     textField?.toolTip = displayTitle
+                    textField?.refusesFirstResponder = true
                 }
 
                 if let cb = checkbox {
@@ -42,11 +43,7 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
             }
         }
     }
-    
-    override func controlTextDidBeginEditing(obj: NSNotification) {
-        select(true)
-    }
-    
+
     @IBAction func checkboxChecked(sender:AnyObject?) {
         
         if checkbox?.state == NSOnState {

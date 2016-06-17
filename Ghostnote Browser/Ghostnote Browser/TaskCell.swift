@@ -62,7 +62,6 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
         NSNotificationCenter.defaultCenter().postNotificationName("EditTaskTitle", object: self)
     }
     
-    
     override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
         
@@ -79,7 +78,6 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
             CGContextAddRect(ctx, CGRect(origin: origin, size: size))
 
             CGContextStrokePath(ctx)
-
         }
     }
 }

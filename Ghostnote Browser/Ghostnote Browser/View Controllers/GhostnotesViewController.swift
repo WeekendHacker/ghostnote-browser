@@ -15,6 +15,8 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
     var docsTableViewController = GhostNotesDocTableViewController()
     var noteTextViewController = GhostNoteTextViewController()
     
+    @IBOutlet weak var splitView:CustomSplitView?
+    
     @IBOutlet var noteTextView:NSTextView? {
         didSet {
             if let tv = noteTextView {
@@ -53,6 +55,7 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
     override func viewDidLoad() {
         super.viewDidLoad()
         view.autoresizingMask = [.ViewWidthSizable, .ViewHeightSizable]
+        splitView?.dividerStyle = .Thin
     }
 
     override func viewDidAppear() {

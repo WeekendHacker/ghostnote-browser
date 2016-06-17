@@ -15,6 +15,8 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
     let taskEditingController = TaskNameEditorController()
     
     
+    @IBOutlet weak var splitView:CustomSplitView?
+    
     @IBOutlet weak var taskListTableView:DeletableTableView? {
         didSet {
             if let tv = taskListTableView {
@@ -36,6 +38,7 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
        
         view.autoresizingMask = [.ViewWidthSizable, .ViewHeightSizable]
         taskEditingController.hostingViewController = self
+        splitView?.dividerStyle = .Thin
     }
     
     override func viewDidAppear() {

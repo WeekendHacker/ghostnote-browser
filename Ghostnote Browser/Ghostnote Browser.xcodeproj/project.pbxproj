@@ -47,6 +47,7 @@
 		D84F16E61CC71215005612BB /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16E41CC71215005612BB /* NotesViewController.swift */; };
 		D84F16EB1CC7123E005612BB /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16E91CC7123E005612BB /* TasksViewController.swift */; };
 		D84F16F01CC71260005612BB /* GhostnotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16EE1CC71260005612BB /* GhostnotesViewController.swift */; };
+		D86A9FBA1D148FCC00F6DFF9 /* CustomSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86A9FB91D148FCC00F6DFF9 /* CustomSplitView.swift */; };
 		D86DC3831D0407E30013DFC8 /* DocCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D86DC3821D0407E30013DFC8 /* DocCell.xib */; };
 		D872BA761D0BDCBF00C0C556 /* SelectableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872BA751D0BDCBF00C0C556 /* SelectableCell.swift */; };
 		D872BA7B1D0F508600C0C556 /* TextEditingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872BA791D0F508600C0C556 /* TextEditingVC.swift */; };
@@ -146,6 +147,7 @@
 		D84F16E41CC71215005612BB /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotesViewController.swift; path = "View Controllers/NotesViewController.swift"; sourceTree = "<group>"; };
 		D84F16E91CC7123E005612BB /* TasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TasksViewController.swift; path = "View Controllers/TasksViewController.swift"; sourceTree = "<group>"; };
 		D84F16EE1CC71260005612BB /* GhostnotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GhostnotesViewController.swift; path = "View Controllers/GhostnotesViewController.swift"; sourceTree = "<group>"; };
+		D86A9FB91D148FCC00F6DFF9 /* CustomSplitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSplitView.swift; sourceTree = "<group>"; };
 		D86DC3821D0407E30013DFC8 /* DocCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocCell.xib; sourceTree = "<group>"; };
 		D872BA751D0BDCBF00C0C556 /* SelectableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectableCell.swift; sourceTree = "<group>"; };
 		D872BA791D0F508600C0C556 /* TextEditingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextEditingVC.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				D82F61B71D13C2F000721EB6 /* NSTextFieldExtensions.swift */,
+				D86A9FB91D148FCC00F6DFF9 /* CustomSplitView.swift */,
 			);
 			name = "UI Extensions";
 			sourceTree = "<group>";
@@ -669,6 +672,7 @@
 				D8265A611CDB15F00054AF57 /* TasksController.swift in Sources */,
 				D872BA761D0BDCBF00C0C556 /* SelectableCell.swift in Sources */,
 				D8FF023E1D0A6D6C004AE6E2 /* HeaderCell.swift in Sources */,
+				D86A9FBA1D148FCC00F6DFF9 /* CustomSplitView.swift in Sources */,
 				D8265A631CDB18760054AF57 /* TaskListCell.swift in Sources */,
 				D8265A651CDBE37E0054AF57 /* TaskCell.swift in Sources */,
 				D872BA7B1D0F508600C0C556 /* TextEditingVC.swift in Sources */,

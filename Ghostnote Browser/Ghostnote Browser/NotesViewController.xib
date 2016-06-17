@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="noteTextView" destination="KGG-x5-Z5H" id="1yL-nf-qPk"/>
                 <outlet property="notesTableView" destination="0a4-fP-4um" id="POb-UV-VvF"/>
+                <outlet property="splitView" destination="kHs-jf-yu6" id="yef-M4-JlO"/>
                 <outlet property="view" destination="c22-O7-iKe" id="BfV-nq-59Y"/>
             </connections>
         </customObject>
@@ -17,24 +18,24 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <splitView arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kHs-jf-yu6">
+                <splitView dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kHs-jf-yu6" customClass="CustomSplitView" customModule="Ghostnote_Browser" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
                     <subviews>
-                        <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="Ww9-6P-b0r">
-                            <rect key="frame" x="0.0" y="0.0" width="235" height="272"/>
+                        <scrollView fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="Ww9-6P-b0r">
+                            <rect key="frame" x="0.0" y="0.0" width="239.5" height="272"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="FWw-IE-rqF">
-                                <rect key="frame" x="0.0" y="0.0" width="235" height="272"/>
+                            <clipView key="contentView" ambiguous="YES" drawsBackground="NO" copiesOnScroll="NO" id="FWw-IE-rqF">
+                                <rect key="frame" x="0.0" y="0.0" width="239.5" height="272"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="none" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowSizeStyle="automatic" viewBased="YES" id="0a4-fP-4um" customClass="DeletableTableView" customModule="Ghostnote_Browser" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="235" height="272"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="239.5" height="272"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <size key="intercellSpacing" width="3" height="2"/>
                                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
                                         <color key="gridColor" white="0.80000000000000004" alpha="0.0" colorSpace="deviceWhite"/>
                                         <tableColumns>
-                                            <tableColumn width="232" minWidth="40" maxWidth="1000" id="lo9-Eu-Pfg">
+                                            <tableColumn width="236.5" minWidth="40" maxWidth="1000" id="lo9-Eu-Pfg">
                                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
                                                     <font key="font" metaFont="smallSystem"/>
                                                     <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -48,11 +49,11 @@
                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                 <prototypeCellViews>
                                                     <tableCellView identifier="NoteCell" id="fJ7-XF-9mx" customClass="NoteCell" customModule="Ghostnote_Browser" customModuleProvider="target">
-                                                        <rect key="frame" x="1" y="1" width="232" height="17"/>
+                                                        <rect key="frame" x="1" y="1" width="236.5" height="17"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="CS2-ig-HDO">
-                                                                <rect key="frame" x="6" y="0.0" width="228" height="17"/>
+                                                                <rect key="frame" x="6" y="0.0" width="233" height="17"/>
                                                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="sz9-6U-zto">
                                                                     <font key="font" metaFont="system"/>
                                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -77,11 +78,8 @@
                                 </subviews>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </clipView>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="240" id="Am5-8c-cj8"/>
-                            </constraints>
                             <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="cEu-fe-LPU">
-                                <rect key="frame" x="0.0" y="249" width="235.5" height="15"/>
+                                <rect key="frame" x="0.0" y="257" width="235" height="15"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </scroller>
                             <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="eQv-Pq-Q5a">
@@ -90,20 +88,20 @@
                             </scroller>
                         </scrollView>
                         <scrollView fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="iCC-Ca-ktP">
-                            <rect key="frame" x="245" y="0.0" width="235" height="272"/>
+                            <rect key="frame" x="240.5" y="0.0" width="239.5" height="272"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="zjH-Wn-HZC">
-                                <rect key="frame" x="0.0" y="0.0" width="235" height="272"/>
+                            <clipView key="contentView" ambiguous="YES" drawsBackground="NO" copiesOnScroll="NO" id="zjH-Wn-HZC">
+                                <rect key="frame" x="0.0" y="0.0" width="239.5" height="272"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <textView drawsBackground="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="KGG-x5-Z5H">
-                                        <rect key="frame" x="0.0" y="0.0" width="235" height="272"/>
+                                    <textView ambiguous="YES" drawsBackground="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="KGG-x5-Z5H">
+                                        <rect key="frame" x="0.0" y="0.0" width="239.5" height="272"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <size key="minSize" width="235" height="272"/>
+                                        <size key="minSize" width="239.5" height="272"/>
                                         <size key="maxSize" width="463" height="10000000"/>
                                         <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                        <size key="minSize" width="235" height="272"/>
+                                        <size key="minSize" width="239.5" height="272"/>
                                         <size key="maxSize" width="463" height="10000000"/>
                                     </textView>
                                 </subviews>

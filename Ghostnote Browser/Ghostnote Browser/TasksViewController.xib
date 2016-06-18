@@ -15,27 +15,27 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="c22-O7-iKe">
-            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <rect key="frame" x="0.0" y="0.0" width="510" height="272"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <splitView arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8rw-io-1Zb" customClass="CustomSplitView" customModule="Ghostnote_Browser" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+                    <rect key="frame" x="0.0" y="0.0" width="510" height="272"/>
                     <subviews>
                         <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="rWG-dT-Hi3" userLabel="Bordered Scroll View - Task List Table View">
-                            <rect key="frame" x="0.0" y="0.0" width="246" height="272"/>
+                            <rect key="frame" x="0.0" y="0.0" width="261" height="272"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="f1N-Sx-kqn">
-                                <rect key="frame" x="0.0" y="0.0" width="246" height="272"/>
+                                <rect key="frame" x="0.0" y="0.0" width="261" height="272"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="x0l-7o-FYP" customClass="DeletableTableView" customModule="Ghostnote_Browser" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="246" height="272"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="261" height="272"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <size key="intercellSpacing" width="3" height="2"/>
                                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
                                         <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                         <tableColumns>
-                                            <tableColumn width="242.5" minWidth="40" maxWidth="1000" id="V5W-17-fft">
+                                            <tableColumn width="258" minWidth="40" maxWidth="1000" id="V5W-17-fft">
                                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                     <font key="font" metaFont="smallSystem"/>
                                                     <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -54,7 +54,7 @@
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </clipView>
                             <constraints>
-                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="251" id="0gW-lo-tPO"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="0gW-lo-tPO"/>
                             </constraints>
                             <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="jGc-Dh-NkC">
                                 <rect key="frame" x="1" y="-14" width="0.0" height="15"/>
@@ -65,21 +65,21 @@
                                 <autoresizingMask key="autoresizingMask"/>
                             </scroller>
                         </scrollView>
-                        <scrollView fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="rY5-qe-uih" userLabel="Bordered Scroll View - Tasks Table View">
-                            <rect key="frame" x="256" y="0.0" width="224" height="272"/>
+                        <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="rY5-qe-uih" userLabel="Bordered Scroll View - Tasks Table View">
+                            <rect key="frame" x="271" y="0.0" width="239" height="272"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="yN7-RW-9fP">
-                                <rect key="frame" x="0.0" y="0.0" width="224" height="257"/>
+                                <rect key="frame" x="0.0" y="0.0" width="239" height="272"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="nAc-ib-V75" customClass="DeletableTableView" customModule="Ghostnote_Browser" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="224" height="272"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="239" height="272"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <size key="intercellSpacing" width="3" height="2"/>
                                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
                                         <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                         <tableColumns>
-                                            <tableColumn width="221.5" minWidth="40" maxWidth="1000" id="Pjd-cC-4Ue">
+                                            <tableColumn width="236" minWidth="40" maxWidth="1000" id="Pjd-cC-4Ue">
                                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                     <font key="font" metaFont="smallSystem"/>
                                                     <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -97,7 +97,10 @@
                                 </subviews>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </clipView>
-                            <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="4cX-eE-zyb">
+                            <constraints>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="tNp-A5-oh5"/>
+                            </constraints>
+                            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="4cX-eE-zyb">
                                 <rect key="frame" x="0.0" y="257" width="224" height="15"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </scroller>

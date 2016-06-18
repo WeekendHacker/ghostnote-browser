@@ -176,8 +176,36 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
         tasksTableView?.reloadData()
     }
     
+    
+    func tableView(tableView: NSTableView, didAddRowView rowView: NSTableRowView, forRow row: Int) {
+        print(rowView)
+    }
+    
+    
+    func beginEditingForNewTask(task:Task) {
+        if let tableView = tasksTableView {
+            
+            tableView.enumerateAvailableRowViewsUsingBlock({ (rowView, row) in
+                if row != 0 {
+                    if let cell = rowView.viewAtColumn(0) as? TaskCell {
+                        if let cellTask = cell.task {
+                            if cellTask.id == task.id {
+                                self.tasksTableView?.scrollRowToVisible(row)
+                                cell.editButton?.performClick(self)
+                            }
+                        }
+                    }
+                }
+            })
+        }
+    }
+    
     func handleTaskAdded(notif:NSNotification) {
         tasksTableView?.reloadData()
+        
+        performSelector(#selector(beginEditingForNewTask(_:)),
+                        withObject: notif.object as! Task,
+                        afterDelay: 0.3)
     }
     
     func handleTaskRenamed(notification:NSNotification) {

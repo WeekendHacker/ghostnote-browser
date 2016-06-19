@@ -38,6 +38,7 @@ class TaskListCell: NSTableCellView, NSTextFieldDelegate, SelectableCell {
                     TaskListManager.shared.renameTaskList(tl, to: editedField.stringValue)
                 }
             }
+            editedField.editable = false
         }
     }
     

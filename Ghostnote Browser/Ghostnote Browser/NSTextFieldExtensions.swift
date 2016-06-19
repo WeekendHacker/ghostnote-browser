@@ -10,6 +10,42 @@ import Foundation
 import Cocoa
 
 extension NSTextField {
+    
+    
+    override public func mouseDown(theEvent: NSEvent) {
+        
+        if theEvent.clickCount == 1 {
+            superview?.mouseDown(theEvent)
+        }else if theEvent.clickCount == 2 {
+            editable = true
+            becomeFirstResponder()
+        }
+    }
+    
+    func applyBold() {
+        
+        if let text = (attributedStringValue.mutableCopy()) as? NSMutableAttributedString {
+            
+                let range = NSRange(location: 0, length: text.length)
+                text.applyFontTraits(.BoldFontMask,
+                                     range: range)
+                
+                attributedStringValue = text
+                
+        }
+    }
+
+    func removeBold() {
+        if let text = (attributedStringValue.mutableCopy()) as? NSMutableAttributedString {
+            let range = NSRange(location: 0, length: text.length)
+            
+            text.applyFontTraits(.UnboldFontMask,
+                                 range: range)
+            
+            attributedStringValue = text
+        }
+    }
+
     func applyStrikethrough() {
         if let string = attributedStringValue.mutableCopy() as? NSMutableAttributedString {
             string.addAttributes([NSStrikethroughStyleAttributeName : true],
@@ -27,7 +63,7 @@ extension NSTextField {
         }
     }
     
-    override public var intrinsicContentSize:NSSize{
+    override public var intrinsicContentSize:NSSize {
         return NSMakeSize(self.attributedStringValue.size().width, 20)
     }
 

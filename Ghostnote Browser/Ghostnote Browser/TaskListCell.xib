@@ -15,12 +15,12 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="32"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField focusRingType="exterior" horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dWS-os-lET">
+                <textField focusRingType="exterior" horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dWS-os-lET">
                     <rect key="frame" x="0.0" y="7" width="468" height="17"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="8XL-Hq-iIt"/>
                     </constraints>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="exterior" alignment="left" title="Label" id="Uvt-XK-LFL">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" focusRingType="exterior" alignment="left" title="Label" id="Uvt-XK-LFL">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

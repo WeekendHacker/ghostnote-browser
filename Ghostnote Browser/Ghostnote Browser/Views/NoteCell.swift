@@ -21,9 +21,7 @@ class NoteCell: NSTableCellView, NSTextFieldDelegate, SelectableCell {
             }
         }
     }
-    
-    
-    
+
     // NSTextFieldDelegate
     
     func control(control: NSControl, textShouldEndEditing fieldEditor: NSText) -> Bool {
@@ -45,6 +43,8 @@ class NoteCell: NSTableCellView, NSTextFieldDelegate, SelectableCell {
                     editedField.stringValue = (note?.name)!
                 }
             }
+
+            editedField.editable = false 
         }
     }
 }

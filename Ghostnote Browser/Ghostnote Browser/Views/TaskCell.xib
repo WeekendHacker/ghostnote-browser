@@ -31,7 +31,7 @@
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ClR-vJ-MEJ">
                     <rect key="frame" x="40" y="8" width="37" height="17"/>
-                    <textFieldCell key="cell" lineBreakMode="truncatingTail" truncatesLastVisibleLine="YES" selectable="YES" sendsActionOnEndEditing="YES" alignment="left" title="Label" id="pb0-pF-sxg">
+                    <textFieldCell key="cell" lineBreakMode="truncatingTail" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="left" title="Label" id="pb0-pF-sxg">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

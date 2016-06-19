@@ -10,9 +10,6 @@ import Cocoa
 
 class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, DeleteRowDelegate {
 
-    
-    
-    
     override init() {
         
         super.init()
@@ -77,9 +74,7 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
         }
     }
 
-
     // NSTableViewDatasource
-    
     func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
         return 50.0
     }
@@ -117,7 +112,7 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
         return nil
     }
     
-    
+    // select cell for selected row
     func tvAction(tv:AnyObject?) {
         if let tableView = tv as? DeletableTableView {
             
@@ -128,11 +123,7 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
                     }
                 }
             })
-            
-            NSNotificationCenter.defaultCenter().postNotificationName("SelectedTaskChanged", object: nil)
         }
-        
-        
     }
  
     // Actions
@@ -147,6 +138,24 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
                     taskList.removeTask(selectedTask)
                 }
             }
+        }
+    }
+    
+    func beginEditingForNewTask(task:Task) {
+        if let tableView = tasksTableView {
+            
+            tableView.enumerateAvailableRowViewsUsingBlock({ (rowView, row) in
+                if row != 0 {
+                    if let cell = rowView.viewAtColumn(0) as? TaskCell {
+                        if let cellTask = cell.task {
+                            if cellTask.id == task.id {
+                                self.tasksTableView?.scrollRowToVisible(row)
+                                cell.editButton?.performClick(self)
+                            }
+                        }
+                    }
+                }
+            })
         }
     }
 
@@ -166,40 +175,14 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
     }
     
     func handleTaskListDeleted(notif:NSNotification) {
-        
             selectedTaskList = nil
             tasksTableView?.reloadData()
-        
     }
     
     func handleTaskDeleted() {
         tasksTableView?.reloadData()
     }
-    
-    
-    func tableView(tableView: NSTableView, didAddRowView rowView: NSTableRowView, forRow row: Int) {
-        print(rowView)
-    }
-    
-    
-    func beginEditingForNewTask(task:Task) {
-        if let tableView = tasksTableView {
-            
-            tableView.enumerateAvailableRowViewsUsingBlock({ (rowView, row) in
-                if row != 0 {
-                    if let cell = rowView.viewAtColumn(0) as? TaskCell {
-                        if let cellTask = cell.task {
-                            if cellTask.id == task.id {
-                                self.tasksTableView?.scrollRowToVisible(row)
-                                cell.editButton?.performClick(self)
-                            }
-                        }
-                    }
-                }
-            })
-        }
-    }
-    
+
     func handleTaskAdded(notif:NSNotification) {
         tasksTableView?.reloadData()
         

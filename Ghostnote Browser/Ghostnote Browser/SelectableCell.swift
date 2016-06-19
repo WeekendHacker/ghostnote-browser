@@ -15,30 +15,16 @@ protocol SelectableCell {
 }
 
 extension SelectableCell {
-    
+
     func select(isSelected:Bool)  {
-        
-        if let tf = textField {
+
+        if isSelected {
             
-            if let text = (tf.attributedStringValue.mutableCopy()) as? NSMutableAttributedString {
-                if isSelected {
-                    
-                    let range = NSRange(location: 0, length: text.length)
-                    text.applyFontTraits(.BoldFontMask,
-                                         range: range)
-                    
-                    tf.attributedStringValue = text
-                    
-                }else {
- 
-                    let range = NSRange(location: 0, length: text.length)
-                    
-                    text.applyFontTraits(.UnboldFontMask,
-                                         range: range)
-                    
-                    tf.attributedStringValue = text
-                }
-            }
+            textField?.applyBold()
+            
+        }else {
+
+            textField?.removeBold()
         }
     }
 }

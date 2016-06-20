@@ -13,6 +13,7 @@ import QuartzCore
 extension NSTextField {
     
 }
+
 class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
 {
 

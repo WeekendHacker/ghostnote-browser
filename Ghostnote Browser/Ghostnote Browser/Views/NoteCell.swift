@@ -41,10 +41,12 @@ class NoteCell: NSTableCellView, NSTextFieldDelegate, SelectableCell {
                     NoteManager.shared.renameNote(note!, toName: editedField.stringValue)
                 }else {
                     editedField.stringValue = (note?.name)!
+                    NSBeep()
                 }
             }
 
-            editedField.editable = false 
+            editedField.editable = false
+            (editedField.superview as? SelectableCell)?.select(true)
         }
     }
 }

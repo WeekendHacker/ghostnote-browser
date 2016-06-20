@@ -64,7 +64,7 @@ extension NSTextField {
     }
     
     override public var intrinsicContentSize:NSSize {
-        return NSMakeSize(self.attributedStringValue.size().width, 20)
+        return NSMakeSize(self.attributedStringValue.size().width + 10, 20)
     }
 
 }

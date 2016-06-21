@@ -14,11 +14,16 @@ class NoteManager {
     
     static let shared = NoteManager()
     
+    let searchController = NoteSearchController()
+    
     let store = try! Realm()
     var appSupportDir = NSSearchPathForDirectoriesInDomains(.ApplicationSupportDirectory, .AllDomainsMask, true)
 
     var notes:Results<Note> {
         get {
+            if searchController.isSearching {
+                return searchController.results
+            }
             return store.objects(Note)
         }
     }

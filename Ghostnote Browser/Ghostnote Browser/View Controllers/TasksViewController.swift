@@ -37,6 +37,8 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
         super.viewDidLoad()
        
         view.autoresizingMask = [.ViewWidthSizable, .ViewHeightSizable]
+        title = "Tasks"
+        
         taskEditingController.hostingViewController = self
         splitView?.dividerStyle = .Thin
     }

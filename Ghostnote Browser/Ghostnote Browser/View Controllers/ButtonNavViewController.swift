@@ -8,11 +8,6 @@
 
 import Cocoa
 
-protocol SearchHost {
-
-    
-}
-
 protocol ButtonNavigable {
     var view:NSView {get}
     func isActive() -> Bool
@@ -37,10 +32,12 @@ extension  ButtonNavigable {
     }
 }
 
-class ButtonNavViewController: NSViewController {
+class ButtonNavViewController: NSViewController, NSSearchFieldDelegate {
 
+    @IBOutlet weak var searchField:NSSearchField?
     @IBOutlet weak var contentView:NSView?
     @IBOutlet weak var navView:NSView?
+    
     
     @IBOutlet weak var notesButton:NSButton?
     @IBOutlet weak var tasksButton:NSButton?
@@ -53,15 +50,13 @@ class ButtonNavViewController: NSViewController {
     
     var currentController:NSViewController? {
         didSet {
-            var id = ""
-            if currentController == notesController {
-                id = "notes"
-            }else if currentController == tasksController {
-                id = "tasks"
-            }else if currentController == ghostnotesController {
-                id = "ghostnotes"
+
+            if let current = currentController {
+                searchField?.placeholderString = "Search \(current.title)"
+                
+                NSNotificationCenter.defaultCenter().postNotificationName("ControllerChanged", object: current.title)
             }
-            NSNotificationCenter.defaultCenter().postNotificationName("ControllerChanged", object: id)
+
         }
     }
     
@@ -91,6 +86,27 @@ class ButtonNavViewController: NSViewController {
         updateNaveButtonState()
         view.subviews.forEach { (view) in
             view.wantsLayer  = true
+        }
+    }
+    
+    // Actions
+    
+    @IBAction func searchFieldGotText(sender:AnyObject?) {
+        
+        if let sf = sender as? NSSearchField {
+            if currentController == notesController {
+                
+                NoteManager.shared.searchController.isSearching = true
+                NoteManager.shared.searchController.searchText = sf.stringValue
+                
+                notesController.notesTableView?.reloadData()
+                
+            }else if currentController == tasksController  {
+                
+            }else if currentController == ghostnotesController {
+                
+            }
+
         }
     }
     

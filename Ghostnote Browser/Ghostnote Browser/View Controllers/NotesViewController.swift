@@ -12,6 +12,7 @@ class NotesViewController: NSViewController, ButtonNavigable {
 
     var notesTableController = NotesTableViewController()
     var noteTextViewController:NoteTextViewController = NoteTextViewController()
+    
     @IBOutlet weak var splitView:CustomSplitView?
     
     @IBOutlet var noteTextView:NSTextView?
@@ -23,7 +24,8 @@ class NotesViewController: NSViewController, ButtonNavigable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "Notes"
+        
         view.autoresizingMask = [.ViewWidthSizable, .ViewHeightSizable]
         view.wantsLayer = true
         splitView?.dividerStyle = .Thin

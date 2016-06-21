@@ -13,7 +13,13 @@ class NoteSearchController: NSObject {
 
     let db = try! Realm()
     
-    var results = Array<Note>()
+    var isSearching:Bool = false
+    
+    var results:Results<Note> {
+        get {
+            return db.objects(Note.self).filter(noteNamePredicate)
+        }
+    }
     
     var noteNamePredicate:NSPredicate {
         get {
@@ -23,12 +29,5 @@ class NoteSearchController: NSObject {
         }
     }
     
-    var searchText:String = "" {
-        didSet {
-            results.removeAll()
-            for result in db.objects(Note.self).filter(noteNamePredicate) {
-                results.append(result)
-            }
-        }
-    }
+    var searchText:String = ""
 }

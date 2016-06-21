@@ -20,9 +20,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     var realm:Realm? = nil
     
+    var menuController:MainMenuController?
+    
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         configureRealm()
-        registerForNotifications()
+        menuController = MainMenuController(menuItem: newMenuItem)
         showUI()
     }
 
@@ -34,70 +36,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func showUI() {
         buttonNavViewController = ButtonNavViewController(nibName: "ButtonNavViewController", bundle: nil)
+
         windowController.window?.contentView = buttonNavViewController?.view
         windowController.showWindow(self);
     }
-    
-    func registerForNotifications() {
-        NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: #selector(handleControllerChanged(_:)),
-                                                         name: "ControllerChanged",
-                                                         object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: #selector(handleTaskListChanged(_:)),
-                                                         name: "CurrentTaskListChanged",
-                                                         object: nil)
-    }
-    // menu
-    
-    @IBAction func newItem(sender:AnyObject?) {
-        if currentControllerID == "tasks" {
-            NSNotificationCenter.defaultCenter().postNotificationName("NewTaskAction", object: nil)
-        }
-    }
-    
-    // notifcation handlers
-
-    func handleTaskListChanged(notification:NSNotification) {
-        if notification.object != nil {
-            newMenuItem?.title = "New Task"
-            enableNewMenuItem()
-        }else {
-            disableNewMenuItem()
-        }
-    }
-    
-    func handleControllerChanged(notification:NSNotification) {
-        
-        if let controllerID = notification.object as? String {
-            currentControllerID = controllerID
-            if controllerID == "notes" {
-                newMenuItem?.title = "New Note"
-                newMenuItem?.keyEquivalent = "n"
-                enableNewMenuItem()
-            }else if controllerID == "tasks" {
-                if buttonNavViewController?.tasksController.taskListController.currentTaskList != nil {
-                    newMenuItem?.title = "New Task"
-                    newMenuItem?.keyEquivalent = "t"
-                    enableNewMenuItem()
-                }else {
-                    disableNewMenuItem()
-                }
-            }else {
-                disableNewMenuItem()
-            }
-        }
-    }
-    
-    func enableNewMenuItem() {
-        newMenuItem?.enabled = true
-        newMenuItem?.hidden = false
-    }
-    
-    func disableNewMenuItem() {
-        newMenuItem?.enabled = false
-        newMenuItem?.hidden = true
-    }
-    
 }
 

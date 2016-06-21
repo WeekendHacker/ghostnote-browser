@@ -57,7 +57,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     // notifcation handlers
-    
+
     func handleTaskListChanged(notification:NSNotification) {
         if notification.object != nil {
             newMenuItem?.title = "New Task"

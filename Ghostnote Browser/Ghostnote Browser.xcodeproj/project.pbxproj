@@ -26,6 +26,10 @@
 		D81281AA1CCEB60B001749E9 /* NoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81281A91CCEB60B001749E9 /* NoteManager.swift */; };
 		D8151CC21D00C2CC00F04C24 /* NoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8151CC11D00C2CC00F04C24 /* NoteCell.xib */; };
 		D8151CC41D027F6A00F04C24 /* DeletableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8151CC31D027F6A00F04C24 /* DeletableTableView.swift */; };
+		D824C8D81D18739C00246E8C /* NoteSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D824C8D71D18739C00246E8C /* NoteSearchController.swift */; };
+		D824C8DA1D1873AA00246E8C /* TasksSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D824C8D91D1873AA00246E8C /* TasksSearchController.swift */; };
+		D824C8DC1D1873BB00246E8C /* GhostnotesSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D824C8DB1D1873BB00246E8C /* GhostnotesSearchController.swift */; };
+		D824C8DE1D18E45C00246E8C /* NotesSearchControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D824C8DD1D18E45C00246E8C /* NotesSearchControllerTests.swift */; };
 		D8265A611CDB15F00054AF57 /* TasksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8265A601CDB15F00054AF57 /* TasksController.swift */; };
 		D8265A631CDB18760054AF57 /* TaskListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8265A621CDB18760054AF57 /* TaskListCell.swift */; };
 		D8265A651CDBE37E0054AF57 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8265A641CDBE37E0054AF57 /* TaskCell.swift */; };
@@ -125,6 +129,10 @@
 		D81281A91CCEB60B001749E9 /* NoteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteManager.swift; sourceTree = "<group>"; };
 		D8151CC11D00C2CC00F04C24 /* NoteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteCell.xib; sourceTree = "<group>"; };
 		D8151CC31D027F6A00F04C24 /* DeletableTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeletableTableView.swift; sourceTree = "<group>"; };
+		D824C8D71D18739C00246E8C /* NoteSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteSearchController.swift; sourceTree = "<group>"; };
+		D824C8D91D1873AA00246E8C /* TasksSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksSearchController.swift; sourceTree = "<group>"; };
+		D824C8DB1D1873BB00246E8C /* GhostnotesSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GhostnotesSearchController.swift; sourceTree = "<group>"; };
+		D824C8DD1D18E45C00246E8C /* NotesSearchControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesSearchControllerTests.swift; sourceTree = "<group>"; };
 		D8265A601CDB15F00054AF57 /* TasksController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksController.swift; sourceTree = "<group>"; };
 		D8265A621CDB18760054AF57 /* TaskListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskListCell.swift; path = Views/TaskListCell.swift; sourceTree = "<group>"; };
 		D8265A641CDBE37E0054AF57 /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
@@ -260,6 +268,16 @@
 			name = "Table Cells";
 			sourceTree = "<group>";
 		};
+		D824C8D61D18729800246E8C /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				D824C8D71D18739C00246E8C /* NoteSearchController.swift */,
+				D824C8D91D1873AA00246E8C /* TasksSearchController.swift */,
+				D824C8DB1D1873BB00246E8C /* GhostnotesSearchController.swift */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
 		D82F61B61D13C2D800721EB6 /* UI Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,6 +406,7 @@
 		D8D10EC41CC48A9F00A434F6 /* Ghostnote Browser */ = {
 			isa = PBXGroup;
 			children = (
+				D824C8D61D18729800246E8C /* Search */,
 				D82F61B61D13C2D800721EB6 /* UI Extensions */,
 				D81281A61CCEB3A0001749E9 /* Realm */,
 				D84F16DB1CC60E9C005612BB /* Views */,
@@ -410,6 +429,7 @@
 			children = (
 				D8D10ED81CC48A9F00A434F6 /* Ghostnote_BrowserTests.swift */,
 				D8D10EDA1CC48A9F00A434F6 /* Info.plist */,
+				D824C8DD1D18E45C00246E8C /* NotesSearchControllerTests.swift */,
 			);
 			path = "Ghostnote BrowserTests";
 			sourceTree = "<group>";
@@ -644,7 +664,9 @@
 				D83E5B401CDA737A0044F7A3 /* TaskList.swift in Sources */,
 				D84F16C71CC54ED6005612BB /* DocumentIconProvider.swift in Sources */,
 				D83E5B4D1CDA7A430044F7A3 /* NamedItemValidator.swift in Sources */,
+				D824C8DA1D1873AA00246E8C /* TasksSearchController.swift in Sources */,
 				D84F16C61CC54ED6005612BB /* AppNameProvider.swift in Sources */,
+				D824C8DC1D1873BB00246E8C /* GhostnotesSearchController.swift in Sources */,
 				D80001B61CD957C200255E54 /* TaskListController.swift in Sources */,
 				D80001AE1CD7F98A00255E54 /* NoteNameValidator.swift in Sources */,
 				D81281A81CCEB3B2001749E9 /* Note.swift in Sources */,
@@ -673,6 +695,7 @@
 				D872BA761D0BDCBF00C0C556 /* SelectableCell.swift in Sources */,
 				D8FF023E1D0A6D6C004AE6E2 /* HeaderCell.swift in Sources */,
 				D86A9FBA1D148FCC00F6DFF9 /* CustomSplitView.swift in Sources */,
+				D824C8D81D18739C00246E8C /* NoteSearchController.swift in Sources */,
 				D8265A631CDB18760054AF57 /* TaskListCell.swift in Sources */,
 				D8265A651CDBE37E0054AF57 /* TaskCell.swift in Sources */,
 				D872BA7B1D0F508600C0C556 /* TextEditingVC.swift in Sources */,
@@ -690,6 +713,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D824C8DE1D18E45C00246E8C /* NotesSearchControllerTests.swift in Sources */,
 				D8D10ED91CC48A9F00A434F6 /* Ghostnote_BrowserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

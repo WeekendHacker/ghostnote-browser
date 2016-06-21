@@ -1,2 +1,3 @@
-github "MagicalPanda/MagicalRecord"
 github "realm/realm-cocoa"
+github "Quick/Quick"
+github "Quick/Nimble"

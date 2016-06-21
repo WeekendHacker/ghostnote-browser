@@ -8,6 +8,11 @@
 
 import Cocoa
 
+protocol SearchHost {
+
+    
+}
+
 protocol ButtonNavigable {
     var view:NSView {get}
     func isActive() -> Bool
@@ -57,7 +62,6 @@ class ButtonNavViewController: NSViewController {
                 id = "ghostnotes"
             }
             NSNotificationCenter.defaultCenter().postNotificationName("ControllerChanged", object: id)
-
         }
     }
     

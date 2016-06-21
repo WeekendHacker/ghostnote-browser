@@ -12,15 +12,15 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GfO-p6-l6r">
-                    <rect key="frame" x="5" y="-1" width="32" height="32"/>
+                    <rect key="frame" x="5" y="2" width="26" height="26"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="32" id="Jf0-iS-W1Q"/>
-                        <constraint firstAttribute="width" constant="32" id="tyh-2u-10a"/>
+                        <constraint firstAttribute="height" constant="26" id="Jf0-iS-W1Q"/>
+                        <constraint firstAttribute="width" constant="26" id="tyh-2u-10a"/>
                     </constraints>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="a6Q-1Z-zP7"/>
                 </imageView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zNn-F0-AaQ">
-                    <rect key="frame" x="43" y="7" width="434" height="17"/>
+                    <rect key="frame" x="37" y="7" width="440" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="IgZ-6v-6GC">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

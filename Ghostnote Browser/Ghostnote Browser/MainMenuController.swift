@@ -93,5 +93,4 @@ class MainMenuController: NSObject {
         newMenuItem?.enabled = false
         newMenuItem?.hidden = true
     }
-
 }

@@ -19,11 +19,8 @@ extension SelectableCell {
     func select(isSelected:Bool)  {
 
         if isSelected {
-            
             textField?.applyBold()
-            
         }else {
-
             textField?.removeBold()
         }
     }

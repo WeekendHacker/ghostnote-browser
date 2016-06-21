@@ -37,6 +37,11 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
                 
                 tv.target = self
                 tv.action = #selector(tvAction(_:))
+                
+                NSNotificationCenter.defaultCenter().addObserver(self,
+                                                                 selector: #selector(handleNoteAdded(_:)),
+                                                                 name: "NoteAdded",
+                                                                 object: nil)
             }
         }
     }
@@ -79,10 +84,47 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
     func tableViewSelectionDidChange(notification: NSNotification) {
         tvAction(notesTableView!)
     }
+
+    func beginEditingForNewNote(note:Note)   {
+        
+        // should maybe get to a protocol and extension
+        // for this maybe a CRUD tv controller with the HasIDString on the comparision below
+        
+        
+        if let tableView = notesTableView {
+            
+            tableView.enumerateAvailableRowViewsUsingBlock({ (rowView, row) in
+                if row != 0 {
+                    if let cell = rowView.viewAtColumn(0) as? NoteCell {
+                        if let cellNote = cell.note {
+                            if cellNote.id == note.id {
+                                tableView.scrollRowToVisible(row)
+                                cell.select(true)
+                                cell.textField?.enterEditing()
+                            }
+                        }
+                    }
+                }
+            })
+        }
+
+    }
     
-    // func
+    
+    // Notifcation Handlers
+    
+    func handleNoteAdded(notif:AnyObject) {
+        notesTableView?.reloadData()
+        
+        performSelector(#selector(beginEditingForNewNote(_:)),
+                        withObject: notif.object as! Note,
+                        afterDelay: 0.3)
+    }
+    
+    
+    // Actions
     func addNoteClicked(sender:AnyObject?) {
-        NSNotificationCenter.defaultCenter().postNotificationName("AddNoteClicked", object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName("NewNoteAction", object: nil)
     }
     
     func tvAction(tv:AnyObject?) {

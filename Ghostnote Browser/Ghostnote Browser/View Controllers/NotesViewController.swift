@@ -37,7 +37,7 @@ class NotesViewController: NSViewController, ButtonNavigable {
 
         NSNotificationCenter.defaultCenter().addObserver(self,
                                                          selector: #selector(addNoteButtonClicked),
-                                                         name: "AddNoteClicked",
+                                                         name: "NewNoteAction",
                                                          object: nil)
         
         noteTextViewController.noteTextView = noteTextView
@@ -62,6 +62,8 @@ class NotesViewController: NSViewController, ButtonNavigable {
     
 
     // handlers
+    
+    
     
     func selectedNoteChanged(notif:NSNotification) {
         

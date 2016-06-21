@@ -17,9 +17,13 @@ extension NSTextField {
         if theEvent.clickCount == 1 {
             superview?.mouseDown(theEvent)
         }else if theEvent.clickCount == 2 {
-            editable = true
-            becomeFirstResponder()
+            enterEditing()
         }
+    }
+    
+    func enterEditing() {
+        editable = true
+        becomeFirstResponder()
     }
     
     func applyBold() {

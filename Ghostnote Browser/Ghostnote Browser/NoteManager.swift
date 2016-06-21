@@ -41,11 +41,14 @@ class NoteManager {
                 note.filePath = fileURL.path!
                 store.add(note)
                 print(note)
+                
             })
         }
         catch {
             print(error)
         }
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("NoteAdded", object: note)
     }
     
     func deleteNote(note:Note) {

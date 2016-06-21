@@ -83,7 +83,7 @@ class ButtonNavViewController: NSViewController, NSSearchFieldDelegate {
             notesButtonClicked(self)
         }
         
-        updateNaveButtonState()
+        updateNavButtonState()
         view.subviews.forEach { (view) in
             view.wantsLayer  = true
         }
@@ -118,9 +118,10 @@ class ButtonNavViewController: NSViewController, NSSearchFieldDelegate {
         if !notesController.isActive() {
             contentView?.addSubview(notesController.view)
         }
+        
         currentController = notesController
         
-        updateNaveButtonState()
+        updateNavButtonState()
         NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "selectedTab")
     }
     
@@ -133,7 +134,7 @@ class ButtonNavViewController: NSViewController, NSSearchFieldDelegate {
             contentView?.addSubview(tasksController.view)
         }
         currentController = tasksController
-        updateNaveButtonState()
+        updateNavButtonState()
         NSUserDefaults.standardUserDefaults().setInteger(1, forKey: "selectedTab")
 
     }
@@ -147,12 +148,12 @@ class ButtonNavViewController: NSViewController, NSSearchFieldDelegate {
             contentView?.addSubview(ghostnotesController.view)
         }
         currentController = ghostnotesController
-        updateNaveButtonState()
+        updateNavButtonState()
         NSUserDefaults.standardUserDefaults().setInteger(2, forKey: "selectedTab")
 
     }
 
-    func updateNaveButtonState() {
+    func updateNavButtonState() {
         
         if notesController.isActive() {
             notesButton?.image = NSImage(imageLiteral: "Notes-Active")

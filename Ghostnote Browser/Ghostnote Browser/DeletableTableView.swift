@@ -12,9 +12,6 @@ protocol DeleteRowDelegate :NSTableViewDelegate {
     func deleteRow(row:Int)
 }
 
-//protocol KeyboardCreationDelegate :NSTableViewDelegate {
-//    func createKeyPressed(row:Int)
-//}
 
 class DeletableTableView: NSTableView {
 

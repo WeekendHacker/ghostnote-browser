@@ -57,6 +57,10 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
     // NSTableViewDatasource
     
     func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+        
+        if row == 0 {
+            return 48.0
+        }
         return 30.0
     }
     

@@ -14,6 +14,7 @@ class HeaderCell: NSTableCellView {
         didSet {
             if let displayTitle = title.componentsSeparatedByString("<!").first {
                 textField?.stringValue = displayTitle
+                textField?.toolTip = displayTitle
             }
         }
     }

@@ -11,8 +11,11 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="36"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ddc-j4-APO">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ddc-j4-APO">
                     <rect key="frame" x="22" y="7" width="460" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="sG9-eb-QXM"/>
+                    </constraints>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="Label" id="w4S-nc-b4c">
                         <font key="font" metaFont="system" size="18"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>

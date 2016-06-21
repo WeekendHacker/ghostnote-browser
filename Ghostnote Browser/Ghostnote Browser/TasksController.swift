@@ -58,7 +58,7 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
                 tv.setDataSource(self)
                 tv.wantsLayer = true
                 tv.deleteDelegate = self
-                tv.selectionHighlightStyle = .None
+                tv.selectionHighlightStyle = .Regular
                 
                 if let headerNib = NSNib(nibNamed:"HeaderCell", bundle: nil) {
                     tv.registerNib(headerNib, forIdentifier: "HeaderCell")
@@ -150,7 +150,7 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
                         if let cellTask = cell.task {
                             if cellTask.id == task.id {
                                 self.tasksTableView?.scrollRowToVisible(row)
-                                cell.editButton?.performClick(self)
+                                cell.textField?.enterEditing()
                             }
                         }
                     }

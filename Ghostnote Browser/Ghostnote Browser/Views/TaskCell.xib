@@ -15,8 +15,16 @@
             <rect key="frame" x="0.0" y="0.0" width="250" height="36"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ClR-vJ-MEJ">
+                    <rect key="frame" x="60" y="9" width="37" height="17"/>
+                    <textFieldCell key="cell" lineBreakMode="truncatingTail" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="left" title="Label" id="pb0-pF-sxg">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="oJg-uP-G2E">
-                    <rect key="frame" x="18" y="9" width="18" height="18"/>
+                    <rect key="frame" x="38" y="9" width="18" height="18"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="14" id="Dnt-wf-eAU"/>
                         <constraint firstAttribute="width" constant="14" id="NV4-HT-yaZ"/>
@@ -29,50 +37,21 @@
                         <action selector="checkboxChecked:" target="c22-O7-iKe" id="wRP-AH-v4i"/>
                     </connections>
                 </button>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="arn-5e-sIn">
-                    <rect key="frame" x="229" y="5" width="13" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="13" id="96B-Ic-NC0"/>
-                        <constraint firstAttribute="height" constant="19" id="tl2-XK-xgK"/>
-                    </constraints>
-                    <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSActionTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Dbz-ZM-8sV">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="editButtonClicked:" target="c22-O7-iKe" id="ov9-X5-fM8"/>
-                    </connections>
-                </button>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ClR-vJ-MEJ">
-                    <rect key="frame" x="40" y="10" width="37" height="17"/>
-                    <textFieldCell key="cell" lineBreakMode="truncatingTail" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="left" title="Label" id="pb0-pF-sxg">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
             </subviews>
             <constraints>
                 <constraint firstItem="oJg-uP-G2E" firstAttribute="top" relation="greaterThanOrEqual" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="8Hm-MV-baE"/>
-                <constraint firstAttribute="trailing" secondItem="arn-5e-sIn" secondAttribute="trailing" constant="8" id="Ghi-OS-SGo"/>
-                <constraint firstItem="arn-5e-sIn" firstAttribute="top" relation="greaterThanOrEqual" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="QDp-nP-x0s"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oJg-uP-G2E" secondAttribute="trailing" constant="20" id="RmZ-DK-S9M"/>
-                <constraint firstItem="arn-5e-sIn" firstAttribute="top" secondItem="oJg-uP-G2E" secondAttribute="top" id="aqH-3e-XV3"/>
-                <constraint firstItem="oJg-uP-G2E" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="jFW-dD-fvy"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ClR-vJ-MEJ" secondAttribute="trailing" constant="8" id="cDw-S9-5qs"/>
+                <constraint firstItem="oJg-uP-G2E" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="40" id="jFW-dD-fvy"/>
                 <constraint firstItem="ClR-vJ-MEJ" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="jGb-Pn-beV"/>
                 <constraint firstItem="oJg-uP-G2E" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="liT-t4-qXC"/>
-                <constraint firstItem="arn-5e-sIn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ClR-vJ-MEJ" secondAttribute="trailing" constant="8" id="mC2-T2-PKg"/>
                 <constraint firstItem="ClR-vJ-MEJ" firstAttribute="leading" secondItem="oJg-uP-G2E" secondAttribute="trailing" constant="8" id="wOK-b1-FZQ"/>
             </constraints>
             <connections>
                 <outlet property="checkbox" destination="oJg-uP-G2E" id="0Ob-x5-Xjr"/>
-                <outlet property="editButton" destination="arn-5e-sIn" id="pVx-bm-lpm"/>
                 <outlet property="textField" destination="ClR-vJ-MEJ" id="qrR-Tj-epr"/>
             </connections>
             <point key="canvasLocation" x="193" y="56"/>
         </customView>
     </objects>
-    <resources>
-        <image name="NSActionTemplate" width="14" height="14"/>
-    </resources>
 </document>

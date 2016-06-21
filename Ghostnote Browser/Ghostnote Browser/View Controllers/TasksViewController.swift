@@ -12,8 +12,6 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
 
     var taskListController = TaskListController()
     var taskController = TasksController()
-    let taskEditingController = TaskNameEditorController()
-    
     
     @IBOutlet weak var splitView:CustomSplitView?
     
@@ -39,7 +37,6 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
         view.autoresizingMask = [.ViewWidthSizable, .ViewHeightSizable]
         title = "Tasks"
         
-        taskEditingController.hostingViewController = self
         splitView?.dividerStyle = .Thin
     }
     

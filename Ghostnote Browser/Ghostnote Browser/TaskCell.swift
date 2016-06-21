@@ -14,11 +14,10 @@ extension NSTextField {
     
 }
 
-class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
+class TaskCell: NSTableCellView, NSTextFieldDelegate
 {
 
     @IBOutlet weak var checkbox:NSButton?
-    @IBOutlet weak var editButton:NSButton?
 
     var task:Task? {
         didSet {
@@ -29,7 +28,6 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
                     textField?.lineBreakMode = .ByTruncatingTail
                     textField?.stringValue = displayTitle
                     textField?.toolTip = displayTitle
-                    textField?.refusesFirstResponder = true
                 }
 
                 if let cb = checkbox {
@@ -59,9 +57,30 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
         }
     }
 
-    @IBAction func editButtonClicked(sender:AnyObject?) {
-        NSNotificationCenter.defaultCenter().postNotificationName("EditTaskTitle", object: self)
+    // NSTextFieldDelegate
+    
+    func control(control: NSControl, textShouldEndEditing fieldEditor: NSText) -> Bool {
+        if textField!.stringValue.isEmpty {
+            NSBeep()
+            return false
+        }
+        return true
     }
+    
+    override func controlTextDidEndEditing(obj: NSNotification) {
+        if let editedField = obj.object as? NSTextField {
+            
+            if !editedField.stringValue.isEmpty {
+                if let task = self.task {
+                    TaskListManager.shared.changeTask(task, to: editedField.stringValue)
+                }
+            }
+            
+            editedField.editable = false
+            (editedField.superview as? SelectableCell)?.select(true)
+        }
+    }
+
     
     override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
@@ -72,21 +91,23 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
             let height = bounds.size.height
             let insetDistance:CGFloat = 4.0
             let doubleInset:CGFloat = 2.0 * insetDistance
+            let boxLeft:CGFloat = 24.0
             
             CGContextSetGrayStrokeColor(ctx, 0.8, 1.0)
-            let origin = CGPoint(x: insetDistance, y: insetDistance)
-            let size = CGSize(width: width - doubleInset, height: height - doubleInset)
+            let origin = CGPoint(x: boxLeft, y: insetDistance)
+            let size = CGSize(width: width - boxLeft, height: height - doubleInset)
             let rect = CGRect(origin: origin, size: size)
+            
             //
             CGContextSetLineWidth(ctx, 1.0)
             // start at origin
             CGContextMoveToPoint (ctx, CGRectGetMinX(rect), CGRectGetMinY(rect));
             
             // add bottom edge
-            CGContextAddLineToPoint (ctx, CGRectGetMaxX(rect), CGRectGetMinY(rect));
+            CGContextAddLineToPoint (ctx, CGRectGetMaxX(rect) - 8.0, CGRectGetMinY(rect));
             
             // add right edge
-            CGContextAddLineToPoint (ctx, CGRectGetMaxX(rect), CGRectGetMaxY(rect));
+            CGContextAddLineToPoint (ctx, CGRectGetMaxX(rect) - 8.0, CGRectGetMaxY(rect));
                 
                 // add top edge
             CGContextAddLineToPoint (ctx, CGRectGetMinX(rect), CGRectGetMaxY(rect));

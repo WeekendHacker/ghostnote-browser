@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="DocCell" customModule="Ghostnote_Browser" customModuleProvider="target">
@@ -13,11 +13,11 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="c22-O7-iKe" customClass="DocCell" customModule="Ghostnote_Browser" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="480" height="26"/>
+            <rect key="frame" x="0.0" y="0.0" width="480" height="30"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <imageView verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aiG-pR-YtO">
-                    <rect key="frame" x="0.0" y="3" width="26" height="21"/>
+                    <rect key="frame" x="0.0" y="5" width="26" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="26" id="Vtr-1d-85x"/>
                         <constraint firstAttribute="height" constant="21" id="rWW-lw-Lji"/>
@@ -25,7 +25,7 @@
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="XaU-Cf-ajB"/>
                 </imageView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uDO-a2-eGT">
-                    <rect key="frame" x="32" y="5" width="451" height="17"/>
+                    <rect key="frame" x="32" y="7" width="442" height="17"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="17" id="wLH-dq-0po"/>
                     </constraints>
@@ -38,7 +38,7 @@
             </subviews>
             <constraints>
                 <constraint firstItem="uDO-a2-eGT" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="4h6-EX-xWk"/>
-                <constraint firstAttribute="trailing" secondItem="uDO-a2-eGT" secondAttribute="trailing" constant="-1" id="5jF-Ds-QUS"/>
+                <constraint firstAttribute="trailing" secondItem="uDO-a2-eGT" secondAttribute="trailing" constant="8" id="5jF-Ds-QUS"/>
                 <constraint firstItem="aiG-pR-YtO" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="BCc-lh-ALE"/>
                 <constraint firstItem="uDO-a2-eGT" firstAttribute="leading" secondItem="aiG-pR-YtO" secondAttribute="trailing" constant="8" id="NIK-Kl-cO8"/>
                 <constraint firstItem="aiG-pR-YtO" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="i8S-K9-b8E"/>
@@ -47,7 +47,7 @@
                 <outlet property="imageView" destination="aiG-pR-YtO" id="3PP-1n-qpt"/>
                 <outlet property="textField" destination="uDO-a2-eGT" id="BaJ-Hr-yBv"/>
             </connections>
-            <point key="canvasLocation" x="317" y="75"/>
+            <point key="canvasLocation" x="317" y="77"/>
         </customView>
     </objects>
 </document>

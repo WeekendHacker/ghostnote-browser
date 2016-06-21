@@ -43,10 +43,13 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
                 tv.target = self
                 tv.action = #selector(selected)
             
-                let buttonNib = NSNib(nibNamed: "ButtonTableCellView", bundle: nil)
-                tv.registerNib(buttonNib, forIdentifier: "ButtonTableCellView"  )
-                let cellNib = NSNib(nibNamed: "TaskListCell", bundle: nil)
-                tv.registerNib(cellNib, forIdentifier: "TaskListCell")
+                if let buttonNib = NSNib(nibNamed: "ButtonTableCellView", bundle: nil) {
+                    tv.registerNib(buttonNib, forIdentifier: "ButtonTableCellView"  )
+                }
+                
+                if let cellNib = NSNib(nibNamed: "TaskListCell", bundle: nil) {
+                    tv.registerNib(cellNib, forIdentifier: "TaskListCell")
+                }
             }
         }
     }

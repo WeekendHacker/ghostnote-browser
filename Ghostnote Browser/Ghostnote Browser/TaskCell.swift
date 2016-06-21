@@ -73,10 +73,26 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
             let insetDistance:CGFloat = 4.0
             let doubleInset:CGFloat = 2.0 * insetDistance
             
-            CGContextSetGrayStrokeColor(ctx, 0.0, 0.8)
+            CGContextSetGrayStrokeColor(ctx, 0.8, 1.0)
             let origin = CGPoint(x: insetDistance, y: insetDistance)
             let size = CGSize(width: width - doubleInset, height: height - doubleInset)
-            CGContextAddRect(ctx, CGRect(origin: origin, size: size))
+            let rect = CGRect(origin: origin, size: size)
+            //
+            CGContextSetLineWidth(ctx, 1.0)
+            // start at origin
+            CGContextMoveToPoint (ctx, CGRectGetMinX(rect), CGRectGetMinY(rect));
+            
+            // add bottom edge
+            CGContextAddLineToPoint (ctx, CGRectGetMaxX(rect), CGRectGetMinY(rect));
+            
+            // add right edge
+            CGContextAddLineToPoint (ctx, CGRectGetMaxX(rect), CGRectGetMaxY(rect));
+                
+                // add top edge
+            CGContextAddLineToPoint (ctx, CGRectGetMinX(rect), CGRectGetMaxY(rect));
+                
+                // add left edge and close
+            CGContextClosePath (ctx);
 
             CGContextStrokePath(ctx)
         }

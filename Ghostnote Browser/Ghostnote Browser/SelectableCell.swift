@@ -17,11 +17,23 @@ protocol SelectableCell {
 extension SelectableCell {
 
     func select(isSelected:Bool)  {
-
-        if isSelected {
-            textField?.applyBold()
+        
+        if !(self is TaskCell) {
+            if isSelected {
+                textField?.textColor = NSColor(netHex: 0x3C75B8)
+            }else {
+                textField?.textColor = NSColor.blackColor()
+            }
         }else {
-            textField?.removeBold()
+            
+            if let taskCell = self as? TaskCell {
+                if isSelected {
+                    taskCell.selected = true
+                }else {
+                    taskCell.selected = false
+                }
+            }
         }
+       
     }
 }

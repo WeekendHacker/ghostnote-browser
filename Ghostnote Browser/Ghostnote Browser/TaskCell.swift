@@ -14,11 +14,18 @@ extension NSTextField {
     
 }
 
-class TaskCell: NSTableCellView, NSTextFieldDelegate
+class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
 {
 
     @IBOutlet weak var checkbox:NSButton?
-
+    let borderColor = NSColor(netHex: 0xc5c5c5).CGColor
+    let selectedBorderColor = NSColor(netHex: 0x3C75B8).CGColor
+    
+    var selected = false {
+        didSet {
+            needsDisplay = true
+        }
+    }
     var task:Task? {
         didSet {
             if let t = task {
@@ -92,14 +99,23 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate
             let insetDistance:CGFloat = 4.0
             let doubleInset:CGFloat = 2.0 * insetDistance
             let boxLeft:CGFloat = 24.0
+
+            let boxFillcolor = NSColor.whiteColor().CGColor
             
-            CGContextSetGrayStrokeColor(ctx, 0.8, 1.0)
+            if selected {
+                CGContextSetStrokeColorWithColor(ctx, selectedBorderColor)
+            }else {
+                CGContextSetStrokeColorWithColor(ctx, borderColor)
+            }
+            
+            CGContextSetFillColorWithColor(ctx, boxFillcolor)
             let origin = CGPoint(x: boxLeft, y: insetDistance)
             let size = CGSize(width: width - boxLeft, height: height - doubleInset)
             let rect = CGRect(origin: origin, size: size)
             
             //
             CGContextSetLineWidth(ctx, 1.0)
+            
             // start at origin
             CGContextMoveToPoint (ctx, CGRectGetMinX(rect), CGRectGetMinY(rect));
             
@@ -112,10 +128,38 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate
                 // add top edge
             CGContextAddLineToPoint (ctx, CGRectGetMinX(rect), CGRectGetMaxY(rect));
                 
-                // add left edge and close
+            // add left edge and close
             CGContextClosePath (ctx);
-
             CGContextStrokePath(ctx)
+            
+            
+            //
+            // start at origin
+            CGContextMoveToPoint (ctx, CGRectGetMinX(rect), CGRectGetMinY(rect));
+            
+            // add bottom edge
+            CGContextAddLineToPoint (ctx, CGRectGetMaxX(rect) - 8.0, CGRectGetMinY(rect));
+            
+            // add right edge
+            CGContextAddLineToPoint (ctx, CGRectGetMaxX(rect) - 8.0, CGRectGetMaxY(rect));
+            
+            // add top edge
+            CGContextAddLineToPoint (ctx, CGRectGetMinX(rect), CGRectGetMaxY(rect));
+            
+            //
+//            // start at origin
+//            CGContextMoveToPoint (ctx, CGRectGetMinX(rect) + 2.0, CGRectGetMinY(rect) + 2.0);
+//            
+//            // add bottom edge
+//            CGContextAddLineToPoint (ctx, CGRectGetMaxX(rect) - 8.0, CGRectGetMinY(rect) + 2.0);
+//            
+//            // add right edge
+//            CGContextAddLineToPoint (ctx, CGRectGetMaxX(rect) - 8.0, CGRectGetMaxY(rect) - 2.0);
+//            
+//            // add top edge
+//            CGContextAddLineToPoint (ctx, CGRectGetMinX(rect) + 2.0, CGRectGetMaxY(rect) - 2.0);
+            CGContextClosePath(ctx)
+            CGContextFillPath(ctx)
         }
     }
 }

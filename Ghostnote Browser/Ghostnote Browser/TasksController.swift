@@ -58,7 +58,7 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
                 tv.setDataSource(self)
                 tv.wantsLayer = true
                 tv.deleteDelegate = self
-                tv.selectionHighlightStyle = .Regular
+                tv.selectionHighlightStyle = .None
                 
                 if let headerNib = NSNib(nibNamed:"HeaderCell", bundle: nil) {
                     tv.registerNib(headerNib, forIdentifier: "HeaderCell")

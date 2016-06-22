@@ -10,7 +10,6 @@ import Cocoa
 
 class ButtonTableCellView: NSView {
 
-    @IBOutlet weak var button:NSButton?     
-    
+    @IBOutlet weak var button:NSButton?    
     
 }

@@ -8,11 +8,11 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="c22-O7-iKe" customClass="ButtonTableCellView" customModule="Ghostnote_Browser" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="480" height="34"/>
+            <rect key="frame" x="0.0" y="0.0" width="480" height="50"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cop-jp-sCR">
-                    <rect key="frame" x="6" y="7" width="101" height="21"/>
+                    <rect key="frame" x="6" y="15" width="101" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="udu-5e-9J3"/>
                     </constraints>
@@ -25,6 +25,7 @@
             <constraints>
                 <constraint firstItem="cop-jp-sCR" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="84V-kO-Gfz"/>
                 <constraint firstItem="cop-jp-sCR" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="6" id="D31-d0-RfH"/>
+                <constraint firstItem="cop-jp-sCR" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="GT5-oc-M6x"/>
             </constraints>
             <connections>
                 <outlet property="button" destination="cop-jp-sCR" id="6A8-h0-3W1"/>

@@ -47,6 +47,10 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
     }
     
     func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+
+        if row == 0 {
+            return 50.0
+        }
         return 30.0
     }
     

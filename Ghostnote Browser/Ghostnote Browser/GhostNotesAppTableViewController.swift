@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+
 protocol GhostNotesAppTableViewControllerObserver {
 
     func selectedApp(app:App)
@@ -15,7 +16,6 @@ protocol GhostNotesAppTableViewControllerObserver {
 
 class GhostNotesAppTableViewController: NSObject , NSTableViewDelegate , NSTableViewDataSource {
 
-    
     var observer:GhostNotesAppTableViewControllerObserver?
     
     @IBOutlet weak var appsTableView:NSTableView? {
@@ -23,6 +23,7 @@ class GhostNotesAppTableViewController: NSObject , NSTableViewDelegate , NSTable
             appsTableView?.setDelegate(self)
             appsTableView?.setDataSource(self)
             appsTableView?.selectionHighlightStyle = .None
+            
             if let appCellNib = NSNib(nibNamed: "AppCell", bundle: nil) {
                 appsTableView?.registerNib(appCellNib, forIdentifier: "AppCell")
             }

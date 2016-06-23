@@ -143,8 +143,6 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
                 })
                 NSNotificationCenter.defaultCenter().postNotificationName("SelectedNoteChanged", object: nil)
         }
-
-        
     }
     
     // DeleteRowDelegate

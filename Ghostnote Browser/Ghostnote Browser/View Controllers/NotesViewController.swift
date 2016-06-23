@@ -8,10 +8,11 @@
 
 import Cocoa
 
-class NotesViewController: NSViewController, ButtonNavigable {
+class NotesViewController: NSViewController, ButtonNavigable, SplitViewCollapseable {
 
     var notesTableController = NotesTableViewController()
     var noteTextViewController:NoteTextViewController = NoteTextViewController()
+    var masterListExpandedWidth: CGFloat? = 200.0
     
     @IBOutlet weak var splitView:CustomSplitView?
     
@@ -42,7 +43,7 @@ class NotesViewController: NSViewController, ButtonNavigable {
         
         noteTextViewController.noteTextView = noteTextView
         noteTextView?.wantsLayer = true
-        
+        expandMasterList()
     }
 
     override func viewDidAppear() {

@@ -54,7 +54,8 @@
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </clipView>
                             <constraints>
-                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="N7u-Fs-eRL"/>
+                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="250" id="92G-HN-eTL"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" id="N7u-Fs-eRL"/>
                             </constraints>
                             <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="cEu-fe-LPU">
                                 <rect key="frame" x="0.0" y="257" width="235" height="15"/>

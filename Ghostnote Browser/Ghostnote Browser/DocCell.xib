@@ -47,7 +47,7 @@
                 <outlet property="imageView" destination="aiG-pR-YtO" id="3PP-1n-qpt"/>
                 <outlet property="textField" destination="uDO-a2-eGT" id="BaJ-Hr-yBv"/>
             </connections>
-            <point key="canvasLocation" x="317" y="77"/>
+            <point key="canvasLocation" x="293" y="-19"/>
         </customView>
     </objects>
 </document>

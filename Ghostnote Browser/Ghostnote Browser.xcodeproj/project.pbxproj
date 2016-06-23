@@ -42,6 +42,7 @@
 		D83E5B441CDA74BD0044F7A3 /* TaskListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B431CDA74BD0044F7A3 /* TaskListManager.swift */; };
 		D83E5B471CDA76400044F7A3 /* TaskListNameValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B461CDA76400044F7A3 /* TaskListNameValidator.swift */; };
 		D83E5B4D1CDA7A430044F7A3 /* NamedItemValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B4C1CDA7A430044F7A3 /* NamedItemValidator.swift */; };
+		D8474FB81D1C5A0600ACF925 /* SplitViewCollapseable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8474FB71D1C5A0600ACF925 /* SplitViewCollapseable.swift */; };
 		D84F16C51CC54ED6005612BB /* AppIconProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16C21CC54ED6005612BB /* AppIconProvider.swift */; };
 		D84F16C61CC54ED6005612BB /* AppNameProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16C31CC54ED6005612BB /* AppNameProvider.swift */; };
 		D84F16C71CC54ED6005612BB /* DocumentIconProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16C41CC54ED6005612BB /* DocumentIconProvider.swift */; };
@@ -144,6 +145,7 @@
 		D83E5B431CDA74BD0044F7A3 /* TaskListManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskListManager.swift; path = Models/TaskListManager.swift; sourceTree = "<group>"; };
 		D83E5B461CDA76400044F7A3 /* TaskListNameValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListNameValidator.swift; sourceTree = "<group>"; };
 		D83E5B4C1CDA7A430044F7A3 /* NamedItemValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamedItemValidator.swift; sourceTree = "<group>"; };
+		D8474FB71D1C5A0600ACF925 /* SplitViewCollapseable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewCollapseable.swift; sourceTree = "<group>"; };
 		D84F16C21CC54ED6005612BB /* AppIconProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIconProvider.swift; sourceTree = "<group>"; };
 		D84F16C31CC54ED6005612BB /* AppNameProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNameProvider.swift; sourceTree = "<group>"; };
 		D84F16C41CC54ED6005612BB /* DocumentIconProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentIconProvider.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				D824C8E91D1902BE00246E8C /* HasIDString.swift */,
+				D8474FB71D1C5A0600ACF925 /* SplitViewCollapseable.swift */,
 			);
 			name = "Misc Protocols";
 			sourceTree = "<group>";
@@ -695,6 +698,7 @@
 				D84F16E61CC71215005612BB /* NotesViewController.swift in Sources */,
 				D84F16D61CC553DC005612BB /* Document.swift in Sources */,
 				D8D30DAF1D02A1D3004009F7 /* GhostNotesDocTableViewController.swift in Sources */,
+				D8474FB81D1C5A0600ACF925 /* SplitViewCollapseable.swift in Sources */,
 				D82F61B81D13C2F000721EB6 /* NSTextFieldExtensions.swift in Sources */,
 				D8265A611CDB15F00054AF57 /* TasksController.swift in Sources */,
 				D872BA761D0BDCBF00C0C556 /* SelectableCell.swift in Sources */,

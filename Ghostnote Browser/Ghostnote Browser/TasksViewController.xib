@@ -22,20 +22,20 @@
                     <rect key="frame" x="0.0" y="0.0" width="510" height="272"/>
                     <subviews>
                         <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="rWG-dT-Hi3" userLabel="Bordered Scroll View - Task List Table View">
-                            <rect key="frame" x="0.0" y="0.0" width="261" height="272"/>
+                            <rect key="frame" x="0.0" y="0.0" width="250" height="272"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="f1N-Sx-kqn">
-                                <rect key="frame" x="0.0" y="0.0" width="261" height="272"/>
+                                <rect key="frame" x="0.0" y="0.0" width="250" height="272"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="x0l-7o-FYP" customClass="DeletableTableView" customModule="Ghostnote_Browser" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="261" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="272"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <size key="intercellSpacing" width="3" height="2"/>
                                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
                                         <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                         <tableColumns>
-                                            <tableColumn width="258" minWidth="40" maxWidth="1000" id="V5W-17-fft">
+                                            <tableColumn width="247" minWidth="40" maxWidth="1000" id="V5W-17-fft">
                                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                     <font key="font" metaFont="smallSystem"/>
                                                     <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -54,7 +54,8 @@
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </clipView>
                             <constraints>
-                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="0gW-lo-tPO"/>
+                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="250" id="0gW-lo-tPO"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" id="Tyx-h0-RzI"/>
                             </constraints>
                             <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="jGc-Dh-NkC">
                                 <rect key="frame" x="1" y="-14" width="0.0" height="15"/>
@@ -66,20 +67,20 @@
                             </scroller>
                         </scrollView>
                         <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="rY5-qe-uih" userLabel="Bordered Scroll View - Tasks Table View">
-                            <rect key="frame" x="271" y="0.0" width="239" height="272"/>
+                            <rect key="frame" x="260" y="0.0" width="250" height="272"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="yN7-RW-9fP">
-                                <rect key="frame" x="0.0" y="0.0" width="239" height="272"/>
+                                <rect key="frame" x="0.0" y="0.0" width="250" height="272"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="nAc-ib-V75" customClass="DeletableTableView" customModule="Ghostnote_Browser" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="239" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="272"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <size key="intercellSpacing" width="3" height="2"/>
                                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
                                         <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                         <tableColumns>
-                                            <tableColumn width="236" minWidth="40" maxWidth="1000" id="Pjd-cC-4Ue">
+                                            <tableColumn width="247" minWidth="40" maxWidth="1000" id="Pjd-cC-4Ue">
                                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                     <font key="font" metaFont="smallSystem"/>
                                                     <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>

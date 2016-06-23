@@ -74,7 +74,7 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
         
         let view = tableView.makeViewWithIdentifier("NoteCell", owner: nil) as? NoteCell
         
-        view!.note = NoteManager.shared.notes[row - 1]
+        view!.note = NoteManager.shared.notes.reverse()[row - 1]
         return view
     }
     

@@ -16,7 +16,7 @@ protocol DeleteRowDelegate :NSTableViewDelegate {
 class DeletableTableView: NSTableView {
 
     weak var deleteDelegate:DeleteRowDelegate?
-    
+
     override func keyDown(theEvent: NSEvent) {
 
         if theEvent.keyCode == 117 {

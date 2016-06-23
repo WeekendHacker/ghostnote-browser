@@ -48,7 +48,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="66" height="280"/>
                     <subviews>
                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7b9-bd-oQZ">
-                            <rect key="frame" x="24" y="96" width="18" height="20"/>
+                            <rect key="frame" x="24" y="148" width="18" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="3tz-kW-gHe"/>
                                 <constraint firstAttribute="width" constant="18" id="Ki7-OI-rRd"/>
@@ -62,7 +62,7 @@
                             </connections>
                         </button>
                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ghf-cK-mjZ">
-                            <rect key="frame" x="24" y="140" width="18" height="20"/>
+                            <rect key="frame" x="24" y="192" width="18" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="18" id="7P5-Ln-AGd"/>
                                 <constraint firstAttribute="height" constant="20" id="ZcS-yU-P8K"/>
@@ -76,7 +76,7 @@
                             </connections>
                         </button>
                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sty-WD-ANQ">
-                            <rect key="frame" x="24" y="184" width="18" height="20"/>
+                            <rect key="frame" x="24" y="236" width="18" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="EsO-Ei-MbK"/>
                                 <constraint firstAttribute="width" constant="18" id="Ydl-jx-vUA"/>
@@ -97,8 +97,8 @@
                         <constraint firstItem="Ghf-cK-mjZ" firstAttribute="centerX" secondItem="yLv-HR-lB4" secondAttribute="centerX" id="LMX-LZ-dnw"/>
                         <constraint firstItem="7b9-bd-oQZ" firstAttribute="top" secondItem="Ghf-cK-mjZ" secondAttribute="bottom" constant="24" id="NhA-hs-34r"/>
                         <constraint firstItem="Ghf-cK-mjZ" firstAttribute="leading" secondItem="yLv-HR-lB4" secondAttribute="leading" constant="24" id="RWA-c7-QrX"/>
+                        <constraint firstItem="sty-WD-ANQ" firstAttribute="top" secondItem="yLv-HR-lB4" secondAttribute="top" constant="24" id="aJu-v2-3i9"/>
                         <constraint firstItem="sty-WD-ANQ" firstAttribute="leading" secondItem="yLv-HR-lB4" secondAttribute="leading" constant="24" id="el8-vZ-Etl"/>
-                        <constraint firstItem="Ghf-cK-mjZ" firstAttribute="centerY" secondItem="yLv-HR-lB4" secondAttribute="centerY" constant="-10" id="mIh-ox-M6t"/>
                         <constraint firstItem="Ghf-cK-mjZ" firstAttribute="top" secondItem="sty-WD-ANQ" secondAttribute="bottom" constant="24" id="nZf-n9-3KV"/>
                         <constraint firstAttribute="width" constant="66" id="tLi-KF-lfY"/>
                         <constraint firstAttribute="trailing" secondItem="Ghf-cK-mjZ" secondAttribute="trailing" constant="24" id="w0F-8s-cIv"/>

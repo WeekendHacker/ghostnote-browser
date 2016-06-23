@@ -149,7 +149,7 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
     
     // DeleteRowDelegate
     func deleteRow(row: Int) {
-        let noteToDelete = NoteManager.shared.notes[row - 1]
+        let noteToDelete = NoteManager.shared.notes.reverse()[row - 1]
         NoteManager.shared.deleteNote(noteToDelete)
         notesTableView?.reloadData()
         NSNotificationCenter.defaultCenter().postNotificationName("DeletedNote", object: noteToDelete)

@@ -83,7 +83,7 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
             return view
         }
         
-        let taskList = TaskListManager.shared.taskLists[row - 1]
+        let taskList = TaskListManager.shared.taskLists.reverse()[row - 1]
         
         let view = taskListTableView?.makeViewWithIdentifier("TaskListCell", owner: nil) as? TaskListCell
         view?.taskList = taskList
@@ -104,7 +104,7 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
 
     // DeleteRowDelegate
     func deleteRow(row: Int) {
-        let selectedList = TaskListManager.shared.taskLists[row - 1]
+        let selectedList = TaskListManager.shared.taskLists.reverse()[row - 1]
         TaskListManager.shared.deleteTaskList(selectedList.title)
     }
 

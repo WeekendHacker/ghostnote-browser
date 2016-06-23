@@ -30,7 +30,7 @@
                         <constraint firstAttribute="height" constant="17" id="wLH-dq-0po"/>
                     </constraints>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="qc6-TN-eVK">
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="systemThin" size="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>

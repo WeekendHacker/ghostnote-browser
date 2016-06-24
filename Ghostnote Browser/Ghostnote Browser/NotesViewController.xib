@@ -74,7 +74,7 @@
                                 <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="q4G-q2-TwR"/>
                             </constraints>
                         </customView>
-                        <customView id="cE7-51-PxA">
+                        <customView fixedFrame="YES" id="cE7-51-PxA">
                             <rect key="frame" x="257" y="0.0" width="244" height="272"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
@@ -109,7 +109,6 @@
                     </subviews>
                     <constraints>
                         <constraint firstItem="yU1-9X-UuL" firstAttribute="height" secondItem="o24-jj-Ddw" secondAttribute="height" id="Pd2-59-uOr"/>
-                        <constraint firstItem="cE7-51-PxA" firstAttribute="height" secondItem="o24-jj-Ddw" secondAttribute="height" id="f5R-Ek-T5Y"/>
                     </constraints>
                     <holdingPriorities>
                         <real value="250"/>

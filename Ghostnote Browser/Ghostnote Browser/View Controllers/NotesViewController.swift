@@ -13,8 +13,6 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
     var notesTableController = NotesTableViewController()
     var noteTextViewController:NoteTextViewController = NoteTextViewController()
     
-    
-    
     @IBOutlet weak var splitView:CustomSplitView?
     
     @IBOutlet var noteTextView:NSTextView?
@@ -31,35 +29,17 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
         view.wantsLayer = true
         splitView?.dividerStyle = .Thin
         
-        NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: #selector(selectedNoteChanged),
-                                                         name: "SelectedNoteChanged",
-                                                         object: nil)
-
-        NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: #selector(addNoteButtonClicked),
-                                                         name: "NewNoteAction",
-                                                         object: nil)
+        registerForNotifications()
         
         noteTextViewController.noteTextView = noteTextView
         noteTextView?.wantsLayer = true
     }
 
-    
-    override func viewWillAppear() {
-        super.viewWillAppear()
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        splitView?.setPosition(160.0, ofDividerAtIndex: 0)
     }
-    
-    // NSSplitViewDelegate
-    
-    func splitView(splitView: NSSplitView, constrainMinCoordinate proposedMinimumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
-        return 160.0
-    }
-    
-    func splitView(splitView: NSSplitView, constrainMaxCoordinate proposedMaximumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
-        return 320.0
-    }
-    
+
     override func updateViewConstraints() {
         super.updateViewConstraints()
         if let superView = view.superview {
@@ -96,23 +76,43 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
                                              constant: 0.0)
             
             superView.addConstraints([top, left, bottom, right])
+            
+//            if let noteTextViewScrollView = noteTextView?.superview {
+//                if let notesTableViewScrollView = notesTableView?.superview {
+//                    let top = NSLayoutConstraint(item: noteTextViewScrollView,
+//                                                 attribute: .Top,
+//                                                 relatedBy: .Equal,
+//                                                 toItem: view,
+//                                                 attribute: .Top,
+//                                                 multiplier: 1.0,
+//                                                 constant: 24.0)
+//                    let left = NSLayoutConstraint(item: noteTextViewScrollView,
+//                                                  attribute: .Top,
+//                                                  relatedBy: .Equal,
+//                                                  toItem: notesTableViewScrollView,
+//                                                  attribute: .Right,
+//                                                  multiplier: 1.0,
+//                                                  constant: 24.0)
+//                    view.addConstraints([top, left])
+//
+//                }
+//            }
             superView.layoutSubtreeIfNeeded()
         }
     }
-    override func viewDidAppear() {
-        super.viewDidAppear()
-        splitView?.setPosition(160.0, ofDividerAtIndex: 0)
-
+    
+    
+    // NSSplitViewDelegate
+    
+    func splitView(splitView: NSSplitView, constrainMinCoordinate proposedMinimumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
+        return 160.0
     }
     
-    override func viewWillLayout() {
-        super.viewWillLayout()
-        
-
-        
+    func splitView(splitView: NSSplitView, constrainMaxCoordinate proposedMaximumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
+        return 320.0
     }
     
-    // Actions
+    // IBActions
     
     @IBAction func addNoteButtonClicked(sender:AnyObject?) {
         let date = NSDate()
@@ -123,10 +123,21 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
     }
     
 
+    // Setup
+    func registerForNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(selectedNoteChanged),
+                                                         name: "SelectedNoteChanged",
+                                                         object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(addNoteButtonClicked),
+                                                         name: "NewNoteAction",
+                                                         object: nil)
+
+    }
+    
     // handlers
-    
-    
-    
     func selectedNoteChanged(notif:NSNotification) {
         
         if notesTableView!.hasSelection() {

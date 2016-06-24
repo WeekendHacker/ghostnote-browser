@@ -16,9 +16,8 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customView id="c22-O7-iKe" customClass="NSVisualEffectView">
+        <customView translatesAutoresizingMaskIntoConstraints="NO" id="c22-O7-iKe" customClass="NSVisualEffectView">
             <rect key="frame" x="0.0" y="0.0" width="559" height="319"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="Mzz-Rk-AFp">
                     <rect key="frame" x="66" y="0.0" width="493" height="280"/>
@@ -120,7 +119,7 @@
                 <constraint firstItem="kAs-e4-AG9" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="9" id="tnM-KI-tXY"/>
                 <constraint firstAttribute="bottom" secondItem="Mzz-Rk-AFp" secondAttribute="bottom" id="yQL-5R-ZNb"/>
             </constraints>
-            <point key="canvasLocation" x="371.5" y="196.5"/>
+            <point key="canvasLocation" x="399.5" y="78.5"/>
         </customView>
     </objects>
 </document>

@@ -40,11 +40,6 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
         splitView?.dividerStyle = .Thin
     }
     
-    override func viewDidAppear() {
-        super.viewDidAppear()
-        sizeForContainer()
-    }
-    
     // TaskListControllerObserver
     
     func selectedList(taskList: TaskList) {

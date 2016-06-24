@@ -23,13 +23,6 @@ extension  ButtonNavigable {
     func deactivate() {
          view.removeFromSuperview()
     }
-    
-    func sizeForContainer() {
-        if let contentFrame = view.superview?.frame {
-            let newFrame = NSRect(origin: CGPoint(x: 0,y: 0), size: contentFrame.size)
-            view.frame = newFrame
-        }
-    }
 }
 
 class ButtonNavViewController: NSViewController, NSSearchFieldDelegate {

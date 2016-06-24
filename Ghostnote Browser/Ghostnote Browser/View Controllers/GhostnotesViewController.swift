@@ -61,7 +61,6 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
 
     override func viewDidAppear() {
         super.viewDidAppear()
-        sizeForContainer()
         appsTableViewController.reload()
     }
 

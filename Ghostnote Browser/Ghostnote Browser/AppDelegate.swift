@@ -35,9 +35,54 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func showUI() {
-        buttonNavViewController = ButtonNavViewController(nibName: "ButtonNavViewController", bundle: nil)
+        
+        if let contentView = windowController.window?.contentView {
+            buttonNavViewController = ButtonNavViewController(nibName: "ButtonNavViewController", bundle: nil)
+            
+            if let navConView = buttonNavViewController?.view {
+                contentView.addSubview(navConView)
+                
+                let top = NSLayoutConstraint(item: navConView,
+                                             attribute: .Top,
+                                             relatedBy: .Equal,
+                                             toItem: contentView,
+                                             attribute: .Top,
+                                             multiplier: 1.0,
+                                             constant: 0.0)
+                
+                let left =  NSLayoutConstraint(item: navConView,
+                                               attribute: .Left,
+                                               relatedBy: .Equal,
+                                               toItem: contentView,
+                                               attribute: .Left,
+                                               multiplier: 1.0,
+                                               constant: 0.0)
+                
+                let right =  NSLayoutConstraint(item: navConView,
+                                                attribute: .Right,
+                                                relatedBy: .Equal,
+                                                toItem: contentView,
+                                                attribute: .Right,
+                                                multiplier: 1.0,
+                                                constant: 0.0)
+                
+                let bottom =  NSLayoutConstraint(item: navConView,
+                                                 attribute: .Bottom,
+                                                 relatedBy: .Equal,
+                                                 toItem: contentView,
+                                                 attribute: .Bottom,
+                                                 multiplier: 1.0,
+                                                 constant: 0.0)
+                
+                contentView.addConstraints([top, left, bottom, right])
+                contentView.wantsLayer = true
+                contentView.updateConstraints()
+                contentView.layer?.backgroundColor = NSColor.greenColor().CGColor
+            }
+            
+        }
 
-        windowController.window?.contentView = buttonNavViewController?.view
+        
         windowController.showWindow(self);
     }
 }

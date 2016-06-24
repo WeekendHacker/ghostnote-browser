@@ -76,27 +76,6 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
                                              constant: 0.0)
             
             superView.addConstraints([top, left, bottom, right])
-            
-//            if let noteTextViewScrollView = noteTextView?.superview {
-//                if let notesTableViewScrollView = notesTableView?.superview {
-//                    let top = NSLayoutConstraint(item: noteTextViewScrollView,
-//                                                 attribute: .Top,
-//                                                 relatedBy: .Equal,
-//                                                 toItem: view,
-//                                                 attribute: .Top,
-//                                                 multiplier: 1.0,
-//                                                 constant: 24.0)
-//                    let left = NSLayoutConstraint(item: noteTextViewScrollView,
-//                                                  attribute: .Top,
-//                                                  relatedBy: .Equal,
-//                                                  toItem: notesTableViewScrollView,
-//                                                  attribute: .Right,
-//                                                  multiplier: 1.0,
-//                                                  constant: 24.0)
-//                    view.addConstraints([top, left])
-//
-//                }
-//            }
             superView.layoutSubtreeIfNeeded()
         }
     }

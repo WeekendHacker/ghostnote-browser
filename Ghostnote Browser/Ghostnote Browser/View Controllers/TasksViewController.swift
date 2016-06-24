@@ -40,6 +40,47 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
         splitView?.dividerStyle = .Thin
     }
     
+    override func updateViewConstraints() {
+        super.updateViewConstraints()
+        if let superView = view.superview {
+            let top = NSLayoutConstraint(item: view,
+                                         attribute: .Top,
+                                         relatedBy: .Equal,
+                                         toItem: superView,
+                                         attribute: .Top,
+                                         multiplier: 1.0,
+                                         constant: 0.0)
+            
+            let left =  NSLayoutConstraint(item: view,
+                                           attribute: .Left,
+                                           relatedBy: .Equal,
+                                           toItem: superView,
+                                           attribute: .Left,
+                                           multiplier: 1.0,
+                                           constant: 0.0)
+            
+            let right =  NSLayoutConstraint(item: view,
+                                            attribute: .Right,
+                                            relatedBy: .Equal,
+                                            toItem: superView,
+                                            attribute: .Right,
+                                            multiplier: 1.0,
+                                            constant: 0.0)
+            
+            let bottom =  NSLayoutConstraint(item: view,
+                                             attribute: .Bottom,
+                                             relatedBy: .Equal,
+                                             toItem: superView,
+                                             attribute: .Bottom,
+                                             multiplier: 1.0,
+                                             constant: 0.0)
+            
+            superView.addConstraints([top, left, bottom, right])
+            superView.layoutSubtreeIfNeeded()
+        }
+    }
+
+    
     // TaskListControllerObserver
     
     func selectedList(taskList: TaskList) {

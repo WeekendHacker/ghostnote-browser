@@ -74,23 +74,25 @@
                                 <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="q4G-q2-TwR"/>
                             </constraints>
                         </customView>
-                        <customView fixedFrame="YES" id="cE7-51-PxA">
+                        <customView id="cE7-51-PxA">
                             <rect key="frame" x="257" y="0.0" width="244" height="272"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <scrollView fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCC-Ca-ktP">
-                                    <rect key="frame" x="0.0" y="0.0" width="250" height="0.0"/>
-                                    <clipView key="contentView" ambiguous="YES" drawsBackground="NO" copiesOnScroll="NO" id="zjH-Wn-HZC">
-                                        <rect key="frame" x="0.0" y="0.0" width="235" height="0.0"/>
+                                <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCC-Ca-ktP">
+                                    <rect key="frame" x="24" y="0.0" width="220" height="248"/>
+                                    <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="zjH-Wn-HZC">
+                                        <rect key="frame" x="0.0" y="0.0" width="220" height="248"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <textView ambiguous="YES" drawsBackground="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="KGG-x5-Z5H">
-                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="14"/>
+                                            <textView drawsBackground="NO" importsGraphics="NO" horizontallyResizable="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="KGG-x5-Z5H">
+                                                <rect key="frame" x="0.0" y="0.0" width="220" height="248"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <size key="maxSize" width="502.5" height="10000000"/>
+                                                <size key="minSize" width="220" height="248"/>
+                                                <size key="maxSize" width="1000" height="10000000"/>
                                                 <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <size key="maxSize" width="502.5" height="10000000"/>
+                                                <size key="minSize" width="220" height="248"/>
+                                                <size key="maxSize" width="1000" height="10000000"/>
                                             </textView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -99,16 +101,23 @@
                                         <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </scroller>
-                                    <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="LRm-MV-AsL">
-                                        <rect key="frame" x="235" y="0.0" width="15" height="0.0"/>
+                                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="LRm-MV-AsL">
+                                        <rect key="frame" x="-15" y="0.0" width="15" height="0.0"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </scroller>
                                 </scrollView>
                             </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="iCC-Ca-ktP" secondAttribute="trailing" id="8Kg-bf-EKB"/>
+                                <constraint firstItem="iCC-Ca-ktP" firstAttribute="leading" secondItem="cE7-51-PxA" secondAttribute="leading" constant="24" id="AH1-k7-Tgc"/>
+                                <constraint firstAttribute="bottom" secondItem="iCC-Ca-ktP" secondAttribute="bottom" id="Mlr-SL-QCh"/>
+                                <constraint firstItem="iCC-Ca-ktP" firstAttribute="top" secondItem="cE7-51-PxA" secondAttribute="top" constant="24" id="lIX-5q-f7V"/>
+                            </constraints>
                         </customView>
                     </subviews>
                     <constraints>
                         <constraint firstItem="yU1-9X-UuL" firstAttribute="height" secondItem="o24-jj-Ddw" secondAttribute="height" id="Pd2-59-uOr"/>
+                        <constraint firstItem="cE7-51-PxA" firstAttribute="height" secondItem="o24-jj-Ddw" secondAttribute="height" id="XSc-nm-wJV"/>
                     </constraints>
                     <holdingPriorities>
                         <real value="250"/>

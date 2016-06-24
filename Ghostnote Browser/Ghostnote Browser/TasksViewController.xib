@@ -18,11 +18,11 @@
             <rect key="frame" x="0.0" y="0.0" width="510" height="272"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <splitView fixedFrame="YES" arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1RC-MK-LhA" customClass="CustomSplitView" customModule="Ghostnote_Browser" customModuleProvider="target">
-                    <rect key="frame" x="173" y="88" width="163" height="96"/>
+                <splitView arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1RC-MK-LhA" customClass="CustomSplitView" customModule="Ghostnote_Browser" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="510" height="272"/>
                     <subviews>
                         <customView fixedFrame="YES" id="DlC-Fb-X5i">
-                            <rect key="frame" x="0.0" y="0.0" width="77" height="96"/>
+                            <rect key="frame" x="0.0" y="0.0" width="251.5" height="272"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <scrollView fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWG-dT-Hi3" userLabel="Bordered Scroll View - Task List Table View">
@@ -59,14 +59,14 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                     </scroller>
                                     <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="klG-Mg-yKD">
-                                        <rect key="frame" x="224" y="17" width="15" height="102"/>
+                                        <rect key="frame" x="-15" y="-8" width="15" height="0.0"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </scroller>
                                 </scrollView>
                             </subviews>
                         </customView>
                         <customView fixedFrame="YES" id="4oj-c8-oii">
-                            <rect key="frame" x="87" y="0.0" width="76" height="96"/>
+                            <rect key="frame" x="261.5" y="0.0" width="248.5" height="272"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <scrollView fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rY5-qe-uih" userLabel="Bordered Scroll View - Tasks Table View">
@@ -103,7 +103,7 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                     </scroller>
                                     <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="KGc-b4-zsF">
-                                        <rect key="frame" x="224" y="17" width="15" height="102"/>
+                                        <rect key="frame" x="-15" y="-8" width="15" height="0.0"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </scroller>
                                 </scrollView>
@@ -116,6 +116,12 @@
                     </holdingPriorities>
                 </splitView>
             </subviews>
+            <constraints>
+                <constraint firstItem="1RC-MK-LhA" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="9Qh-UP-Coh"/>
+                <constraint firstAttribute="bottom" secondItem="1RC-MK-LhA" secondAttribute="bottom" id="NUK-NE-e4S"/>
+                <constraint firstItem="1RC-MK-LhA" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="bze-lY-Cpu"/>
+                <constraint firstAttribute="trailing" secondItem="1RC-MK-LhA" secondAttribute="trailing" id="hDa-gw-iJY"/>
+            </constraints>
             <point key="canvasLocation" x="116" y="294"/>
         </customView>
     </objects>

@@ -21,7 +21,7 @@
                 <splitView arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1RC-MK-LhA" customClass="CustomSplitView" customModule="Ghostnote_Browser" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="510" height="272"/>
                     <subviews>
-                        <customView fixedFrame="YES" id="DlC-Fb-X5i">
+                        <customView ambiguous="YES" id="DlC-Fb-X5i">
                             <rect key="frame" x="0.0" y="0.0" width="251.5" height="272"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
@@ -65,7 +65,7 @@
                                 </scrollView>
                             </subviews>
                         </customView>
-                        <customView fixedFrame="YES" id="4oj-c8-oii">
+                        <customView ambiguous="YES" id="4oj-c8-oii">
                             <rect key="frame" x="261.5" y="0.0" width="248.5" height="272"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
@@ -110,6 +110,10 @@
                             </subviews>
                         </customView>
                     </subviews>
+                    <constraints>
+                        <constraint firstItem="DlC-Fb-X5i" firstAttribute="height" secondItem="1RC-MK-LhA" secondAttribute="height" id="TsY-jU-1fq"/>
+                        <constraint firstItem="4oj-c8-oii" firstAttribute="height" secondItem="1RC-MK-LhA" secondAttribute="height" id="jw0-ME-uhK"/>
+                    </constraints>
                     <holdingPriorities>
                         <real value="250"/>
                         <real value="250"/>

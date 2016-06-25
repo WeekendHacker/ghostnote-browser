@@ -98,7 +98,7 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
             let height = bounds.size.height
             let insetDistance:CGFloat = 4.0
             let doubleInset:CGFloat = 2.0 * insetDistance
-            let boxLeft:CGFloat = 24.0
+            let boxLeft:CGFloat = 2.0
 
             let boxFillcolor = NSColor.whiteColor().CGColor
             

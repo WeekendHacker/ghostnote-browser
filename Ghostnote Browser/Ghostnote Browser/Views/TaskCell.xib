@@ -11,14 +11,13 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customView identifier="TaskCell" id="c22-O7-iKe" customClass="TaskCell" customModule="Ghostnote_Browser" customModuleProvider="target">
+        <customView identifier="TaskCell" translatesAutoresizingMaskIntoConstraints="NO" id="c22-O7-iKe" customClass="TaskCell" customModule="Ghostnote_Browser" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="250" height="36"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ClR-vJ-MEJ">
-                    <rect key="frame" x="60" y="7" width="37" height="22"/>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ClR-vJ-MEJ">
+                    <rect key="frame" x="28" y="8.5" width="41" height="19"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="22" id="knV-XN-E7P"/>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="22" id="knV-XN-E7P"/>
                     </constraints>
                     <textFieldCell key="cell" lineBreakMode="truncatingTail" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="left" title="Label" id="pb0-pF-sxg">
                         <font key="font" metaFont="systemThin" size="15"/>
@@ -27,7 +26,7 @@
                     </textFieldCell>
                 </textField>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="oJg-uP-G2E">
-                    <rect key="frame" x="38" y="9" width="18" height="18"/>
+                    <rect key="frame" x="6" y="9" width="18" height="18"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="14" id="Dnt-wf-eAU"/>
                         <constraint firstAttribute="width" constant="14" id="NV4-HT-yaZ"/>
@@ -43,9 +42,8 @@
             </subviews>
             <constraints>
                 <constraint firstItem="oJg-uP-G2E" firstAttribute="top" relation="greaterThanOrEqual" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="8Hm-MV-baE"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oJg-uP-G2E" secondAttribute="trailing" constant="20" id="RmZ-DK-S9M"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ClR-vJ-MEJ" secondAttribute="trailing" constant="8" id="cDw-S9-5qs"/>
-                <constraint firstItem="oJg-uP-G2E" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="40" id="jFW-dD-fvy"/>
+                <constraint firstItem="oJg-uP-G2E" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="8" id="jFW-dD-fvy"/>
                 <constraint firstItem="ClR-vJ-MEJ" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="jGb-Pn-beV"/>
                 <constraint firstItem="oJg-uP-G2E" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="liT-t4-qXC"/>
                 <constraint firstItem="ClR-vJ-MEJ" firstAttribute="leading" secondItem="oJg-uP-G2E" secondAttribute="trailing" constant="8" id="wOK-b1-FZQ"/>

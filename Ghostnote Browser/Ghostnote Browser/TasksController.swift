@@ -77,7 +77,7 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
     // NSTableViewDatasource
     func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
         if row == 0 {
-            return 60.0
+            return 30.0
         }
         return 50.0
     }

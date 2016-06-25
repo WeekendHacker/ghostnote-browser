@@ -25,13 +25,13 @@
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ww9-6P-b0r">
-                                    <rect key="frame" x="0.0" y="0.0" width="247" height="252"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="247" height="272"/>
                                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="FWw-IE-rqF">
-                                        <rect key="frame" x="0.0" y="0.0" width="247" height="252"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="247" height="272"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <tableView autoresizesSubviews="NO" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="none" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowSizeStyle="automatic" viewBased="YES" floatsGroupRows="NO" id="0a4-fP-4um" customClass="DeletableTableView" customModule="Ghostnote_Browser" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="247" height="252"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="247" height="272"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <size key="intercellSpacing" width="3" height="2"/>
                                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
@@ -69,7 +69,7 @@
                                 <constraint firstItem="Ww9-6P-b0r" firstAttribute="width" secondItem="yU1-9X-UuL" secondAttribute="width" id="426-JE-Z6T"/>
                                 <constraint firstItem="Ww9-6P-b0r" firstAttribute="leading" secondItem="yU1-9X-UuL" secondAttribute="leading" id="I0L-NL-Svu"/>
                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="d1q-3g-DRy"/>
-                                <constraint firstItem="Ww9-6P-b0r" firstAttribute="top" secondItem="yU1-9X-UuL" secondAttribute="top" constant="20" id="jwU-li-IGk"/>
+                                <constraint firstItem="Ww9-6P-b0r" firstAttribute="top" secondItem="yU1-9X-UuL" secondAttribute="top" id="jwU-li-IGk"/>
                                 <constraint firstAttribute="bottom" secondItem="Ww9-6P-b0r" secondAttribute="bottom" id="nhT-r6-zEW"/>
                                 <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="q4G-q2-TwR"/>
                             </constraints>

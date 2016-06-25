@@ -31,7 +31,7 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="x0l-7o-FYP" customClass="DeletableTableView" customModule="Ghostnote_Browser" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="252" height="257"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="252" height="0.0"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <size key="intercellSpacing" width="3" height="2"/>
                                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
@@ -85,7 +85,7 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="nAc-ib-V75" customClass="DeletableTableView" customModule="Ghostnote_Browser" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="224" height="248"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="224" height="0.0"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <size key="intercellSpacing" width="3" height="2"/>
                                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
@@ -133,7 +133,7 @@
                     </constraints>
                     <holdingPriorities>
                         <real value="250"/>
-                        <real value="250"/>
+                        <real value="1"/>
                     </holdingPriorities>
                 </splitView>
             </subviews>

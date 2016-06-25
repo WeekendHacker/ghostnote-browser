@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class TasksViewController: NSViewController, ButtonNavigable, TaskListControllerObserver {
+class TasksViewController: NSViewController, ButtonNavigable, TaskListControllerObserver, NSSplitViewDelegate {
 
     var taskListController = TaskListController()
     var taskController = TasksController()
@@ -34,12 +34,25 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        view.autoresizingMask = [.ViewWidthSizable, .ViewHeightSizable]
         title = "Tasks"
         
         splitView?.dividerStyle = .Thin
     }
     
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        splitView?.setPosition(160.0, ofDividerAtIndex: 0)
+    }
+    // NSSplitViewDelegate
+    
+    func splitView(splitView: NSSplitView, constrainMinCoordinate proposedMinimumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
+        return 160.0
+    }
+    
+    func splitView(splitView: NSSplitView, constrainMaxCoordinate proposedMaximumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
+        return 320.0
+    }
+
     override func updateViewConstraints() {
         super.updateViewConstraints()
         if let superView = view.superview {

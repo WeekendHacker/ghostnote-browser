@@ -11,6 +11,8 @@
 		D80001B41CD88BDC00255E54 /* NoteTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80001B31CD88BDC00255E54 /* NoteTextViewController.swift */; };
 		D80001B61CD957C200255E54 /* TaskListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80001B51CD957C200255E54 /* TaskListController.swift */; };
 		D803FEB81D21A5FD00360741 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D803FEB71D21A5FD00360741 /* StringExtensions.swift */; };
+		D803FEBA1D21C88100360741 /* CustomRowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D803FEB91D21C88100360741 /* CustomRowView.xib */; };
+		D803FEBC1D21C8A700360741 /* CustomRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D803FEBB1D21C8A700360741 /* CustomRowView.swift */; };
 		D81281881CCD97F2001749E9 /* ButtonNavViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D81281871CCD97F2001749E9 /* ButtonNavViewController.xib */; };
 		D812818A1CCD98C0001749E9 /* ButtonNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81281891CCD98C0001749E9 /* ButtonNavViewController.swift */; };
 		D812818D1CCD9AA3001749E9 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D812818B1CCD9AA3001749E9 /* MainWindowController.swift */; };
@@ -112,6 +114,8 @@
 		D80001B31CD88BDC00255E54 /* NoteTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteTextViewController.swift; path = "View Controllers/NoteTextViewController.swift"; sourceTree = "<group>"; };
 		D80001B51CD957C200255E54 /* TaskListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskListController.swift; path = "View Controllers/TaskListController.swift"; sourceTree = "<group>"; };
 		D803FEB71D21A5FD00360741 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		D803FEB91D21C88100360741 /* CustomRowView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomRowView.xib; sourceTree = "<group>"; };
+		D803FEBB1D21C8A700360741 /* CustomRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRowView.swift; sourceTree = "<group>"; };
 		D81281871CCD97F2001749E9 /* ButtonNavViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ButtonNavViewController.xib; path = Views/ButtonNavViewController.xib; sourceTree = "<group>"; };
 		D81281891CCD98C0001749E9 /* ButtonNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonNavViewController.swift; path = "View Controllers/ButtonNavViewController.swift"; sourceTree = "<group>"; };
 		D812818B1CCD9AA3001749E9 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
@@ -348,6 +352,8 @@
 			children = (
 				D8151CC51D028B1C00F04C24 /* Table Cells */,
 				D8151CC31D027F6A00F04C24 /* DeletableTableView.swift */,
+				D803FEB91D21C88100360741 /* CustomRowView.xib */,
+				D803FEBB1D21C8A700360741 /* CustomRowView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -619,6 +625,7 @@
 				D8E380EC1CDC21000028D161 /* TaskCell.xib in Resources */,
 				D8FF023C1D0A6CC9004AE6E2 /* HeaderCell.xib in Resources */,
 				D8D10ECB1CC48A9F00A434F6 /* Assets.xcassets in Resources */,
+				D803FEBA1D21C88100360741 /* CustomRowView.xib in Resources */,
 				D86DC3831D0407E30013DFC8 /* DocCell.xib in Resources */,
 				D81281941CCDB9DC001749E9 /* GhostnotesViewController.xib in Resources */,
 				D8FF02351D08C516004AE6E2 /* TaskListCell.xib in Resources */,
@@ -657,6 +664,7 @@
 				D84F16C71CC54ED6005612BB /* DocumentIconProvider.swift in Sources */,
 				D83E5B4D1CDA7A430044F7A3 /* NamedItemValidator.swift in Sources */,
 				D824C8DA1D1873AA00246E8C /* TasksSearchController.swift in Sources */,
+				D803FEBC1D21C8A700360741 /* CustomRowView.swift in Sources */,
 				D84F16C61CC54ED6005612BB /* AppNameProvider.swift in Sources */,
 				D824C8DC1D1873BB00246E8C /* GhostnotesSearchController.swift in Sources */,
 				D80001B61CD957C200255E54 /* TaskListController.swift in Sources */,

@@ -25,10 +25,14 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
                 tv.setDataSource(self)
                 tv.wantsLayer = true
                 tv.deleteDelegate = self
-                tv.selectionHighlightStyle = .None
+                tv.selectionHighlightStyle = .Regular
                 
                 if let noteCellNib = NSNib(nibNamed: "NoteCell", bundle: nil) {
                     tv.registerNib(noteCellNib, forIdentifier: "NoteCell")
+                }
+                
+                if let rowViewNib = NSNib(nibNamed: "CustomRowView", bundle: nil) {
+                    tv.registerNib(rowViewNib, forIdentifier: "CustomRowView")
                 }
                 
                 tv.target = self
@@ -88,6 +92,12 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
 
     }
     
+    func tableView(tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
+        let rowView = tableView.makeViewWithIdentifier("CustomRowView",
+                                                       owner: nil) as? NSTableRowView
+        return rowView
+    }
+    
     
     // Notifcation Handlers
     
@@ -108,12 +118,12 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
     func tvAction(tv:AnyObject?) {
         if let tableView = tv as? DeletableTableView {
 
-                tableView.enumerateAvailableRowViewsUsingBlock({ (rowView, row) in
-
-                    if let selectedCell = rowView.viewAtColumn(0) as? SelectableCell {
-                            selectedCell.select(rowView.selected)
-                    }
-                })
+//                tableView.enumerateAvailableRowViewsUsingBlock({ (rowView, row) in
+//
+//                    if let selectedCell = rowView.viewAtColumn(0) as? SelectableCell {
+//                            selectedCell.select(rowView.selected)
+//                    }
+//                })
                 NSNotificationCenter.defaultCenter().postNotificationName("SelectedNoteChanged", object: nil)
         }
     }

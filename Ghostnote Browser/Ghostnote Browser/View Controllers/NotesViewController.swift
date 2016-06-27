@@ -13,6 +13,17 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
     var notesTableController = NotesTableViewController()
     var noteTextViewController:NoteTextViewController = NoteTextViewController()
     
+    @IBOutlet weak var addNoteButton:NSButton? {
+        didSet {
+            
+            let color = NSColor(netHex:0x3C75B8)
+            let title = NSAttributedString(string: "Add Note",
+                                           attributes: [NSFontSizeAttribute : 15.0,
+                                                        NSForegroundColorAttributeName : color])
+            
+            addNoteButton?.attributedTitle = title
+        }
+    }
     @IBOutlet weak var splitView:CustomSplitView?
     
     @IBOutlet var noteTextView:NSTextView?

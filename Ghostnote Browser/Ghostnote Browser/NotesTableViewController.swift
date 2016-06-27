@@ -27,10 +27,6 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
                 tv.deleteDelegate = self
                 tv.selectionHighlightStyle = .None
                 
-                if let buttonNib = NSNib(nibNamed: "ButtonTableCellView", bundle: nil) {
-                    tv.registerNib(buttonNib, forIdentifier: "ButtonTableCellView")
-                }
-                
                 if let noteCellNib = NSNib(nibNamed: "NoteCell", bundle: nil) {
                     tv.registerNib(noteCellNib, forIdentifier: "NoteCell")
                 }
@@ -52,35 +48,18 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
     }
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
-        return NoteManager.shared.notes.count + 1
+        return NoteManager.shared.notes.count
     }
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
-        if row == 0 {
-            
-            let view = tableView.makeViewWithIdentifier("ButtonTableCellView", owner: nil) as? ButtonTableCellView
-            let buttonColor = NSColor(netHex: 0x3C75B8)
-            let title = NSAttributedString(string: "Add New Note", attributes: [NSForegroundColorAttributeName : buttonColor])
-            view?.button?.attributedTitle = title
-            view?.button?.target = self
-            view?.button?.action = #selector(addNoteClicked(_:))
-            
-            return view
-        }
-        
         let view = tableView.makeViewWithIdentifier("NoteCell", owner: nil) as? NoteCell
         
-        view!.note = NoteManager.shared.notes.reverse()[row - 1]
+        view!.note = NoteManager.shared.notes.reverse()[row]
         return view
     }
     
-    func tableView(tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
-        if row == 0 {
-            return false
-        }
-        return true
-    }
+
     
     func tableViewSelectionDidChange(notification: NSNotification) {
         tvAction(notesTableView!)
@@ -132,10 +111,9 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
         if let tableView = tv as? DeletableTableView {
 
                 tableView.enumerateAvailableRowViewsUsingBlock({ (rowView, row) in
-                    if row != 0 {
-                        if let selectedCell = rowView.viewAtColumn(0) as? SelectableCell {
+
+                    if let selectedCell = rowView.viewAtColumn(0) as? SelectableCell {
                             selectedCell.select(rowView.selected)
-                        }
                     }
                 })
                 NSNotificationCenter.defaultCenter().postNotificationName("SelectedNoteChanged", object: nil)
@@ -144,7 +122,7 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
     
     // DeleteRowDelegate
     func deleteRow(row: Int) {
-        let noteToDelete = NoteManager.shared.notes.reverse()[row - 1]
+        let noteToDelete = NoteManager.shared.notes.reverse()[row]
         NoteManager.shared.deleteNote(noteToDelete)
         notesTableView?.reloadData()
         NSNotificationCenter.defaultCenter().postNotificationName("DeletedNote", object: noteToDelete)

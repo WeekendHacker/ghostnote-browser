@@ -107,7 +107,7 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
                 return view
             }else {
                 let view = tableView.makeViewWithIdentifier("TaskCell", owner: nil) as? TaskCell
-                let task = taskList.tasks[row - 1]
+                let task = taskList.tasks[row]
                 view?.task = task
                 return view
             }

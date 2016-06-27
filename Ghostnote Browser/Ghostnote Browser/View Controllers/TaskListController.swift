@@ -42,11 +42,7 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
 
                 tv.target = self
                 tv.action = #selector(selected)
-            
-                if let buttonNib = NSNib(nibNamed: "ButtonTableCellView", bundle: nil) {
-                    tv.registerNib(buttonNib, forIdentifier: "ButtonTableCellView"  )
-                }
-                
+
                 if let cellNib = NSNib(nibNamed: "TaskListCell", bundle: nil) {
                     tv.registerNib(cellNib, forIdentifier: "TaskListCell")
                 }
@@ -62,36 +58,17 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
     }
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
-        let count = TaskListManager.shared.taskLists.count + 1
+        let count = TaskListManager.shared.taskLists.count
         return count
     }
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
-        if row == 0 {
-            
-            let view = taskListTableView?.makeViewWithIdentifier("ButtonTableCellView", owner: nil) as? ButtonTableCellView
-            let buttonColor = NSColor(netHex: 0x3C75B8)
-            let title = NSAttributedString(string: "Add Task List", attributes: [NSForegroundColorAttributeName : buttonColor])
-            
-            view?.button?.attributedTitle = title
-            view?.button?.target = self
-            view?.button?.action = #selector(addTaskListClicked)
-            return view
-        }
-        
-        let taskList = TaskListManager.shared.taskLists.reverse()[row - 1]
+        let taskList = TaskListManager.shared.taskLists.reverse()[row]
         
         let view = taskListTableView?.makeViewWithIdentifier("TaskListCell", owner: nil) as? TaskListCell
         view?.taskList = taskList
         return view
-    }
-    
-    func tableView(tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
-        if row == 0 {
-            return false
-        }
-        return true
     }
     
     // Actions
@@ -101,14 +78,14 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
 
     // DeleteRowDelegate
     func deleteRow(row: Int) {
-        let selectedList = TaskListManager.shared.taskLists.reverse()[row - 1]
+        let selectedList = TaskListManager.shared.taskLists.reverse()[row]
         TaskListManager.shared.deleteTaskList(selectedList.title)
     }
 
     func selected(sender:AnyObject?) {
         
-        if let row = taskListTableView?.selectedRow where row >= 1 {
-            let selectedTaskList = TaskListManager.shared.taskLists[row - 1]
+        if let row = taskListTableView?.selectedRow {
+            let selectedTaskList = TaskListManager.shared.taskLists[row]
             observer?.selectedList(selectedTaskList)
             currentTaskList = selectedTaskList
         }else {

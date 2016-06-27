@@ -13,9 +13,7 @@ class TaskListCell: NSTableCellView, NSTextFieldDelegate, SelectableCell {
     var taskList:TaskList? {
         didSet {
             if let list = taskList {
-                let title = list.title
-                let displayTitle = title.componentsSeparatedByString("<!").first
-                textField?.stringValue = displayTitle!
+                textField?.stringValue = list.title.withoutUniquePart()
                 textField?.delegate = self
             }
         }

@@ -38,7 +38,7 @@ class TaskListManager: NSObject {
 
         newList.addTask("New Task")
         
-        NSNotificationCenter.defaultCenter().postNotificationName("CreatedTaskList", object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName("CreatedTaskList", object: newList)
     }
     
     func deleteTaskList(name:String) {

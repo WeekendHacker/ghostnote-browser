@@ -14,9 +14,7 @@ class NoteCell: NSTableCellView, NSTextFieldDelegate, SelectableCell {
     var note:Note? { didSet {
      
             if let myNote = note {
-                let title = myNote.name
-                let displayTitle = title.componentsSeparatedByString("<!").first
-                textField?.stringValue = displayTitle!
+                textField?.stringValue = myNote.name.withoutUniquePart()
                 textField?.delegate = self
             }
         }
@@ -40,7 +38,7 @@ class NoteCell: NSTableCellView, NSTextFieldDelegate, SelectableCell {
                 if NoteManager.shared.canName(editedField.stringValue) == true {
                     NoteManager.shared.renameNote(note!, toName: editedField.stringValue)
                 }else {
-                    editedField.stringValue = (note?.name)!
+                    editedField.stringValue = (note?.name.withoutUniquePart())!
                     NSBeep()
                 }
             }

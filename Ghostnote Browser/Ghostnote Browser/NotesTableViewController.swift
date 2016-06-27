@@ -74,14 +74,12 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
         if let tableView = notesTableView {
             
             tableView.enumerateAvailableRowViewsUsingBlock({ (rowView, row) in
-                if row != 0 {
-                    if let cell = rowView.viewAtColumn(0) as? NoteCell {
-                        if let cellNote = cell.note {
-                            if cellNote.id == note.id {
-                                tableView.scrollRowToVisible(row)
-                                cell.select(true)
-                                cell.textField?.enterEditing()
-                            }
+                if let cell = rowView.viewAtColumn(0) as? NoteCell {
+                    if let cellNote = cell.note {
+                        if cellNote.id == note.id {
+                            tableView.scrollRowToVisible(row)
+                            cell.select(true)
+                            cell.textField?.enterEditing()
                         }
                     }
                 }

@@ -10,6 +10,7 @@
 		D80001AE1CD7F98A00255E54 /* NoteNameValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80001AD1CD7F98A00255E54 /* NoteNameValidator.swift */; };
 		D80001B41CD88BDC00255E54 /* NoteTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80001B31CD88BDC00255E54 /* NoteTextViewController.swift */; };
 		D80001B61CD957C200255E54 /* TaskListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80001B51CD957C200255E54 /* TaskListController.swift */; };
+		D803FEB81D21A5FD00360741 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D803FEB71D21A5FD00360741 /* StringExtensions.swift */; };
 		D81281881CCD97F2001749E9 /* ButtonNavViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D81281871CCD97F2001749E9 /* ButtonNavViewController.xib */; };
 		D812818A1CCD98C0001749E9 /* ButtonNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81281891CCD98C0001749E9 /* ButtonNavViewController.swift */; };
 		D812818D1CCD9AA3001749E9 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D812818B1CCD9AA3001749E9 /* MainWindowController.swift */; };
@@ -110,6 +111,7 @@
 		D80001AD1CD7F98A00255E54 /* NoteNameValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteNameValidator.swift; path = Models/NoteNameValidator.swift; sourceTree = "<group>"; };
 		D80001B31CD88BDC00255E54 /* NoteTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteTextViewController.swift; path = "View Controllers/NoteTextViewController.swift"; sourceTree = "<group>"; };
 		D80001B51CD957C200255E54 /* TaskListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskListController.swift; path = "View Controllers/TaskListController.swift"; sourceTree = "<group>"; };
+		D803FEB71D21A5FD00360741 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		D81281871CCD97F2001749E9 /* ButtonNavViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ButtonNavViewController.xib; path = Views/ButtonNavViewController.xib; sourceTree = "<group>"; };
 		D81281891CCD98C0001749E9 /* ButtonNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonNavViewController.swift; path = "View Controllers/ButtonNavViewController.swift"; sourceTree = "<group>"; };
 		D812818B1CCD9AA3001749E9 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 			children = (
 				D82F61B71D13C2F000721EB6 /* NSTextFieldExtensions.swift */,
 				D86A9FB91D148FCC00F6DFF9 /* CustomSplitView.swift */,
+				D803FEB71D21A5FD00360741 /* StringExtensions.swift */,
 			);
 			name = "UI Extensions";
 			sourceTree = "<group>";
@@ -661,6 +664,7 @@
 				D81281A81CCEB3B2001749E9 /* Note.swift in Sources */,
 				D83E5B471CDA76400044F7A3 /* TaskListNameValidator.swift in Sources */,
 				D83E5B441CDA74BD0044F7A3 /* TaskListManager.swift in Sources */,
+				D803FEB81D21A5FD00360741 /* StringExtensions.swift in Sources */,
 				D8CC00AD1CE6793300D13331 /* GhostNoteManager.swift in Sources */,
 				D84F16DF1CC60EEE005612BB /* DocCell.swift in Sources */,
 				D84F16D41CC553B3005612BB /* App.swift in Sources */,

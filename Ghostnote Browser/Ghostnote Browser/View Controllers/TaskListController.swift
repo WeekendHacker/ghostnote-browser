@@ -19,7 +19,7 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
     override init() {
         super.init()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(handleTaskListCreation), name: "CreatedTaskList", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(handleTaskListCreation), name: "DeletedTaskList", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(handleTaskListDeletion), name: "DeletedTaskList", object: nil)
     }
     
     var observer:TaskListControllerObserver?
@@ -70,11 +70,6 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
         view?.taskList = taskList
         return view
     }
-    
-    // Actions
-    func addTaskListClicked(sender:AnyObject?) {
-        TaskListManager.shared.createTaskList("New Task List")
-    }
 
     // DeleteRowDelegate
     func deleteRow(row: Int) {
@@ -103,10 +98,36 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
         selected(self)
     }
     
+    
+    func beginEditingForNewTaskList(newTaskList:TaskList) {
+        
+        // should maybe get to a protocol and extension
+        // for this maybe a CRUD tv controller with the HasIDString on the comparision below
+        
+        if let tableView = taskListTableView {
+            
+            tableView.enumerateAvailableRowViewsUsingBlock({ (rowView, row) in
+                if let cell = rowView.viewAtColumn(0) as? TaskListCell {
+                    if let cellTaskList = cell.taskList {
+                        if cellTaskList.id == newTaskList.id {
+                            tableView.scrollRowToVisible(row)
+                            cell.select(true)
+                            cell.textField?.enterEditing()
+                        }
+                    }
+                }
+            })
+        }
+    }
+    
     // Notification Handlers
     
-    func handleTaskListCreation() {
+    func handleTaskListCreation(notif:NSNotification) {
         taskListTableView?.reloadData()
+        
+        performSelector(#selector(beginEditingForNewTaskList(_:)),
+                        withObject: notif.object as! TaskList,
+                        afterDelay: 0.3)
     }
     
     func handleTaskListDeletion() {

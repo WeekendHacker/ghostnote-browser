@@ -23,6 +23,7 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
             addTaskListButton?.attributedTitle = title
         }
     }
+    
     @IBOutlet weak var splitView:CustomSplitView?
     
     @IBOutlet weak var taskListTableView:DeletableTableView? {
@@ -101,6 +102,12 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
             superView.addConstraints([top, left, bottom, right])
             superView.layoutSubtreeIfNeeded()
         }
+    }
+
+    
+    // Actions
+    @IBAction func addTaskListClicked(sender:AnyObject?) {
+        TaskListManager.shared.createTaskList("New Task List")
     }
 
     

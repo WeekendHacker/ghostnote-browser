@@ -6,6 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="TasksViewController" customModule="Ghostnote_Browser" customModuleProvider="target">
             <connections>
+                <outlet property="addTaskListButton" destination="jpu-pK-nxR" id="JDk-Cz-3Ba"/>
                 <outlet property="splitView" destination="1RC-MK-LhA" id="nGY-4z-1IG"/>
                 <outlet property="taskListTableView" destination="x0l-7o-FYP" id="Mzp-ut-uua"/>
                 <outlet property="tasksTableView" destination="nAc-ib-V75" id="Wgo-vB-fgV"/>
@@ -25,13 +26,13 @@
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWG-dT-Hi3" userLabel="Bordered Scroll View - Task List Table View">
-                                    <rect key="frame" x="0.0" y="0.0" width="252" height="272"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="252" height="224"/>
                                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="f1N-Sx-kqn">
-                                        <rect key="frame" x="0.0" y="0.0" width="252" height="272"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="252" height="224"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="x0l-7o-FYP" customClass="DeletableTableView" customModule="Ghostnote_Browser" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="252" height="272"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="252" height="224"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <size key="intercellSpacing" width="3" height="2"/>
                                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
@@ -64,13 +65,22 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                     </scroller>
                                 </scrollView>
+                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jpu-pK-nxR">
+                                    <rect key="frame" x="8" y="224" width="62" height="32"/>
+                                    <buttonCell key="cell" type="bevel" title="Button" bezelStyle="rounded" image="Add Button" imagePosition="left" alignment="center" imageScaling="proportionallyDown" inset="2" id="pAi-uh-hP3">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                </button>
                             </subviews>
                             <constraints>
                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="Ni9-Bq-iUu"/>
+                                <constraint firstItem="jpu-pK-nxR" firstAttribute="top" secondItem="DlC-Fb-X5i" secondAttribute="top" constant="16" id="UqG-Mb-3eP"/>
                                 <constraint firstAttribute="bottom" secondItem="rWG-dT-Hi3" secondAttribute="bottom" id="c4L-je-S2z"/>
                                 <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="dFC-Xk-TME"/>
+                                <constraint firstItem="rWG-dT-Hi3" firstAttribute="top" secondItem="jpu-pK-nxR" secondAttribute="bottom" id="qnO-4R-ifF"/>
+                                <constraint firstItem="jpu-pK-nxR" firstAttribute="leading" secondItem="DlC-Fb-X5i" secondAttribute="leading" constant="8" id="ser-I4-Oxh"/>
                                 <constraint firstItem="rWG-dT-Hi3" firstAttribute="width" secondItem="DlC-Fb-X5i" secondAttribute="width" id="uRi-qj-1ge"/>
-                                <constraint firstItem="rWG-dT-Hi3" firstAttribute="top" secondItem="DlC-Fb-X5i" secondAttribute="top" id="uWP-Ex-tOh"/>
                                 <constraint firstItem="rWG-dT-Hi3" firstAttribute="leading" secondItem="DlC-Fb-X5i" secondAttribute="leading" id="yPV-he-ys7"/>
                             </constraints>
                         </customView>
@@ -146,4 +156,7 @@
             <point key="canvasLocation" x="116" y="294"/>
         </customView>
     </objects>
+    <resources>
+        <image name="Add Button" width="17" height="17"/>
+    </resources>
 </document>

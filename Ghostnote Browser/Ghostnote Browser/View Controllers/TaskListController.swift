@@ -93,10 +93,8 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
         }
         
         taskListTableView?.enumerateAvailableRowViewsUsingBlock({ (rowView, row) in
-            if row > 0 {
-                if let cell = rowView.viewAtColumn(0) as? SelectableCell {
-                    cell.select(rowView.selected)
-                }
+            if let cell = rowView.viewAtColumn(0) as? SelectableCell {
+                cell.select(rowView.selected)
             }
         })
     }

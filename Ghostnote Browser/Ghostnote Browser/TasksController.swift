@@ -86,31 +86,24 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
         var rows = 0
         
         if let selected = selectedTaskList {
-            rows = selected.tasks.count + 1
+            rows = selected.tasks.count 
         }
         return rows
     }
     
     func tableView(tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
-        if row == 0 {
-            return false
-        }
+
         return true
     }
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
         if let taskList = selectedTaskList {
-            if row == 0 {
-                let view = tableView.makeViewWithIdentifier("HeaderCell", owner: nil) as? HeaderCell
-                view?.title = taskList.title
-                return view
-            }else {
-                let view = tableView.makeViewWithIdentifier("TaskCell", owner: nil) as? TaskCell
-                let task = taskList.tasks[row]
-                view?.task = task
-                return view
-            }
+
+            let view = tableView.makeViewWithIdentifier("TaskCell", owner: nil) as? TaskCell
+            let task = taskList.tasks[row]
+            view?.task = task
+            return view
         }
         return nil
     }
@@ -120,10 +113,8 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
         if let tableView = tv as? DeletableTableView {
             
             tableView.enumerateAvailableRowViewsUsingBlock({ (rowView, row) in
-                if row != 0 {
-                    if let selectedCell = rowView.viewAtColumn(0) as? SelectableCell {
-                        selectedCell.select(rowView.selected)
-                    }
+                if let selectedCell = rowView.viewAtColumn(0) as? SelectableCell {
+                    selectedCell.select(rowView.selected)
                 }
             })
         }
@@ -148,13 +139,11 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
         if let tableView = tasksTableView {
             
             tableView.enumerateAvailableRowViewsUsingBlock({ (rowView, row) in
-                if row != 0 {
-                    if let cell = rowView.viewAtColumn(0) as? TaskCell {
-                        if let cellTask = cell.task {
-                            if cellTask.id == task.id {
-                                self.tasksTableView?.scrollRowToVisible(row)
-                                cell.textField?.enterEditing()
-                            }
+                if let cell = rowView.viewAtColumn(0) as? TaskCell {
+                    if let cellTask = cell.task {
+                        if cellTask.id == task.id {
+                            self.tasksTableView?.scrollRowToVisible(row)
+                            cell.textField?.enterEditing()
                         }
                     }
                 }

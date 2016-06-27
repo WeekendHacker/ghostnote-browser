@@ -13,6 +13,16 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
     var taskListController = TaskListController()
     var taskController = TasksController()
     
+    
+    @IBOutlet weak var addTaskListButton:NSButton? {
+        didSet {
+            let color = NSColor(netHex:0x3C75B8)
+            let title = NSAttributedString(string: "Add List",
+                                           attributes: [NSFontSizeAttribute : 15.0,
+                                            NSForegroundColorAttributeName : color])
+            addTaskListButton?.attributedTitle = title
+        }
+    }
     @IBOutlet weak var splitView:CustomSplitView?
     
     @IBOutlet weak var taskListTableView:DeletableTableView? {

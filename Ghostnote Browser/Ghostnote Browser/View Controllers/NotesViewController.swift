@@ -131,7 +131,7 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
     func selectedNoteChanged(notif:NSNotification) {
         
         if notesTableView!.hasSelection() {
-            if let row = notesTableView?.selectedRowIndexes.firstIndex where row != 0 {
+            if let row = notesTableView?.selectedRow {
                 let view = notesTableView?.viewAtColumn(0, row: row, makeIfNecessary: false) as? NoteCell
                 
                 if let selectedNote = view?.note {

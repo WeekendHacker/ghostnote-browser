@@ -36,21 +36,27 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
                 tv.setDelegate(self)
                 tv.setDataSource(self)
                 tv.wantsLayer = true
-                tv.selectionHighlightStyle = .None
+                tv.selectionHighlightStyle = .Regular
                 
                 tv.deleteDelegate = self
 
-                tv.target = self
-                tv.action = #selector(selected)
-
                 if let cellNib = NSNib(nibNamed: "TaskListCell", bundle: nil) {
                     tv.registerNib(cellNib, forIdentifier: "TaskListCell")
+                }
+                
+                if let rowViewNib = NSNib(nibNamed: "CustomRowView", bundle: nil) {
+                    tv.registerNib(rowViewNib, forIdentifier: "CustomRowView")
                 }
             }
         }
     }
 
     // NSTableViewDatasource
+    
+    func tableView(tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
+        let rowView = tableView.makeViewWithIdentifier("CustomRowView", owner: nil) as? NSTableRowView
+        return rowView
+    }
     
     func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
 
@@ -77,8 +83,8 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
         TaskListManager.shared.deleteTaskList(selectedList.title)
     }
 
-    func selected(sender:AnyObject?) {
-        
+
+    func tableViewSelectionDidChange(notification: NSNotification) {
         if let row = taskListTableView?.selectedRow {
             let selectedTaskList = TaskListManager.shared.taskLists[row]
             observer?.selectedList(selectedTaskList)
@@ -86,16 +92,6 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
         }else {
             currentTaskList = nil
         }
-        
-        taskListTableView?.enumerateAvailableRowViewsUsingBlock({ (rowView, row) in
-            if let cell = rowView.viewAtColumn(0) as? SelectableCell {
-                cell.select(rowView.selected)
-            }
-        })
-    }
-    
-    func tableViewSelectionDidChange(notification: NSNotification) {
-        selected(self)
     }
     
     

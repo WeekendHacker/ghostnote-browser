@@ -17,11 +17,15 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
         didSet {
             
             let color = NSColor(netHex:0x3C75B8)
-            let title = NSAttributedString(string: "Add Note",
-                                           attributes: [NSFontSizeAttribute : 15.0])
-                                            
+            let title = NSMutableAttributedString(string: "Add Note",
+                                                  attributes: [NSFontSizeAttribute : 15.0,
+                                                    NSForegroundColorAttributeName : color])
+            
+            title.applyFontTraits(.BoldFontMask,
+                                  range: NSMakeRange(0, title.length))
             
             addNoteButton?.attributedTitle = title
+            
         }
     }
     @IBOutlet weak var splitView:CustomSplitView?
@@ -44,6 +48,8 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
         
         noteTextViewController.noteTextView = noteTextView
         noteTextView?.wantsLayer = true
+        
+        
     }
 
     override func viewDidAppear() {
@@ -112,18 +118,29 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
         notesTableView?.reloadData()
     }
     
+    
+    // Delete confirmation
+    
+    
 
     // Setup
     func registerForNotifications() {
-        NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: #selector(selectedNoteChanged),
-                                                         name: "SelectedNoteChanged",
-                                                         object: nil)
         
-        NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: #selector(addNoteButtonClicked),
-                                                         name: "NewNoteAction",
-                                                         object: nil)
+        let notifcationCenter = NSNotificationCenter.defaultCenter()
+            notifcationCenter.addObserver(self,
+                                         selector: #selector(selectedNoteChanged),
+                                         name: "SelectedNoteChanged",
+                                         object: nil)
+        
+            notifcationCenter.addObserver(self,
+                                          selector: #selector(addNoteButtonClicked),
+                                          name: "NewNoteAction",
+                                          object: nil)
+        
+            notifcationCenter.addObserver(self,
+                                          selector: #selector(handleDeleteNoteRequest(_:)),
+                                          name: "DeleteNoteRequest",
+                                          object: nil)
 
     }
     
@@ -140,6 +157,38 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
             }
         }else {
             noteTextViewController.currentNote = nil
+        }
+    }
+    
+    func handleDeleteNoteRequest(notif:NSNotification) {
+
+        if let payload = notif.object as? Dictionary<String,AnyObject> {
+            
+            if let noteToDelete = payload["noteToDelete"] as? Note {
+                if let hostingNoteCell = payload["hostingNoteCell"] as? NoteCell {
+                    
+                    let deleteVC = ConfirmDeleteViewController()
+                    
+                    deleteVC.yesBlock = {
+                        NoteManager.shared.deleteNote(noteToDelete)
+                        self.dismissViewController(deleteVC)
+                    }
+                    
+                    deleteVC.noBlock = {
+                        self.dismissViewController(deleteVC)
+
+                    }
+                    
+                    presentViewController(deleteVC,
+                                          asPopoverRelativeToRect: hostingNoteCell.bounds,
+                                          ofView: hostingNoteCell,
+                                          preferredEdge: .MaxX,
+                                          behavior: .Transient)
+                    
+                }
+
+            }
+            
         }
     }
 }

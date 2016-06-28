@@ -11,7 +11,6 @@ import Cocoa
 
 extension NSTextField {
     
-    
     override public func mouseDown(theEvent: NSEvent) {
         
         if theEvent.clickCount == 1 {

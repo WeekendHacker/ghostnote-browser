@@ -19,11 +19,10 @@ extension SelectableCell {
     func select(isSelected:Bool)  {
         
         if !(self is TaskCell) {
-            if isSelected {
-                textField?.textColor = NSColor(netHex: 0x3C75B8)
-            }else {
-                textField?.textColor = NSColor.blackColor()
+            if let superView = textField?.superview?.superview as? CustomRowView {
+               superView.selected = true
             }
+
         }else {
             
             if let taskCell = self as? TaskCell {

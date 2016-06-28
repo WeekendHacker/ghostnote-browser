@@ -60,6 +60,8 @@ class NoteManager {
             try store.write({ 
                 store.delete(note)
             })
+            NSNotificationCenter.defaultCenter().postNotificationName("NoteDeleted", object: nil)
+
         }
         catch {
             print(error)

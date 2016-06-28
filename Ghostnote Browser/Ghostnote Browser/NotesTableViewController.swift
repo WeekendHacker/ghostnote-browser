@@ -35,12 +35,15 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
                     tv.registerNib(rowViewNib, forIdentifier: "CustomRowView")
                 }
                 
-                tv.target = self
-                tv.action = #selector(tvAction(_:))
+
                 
                 NSNotificationCenter.defaultCenter().addObserver(self,
                                                                  selector: #selector(handleNoteAdded(_:)),
                                                                  name: "NoteAdded",
+                                                                 object: nil)
+                NSNotificationCenter.defaultCenter().addObserver(self,
+                                                                 selector: #selector(handleNoteDeleted),
+                                                                 name: "NoteDeleted",
                                                                  object: nil)
             }
         }
@@ -54,12 +57,7 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
         return NoteManager.shared.notes.count
     }
-    
-    
-    func tableView(tableView: NSTableView, mouseDownInHeaderOfTableColumn tableColumn: NSTableColumn) {
-        
-    }
-    
+
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
         let view = tableView.makeViewWithIdentifier("NoteCell", owner: nil) as? NoteCell
@@ -68,11 +66,6 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
         return view
     }
     
-
-    
-    func tableViewSelectionDidChange(notification: NSNotification) {
-        tvAction(notesTableView!)
-    }
 
     func beginEditingForNewNote(note:Note)   {
         
@@ -94,7 +87,6 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
                 }
             })
         }
-
     }
     
     func tableView(tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
@@ -103,9 +95,12 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
         return rowView
     }
     
-    
     // Notifcation Handlers
     
+    func tableViewSelectionDidChange(notification: NSNotification) {
+        NSNotificationCenter.defaultCenter().postNotificationName("SelectedNoteChanged", object: nil)
+    }
+
     func handleNoteAdded(notif:AnyObject) {
         notesTableView?.reloadData()
         
@@ -114,30 +109,26 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
                         afterDelay: 0.3)
     }
     
+    func handleNoteDeleted() {
+        notesTableView?.reloadData()
+
+    }
     
     // Actions
     func addNoteClicked(sender:AnyObject?) {
         NSNotificationCenter.defaultCenter().postNotificationName("NewNoteAction", object: nil)
     }
     
-    func tvAction(tv:AnyObject?) {
-        if let tableView = tv as? DeletableTableView {
-
-//                tableView.enumerateAvailableRowViewsUsingBlock({ (rowView, row) in
-//
-//                    if let selectedCell = rowView.viewAtColumn(0) as? SelectableCell {
-//                            selectedCell.select(rowView.selected)
-//                    }
-//                })
-                NSNotificationCenter.defaultCenter().postNotificationName("SelectedNoteChanged", object: nil)
-        }
-    }
-    
     // DeleteRowDelegate
     func deleteRow(row: Int) {
+        
+
         let noteToDelete = NoteManager.shared.notes.reverse()[row]
-        NoteManager.shared.deleteNote(noteToDelete)
-        notesTableView?.reloadData()
-        NSNotificationCenter.defaultCenter().postNotificationName("DeletedNote", object: noteToDelete)
+        var userInfo = Dictionary<String, AnyObject>()
+        userInfo["noteToDelete"] = noteToDelete
+        userInfo["hostingNoteCell"] = notesTableView?.viewAtColumn(0, row: row, makeIfNecessary: false)
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("DeleteNoteRequest",
+                                                                  object: userInfo)
     }
 }

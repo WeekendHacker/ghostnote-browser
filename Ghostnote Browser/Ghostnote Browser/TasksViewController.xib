@@ -70,6 +70,8 @@
                                     <buttonCell key="cell" type="bevel" title="Button" bezelStyle="rounded" image="Add Button" imagePosition="left" alignment="center" imageScaling="proportionallyDown" inset="2" id="pAi-uh-hP3">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="system"/>
+                                        <string key="keyEquivalent">l</string>
+                                        <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                     </buttonCell>
                                     <connections>
                                         <action selector="addTaskListClicked:" target="-2" id="e8e-2a-Fti"/>

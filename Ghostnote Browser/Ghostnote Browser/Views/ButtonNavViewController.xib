@@ -19,6 +19,12 @@
         <customView translatesAutoresizingMaskIntoConstraints="NO" id="c22-O7-iKe" customClass="NSVisualEffectView">
             <rect key="frame" x="0.0" y="0.0" width="559" height="319"/>
             <subviews>
+                <box horizontalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="EN4-yC-QlN">
+                    <rect key="frame" x="64" y="0.0" width="5" height="280"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="Mzz-Rk-AFp">
                     <rect key="frame" x="66" y="0.0" width="493" height="280"/>
                 </customView>
@@ -106,12 +112,17 @@
                 </customView>
             </subviews>
             <constraints>
+                <constraint firstItem="EN4-yC-QlN" firstAttribute="top" secondItem="yLv-HR-lB4" secondAttribute="top" id="5tM-Ak-CoL"/>
                 <constraint firstItem="yLv-HR-lB4" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="39" id="AUC-jA-xXV"/>
                 <constraint firstAttribute="trailing" secondItem="lLd-ZU-04Z" secondAttribute="trailing" id="Cjt-M3-le0"/>
+                <constraint firstAttribute="trailing" secondItem="yLv-HR-lB4" secondAttribute="trailing" constant="493" id="E6j-JK-ZQ3"/>
+                <constraint firstItem="EN4-yC-QlN" firstAttribute="bottom" secondItem="yLv-HR-lB4" secondAttribute="bottom" id="GHI-ge-5Uh"/>
+                <constraint firstItem="Mzz-Rk-AFp" firstAttribute="top" secondItem="yLv-HR-lB4" secondAttribute="top" id="GJX-GR-i3F"/>
                 <constraint firstAttribute="trailing" secondItem="Mzz-Rk-AFp" secondAttribute="trailing" id="MX6-ci-SeM"/>
                 <constraint firstItem="Mzz-Rk-AFp" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="66" id="Z0O-as-SYc"/>
                 <constraint firstItem="yLv-HR-lB4" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="bFw-yu-2fV"/>
                 <constraint firstItem="lLd-ZU-04Z" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="39" id="bHv-Sc-l11"/>
+                <constraint firstItem="EN4-yC-QlN" firstAttribute="leading" secondItem="yLv-HR-lB4" secondAttribute="trailing" id="bJm-go-bxc"/>
                 <constraint firstItem="Mzz-Rk-AFp" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="39" id="e5H-iR-rPo"/>
                 <constraint firstAttribute="bottom" secondItem="yLv-HR-lB4" secondAttribute="bottom" id="fjm-YB-gjv"/>
                 <constraint firstAttribute="trailing" secondItem="kAs-e4-AG9" secondAttribute="trailing" constant="10" id="hdB-Zq-Ms1"/>

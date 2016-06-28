@@ -55,6 +55,11 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
         return NoteManager.shared.notes.count
     }
     
+    
+    func tableView(tableView: NSTableView, mouseDownInHeaderOfTableColumn tableColumn: NSTableColumn) {
+        
+    }
+    
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
         let view = tableView.makeViewWithIdentifier("NoteCell", owner: nil) as? NoteCell

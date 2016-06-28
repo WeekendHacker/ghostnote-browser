@@ -11,25 +11,22 @@ import Cocoa
 class CustomRowView: NSTableRowView {
 
     override func drawSelectionInRect(dirtyRect: NSRect) {
+        let selectionRect = NSInsetRect(self.bounds, 2.5, 2.5);
+        let selectionPath = NSBezierPath(roundedRect: selectionRect, xRadius: 0.0, yRadius: 0.0)
+        let color:NSColor
         
         if emphasized {
-            let selectionRect = NSInsetRect(self.bounds, 2.5, 2.5);
             
-            let selectionPath = NSBezierPath(roundedRect: selectionRect, xRadius: 0.0, yRadius: 0.0)
-            let color = NSColor(netHex: 0x3C75B8)
-            color.set()
-            selectionPath.stroke()
-            selectionPath.fill()
+            color = NSColor(netHex: 0x3C75B8)
+
         }else {
-            let selectionRect = NSInsetRect(self.bounds, 2.5, 2.5);
             
-            let selectionPath = NSBezierPath(roundedRect: selectionRect, xRadius: 0.0, yRadius: 0.0)
-            let color = NSColor.grayColor()
-            color.set()
-            selectionPath.stroke()
-            selectionPath.fill()
+            color = NSColor.grayColor()
+
         }
-
-
+        
+        color.set()
+        selectionPath.stroke()
+        selectionPath.fill()
     }
 }

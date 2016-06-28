@@ -16,7 +16,7 @@ class GhostNoteManager: NSObject {
     
     override init() {
         var  config = Realm.Configuration()
-        config.deleteRealmIfMigrationNeeded = true //TODO remove this before release
+//        config.deleteRealmIfMigrationNeeded = true //TODO remove this before release
         config.fileURL =  NSURL(fileURLWithPath: appSupportDir.first!).URLByAppendingPathComponent("com.ghostnoteapp.Ghostnote-Paddle/Default.realm")
         store = try! Realm(configuration: config)
     }

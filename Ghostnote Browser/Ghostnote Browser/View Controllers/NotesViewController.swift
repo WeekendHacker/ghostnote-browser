@@ -17,7 +17,7 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
         didSet {
             
             let title = NSMutableAttributedString(string: "Add Note",
-                                                  attributes: [NSFontSizeAttribute : 15.0])
+                                                  attributes: [NSFontSizeAttribute : 12.0])
             
 
             

@@ -22,14 +22,17 @@ class GhostNotesAppTableViewController: NSObject , NSTableViewDelegate , NSTable
         didSet {
             appsTableView?.setDelegate(self)
             appsTableView?.setDataSource(self)
-            appsTableView?.selectionHighlightStyle = .None
+            appsTableView?.selectionHighlightStyle = .Regular
             
             if let appCellNib = NSNib(nibNamed: "AppCell", bundle: nil) {
                 appsTableView?.registerNib(appCellNib, forIdentifier: "AppCell")
             }
             
-            appsTableView?.target = self
-            appsTableView?.action = #selector(rowClicked(_:))
+            if let rowViewNib = NSNib(nibNamed: "CustomRowView", bundle: nil) {
+                appsTableView?.registerNib(rowViewNib, forIdentifier: "CustomRowView")
+            }
+            
+
             
             NSDistributedNotificationCenter.defaultCenter().addObserver(self,
                                                                         selector: #selector(handleNoteCreation),
@@ -83,6 +86,11 @@ class GhostNotesAppTableViewController: NSObject , NSTableViewDelegate , NSTable
         return 30.0
     }
     
+    func tableView(tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
+        let rowView = tableView.makeViewWithIdentifier("CustomRowView", owner: nil) as? CustomRowView
+        return rowView
+    }
+    
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let app = apps[row]
         let view = appsTableView?.makeViewWithIdentifier("AppCell", owner: nil) as! AppCell
@@ -91,9 +99,8 @@ class GhostNotesAppTableViewController: NSObject , NSTableViewDelegate , NSTable
     }
     
     
-    
-    func rowClicked(sender:AnyObject?) {
-        if let tv = sender as? NSTableView! {
+    func tableViewSelectionDidChange(notification: NSNotification) {
+        if let tv = notification.object as? NSTableView! {
             
             if tv.hasSelection() {
                 let selectedApp = apps[tv.selectedRow]
@@ -101,14 +108,8 @@ class GhostNotesAppTableViewController: NSObject , NSTableViewDelegate , NSTable
             }else {
                 observer?.selectedNothing()
             }
-            
-            tv.enumerateAvailableRowViewsUsingBlock({ (rowView, row) in
-                
-                if let cell = tv.viewAtColumn(0, row: row, makeIfNecessary: false) as? SelectableCell {
-                    cell.select(rowView.selected)
-                }
-                
-            })
         }
     }
+    
+   
 }

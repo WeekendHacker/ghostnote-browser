@@ -71,6 +71,8 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
     }
     
     func selectedNothing() {
+        noteTextViewController.currentNote = nil
+        docsTableViewController.currentApp = nil
     }
     
     // GhostNotesDocTableViewControllerObserver

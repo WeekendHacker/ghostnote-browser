@@ -26,13 +26,13 @@
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWG-dT-Hi3" userLabel="Bordered Scroll View - Task List Table View">
-                                    <rect key="frame" x="0.0" y="0.0" width="252" height="252"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="252" height="254"/>
                                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="f1N-Sx-kqn">
-                                        <rect key="frame" x="0.0" y="0.0" width="252" height="252"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="252" height="254"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="x0l-7o-FYP" customClass="DeletableTableView" customModule="Ghostnote_Browser" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="252" height="252"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="252" height="254"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <size key="intercellSpacing" width="3" height="2"/>
                                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
@@ -66,10 +66,10 @@
                                     </scroller>
                                 </scrollView>
                                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jpu-pK-nxR">
-                                    <rect key="frame" x="8" y="253" width="236" height="19"/>
+                                    <rect key="frame" x="8" y="255" width="236" height="17"/>
                                     <buttonCell key="cell" type="smallSquare" title="Button" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="right" alignment="left" imageScaling="proportionallyDown" inset="2" id="pAi-uh-hP3">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" metaFont="systemThin" size="15"/>
+                                        <font key="font" metaFont="systemThin" size="13"/>
                                         <string key="keyEquivalent">l</string>
                                         <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                     </buttonCell>
@@ -78,7 +78,7 @@
                                     </connections>
                                 </button>
                                 <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="XYy-jr-6sv">
-                                    <rect key="frame" x="0.0" y="250" width="251.5" height="5"/>
+                                    <rect key="frame" x="0.0" y="252" width="251.5" height="5"/>
                                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <font key="titleFont" metaFont="system"/>

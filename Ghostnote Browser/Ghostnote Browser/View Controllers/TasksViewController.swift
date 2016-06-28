@@ -17,7 +17,7 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
     @IBOutlet weak var addTaskListButton:NSButton? {
         didSet {
             let title = NSAttributedString(string: "Add List",
-                                           attributes: [NSFontSizeAttribute : 15.0])
+                                           attributes: [NSFontSizeAttribute : 12.0])
                                            
             addTaskListButton?.attributedTitle = title
         }

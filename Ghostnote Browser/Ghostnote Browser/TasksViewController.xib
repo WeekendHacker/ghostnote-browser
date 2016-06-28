@@ -26,13 +26,13 @@
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWG-dT-Hi3" userLabel="Bordered Scroll View - Task List Table View">
-                                    <rect key="frame" x="0.0" y="0.0" width="252" height="224"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="252" height="252"/>
                                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="f1N-Sx-kqn">
-                                        <rect key="frame" x="0.0" y="0.0" width="252" height="224"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="252" height="252"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="x0l-7o-FYP" customClass="DeletableTableView" customModule="Ghostnote_Browser" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="252" height="224"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="252" height="252"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <size key="intercellSpacing" width="3" height="2"/>
                                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
@@ -66,10 +66,10 @@
                                     </scroller>
                                 </scrollView>
                                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jpu-pK-nxR">
-                                    <rect key="frame" x="8" y="224" width="62" height="32"/>
-                                    <buttonCell key="cell" type="bevel" title="Button" bezelStyle="rounded" image="Add Button" imagePosition="left" alignment="center" imageScaling="proportionallyDown" inset="2" id="pAi-uh-hP3">
+                                    <rect key="frame" x="8" y="253" width="236" height="19"/>
+                                    <buttonCell key="cell" type="smallSquare" title="Button" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="right" alignment="left" imageScaling="proportionallyDown" inset="2" id="pAi-uh-hP3">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" metaFont="system"/>
+                                        <font key="font" metaFont="systemThin" size="15"/>
                                         <string key="keyEquivalent">l</string>
                                         <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                     </buttonCell>
@@ -77,15 +77,25 @@
                                         <action selector="addTaskListClicked:" target="-2" id="e8e-2a-Fti"/>
                                     </connections>
                                 </button>
+                                <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="XYy-jr-6sv">
+                                    <rect key="frame" x="0.0" y="250" width="251.5" height="5"/>
+                                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <font key="titleFont" metaFont="system"/>
+                                </box>
                             </subviews>
                             <constraints>
+                                <constraint firstItem="XYy-jr-6sv" firstAttribute="leading" secondItem="DlC-Fb-X5i" secondAttribute="leading" id="9G1-Jw-XPd"/>
+                                <constraint firstItem="XYy-jr-6sv" firstAttribute="top" secondItem="jpu-pK-nxR" secondAttribute="bottom" id="IRA-gk-ati"/>
                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="Ni9-Bq-iUu"/>
-                                <constraint firstItem="jpu-pK-nxR" firstAttribute="top" secondItem="DlC-Fb-X5i" secondAttribute="top" constant="16" id="UqG-Mb-3eP"/>
+                                <constraint firstItem="jpu-pK-nxR" firstAttribute="top" secondItem="DlC-Fb-X5i" secondAttribute="top" id="UqG-Mb-3eP"/>
                                 <constraint firstAttribute="bottom" secondItem="rWG-dT-Hi3" secondAttribute="bottom" id="c4L-je-S2z"/>
                                 <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="dFC-Xk-TME"/>
-                                <constraint firstItem="rWG-dT-Hi3" firstAttribute="top" secondItem="jpu-pK-nxR" secondAttribute="bottom" id="qnO-4R-ifF"/>
+                                <constraint firstAttribute="trailing" secondItem="XYy-jr-6sv" secondAttribute="trailing" id="eRH-ZP-2FA"/>
+                                <constraint firstItem="rWG-dT-Hi3" firstAttribute="top" secondItem="XYy-jr-6sv" secondAttribute="bottom" id="s8r-ng-xgE"/>
                                 <constraint firstItem="jpu-pK-nxR" firstAttribute="leading" secondItem="DlC-Fb-X5i" secondAttribute="leading" constant="8" id="ser-I4-Oxh"/>
                                 <constraint firstItem="rWG-dT-Hi3" firstAttribute="width" secondItem="DlC-Fb-X5i" secondAttribute="width" id="uRi-qj-1ge"/>
+                                <constraint firstAttribute="trailing" secondItem="jpu-pK-nxR" secondAttribute="trailing" constant="8" id="vEf-u3-gHa"/>
                                 <constraint firstItem="rWG-dT-Hi3" firstAttribute="leading" secondItem="DlC-Fb-X5i" secondAttribute="leading" id="yPV-he-ys7"/>
                             </constraints>
                         </customView>
@@ -100,7 +110,7 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="nAc-ib-V75" customClass="DeletableTableView" customModule="Ghostnote_Browser" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="224" height="254"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="224" height="0.0"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <size key="intercellSpacing" width="3" height="2"/>
                                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
@@ -162,6 +172,6 @@
         </customView>
     </objects>
     <resources>
-        <image name="Add Button" width="17" height="17"/>
+        <image name="NSAddTemplate" width="11" height="11"/>
     </resources>
 </document>

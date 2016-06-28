@@ -51,7 +51,7 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
     
     func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
 
-        return 30.0
+        return 25.0
     }
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {

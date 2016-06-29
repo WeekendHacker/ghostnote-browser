@@ -10,6 +10,7 @@
                 <outlet property="ghostnotesButton" destination="7b9-bd-oQZ" id="tt3-hr-U9H"/>
                 <outlet property="navView" destination="yLv-HR-lB4" id="g5f-sX-7SO"/>
                 <outlet property="notesButton" destination="sty-WD-ANQ" id="uSw-iv-V6X"/>
+                <outlet property="searchField" destination="kAs-e4-AG9" id="0Yb-Ru-dHq"/>
                 <outlet property="tasksButton" destination="Ghf-cK-mjZ" id="ZMy-jy-ly8"/>
                 <outlet property="view" destination="c22-O7-iKe" id="oud-D3-BLt"/>
             </connections>
@@ -28,21 +29,6 @@
                 <customView identifier="NavContentView" translatesAutoresizingMaskIntoConstraints="NO" id="Mzz-Rk-AFp">
                     <rect key="frame" x="66" y="0.0" width="493" height="280"/>
                 </customView>
-                <searchField identifier="SearchView" wantsLayer="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kAs-e4-AG9">
-                    <rect key="frame" x="415" y="288" width="134" height="22"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="22" id="qSO-Oj-yxk"/>
-                        <constraint firstAttribute="width" constant="134" id="wIf-IL-dMG"/>
-                    </constraints>
-                    <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="ArG-9G-eC7">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </searchFieldCell>
-                    <connections>
-                        <action selector="searchFieldGotText:" target="-2" id="lqz-E2-eDd"/>
-                    </connections>
-                </searchField>
                 <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="lLd-ZU-04Z">
                     <rect key="frame" x="0.0" y="277" width="559" height="5"/>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
@@ -110,6 +96,21 @@
                         <constraint firstAttribute="trailing" secondItem="sty-WD-ANQ" secondAttribute="trailing" constant="24" id="z82-sF-nRS"/>
                     </constraints>
                 </customView>
+                <searchField identifier="SearchView" wantsLayer="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kAs-e4-AG9">
+                    <rect key="frame" x="349" y="288" width="200" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="qSO-Oj-yxk"/>
+                        <constraint firstAttribute="width" constant="200" id="wIf-IL-dMG"/>
+                    </constraints>
+                    <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" alignment="left" usesSingleLineMode="YES" bezelStyle="round" id="ArG-9G-eC7">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </searchFieldCell>
+                    <connections>
+                        <action selector="searchFieldGotText:" target="-2" id="lqz-E2-eDd"/>
+                    </connections>
+                </searchField>
             </subviews>
             <constraints>
                 <constraint firstItem="EN4-yC-QlN" firstAttribute="top" secondItem="yLv-HR-lB4" secondAttribute="top" id="5tM-Ak-CoL"/>
@@ -128,7 +129,7 @@
                 <constraint firstItem="kAs-e4-AG9" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="9" id="tnM-KI-tXY"/>
                 <constraint firstAttribute="bottom" secondItem="Mzz-Rk-AFp" secondAttribute="bottom" id="yQL-5R-ZNb"/>
             </constraints>
-            <point key="canvasLocation" x="399.5" y="78.5"/>
+            <point key="canvasLocation" x="338.5" y="-35.5"/>
         </customView>
     </objects>
 </document>

@@ -25,9 +25,12 @@ extension  ButtonNavigable {
     }
 }
 
-class ButtonNavViewController: NSViewController, NSSearchFieldDelegate {
+class ButtonNavViewController: NSViewController {
 
-    @IBOutlet weak var searchField:NSSearchField?
+    @IBOutlet weak var searchField:NSSearchField? {
+        didSet {
+        }
+    }
     @IBOutlet weak var contentView:NSView?
     @IBOutlet weak var navView:NSView?
     
@@ -45,12 +48,66 @@ class ButtonNavViewController: NSViewController, NSSearchFieldDelegate {
         didSet {
 
             if let current = currentController {
-                searchField?.placeholderString = "Search \(current.title)"
-                
-                NSNotificationCenter.defaultCenter().postNotificationName("ControllerChanged", object: current.title)
+                if let title = current.title {
+                    
+                   
+                    switch title {
+                    case "Notes":
+                        searchField?.searchMenuTemplate = searchMenuForNotes()
+                    case "Tasks":
+                        searchField?.searchMenuTemplate = searchMenuForTasks()
+                    case "Ghostnotes":
+                        searchField?.searchMenuTemplate = searchMenuForGhostnotes()
+                    default:
+                        searchField?.searchMenuTemplate = nil
+                    }
+
+                    
+
+                    
+                    
+                    
+                    searchField?.placeholderString = "Search \(title)"
+                    NSNotificationCenter.defaultCenter().postNotificationName("ControllerChanged", object: title)
+
+                }
             }
 
         }
+    }
+    
+    
+    func searchMenuForNotes() -> NSMenu {
+        let notesMenu = NSMenu()
+        let noteTitleItem = NSMenuItem(title: "Title", action: nil, keyEquivalent: "")
+        
+        let noteTextItem = NSMenuItem(title: "Text", action: nil, keyEquivalent: "")
+        
+        notesMenu.addItem(noteTitleItem)
+        notesMenu.addItem(noteTextItem)
+        
+        return notesMenu
+    }
+    
+    func searchMenuForTasks() -> NSMenu {
+        
+        let tasksMenu = NSMenu()
+        let taskListItem = NSMenuItem(title: "List", action: nil, keyEquivalent: "")
+        let taskItem = NSMenuItem(title: "Task", action: nil, keyEquivalent: "")
+        tasksMenu.addItem(taskListItem)
+        tasksMenu.addItem(taskItem)
+        return tasksMenu
+    }
+    
+    func searchMenuForGhostnotes() -> NSMenu {
+        let ghostnotesMenu = NSMenu()
+        let appItem = NSMenuItem(title: "App", action: nil, keyEquivalent: "")
+        let docItem = NSMenuItem(title: "Document", action: nil, keyEquivalent: "")
+        let ghostnoteTextItem = NSMenuItem(title: "Text", action: nil, keyEquivalent: "")
+        ghostnotesMenu.addItem(appItem)
+        ghostnotesMenu.addItem(docItem)
+        ghostnotesMenu.addItem(ghostnoteTextItem)
+        return ghostnotesMenu
     }
     
     override func viewDidLoad() {

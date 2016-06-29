@@ -54,7 +54,6 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        view.autoresizingMask = [.ViewWidthSizable, .ViewHeightSizable]
         title = "Ghostnotes"
         splitView?.dividerStyle = .Thin
     }

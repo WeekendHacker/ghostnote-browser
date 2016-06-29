@@ -16,7 +16,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customView translatesAutoresizingMaskIntoConstraints="NO" id="c22-O7-iKe" customClass="NSVisualEffectView">
+        <customView identifier="NavVisualEffectView" translatesAutoresizingMaskIntoConstraints="NO" id="c22-O7-iKe" customClass="NSVisualEffectView">
             <rect key="frame" x="0.0" y="0.0" width="559" height="319"/>
             <subviews>
                 <box horizontalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="EN4-yC-QlN">
@@ -25,10 +25,10 @@
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <font key="titleFont" metaFont="system"/>
                 </box>
-                <customView translatesAutoresizingMaskIntoConstraints="NO" id="Mzz-Rk-AFp">
+                <customView identifier="NavContentView" translatesAutoresizingMaskIntoConstraints="NO" id="Mzz-Rk-AFp">
                     <rect key="frame" x="66" y="0.0" width="493" height="280"/>
                 </customView>
-                <searchField wantsLayer="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kAs-e4-AG9">
+                <searchField identifier="SearchView" wantsLayer="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kAs-e4-AG9">
                     <rect key="frame" x="415" y="288" width="134" height="22"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="22" id="qSO-Oj-yxk"/>
@@ -49,7 +49,7 @@
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <font key="titleFont" metaFont="system"/>
                 </box>
-                <customView translatesAutoresizingMaskIntoConstraints="NO" id="yLv-HR-lB4">
+                <customView identifier="NavButtonColumnView" translatesAutoresizingMaskIntoConstraints="NO" id="yLv-HR-lB4">
                     <rect key="frame" x="0.0" y="0.0" width="66" height="280"/>
                     <subviews>
                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7b9-bd-oQZ">
@@ -115,9 +115,7 @@
                 <constraint firstItem="EN4-yC-QlN" firstAttribute="top" secondItem="yLv-HR-lB4" secondAttribute="top" id="5tM-Ak-CoL"/>
                 <constraint firstItem="yLv-HR-lB4" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="39" id="AUC-jA-xXV"/>
                 <constraint firstAttribute="trailing" secondItem="lLd-ZU-04Z" secondAttribute="trailing" id="Cjt-M3-le0"/>
-                <constraint firstAttribute="trailing" secondItem="yLv-HR-lB4" secondAttribute="trailing" constant="493" id="E6j-JK-ZQ3"/>
                 <constraint firstItem="EN4-yC-QlN" firstAttribute="bottom" secondItem="yLv-HR-lB4" secondAttribute="bottom" id="GHI-ge-5Uh"/>
-                <constraint firstItem="Mzz-Rk-AFp" firstAttribute="top" secondItem="yLv-HR-lB4" secondAttribute="top" id="GJX-GR-i3F"/>
                 <constraint firstAttribute="trailing" secondItem="Mzz-Rk-AFp" secondAttribute="trailing" id="MX6-ci-SeM"/>
                 <constraint firstItem="Mzz-Rk-AFp" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="66" id="Z0O-as-SYc"/>
                 <constraint firstItem="yLv-HR-lB4" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="bFw-yu-2fV"/>

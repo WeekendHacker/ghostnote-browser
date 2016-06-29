@@ -37,8 +37,6 @@ class TaskListCell: NSTableCellView, NSTextFieldDelegate, SelectableCell {
                 }
             }
             editedField.editable = false
-            (editedField.superview as? SelectableCell)?.select(true)
-
         }
     }
     

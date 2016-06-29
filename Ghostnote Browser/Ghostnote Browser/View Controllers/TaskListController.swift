@@ -129,6 +129,8 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
                             tableView.scrollRowToVisible(row)
                             cell.select(true)
                             cell.textField?.enterEditing()
+                        }else {
+                            cell.select(false)
                         }
                     }
                 }

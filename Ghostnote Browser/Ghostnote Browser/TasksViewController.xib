@@ -202,7 +202,7 @@
                 <constraint firstItem="1RC-MK-LhA" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="bze-lY-Cpu"/>
                 <constraint firstAttribute="trailing" secondItem="1RC-MK-LhA" secondAttribute="trailing" id="hDa-gw-iJY"/>
             </constraints>
-            <point key="canvasLocation" x="116" y="294"/>
+            <point key="canvasLocation" x="127" y="174"/>
         </customView>
         <button verticalHuggingPriority="750" id="7mI-A8-qdp">
             <rect key="frame" x="0.0" y="0.0" width="82" height="32"/>

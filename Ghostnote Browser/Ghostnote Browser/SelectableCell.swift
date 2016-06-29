@@ -20,17 +20,14 @@ extension SelectableCell {
         
         if !(self is TaskCell) {
             if let superView = textField?.superview?.superview as? CustomRowView {
-               superView.selected = true
+               superView.selected = isSelected
             }
 
         }else {
             
             if let taskCell = self as? TaskCell {
-                if isSelected {
-                    taskCell.selected = true
-                }else {
-                    taskCell.selected = false
-                }
+                (taskCell.superview as? NSTableRowView)?.selected = isSelected
+                taskCell.selected = isSelected
             }
         }
        

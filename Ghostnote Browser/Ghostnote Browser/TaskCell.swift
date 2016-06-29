@@ -74,6 +74,13 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
         return true
     }
     
+    func control(control: NSControl, textShouldBeginEditing fieldEditor: NSText) -> Bool {
+        select(true)
+        return true
+    }
+    override func controlTextDidBeginEditing(obj: NSNotification) {
+        select(true)
+    }
     override func controlTextDidEndEditing(obj: NSNotification) {
         if let editedField = obj.object as? NSTextField {
             
@@ -84,11 +91,10 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
             }
             
             editedField.editable = false
-            (editedField.superview as? SelectableCell)?.select(true)
         }
     }
 
-    
+    // Drawing
     override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
         

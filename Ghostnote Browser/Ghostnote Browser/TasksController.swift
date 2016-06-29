@@ -19,7 +19,10 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
                                                          name: "DeletedTaskList",
                                                          object: nil)
         
-
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(handleTaskListRenamed(_:)),
+                                                         name: "TaskListRenamed",
+                                                         object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self,
                                                          selector: #selector(handleTaskDeleted),
@@ -31,10 +34,8 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
                                                          name: "TaskAdded",
                                                          object: nil)
         
-        NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: #selector(handleTaskListRenamed(_:)),
-                                                         name: "TaskListRenamed",
-                                                         object: nil)
+
+        
         NSNotificationCenter.defaultCenter().addObserver(self,
                                                          selector: #selector(handleTaskRenamed(_:)),
                                                          name: "TaskRenamed",
@@ -78,22 +79,21 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
     weak var tasksTableView:DeletableTableView? {
         didSet {
             if let tv = tasksTableView {
+                
                 tv.setDelegate(self)
                 tv.setDataSource(self)
                 tv.wantsLayer = true
                 tv.deleteDelegate = self
                 tv.selectionHighlightStyle = .None
                 tv.allowsTypeSelect = true
-                if let headerNib = NSNib(nibNamed:"HeaderCell", bundle: nil) {
-                    tv.registerNib(headerNib, forIdentifier: "HeaderCell")
-                }
+                
+                tv.target = self
+                tv.action = #selector(tvAction(_:))
                 
                 if let taskNib = NSNib(nibNamed: "TaskCell", bundle: nil) {
                     tv.registerNib(taskNib, forIdentifier: "TaskCell")
                 }
-                
-                tv.target = self
-                tv.action = #selector(tvAction(_:))
+
             }
         }
     }
@@ -172,7 +172,6 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
         }
     }
 
-    // notification handlers
     @IBAction func addTaskButtonClicked(sender:AnyObject) {
         if let tl = selectedTaskList {
             
@@ -180,10 +179,10 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
         }
     }
     
+    
     func handleTaskListRenamed(notif:NSNotification) {
         if let tl = selectedTaskList {
-            let view = tasksTableView?.viewAtColumn(0, row: 0, makeIfNecessary: false) as? HeaderCell
-            view?.title = tl.title
+            listTitleLabel?.stringValue = tl.title.withoutUniquePart()
         }
     }
     

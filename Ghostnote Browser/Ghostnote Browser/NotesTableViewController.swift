@@ -68,7 +68,6 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
         return view
     }
     
-
     func beginEditingForNewNote(note:Note)   {
         
         // should maybe get to a protocol and extension

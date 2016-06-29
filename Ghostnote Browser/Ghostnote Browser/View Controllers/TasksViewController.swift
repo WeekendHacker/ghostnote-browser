@@ -16,10 +16,13 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
     
     @IBOutlet weak var addTaskListButton:NSButton? {
         didSet {
-            let title = NSAttributedString(string: "Add List",
-                                           attributes: [NSFontSizeAttribute : 12.0])
-                                           
-            addTaskListButton?.attributedTitle = title
+           taskListController.addTaskListButton = addTaskListButton
+        }
+    }
+    
+    @IBOutlet weak var addTaskButton:NSButton? {
+        didSet {
+            taskController.addTaskButton = addTaskButton
         }
     }
     
@@ -31,6 +34,13 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
                 taskListController.taskListTableView = tv
                 taskListController.observer = self
            }
+        }
+    }
+    
+    
+    @IBOutlet weak var listTitleLabel:NSTextField? {
+        didSet {
+            taskController.listTitleLabel = listTitleLabel
         }
     }
     
@@ -53,6 +63,7 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
         super.viewDidAppear()
         splitView?.setPosition(160.0, ofDividerAtIndex: 0)
     }
+    
     // NSSplitViewDelegate
     
     func splitView(splitView: NSSplitView, constrainMinCoordinate proposedMinimumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
@@ -104,10 +115,8 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
     }
 
     
-    // Actions
-    @IBAction func addTaskListClicked(sender:AnyObject?) {
-        TaskListManager.shared.createTaskList("New Task List")
-    }
+
+  
 
     
     // TaskListControllerObserver

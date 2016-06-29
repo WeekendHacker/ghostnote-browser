@@ -19,10 +19,7 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
                                                          name: "DeletedTaskList",
                                                          object: nil)
         
-        NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: #selector(handleNewTaskAction),
-                                                         name: "NewTaskAction",
-                                                         object: nil)
+
         
         NSNotificationCenter.defaultCenter().addObserver(self,
                                                          selector: #selector(handleTaskDeleted),
@@ -45,11 +42,38 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
         
     }
     
+    weak var addTaskButton:NSButton? {
+        didSet {
+            let title = NSAttributedString(string: "Add Task",
+                                           attributes: [NSFontSizeAttribute : 12.0])
+            
+            addTaskButton?.attributedTitle = title
+            addTaskButton?.action = #selector(addTaskButtonClicked(_:))
+            addTaskButton?.target = self
+            addTaskButton?.enabled = false
+        }
+    }
+    
     weak var selectedTaskList:TaskList? {
         didSet {
+            if let list = selectedTaskList {
+                listTitleLabel?.stringValue = list.title.withoutUniquePart()
+                addTaskButton?.enabled = true
+            }else {
+                addTaskButton?.enabled = false
+                listTitleLabel?.stringValue = ""
+            }
+            
             tasksTableView?.reloadData()
         }
     }
+    
+    weak var listTitleLabel:NSTextField? {
+        didSet {
+            listTitleLabel?.stringValue = ""
+        }
+    }
+
     
     weak var tasksTableView:DeletableTableView? {
         didSet {
@@ -59,7 +83,7 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
                 tv.wantsLayer = true
                 tv.deleteDelegate = self
                 tv.selectionHighlightStyle = .None
-                
+                tv.allowsTypeSelect = true
                 if let headerNib = NSNib(nibNamed:"HeaderCell", bundle: nil) {
                     tv.registerNib(headerNib, forIdentifier: "HeaderCell")
                 }
@@ -76,10 +100,7 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
 
     // NSTableViewDatasource
     func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        if row == 0 {
-            return 30.0
-        }
-        return 50.0
+        return 30.0
     }
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
@@ -152,7 +173,7 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
     }
 
     // notification handlers
-    func handleNewTaskAction() {
+    @IBAction func addTaskButtonClicked(sender:AnyObject) {
         if let tl = selectedTaskList {
             
             tl.addTask("New Task")

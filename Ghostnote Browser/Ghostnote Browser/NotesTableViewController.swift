@@ -26,6 +26,7 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
                 tv.wantsLayer = true
                 tv.deleteDelegate = self
                 tv.selectionHighlightStyle = .Regular
+                tv.allowsTypeSelect = true
                 
                 if let noteCellNib = NSNib(nibNamed: "NoteCell", bundle: nil) {
                     tv.registerNib(noteCellNib, forIdentifier: "NoteCell")
@@ -41,6 +42,7 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
                                                                  selector: #selector(handleNoteAdded(_:)),
                                                                  name: "NoteAdded",
                                                                  object: nil)
+                
                 NSNotificationCenter.defaultCenter().addObserver(self,
                                                                  selector: #selector(handleNoteDeleted),
                                                                  name: "NoteDeleted",
@@ -96,7 +98,6 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
     }
     
     // Notifcation Handlers
-    
     func tableViewSelectionDidChange(notification: NSNotification) {
         NSNotificationCenter.defaultCenter().postNotificationName("SelectedNoteChanged", object: nil)
     }
@@ -121,7 +122,6 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
     
     // DeleteRowDelegate
     func deleteRow(row: Int) {
-        
 
         let noteToDelete = NoteManager.shared.notes.reverse()[row]
         var userInfo = Dictionary<String, AnyObject>()

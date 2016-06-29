@@ -26,7 +26,20 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
 
     var currentTaskList:TaskList? {
         didSet {
+
             NSNotificationCenter.defaultCenter().postNotificationName("CurrentTaskListChanged", object: currentTaskList)
+        }
+    }
+    
+    
+    weak var addTaskListButton:NSButton? {
+        didSet {
+            let title = NSAttributedString(string: "Add List",
+                                           attributes: [NSFontSizeAttribute : 12.0])
+            
+            addTaskListButton?.attributedTitle = title
+            addTaskListButton?.action = #selector(addTaskListButtonClicked(_:))
+            addTaskListButton?.target = self
         }
     }
     
@@ -37,7 +50,7 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
                 tv.setDataSource(self)
                 tv.wantsLayer = true
                 tv.selectionHighlightStyle = .Regular
-                
+                tv.allowsTypeSelect = true
                 tv.deleteDelegate = self
 
                 if let cellNib = NSNib(nibNamed: "TaskListCell", bundle: nil) {
@@ -50,6 +63,12 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
             }
         }
     }
+    
+    // Actions
+    @IBAction func addTaskListButtonClicked(sender:AnyObject?) {
+        TaskListManager.shared.createTaskList("New Task List")
+    }
+    
 
     // NSTableViewDatasource
     
@@ -85,11 +104,12 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
 
 
     func tableViewSelectionDidChange(notification: NSNotification) {
-        if let row = taskListTableView?.selectedRow {
+        if let row = taskListTableView?.selectedRow where row >= 0 {
             let selectedTaskList = TaskListManager.shared.taskLists[row]
             observer?.selectedList(selectedTaskList)
             currentTaskList = selectedTaskList
         }else {
+            observer?.selectedNoList()
             currentTaskList = nil
         }
     }

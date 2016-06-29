@@ -174,7 +174,6 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
                     
                     deleteVC.noBlock = {
                         self.dismissViewController(deleteVC)
-
                     }
                     
                     presentViewController(deleteVC,

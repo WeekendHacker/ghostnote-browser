@@ -34,10 +34,7 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
     
     weak var addTaskListButton:NSButton? {
         didSet {
-            let title = NSAttributedString(string: "Add List",
-                                           attributes: [NSFontSizeAttribute : 12.0])
-            
-            addTaskListButton?.attributedTitle = title
+
             addTaskListButton?.action = #selector(addTaskListButtonClicked(_:))
             addTaskListButton?.target = self
         }

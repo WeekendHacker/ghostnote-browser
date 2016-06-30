@@ -45,10 +45,7 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
     
     weak var addTaskButton:NSButton? {
         didSet {
-            let title = NSAttributedString(string: "Add Task",
-                                           attributes: [NSFontSizeAttribute : 12.0])
-            
-            addTaskButton?.attributedTitle = title
+
             addTaskButton?.action = #selector(addTaskButtonClicked(_:))
             addTaskButton?.target = self
             addTaskButton?.enabled = false

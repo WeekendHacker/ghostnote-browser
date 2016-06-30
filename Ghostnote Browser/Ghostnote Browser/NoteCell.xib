@@ -11,10 +11,10 @@
             <rect key="frame" x="0.0" y="0.0" width="262" height="32"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sk9-um-Gbj">
-                    <rect key="frame" x="6" y="7" width="4" height="19"/>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Sk9-um-Gbj">
+                    <rect key="frame" x="6" y="8" width="4" height="16"/>
                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" state="on" alignment="left" id="xOW-G4-Wj4">
-                        <font key="font" metaFont="systemThin" size="13"/>
+                        <font key="font" metaFont="system" size="12"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
                     </textFieldCell>

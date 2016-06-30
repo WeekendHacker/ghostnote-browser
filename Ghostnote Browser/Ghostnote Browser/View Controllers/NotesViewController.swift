@@ -16,12 +16,12 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
     @IBOutlet weak var addNoteButton:NSButton? {
         didSet {
             
-            let title = NSMutableAttributedString(string: "Add Note",
-                                                  attributes: [NSFontSizeAttribute : 12.0])
-            
-
-            
-            addNoteButton?.attributedTitle = title
+//            let title = NSMutableAttributedString(string: "Add Note",
+//                                                  attributes: [NSFontSizeAttribute : 12.0])
+//            
+//
+//            
+//            addNoteButton?.attributedTitle = title
             
         }
     }

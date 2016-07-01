@@ -124,7 +124,7 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
                     if let cellTaskList = cell.taskList {
                         if cellTaskList.id == newTaskList.id {
                             tableView.scrollRowToVisible(row)
-                            cell.select(true)
+                            tableView.selectRowIndexes(NSIndexSet(index:row), byExtendingSelection: false)
                             cell.textField?.enterEditing()
                         }else {
                             cell.select(false)

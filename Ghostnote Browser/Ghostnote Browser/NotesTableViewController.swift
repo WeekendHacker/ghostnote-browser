@@ -82,7 +82,8 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
                     if let cellNote = cell.note {
                         if cellNote.id == note.id {
                             tableView.scrollRowToVisible(row)
-                            cell.select(true)
+                            tableView.selectRowIndexes(NSIndexSet(index:row), byExtendingSelection: false)
+//                            cell.select(true)
                             cell.textField?.enterEditing()
                         }
                     }

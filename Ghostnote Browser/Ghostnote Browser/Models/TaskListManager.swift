@@ -12,10 +12,16 @@ import RealmSwift
 class TaskListManager: NSObject {
 
     static let shared = TaskListManager()
+    
+    let searchController = TasksSearchController()
+
     let db = try! Realm()
     
     var taskLists:Results<TaskList> {
         get {
+            if searchController.isSearching {
+                return searchController.results
+            }
             return db.objects(TaskList)
         }
     }

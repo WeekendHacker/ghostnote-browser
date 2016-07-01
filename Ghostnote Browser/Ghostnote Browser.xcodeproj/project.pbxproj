@@ -295,7 +295,6 @@
 			isa = PBXGroup;
 			children = (
 				D82F61B71D13C2F000721EB6 /* NSTextFieldExtensions.swift */,
-				D86A9FB91D148FCC00F6DFF9 /* CustomSplitView.swift */,
 				D803FEB71D21A5FD00360741 /* StringExtensions.swift */,
 				D803FEBD1D220E4400360741 /* NSTableViewExtensions.swift */,
 			);
@@ -359,6 +358,7 @@
 		D84F16DB1CC60E9C005612BB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D86A9FB91D148FCC00F6DFF9 /* CustomSplitView.swift */,
 				D8151CC51D028B1C00F04C24 /* Table Cells */,
 				D8151CC31D027F6A00F04C24 /* DeletableTableView.swift */,
 				D803FEB91D21C88100360741 /* CustomRowView.xib */,

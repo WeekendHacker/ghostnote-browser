@@ -65,7 +65,7 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
         let view = tableView.makeViewWithIdentifier("NoteCell", owner: nil) as? NoteCell
         
         view!.note = NoteManager.shared.notes.reverse()[row]
-        print("view textfield font = \(view!.textField?.font)")
+        print("note text is \(view!.note!.rawText())")
         return view
     }
     

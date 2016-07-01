@@ -28,5 +28,13 @@ class Note:Object {
         return NSURL(fileURLWithPath: self.filePath)
     }
     
+    func rawText() -> String {
+        let wrapper = NSFileWrapper(path: filePath)
+        if let attributedText = NSAttributedString(RTFDFileWrapper: wrapper!,
+                                                   documentAttributes: nil) {
+            return attributedText.string
+        }
+        return ""
+    }
     
 }

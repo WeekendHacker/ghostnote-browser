@@ -43,7 +43,7 @@ class NoteTextViewController: NSObject, NSTextViewDelegate {
         didSet {
             noteTextView?.delegate = self
             noteTextView?.wantsLayer = true
-            
+//            noteTextView?.richText = true
             noteTextView?.font = NSFont.systemFontOfSize(12.0)
         }
     }

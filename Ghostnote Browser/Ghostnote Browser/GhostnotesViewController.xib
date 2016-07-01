@@ -32,7 +32,7 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="5LJ-AF-fxE" userLabel="Apps Table View">
-                                                <rect key="frame" x="0.0" y="0.0" width="271" height="269"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="271" height="0.0"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <size key="intercellSpacing" width="3" height="2"/>
                                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
@@ -107,7 +107,7 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="iBq-wR-WSp" userLabel="Docs Table View">
-                                                <rect key="frame" x="0.0" y="0.0" width="271" height="269"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="271" height="0.0"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <size key="intercellSpacing" width="3" height="2"/>
                                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
@@ -178,20 +178,20 @@
                             <rect key="frame" x="548" y="0.0" width="273" height="271"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <subviews>
-                                <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HS3-XA-UR6" userLabel="Bordered Scroll View - Note Text View">
+                                <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HS3-XA-UR6" userLabel="Bordered Scroll View - Note Text View">
                                     <rect key="frame" x="0.0" y="0.0" width="273" height="271"/>
                                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="PG8-eH-a23">
-                                        <rect key="frame" x="1" y="1" width="256" height="269"/>
+                                        <rect key="frame" x="1" y="1" width="271" height="269"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <textView drawsBackground="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="e54-Cj-F06" userLabel="Note Text View">
-                                                <rect key="frame" x="0.0" y="0.0" width="256" height="269"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="271" height="269"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <size key="minSize" width="256" height="269"/>
+                                                <size key="minSize" width="271" height="269"/>
                                                 <size key="maxSize" width="463" height="10000000"/>
                                                 <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <size key="minSize" width="256" height="269"/>
+                                                <size key="minSize" width="271" height="269"/>
                                                 <size key="maxSize" width="463" height="10000000"/>
                                             </textView>
                                         </subviews>
@@ -201,7 +201,7 @@
                                         <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </scroller>
-                                    <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="VpB-Sx-QPq">
+                                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="VpB-Sx-QPq">
                                         <rect key="frame" x="257" y="1" width="15" height="269"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </scroller>

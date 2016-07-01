@@ -61,8 +61,13 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
     override func viewDidAppear() {
         super.viewDidAppear()
         appsTableViewController.reload()
+        moveDidvdersToDefaultPosition()
     }
 
+    func moveDidvdersToDefaultPosition() {
+        splitView?.setPosition(160.0, ofDividerAtIndex: 0)
+        splitView?.setPosition(320.0, ofDividerAtIndex: 1)
+    }
     
     override func updateViewConstraints() {
         super.updateViewConstraints()

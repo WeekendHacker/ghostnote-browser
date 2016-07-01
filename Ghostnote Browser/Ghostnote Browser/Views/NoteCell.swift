@@ -16,6 +16,7 @@ class NoteCell: NSTableCellView, NSTextFieldDelegate, SelectableCell {
             if let myNote = note {
                 textField?.stringValue = myNote.name.withoutUniquePart()
                 textField?.delegate = self
+                Swift.print(textField?.font!)
             }
         }
     }

@@ -113,9 +113,11 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
         if TaskListManager.shared.searchController.isSearching {
             let selectedList = TaskListManager.shared.searchController.results[row]
             TaskListManager.shared.deleteTaskList(selectedList.title)
+        }else {
+            let selectedList = TaskListManager.shared.taskLists.reverse()[row]
+            TaskListManager.shared.deleteTaskList(selectedList.title)
         }
-        let selectedList = TaskListManager.shared.taskLists.reverse()[row]
-        TaskListManager.shared.deleteTaskList(selectedList.title)
+       
     }
 
 

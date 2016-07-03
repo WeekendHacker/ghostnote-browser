@@ -103,11 +103,6 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
         NoteManager.shared.createNoteWithName("New Note <!\(uniquePart)>")
         notesTableView?.reloadData()
     }
-    
-    
-    // Delete confirmation
-    
-    
 
     // Setup
     func registerForNotifications() {
@@ -173,7 +168,6 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
                 }
 
             }
-            
         }
     }
 }

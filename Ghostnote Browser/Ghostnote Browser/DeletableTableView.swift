@@ -24,7 +24,8 @@ class DeletableTableView: NSTableView {
                 let selectionToDelete = selectedRow
                 deleteDelegate?.deleteRow(selectionToDelete)
             }
+        }else {
+            super.keyDown(theEvent)
         }
-        super.keyDown(theEvent)
     }
 }

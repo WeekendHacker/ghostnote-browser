@@ -203,4 +203,8 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
     func handleTaskRenamed(notification:NSNotification) {
         tasksTableView?.reloadData()
     }
+    
+    func handleTaskDeletionRequest(notif:NSNotification) {
+        
+    }
 }

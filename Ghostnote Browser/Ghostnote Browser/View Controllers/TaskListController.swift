@@ -177,4 +177,8 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
     func handleTaskListDeletion() {
         taskListTableView?.reloadData()
     }
+    
+    func handleTaskListDeleteRequest(notif:NSNotification) {
+        
+    }
 }

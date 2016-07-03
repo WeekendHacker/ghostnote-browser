@@ -44,9 +44,5 @@ class TasksSearchController: NSObject {
     
     var searchText:String = ""
     
-    var searchPredicate:NSPredicate {
-        get {
-            return NSPredicate(format: "title contains %@", argumentArray: [searchText])
-        }
-    }
+
 }

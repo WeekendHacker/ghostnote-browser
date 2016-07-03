@@ -55,8 +55,13 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
        
         title = "Tasks"
         NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: #selector(handleTaskDeleteRequest(_:)),
+                                                         selector: #selector(handleTaskListDeleteRequest(_:)),
                                                          name: "DeleteTaskListRequest",
+                                                         object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(handleTaskDeletionRequest),
+                                                         name: "DeleteTaskRequest",
                                                          object: nil)
         splitView?.dividerStyle = .Thin
     }
@@ -138,7 +143,7 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
     }
     
 
-    func handleTaskDeleteRequest(notif:NSNotification) {
+    func handleTaskListDeleteRequest(notif:NSNotification) {
         if let payload = notif.object as? Dictionary<String,AnyObject> {
             
             if let taskListToDelete = payload["taskListToDelete"] as? TaskList {
@@ -164,5 +169,39 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
             }
         }
 
+    }
+    
+    func handleTaskDeletionRequest(notif:NSNotification) {
+        
+        if let payload = notif.object as? Dictionary<String,AnyObject> {
+            if let hostingTaskCell = payload["hostingTaskCell"] as? TaskCell {
+                if let containingTaskList = payload["containingTaskList"] as? TaskList {
+                    if let taskToDelete = payload["taskToDelete"] as? Task {
+                        
+                        let deleteVC = ConfirmDeleteViewController()
+                        
+                        deleteVC.yesBlock = {
+                            containingTaskList.removeTask(taskToDelete)
+                            self.dismissViewController(deleteVC)
+                        }
+                        
+                        deleteVC.noBlock = {
+                            self.dismissViewController(deleteVC)
+                        }
+                        
+                        presentViewController(deleteVC,
+                                              asPopoverRelativeToRect: hostingTaskCell.bounds,
+                                              ofView: hostingTaskCell,
+                                              preferredEdge: .MaxX,
+                                              behavior: .Transient)
+                        
+                    }
+
+                    }
+            }
+
+        }
+        
+        
     }
 }

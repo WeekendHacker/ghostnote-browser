@@ -90,7 +90,6 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
                 if let taskNib = NSNib(nibNamed: "TaskCell", bundle: nil) {
                     tv.registerNib(taskNib, forIdentifier: "TaskCell")
                 }
-
             }
         }
     }
@@ -146,8 +145,13 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
             
             if let selectedTask = view?.task {
                 
+                var payload = Dictionary<String, AnyObject>()
+                payload["hostingTaskCell"] = view
+                payload["taskToDelete"] = selectedTask
                 if let taskList = selectedTaskList {
-                    taskList.removeTask(selectedTask)
+                    payload["containingTaskList"] = taskList
+                    NSNotificationCenter.defaultCenter().postNotificationName("DeleteTaskRequest",
+                                                                              object: payload)
                 }
             }
         }
@@ -176,6 +180,7 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
         }
     }
     
+    // Notification Handlers
     
     func handleTaskListRenamed(notif:NSNotification) {
         if let tl = selectedTaskList {
@@ -203,8 +208,5 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
     func handleTaskRenamed(notification:NSNotification) {
         tasksTableView?.reloadData()
     }
-    
-    func handleTaskDeletionRequest(notif:NSNotification) {
-        
-    }
+
 }

@@ -54,6 +54,7 @@ class GhostNotesAppTableViewController: NSObject , NSTableViewDelegate , NSTable
     }
     
     func refreshApps() {
+        print("refreshing Apps")
         apps = Array<App>()
 
         let bundleIDs = GhostNoteManager.shared.allAppBundleIDs()
@@ -110,6 +111,4 @@ class GhostNotesAppTableViewController: NSObject , NSTableViewDelegate , NSTable
             }
         }
     }
-    
-   
 }

@@ -10,20 +10,29 @@ import Cocoa
 import RealmSwift
 
 class GhostnotesSearchController: NSObject {
-    let db = try! Realm()
+    
+    let db:Realm
+    var appSupportDir = NSSearchPathForDirectoriesInDomains(.ApplicationSupportDirectory, .AllDomainsMask, true)
+    
+    override init() {
+        var  config = Realm.Configuration()
+        config.fileURL =  NSURL(fileURLWithPath: appSupportDir.first!).URLByAppendingPathComponent("com.ghostnoteapp.Ghostnote-Paddle/Default.realm")
+        db = try! Realm(configuration: config)
+    }
     
     var isSearching:Bool = false
     
-    var results:Results<GhostNote> {
+    var results:Array<GhostNote> {
         get {
-            return db.objects(GhostNote.self).filter(ghostNotePredicate)
-        }
-    }
-    
-    var ghostNotePredicate:NSPredicate {
-        get {
-            let predicate = NSPredicate(format: "title contains %@", argumentArray: [searchText])
-            return predicate
+            var sr = Array<GhostNote>()
+            
+            for gn in db.objects(GhostNote.self) {
+                if gn.rawText().containsString(searchText) {
+                    sr.append(gn)
+                }
+            }
+            
+            return sr
         }
     }
     

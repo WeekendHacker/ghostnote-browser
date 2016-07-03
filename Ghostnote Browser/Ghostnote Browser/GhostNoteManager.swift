@@ -13,10 +13,10 @@ import RealmSwift
 class GhostNoteManager: NSObject {
     
     static let shared = GhostNoteManager()
+    let searchController = GhostnotesSearchController()
     
     override init() {
         var  config = Realm.Configuration()
-//        config.deleteRealmIfMigrationNeeded = true //TODO remove this before release
         config.fileURL =  NSURL(fileURLWithPath: appSupportDir.first!).URLByAppendingPathComponent("com.ghostnoteapp.Ghostnote-Paddle/Default.realm")
         store = try! Realm(configuration: config)
     }
@@ -25,23 +25,19 @@ class GhostNoteManager: NSObject {
     
     var appSupportDir = NSSearchPathForDirectoriesInDomains(.ApplicationSupportDirectory, .AllDomainsMask, true)
     
-    var docsURL: NSURL {
+    var ghostNotes:Array<GhostNote> {
         get {
-            let path = appSupportDir.first!
             
-            return NSURL(fileURLWithPath: path).URLByAppendingPathComponent("com.ghostnoteapp.Ghostnote").URLByAppendingPathComponent("GhostNotes", isDirectory: true)
-        }
-    }
-    
-    var ghostNotes:Results<GhostNote> {
-        get {
-            return store.objects(GhostNote)
+            if searchController.isSearching {
+                return searchController.results
+            }
+            return Array<GhostNote>(store.objects(GhostNote))
         }
     }
     
     func allAppBundleIDs() -> Array<String> {
         var ids = Array<String>()
-        for id in store.objects(GhostNote) {
+        for id in ghostNotes {
             if !ids.contains(id.appBundleID) {
                 ids.append(id.appBundleID)
             }
@@ -53,7 +49,7 @@ class GhostNoteManager: NSObject {
         
         var notes = Array<GhostNote>()
         
-        for note in store.objects(GhostNote) {
+        for note in ghostNotes {
             if note.appBundleID == bundleID {
                 if !note.isAppNote() {
                                         
@@ -67,7 +63,7 @@ class GhostNoteManager: NSObject {
     
     func appNoteForApp(bundleID:String) -> GhostNote? {
         
-        for note in store.objects(GhostNote) {
+        for note in ghostNotes {
             if note.appBundleID == bundleID {
                 if note.docID == bundleID {
                     return note
@@ -75,110 +71,5 @@ class GhostNoteManager: NSObject {
             }
         }
         return nil
-    }
-    
-    
-    // file methods
-    
-    private func appcontainerURLForBundleID(bundleID:String) -> NSURL {
-        let name = AppNameProvider.displayNameForBundleID(bundleID)
-        return docsURL.URLByAppendingPathComponent(name, isDirectory: true)
-    }
-    
-    private func createAppContainerFolderFor(bundleID:String) {
-        
-        let containerURL = appcontainerURLForBundleID(bundleID)
-        
-        if !NSFileManager.defaultManager().fileExistsAtPath(containerURL.path!) {
-            do {
-                try NSFileManager.defaultManager().createDirectoryAtURL(containerURL,
-                                                                        withIntermediateDirectories: true,
-                                                                        attributes: nil)
-            }
-            catch {
-                print(error)
-            }
-            
-        }
-    }
-    
-    private func createFileFor(bundleID:String, docID:String, content:NSAttributedString) -> NSURL {
-        
-        createAppContainerFolderFor(bundleID)
-        
-        
-        let docIDtoUse = docID.stringByReplacingOccurrencesOfString("/", withString: " ")
-        
-        let fileURL = appcontainerURLForBundleID(bundleID).URLByAppendingPathComponent(docIDtoUse, isDirectory: false).URLByAppendingPathExtension("rtfd")
-        
-        if docIDtoUse.isEmpty {
-            print("empty docID for \(bundleID)")
-            
-        }
-        
-        do  {
-            
-            let wrapper = try  content.fileWrapperFromRange(NSRange(location: 0, length: content.length), documentAttributes: [NSDocumentTypeDocumentAttribute : NSRTFTextDocumentType])
-            
-            do {
-                try wrapper.writeToURL(fileURL, options: .Atomic, originalContentsURL: nil)
-            }
-            catch{
-                print(error)
-            }
-        }
-        catch {
-            print(error)
-        }
-        
-        return fileURL
-    }
-    // kruft
-    
-    //    func createNote(bundleID:String, docID:String, content:NSAttributedString?) {
-    //        print("Creating note for \(bundleID), \(docID), content \(content)")
-    //        // attributes should come from somehwere else!
-    //
-    //        if docID.isEmpty {
-    //            return
-    //        }
-    //
-    //        let seed = content ?? NSAttributedString(string: "", attributes: nil)
-    //
-    //        let fileURL = createFileFor(bundleID, docID:docID, content:seed)
-    //        let note = GhostNote()
-    //
-    //        // this should maybe bail if the file cant be created
-    //
-    //        do {
-    //            try store.write({
-    //                note.appBundleID = bundleID
-    //                note.docID = docID
-    //                note.filePath = fileURL.path!
-    //                store.add(note)
-    //            })
-    //        }
-    //        catch {
-    //            print(error)
-    //        }
-    //    }
-    //
-    //    func deleteNote(note:GhostNote) {
-    //
-    //        // this shouldmaybe bail if file cant be created
-    //        removeFileForNote(note.appBundleID, docID: note.docID)
-    //
-    //        do {
-    //            try store.write({
-    //                store.delete(note)
-    //            })
-    //        }
-    //        catch {
-    //            print(error)
-    //        }
-    //    }
-
-    private func removeFileForNote(bundleID:String, docID:String) {
-        
     }
 }

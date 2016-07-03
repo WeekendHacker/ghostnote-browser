@@ -46,17 +46,6 @@ class ButtonNavViewController: NSViewController {
             if let current = currentController {
                 if let title = current.title {
                    
-//                    switch title {
-//                    case "Notes":
-//                        searchField?.searchMenuTemplate = searchMenuForNotes()
-//                    case "Tasks":
-//                        searchField?.searchMenuTemplate = searchMenuForTasks()
-//                    case "Ghostnotes":
-//                        searchField?.searchMenuTemplate = searchMenuForGhostnotes()
-//                    default:
-//                        searchField?.searchMenuTemplate = nil
-//                    }
-                    
                     searchField?.placeholderString = "Search \(title)"
                     NSNotificationCenter.defaultCenter().postNotificationName("ControllerChanged", object: title)
 
@@ -151,8 +140,13 @@ class ButtonNavViewController: NSViewController {
                 tasksController.taskListTableView?.reloadData()
                 
             }else if currentController == ghostnotesController {
-                ghostnotesController.appsTableView?.reloadData()
-                ghostnotesController.docsTableView?.reloadData()
+                
+                GhostNoteManager.shared.searchController.isSearching = !sf.stringValue.isEmpty
+                GhostNoteManager.shared.searchController.searchText = sf.stringValue
+                
+                ghostnotesController.appsTableViewController.reload()
+                ghostnotesController.docsTableViewController.reload()
+                
             }
 
         }

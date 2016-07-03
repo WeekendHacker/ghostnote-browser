@@ -11,6 +11,7 @@ import RealmSwift
 
 class TasksSearchController: NSObject {
 
+   
     let db = try! Realm()
     
     var isSearching:Bool = false

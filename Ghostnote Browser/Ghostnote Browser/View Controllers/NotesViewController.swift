@@ -13,14 +13,7 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
     var notesTableController = NotesTableViewController()
     var noteTextViewController:NoteTextViewController = NoteTextViewController()
     
-    @IBOutlet weak var addNoteButton:NSButton? {
-        didSet {
-            
-
-            
-        }
-    }
-    
+    @IBOutlet weak var addNoteButton:NSButton?    
     @IBOutlet weak var splitView:CustomSplitView?
     
     @IBOutlet var noteTextView:NSTextView?

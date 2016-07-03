@@ -80,11 +80,24 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
     }
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
+        
+        if TaskListManager.shared.searchController.isSearching {
+            let count = TaskListManager.shared.searchController.results.count
+            return count
+        }
         let count = TaskListManager.shared.taskLists.count
         return count
     }
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        
+        if TaskListManager.shared.searchController.isSearching {
+            let taskList = TaskListManager.shared.searchController.results[row]
+            
+            let view = taskListTableView?.makeViewWithIdentifier("TaskListCell", owner: nil) as? TaskListCell
+            view?.taskList = taskList
+            return view
+        }
         
         let taskList = TaskListManager.shared.taskLists.reverse()[row]
         
@@ -95,6 +108,11 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
 
     // DeleteRowDelegate
     func deleteRow(row: Int) {
+        
+        if TaskListManager.shared.searchController.isSearching {
+            let selectedList = TaskListManager.shared.searchController.results[row]
+            TaskListManager.shared.deleteTaskList(selectedList.title)
+        }
         let selectedList = TaskListManager.shared.taskLists.reverse()[row]
         TaskListManager.shared.deleteTaskList(selectedList.title)
     }
@@ -102,9 +120,17 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
 
     func tableViewSelectionDidChange(notification: NSNotification) {
         if let row = taskListTableView?.selectedRow where row >= 0 {
+            
+            if TaskListManager.shared.searchController.isSearching {
+                let selectedTaskList = TaskListManager.shared.searchController.results[row]
+                observer?.selectedList(selectedTaskList)
+                currentTaskList = selectedTaskList
+            }
+            
             let selectedTaskList = TaskListManager.shared.taskLists[row]
             observer?.selectedList(selectedTaskList)
             currentTaskList = selectedTaskList
+            
         }else {
             observer?.selectedNoList()
             currentTaskList = nil

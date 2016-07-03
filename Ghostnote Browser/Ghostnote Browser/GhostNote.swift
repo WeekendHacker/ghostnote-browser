@@ -27,4 +27,22 @@ class GhostNote: Object {
     func isAppNote() -> Bool {
         return appBundleID == docID
     }
+    
+    func rawText() -> String {
+        if let url = urlForFilePath() {
+            do {
+                let wrapper = try NSFileWrapper(URL: url, options: NSFileWrapperReadingOptions.Immediate)
+                if let attributedText = NSAttributedString(RTFDFileWrapper: wrapper,
+                                                           documentAttributes: nil) {
+                    return attributedText.string
+                }
+            }
+            catch {
+                print(error)
+            }
+        }
+        return ""
+    }
+
+    
 }

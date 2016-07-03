@@ -15,19 +15,21 @@ class NoteSearchController: NSObject {
     
     var isSearching:Bool = false
     
-    var results:Results<Note> {
+    var results:Array<Note> {
         get {
-            return db.objects(Note.self).filter(noteNamePredicate)
+            var sr = Array<Note>()
+            
+            for note in db.objects(Note.self) {
+                
+                if note.rawText().containsString(searchText) {
+                    sr.append(note)
+                }
+            }
+            return sr
         }
     }
     
-    var noteNamePredicate:NSPredicate {
-        get {
-            let predicate = NSPredicate(format: "name contains %@", argumentArray: [searchText])
-
-            return predicate
-        }
-    }
+    
     
     var searchText:String = ""
 }

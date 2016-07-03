@@ -17,8 +17,14 @@ class NoteNameValidator: NSObject, NamedItemValidator {
         
         var exists = false
         // unique name check
-        let predicate = NSPredicate(format: "name == %@", argumentArray: [name])
-        if (NoteManager.shared.notes.filter(predicate).count > 0) {
+        let notesNamedName = NoteManager.shared.notes.filter { (note) -> Bool in
+            if note.name == name {
+                return true
+            }
+            return false
+        }
+        
+        if (notesNamedName.count > 0) {
             exists = true
         }
         

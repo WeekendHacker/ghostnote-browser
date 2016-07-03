@@ -136,14 +136,14 @@ class ButtonNavViewController: NSViewController {
         if let sf = sender as? NSSearchField {
             if currentController == notesController {
                 
-                NoteManager.shared.searchController.isSearching = true
+                NoteManager.shared.searchController.isSearching = !sf.stringValue.isEmpty
                 NoteManager.shared.searchController.searchText = sf.stringValue
                 
                 notesController.notesTableView?.reloadData()
                 
             }else if currentController == tasksController  {
                 
-                TaskListManager.shared.searchController.isSearching = true
+                TaskListManager.shared.searchController.isSearching = !sf.stringValue.isEmpty
                 TaskListManager.shared.searchController.searchText = sf.stringValue
                 
                 tasksController.taskListTableView?.reloadData()

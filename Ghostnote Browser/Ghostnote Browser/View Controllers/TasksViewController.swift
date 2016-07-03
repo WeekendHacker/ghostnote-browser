@@ -13,7 +13,6 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
     var taskListController = TaskListController()
     var taskController = TasksController()
     
-    
     @IBOutlet weak var addTaskListButton:NSButton? {
         didSet {
            taskListController.addTaskListButton = addTaskListButton
@@ -55,7 +54,10 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
         super.viewDidLoad()
        
         title = "Tasks"
-        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(handleTaskDeleteRequest(_:)),
+                                                         name: "DeleteTaskListRequest",
+                                                         object: nil)
         splitView?.dividerStyle = .Thin
     }
     
@@ -114,11 +116,6 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
         }
     }
 
-    
-
-  
-
-    
     // TaskListControllerObserver
     
     func selectedList(taskList: TaskList) {
@@ -141,4 +138,31 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
     }
     
 
+    func handleTaskDeleteRequest(notif:NSNotification) {
+        if let payload = notif.object as? Dictionary<String,AnyObject> {
+            
+            if let taskListToDelete = payload["taskListToDelete"] as? TaskList {
+                if let hostingNoteCell = payload["hostingTaskListCell"] as? TaskListCell {
+                    
+                    let deleteVC = ConfirmDeleteViewController()
+                    
+                    deleteVC.yesBlock = {
+                        TaskListManager.shared.deleteTaskList(taskListToDelete.title)
+                        self.dismissViewController(deleteVC)
+                    }
+                    
+                    deleteVC.noBlock = {
+                        self.dismissViewController(deleteVC)
+                    }
+                    
+                    presentViewController(deleteVC,
+                                          asPopoverRelativeToRect: hostingNoteCell.bounds,
+                                          ofView: hostingNoteCell,
+                                          preferredEdge: .MaxX,
+                                          behavior: .Transient)
+                }
+            }
+        }
+
+    }
 }

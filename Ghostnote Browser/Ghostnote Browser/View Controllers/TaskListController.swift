@@ -109,15 +109,25 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
     
     // DeleteRowDelegate
     func deleteRow(row: Int) {
-        
+        let selectedList:TaskList
+
         if TaskListManager.shared.searchController.isSearching {
-            let selectedList = TaskListManager.shared.searchController.results[row]
-            TaskListManager.shared.deleteTaskList(selectedList.title)
+            
+            selectedList = TaskListManager.shared.searchController.results[row]
+            
         }else {
-            let selectedList = TaskListManager.shared.taskLists.reverse()[row]
-            TaskListManager.shared.deleteTaskList(selectedList.title)
+            selectedList = TaskListManager.shared.taskLists.reverse()[row]
         }
-       
+        
+        let hostingCell =  taskListTableView?.viewAtColumn(0, row: row, makeIfNecessary: false)
+        
+        var payload = Dictionary<String, AnyObject>()
+        
+        payload["taskListToDelete"] = selectedList
+        payload["hostingTaskListCell"] = hostingCell
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("DeleteTaskListRequest", object: payload)
+
     }
 
 
@@ -176,9 +186,5 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
     
     func handleTaskListDeletion() {
         taskListTableView?.reloadData()
-    }
-    
-    func handleTaskListDeleteRequest(notif:NSNotification) {
-        
     }
 }

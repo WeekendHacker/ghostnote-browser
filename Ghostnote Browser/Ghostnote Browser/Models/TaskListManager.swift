@@ -17,12 +17,12 @@ class TaskListManager: NSObject {
 
     let db = try! Realm()
     
-    var taskLists:Results<TaskList> {
+    var taskLists:Array<TaskList> {
         get {
             if searchController.isSearching {
                 return searchController.results
             }
-            return db.objects(TaskList)
+            return Array<TaskList>(db.objects(TaskList))
         }
     }
     

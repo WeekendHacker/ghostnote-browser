@@ -85,6 +85,7 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
             let count = TaskListManager.shared.searchController.results.count
             return count
         }
+        
         let count = TaskListManager.shared.taskLists.count
         return count
     }
@@ -105,7 +106,7 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
         view?.taskList = taskList
         return view
     }
-
+    
     // DeleteRowDelegate
     func deleteRow(row: Int) {
         
@@ -125,12 +126,12 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
                 let selectedTaskList = TaskListManager.shared.searchController.results[row]
                 observer?.selectedList(selectedTaskList)
                 currentTaskList = selectedTaskList
+            }else {
+                let selectedTaskList = TaskListManager.shared.taskLists[row]
+                observer?.selectedList(selectedTaskList)
+                currentTaskList = selectedTaskList
             }
-            
-            let selectedTaskList = TaskListManager.shared.taskLists[row]
-            observer?.selectedList(selectedTaskList)
-            currentTaskList = selectedTaskList
-            
+
         }else {
             observer?.selectedNoList()
             currentTaskList = nil

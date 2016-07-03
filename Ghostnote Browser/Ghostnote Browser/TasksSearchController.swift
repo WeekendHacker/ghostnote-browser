@@ -16,19 +16,37 @@ class TasksSearchController: NSObject {
     
     var isSearching:Bool = false
     
-    var results:Results<TaskList> {
+    var results:Array<TaskList> {
         get {
-            return db.objects(TaskList.self).filter(taskListNamePredicate)
-        }
-    }
-    
-    var taskListNamePredicate:NSPredicate {
-        get {
-            let predicate = NSPredicate(format: "title contains %@", argumentArray: [searchText])
+
+            let taskLists = Array<TaskList>(db.objects(TaskList.self))
             
-            return predicate
+            let foo = taskLists.filter { (taskList) -> Bool in
+                
+                let filteredTasks = taskList.tasks.filter({ (task) -> Bool in
+                    print(task.title)
+                    print("search text is \(searchText)")
+                    
+                    if task.title.containsString(searchText) {
+                        print(task.title)
+                        return true
+                    }
+                    return false
+                })
+                if filteredTasks.count > 0 {
+                    return true
+                }
+                return false
+            }
+            return foo
         }
     }
     
     var searchText:String = ""
+    
+    var searchPredicate:NSPredicate {
+        get {
+            return NSPredicate(format: "title contains %@", argumentArray: [searchText])
+        }
+    }
 }

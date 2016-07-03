@@ -145,7 +145,7 @@ class ButtonNavViewController: NSViewController {
                 
                 TaskListManager.shared.searchController.isSearching = !sf.stringValue.isEmpty
                 TaskListManager.shared.searchController.searchText = sf.stringValue
-                
+//                print(TaskListManager.shared.searchController.searchText)
                 tasksController.taskListTableView?.reloadData()
                 
             }else if currentController == ghostnotesController {

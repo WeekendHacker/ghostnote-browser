@@ -41,6 +41,7 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
     override func viewDidAppear() {
         super.viewDidAppear()
         splitView?.setPosition(160.0, ofDividerAtIndex: 0)
+        selectFirstNote()
     }
 
     override func updateViewConstraints() {
@@ -83,6 +84,14 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
         }
     }
     
+    
+    // foo
+    func selectFirstNote() {
+        if NoteManager.shared.notes.count > 0 {
+            notesTableView?.selectRowIndexes(NSIndexSet(index: 0), byExtendingSelection: false)
+            self.view.window?.makeFirstResponder(noteTextView)
+        }
+    }
     
     // NSSplitViewDelegate
     
@@ -127,7 +136,7 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
     
     // handlers
     func selectedNoteChanged(notif:NSNotification) {
-        
+        print("notes tv selection changed")
         if notesTableView!.hasSelection() {
             if let row = notesTableView?.selectedRow {
                 let view = notesTableView?.viewAtColumn(0, row: row, makeIfNecessary: false) as? NoteCell

@@ -69,8 +69,14 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
     override func viewDidAppear() {
         super.viewDidAppear()
         splitView?.setPosition(160.0, ofDividerAtIndex: 0)
+        selectFirstTaskList()
     }
     
+    func selectFirstTaskList() {
+        if (TaskListManager.shared.taskLists.count > 0) {
+            taskListTableView?.selectRowIndexes(NSIndexSet(index:0), byExtendingSelection: false)
+        }
+    }
     // NSSplitViewDelegate
     
     func splitView(splitView: NSSplitView, constrainMinCoordinate proposedMinimumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {

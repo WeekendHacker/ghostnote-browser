@@ -139,7 +139,6 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
             CGContextStrokePath(ctx)
             
             
-            //
             // start at origin
             CGContextMoveToPoint (ctx, CGRectGetMinX(rect), CGRectGetMinY(rect));
             
@@ -152,18 +151,7 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
             // add top edge
             CGContextAddLineToPoint (ctx, CGRectGetMinX(rect), CGRectGetMaxY(rect));
             
-            //
-//            // start at origin
-//            CGContextMoveToPoint (ctx, CGRectGetMinX(rect) + 2.0, CGRectGetMinY(rect) + 2.0);
-//            
-//            // add bottom edge
-//            CGContextAddLineToPoint (ctx, CGRectGetMaxX(rect) - 8.0, CGRectGetMinY(rect) + 2.0);
-//            
-//            // add right edge
-//            CGContextAddLineToPoint (ctx, CGRectGetMaxX(rect) - 8.0, CGRectGetMaxY(rect) - 2.0);
-//            
-//            // add top edge
-//            CGContextAddLineToPoint (ctx, CGRectGetMinX(rect) + 2.0, CGRectGetMaxY(rect) - 2.0);
+
             CGContextClosePath(ctx)
             CGContextFillPath(ctx)
         }

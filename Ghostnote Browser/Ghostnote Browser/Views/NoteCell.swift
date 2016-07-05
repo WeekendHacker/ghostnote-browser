@@ -16,9 +16,7 @@ class NoteCell: NSTableCellView, NSTextFieldDelegate, SelectableCell {
             if let myNote = note {
                 textField?.stringValue = myNote.name.withoutUniquePart()
                 textField?.delegate = self
-                Swift.print("note set")
                 textField?.font = NSFont(name: "HelveticaNeue", size: 12.0)
-                Swift.print(textField?.font!)
             }
         }
     }

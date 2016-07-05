@@ -53,7 +53,6 @@ class NoteTextViewController: NSObject, NSTextViewDelegate {
         if notification.object as? NSTextView == noteTextView {
             if let note = currentNote {
                 if !note.invalidated {
-                    print(noteTextView?.font)
                     noteTextView!.writeRTFDToFile(note.filePath, atomically: true)
                 }
             }

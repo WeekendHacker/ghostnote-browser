@@ -17,18 +17,8 @@ class DocCell: NSTableCellView, SelectableCell {
                 textField?.stringValue = myDoc.note.docID
                 toolTip = myDoc.note.docID
                 imageView?.image = DocumentIconProvider.iconImageForDocumentPath(myDoc.path)
+                textField?.font = NSFont(name: "HelveticaNeue", size: 12.0)
             }
         }
     }
-    
-    override var backgroundStyle: NSBackgroundStyle {
-        didSet {
-            if self.backgroundStyle == .Light {
-                self.textField?.textColor = NSColor.controlTextColor()
-            } else if self.backgroundStyle == .Dark {
-                self.textField?.textColor = NSColor.alternateSelectedControlTextColor()
-            }
-        }
-    }
-    
 }

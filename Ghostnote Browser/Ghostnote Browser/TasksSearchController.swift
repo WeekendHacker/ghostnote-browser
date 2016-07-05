@@ -24,9 +24,7 @@ class TasksSearchController: NSObject {
             let foo = taskLists.filter { (taskList) -> Bool in
                 
                 let filteredTasks = taskList.tasks.filter({ (task) -> Bool in
-                    print(task.title)
-                    print("search text is \(searchText)")
-                    
+
                     if task.title.containsString(searchText) {
                         print(task.title)
                         return true

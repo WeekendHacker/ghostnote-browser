@@ -17,17 +17,10 @@ class AppCell: NSTableCellView, SelectableCell {
                 textField?.stringValue = AppNameProvider.displayNameForBundleID(myApp.bundleID)
                 toolTip = myApp.bundleID
                 imageView?.image = AppIconProvider.iconImagefor(myApp.bundleID)
+                textField?.font = NSFont(name: "HelveticaNeue", size: 12.0)
+
             }
         }
     }
     
-    override var backgroundStyle: NSBackgroundStyle {
-        didSet {
-            if self.backgroundStyle == .Light {
-                self.textField?.textColor = NSColor.controlTextColor()
-            } else if self.backgroundStyle == .Dark {
-                self.textField?.textColor = NSColor.alternateSelectedControlTextColor()
-            }
-        }
-    }
 }

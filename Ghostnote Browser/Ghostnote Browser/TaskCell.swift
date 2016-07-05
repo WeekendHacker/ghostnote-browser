@@ -114,38 +114,12 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
             let boxLeft:CGFloat = 2.0
 
             let boxFillcolor = NSColor.whiteColor().CGColor
-            
-            if selected {
-                CGContextSetStrokeColorWithColor(ctx, selectedBorderColor)
-            }else {
-                CGContextSetStrokeColorWithColor(ctx, borderColor)
-            }
-            
+
             CGContextSetFillColorWithColor(ctx, boxFillcolor)
             let origin = CGPoint(x: boxLeft, y: insetDistance)
             let size = CGSize(width: width - boxLeft, height: height - doubleInset)
             let rect = CGRect(origin: origin, size: size)
-            
-            //
-            CGContextSetLineWidth(ctx, 1.0)
-            
-            // start at origin
-            CGContextMoveToPoint (ctx, CGRectGetMinX(rect), CGRectGetMinY(rect));
-            
-            // add bottom edge
-            CGContextAddLineToPoint (ctx, CGRectGetMaxX(rect) - 8.0, CGRectGetMinY(rect));
-            
-            // add right edge
-            CGContextAddLineToPoint (ctx, CGRectGetMaxX(rect) - 8.0, CGRectGetMaxY(rect));
-                
-                // add top edge
-            CGContextAddLineToPoint (ctx, CGRectGetMinX(rect), CGRectGetMaxY(rect));
-                
-            // add left edge and close
-            CGContextClosePath (ctx);
-            CGContextStrokePath(ctx)
-            
-            
+
             // start at origin
             CGContextMoveToPoint (ctx, CGRectGetMinX(rect), CGRectGetMinY(rect));
             

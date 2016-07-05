@@ -9,7 +9,7 @@
 import Cocoa
 
 class GhostnotesViewController: NSViewController, ButtonNavigable,
-                                GhostNotesAppTableViewControllerObserver, GhostNotesDocTableViewControllerObserver {
+                                GhostNotesAppTableViewControllerObserver, GhostNotesDocTableViewControllerObserver, InterTableKeyboardNavigationDelegate {
 
     var appsTableViewController = GhostNotesAppTableViewController()
     var docsTableViewController = GhostNotesDocTableViewController()
@@ -28,25 +28,28 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
     }
     
     
-    @IBOutlet weak var appsTableView:NSTableView? {
+    @IBOutlet weak var appsTableView:DeletableTableView? {
         didSet {
             if let tv = appsTableView {
                 appsTableViewController.appsTableView = tv
                 appsTableViewController.observer = self
                 tv.wantsLayer = true
+                tv.keyboardDelegate = self
             }
         }
     }
     
-    @IBOutlet weak var docsTableView:NSTableView? {
+    @IBOutlet weak var docsTableView:DeletableTableView? {
         didSet {
             if let tv = docsTableView {
                 docsTableViewController.docsTableView = tv
                 docsTableViewController.observer = self
                 tv.wantsLayer = true
+                tv.keyboardDelegate = self
             }
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Ghostnotes"
@@ -59,6 +62,7 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
         moveDidvdersToDefaultPosition()
     }
 
+    
     func moveDidvdersToDefaultPosition() {
         splitView?.setPosition(160.0, ofDividerAtIndex: 0)
         splitView?.setPosition(320.0, ofDividerAtIndex: 1)
@@ -105,6 +109,22 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
 
     }
     
+    
+    // Selection automation 
+    
+    func selectFirstApp() {
+        print("select apps")
+        appsTableView?.selectRowIndexes(NSIndexSet(index:0), byExtendingSelection: false)
+        appsTableView?.window?.makeFirstResponder(appsTableView)
+
+    }
+    
+    func selectFirstDoc() {
+        print("select docs")
+        docsTableView?.selectRowIndexes(NSIndexSet(index:0), byExtendingSelection: false)
+        docsTableView?.window?.makeFirstResponder(docsTableView)
+    }
+    
     // GhostNotesAppTableViewControllerObserver
     func selectedApp(app: App) {
         noteTextViewController.currentNote = app.note
@@ -124,5 +144,19 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
     
     func selectedNoNote() {
         noteTextViewController.currentNote = nil
+    }
+    
+    // InterTableKeyboardNavigationDelegate
+    
+    func leftArrow() {
+        if appsTableViewController.apps.count > 0 {
+            selectFirstApp()
+        }
+    }
+    
+    func rightArrow() {
+        if docsTableViewController.ghostnotes.count > 0 {
+            selectFirstDoc()
+        }
     }
 }

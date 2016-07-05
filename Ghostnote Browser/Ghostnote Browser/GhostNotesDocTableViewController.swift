@@ -37,9 +37,11 @@ class GhostNotesDocTableViewController: NSObject, NSTableViewDelegate, NSTableVi
                 if let nib =  NSNib(nibNamed: "DocCell",bundle: nil) {
                     tv.registerNib(nib, forIdentifier: "DocCell")
                 }
+                if let rowViewNib = NSNib(nibNamed: "CustomRowView", bundle: nil) {
+                    tv.registerNib(rowViewNib, forIdentifier: "CustomRowView")
+                }
                 
                 tv.wantsLayer = true
-                tv.backgroundColor = NSColor.clearColor()
 
             }
         }
@@ -59,6 +61,15 @@ class GhostNotesDocTableViewController: NSObject, NSTableViewDelegate, NSTableVi
     
     func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
         return 30.0
+    }
+    
+    
+    func tableView(tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
+        if let rv = tableView.makeViewWithIdentifier("CustomRowView", owner: nil) as? CustomRowView {
+            rv.forTasks = false
+            return rv
+        }
+        return nil
     }
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {

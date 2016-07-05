@@ -18,7 +18,6 @@ class AppCell: NSTableCellView, SelectableCell {
                 toolTip = myApp.bundleID
                 imageView?.image = AppIconProvider.iconImagefor(myApp.bundleID)
                 textField?.font = NSFont(name: "HelveticaNeue", size: 12.0)
-
             }
         }
     }

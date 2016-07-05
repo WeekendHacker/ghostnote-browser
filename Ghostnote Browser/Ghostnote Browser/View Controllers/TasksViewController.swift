@@ -63,6 +63,17 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
                                                          selector: #selector(handleTaskDeletionRequest),
                                                          name: "DeleteTaskRequest",
                                                          object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(handleSelectTasksTableView),
+                                                         name: "SelectTasksTableView",
+                                                         object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(handleSelectTaskListTableView),
+                                                         name: "SelectTaskListTableView",
+                                                         object: nil)
+        
         splitView?.dividerStyle = .Thin
     }
     
@@ -207,7 +218,13 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
             }
 
         }
-        
-        
+    }
+    
+    func handleSelectTaskListTableView() {
+        print("handleSelectTaskListTableView")
+    }
+    
+    func handleSelectTasksTableView() {
+        print("handleSelectTasksTableView")
     }
 }

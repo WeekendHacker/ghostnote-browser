@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, DeleteRowDelegate {
+class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, DeleteRowDelegate, InterTableKeyboardNavigationDelegate {
 
     override init() {
         
@@ -81,6 +81,8 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
                 tv.setDataSource(self)
                 tv.wantsLayer = true
                 tv.deleteDelegate = self
+                tv.keyboardDelegate = self
+                
                 tv.selectionHighlightStyle = .None
                 tv.allowsTypeSelect = true
                 
@@ -125,6 +127,17 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
         return nil
     }
     
+    
+    // InterTableKeyboardNavigationDelegate
+    
+    func leftArrow() {
+        NSNotificationCenter.defaultCenter().postNotificationName("SelectTaskListTableView",
+                                                                  object: nil)
+    }
+    
+    func rightArrow() {
+        
+    }
     // select cell for selected row
     func tvAction(tv:AnyObject?) {
         if let tableView = tv as? DeletableTableView {

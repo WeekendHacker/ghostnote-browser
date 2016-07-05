@@ -12,19 +12,32 @@ protocol DeleteRowDelegate :NSTableViewDelegate {
     func deleteRow(row:Int)
 }
 
+protocol InterTableKeyboardNavigationDelegate {
+    func leftArrow()
+    func rightArrow()
+}
+
 
 class DeletableTableView: NSTableView {
 
     weak var deleteDelegate:DeleteRowDelegate?
-
+    var keyboardDelegate:InterTableKeyboardNavigationDelegate?
+    
     override func keyDown(theEvent: NSEvent) {
 
-        if theEvent.keyCode == 117 {
+        if theEvent.keyCode == 117 /* Delete Key */ {
             if hasSelection() == true {
                 let selectionToDelete = selectedRow
                 deleteDelegate?.deleteRow(selectionToDelete)
             }
-        }else {
+        }
+        else if theEvent.keyCode == 123 {
+            keyboardDelegate?.leftArrow()
+        }
+        else if theEvent.keyCode == 124 {
+            keyboardDelegate?.rightArrow()
+        }
+        else {
             super.keyDown(theEvent)
         }
     }

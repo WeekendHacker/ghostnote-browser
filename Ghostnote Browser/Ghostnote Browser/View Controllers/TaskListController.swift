@@ -14,7 +14,7 @@ protocol TaskListControllerObserver {
 }
 
 class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
-                          DeleteRowDelegate {
+                          DeleteRowDelegate, InterTableKeyboardNavigationDelegate {
     
     override init() {
         super.init()
@@ -49,7 +49,8 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
                 tv.selectionHighlightStyle = .Regular
                 tv.allowsTypeSelect = true
                 tv.deleteDelegate = self
-
+                tv.keyboardDelegate = self
+                
                 if let cellNib = NSNib(nibNamed: "TaskListCell", bundle: nil) {
                     tv.registerNib(cellNib, forIdentifier: "TaskListCell")
                 }
@@ -150,6 +151,16 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
         }
     }
     
+    // InterTableKeyboardNavigationDelegate
+    
+    func leftArrow() {
+        
+    }
+    
+    func rightArrow() {
+        NSNotificationCenter.defaultCenter().postNotificationName("SelectTasksTableView",
+                                                                  object: nil)
+    }
     
     func beginEditingForNewTaskList(newTaskList:TaskList) {
         

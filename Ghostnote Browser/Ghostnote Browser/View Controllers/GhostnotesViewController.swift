@@ -34,7 +34,6 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
                 appsTableViewController.appsTableView = tv
                 appsTableViewController.observer = self
                 tv.wantsLayer = true
-                tv.backgroundColor = NSColor.clearColor()
             }
         }
     }
@@ -45,13 +44,9 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
                 docsTableViewController.docsTableView = tv
                 docsTableViewController.observer = self
                 tv.wantsLayer = true
-                tv.backgroundColor = NSColor.clearColor()
             }
         }
     }
-    
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Ghostnotes"

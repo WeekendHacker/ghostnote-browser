@@ -50,6 +50,7 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
     }
 
     
+    // view life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -83,11 +84,22 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
         selectFirstTaskList()
     }
     
+    // Selection Automation
     func selectFirstTaskList() {
         if (TaskListManager.shared.taskLists.count > 0) {
             taskListTableView?.selectRowIndexes(NSIndexSet(index:0), byExtendingSelection: false)
+            taskListTableView?.window?.makeFirstResponder(taskListTableView)
         }
     }
+    
+    func selectFirstTask() {
+        if (taskListController.currentTaskList?.tasks.count > 0) {
+            tasksTableView?.selectRowIndexes(NSIndexSet(index:0), byExtendingSelection: false)
+            tasksTableView?.window?.makeFirstResponder(tasksTableView)
+            taskController.tvAction(self)
+        }
+    }
+    
     // NSSplitViewDelegate
     
     func splitView(splitView: NSSplitView, constrainMinCoordinate proposedMinimumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
@@ -159,7 +171,7 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
         taskController.selectedTaskList = nil
     }
     
-
+    // Notification Handlers
     func handleTaskListDeleteRequest(notif:NSNotification) {
         if let payload = notif.object as? Dictionary<String,AnyObject> {
             
@@ -222,9 +234,11 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
     
     func handleSelectTaskListTableView() {
         print("handleSelectTaskListTableView")
+        selectFirstTaskList()
     }
     
     func handleSelectTasksTableView() {
         print("handleSelectTasksTableView")
+        selectFirstTask()
     }
 }

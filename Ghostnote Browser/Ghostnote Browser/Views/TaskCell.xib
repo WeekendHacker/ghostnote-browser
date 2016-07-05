@@ -14,8 +14,8 @@
         <customView identifier="TaskCell" translatesAutoresizingMaskIntoConstraints="NO" id="c22-O7-iKe" customClass="TaskCell" customModule="Ghostnote_Browser" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="250" height="36"/>
             <subviews>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ClR-vJ-MEJ">
-                    <rect key="frame" x="28" y="8.5" width="41" height="19"/>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ClR-vJ-MEJ">
+                    <rect key="frame" x="28" y="9.5" width="216" height="17"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="22" id="knV-XN-E7P"/>
                     </constraints>
@@ -42,7 +42,7 @@
             </subviews>
             <constraints>
                 <constraint firstItem="oJg-uP-G2E" firstAttribute="top" relation="greaterThanOrEqual" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="8Hm-MV-baE"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ClR-vJ-MEJ" secondAttribute="trailing" constant="8" id="cDw-S9-5qs"/>
+                <constraint firstAttribute="trailing" secondItem="ClR-vJ-MEJ" secondAttribute="trailing" constant="8" id="HIM-Rk-CqM"/>
                 <constraint firstItem="oJg-uP-G2E" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="8" id="jFW-dD-fvy"/>
                 <constraint firstItem="ClR-vJ-MEJ" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="jGb-Pn-beV"/>
                 <constraint firstItem="oJg-uP-G2E" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="liT-t4-qXC"/>

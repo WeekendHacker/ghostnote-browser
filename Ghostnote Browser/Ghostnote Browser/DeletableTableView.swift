@@ -17,7 +17,6 @@ protocol InterTableKeyboardNavigationDelegate {
     func rightArrow()
 }
 
-
 class DeletableTableView: NSTableView {
 
     weak var deleteDelegate:DeleteRowDelegate?

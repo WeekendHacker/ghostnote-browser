@@ -83,11 +83,16 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
                 tv.deleteDelegate = self
                 tv.keyboardDelegate = self
                 
-                tv.selectionHighlightStyle = .None
+                tv.selectionHighlightStyle = .Regular
                 tv.allowsTypeSelect = true
                 
                 tv.target = self
                 tv.action = #selector(tvAction(_:))
+                
+                
+                if let rowViewNib = NSNib(nibNamed: "CustomRowView", bundle: nil) {
+                    tv.registerNib(rowViewNib, forIdentifier: "CustomRowView")
+                }
                 
                 if let taskNib = NSNib(nibNamed: "TaskCell", bundle: nil) {
                     tv.registerNib(taskNib, forIdentifier: "TaskCell")
@@ -113,6 +118,14 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
     func tableView(tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
 
         return true
+    }
+    
+    func tableView(tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
+        if let rv = tableView.makeViewWithIdentifier("CustomRowView", owner: nil) as? CustomRowView {
+            rv.forTasks = true
+            return rv
+        }
+        return nil
     }
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {

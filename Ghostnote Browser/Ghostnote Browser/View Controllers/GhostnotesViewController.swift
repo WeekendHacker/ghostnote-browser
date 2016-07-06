@@ -27,6 +27,17 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
         }
     }
     
+    @IBOutlet weak var noteTitleLabel:NSTextField? {
+        didSet {
+            noteTextViewController.noteTitleLabel = noteTitleLabel
+        }
+    }
+    
+    @IBOutlet weak var noteIconImageView:NSImageView? {
+        didSet {
+            noteTextViewController.noteIconImageView = noteIconImageView
+        }
+    }
     
     @IBOutlet weak var appsTableView:DeletableTableView? {
         didSet {

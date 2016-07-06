@@ -10,9 +10,13 @@ import Cocoa
 
 class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
 
+    @IBOutlet var noteTitleLabel:NSTextField?
+    @IBOutlet var noteIconImageView:NSImageView?
+    
     @IBOutlet var noteTextView:NSTextView? {
         didSet {
             noteTextView?.delegate = self
+            noteTextView?.horizontallyResizable = true
             NSDistributedNotificationCenter.defaultCenter().addObserver(self, selector: #selector(reloadCurrentNote), name: "GhostnoteChangedNote", object: nil)
         }
     }
@@ -37,6 +41,17 @@ class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
             
             noteTextView?.backgroundColor = NSColor.clearColor()
             noteTextView?.textColor = NSColor.blackColor()
+            
+            
+            if note.isAppNote() {
+                noteIconImageView?.image = AppIconProvider.iconImagefor(note.appBundleID)
+                noteTitleLabel?.stringValue = AppNameProvider.displayNameForBundleID(note.appBundleID)
+                noteTitleLabel?.toolTip = note.appBundleID
+            }else {
+                noteIconImageView?.image = DocumentIconProvider.iconImageForDocumentPath(note.docID)
+                noteTitleLabel?.stringValue = note.docID
+                noteTitleLabel?.toolTip = note.docID
+            }
             
             if !read! {
                 

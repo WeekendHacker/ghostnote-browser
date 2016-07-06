@@ -29,6 +29,7 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
     
     @IBOutlet weak var noteTitleLabel:NSTextField? {
         didSet {
+            noteTitleLabel?.stringValue = ""
             noteTextViewController.noteTitleLabel = noteTitleLabel
         }
     }

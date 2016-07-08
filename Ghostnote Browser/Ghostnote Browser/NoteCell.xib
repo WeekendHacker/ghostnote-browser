@@ -8,10 +8,10 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="c22-O7-iKe" customClass="NoteCell" customModule="Ghostnote_Browser" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="262" height="32"/>
+            <rect key="frame" x="0.0" y="0.0" width="16" height="32"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Sk9-um-Gbj">
+                <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Sk9-um-Gbj">
                     <rect key="frame" x="6" y="8" width="4" height="16"/>
                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" state="on" alignment="left" id="xOW-G4-Wj4">
                         <font key="font" metaFont="cellTitle"/>
@@ -22,7 +22,7 @@
             </subviews>
             <constraints>
                 <constraint firstItem="Sk9-um-Gbj" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="8" id="1yz-AA-uUV"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Sk9-um-Gbj" secondAttribute="trailing" constant="8" id="Q5O-tp-xft"/>
+                <constraint firstAttribute="trailing" secondItem="Sk9-um-Gbj" secondAttribute="trailing" constant="8" id="Q5O-tp-xft"/>
                 <constraint firstItem="Sk9-um-Gbj" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="gVC-sa-ght"/>
             </constraints>
             <connections>

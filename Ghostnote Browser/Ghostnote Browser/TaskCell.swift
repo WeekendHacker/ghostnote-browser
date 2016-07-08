@@ -21,12 +21,6 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
     let borderColor = NSColor(netHex: 0xc5c5c5).CGColor
     let selectedBorderColor = NSColor(netHex: 0x3C75B8).CGColor
     
-    override var backgroundStyle: NSBackgroundStyle {
-        didSet {
-            super.backgroundStyle = .Light
-        }
-    }
-    
     var selected = false {
         didSet {
             needsDisplay = true

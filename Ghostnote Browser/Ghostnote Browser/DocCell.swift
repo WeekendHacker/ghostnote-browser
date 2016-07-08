@@ -16,7 +16,12 @@ class DocCell: NSTableCellView, SelectableCell {
                 textField?.lineBreakMode = .ByTruncatingMiddle
                 textField?.stringValue = myDoc.note.docID
                 toolTip = myDoc.note.docID
-                imageView?.image = DocumentIconProvider.iconImageForDocumentPath(myDoc.path)
+                
+                if myDoc.note.appBundleID == "com.apple.finder" {
+                    imageView?.image = AppIconProvider.iconImagefor(myDoc.note.appBundleID)
+                }else {
+                    imageView?.image = DocumentIconProvider.iconImageForDocumentPath(myDoc.path)
+                }
                 textField?.font = NSFont(name: "HelveticaNeue", size: 12.0)
             }
         }

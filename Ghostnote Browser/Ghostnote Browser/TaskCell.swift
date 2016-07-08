@@ -35,12 +35,12 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
     var task:Task? {
         didSet {
             if let t = task {
-                
                 if let displayTitle = t.title.componentsSeparatedByString("<!").first {
                     textField?.delegate = self
                     textField?.lineBreakMode = .ByTruncatingTail
                     textField?.stringValue = displayTitle
                     textField?.toolTip = displayTitle
+                    textField?.layer?.shadowColor = NSColor.blackColor().CGColor
                 }
 
                 if let cb = checkbox {

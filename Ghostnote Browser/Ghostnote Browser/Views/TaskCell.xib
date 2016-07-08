@@ -14,15 +14,15 @@
         <customView identifier="TaskCell" translatesAutoresizingMaskIntoConstraints="NO" id="c22-O7-iKe" customClass="TaskCell" customModule="Ghostnote_Browser" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="250" height="36"/>
             <subviews>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ClR-vJ-MEJ">
-                    <rect key="frame" x="28" y="9.5" width="216" height="17"/>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ClR-vJ-MEJ">
+                    <rect key="frame" x="28" y="9" width="216" height="17"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="22" id="knV-XN-E7P"/>
                     </constraints>
-                    <textFieldCell key="cell" lineBreakMode="truncatingTail" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="left" title="Label" id="pb0-pF-sxg">
+                    <textFieldCell key="cell" lineBreakMode="truncatingTail" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="left" title="Label" drawsBackground="YES" id="pb0-pF-sxg">
                         <font key="font" metaFont="systemThin" size="13"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="oJg-uP-G2E">

@@ -164,7 +164,7 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
                 if let hostingNoteCell = payload["hostingNoteCell"] as? NoteCell {
                     
                     let deleteVC = ConfirmDeleteViewController()
-                    
+                    deleteVC.promptText = "Delete \(noteToDelete.name.withoutUniquePart()) ?"
                     deleteVC.yesBlock = {
                         NoteManager.shared.deleteNote(noteToDelete)
                         self.dismissViewController(deleteVC)
@@ -173,7 +173,7 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
                     deleteVC.noBlock = {
                         self.dismissViewController(deleteVC)
                     }
-                    
+
                     presentViewController(deleteVC,
                                           asPopoverRelativeToRect: hostingNoteCell.bounds,
                                           ofView: hostingNoteCell,

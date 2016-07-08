@@ -13,7 +13,13 @@ class ConfirmDeleteViewController: NSViewController {
 
     @IBOutlet weak var yesButton:NSButton?
     @IBOutlet weak var noButton:NSButton?
-
+    @IBOutlet weak var promptLabel:NSTextField?
+    
+    var promptText:String = "Delete Me?" {
+        didSet {
+            promptLabel?.stringValue = promptText
+        }
+    }
     
     var yesBlock:(() -> Void)?
     var noBlock:(() -> Void)?
@@ -24,5 +30,9 @@ class ConfirmDeleteViewController: NSViewController {
     
     @IBAction func noClicked(sender:AnyObject?) {
         noBlock!()
+    }
+    
+    override func viewDidAppear() {
+        promptLabel?.stringValue = promptText
     }
 }

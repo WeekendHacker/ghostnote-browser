@@ -67,12 +67,8 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
         return view
     }
     
-    func beginEditingForNewNote(note:Note)   {
-        
-        // should maybe get to a protocol and extension
-        // for this maybe a CRUD tv controller with the HasIDString on the comparision below
-        
-        
+    
+    func selectNote(note:Note) {
         if let tableView = notesTableView {
             
             tableView.enumerateAvailableRowViewsUsingBlock({ (rowView, row) in
@@ -81,14 +77,36 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
                         if cellNote.id == note.id {
                             tableView.scrollRowToVisible(row)
                             tableView.selectRowIndexes(NSIndexSet(index:row), byExtendingSelection: false)
-//                            cell.select(true)
-                            cell.textField?.enterEditing()
                         }
                     }
                 }
             })
+            NSNotificationCenter.defaultCenter().postNotificationName("EditNote", object: nil)
         }
     }
+    
+//    func beginEditingForNewNote(note:Note)   {
+//        
+//        // should maybe get to a protocol and extension
+//        // for this maybe a CRUD tv controller with the HasIDString on the comparision below
+//        
+//        
+//        if let tableView = notesTableView {
+//            
+//            tableView.enumerateAvailableRowViewsUsingBlock({ (rowView, row) in
+//                if let cell = rowView.viewAtColumn(0) as? NoteCell {
+//                    if let cellNote = cell.note {
+//                        if cellNote.id == note.id {
+//                            tableView.scrollRowToVisible(row)
+//                            tableView.selectRowIndexes(NSIndexSet(index:row), byExtendingSelection: false)
+////                            cell.select(true)
+//                            cell.textField?.enterEditing()
+//                        }
+//                    }
+//                }
+//            })
+//        }
+//    }
     
     func tableView(tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
         let rowView = tableView.makeViewWithIdentifier("CustomRowView",
@@ -104,7 +122,7 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
     func handleNoteAdded(notif:AnyObject) {
         notesTableView?.reloadData()
         
-        performSelector(#selector(beginEditingForNewNote(_:)),
+        performSelector(#selector(selectNote(_:)),
                         withObject: notif.object as! Note,
                         afterDelay: 0.3)
     }

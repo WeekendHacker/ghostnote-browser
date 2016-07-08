@@ -10,6 +10,7 @@
                 <outlet property="noteTextView" destination="KGG-x5-Z5H" id="1yL-nf-qPk"/>
                 <outlet property="notesTableView" destination="0a4-fP-4um" id="POb-UV-VvF"/>
                 <outlet property="splitView" destination="o24-jj-Ddw" id="47g-3o-V6d"/>
+                <outlet property="textViewPlaceholderLabel" destination="Fla-K8-vRh" id="Wxk-Na-TY9"/>
                 <outlet property="view" destination="c22-O7-iKe" id="BfV-nq-59Y"/>
             </connections>
         </customObject>
@@ -131,11 +132,21 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                     </scroller>
                                 </scrollView>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Fla-K8-vRh">
+                                    <rect key="frame" x="82.5" y="127.5" width="79" height="17"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Start writing" id="ruN-V2-Oze">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" white="0.42669356496710525" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
                             </subviews>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="iCC-Ca-ktP" secondAttribute="trailing" id="8Kg-bf-EKB"/>
+                                <constraint firstItem="Fla-K8-vRh" firstAttribute="centerY" secondItem="cE7-51-PxA" secondAttribute="centerY" id="9nv-M8-1Lj"/>
                                 <constraint firstItem="iCC-Ca-ktP" firstAttribute="leading" secondItem="cE7-51-PxA" secondAttribute="leading" constant="24" id="AH1-k7-Tgc"/>
                                 <constraint firstAttribute="bottom" secondItem="iCC-Ca-ktP" secondAttribute="bottom" id="Mlr-SL-QCh"/>
+                                <constraint firstItem="Fla-K8-vRh" firstAttribute="centerX" secondItem="cE7-51-PxA" secondAttribute="centerX" id="SlS-Tk-6Nc"/>
                                 <constraint firstItem="iCC-Ca-ktP" firstAttribute="top" secondItem="cE7-51-PxA" secondAttribute="top" constant="24" id="lIX-5q-f7V"/>
                             </constraints>
                         </customView>

@@ -16,7 +16,14 @@ class NoteTextViewController: NSObject, NSTextViewDelegate {
                                                          selector: #selector(handleDeletedNote(_:)),
                                                          name: "DeletedNote",
                                                          object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(handleEditNote),
+                                                         name: "EditNote",
+                                                         object: nil)
     }
+    
+    weak var placeholderLabel:NSTextField?
     
     var currentNote:Note? {
         
@@ -36,6 +43,7 @@ class NoteTextViewController: NSObject, NSTextViewDelegate {
             else {
                 noteTextView?.string = ""
             }
+            applyPlaceHolderState()
         }
     }
     
@@ -45,9 +53,18 @@ class NoteTextViewController: NSObject, NSTextViewDelegate {
             noteTextView?.wantsLayer = true
             noteTextView?.richText = true
             noteTextView?.font = NSFont(name: "HelveticaNeue", size: 12.0)
+            
         }
     }
     
+    
+    func applyPlaceHolderState() {
+        if let text = noteTextView?.string {
+            placeholderLabel?.hidden = !text.isEmpty
+        }else {
+            placeholderLabel?.hidden = false
+        }
+    }
     
     func textDidChange(notification: NSNotification) {
         if notification.object as? NSTextView == noteTextView {
@@ -56,6 +73,7 @@ class NoteTextViewController: NSObject, NSTextViewDelegate {
                     noteTextView!.writeRTFDToFile(note.filePath, atomically: true)
                 }
             }
+            applyPlaceHolderState()
         }
     }
     
@@ -64,5 +82,9 @@ class NoteTextViewController: NSObject, NSTextViewDelegate {
         if currentNote?.invalidated == true {
             noteTextView?.string = ""
         }
+    }
+    
+    func handleEditNote() {
+        noteTextView?.window?.makeFirstResponder(noteTextView)
     }
 }

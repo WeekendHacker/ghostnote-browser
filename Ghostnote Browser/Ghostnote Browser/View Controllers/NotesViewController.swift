@@ -23,6 +23,11 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
         }
     }
     
+    @IBOutlet weak var textViewPlaceholderLabel:NSTextField? {
+        didSet {
+            noteTextViewController.placeholderLabel = textViewPlaceholderLabel
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Notes"

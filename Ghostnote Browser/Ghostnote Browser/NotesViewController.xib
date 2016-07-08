@@ -110,7 +110,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="220" height="248"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <textView drawsBackground="NO" importsGraphics="NO" horizontallyResizable="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="KGG-x5-Z5H">
+                                            <textView drawsBackground="NO" importsGraphics="NO" richText="NO" horizontallyResizable="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" linkDetection="YES" dataDetection="YES" dashSubstitution="YES" textReplacement="YES" spellingCorrection="YES" grammarChecking="YES" smartInsertDelete="YES" id="KGG-x5-Z5H" customClass="CustomTextView" customModule="Ghostnote_Browser" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="220" height="248"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -133,7 +133,7 @@
                                     </scroller>
                                 </scrollView>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Fla-K8-vRh">
-                                    <rect key="frame" x="82.5" y="127.5" width="79" height="17"/>
+                                    <rect key="frame" x="82" y="127" width="79" height="17"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Start writing" id="ruN-V2-Oze">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" white="0.42669356496710525" alpha="1" colorSpace="calibratedWhite"/>

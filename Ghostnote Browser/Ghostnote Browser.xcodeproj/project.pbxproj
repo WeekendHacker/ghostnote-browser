@@ -16,6 +16,7 @@
 		D803FEBE1D220E4400360741 /* NSTableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D803FEBD1D220E4400360741 /* NSTableViewExtensions.swift */; };
 		D803FEC11D2219B900360741 /* ConfirmDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D803FEBF1D2219B900360741 /* ConfirmDeleteViewController.swift */; };
 		D803FEC21D2219B900360741 /* ConfirmDeleteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D803FEC01D2219B900360741 /* ConfirmDeleteViewController.xib */; };
+		D807C1C61D302353007F3BD6 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D807C1C51D302353007F3BD6 /* CustomTextView.swift */; };
 		D81281881CCD97F2001749E9 /* ButtonNavViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D81281871CCD97F2001749E9 /* ButtonNavViewController.xib */; };
 		D812818A1CCD98C0001749E9 /* ButtonNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81281891CCD98C0001749E9 /* ButtonNavViewController.swift */; };
 		D812818D1CCD9AA3001749E9 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D812818B1CCD9AA3001749E9 /* MainWindowController.swift */; };
@@ -122,6 +123,7 @@
 		D803FEBD1D220E4400360741 /* NSTableViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTableViewExtensions.swift; sourceTree = "<group>"; };
 		D803FEBF1D2219B900360741 /* ConfirmDeleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmDeleteViewController.swift; sourceTree = "<group>"; };
 		D803FEC01D2219B900360741 /* ConfirmDeleteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmDeleteViewController.xib; sourceTree = "<group>"; };
+		D807C1C51D302353007F3BD6 /* CustomTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 		D81281871CCD97F2001749E9 /* ButtonNavViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ButtonNavViewController.xib; path = Views/ButtonNavViewController.xib; sourceTree = "<group>"; };
 		D81281891CCD98C0001749E9 /* ButtonNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonNavViewController.swift; path = "View Controllers/ButtonNavViewController.swift"; sourceTree = "<group>"; };
 		D812818B1CCD9AA3001749E9 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 		D84F16DB1CC60E9C005612BB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D807C1C51D302353007F3BD6 /* CustomTextView.swift */,
 				D86A9FB91D148FCC00F6DFF9 /* CustomSplitView.swift */,
 				D8151CC51D028B1C00F04C24 /* Table Cells */,
 				D8151CC31D027F6A00F04C24 /* DeletableTableView.swift */,
@@ -695,6 +698,7 @@
 				D812818D1CCD9AA3001749E9 /* MainWindowController.swift in Sources */,
 				D8CC00AF1CE6798600D13331 /* GhostNote.swift in Sources */,
 				D81281991CCDCFD8001749E9 /* NotesTableViewController.swift in Sources */,
+				D807C1C61D302353007F3BD6 /* CustomTextView.swift in Sources */,
 				D80001B41CD88BDC00255E54 /* NoteTextViewController.swift in Sources */,
 				D81281AA1CCEB60B001749E9 /* NoteManager.swift in Sources */,
 				D8151CC41D027F6A00F04C24 /* DeletableTableView.swift in Sources */,

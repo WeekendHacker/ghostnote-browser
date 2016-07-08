@@ -101,6 +101,23 @@ class NoteManager {
         }
     }
     
+    
+    //
+    
+    func newNoteNameSuffix() -> String {
+        
+        let count = notes.filter { (note) -> Bool in
+                if note.name.containsString("New Note") {
+                    return true
+                }else {
+                    return false
+                }
+            }.count
+        if count > 0 {
+            return "\(count)"
+        }
+        return ""
+    }
     // file methods
     private func createFileForNoteNamed(name:String) -> NSURL {
         

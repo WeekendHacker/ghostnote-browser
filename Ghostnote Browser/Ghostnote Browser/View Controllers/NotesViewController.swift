@@ -114,7 +114,9 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
         let date = NSDate()
         
         let uniquePart = "\(date.timeIntervalSince1970)"
-        NoteManager.shared.createNoteWithName("New Note <!\(uniquePart)>")
+        let suffix = NoteManager.shared.newNoteNameSuffix()
+        
+        NoteManager.shared.createNoteWithName("New Note \(suffix) <!\(uniquePart)>")
         notesTableView?.reloadData()
     }
 

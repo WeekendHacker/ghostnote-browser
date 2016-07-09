@@ -79,7 +79,7 @@
                                     </connections>
                                 </button>
                                 <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="5HX-np-PNN">
-                                    <rect key="frame" x="0.0" y="255" width="247" height="5"/>
+                                    <rect key="frame" x="0.0" y="253" width="247" height="5"/>
                                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <font key="titleFont" metaFont="system"/>
@@ -97,7 +97,7 @@
                                 <constraint firstItem="e9j-p1-EL0" firstAttribute="leading" secondItem="yU1-9X-UuL" secondAttribute="leading" constant="8" id="lyB-t8-2py"/>
                                 <constraint firstAttribute="bottom" secondItem="Ww9-6P-b0r" secondAttribute="bottom" id="nhT-r6-zEW"/>
                                 <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="q4G-q2-TwR"/>
-                                <constraint firstItem="5HX-np-PNN" firstAttribute="bottom" secondItem="e9j-p1-EL0" secondAttribute="bottom" id="sZZ-B0-nRz"/>
+                                <constraint firstItem="5HX-np-PNN" firstAttribute="bottom" secondItem="e9j-p1-EL0" secondAttribute="bottom" constant="2" id="sZZ-B0-nRz"/>
                             </constraints>
                         </customView>
                         <customView id="cE7-51-PxA">

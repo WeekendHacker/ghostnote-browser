@@ -67,6 +67,7 @@
 		D8CC00AD1CE6793300D13331 /* GhostNoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC00AC1CE6793300D13331 /* GhostNoteManager.swift */; };
 		D8CC00AF1CE6798600D13331 /* GhostNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC00AE1CE6798600D13331 /* GhostNote.swift */; };
 		D8CC00B11CE67B6D00D13331 /* GhostNoteTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC00B01CE67B6D00D13331 /* GhostNoteTextViewController.swift */; };
+		D8CD4DB11D317269008C7427 /* NSImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CD4DB01D317269008C7427 /* NSImageExtensions.swift */; };
 		D8D10EC61CC48A9F00A434F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D10EC51CC48A9F00A434F6 /* AppDelegate.swift */; };
 		D8D10ECB1CC48A9F00A434F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8D10ECA1CC48A9F00A434F6 /* Assets.xcassets */; };
 		D8D10ECE1CC48A9F00A434F6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8D10ECC1CC48A9F00A434F6 /* MainMenu.xib */; };
@@ -173,6 +174,7 @@
 		D8CC00AC1CE6793300D13331 /* GhostNoteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GhostNoteManager.swift; sourceTree = "<group>"; };
 		D8CC00AE1CE6798600D13331 /* GhostNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GhostNote.swift; sourceTree = "<group>"; };
 		D8CC00B01CE67B6D00D13331 /* GhostNoteTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GhostNoteTextViewController.swift; sourceTree = "<group>"; };
+		D8CD4DB01D317269008C7427 /* NSImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSImageExtensions.swift; sourceTree = "<group>"; };
 		D8D10EC21CC48A9F00A434F6 /* Ghostnote Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ghostnote Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8D10EC51CC48A9F00A434F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8D10ECA1CC48A9F00A434F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 				D82F61B71D13C2F000721EB6 /* NSTextFieldExtensions.swift */,
 				D803FEB71D21A5FD00360741 /* StringExtensions.swift */,
 				D803FEBD1D220E4400360741 /* NSTableViewExtensions.swift */,
+				D8CD4DB01D317269008C7427 /* NSImageExtensions.swift */,
 			);
 			name = "UI Extensions";
 			sourceTree = "<group>";
@@ -700,6 +703,7 @@
 				D81281991CCDCFD8001749E9 /* NotesTableViewController.swift in Sources */,
 				D807C1C61D302353007F3BD6 /* CustomTextView.swift in Sources */,
 				D80001B41CD88BDC00255E54 /* NoteTextViewController.swift in Sources */,
+				D8CD4DB11D317269008C7427 /* NSImageExtensions.swift in Sources */,
 				D81281AA1CCEB60B001749E9 /* NoteManager.swift in Sources */,
 				D8151CC41D027F6A00F04C24 /* DeletableTableView.swift in Sources */,
 				D8265A671CDC10210054AF57 /* TaskNameValidator.swift in Sources */,

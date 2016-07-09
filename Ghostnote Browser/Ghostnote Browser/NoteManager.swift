@@ -114,7 +114,7 @@ class NoteManager {
                 }
             }.count
         if count > 0 {
-            return "\(count)"
+            return "\(count + 1)"
         }
         return ""
     }

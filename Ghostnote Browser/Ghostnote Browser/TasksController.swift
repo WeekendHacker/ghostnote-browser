@@ -13,33 +13,8 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
     override init() {
         
         super.init()
+        registerForNotifications()
         
-        NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: #selector(TasksController.handleTaskListDeleted(_:)),
-                                                         name: "DeletedTaskList",
-                                                         object: nil)
-        
-        NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: #selector(handleTaskListRenamed(_:)),
-                                                         name: "TaskListRenamed",
-                                                         object: nil)
-        
-        NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: #selector(handleTaskDeleted),
-                                                         name: "TaskDeleted",
-                                                         object: nil)
-        
-        NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: #selector(handleTaskAdded(_:)),
-                                                         name: "TaskAdded",
-                                                         object: nil)
-        
-
-        
-        NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: #selector(handleTaskRenamed(_:)),
-                                                         name: "TaskRenamed",
-                                                         object: nil)
         
     }
     
@@ -101,6 +76,42 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
         }
     }
 
+    
+    func registerForNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(handleTaskListCreated),
+                                                         name: "CreatedTaskList",
+                                                         object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(TasksController.handleTaskListDeleted(_:)),
+                                                         name: "DeletedTaskList",
+                                                         object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(handleTaskListRenamed(_:)),
+                                                         name: "TaskListRenamed",
+                                                         object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(handleTaskDeleted),
+                                                         name: "TaskDeleted",
+                                                         object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(handleTaskAdded(_:)),
+                                                         name: "TaskAdded",
+                                                         object: nil)
+        
+        
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(handleTaskRenamed(_:)),
+                                                         name: "TaskRenamed",
+                                                         object: nil)
+
+    }
+    
     // NSTableViewDatasource
     func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
         return 30.0
@@ -201,12 +212,20 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
 
     @IBAction func addTaskButtonClicked(sender:AnyObject) {
         if let tl = selectedTaskList {
-            
-            tl.addTask("New Task")
+            let suffix = TaskListManager.shared.newTaskNameSuffix(tl)
+            tl.addTask("New Task \(suffix)")
         }
     }
     
     // Notification Handlers
+    
+    func handleTaskListCreated(notif:NSNotification) {
+        if let tl = selectedTaskList {
+            if let firstTask = tl.tasks.reverse().first {
+                beginEditingForNewTask(firstTask)
+            }
+        }
+    }
     
     func handleTaskListRenamed(notif:NSNotification) {
         if let tl = selectedTaskList {

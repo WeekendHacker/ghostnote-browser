@@ -14,7 +14,7 @@ class NoteTextViewController: NSObject, NSTextViewDelegate {
         super.init()
         NSNotificationCenter.defaultCenter().addObserver(self,
                                                          selector: #selector(handleDeletedNote(_:)),
-                                                         name: "DeletedNote",
+                                                         name: "NoteDeleted",
                                                          object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self,
@@ -81,9 +81,9 @@ class NoteTextViewController: NSObject, NSTextViewDelegate {
     
     func handleDeletedNote(notif:NSNotification) {
         
-        if currentNote?.invalidated == true {
+//        if currentNote?.invalidated == true {
             noteTextView?.string = ""
-        }
+//        }
     }
     
     func handleEditNote() {

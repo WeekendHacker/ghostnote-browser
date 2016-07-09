@@ -64,7 +64,9 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
     
     // Actions
     @IBAction func addTaskListButtonClicked(sender:AnyObject?) {
-        TaskListManager.shared.createTaskList("New Task List")
+        let suffix = TaskListManager.shared.newTaskListNameSuffix()
+        
+        TaskListManager.shared.createTaskList("New Task List \(suffix)")
     }
     
 
@@ -162,20 +164,17 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
                                                                   object: nil)
     }
     
-    func beginEditingForNewTaskList(newTaskList:TaskList) {
-        
-        // should maybe get to a protocol and extension
-        // for this maybe a CRUD tv controller with the HasIDString on the comparision below
+    
+    func selectTaskList(taskList:TaskList) {
         
         if let tableView = taskListTableView {
             
             tableView.enumerateAvailableRowViewsUsingBlock({ (rowView, row) in
                 if let cell = rowView.viewAtColumn(0) as? TaskListCell {
                     if let cellTaskList = cell.taskList {
-                        if cellTaskList.id == newTaskList.id {
+                        if cellTaskList.id == taskList.id {
                             tableView.scrollRowToVisible(row)
                             tableView.selectRowIndexes(NSIndexSet(index:row), byExtendingSelection: false)
-                            cell.textField?.enterEditing()
                         }else {
                             cell.select(false)
                         }
@@ -184,15 +183,40 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
             })
         }
     }
-    
+//    func beginEditingForNewTaskList(newTaskList:TaskList) {
+//        
+//        // should maybe get to a protocol and extension
+//        // for this maybe a CRUD tv controller with the HasIDString on the comparision below
+//        
+//        if let tableView = taskListTableView {
+//            
+//            tableView.enumerateAvailableRowViewsUsingBlock({ (rowView, row) in
+//                if let cell = rowView.viewAtColumn(0) as? TaskListCell {
+//                    if let cellTaskList = cell.taskList {
+//                        if cellTaskList.id == newTaskList.id {
+//                            tableView.scrollRowToVisible(row)
+//                            tableView.selectRowIndexes(NSIndexSet(index:row), byExtendingSelection: false)
+//                            cell.textField?.enterEditing()
+//                        }else {
+//                            cell.select(false)
+//                        }
+//                    }
+//                }
+//            })
+//        }
+//    }
+//    
     // Notification Handlers
     
     func handleTaskListCreation(notif:NSNotification) {
         taskListTableView?.reloadData()
         
-        performSelector(#selector(beginEditingForNewTaskList(_:)),
-                        withObject: notif.object as! TaskList,
-                        afterDelay: 0.3)
+        if let tl = notif.object as? TaskList {
+            performSelector(#selector(selectTaskList(_:)),
+                            withObject:tl,
+                            afterDelay: 0.1)
+        }
+        
     }
     
     func handleTaskListDeletion() {

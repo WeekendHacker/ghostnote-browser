@@ -26,6 +26,36 @@ class TaskListManager: NSObject {
         }
     }
     
+    func newTaskNameSuffix(inTaskList:TaskList) -> String {
+        
+        let count = inTaskList.tasks.filter { (taskList) -> Bool in
+            if taskList.title.containsString("New Task") {
+                return true
+            }else {
+                return false
+            }
+            }.count
+        if count > 0 {
+            return "\(count + 1)"
+        }
+        return ""
+    }
+    
+    func newTaskListNameSuffix() -> String {
+        
+        let count = taskLists.filter { (taskList) -> Bool in
+            if taskList.title.containsString("New Task List") {
+                return true
+            }else {
+                return false
+            }
+            }.count
+        if count > 0 {
+            return "\(count + 1)"
+        }
+        return ""
+    }
+
     func createTaskList(name:String) {
         let newList = TaskList()
         

@@ -129,7 +129,6 @@ class NotesTableViewController: NSObject, NSTableViewDataSource, NSTableViewDele
     
     func handleNoteDeleted() {
         notesTableView?.reloadData()
-
     }
     
     // Actions

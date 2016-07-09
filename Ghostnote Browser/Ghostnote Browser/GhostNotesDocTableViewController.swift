@@ -93,13 +93,13 @@ class GhostNotesDocTableViewController: NSObject, NSTableViewDelegate, NSTableVi
                 observer?.selectedNothing()
             }
             
-            tv.enumerateAvailableRowViewsUsingBlock({ (rowView, row) in
-                
-                if let cell = tv.viewAtColumn(0, row: row, makeIfNecessary: false) as? SelectableCell {
-                    cell.select(rowView.selected)
-                }
-                
-            })
+//            tv.enumerateAvailableRowViewsUsingBlock({ (rowView, row) in
+//                
+//                if let cell = tv.viewAtColumn(0, row: row, makeIfNecessary: false) as? SelectableCell {
+//                    cell.select(rowView.selected)
+//                }
+//                
+//            })
         }
     }
 }

@@ -20,7 +20,7 @@ class CustomRowView: NSTableRowView {
             let color:NSColor
             
             if emphasized {
-                
+            
                 color = NSColor(netHex: 0x3C75B8)
                 
             }else {

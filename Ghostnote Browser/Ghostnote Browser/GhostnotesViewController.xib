@@ -28,13 +28,13 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <subviews>
                                 <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dbq-gu-vmS" userLabel="Bordered Scroll View - Apps Table View">
-                                    <rect key="frame" x="0.0" y="0.0" width="267" height="247"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="267" height="271"/>
                                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="tYx-MW-KOw">
-                                        <rect key="frame" x="0.0" y="0.0" width="267" height="247"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="267" height="271"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="5LJ-AF-fxE" userLabel="Apps Table View" customClass="DeletableTableView" customModule="Ghostnote_Browser" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="267" height="247"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="267" height="271"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <size key="intercellSpacing" width="3" height="2"/>
                                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
@@ -101,7 +101,7 @@
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="Dbq-gu-vmS" secondAttribute="bottom" id="2zf-wQ-wcw"/>
                                 <constraint firstItem="Dbq-gu-vmS" firstAttribute="width" secondItem="lPU-bU-knb" secondAttribute="width" id="Dvt-N0-K6B"/>
-                                <constraint firstItem="Dbq-gu-vmS" firstAttribute="top" secondItem="lPU-bU-knb" secondAttribute="top" constant="24" id="eeG-BF-WeS"/>
+                                <constraint firstItem="Dbq-gu-vmS" firstAttribute="top" secondItem="lPU-bU-knb" secondAttribute="top" id="eeG-BF-WeS"/>
                                 <constraint firstItem="Dbq-gu-vmS" firstAttribute="leading" secondItem="lPU-bU-knb" secondAttribute="leading" id="q40-E6-OGD"/>
                             </constraints>
                         </customView>
@@ -110,13 +110,13 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <subviews>
                                 <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ibe-OJ-ANj" userLabel="Bordered Scroll View - Docs Table View">
-                                    <rect key="frame" x="0.0" y="0.0" width="267" height="247"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="267" height="271"/>
                                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="bhw-mp-YTS">
-                                        <rect key="frame" x="0.0" y="0.0" width="267" height="247"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="267" height="271"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="iBq-wR-WSp" userLabel="Docs Table View" customClass="DeletableTableView" customModule="Ghostnote_Browser" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="267" height="247"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="267" height="271"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <size key="intercellSpacing" width="3" height="2"/>
                                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
@@ -182,7 +182,7 @@
                             </subviews>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="Ibe-OJ-ANj" secondAttribute="bottom" id="8lu-Kz-eif"/>
-                                <constraint firstItem="Ibe-OJ-ANj" firstAttribute="top" secondItem="1q2-Vg-FUD" secondAttribute="top" constant="24" id="H8t-hh-x62"/>
+                                <constraint firstItem="Ibe-OJ-ANj" firstAttribute="top" secondItem="1q2-Vg-FUD" secondAttribute="top" id="H8t-hh-x62"/>
                                 <constraint firstItem="Ibe-OJ-ANj" firstAttribute="leading" secondItem="1q2-Vg-FUD" secondAttribute="leading" id="OsQ-yA-Uw8"/>
                                 <constraint firstItem="Ibe-OJ-ANj" firstAttribute="leading" secondItem="1q2-Vg-FUD" secondAttribute="leading" id="ZKz-zF-zNg"/>
                                 <constraint firstAttribute="bottom" secondItem="Ibe-OJ-ANj" secondAttribute="bottom" id="dCz-wl-VgX"/>
@@ -194,19 +194,19 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <subviews>
                                 <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HS3-XA-UR6" userLabel="Bordered Scroll View - Note Text View">
-                                    <rect key="frame" x="24" y="24" width="235" height="213"/>
+                                    <rect key="frame" x="24" y="24" width="235" height="237"/>
                                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="PG8-eH-a23">
-                                        <rect key="frame" x="0.0" y="0.0" width="235" height="213"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="235" height="237"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <textView drawsBackground="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="e54-Cj-F06" userLabel="Note Text View">
-                                                <rect key="frame" x="0.0" y="0.0" width="135" height="213"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="135" height="237"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" red="1" green="0.20176665152279916" blue="0.32919391092602879" alpha="1" colorSpace="calibratedRGB"/>
-                                                <size key="minSize" width="135" height="213"/>
+                                                <size key="minSize" width="235" height="237"/>
                                                 <size key="maxSize" width="463" height="10000000"/>
                                                 <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <size key="minSize" width="135" height="213"/>
+                                                <size key="minSize" width="235" height="237"/>
                                                 <size key="maxSize" width="463" height="10000000"/>
                                             </textView>
                                         </subviews>
@@ -256,7 +256,7 @@
                             </subviews>
                             <constraints>
                                 <constraint firstItem="WdQ-qm-cYB" firstAttribute="top" secondItem="HS3-XA-UR6" secondAttribute="bottom" id="1CI-vL-4wc"/>
-                                <constraint firstItem="HS3-XA-UR6" firstAttribute="top" secondItem="CWu-Nb-Hm1" secondAttribute="top" constant="34" id="KVJ-oY-m5o"/>
+                                <constraint firstItem="HS3-XA-UR6" firstAttribute="top" secondItem="CWu-Nb-Hm1" secondAttribute="top" constant="10" id="KVJ-oY-m5o"/>
                                 <constraint firstAttribute="trailing" secondItem="WdQ-qm-cYB" secondAttribute="trailing" id="KyO-Hk-Vqg"/>
                                 <constraint firstAttribute="trailing" secondItem="HS3-XA-UR6" secondAttribute="trailing" constant="8" id="NdH-Gh-qUh"/>
                                 <constraint firstItem="WdQ-qm-cYB" firstAttribute="leading" secondItem="CWu-Nb-Hm1" secondAttribute="leading" id="Qmv-Uh-WeP"/>

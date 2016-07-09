@@ -30,6 +30,5 @@ extension SelectableCell {
                 taskCell.selected = isSelected
             }
         }
-       
     }
 }

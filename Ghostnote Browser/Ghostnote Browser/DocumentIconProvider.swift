@@ -13,6 +13,6 @@ class DocumentIconProvider: NSObject {
     static func iconImageForDocumentPath(path:String) -> NSImage {
         let url = NSURL.fileURLWithPath(path)
         
-        return NSWorkspace.sharedWorkspace().iconForFileType((url.pathExtension)!)
+        return  NSWorkspace.sharedWorkspace().iconForFileType((url.pathExtension)!)
     }
 }

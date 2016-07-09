@@ -63,6 +63,7 @@ class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
             noteTextView?.string = ""
             noteTextView?.hidden = true
             noteTitleLabel?.stringValue = ""
+            noteIconImageView?.image = nil
         }
     }
     

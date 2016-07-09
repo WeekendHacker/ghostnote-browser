@@ -8,20 +8,37 @@
 
 import Cocoa
 
+extension NSImage {
+    func appIconIfGeneric(usingBundleID:String) -> NSImage {
+        
+        let appIcon = AppIconProvider.iconImagefor(usingBundleID)
+        
+        let genericAppIconTiff = NSWorkspace.sharedWorkspace().iconForFileType(NSFileTypeForHFSTypeCode(OSType(kGenericApplicationIcon))).TIFFRepresentation
+        
+        let genericDocImageTiff = NSWorkspace.sharedWorkspace().iconForFileType(NSFileTypeForHFSTypeCode(OSType(kGenericDocumentIcon))).TIFFRepresentation
+        
+        
+        let proposedTiff = self.TIFFRepresentation
+        
+        if (proposedTiff == genericDocImageTiff) || (proposedTiff == genericAppIconTiff) {
+            return appIcon
+        }
+        
+        return self
+    }
+}
+
 class DocCell: NSTableCellView, SelectableCell {
 
-    var doc:Document? {
+       var doc:Document? {
         didSet {
             if let  myDoc = doc {
                 textField?.lineBreakMode = .ByTruncatingMiddle
                 textField?.stringValue = myDoc.note.docID
                 toolTip = myDoc.note.docID
                 
-                if myDoc.note.appBundleID == "com.apple.finder" {
-                    imageView?.image = AppIconProvider.iconImagefor(myDoc.note.appBundleID)
-                }else {
-                    imageView?.image = DocumentIconProvider.iconImageForDocumentPath(myDoc.path)
-                }
+                let proposedDocImage = DocumentIconProvider.iconImageForDocumentPath(myDoc.path)
+                imageView?.image = proposedDocImage.appIconIfGeneric(myDoc.note.appBundleID)
                 textField?.font = NSFont(name: "HelveticaNeue", size: 12.0)
             }
         }

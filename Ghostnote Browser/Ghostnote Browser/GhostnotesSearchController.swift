@@ -29,6 +29,8 @@ class GhostnotesSearchController: NSObject {
             for gn in db.objects(GhostNote.self) {
                 if gn.rawText().containsString(searchText) {
                     sr.append(gn)
+                }else if gn.rawText().uppercaseString.containsString(searchText) {
+                    sr.append(gn)
                 }
             }
             

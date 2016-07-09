@@ -23,6 +23,8 @@ class NoteSearchController: NSObject {
                 
                 if note.rawText().containsString(searchText) {
                     sr.append(note)
+                }else if note.rawText().uppercaseString.containsString(searchText) {
+                    sr.append(note)
                 }
             }
             return sr

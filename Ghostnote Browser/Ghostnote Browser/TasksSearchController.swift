@@ -28,6 +28,8 @@ class TasksSearchController: NSObject {
                     if task.title.containsString(searchText) {
                         print(task.title)
                         return true
+                    }else if task.title.uppercaseString.containsString(searchText) {
+                        return true
                     }
                     return false
                 })

@@ -24,6 +24,7 @@ class TasksController: NSObject, NSTableViewDataSource, NSTableViewDelegate, Del
             addTaskButton?.action = #selector(addTaskButtonClicked(_:))
             addTaskButton?.target = self
             addTaskButton?.enabled = false
+            addTaskButton?.toolTip = "Add Task - command-t"
         }
     }
     

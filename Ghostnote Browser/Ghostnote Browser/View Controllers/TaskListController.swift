@@ -37,6 +37,7 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
 
             addTaskListButton?.action = #selector(addTaskListButtonClicked(_:))
             addTaskListButton?.target = self
+            addTaskListButton?.toolTip = "Add List - command-l"
         }
     }
     

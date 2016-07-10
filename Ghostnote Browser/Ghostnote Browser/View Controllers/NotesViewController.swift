@@ -13,7 +13,11 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
     var notesTableController = NotesTableViewController()
     var noteTextViewController:NoteTextViewController = NoteTextViewController()
     
-    @IBOutlet weak var addNoteButton:NSButton?    
+    @IBOutlet weak var addNoteButton:NSButton? {
+        didSet {
+            addNoteButton?.toolTip = "Add Note - command-n"
+        }
+    }
     @IBOutlet weak var splitView:CustomSplitView?
     
     @IBOutlet var noteTextView:NSTextView?

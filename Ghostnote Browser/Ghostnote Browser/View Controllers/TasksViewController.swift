@@ -235,12 +235,10 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
     }
     
     func handleSelectTaskListTableView() {
-        print("handleSelectTaskListTableView")
         selectFirstTaskList()
     }
     
     func handleSelectTasksTableView() {
-        print("handleSelectTasksTableView")
         selectFirstTask()
     }
 }

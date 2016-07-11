@@ -39,7 +39,6 @@ class NoteTextViewController: NSObject, NSTextViewDelegate {
             
             if let note = currentNote {
                 noteTextView?.readRTFDFromFile(note.filePath)
-                print("read note from disk. font is \(noteTextView?.font)" )
             }
             else {
                 noteTextView?.string = ""
@@ -54,8 +53,6 @@ class NoteTextViewController: NSObject, NSTextViewDelegate {
             noteTextView?.wantsLayer = true
             noteTextView?.richText = true
             noteTextView?.font = NSFont(name: "HelveticaNeue", size: 12.0)
-            print("text view starting font is \(noteTextView?.font)")
-            
         }
     }
     

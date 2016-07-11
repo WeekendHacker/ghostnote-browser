@@ -22,7 +22,6 @@ extension NSTextField {
         }else if theEvent.clickCount == 2 {
             enterEditing()
         }
-       
     }
     
     func enterEditing() {
@@ -67,12 +66,10 @@ extension NSTextField {
             string.removeAttribute(NSStrikethroughStyleAttributeName,
                                    range: NSRange(location: 0, length: string.length))
             attributedStringValue = string
-
         }
     }
     
     override public var intrinsicContentSize:NSSize {
         return NSMakeSize(self.attributedStringValue.size().width + 10, 20)
     }
-
 }

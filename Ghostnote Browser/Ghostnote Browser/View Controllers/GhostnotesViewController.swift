@@ -125,14 +125,12 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
     // Selection automation 
     
     func selectFirstApp() {
-        print("select apps")
         appsTableView?.selectRowIndexes(NSIndexSet(index:0), byExtendingSelection: false)
         appsTableView?.window?.makeFirstResponder(appsTableView)
 
     }
     
     func selectFirstDoc() {
-        print("select docs")
         docsTableView?.selectRowIndexes(NSIndexSet(index:0), byExtendingSelection: false)
         docsTableView?.window?.makeFirstResponder(docsTableView)
     }

@@ -16,7 +16,6 @@ class TaskListCell: NSTableCellView, NSTextFieldDelegate, SelectableCell {
                 textField?.stringValue = list.title.withoutUniquePart()
                 textField?.delegate = self
                 textField?.font = NSFont(name: "HelveticaNeue", size: 12.0)
-                Swift.print("font is \(textField?.font)")
             }
         }
     }

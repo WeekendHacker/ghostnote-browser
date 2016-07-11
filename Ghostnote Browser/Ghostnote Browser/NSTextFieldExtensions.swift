@@ -14,10 +14,15 @@ extension NSTextField {
     override public func mouseDown(theEvent: NSEvent) {
         
         if theEvent.clickCount == 1 {
-            superview?.mouseDown(theEvent)
+            if self.superview is NSTableCellView {
+                superview?.mouseDown(theEvent)
+            }else {
+                super.mouseDown(theEvent)
+            }
         }else if theEvent.clickCount == 2 {
             enterEditing()
         }
+       
     }
     
     func enterEditing() {

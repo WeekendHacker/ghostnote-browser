@@ -27,10 +27,9 @@ extension  ButtonNavigable {
 
 class ButtonNavViewController: NSViewController {
 
-    @IBOutlet weak var searchField:NSSearchField?
+    @IBOutlet weak var searchField:NSSearchField?     
     @IBOutlet weak var contentView:NSView?
     @IBOutlet weak var navView:NSView?
-    
     
     @IBOutlet weak var notesButton:NSButton?
     @IBOutlet weak var tasksButton:NSButton?
@@ -55,7 +54,9 @@ class ButtonNavViewController: NSViewController {
         }
     }
     
-    
+    func clearSearchField() {
+        searchField?.resignFirstResponder()
+    }
 //    func searchMenuForNotes() -> NSMenu {
 //        let notesMenu = NSMenu()
 //        let noteTitleItem = NSMenuItem(title: "Title", action: nil, keyEquivalent: "")
@@ -99,7 +100,7 @@ class ButtonNavViewController: NSViewController {
         notesButton?.layer?.backgroundColor = NSColor.clearColor().CGColor
         tasksButton?.layer?.backgroundColor = NSColor.clearColor().CGColor
         ghostnotesButton?.layer?.backgroundColor = NSColor.clearColor().CGColor
-        
+
         let selectedTab = NSUserDefaults.standardUserDefaults().integerForKey("selectedTab")
         
         if selectedTab == 0 {
@@ -146,9 +147,7 @@ class ButtonNavViewController: NSViewController {
                 
                 ghostnotesController.appsTableViewController.reload()
                 ghostnotesController.docsTableViewController.reload()
-                
             }
-
         }
     }
     

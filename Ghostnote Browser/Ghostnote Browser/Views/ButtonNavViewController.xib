@@ -10,7 +10,7 @@
                 <outlet property="ghostnotesButton" destination="7b9-bd-oQZ" id="tt3-hr-U9H"/>
                 <outlet property="navView" destination="yLv-HR-lB4" id="g5f-sX-7SO"/>
                 <outlet property="notesButton" destination="sty-WD-ANQ" id="uSw-iv-V6X"/>
-                <outlet property="searchField" destination="kAs-e4-AG9" id="0Yb-Ru-dHq"/>
+                <outlet property="searchField" destination="w4X-m4-3gR" id="QMd-3N-IiB"/>
                 <outlet property="tasksButton" destination="Ghf-cK-mjZ" id="ZMy-jy-ly8"/>
                 <outlet property="view" destination="c22-O7-iKe" id="oud-D3-BLt"/>
             </connections>
@@ -96,19 +96,19 @@
                         <constraint firstAttribute="trailing" secondItem="sty-WD-ANQ" secondAttribute="trailing" constant="24" id="z82-sF-nRS"/>
                     </constraints>
                 </customView>
-                <searchField identifier="SearchView" wantsLayer="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kAs-e4-AG9">
-                    <rect key="frame" x="349" y="288" width="200" height="22"/>
+                <searchField wantsLayer="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="w4X-m4-3gR">
+                    <rect key="frame" x="349" y="288" width="190" height="22"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="22" id="qSO-Oj-yxk"/>
-                        <constraint firstAttribute="width" constant="200" id="wIf-IL-dMG"/>
+                        <constraint firstAttribute="width" constant="190" id="eFD-5L-BYg"/>
+                        <constraint firstAttribute="height" constant="22" id="ulu-pg-0ch"/>
                     </constraints>
-                    <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" alignment="left" usesSingleLineMode="YES" bezelStyle="round" id="ArG-9G-eC7">
+                    <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" alignment="left" usesSingleLineMode="YES" bezelStyle="round" id="RD6-KO-4Tu">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </searchFieldCell>
                     <connections>
-                        <action selector="searchFieldGotText:" target="-2" id="lqz-E2-eDd"/>
+                        <action selector="searchFieldGotText:" target="-2" id="Lhh-II-xqW"/>
                     </connections>
                 </searchField>
             </subviews>
@@ -117,6 +117,7 @@
                 <constraint firstItem="yLv-HR-lB4" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="39" id="AUC-jA-xXV"/>
                 <constraint firstAttribute="trailing" secondItem="lLd-ZU-04Z" secondAttribute="trailing" id="Cjt-M3-le0"/>
                 <constraint firstItem="EN4-yC-QlN" firstAttribute="bottom" secondItem="yLv-HR-lB4" secondAttribute="bottom" id="GHI-ge-5Uh"/>
+                <constraint firstAttribute="trailing" secondItem="w4X-m4-3gR" secondAttribute="trailing" constant="20" id="M72-U5-fwu"/>
                 <constraint firstAttribute="trailing" secondItem="Mzz-Rk-AFp" secondAttribute="trailing" id="MX6-ci-SeM"/>
                 <constraint firstItem="Mzz-Rk-AFp" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="66" id="Z0O-as-SYc"/>
                 <constraint firstItem="yLv-HR-lB4" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="bFw-yu-2fV"/>
@@ -124,9 +125,8 @@
                 <constraint firstItem="EN4-yC-QlN" firstAttribute="leading" secondItem="yLv-HR-lB4" secondAttribute="trailing" id="bJm-go-bxc"/>
                 <constraint firstItem="Mzz-Rk-AFp" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="39" id="e5H-iR-rPo"/>
                 <constraint firstAttribute="bottom" secondItem="yLv-HR-lB4" secondAttribute="bottom" id="fjm-YB-gjv"/>
-                <constraint firstAttribute="trailing" secondItem="kAs-e4-AG9" secondAttribute="trailing" constant="10" id="hdB-Zq-Ms1"/>
+                <constraint firstItem="w4X-m4-3gR" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="9" id="qJ4-hN-biy"/>
                 <constraint firstItem="lLd-ZU-04Z" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="r9w-Z3-fwo"/>
-                <constraint firstItem="kAs-e4-AG9" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="9" id="tnM-KI-tXY"/>
                 <constraint firstAttribute="bottom" secondItem="Mzz-Rk-AFp" secondAttribute="bottom" id="yQL-5R-ZNb"/>
             </constraints>
             <point key="canvasLocation" x="338.5" y="-35.5"/>

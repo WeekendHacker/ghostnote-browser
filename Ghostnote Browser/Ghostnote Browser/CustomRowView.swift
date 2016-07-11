@@ -24,9 +24,9 @@ class CustomRowView: NSTableRowView {
                 color = NSColor(netHex: 0x3C75B8)
                 
             }else {
-                
-                color = NSColor.grayColor()
-                
+            
+                color = NSColor(netHex: 0xE5E3E3).colorWithAlphaComponent(0.5)
+            
             }
             
             color.set()

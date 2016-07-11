@@ -26,6 +26,7 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
             needsDisplay = true
         }
     }
+    
     var task:Task? {
         didSet {
             if let t = task {

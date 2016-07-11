@@ -35,6 +35,8 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
                     textField?.stringValue = displayTitle
                     textField?.toolTip = displayTitle
                     textField?.layer?.shadowColor = NSColor.blackColor().CGColor
+                    textField?.font = NSFont(name: "HelveticaNeue", size: 12.0)
+                    Swift.print("font is \(textField?.font)")
                 }
 
                 if let cb = checkbox {

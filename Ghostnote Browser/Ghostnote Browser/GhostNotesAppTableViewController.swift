@@ -99,6 +99,7 @@ class GhostNotesAppTableViewController: NSObject , NSTableViewDelegate , NSTable
     }
     
     
+    
     func tableViewSelectionDidChange(notification: NSNotification) {
         if let tv = notification.object as? NSTableView! {
             

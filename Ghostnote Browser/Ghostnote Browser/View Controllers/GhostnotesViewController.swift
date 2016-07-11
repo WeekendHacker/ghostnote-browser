@@ -160,7 +160,15 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
     
     func leftArrow() {
         if appsTableViewController.apps.count > 0 {
-            selectFirstApp()
+
+//            selectFirstApp()
+            if let row = appsTableView?.selectedRow where row >= 0 {
+                appsTableView?.selectRowIndexes(NSIndexSet(index:row), byExtendingSelection: false)
+                appsTableView?.window?.makeFirstResponder(appsTableView)
+                let notif = NSNotification(name: "NSTableViewSelectionDidChangeNotification",
+                                           object: appsTableView!)
+                NSNotificationCenter.defaultCenter().postNotification(notif)
+            }
         }
     }
     

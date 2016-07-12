@@ -160,7 +160,6 @@
 		D84F16C41CC54ED6005612BB /* DocumentIconProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentIconProvider.swift; sourceTree = "<group>"; };
 		D84F16D31CC553B3005612BB /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = App.swift; path = Models/App.swift; sourceTree = "<group>"; };
 		D84F16D51CC553DC005612BB /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Document.swift; path = Models/Document.swift; sourceTree = "<group>"; };
-		D84F16D71CC5E4E1005612BB /* Ghostnote Browser-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ghostnote Browser-Bridging-Header.h"; sourceTree = "<group>"; };
 		D84F16DC1CC60EB6005612BB /* AppCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCell.swift; sourceTree = "<group>"; };
 		D84F16DE1CC60EEE005612BB /* DocCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocCell.swift; sourceTree = "<group>"; };
 		D84F16E41CC71215005612BB /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotesViewController.swift; path = "View Controllers/NotesViewController.swift"; sourceTree = "<group>"; };
@@ -441,7 +440,6 @@
 				D8D10EC51CC48A9F00A434F6 /* AppDelegate.swift */,
 				D8D10ECA1CC48A9F00A434F6 /* Assets.xcassets */,
 				D8D10ECF1CC48A9F00A434F6 /* Info.plist */,
-				D84F16D71CC5E4E1005612BB /* Ghostnote Browser-Bridging-Header.h */,
 				D812818B1CCD9AA3001749E9 /* MainWindowController.swift */,
 				D812818C1CCD9AA3001749E9 /* MainWindowController.xib */,
 			);
@@ -871,7 +869,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ghostnoteapp.Ghostnote-Browser";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Ghostnote Browser/Ghostnote Browser-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -892,7 +889,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ghostnoteapp.Ghostnote-Browser";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Ghostnote Browser/Ghostnote Browser-Bridging-Header.h";
 			};
 			name = Release;
 		};

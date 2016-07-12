@@ -31,9 +31,7 @@ class GhostNotesAppTableViewController: NSObject , NSTableViewDelegate , NSTable
             if let rowViewNib = NSNib(nibNamed: "CustomRowView", bundle: nil) {
                 appsTableView?.registerNib(rowViewNib, forIdentifier: "CustomRowView")
             }
-            
 
-            
             NSDistributedNotificationCenter.defaultCenter().addObserver(self,
                                                                         selector: #selector(handleNoteCreation),
                                                                         name: "GhostnoteCreatedNote",
@@ -54,8 +52,13 @@ class GhostNotesAppTableViewController: NSObject , NSTableViewDelegate , NSTable
     }
     
     func refreshApps() {
+        
         apps = Array<App>()
 
+        // if there is a doc note for an app
+        // we still need an app in the tree to get to it
+        // thus the else clause
+        
         let bundleIDs = GhostNoteManager.shared.allAppBundleIDs()
         for bundleID in bundleIDs  {
             if let note = GhostNoteManager.shared.appNoteForApp(bundleID) {
@@ -97,8 +100,6 @@ class GhostNotesAppTableViewController: NSObject , NSTableViewDelegate , NSTable
         view.app = app
         return view
     }
-    
-    
     
     func tableViewSelectionDidChange(notification: NSNotification) {
         if let tv = notification.object as? NSTableView! {

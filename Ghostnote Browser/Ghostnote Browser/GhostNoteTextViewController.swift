@@ -15,6 +15,8 @@ class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
     
     @IBOutlet var noteTextView:NSTextView? {
         didSet {
+            let hellvetica = NSFont(name: "Hellvetica-Regular", size: 12.0)
+            print(hellvetica)
             noteTextView?.delegate = self
             noteTextView?.horizontallyResizable = true
             NSDistributedNotificationCenter.defaultCenter().addObserver(self, selector: #selector(reloadCurrentNote), name: "GhostnoteChangedNote", object: nil)
@@ -60,6 +62,7 @@ class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
                 
                 noteTextView?.textStorage?.setAttributedString(NSAttributedString())
             }
+            print(noteTextView?.textStorage)
             
         }
         else {

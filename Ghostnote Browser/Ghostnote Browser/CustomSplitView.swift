@@ -12,12 +12,12 @@ import Cocoa
 class CustomSplitView:NSSplitView {
     
     override var dividerColor: NSColor {
-        return NSColor.grayColor().colorWithAlphaComponent(0.5)
+        return NSColor.lightGrayColor().colorWithAlphaComponent(0.5)
     }
     
     override func drawDividerInRect(rect: NSRect) {
         
-            super.drawDividerInRect(rect)   
+            super.drawDividerInRect(rect)
         
     }
 }

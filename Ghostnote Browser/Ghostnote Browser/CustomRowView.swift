@@ -21,11 +21,11 @@ class CustomRowView: NSTableRowView {
             
             if emphasized {
             
-                color = NSColor(netHex: 0x3C75B8)
+                color = NSColor.gnBlue()
                 
             }else {
             
-                color = NSColor(netHex: 0xE5E3E3).colorWithAlphaComponent(0.5)
+                color = NSColor.gnGrey().colorWithAlphaComponent(0.5)
             
             }
             
@@ -37,8 +37,8 @@ class CustomRowView: NSTableRowView {
             
             if let ctx = NSGraphicsContext.currentContext()?.CGContext {
                 
-                let borderColor = NSColor(netHex: 0xc5c5c5).CGColor
-                let selectedBorderColor = NSColor(netHex: 0x3C75B8).CGColor
+                let borderColor = NSColor.gnWhite().CGColor
+                let selectedBorderColor = NSColor.gnBlue().CGColor
 
                 let width = bounds.size.width
                 let height = bounds.size.height

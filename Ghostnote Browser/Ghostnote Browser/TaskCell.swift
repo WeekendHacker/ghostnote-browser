@@ -9,17 +9,12 @@
 import Cocoa
 import QuartzCore
 
-
-extension NSTextField {
-    
-}
-
 class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
 {
 
     @IBOutlet weak var checkbox:NSButton?
-    let borderColor = NSColor(netHex: 0xc5c5c5).CGColor
-    let selectedBorderColor = NSColor(netHex: 0x3C75B8).CGColor
+    let borderColor = NSColor.gnWhite().CGColor
+    let selectedBorderColor = NSColor.gnBlue().CGColor
     
     var selected = false {
         didSet {

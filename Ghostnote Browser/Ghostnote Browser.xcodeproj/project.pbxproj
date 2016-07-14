@@ -59,6 +59,7 @@
 		D84F16F01CC71260005612BB /* GhostnotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16EE1CC71260005612BB /* GhostnotesViewController.swift */; };
 		D86A9FBA1D148FCC00F6DFF9 /* CustomSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86A9FB91D148FCC00F6DFF9 /* CustomSplitView.swift */; };
 		D86DC3831D0407E30013DFC8 /* DocCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D86DC3821D0407E30013DFC8 /* DocCell.xib */; };
+		D86FA0471D35F01200FFEC80 /* NSColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86FA0461D35F01200FFEC80 /* NSColorExtensions.swift */; };
 		D872BA761D0BDCBF00C0C556 /* SelectableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872BA751D0BDCBF00C0C556 /* SelectableCell.swift */; };
 		D884C1A31CE27600003E15D2 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D884C1A01CE27600003E15D2 /* Realm.framework */; };
 		D884C1A81CE2760A003E15D2 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D884C1A01CE27600003E15D2 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -167,6 +168,7 @@
 		D84F16EE1CC71260005612BB /* GhostnotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GhostnotesViewController.swift; path = "View Controllers/GhostnotesViewController.swift"; sourceTree = "<group>"; };
 		D86A9FB91D148FCC00F6DFF9 /* CustomSplitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSplitView.swift; sourceTree = "<group>"; };
 		D86DC3821D0407E30013DFC8 /* DocCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocCell.xib; sourceTree = "<group>"; };
+		D86FA0461D35F01200FFEC80 /* NSColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSColorExtensions.swift; sourceTree = "<group>"; };
 		D872BA751D0BDCBF00C0C556 /* SelectableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectableCell.swift; sourceTree = "<group>"; };
 		D884C1A01CE27600003E15D2 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/Mac/Realm.framework; sourceTree = "<group>"; };
 		D884C1A11CE27600003E15D2 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/Mac/RealmSwift.framework; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 				D803FEB71D21A5FD00360741 /* StringExtensions.swift */,
 				D803FEBD1D220E4400360741 /* NSTableViewExtensions.swift */,
 				D8CD4DB01D317269008C7427 /* NSImageExtensions.swift */,
+				D86FA0461D35F01200FFEC80 /* NSColorExtensions.swift */,
 			);
 			name = "UI Extensions";
 			sourceTree = "<group>";
@@ -719,6 +722,7 @@
 				D803FEC11D2219B900360741 /* ConfirmDeleteViewController.swift in Sources */,
 				D84F16DD1CC60EB6005612BB /* AppCell.swift in Sources */,
 				D803FEBE1D220E4400360741 /* NSTableViewExtensions.swift in Sources */,
+				D86FA0471D35F01200FFEC80 /* NSColorExtensions.swift in Sources */,
 				D81281961CCDCE6C001749E9 /* NoteCell.swift in Sources */,
 				D8D10EC61CC48A9F00A434F6 /* AppDelegate.swift in Sources */,
 				D84F16C51CC54ED6005612BB /* AppIconProvider.swift in Sources */,

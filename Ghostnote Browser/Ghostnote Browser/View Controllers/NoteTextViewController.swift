@@ -53,6 +53,7 @@ class NoteTextViewController: NSObject, NSTextViewDelegate {
             noteTextView?.wantsLayer = true
             noteTextView?.richText = true
             noteTextView?.font = NSFont(name: "HelveticaNeue", size: 12.0)
+            noteTextView?.linkTextAttributes = [NSForegroundColorAttributeName : NSColor.gnBlue()]
         }
     }
     

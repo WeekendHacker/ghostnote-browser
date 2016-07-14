@@ -18,6 +18,7 @@ class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
             noteTextView?.delegate = self
             noteTextView?.horizontallyResizable = true
             NSDistributedNotificationCenter.defaultCenter().addObserver(self, selector: #selector(reloadCurrentNote), name: "GhostnoteChangedNote", object: nil)
+            noteTextView?.linkTextAttributes = [NSForegroundColorAttributeName : NSColor.gnBlue()]
         }
     }
     

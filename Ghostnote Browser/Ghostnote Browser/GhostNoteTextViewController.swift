@@ -10,17 +10,25 @@ import Cocoa
 
 class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
 
+    
+    let textProcessor = TextProcessor()
+    
     @IBOutlet var noteTitleLabel:NSTextField?
     @IBOutlet var noteIconImageView:NSImageView?
     
+    
+    @IBOutlet weak var boldButton:NSButton?
+    @IBOutlet weak var italicButton:NSButton?
+    @IBOutlet weak var numberedListButton:NSButton?
+    @IBOutlet weak var todoListButton:NSButton?
+    
     @IBOutlet var noteTextView:NSTextView? {
         didSet {
-            let hellvetica = NSFont(name: "Hellvetica-Regular", size: 12.0)
-            print(hellvetica)
             noteTextView?.delegate = self
             noteTextView?.horizontallyResizable = true
             NSDistributedNotificationCenter.defaultCenter().addObserver(self, selector: #selector(reloadCurrentNote), name: "GhostnoteChangedNote", object: nil)
             noteTextView?.linkTextAttributes = [NSForegroundColorAttributeName : NSColor.gnBlue()]
+            textProcessor.textView = noteTextView
         }
     }
     
@@ -33,12 +41,28 @@ class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
         }
     }
     
+    
+    func enableUI() {
+        noteTextView?.hidden = false
+        boldButton?.enabled = true
+        italicButton?.enabled = true
+        numberedListButton?.enabled = true
+        todoListButton?.enabled = true
+    }
+    
+    func disableUI() {
+        noteTextView?.hidden = true
+        boldButton?.enabled = false
+        italicButton?.enabled = false
+        numberedListButton?.enabled = false
+        todoListButton?.enabled = false
+    }
+    
     func reloadCurrentNote() {
         
         if let note = currentNote {
             
-            noteTextView?.hidden = false
-
+            enableUI()
 
             let read = noteTextView?.readRTFDFromFile(note.filePath)
             
@@ -62,20 +86,20 @@ class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
                 
                 noteTextView?.textStorage?.setAttributedString(NSAttributedString())
             }
-            print(noteTextView?.textStorage)
-            
         }
         else {
             noteTextView?.string = ""
-            noteTextView?.hidden = true
             noteTitleLabel?.stringValue = ""
             noteIconImageView?.image = nil
+            disableUI()
         }
     }
     
     func textDidChange(notification: NSNotification) {
         if let note = currentNote {
             noteTextView!.writeRTFDToFile(note.filePath, atomically: true)
+            
+            // This allows GN to reload the note file form disk
             NSDistributedNotificationCenter.defaultCenter().postNotificationName("GhostnoteBrowserChangedNote",
                                                                                  object: nil,
                                                                                  userInfo: nil,
@@ -84,4 +108,34 @@ class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
 
         }
     }
+    
+    
+    // Actions
+    
+    func boldClicked(sender:AnyObject?) {
+        textProcessor.toggleBold()
+    }
+    
+    func italicClicked(sender:AnyObject?) {
+        textProcessor.toggleItalic()
+
+    }
+    
+    func numberedListClicked(sender:AnyObject?) {
+        noteTextView?.changeAttributes(self)
+    }
+    
+    func todoListClicked(sender:AnyObject?) {
+        noteTextView?.changeAttributes(self)
+    }
+    
+    //
+    
+//    func convertAttributes(attributes: [String : AnyObject]) -> [String : AnyObject]{
+//        print("convert")
+//        print(attributes)
+//        return attributes
+//    }
+
+    
 }

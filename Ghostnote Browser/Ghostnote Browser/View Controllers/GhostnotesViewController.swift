@@ -17,6 +17,31 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
     
     @IBOutlet weak var splitView:CustomSplitView?
     
+    
+    @IBOutlet weak var boldButton:NSButton? {
+        didSet {
+            noteTextViewController.boldButton = boldButton
+        }
+    }
+    
+    @IBOutlet weak var italicButton:NSButton? {
+        didSet {
+            noteTextViewController.italicButton = italicButton
+        }
+    }
+    
+    @IBOutlet weak var numberedListButton:NSButton? {
+        didSet {
+            noteTextViewController.numberedListButton = numberedListButton
+        }
+    }
+    
+    @IBOutlet weak var todoListButton:NSButton? {
+        didSet {
+            noteTextViewController.todoListButton = todoListButton
+        }
+    }
+    
     @IBOutlet var noteTextView:NSTextView? {
         didSet {
             if let tv = noteTextView {
@@ -66,6 +91,7 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
         super.viewDidLoad()
         title = "Ghostnotes"
         splitView?.dividerStyle = .Thin
+        noteTextViewController.disableUI()
     }
 
     override func viewDidAppear() {
@@ -161,7 +187,6 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
     func leftArrow() {
         if appsTableViewController.apps.count > 0 {
 
-//            selectFirstApp()
             if let row = appsTableView?.selectedRow where row >= 0 {
                 appsTableView?.selectRowIndexes(NSIndexSet(index:row), byExtendingSelection: false)
                 appsTableView?.window?.makeFirstResponder(appsTableView)
@@ -177,4 +202,23 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
             selectFirstDoc()
         }
     }
+    
+    // IBACtions
+    
+    @IBAction func boldClicked(sender:AnyObject?) {
+        noteTextViewController.boldClicked(self)
+    }
+    
+    @IBAction func italicClicked(sender:AnyObject?) {
+        noteTextViewController.italicClicked(self)
+    }
+    
+    @IBAction func numberedListClicked(sender:AnyObject?) {
+        noteTextViewController.numberedListClicked(self)
+    }
+    
+    @IBAction func todoListClicked(sender:AnyObject?) {
+        noteTextViewController.todoListClicked(self)
+    }
+    
 }

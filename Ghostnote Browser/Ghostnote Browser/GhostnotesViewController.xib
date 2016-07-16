@@ -7,11 +7,15 @@
         <customObject id="-2" userLabel="File's Owner" customClass="GhostnotesViewController" customModule="Ghostnote_Browser" customModuleProvider="target">
             <connections>
                 <outlet property="appsTableView" destination="5LJ-AF-fxE" id="h0k-ub-cbD"/>
+                <outlet property="boldButton" destination="tNE-4r-Eeu" id="5ow-rW-VEK"/>
                 <outlet property="docsTableView" destination="iBq-wR-WSp" id="PkF-rJ-ueP"/>
+                <outlet property="italicButton" destination="9nz-C8-7Wj" id="fWz-Q9-WXF"/>
                 <outlet property="noteIconImageView" destination="eEc-RT-4w5" id="j8h-1i-o97"/>
                 <outlet property="noteTextView" destination="e54-Cj-F06" id="xCQ-8o-61X"/>
                 <outlet property="noteTitleLabel" destination="PfQ-b6-Zsm" id="Ihj-BF-AAp"/>
+                <outlet property="numberedListButton" destination="53P-D7-ghn" id="k6B-RL-ByR"/>
                 <outlet property="splitView" destination="vo5-J5-L2U" id="uwn-Pz-L4X"/>
+                <outlet property="todoListButton" destination="1SR-a1-XSf" id="aZ7-wN-ETM"/>
                 <outlet property="view" destination="c22-O7-iKe" id="BfV-nq-59Y"/>
             </connections>
         </customObject>
@@ -34,7 +38,7 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="5LJ-AF-fxE" userLabel="Apps Table View" customClass="DeletableTableView" customModule="Ghostnote_Browser" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="267" height="271"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="267" height="0.0"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <size key="intercellSpacing" width="3" height="2"/>
                                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
@@ -116,7 +120,7 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="iBq-wR-WSp" userLabel="Docs Table View" customClass="DeletableTableView" customModule="Ghostnote_Browser" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="267" height="271"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="267" height="0.0"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <size key="intercellSpacing" width="3" height="2"/>
                                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
@@ -194,19 +198,19 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <subviews>
                                 <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HS3-XA-UR6" userLabel="Bordered Scroll View - Note Text View">
-                                    <rect key="frame" x="24" y="24" width="235" height="237"/>
+                                    <rect key="frame" x="24" y="24" width="235" height="221"/>
                                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="PG8-eH-a23">
-                                        <rect key="frame" x="0.0" y="0.0" width="235" height="237"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="235" height="221"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <textView drawsBackground="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="e54-Cj-F06" userLabel="Note Text View">
-                                                <rect key="frame" x="0.0" y="0.0" width="135" height="237"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="135" height="221"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" red="1" green="0.20176665152279916" blue="0.32919391092602879" alpha="1" colorSpace="calibratedRGB"/>
-                                                <size key="minSize" width="235" height="237"/>
+                                                <size key="minSize" width="135" height="221"/>
                                                 <size key="maxSize" width="463" height="10000000"/>
                                                 <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <size key="minSize" width="235" height="237"/>
+                                                <size key="minSize" width="135" height="221"/>
                                                 <size key="maxSize" width="463" height="10000000"/>
                                             </textView>
                                         </subviews>
@@ -253,10 +257,50 @@
                                         <constraint firstItem="PfQ-b6-Zsm" firstAttribute="centerX" secondItem="WdQ-qm-cYB" secondAttribute="centerX" id="vfa-tb-JPn"/>
                                     </constraints>
                                 </customView>
+                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tNE-4r-Eeu">
+                                    <rect key="frame" x="35" y="238" width="48" height="32"/>
+                                    <buttonCell key="cell" type="push" title="b" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="w2W-pa-nma">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="boldClicked:" target="-2" id="nVP-ge-iqx"/>
+                                    </connections>
+                                </button>
+                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9nz-C8-7Wj">
+                                    <rect key="frame" x="77" y="238" width="44" height="32"/>
+                                    <buttonCell key="cell" type="push" title="i" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Fkv-9P-AzI">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="italicClicked:" target="-2" id="bmb-QK-eef"/>
+                                    </connections>
+                                </button>
+                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1SR-a1-XSf">
+                                    <rect key="frame" x="116" y="238" width="51" height="32"/>
+                                    <buttonCell key="cell" type="push" title="ul" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hSf-GS-h2k">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="todoListClicked:" target="-2" id="dm1-Hj-acA"/>
+                                    </connections>
+                                </button>
+                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="53P-D7-ghn">
+                                    <rect key="frame" x="167" y="238" width="51" height="32"/>
+                                    <buttonCell key="cell" type="push" title="ol" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Izd-Ld-dTO">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="numberedListClicked:" target="-2" id="ZnT-ff-BZD"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <constraints>
                                 <constraint firstItem="WdQ-qm-cYB" firstAttribute="top" secondItem="HS3-XA-UR6" secondAttribute="bottom" id="1CI-vL-4wc"/>
-                                <constraint firstItem="HS3-XA-UR6" firstAttribute="top" secondItem="CWu-Nb-Hm1" secondAttribute="top" constant="10" id="KVJ-oY-m5o"/>
+                                <constraint firstItem="HS3-XA-UR6" firstAttribute="top" secondItem="CWu-Nb-Hm1" secondAttribute="top" constant="26" id="KVJ-oY-m5o"/>
                                 <constraint firstAttribute="trailing" secondItem="WdQ-qm-cYB" secondAttribute="trailing" id="KyO-Hk-Vqg"/>
                                 <constraint firstAttribute="trailing" secondItem="HS3-XA-UR6" secondAttribute="trailing" constant="8" id="NdH-Gh-qUh"/>
                                 <constraint firstItem="WdQ-qm-cYB" firstAttribute="leading" secondItem="CWu-Nb-Hm1" secondAttribute="leading" id="Qmv-Uh-WeP"/>

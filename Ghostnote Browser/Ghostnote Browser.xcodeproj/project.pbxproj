@@ -79,6 +79,8 @@
 		D8D30DAF1D02A1D3004009F7 /* GhostNotesDocTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D30DAE1D02A1D3004009F7 /* GhostNotesDocTableViewController.swift */; };
 		D8D30DB11D02A73D004009F7 /* AppCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8D30DB01D02A73D004009F7 /* AppCell.xib */; };
 		D8E380EC1CDC21000028D161 /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E380EB1CDC21000028D161 /* TaskCell.xib */; };
+		D8FEA3CB1D3A99C400DA822F /* NSTextViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEA3CA1D3A99C400DA822F /* NSTextViewExtensions.swift */; };
+		D8FEA3CD1D3AA17F00DA822F /* NSFontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEA3CC1D3AA17F00DA822F /* NSFontExtensions.swift */; };
 		D8FF02351D08C516004AE6E2 /* TaskListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8FF02341D08C516004AE6E2 /* TaskListCell.xib */; };
 		D8FF023C1D0A6CC9004AE6E2 /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8FF023B1D0A6CC9004AE6E2 /* HeaderCell.xib */; };
 		D8FF023E1D0A6D6C004AE6E2 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FF023D1D0A6D6C004AE6E2 /* HeaderCell.swift */; };
@@ -195,6 +197,8 @@
 		D8D30DAE1D02A1D3004009F7 /* GhostNotesDocTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GhostNotesDocTableViewController.swift; sourceTree = "<group>"; };
 		D8D30DB01D02A73D004009F7 /* AppCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppCell.xib; sourceTree = "<group>"; };
 		D8E380EB1CDC21000028D161 /* TaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TaskCell.xib; path = Views/TaskCell.xib; sourceTree = "<group>"; };
+		D8FEA3CA1D3A99C400DA822F /* NSTextViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTextViewExtensions.swift; sourceTree = "<group>"; };
+		D8FEA3CC1D3AA17F00DA822F /* NSFontExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSFontExtensions.swift; sourceTree = "<group>"; };
 		D8FF02341D08C516004AE6E2 /* TaskListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskListCell.xib; sourceTree = "<group>"; };
 		D8FF023B1D0A6CC9004AE6E2 /* HeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
 		D8FF023D1D0A6D6C004AE6E2 /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
@@ -308,6 +312,8 @@
 				D803FEBD1D220E4400360741 /* NSTableViewExtensions.swift */,
 				D8CD4DB01D317269008C7427 /* NSImageExtensions.swift */,
 				D86FA0461D35F01200FFEC80 /* NSColorExtensions.swift */,
+				D8FEA3CA1D3A99C400DA822F /* NSTextViewExtensions.swift */,
+				D8FEA3CC1D3AA17F00DA822F /* NSFontExtensions.swift */,
 			);
 			name = "UI Extensions";
 			sourceTree = "<group>";
@@ -700,6 +706,7 @@
 				D824C8DA1D1873AA00246E8C /* TasksSearchController.swift in Sources */,
 				D803FEBC1D21C8A700360741 /* CustomRowView.swift in Sources */,
 				D84F16C61CC54ED6005612BB /* AppNameProvider.swift in Sources */,
+				D8FEA3CB1D3A99C400DA822F /* NSTextViewExtensions.swift in Sources */,
 				D824C8DC1D1873BB00246E8C /* GhostnotesSearchController.swift in Sources */,
 				D80001B61CD957C200255E54 /* TaskListController.swift in Sources */,
 				D80001AE1CD7F98A00255E54 /* NoteNameValidator.swift in Sources */,
@@ -709,6 +716,7 @@
 				D803FEB81D21A5FD00360741 /* StringExtensions.swift in Sources */,
 				D8CC00AD1CE6793300D13331 /* GhostNoteManager.swift in Sources */,
 				D84F16DF1CC60EEE005612BB /* DocCell.swift in Sources */,
+				D8FEA3CD1D3AA17F00DA822F /* NSFontExtensions.swift in Sources */,
 				D84F16D41CC553B3005612BB /* App.swift in Sources */,
 				D84F16EB1CC7123E005612BB /* TasksViewController.swift in Sources */,
 				D824C8EA1D1902BE00246E8C /* HasIDString.swift in Sources */,

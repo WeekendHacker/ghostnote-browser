@@ -12,6 +12,7 @@ import Cocoa
 
 class TextProcessor: NSObject {
     
+    // public
     var textView:NSTextView?
     
     func toggleBold() {
@@ -48,15 +49,26 @@ class TextProcessor: NSObject {
         }
     }
 
-    
     func toggleNumberedList() {
         print("toggleNumberedList")
     }
     
     func toggleTaskList() {
-        print("toggleTaskList")
+        let taskUncheck = taskUncheckedString()
+        
+        print("toggleTaskList \(taskUncheck)")
+        if let text = textView?.textStorage {
+            if let index = textView?.selectedRange().location {
+                text.beginEditing()
+                text.insertAttributedString(taskUncheck, atIndex: index)
+                text.endEditing()
+            }
+        }
+        
     }
     
+    
+    // porbably private
     func toggleBoldOverRange(range:NSRange) {
         
         if let string = textView?.textStorage?.attributedSubstringFromRange(range) {
@@ -117,4 +129,18 @@ class TextProcessor: NSObject {
         }
     }
 
+    func taskCheckedString() -> NSAttributedString {
+        var attribs = textView?.typingAttributes
+        attribs![NSFontAttributeName] = NSFont(name: "Hellvetica", size: 12.0)
+        let foo =  NSAttributedString(string: "\"", attributes: attribs)
+        return foo
+    }
+    
+    func taskUncheckedString() -> NSAttributedString {
+        var attribs = textView?.typingAttributes
+        attribs![NSFontAttributeName] = NSFont(name: "Hellvetica", size: 12.0)
+        let foo =  NSAttributedString(string: "!", attributes: attribs)
+        return foo
+    }
+    
 }

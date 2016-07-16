@@ -122,20 +122,11 @@ class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
     }
     
     func numberedListClicked(sender:AnyObject?) {
-        noteTextView?.changeAttributes(self)
+        textProcessor.toggleNumberedList()
     }
     
     func todoListClicked(sender:AnyObject?) {
-        noteTextView?.changeAttributes(self)
+        textProcessor.toggleTaskList()
     }
-    
-    //
-    
-//    func convertAttributes(attributes: [String : AnyObject]) -> [String : AnyObject]{
-//        print("convert")
-//        print(attributes)
-//        return attributes
-//    }
 
-    
 }

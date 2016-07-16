@@ -81,6 +81,7 @@
 		D8E380EC1CDC21000028D161 /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E380EB1CDC21000028D161 /* TaskCell.xib */; };
 		D8FEA3CB1D3A99C400DA822F /* NSTextViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEA3CA1D3A99C400DA822F /* NSTextViewExtensions.swift */; };
 		D8FEA3CD1D3AA17F00DA822F /* NSFontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEA3CC1D3AA17F00DA822F /* NSFontExtensions.swift */; };
+		D8FEA3CE1D3AB52200DA822F /* Hellvetica-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8BD62D11D3811F800BD45AC /* Hellvetica-Regular.otf */; };
 		D8FF02351D08C516004AE6E2 /* TaskListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8FF02341D08C516004AE6E2 /* TaskListCell.xib */; };
 		D8FF023C1D0A6CC9004AE6E2 /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8FF023B1D0A6CC9004AE6E2 /* HeaderCell.xib */; };
 		D8FF023E1D0A6D6C004AE6E2 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FF023D1D0A6D6C004AE6E2 /* HeaderCell.swift */; };
@@ -668,6 +669,7 @@
 				D86DC3831D0407E30013DFC8 /* DocCell.xib in Resources */,
 				D81281941CCDB9DC001749E9 /* GhostnotesViewController.xib in Resources */,
 				D8FF02351D08C516004AE6E2 /* TaskListCell.xib in Resources */,
+				D8FEA3CE1D3AB52200DA822F /* Hellvetica-Regular.otf in Resources */,
 				D8D30DB11D02A73D004009F7 /* AppCell.xib in Resources */,
 				D812818E1CCD9AA3001749E9 /* MainWindowController.xib in Resources */,
 				D8151CC21D00C2CC00F04C24 /* NoteCell.xib in Resources */,

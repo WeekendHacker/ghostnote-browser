@@ -134,7 +134,7 @@ class TextProcessor: NSObject {
     
     func toggleTaskListOverRange(range:NSRange) {
 
-        if let lines = textView?.textStorage?.attributedSubstringFromRange(range).mutableLines() {
+        if let lines = textView?.textStorage?.attributedSubstringFromRange(range).mutableLines() where !lines.isEmpty {
             let replacementString = NSMutableAttributedString()
             
             lines.forEach { (attributedString) in
@@ -148,17 +148,20 @@ class TextProcessor: NSObject {
                     
                 }else {
                     
-                    var mutableAttribs = attributedString.attributesAtIndex(0, effectiveRange: nil)
-                    
-                    if let currentFont = mutableAttribs[NSFontAttributeName] as? NSFont {
+                    if !attributedString.string.isEmpty {
+                        var mutableAttribs = attributedString.attributesAtIndex(0, effectiveRange: nil)
                         
-                        let size = currentFont.pointSize
-                        mutableAttribs[NSFontAttributeName] = NSFont(name: "Hellvetica", size: size)
-                        let box = NSAttributedString.taskUncheckedStringWith(mutableAttribs)
-                        attributedString.insertAttributedString(box, atIndex: 0)
-                        let newLine = NSAttributedString(string: "\n")
-                        attributedString.appendAttributedString(newLine)
-                        replacementString.appendAttributedString(attributedString)
+                        if let currentFont = mutableAttribs[NSFontAttributeName] as? NSFont {
+                            
+                            let size = currentFont.pointSize
+                            mutableAttribs[NSFontAttributeName] = NSFont(name: "Hellvetica", size: size)
+                            let box = NSAttributedString.taskUncheckedStringWith(mutableAttribs)
+                            attributedString.insertAttributedString(box, atIndex: 0)
+                            let newLine = NSAttributedString(string: "\n")
+                            attributedString.appendAttributedString(newLine)
+                            replacementString.appendAttributedString(attributedString)
+                        }
+
                     }
                 }
             }
@@ -168,20 +171,58 @@ class TextProcessor: NSObject {
                 textView?.textStorage?.replaceCharactersInRange(range, withAttributedString: replacementString)
                 textView?.textStorage?.endEditing()
                 textView?.didChangeText()
-//                let notif = NSNotification(name: NSTextDidChangeNotification, object: textView)
-//                textView?.delegate?.textDidChange!(notif)
             }
-           
         }
     }
     
     func toggleTaskListAtInsertionPoint() {
-        print("toggleTaskAtInsertionPoint")
         if let range = textView?.selectedRange() {
-            ((textView?.textStorage?.string)! as NSString).enumerateSubstringsInRange(range, options:.ByLines) { (line, lineRange, rangeWithTerminators, nil) in
-                print(line)
+            
+            let lineRange = (textView?.textStorage?.string as! NSString).lineRangeForRange(NSRange(location: range.location, length: 0))
+            
+            if let currentLine = textView?.textStorage?.attributedSubstringFromRange(lineRange) {
+                
+                if currentLine.hasCheckBox() {
+                    
+                    removeCheckboxFromLine(lineRange)
+                    
+                }else {
+                    
+                    addCheckboxToLine(lineRange)
+
+                }
             }
         }
-       
+    }
+    
+    func addCheckboxToLine(range:NSRange) {
+        var mutableAttribs = textView?.typingAttributes
+
+        if let currentFont = mutableAttribs![NSFontAttributeName] as? NSFont {
+            
+            let size = currentFont.pointSize
+            mutableAttribs![NSFontAttributeName] = NSFont(name: "Hellvetica", size: size)
+            let box = NSAttributedString.taskUncheckedStringWith(mutableAttribs)
+            
+            if textView!.shouldChangeTextInRange(range, replacementString: box.string) {
+                textView?.textStorage?.beginEditing()
+                textView?.textStorage?.insertAttributedString(box, atIndex: range.location)
+                textView?.textStorage?.endEditing()
+                textView?.didChangeText()
+            }
+        }
+    }
+    
+    func removeCheckboxFromLine(range:NSRange) {
+        
+        if textView!.shouldChangeTextInRange(range, replacementString: "") {
+            
+            let rangeToDelete = NSRange(location: range.location, length: 2)
+            textView?.textStorage?.beginEditing()
+            textView?.textStorage?.deleteCharactersInRange(rangeToDelete)
+            textView?.textStorage?.endEditing()
+            textView?.didChangeText()
+        }
+
     }
 }

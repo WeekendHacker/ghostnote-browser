@@ -6,11 +6,90 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             scope = "0"
             stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ghostnote Browser/NSTextViewExtensions.swift"
+            timestampString = "490470622.45968"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "toggleTaskListAtInsertionPoint()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ghostnote_Browser.TextProcessor.toggleTaskListAtInsertionPoint () -&gt; ()"
+                  moduleName = "Ghostnote Browser"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jimmyhoughjr/workspace/ghostnote-browser/Ghostnote%20Browser/Ghostnote%20Browser/NSTextViewExtensions.swift"
+                  timestampString = "490470622.827919"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "177"
+                  endingLineNumber = "177"
+                  offsetFromSymbolStart = "466">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ghostnote_Browser.TextProcessor.toggleTaskListAtInsertionPoint () -&gt; ()"
+                  moduleName = "Ghostnote Browser"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jimmyhoughjr/workspace/ghostnote-browser/Ghostnote%20Browser/Ghostnote%20Browser/NSTextViewExtensions.swift"
+                  timestampString = "490470622.828041"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "177"
+                  endingLineNumber = "177"
+                  offsetFromSymbolStart = "999">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ghostnote_Browser.TextProcessor.(toggleTaskListAtInsertionPoint () -&gt; ()).(closure #1)"
+                  moduleName = "Ghostnote Browser"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jimmyhoughjr/workspace/ghostnote-browser/Ghostnote%20Browser/Ghostnote%20Browser/NSTextViewExtensions.swift"
+                  timestampString = "490470622.828142"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "178"
+                  endingLineNumber = "178"
+                  offsetFromSymbolStart = "86">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ghostnote Browser/NSTextViewExtensions.swift"
+            timestampString = "490470622.45968"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
+            landmarkName = "toggleTaskListAtInsertionPoint()"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

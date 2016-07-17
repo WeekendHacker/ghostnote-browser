@@ -82,6 +82,7 @@
 		D8FEA3CB1D3A99C400DA822F /* NSTextViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEA3CA1D3A99C400DA822F /* NSTextViewExtensions.swift */; };
 		D8FEA3CD1D3AA17F00DA822F /* NSFontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEA3CC1D3AA17F00DA822F /* NSFontExtensions.swift */; };
 		D8FEA3CE1D3AB52200DA822F /* Hellvetica-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8BD62D11D3811F800BD45AC /* Hellvetica-Regular.otf */; };
+		D8FEA3D01D3B38B000DA822F /* NSAttributesStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEA3CF1D3B38B000DA822F /* NSAttributesStringExtensions.swift */; };
 		D8FF02351D08C516004AE6E2 /* TaskListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8FF02341D08C516004AE6E2 /* TaskListCell.xib */; };
 		D8FF023C1D0A6CC9004AE6E2 /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8FF023B1D0A6CC9004AE6E2 /* HeaderCell.xib */; };
 		D8FF023E1D0A6D6C004AE6E2 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FF023D1D0A6D6C004AE6E2 /* HeaderCell.swift */; };
@@ -200,6 +201,7 @@
 		D8E380EB1CDC21000028D161 /* TaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TaskCell.xib; path = Views/TaskCell.xib; sourceTree = "<group>"; };
 		D8FEA3CA1D3A99C400DA822F /* NSTextViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTextViewExtensions.swift; sourceTree = "<group>"; };
 		D8FEA3CC1D3AA17F00DA822F /* NSFontExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSFontExtensions.swift; sourceTree = "<group>"; };
+		D8FEA3CF1D3B38B000DA822F /* NSAttributesStringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributesStringExtensions.swift; sourceTree = "<group>"; };
 		D8FF02341D08C516004AE6E2 /* TaskListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskListCell.xib; sourceTree = "<group>"; };
 		D8FF023B1D0A6CC9004AE6E2 /* HeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
 		D8FF023D1D0A6D6C004AE6E2 /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 				D86FA0461D35F01200FFEC80 /* NSColorExtensions.swift */,
 				D8FEA3CA1D3A99C400DA822F /* NSTextViewExtensions.swift */,
 				D8FEA3CC1D3AA17F00DA822F /* NSFontExtensions.swift */,
+				D8FEA3CF1D3B38B000DA822F /* NSAttributesStringExtensions.swift */,
 			);
 			name = "UI Extensions";
 			sourceTree = "<group>";
@@ -744,6 +747,7 @@
 				D8FF023E1D0A6D6C004AE6E2 /* HeaderCell.swift in Sources */,
 				D86A9FBA1D148FCC00F6DFF9 /* CustomSplitView.swift in Sources */,
 				D824C8D81D18739C00246E8C /* NoteSearchController.swift in Sources */,
+				D8FEA3D01D3B38B000DA822F /* NSAttributesStringExtensions.swift in Sources */,
 				D8265A631CDB18760054AF57 /* TaskListCell.swift in Sources */,
 				D8265A651CDBE37E0054AF57 /* TaskCell.swift in Sources */,
 				D803FEC11D2219B900360741 /* ConfirmDeleteViewController.swift in Sources */,

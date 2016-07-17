@@ -54,15 +54,18 @@ class TextProcessor: NSObject {
     }
     
     func toggleTaskList() {
-        let taskUncheck = taskUncheckedString()
         
-        print("toggleTaskList \(taskUncheck)")
-        if let text = textView?.textStorage {
-            if let index = textView?.selectedRange().location {
-                text.beginEditing()
-                text.insertAttributedString(taskUncheck, atIndex: index)
-                text.endEditing()
-            }
+        if let ranges = textView?.selectedRanges  {
+            
+            ranges.forEach({ (range) in
+                
+                if range.rangeValue.length > 0 {
+                    toggleTaskListOverRange(range.rangeValue)
+                }
+                else {
+                    toggleTaskListAtInsertionPoint()
+                }
+            })
         }
         
     }
@@ -128,19 +131,53 @@ class TextProcessor: NSObject {
             textView?.typingAttributes["NSFont"] = newFont
         }
     }
+    
+    func toggleTaskListOverRange(range:NSRange) {
 
-    func taskCheckedString() -> NSAttributedString {
-        var attribs = textView?.typingAttributes
-        attribs![NSFontAttributeName] = NSFont(name: "Hellvetica", size: 12.0)
-        let foo =  NSAttributedString(string: "\"", attributes: attribs)
-        return foo
+        if let lines = textView?.textStorage?.attributedSubstringFromRange(range).mutableLines() {
+            let replacementString = NSMutableAttributedString()
+            
+            lines.forEach { (attributedString) in
+                
+                if attributedString.hasCheckBox() {
+                    
+                    attributedString.deleteCharactersInRange(NSRange(location: 0, length: 2))
+                    let newLine = NSAttributedString(string: "\n")
+                    attributedString.appendAttributedString(newLine)
+                    replacementString.appendAttributedString(attributedString)
+                    
+                }else {
+                    
+                    var mutableAttribs = attributedString.attributesAtIndex(0, effectiveRange: nil)
+                    
+                    if let currentFont = mutableAttribs[NSFontAttributeName] as? NSFont {
+                        
+                        let size = currentFont.pointSize
+                        mutableAttribs[NSFontAttributeName] = NSFont(name: "Hellvetica", size: size)
+                        let box = NSAttributedString.taskUncheckedStringWith(mutableAttribs)
+                        attributedString.insertAttributedString(box, atIndex: 0)
+                        let newLine = NSAttributedString(string: "\n")
+                        attributedString.appendAttributedString(newLine)
+                        replacementString.appendAttributedString(attributedString)
+                    }
+                }
+            }
+
+            textView?.textStorage?.beginEditing()
+            textView?.textStorage?.replaceCharactersInRange(range, withAttributedString: replacementString)
+            textView?.textStorage?.endEditing()
+            let notif = NSNotification(name: NSTextDidChangeNotification, object: textView)
+            textView?.delegate?.textDidChange!(notif)
+        }
     }
     
-    func taskUncheckedString() -> NSAttributedString {
-        var attribs = textView?.typingAttributes
-        attribs![NSFontAttributeName] = NSFont(name: "Hellvetica", size: 12.0)
-        let foo =  NSAttributedString(string: "!", attributes: attribs)
-        return foo
+    func toggleTaskListAtInsertionPoint() {
+        print("toggleTaskAtInsertionPoint")
+        if let range = textView?.selectedRange() {
+            ((textView?.textStorage?.string)! as NSString).enumerateSubstringsInRange(range, options:.ByLines) { (line, lineRange, rangeWithTerminators, nil) in
+                print(line)
+            }
+        }
+       
     }
-    
 }

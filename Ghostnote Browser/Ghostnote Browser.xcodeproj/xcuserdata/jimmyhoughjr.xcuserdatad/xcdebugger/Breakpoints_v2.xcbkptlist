@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ghostnote Browser/NSTextViewExtensions.swift"
-            timestampString = "490470622.45968"
+            timestampString = "490470867.420047"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
             landmarkName = "toggleTaskListAtInsertionPoint()"
             landmarkType = "5">
             <Locations>
@@ -36,11 +36,11 @@
                   moduleName = "Ghostnote Browser"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jimmyhoughjr/workspace/ghostnote-browser/Ghostnote%20Browser/Ghostnote%20Browser/NSTextViewExtensions.swift"
-                  timestampString = "490470622.827919"
+                  timestampString = "490470867.781161"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "177"
-                  endingLineNumber = "177"
+                  startingLineNumber = "181"
+                  endingLineNumber = "181"
                   offsetFromSymbolStart = "466">
                </Location>
                <Location
@@ -51,11 +51,11 @@
                   moduleName = "Ghostnote Browser"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jimmyhoughjr/workspace/ghostnote-browser/Ghostnote%20Browser/Ghostnote%20Browser/NSTextViewExtensions.swift"
-                  timestampString = "490470622.828041"
+                  timestampString = "490470867.781361"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "177"
-                  endingLineNumber = "177"
+                  startingLineNumber = "181"
+                  endingLineNumber = "181"
                   offsetFromSymbolStart = "999">
                </Location>
                <Location
@@ -66,11 +66,11 @@
                   moduleName = "Ghostnote Browser"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jimmyhoughjr/workspace/ghostnote-browser/Ghostnote%20Browser/Ghostnote%20Browser/NSTextViewExtensions.swift"
-                  timestampString = "490470622.828142"
+                  timestampString = "490470867.781508"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "178"
-                  endingLineNumber = "178"
+                  startingLineNumber = "182"
+                  endingLineNumber = "182"
                   offsetFromSymbolStart = "86">
                </Location>
             </Locations>
@@ -83,11 +83,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ghostnote Browser/NSTextViewExtensions.swift"
-            timestampString = "490470622.45968"
+            timestampString = "490470867.420047"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
             landmarkName = "toggleTaskListAtInsertionPoint()"
             landmarkType = "5">
          </BreakpointContent>

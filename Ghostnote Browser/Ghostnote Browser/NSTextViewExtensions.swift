@@ -162,12 +162,16 @@ class TextProcessor: NSObject {
                     }
                 }
             }
-
-            textView?.textStorage?.beginEditing()
-            textView?.textStorage?.replaceCharactersInRange(range, withAttributedString: replacementString)
-            textView?.textStorage?.endEditing()
-            let notif = NSNotification(name: NSTextDidChangeNotification, object: textView)
-            textView?.delegate?.textDidChange!(notif)
+            
+            if ((textView?.shouldChangeTextInRange(range, replacementString: replacementString.string)) != nil) {
+                textView?.textStorage?.beginEditing()
+                textView?.textStorage?.replaceCharactersInRange(range, withAttributedString: replacementString)
+                textView?.textStorage?.endEditing()
+                textView?.didChangeText()
+//                let notif = NSNotification(name: NSTextDidChangeNotification, object: textView)
+//                textView?.delegate?.textDidChange!(notif)
+            }
+           
         }
     }
     

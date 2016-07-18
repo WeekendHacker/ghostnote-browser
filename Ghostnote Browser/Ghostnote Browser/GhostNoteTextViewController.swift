@@ -22,7 +22,7 @@ class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
     @IBOutlet weak var numberedListButton:NSButton?
     @IBOutlet weak var todoListButton:NSButton?
     
-    @IBOutlet var noteTextView:NSTextView? {
+    @IBOutlet var noteTextView:CustomTextView? {
         didSet {
             noteTextView?.delegate = self
             noteTextView?.horizontallyResizable = true

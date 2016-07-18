@@ -9,22 +9,12 @@
 import Foundation
 import Cocoa
 
-class TextProcessor: NSObject {
+class TextProcessor: NSObject, CustomTextViewDelegate {
     
-    var textView:NSTextView? {
+    var textView:CustomTextView? {
         
         didSet {
-            
-            NSNotificationCenter.defaultCenter().addObserver(self,
-                                                             selector: #selector(handleClick(_:)),
-                                                             name: "CustomTextViewGotClick",
-                                                             object: nil)
-            
-            NSNotificationCenter.defaultCenter().addObserver(self,
-                                                             selector: #selector(handleNewLine(_:)),
-                                                             name: "CustomTextViewGotNewLine",
-                                                             object: nil)
-            
+            textView?.processor = self
         }
     }
     
@@ -337,12 +327,54 @@ class TextProcessor: NSObject {
         }
     }
     
-    // handlers
-    func handleClick(notif:NSNotification) {
-        print("CLICK:")
+
+    // CustomTextViewDelegate
+    func shouldMoveInsertionPointForClick(clickedIndex:Int) -> Bool {
+        
+        if (clickedIndex + 2) < textView?.textStorage?.length {
+            if let attributedString = textView?.textStorage?.attributedSubstringFromRange(NSRange(location: clickedIndex, length: 2)) {
+                
+                if attributedString.rangeOfUncheckedBox().location == 0 {
+                    checkCheckboxAt(clickedIndex)
+                    return false
+                    
+                }else if attributedString.rangeOfCheckedBox().location == 0 {
+                    uncheckCheckboxAt(clickedIndex)
+                    return false
+                }
+            }
+        }
+
+        return true
     }
     
-    func handleNewLine(notif:NSNotification) {
+    func clickedCharacterAtIndex(index: Int) {
+
+    }
+    
+    func newLineEntered() {
         print("newLine")
+    }
+    
+    func checkCheckboxAt(index:Int) {
+        let font = textView?.textStorage?.attribute(NSFontAttributeName, atIndex: index, effectiveRange: nil)
+        let size = font?.pointSize
+        
+        
+        let checkedBox = NSAttributedString.taskCheckedStringWith([NSFontAttributeName : NSFont(name:"Hellvetica", size: size!)!])
+        let replacementRange = NSRange(location: index, length: 2)
+        
+        textView?.textStorage?.replaceCharactersInRange(replacementRange, withAttributedString: checkedBox)
+    }
+    
+    func uncheckCheckboxAt(index:Int) {
+        
+        let font = textView?.textStorage?.attribute(NSFontAttributeName, atIndex: index, effectiveRange: nil)
+        let size = font?.pointSize
+        
+        let uncheckedBox = NSAttributedString.taskUncheckedStringWith([NSFontAttributeName : NSFont(name:"Hellvetica", size: size!)!])
+        let replacementRange = NSRange(location: index, length: 2)
+        
+        textView?.textStorage?.replaceCharactersInRange(replacementRange, withAttributedString: uncheckedBox)
     }
 }

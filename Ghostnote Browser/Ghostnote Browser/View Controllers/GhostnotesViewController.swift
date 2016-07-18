@@ -42,7 +42,7 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
         }
     }
     
-    @IBOutlet var noteTextView:NSTextView? {
+    @IBOutlet var noteTextView:CustomTextView? {
         didSet {
             if let tv = noteTextView {
                 noteTextViewController.noteTextView = tv

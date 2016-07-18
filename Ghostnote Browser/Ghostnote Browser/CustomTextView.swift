@@ -9,7 +9,16 @@
 import Foundation
 import Cocoa
 
+protocol CustomTextViewDelegate {
+    
+    func shouldMoveInsertionPointForClick(clickedIndex:Int) -> Bool
+    func clickedCharacterAtIndex(index:Int)
+    func newLineEntered()
+}
+
 class CustomTextView: NSTextView {
+    
+    var processor:TextProcessor?
     
     override func preferredPasteboardTypeFromArray(availableTypes: [String], restrictedToTypesFromArray allowedTypes: [String]?) -> String? {
         if availableTypes.contains(NSPasteboardTypeString) {
@@ -20,16 +29,19 @@ class CustomTextView: NSTextView {
     }
     
     override func mouseDown(theEvent: NSEvent) {
-        NSNotificationCenter.defaultCenter().postNotificationName("CustomTextViewGotClick",
-                                                                  object: self,
-                                                                  userInfo: nil)
-        super.mouseDown(theEvent)
+        
+        let point = convertPoint(theEvent.locationInWindow, fromView:nil)
+        let clickedCharIndex = characterIndexForInsertionAtPoint(point)
+
+        if processor!.shouldMoveInsertionPointForClick(clickedCharIndex) {
+            super.mouseDown(theEvent)
+        }else {
+            processor?.clickedCharacterAtIndex(clickedCharIndex)
+        }
     }
     
     override func insertNewline(sender: AnyObject?) {
-        NSNotificationCenter.defaultCenter().postNotificationName("CustomTextViewGotNewLine",
-                                                                  object: self,
-                                                                  userInfo: nil)
+        processor?.newLineEntered()
         super.insertNewline(sender)
     }
 }

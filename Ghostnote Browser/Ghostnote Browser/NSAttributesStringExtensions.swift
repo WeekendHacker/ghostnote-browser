@@ -78,7 +78,18 @@ extension NSAttributedString {
     
     func hasLineNumber() -> Bool {
  
-        if rangeOfLineNumber().location == 0 {
+        if (rangeOfLineNumber().location == 0) && (self.string as NSString).length == rangeOfLineNumber().length {
+            return true
+        }
+        return false
+    }
+    
+    func hasOnlyLineNumber() -> Bool {
+        
+        let string = self.string as NSString
+        let trimmedString = string.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        
+        if hasLineNumber() && rangeOfLineNumber().length == (trimmedString as NSString).length + 2 {
             return true
         }
         return false
@@ -95,6 +106,6 @@ extension NSAttributedString {
     func rangeOfLineNumber() -> NSRange {
         let decimalCharacters = NSCharacterSet.decimalDigitCharacterSet()
         let decimalRange = (self.string as NSString).rangeOfCharacterFromSet(decimalCharacters)
-        return decimalRange
+        return NSRange(location: decimalRange.location, length: decimalRange.length + 2)
     }
 }

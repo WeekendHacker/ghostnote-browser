@@ -9,7 +9,7 @@
 import Foundation
 import Cocoa
 
-class TextProcessor: NSObject, CustomTextViewDelegate {
+class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
     
     var textView:CustomTextView? {
         
@@ -96,6 +96,7 @@ class TextProcessor: NSObject, CustomTextViewDelegate {
                 
                 if font.isBold() {
                     if textView!.shouldChangeTextInRange(range, replacementString: string.string) {
+                        
                         textView?.textStorage?.beginEditing()
                         textView?.textStorage?.applyFontTraits(.UnboldFontMask, range: range)
                         textView?.textStorage?.endEditing()
@@ -395,11 +396,11 @@ class TextProcessor: NSObject, CustomTextViewDelegate {
             if let lineNumberString = previousLine.lineNumber() {
                 if let lineNumber = Int(lineNumberString.string) {
                     print("previous number is \(lineNumber)")
-                    if previousLine.length == lineNumberString.length + 1 {
+                    
+                    if previousLine.hasOnlyLineNumber() {
                         print("should remove line number")
                     }else {
                         print("continuing numbered list")
-                        addLineNumberToLine(lineNumber + 1, range: NSRange(location: index!,length: 1))
                     }
                 }
             }

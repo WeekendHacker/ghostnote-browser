@@ -68,7 +68,7 @@ extension NSAttributedString {
         
         (self.string as NSString).enumerateSubstringsInRange(range, options:.ByLines) { (line, lineRange, rangeWithTerminators, nil) in
             
-            let attributedLine = (self.attributedSubstringFromRange(lineRange))
+            let attributedLine = (self.attributedSubstringFromRange(rangeWithTerminators))
             
             lines.append((attributedLine.mutableCopy() as? NSMutableAttributedString)!)
             

@@ -95,9 +95,20 @@ class TextProcessor: NSObject, CustomTextViewDelegate {
             if let font = attribs["NSFont"] as? NSFont {
                 
                 if font.isBold() {
-                    textView?.textStorage?.applyFontTraits(.UnboldFontMask, range: range)
+                    if textView!.shouldChangeTextInRange(range, replacementString: string.string) {
+                        textView?.textStorage?.beginEditing()
+                        textView?.textStorage?.applyFontTraits(.UnboldFontMask, range: range)
+                        textView?.textStorage?.endEditing()
+
+                    }
                 }else {
-                    textView?.textStorage?.applyFontTraits(.BoldFontMask, range: range)
+                    
+                    if textView!.shouldChangeTextInRange(range, replacementString: string.string) {
+                        textView?.textStorage?.beginEditing()
+                        textView?.textStorage?.applyFontTraits(.BoldFontMask, range: range)
+                        textView?.textStorage?.endEditing()
+
+                    }
                 }
             }
         }
@@ -112,9 +123,13 @@ class TextProcessor: NSObject, CustomTextViewDelegate {
             if let font = attribs["NSFont"] as? NSFont {
                 
                 if font.isItalic() {
-                    textView?.textStorage?.applyFontTraits(.UnitalicFontMask, range: range)
+                    if textView!.shouldChangeTextInRange(range, replacementString: string.string) {
+                        textView?.textStorage?.applyFontTraits(.UnitalicFontMask, range: range)
+                     }
                 }else {
-                    textView?.textStorage?.applyFontTraits(.ItalicFontMask, range: range)
+                    if textView!.shouldChangeTextInRange(range, replacementString: string.string) {
+                        textView?.textStorage?.applyFontTraits(.ItalicFontMask, range: range)
+                    }
                 }
             }
         }
@@ -157,8 +172,8 @@ class TextProcessor: NSObject, CustomTextViewDelegate {
                 if attributedString.hasCheckBox() {
                     
                     attributedString.deleteCharactersInRange(NSRange(location: 0, length: 2))
-                    let newLine = NSAttributedString(string: "\n")
-                    attributedString.appendAttributedString(newLine)
+//                    let newLine = NSAttributedString(string: "\n")
+//                    attributedString.appendAttributedString(newLine)
                     replacementString.appendAttributedString(attributedString)
                     
                 }else {
@@ -172,8 +187,8 @@ class TextProcessor: NSObject, CustomTextViewDelegate {
                             mutableAttribs[NSFontAttributeName] = NSFont(name: "Hellvetica", size: size)
                             let box = NSAttributedString.taskUncheckedStringWith(mutableAttribs)
                             attributedString.insertAttributedString(box, atIndex: 0)
-                            let newLine = NSAttributedString(string: "\n")
-                            attributedString.appendAttributedString(newLine)
+//                            let newLine = NSAttributedString(string: "\n")
+//                            attributedString.appendAttributedString(newLine)
                             replacementString.appendAttributedString(attributedString)
                         }
 
@@ -254,8 +269,8 @@ class TextProcessor: NSObject, CustomTextViewDelegate {
                 if attributedString.hasLineNumber() {
                     
                     attributedString.deleteCharactersInRange(attributedString.rangeOfLineNumber())
-                    let newLine = NSAttributedString(string: "\n")
-                    attributedString.appendAttributedString(newLine)
+//                    let newLine = NSAttributedString(string: "\n")
+//                    attributedString.appendAttributedString(newLine)
                     replacementString.appendAttributedString(attributedString)
                     
                 }else {
@@ -263,8 +278,8 @@ class TextProcessor: NSObject, CustomTextViewDelegate {
                     let lineNumber = NSAttributedString(string: "\(index) ")
                     
                     attributedString.insertAttributedString(lineNumber, atIndex: 0)
-                    let newLine = NSAttributedString(string: "\n")
-                    attributedString.appendAttributedString(newLine)
+//                    let newLine = NSAttributedString(string: "\n")
+//                    attributedString.appendAttributedString(newLine)
                     replacementString.appendAttributedString(attributedString)
                     
                 }
@@ -353,10 +368,47 @@ class TextProcessor: NSObject, CustomTextViewDelegate {
     }
     
     func newLineEntered() {
-        print("newLine")
+        let selection = textView?.selectedRange()
+        let index = selection?.location
+        let rangeToSelection = NSRange(location: 0, length: index!)
+        let attributedString = textView?.textStorage?.attributedSubstringFromRange(rangeToSelection)
+        
+        let lines = attributedString!.mutableLines()
+        let previousLine = lines.last!
+        
+        // should probably trimt whitespace form the line
+        // to see if it is just the line symbol
+        if previousLine.hasCheckBox() {
+            print("previous had box, maybe should continue")
+
+            if previousLine.length == NSAttributedString.taskUncheckedStringWith(nil).length + 1 {
+                print("previous had only box, should remove")
+                removeCheckboxFromLine(NSRange(location: index! - 3, length: 3))
+            }else {
+                print("previous had text, should continue")
+                toggleTaskListAtInsertionPoint()
+            }
+            
+        }else if previousLine.hasLineNumber() {
+            print("previous had number, maybe should continue")
+            
+            if let lineNumberString = previousLine.lineNumber() {
+                if let lineNumber = Int(lineNumberString.string) {
+                    print("previous number is \(lineNumber)")
+                    if previousLine.length == lineNumberString.length + 1 {
+                        print("should remove line number")
+                    }else {
+                        print("continuing numbered list")
+                        addLineNumberToLine(lineNumber + 1, range: NSRange(location: index!,length: 1))
+                    }
+                }
+            }
+        }
+        
     }
     
     func checkCheckboxAt(index:Int) {
+        
         let font = textView?.textStorage?.attribute(NSFontAttributeName, atIndex: index, effectiveRange: nil)
         let size = font?.pointSize
         
@@ -385,4 +437,5 @@ class TextProcessor: NSObject, CustomTextViewDelegate {
             textView?.textStorage?.endEditing()
         }
     }
+    
 }

@@ -41,7 +41,7 @@ class CustomTextView: NSTextView {
     }
     
     override func insertNewline(sender: AnyObject?) {
-        processor?.newLineEntered()
         super.insertNewline(sender)
+        processor?.newLineEntered()
     }
 }

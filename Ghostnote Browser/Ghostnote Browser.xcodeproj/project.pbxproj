@@ -79,7 +79,7 @@
 		D8D30DAF1D02A1D3004009F7 /* GhostNotesDocTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D30DAE1D02A1D3004009F7 /* GhostNotesDocTableViewController.swift */; };
 		D8D30DB11D02A73D004009F7 /* AppCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8D30DB01D02A73D004009F7 /* AppCell.xib */; };
 		D8E380EC1CDC21000028D161 /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E380EB1CDC21000028D161 /* TaskCell.xib */; };
-		D8FEA3CB1D3A99C400DA822F /* NSTextViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEA3CA1D3A99C400DA822F /* NSTextViewExtensions.swift */; };
+		D8FEA3CB1D3A99C400DA822F /* TextProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEA3CA1D3A99C400DA822F /* TextProcessor.swift */; };
 		D8FEA3CD1D3AA17F00DA822F /* NSFontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEA3CC1D3AA17F00DA822F /* NSFontExtensions.swift */; };
 		D8FEA3CE1D3AB52200DA822F /* Hellvetica-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8BD62D11D3811F800BD45AC /* Hellvetica-Regular.otf */; };
 		D8FEA3D01D3B38B000DA822F /* NSAttributesStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEA3CF1D3B38B000DA822F /* NSAttributesStringExtensions.swift */; };
@@ -199,7 +199,7 @@
 		D8D30DAE1D02A1D3004009F7 /* GhostNotesDocTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GhostNotesDocTableViewController.swift; sourceTree = "<group>"; };
 		D8D30DB01D02A73D004009F7 /* AppCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppCell.xib; sourceTree = "<group>"; };
 		D8E380EB1CDC21000028D161 /* TaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TaskCell.xib; path = Views/TaskCell.xib; sourceTree = "<group>"; };
-		D8FEA3CA1D3A99C400DA822F /* NSTextViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTextViewExtensions.swift; sourceTree = "<group>"; };
+		D8FEA3CA1D3A99C400DA822F /* TextProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextProcessor.swift; sourceTree = "<group>"; };
 		D8FEA3CC1D3AA17F00DA822F /* NSFontExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSFontExtensions.swift; sourceTree = "<group>"; };
 		D8FEA3CF1D3B38B000DA822F /* NSAttributesStringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributesStringExtensions.swift; sourceTree = "<group>"; };
 		D8FF02341D08C516004AE6E2 /* TaskListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskListCell.xib; sourceTree = "<group>"; };
@@ -315,7 +315,7 @@
 				D803FEBD1D220E4400360741 /* NSTableViewExtensions.swift */,
 				D8CD4DB01D317269008C7427 /* NSImageExtensions.swift */,
 				D86FA0461D35F01200FFEC80 /* NSColorExtensions.swift */,
-				D8FEA3CA1D3A99C400DA822F /* NSTextViewExtensions.swift */,
+				D8FEA3CA1D3A99C400DA822F /* TextProcessor.swift */,
 				D8FEA3CC1D3AA17F00DA822F /* NSFontExtensions.swift */,
 				D8FEA3CF1D3B38B000DA822F /* NSAttributesStringExtensions.swift */,
 			);
@@ -711,7 +711,7 @@
 				D824C8DA1D1873AA00246E8C /* TasksSearchController.swift in Sources */,
 				D803FEBC1D21C8A700360741 /* CustomRowView.swift in Sources */,
 				D84F16C61CC54ED6005612BB /* AppNameProvider.swift in Sources */,
-				D8FEA3CB1D3A99C400DA822F /* NSTextViewExtensions.swift in Sources */,
+				D8FEA3CB1D3A99C400DA822F /* TextProcessor.swift in Sources */,
 				D824C8DC1D1873BB00246E8C /* GhostnotesSearchController.swift in Sources */,
 				D80001B61CD957C200255E54 /* TaskListController.swift in Sources */,
 				D80001AE1CD7F98A00255E54 /* NoteNameValidator.swift in Sources */,

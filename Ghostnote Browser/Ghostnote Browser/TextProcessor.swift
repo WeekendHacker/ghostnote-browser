@@ -9,11 +9,24 @@
 import Foundation
 import Cocoa
 
-
 class TextProcessor: NSObject {
     
-    // public
-    var textView:NSTextView?
+    var textView:NSTextView? {
+        
+        didSet {
+            
+            NSNotificationCenter.defaultCenter().addObserver(self,
+                                                             selector: #selector(handleClick(_:)),
+                                                             name: "CustomTextViewGotClick",
+                                                             object: nil)
+            
+            NSNotificationCenter.defaultCenter().addObserver(self,
+                                                             selector: #selector(handleNewLine(_:)),
+                                                             name: "CustomTextViewGotNewLine",
+                                                             object: nil)
+            
+        }
+    }
     
     func toggleBold() {
         
@@ -51,6 +64,19 @@ class TextProcessor: NSObject {
 
     func toggleNumberedList() {
         print("toggleNumberedList")
+        if let ranges = textView?.selectedRanges  {
+            
+            ranges.forEach({ (range) in
+                
+                if range.rangeValue.length > 0 {
+                    toggleLineNumberOverRange(range.rangeValue)
+                }
+                else {
+                    toggleLineNumberAtInsertionPoint()
+                }
+            })
+        }
+
     }
     
     func toggleTaskList() {
@@ -67,9 +93,7 @@ class TextProcessor: NSObject {
                 }
             })
         }
-        
     }
-    
     
     // porbably private
     func toggleBoldOverRange(range:NSRange) {
@@ -135,6 +159,7 @@ class TextProcessor: NSObject {
     func toggleTaskListOverRange(range:NSRange) {
 
         if let lines = textView?.textStorage?.attributedSubstringFromRange(range).mutableLines() where !lines.isEmpty {
+            
             let replacementString = NSMutableAttributedString()
             
             lines.forEach { (attributedString) in
@@ -224,5 +249,100 @@ class TextProcessor: NSObject {
             textView?.didChangeText()
         }
 
+    }
+    
+    func toggleLineNumberOverRange(range:NSRange) {
+        print("toggleLineNumberOverRange")
+        
+        if let lines = textView?.textStorage?.attributedSubstringFromRange(range).mutableLines() where !lines.isEmpty {
+            let replacementString = NSMutableAttributedString()
+            
+            var index = 1
+            
+            for attributedString in lines {
+                
+                if attributedString.hasLineNumber() {
+                    
+                    attributedString.deleteCharactersInRange(attributedString.rangeOfLineNumber())
+                    let newLine = NSAttributedString(string: "\n")
+                    attributedString.appendAttributedString(newLine)
+                    replacementString.appendAttributedString(attributedString)
+                    
+                }else {
+                    
+                    let lineNumber = NSAttributedString(string: "\(index) ")
+                    
+                    attributedString.insertAttributedString(lineNumber, atIndex: 0)
+                    let newLine = NSAttributedString(string: "\n")
+                    attributedString.appendAttributedString(newLine)
+                    replacementString.appendAttributedString(attributedString)
+                    
+                }
+                
+                index += 1
+            }
+            
+            if ((textView?.shouldChangeTextInRange(range, replacementString: replacementString.string)) != nil) {
+                
+                textView?.textStorage?.beginEditing()
+                textView?.textStorage?.replaceCharactersInRange(range, withAttributedString: replacementString)
+                textView?.textStorage?.endEditing()
+                textView?.didChangeText()
+            }
+        }
+    }
+    
+    func toggleLineNumberAtInsertionPoint() {
+        if let range = textView?.selectedRange() {
+            
+            let lineRange = (textView?.textStorage?.string as! NSString).lineRangeForRange(NSRange(location: range.location, length: 0))
+            
+            if let currentLine = textView?.textStorage?.attributedSubstringFromRange(lineRange) {
+                
+                if !currentLine.hasLineNumber() {
+                    
+                    addLineNumberToLine(1, range:lineRange)
+                    
+                }else {
+                    
+                    removeLineNumberFromLine(lineRange)
+                    
+                }
+            }
+        }
+    }
+    
+    func addLineNumberToLine(number:Int , range:NSRange) {
+        
+        let mutableAttribs = textView?.typingAttributes
+        let lineString = NSAttributedString(string: "\(number) ",attributes: mutableAttribs)
+        
+            if textView!.shouldChangeTextInRange(range, replacementString: lineString.string) {
+                textView?.textStorage?.beginEditing()
+                textView?.textStorage?.insertAttributedString(lineString, atIndex: range.location)
+                textView?.textStorage?.endEditing()
+                textView?.didChangeText()
+            }
+    }
+    
+    func removeLineNumberFromLine(range:NSRange) {
+        
+        if textView!.shouldChangeTextInRange(range, replacementString: "") {
+            
+            let rangeToDelete = NSRange(location: range.location, length: 2)
+            textView?.textStorage?.beginEditing()
+            textView?.textStorage?.deleteCharactersInRange(rangeToDelete)
+            textView?.textStorage?.endEditing()
+            textView?.didChangeText()
+        }
+    }
+    
+    // handlers
+    func handleClick(notif:NSNotification) {
+        print("CLICK:")
+    }
+    
+    func handleNewLine(notif:NSNotification) {
+        print("newLine")
     }
 }

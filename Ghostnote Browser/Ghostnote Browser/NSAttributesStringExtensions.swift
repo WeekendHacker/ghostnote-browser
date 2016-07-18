@@ -75,4 +75,26 @@ extension NSAttributedString {
         }
         return lines
     }
+    
+    func hasLineNumber() -> Bool {
+ 
+        if rangeOfLineNumber().location == 0 {
+            return true
+        }
+        return false
+    }
+   
+    func lineNumber() -> NSAttributedString? {
+        let decimalRange = self.rangeOfLineNumber()
+        if (decimalRange.location == 0) && decimalRange.location != NSNotFound {
+            return self.attributedSubstringFromRange(decimalRange)
+        }
+        return nil
+    }
+    
+    func rangeOfLineNumber() -> NSRange {
+        let decimalCharacters = NSCharacterSet.decimalDigitCharacterSet()
+        let decimalRange = (self.string as NSString).rangeOfCharacterFromSet(decimalCharacters)
+        return decimalRange
+    }
 }

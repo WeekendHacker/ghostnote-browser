@@ -364,7 +364,11 @@ class TextProcessor: NSObject, CustomTextViewDelegate {
         let checkedBox = NSAttributedString.taskCheckedStringWith([NSFontAttributeName : NSFont(name:"Hellvetica", size: size!)!])
         let replacementRange = NSRange(location: index, length: 2)
         
-        textView?.textStorage?.replaceCharactersInRange(replacementRange, withAttributedString: checkedBox)
+        if textView!.shouldChangeTextInRange(replacementRange, replacementString: checkedBox.string) {
+            textView?.textStorage?.beginEditing()
+            textView?.textStorage?.replaceCharactersInRange(replacementRange, withAttributedString: checkedBox)
+            textView?.textStorage?.endEditing()
+        }
     }
     
     func uncheckCheckboxAt(index:Int) {
@@ -375,6 +379,10 @@ class TextProcessor: NSObject, CustomTextViewDelegate {
         let uncheckedBox = NSAttributedString.taskUncheckedStringWith([NSFontAttributeName : NSFont(name:"Hellvetica", size: size!)!])
         let replacementRange = NSRange(location: index, length: 2)
         
-        textView?.textStorage?.replaceCharactersInRange(replacementRange, withAttributedString: uncheckedBox)
+        if textView!.shouldChangeTextInRange(replacementRange, replacementString: uncheckedBox.string) {
+            textView?.textStorage?.beginEditing()
+            textView?.textStorage?.replaceCharactersInRange(replacementRange, withAttributedString: uncheckedBox)
+            textView?.textStorage?.endEditing()
+        }
     }
 }

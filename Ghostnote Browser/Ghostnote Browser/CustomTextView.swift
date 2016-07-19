@@ -21,6 +21,11 @@ class CustomTextView: NSTextView {
     var processor:TextProcessor?
     
     override func preferredPasteboardTypeFromArray(availableTypes: [String], restrictedToTypesFromArray allowedTypes: [String]?) -> String? {
+        
+        
+        if availableTypes.contains(NSPasteboardTypeTIFF) {
+            return NSPasteboardTypeTIFF
+        }
         if availableTypes.contains(NSPasteboardTypeString) {
             return NSPasteboardTypeString
         }else {
@@ -32,12 +37,17 @@ class CustomTextView: NSTextView {
         
         let point = convertPoint(theEvent.locationInWindow, fromView:nil)
         let clickedCharIndex = characterIndexForInsertionAtPoint(point)
-
-        if processor!.shouldMoveInsertionPointForClick(clickedCharIndex) {
-            super.mouseDown(theEvent)
+        
+        if let p = processor {
+            if p.shouldMoveInsertionPointForClick(clickedCharIndex) {
+                super.mouseDown(theEvent)
+            }else {
+                p.clickedCharacterAtIndex(clickedCharIndex)
+            }
         }else {
-            processor?.clickedCharacterAtIndex(clickedCharIndex)
+             super.mouseDown(theEvent)
         }
+        
     }
     
     override func insertNewline(sender: AnyObject?) {

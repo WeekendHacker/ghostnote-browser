@@ -77,21 +77,57 @@ extension NSAttributedString {
     }
     
     func hasLineNumber() -> Bool {
- 
-        if (rangeOfLineNumber().location == 0) && (self.string as NSString).length == rangeOfLineNumber().length {
+        
+        var numericCharCount = 0
+        var newLineCount = 0
+        var spaceCount = 0
+        var otherCount = 0
+        
+        for c in string.characters {
+            
+            if "0"..."9" ~= c {
+                numericCharCount += 1
+            }else if c == " " {
+                spaceCount += 1
+            }else if c == "\n" {
+                newLineCount += 1
+            }else {
+                otherCount += 1
+            }
+        }
+        
+        if numericCharCount > 0 && (spaceCount >= 1) {
             return true
         }
+
+        
         return false
     }
     
     func hasOnlyLineNumber() -> Bool {
         
-        let string = self.string as NSString
-        let trimmedString = string.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        var numericCharCount = 0
+        var newLineCount = 0
+        var spaceCount = 0
+        var otherCount = 0
         
-        if hasLineNumber() && rangeOfLineNumber().length == (trimmedString as NSString).length + 2 {
+        for c in string.characters {
+            
+            if "0"..."9" ~= c {
+                numericCharCount += 1
+            }else if c == " " {
+                spaceCount += 1
+            }else if c == "\n" {
+                newLineCount += 1
+            }else {
+                otherCount += 1
+            }
+        }
+        
+        if otherCount == 0 && numericCharCount > 0 && spaceCount >= 1 {
             return true
         }
+        
         return false
     }
    
@@ -104,8 +140,17 @@ extension NSAttributedString {
     }
     
     func rangeOfLineNumber() -> NSRange {
-        let decimalCharacters = NSCharacterSet.decimalDigitCharacterSet()
-        let decimalRange = (self.string as NSString).rangeOfCharacterFromSet(decimalCharacters)
-        return NSRange(location: decimalRange.location, length: decimalRange.length + 2)
+        
+        var endOfLineNumber = 0
+        
+        for c in self.string.characters {
+            if "0"..."9" ~= c {
+                endOfLineNumber += 1
+            }else {
+                break
+            }
+            
+        }
+        return NSRange(location: 0, length: endOfLineNumber)
     }
 }

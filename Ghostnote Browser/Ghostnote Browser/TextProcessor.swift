@@ -279,8 +279,7 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
                     let lineNumber = NSAttributedString(string: "\(index) ")
                     
                     attributedString.insertAttributedString(lineNumber, atIndex: 0)
-//                    let newLine = NSAttributedString(string: "\n")
-//                    attributedString.appendAttributedString(newLine)
+
                     replacementString.appendAttributedString(attributedString)
                     
                 }
@@ -337,7 +336,7 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
             
             let rangeToDelete = NSRange(location: range.location, length: 2)
             textView?.textStorage?.beginEditing()
-            textView?.textStorage?.deleteCharactersInRange(rangeToDelete)
+            textView?.textStorage?.deleteCharactersInRange(range)
             textView?.textStorage?.endEditing()
             textView?.didChangeText()
         }
@@ -394,13 +393,24 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
             print("previous had number, maybe should continue")
             
             if let lineNumberString = previousLine.lineNumber() {
-                if let lineNumber = Int(lineNumberString.string) {
+                
+                if let lineNumber = Int(lineNumberString.string.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())) {
                     print("previous number is \(lineNumber)")
                     
                     if previousLine.hasOnlyLineNumber() {
                         print("should remove line number")
+                        let loc:Int
+                        if index == 0 {
+                           loc = 0
+                        }else {
+                           loc = index! - lineNumberString.length - 2
+                        }
+                        let range = NSRange(location: loc , length: lineNumberString.length +  1)
+                        removeLineNumberFromLine(range)
                     }else {
                         print("continuing numbered list")
+                        let range = NSRange(location: index!, length: 0)
+                        addLineNumberToLine(lineNumber + 1, range: range)
                     }
                 }
             }

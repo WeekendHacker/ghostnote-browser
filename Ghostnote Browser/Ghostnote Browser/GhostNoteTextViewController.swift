@@ -16,7 +16,6 @@ class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
     @IBOutlet var noteTitleLabel:NSTextField?
     @IBOutlet var noteIconImageView:NSImageView?
     
-    
     @IBOutlet weak var boldButton:NSButton?
     @IBOutlet weak var italicButton:NSButton?
     @IBOutlet weak var numberedListButton:NSButton?
@@ -26,7 +25,15 @@ class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
         didSet {
             noteTextView?.delegate = self
             noteTextView?.horizontallyResizable = true
-            NSDistributedNotificationCenter.defaultCenter().addObserver(self, selector: #selector(reloadCurrentNote), name: "GhostnoteChangedNote", object: nil)
+            NSDistributedNotificationCenter.defaultCenter().addObserver(self,
+                                                                        selector: #selector(reloadCurrentNote),
+                                                                        name: "GhostnoteChangedNote",
+                                                                        object: nil)
+            NSNotificationCenter.defaultCenter().addObserver(self,
+                                                             selector: #selector(updateUIForTypingAttributes(_:)),
+                                                             name: NSTextViewDidChangeTypingAttributesNotification,
+                                                             object: nil)
+            
             noteTextView?.linkTextAttributes = [NSForegroundColorAttributeName : NSColor.gnBlue()]
             textProcessor.textView = noteTextView
         }
@@ -118,7 +125,6 @@ class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
     
     func italicClicked(sender:AnyObject?) {
         textProcessor.toggleItalic()
-
     }
     
     func numberedListClicked(sender:AnyObject?) {
@@ -129,4 +135,12 @@ class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
         textProcessor.toggleTaskList()
     }
 
+    func updateUIForTypingAttributes(notif:NSNotification) {
+        if let attribs = noteTextView?.typingAttributes {
+            if let font = attribs["NSFont"] as? NSFont {
+                boldButton?.highlight(font.isBold())
+                italicButton?.highlight(font.isItalic())
+             }
+        }
+    }
 }

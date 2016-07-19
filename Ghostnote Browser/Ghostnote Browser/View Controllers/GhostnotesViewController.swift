@@ -48,6 +48,7 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
                 noteTextViewController.noteTextView = tv
                 tv.wantsLayer = true
                 tv.backgroundColor = NSColor.clearColor()
+            
             }
         }
     }

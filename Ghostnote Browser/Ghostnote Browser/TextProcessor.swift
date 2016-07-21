@@ -32,7 +32,6 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
             tag = NSFontTraitMask.BoldFontMask.rawValue
 
         }
-        print("isFirst \(textView?.canBecomeKeyView)")
         
         NSFontManager.sharedFontManager().addFontTrait(self)
     }
@@ -84,7 +83,6 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
         }
 
     }
-    
     
     func toggleTaskList() {
         print("toggleTaskList")
@@ -153,33 +151,6 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
             }
         }
     }
-    
-//    func toggleBoldAtInsertionPoint() {
-//        if let font = textView?.typingAttributes["NSFont"] as? NSFont {
-//            var newFont = font
-//            
-//            if font.isBold() {
-//                newFont = font.nonBoldFont()
-//            }else {
-//                newFont = font.boldFont()
-//            }
-//            textView?.typingAttributes["NSFont"] = newFont
-//        }
-//    }
-//    
-//    func toggleItalicAtInsertionPoint() {
-//        if let font = textView?.typingAttributes["NSFont"] as? NSFont {
-//            var newFont = font
-//            
-//            if font.isItalic() {
-//                newFont = font.nonItalicFont()
-//            }else {
-//                newFont = font.italicFont()
-//            }
-//            textView?.typingAttributes["NSFont"] = newFont
-//        }
-//    }
-    
     
     func toggleBulletOverRange(range:NSRange) {
         if let lines = textView?.textStorage?.attributedSubstringFromRange(range).mutableLines() where !lines.isEmpty {
@@ -530,6 +501,21 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
                         addLineNumberToLine(lineNumber + 1, range: range)
                     }
                 }
+            }
+        }else if previousLine.hasBullet() {
+            
+            if previousLine.hasOnlyBullet() {
+                
+                let loc:Int
+                if index == 0 {
+                    loc = 0
+                }else {
+                    loc = index! - previousLine.rangeOfBullet().length - 2
+                }
+                let range = NSRange(location: loc , length: 3)
+                removeBulletFromLine(range)
+            }else {
+                toggleBulletAtInsertionPoint()
             }
         }
         

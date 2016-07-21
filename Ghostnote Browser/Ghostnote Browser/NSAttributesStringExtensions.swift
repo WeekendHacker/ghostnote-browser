@@ -26,9 +26,7 @@ extension NSAttributedString {
     }
     
     static func taskUncheckedStringWith(tailAttribs:[String:AnyObject]?, size:CGFloat) -> NSAttributedString {
-//        let foo =  NSAttributedString(string: "! ", attributes: attribs)
-//        return foo
-//        
+
         let headFont = NSFont(name:"Hellvetica", size: size)
         let headAttribs:[String:AnyObject] = [NSFontAttributeName : headFont!,
                                               NSFontSizeAttribute : size]
@@ -144,6 +142,37 @@ extension NSAttributedString {
         return false
     }
     
+    
+    func hasOnlyBullet() -> Bool {
+
+        var numericCharCount = 0
+        var newLineCount = 0
+        var spaceCount = 0
+        var otherCount = 0
+        var bulletCount = 0
+        
+        for c in string.characters {
+            
+            if "0"..."9" ~= c {
+                numericCharCount += 1
+            }else if c == " " {
+                spaceCount += 1
+            }else if c == "\n" {
+                newLineCount += 1
+            }else if c == "•" {
+                bulletCount += 1
+            }else {
+                 otherCount += 1
+            }
+        }
+        
+        if otherCount == 0  && spaceCount >= 1 && bulletCount == 1 {
+            return true
+        }
+        
+        return false
+    }
+    
     func hasOnlyLineNumber() -> Bool {
         
         var numericCharCount = 0
@@ -179,6 +208,9 @@ extension NSAttributedString {
         return nil
     }
     
+    
+    //this needs some work
+    
     func rangeOfLineNumber() -> NSRange {
         
         var endOfLineNumber = 0
@@ -191,10 +223,23 @@ extension NSAttributedString {
             }
             
         }
+        
         return NSRange(location: 0, length: endOfLineNumber)
     }
     
     func rangeOfBullet() -> NSRange {
-        return NSRange(location: NSNotFound, length: 0) 
+        
+        var endOfBullet = 0
+        
+        for c in self.string.characters {
+            if c == "•" {
+                endOfBullet += 1
+                break
+            }
+        }
+        if endOfBullet ==  0 {
+            return NSRange(location: NSNotFound, length: 0)
+        }
+        return NSRange(location:endOfBullet , length: 1)
     }
 }

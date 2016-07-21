@@ -66,6 +66,7 @@
 		D884C1A91CE2760A003E15D2 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D884C1A11CE27600003E15D2 /* RealmSwift.framework */; };
 		D884C1AA1CE2760A003E15D2 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D884C1A11CE27600003E15D2 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D8BD62D81D382E0A00BD45AC /* customFonts in Resources */ = {isa = PBXBuildFile; fileRef = D8BD62D71D382E0A00BD45AC /* customFonts */; };
+		D8C153B31D411A56001F5AE6 /* Welcome to Ghostnote!.rtfd in Resources */ = {isa = PBXBuildFile; fileRef = D8C153B21D411A56001F5AE6 /* Welcome to Ghostnote!.rtfd */; };
 		D8CC00AD1CE6793300D13331 /* GhostNoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC00AC1CE6793300D13331 /* GhostNoteManager.swift */; };
 		D8CC00AF1CE6798600D13331 /* GhostNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC00AE1CE6798600D13331 /* GhostNote.swift */; };
 		D8CC00B11CE67B6D00D13331 /* GhostNoteTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC00B01CE67B6D00D13331 /* GhostNoteTextViewController.swift */; };
@@ -180,6 +181,7 @@
 		D8BD62D11D3811F800BD45AC /* Hellvetica-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hellvetica-Regular.otf"; sourceTree = "<group>"; };
 		D8BD62D51D382CFE00BD45AC /* Hellvetica-Regular-2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hellvetica-Regular-2.otf"; sourceTree = "<group>"; };
 		D8BD62D71D382E0A00BD45AC /* customFonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = customFonts; sourceTree = "<group>"; };
+		D8C153B21D411A56001F5AE6 /* Welcome to Ghostnote!.rtfd */ = {isa = PBXFileReference; lastKnownFileType = wrapper.rtfd; name = "Welcome to Ghostnote!.rtfd"; path = "Ghostnote Browser/Welcome to Ghostnote!.rtfd"; sourceTree = "<group>"; };
 		D8CC00AC1CE6793300D13331 /* GhostNoteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GhostNoteManager.swift; sourceTree = "<group>"; };
 		D8CC00AE1CE6798600D13331 /* GhostNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GhostNote.swift; sourceTree = "<group>"; };
 		D8CC00B01CE67B6D00D13331 /* GhostNoteTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GhostNoteTextViewController.swift; sourceTree = "<group>"; };
@@ -432,6 +434,7 @@
 		D8D10EB91CC48A9F00A434F6 = {
 			isa = PBXGroup;
 			children = (
+				D8C153B21D411A56001F5AE6 /* Welcome to Ghostnote!.rtfd */,
 				D8BD62D71D382E0A00BD45AC /* customFonts */,
 				D8BD62D41D382CFE00BD45AC /* customFonts */,
 				D8BD62D11D3811F800BD45AC /* Hellvetica-Regular.otf */,
@@ -666,6 +669,7 @@
 				D8BD62D81D382E0A00BD45AC /* customFonts in Resources */,
 				D81281881CCD97F2001749E9 /* ButtonNavViewController.xib in Resources */,
 				D8E380EC1CDC21000028D161 /* TaskCell.xib in Resources */,
+				D8C153B31D411A56001F5AE6 /* Welcome to Ghostnote!.rtfd in Resources */,
 				D8FF023C1D0A6CC9004AE6E2 /* HeaderCell.xib in Resources */,
 				D8D10ECB1CC48A9F00A434F6 /* Assets.xcassets in Resources */,
 				D803FEBA1D21C88100360741 /* CustomRowView.xib in Resources */,

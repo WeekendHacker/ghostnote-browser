@@ -207,10 +207,10 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="135" height="221"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" red="1" green="0.20176665152279916" blue="0.32919391092602879" alpha="1" colorSpace="calibratedRGB"/>
-                                                <size key="minSize" width="235" height="221"/>
+                                                <size key="minSize" width="135" height="221"/>
                                                 <size key="maxSize" width="463" height="10000000"/>
                                                 <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <size key="minSize" width="235" height="221"/>
+                                                <size key="minSize" width="135" height="221"/>
                                                 <size key="maxSize" width="463" height="10000000"/>
                                             </textView>
                                         </subviews>
@@ -258,8 +258,8 @@
                                     </constraints>
                                 </customView>
                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tNE-4r-Eeu">
-                                    <rect key="frame" x="35" y="238" width="48" height="32"/>
-                                    <buttonCell key="cell" type="push" title="b" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="w2W-pa-nma">
+                                    <rect key="frame" x="14" y="238" width="40" height="32"/>
+                                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="Bold" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="w2W-pa-nma">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
@@ -268,8 +268,8 @@
                                     </connections>
                                 </button>
                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9nz-C8-7Wj">
-                                    <rect key="frame" x="77" y="238" width="44" height="32"/>
-                                    <buttonCell key="cell" type="push" title="i" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Fkv-9P-AzI">
+                                    <rect key="frame" x="48" y="238" width="41" height="32"/>
+                                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="Italic" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="Fkv-9P-AzI">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
@@ -278,8 +278,8 @@
                                     </connections>
                                 </button>
                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1SR-a1-XSf">
-                                    <rect key="frame" x="116" y="238" width="51" height="32"/>
-                                    <buttonCell key="cell" type="push" title="ul" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hSf-GS-h2k">
+                                    <rect key="frame" x="116" y="238" width="40" height="32"/>
+                                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="TaskList" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="hSf-GS-h2k">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
@@ -287,9 +287,16 @@
                                         <action selector="todoListClicked:" target="-2" id="dm1-Hj-acA"/>
                                     </connections>
                                 </button>
+                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CUD-VL-0S2">
+                                    <rect key="frame" x="83" y="238" width="41" height="32"/>
+                                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="Bullet" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="syZ-PC-7df">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                </button>
                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="53P-D7-ghn">
-                                    <rect key="frame" x="167" y="238" width="51" height="32"/>
-                                    <buttonCell key="cell" type="push" title="ol" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Izd-Ld-dTO">
+                                    <rect key="frame" x="148" y="238" width="40" height="32"/>
+                                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="NumberedList" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="Izd-Ld-dTO">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
@@ -326,4 +333,11 @@
             <point key="canvasLocation" x="297.5" y="186.5"/>
         </customView>
     </objects>
+    <resources>
+        <image name="Bold" width="10" height="16"/>
+        <image name="Bullet" width="14" height="14"/>
+        <image name="Italic" width="5" height="14"/>
+        <image name="NumberedList" width="14" height="16"/>
+        <image name="TaskList" width="16" height="15"/>
+    </resources>
 </document>

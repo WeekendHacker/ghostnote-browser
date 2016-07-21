@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="appsTableView" destination="5LJ-AF-fxE" id="h0k-ub-cbD"/>
                 <outlet property="boldButton" destination="tNE-4r-Eeu" id="5ow-rW-VEK"/>
+                <outlet property="bulletListButton" destination="CUD-VL-0S2" id="n4s-0u-svA"/>
                 <outlet property="docsTableView" destination="iBq-wR-WSp" id="PkF-rJ-ueP"/>
                 <outlet property="italicButton" destination="9nz-C8-7Wj" id="fWz-Q9-WXF"/>
                 <outlet property="noteIconImageView" destination="eEc-RT-4w5" id="j8h-1i-o97"/>
@@ -258,8 +259,8 @@
                                     </constraints>
                                 </customView>
                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tNE-4r-Eeu">
-                                    <rect key="frame" x="14" y="238" width="40" height="32"/>
-                                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="Bold" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="w2W-pa-nma">
+                                    <rect key="frame" x="20" y="245" width="28" height="21"/>
+                                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="Bold" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="w2W-pa-nma">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
@@ -267,18 +268,8 @@
                                         <action selector="boldClicked:" target="-2" id="nVP-ge-iqx"/>
                                     </connections>
                                 </button>
-                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9nz-C8-7Wj">
-                                    <rect key="frame" x="48" y="238" width="41" height="32"/>
-                                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="Italic" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="Fkv-9P-AzI">
-                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" metaFont="system"/>
-                                    </buttonCell>
-                                    <connections>
-                                        <action selector="italicClicked:" target="-2" id="bmb-QK-eef"/>
-                                    </connections>
-                                </button>
                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1SR-a1-XSf">
-                                    <rect key="frame" x="116" y="238" width="40" height="32"/>
+                                    <rect key="frame" x="122" y="245" width="28" height="21"/>
                                     <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="TaskList" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="hSf-GS-h2k">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="system"/>
@@ -287,21 +278,34 @@
                                         <action selector="todoListClicked:" target="-2" id="dm1-Hj-acA"/>
                                     </connections>
                                 </button>
-                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CUD-VL-0S2">
-                                    <rect key="frame" x="83" y="238" width="41" height="32"/>
-                                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="Bullet" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="syZ-PC-7df">
-                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" metaFont="system"/>
-                                    </buttonCell>
-                                </button>
                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="53P-D7-ghn">
-                                    <rect key="frame" x="148" y="238" width="40" height="32"/>
+                                    <rect key="frame" x="154" y="245" width="28" height="21"/>
                                     <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="NumberedList" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="Izd-Ld-dTO">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
                                     <connections>
                                         <action selector="numberedListClicked:" target="-2" id="ZnT-ff-BZD"/>
+                                    </connections>
+                                </button>
+                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CUD-VL-0S2">
+                                    <rect key="frame" x="89" y="245" width="29" height="21"/>
+                                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="Bullet" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="syZ-PC-7df">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="bulletListClicked:" target="-2" id="mIB-Tw-hhv"/>
+                                    </connections>
+                                </button>
+                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9nz-C8-7Wj">
+                                    <rect key="frame" x="52" y="245" width="29" height="21"/>
+                                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="Italic" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="Fkv-9P-AzI">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="italicClicked:" target="-2" id="bmb-QK-eef"/>
                                     </connections>
                                 </button>
                             </subviews>

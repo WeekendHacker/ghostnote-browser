@@ -11,6 +11,8 @@ import Cocoa
 
 class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
     
+    var tag:UInt = 0
+    
     var textView:CustomTextView? {
         
         didSet {
@@ -20,37 +22,51 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
     }
     
     
+    
     func toggleBold() {
+        print("toggleBold")
         
-        if let ranges = textView?.selectedRanges  {
+        if textView!.font!.isBold() {
             
-            ranges.forEach({ (range) in
-                
-                if range.rangeValue.length > 0 {
-                    
-                    toggleBoldOverRange(range.rangeValue)
-                }
-                else {
-                    toggleBoldAtInsertionPoint()
-                }
-            })
+            tag = NSFontTraitMask.UnboldFontMask.rawValue
+            
+        }else {
+            tag = NSFontTraitMask.BoldFontMask.rawValue
+
         }
+        print("isFirst \(textView?.canBecomeKeyView)")
+        
+        NSFontManager.sharedFontManager().addFontTrait(self)
     }
     
     func toggleItalic() {
-        
-        if let ranges = textView?.selectedRanges  {
+        print("toggleItalic")
+        if textView!.font!.isItalic() {
             
+            tag = NSFontTraitMask.UnitalicFontMask.rawValue
+            
+        }else {
+            tag = NSFontTraitMask.ItalicFontMask.rawValue
+            
+        }
+        NSFontManager.sharedFontManager().addFontTrait(self)
+    }
+    
+    
+    func toggleBulletList() {
+        print("togglebulletList")
+        
+        if let ranges = textView?.selectedRanges {
             ranges.forEach({ (range) in
                 
                 if range.rangeValue.length > 0 {
-                    
-                    toggleItalicOverRange(range.rangeValue)
+                    toggleBulletOverRange(range.rangeValue)
                 }
                 else {
-                    toggleItalicAtInsertionPoint()
+                    toggleBulletAtInsertionPoint()
                 }
             })
+
         }
     }
 
@@ -71,7 +87,9 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
 
     }
     
+    
     func toggleTaskList() {
+        print("toggleTaskList")
         
         if let ranges = textView?.selectedRanges  {
             
@@ -164,6 +182,65 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
         }
     }
     
+    
+    func toggleBulletOverRange(range:NSRange) {
+        if let lines = textView?.textStorage?.attributedSubstringFromRange(range).mutableLines() where !lines.isEmpty {
+            
+            let replacementString = NSMutableAttributedString()
+            
+            lines.forEach { (attributedString) in
+                
+                if attributedString.hasBullet() {
+
+                    attributedString.deleteCharactersInRange(NSRange(location: 0, length: 2))
+                    replacementString.appendAttributedString(attributedString)
+                    
+                }else {
+                    
+                    if !attributedString.string.isEmpty {
+                        var mutableAttribs = attributedString.attributesAtIndex(0, effectiveRange: nil)
+                        
+                        if let currentFont = mutableAttribs[NSFontAttributeName] as? NSFont {
+                            let size = currentFont.pointSize
+                            let bullet = NSAttributedString.bulletStringWith(mutableAttribs, size: size)
+                            attributedString.insertAttributedString(bullet, atIndex: 0)
+                            replacementString.appendAttributedString(attributedString)
+                        }
+                        
+                    }
+                }
+            }
+            
+            if ((textView?.shouldChangeTextInRange(range, replacementString: replacementString.string)) != nil) {
+                textView?.textStorage?.beginEditing()
+                textView?.textStorage?.replaceCharactersInRange(range, withAttributedString: replacementString)
+                textView?.textStorage?.endEditing()
+                textView?.didChangeText()
+            }
+        }
+    }
+    
+    func toggleBulletAtInsertionPoint() {
+        if let range = textView?.selectedRange() {
+            
+            let lineRange = (textView?.textStorage?.string as! NSString).lineRangeForRange(NSRange(location: range.location, length: 0))
+            
+            if let currentLine = textView?.textStorage?.attributedSubstringFromRange(lineRange) {
+                
+                if currentLine.hasBullet() {
+                    
+                    removeBulletFromLine(lineRange)
+                    
+                }else {
+                    
+                    addBulletToLine(lineRange)
+                    
+                }
+            }
+        }
+
+    }
+    
     func toggleTaskListOverRange(range:NSRange) {
 
         if let lines = textView?.textStorage?.attributedSubstringFromRange(range).mutableLines() where !lines.isEmpty {
@@ -173,7 +250,7 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
             lines.forEach { (attributedString) in
                 
                 if attributedString.hasCheckBox() {
-                    attributedString.removeAttribute("GNTaskList", range: NSRange(location: 0, length: attributedString.length))
+
                     attributedString.deleteCharactersInRange(NSRange(location: 0, length: 2))
                     replacementString.appendAttributedString(attributedString)
                     
@@ -185,8 +262,7 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
                         if let currentFont = mutableAttribs[NSFontAttributeName] as? NSFont {
                             
                             let size = currentFont.pointSize
-                            mutableAttribs[NSFontAttributeName] = NSFont(name: "Hellvetica", size: size)
-                            let box = NSAttributedString.taskUncheckedStringWith(mutableAttribs)
+                            let box = NSAttributedString.taskUncheckedStringWith(mutableAttribs, size: size)
                             attributedString.insertAttributedString(box, atIndex: 0)
                             replacementString.appendAttributedString(attributedString)
                         }
@@ -231,8 +307,8 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
         if let currentFont = mutableAttribs![NSFontAttributeName] as? NSFont {
             
             let size = currentFont.pointSize
-            mutableAttribs![NSFontAttributeName] = NSFont(name: "Hellvetica", size: size)
-            let box = NSAttributedString.taskUncheckedStringWith(mutableAttribs)
+
+            let box = NSAttributedString.taskUncheckedStringWith(mutableAttribs, size: size)
             
             if textView!.shouldChangeTextInRange(range, replacementString: box.string) {
                 textView?.textStorage?.beginEditing()
@@ -240,8 +316,42 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
                 textView?.textStorage?.endEditing()
                 textView?.didChangeText()
             }
+
         }
     }
+    
+    func addBulletToLine(range:NSRange) {
+        var mutableAttribs = textView?.typingAttributes
+        
+        if let currentFont = mutableAttribs![NSFontAttributeName] as? NSFont {
+            
+            let size = currentFont.pointSize
+            let bullet = NSAttributedString.bulletStringWith(mutableAttribs, size: size)
+            
+            if textView!.shouldChangeTextInRange(range, replacementString: bullet.string) {
+                textView?.textStorage?.beginEditing()
+                textView?.textStorage?.insertAttributedString(bullet, atIndex: range.location)
+                textView?.textStorage?.endEditing()
+                textView?.didChangeText()
+            }
+        }
+    }
+    
+    func removeBulletFromLine(range:NSRange) {
+        
+        if textView!.shouldChangeTextInRange(range, replacementString: "") {
+            
+            let rangeToDelete = NSRange(location: range.location, length: 2)
+            
+            
+            textView?.textStorage?.beginEditing()
+            textView?.textStorage?.deleteCharactersInRange(rangeToDelete)
+            
+            textView?.textStorage?.endEditing()
+            textView?.didChangeText()
+        }
+    }
+
     
     func removeCheckboxFromLine(range:NSRange) {
         
@@ -270,8 +380,7 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
                 if attributedString.hasLineNumber() {
                     
                     attributedString.deleteCharactersInRange(attributedString.rangeOfLineNumber())
-//                    let newLine = NSAttributedString(string: "\n")
-//                    attributedString.appendAttributedString(newLine)
+
                     replacementString.appendAttributedString(attributedString)
                     
                 }else {
@@ -322,13 +431,13 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
         let mutableAttribs = textView?.typingAttributes
         
         let lineString = NSAttributedString(string: "\(number) ",attributes: mutableAttribs)
-            // add attrib for ol
-            if textView!.shouldChangeTextInRange(range, replacementString: lineString.string) {
+
+        if textView!.shouldChangeTextInRange(range, replacementString: lineString.string) {
                 textView?.textStorage?.beginEditing()
                 textView?.textStorage?.insertAttributedString(lineString, atIndex: range.location)
                 textView?.textStorage?.endEditing()
                 textView?.didChangeText()
-            }
+        }
     }
     
     func removeLineNumberFromLine(range:NSRange) {
@@ -389,12 +498,12 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
         if previousLine.hasCheckBox() {
             print("previous had box, maybe should continue")
 
-            if previousLine.length == NSAttributedString.taskUncheckedStringWith(nil).length + 1 {
+            if previousLine.length == NSAttributedString.taskUncheckedStringWith(nil,size: 0).length + 1 {
                 print("previous had only box, should remove")
                 removeCheckboxFromLine(NSRange(location: index! - 3, length: 3))
             }else {
                 print("previous had text, should continue")
-                toggleTaskListAtInsertionPoint()
+                addCheckboxToLine(NSRange(location: index! - 3, length: 3))
             }
             
         }else if previousLine.hasLineNumber() {
@@ -432,7 +541,7 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
         let size = font?.pointSize
         
         
-        let checkedBox = NSAttributedString.taskCheckedStringWith([NSFontAttributeName : NSFont(name:"Hellvetica", size: size!)!])
+        let checkedBox = NSAttributedString.taskCheckedStringWith(textView?.typingAttributes, size: size!)
         let replacementRange = NSRange(location: index, length: 2)
         
         if textView!.shouldChangeTextInRange(replacementRange, replacementString: checkedBox.string) {
@@ -447,7 +556,7 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
         let font = textView?.textStorage?.attribute(NSFontAttributeName, atIndex: index, effectiveRange: nil)
         let size = font?.pointSize
         
-        let uncheckedBox = NSAttributedString.taskUncheckedStringWith([NSFontAttributeName : NSFont(name:"Hellvetica", size: size!)!])
+        let uncheckedBox = NSAttributedString.taskUncheckedStringWith(textView!.typingAttributes, size: size!)
         let replacementRange = NSRange(location: index, length: 2)
         
         if textView!.shouldChangeTextInRange(replacementRange, replacementString: uncheckedBox.string) {

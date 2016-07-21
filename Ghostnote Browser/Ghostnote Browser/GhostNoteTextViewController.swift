@@ -18,6 +18,7 @@ class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
     
     @IBOutlet weak var boldButton:NSButton?
     @IBOutlet weak var italicButton:NSButton?
+    @IBOutlet weak var bulletListButton:NSButton?
     @IBOutlet weak var numberedListButton:NSButton?
     @IBOutlet weak var todoListButton:NSButton?
     
@@ -107,6 +108,7 @@ class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
     }
     
     func textDidChange(notification: NSNotification) {
+        
         if let note = currentNote {
             noteTextView!.writeRTFDToFile(note.filePath, atomically: true)
             
@@ -131,6 +133,10 @@ class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
         textProcessor.toggleItalic()
     }
     
+    func bulletListClicked(sender:AnyObject?) {
+        textProcessor.toggleBulletList()
+    }
+    
     func numberedListClicked(sender:AnyObject?) {
         textProcessor.toggleNumberedList()
     }
@@ -144,7 +150,7 @@ class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
             if selection.location < noteTextView?.textStorage?.length {
                  let lineRange = ((noteTextView?.textStorage!.string)! as NSString).lineRangeForRange(selection)
                     if let attributedLine = noteTextView?.textStorage?.attributedSubstringFromRange(lineRange) {
-
+                            bulletListButton?.highlight(attributedLine.hasBullet())
                             todoListButton?.highlight(attributedLine.hasCheckBox())
                             numberedListButton?.highlight(attributedLine.hasLineNumber())
                     }

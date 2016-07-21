@@ -24,7 +24,7 @@ class DeletableTableView: NSTableView {
     
     override func keyDown(theEvent: NSEvent) {
 
-        if theEvent.keyCode == 117 /* Delete Key */ {
+        if theEvent.keyCode == 117 /* Delete Key */  || theEvent.keyCode == 51 /* backspace key */ {
             if hasSelection() == true {
                 let selectionToDelete = selectedRow
                 deleteDelegate?.deleteRow(selectionToDelete)

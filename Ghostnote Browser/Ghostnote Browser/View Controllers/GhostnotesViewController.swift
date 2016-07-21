@@ -30,6 +30,12 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
         }
     }
     
+    @IBOutlet weak var bulletListButton:NSButton? {
+        didSet {
+            noteTextViewController.bulletListButton = bulletListButton
+        }
+    }
+    
     @IBOutlet weak var numberedListButton:NSButton? {
         didSet {
             noteTextViewController.numberedListButton = numberedListButton
@@ -212,6 +218,10 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
     
     @IBAction func italicClicked(sender:AnyObject?) {
         noteTextViewController.italicClicked(self)
+    }
+    
+    @IBAction func bulletListClicked(sender:AnyObject?) {
+        noteTextViewController.bulletListClicked(self)
     }
     
     @IBAction func numberedListClicked(sender:AnyObject?) {

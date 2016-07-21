@@ -11,19 +11,55 @@ import Cocoa
 
 extension NSAttributedString {
     
-    static func taskCheckedStringWith(attribs:[String:AnyObject]?) -> NSAttributedString {
-        let foo =  NSAttributedString(string: "\" ", attributes: attribs)
-        return foo
+    static func taskCheckedStringWith(tailAttribs:[String:AnyObject]?, size:CGFloat) -> NSAttributedString {
+        let headFont = NSFont(name:"Hellvetica", size: size)
+        let headAttribs:[String:AnyObject] = [NSFontAttributeName : headFont!,
+                                              NSFontSizeAttribute : size]
+        
+        let head = NSAttributedString(string: "\"", attributes: headAttribs)
+        
+        let tail = NSAttributedString(string: " ", attributes: tailAttribs)
+        
+        let symbol:NSMutableAttributedString = NSMutableAttributedString(attributedString: head)
+        symbol.appendAttributedString(tail)
+        return symbol
     }
     
-    static func taskUncheckedStringWith(attribs:[String:AnyObject]?) -> NSAttributedString {
-        let foo =  NSAttributedString(string: "! ", attributes: attribs)
-        return foo
+    static func taskUncheckedStringWith(tailAttribs:[String:AnyObject]?, size:CGFloat) -> NSAttributedString {
+//        let foo =  NSAttributedString(string: "! ", attributes: attribs)
+//        return foo
+//        
+        let headFont = NSFont(name:"Hellvetica", size: size)
+        let headAttribs:[String:AnyObject] = [NSFontAttributeName : headFont!,
+                                              NSFontSizeAttribute : size]
+        
+        let head = NSAttributedString(string: "!", attributes: headAttribs)
+        
+        let tail = NSAttributedString(string: " ", attributes: tailAttribs)
+        
+        let symbol:NSMutableAttributedString = NSMutableAttributedString(attributedString: head)
+        symbol.appendAttributedString(tail)
+        return symbol
+    }
+    
+    
+    static func bulletStringWith(tailAttribs:[String:AnyObject]?, size:CGFloat) -> NSAttributedString {
+        let headFont = NSFont(name:"Hellvetica", size: size)
+        let headAttribs:[String:AnyObject] = [NSFontAttributeName : headFont!,
+                                              NSFontSizeAttribute : size]
+        
+        let head = NSAttributedString(string: "•", attributes: headAttribs)
+        
+        let tail = NSAttributedString(string: " ", attributes: tailAttribs)
+        
+        let symbol:NSMutableAttributedString = NSMutableAttributedString(attributedString: head)
+        symbol.appendAttributedString(tail)
+        return symbol
     }
     
     func rangeOfUncheckedBox() -> NSRange {
         
-        let unchecked = NSAttributedString.taskUncheckedStringWith(nil)
+        let unchecked = NSAttributedString.taskUncheckedStringWith(nil,size:0)
         let range = (self.string as NSString).rangeOfString(unchecked.string)
 
         if range.location != NSNotFound {
@@ -41,7 +77,7 @@ extension NSAttributedString {
     
     func rangeOfCheckedBox() -> NSRange {
         
-        let checked = NSAttributedString.taskCheckedStringWith(nil)
+        let checked = NSAttributedString.taskCheckedStringWith(nil, size:0)
        
         let range = (self.string as NSString).rangeOfString(checked.string)
         
@@ -60,6 +96,10 @@ extension NSAttributedString {
     
     func hasCheckBox() -> Bool {
         return rangeOfCheckedBox().location != NSNotFound || rangeOfUncheckedBox().location != NSNotFound
+    }
+    
+    func hasBullet() -> Bool {
+        return rangeOfBullet().location != NSNotFound
     }
     
     func mutableLines() -> [NSMutableAttributedString] {
@@ -152,5 +192,9 @@ extension NSAttributedString {
             
         }
         return NSRange(location: 0, length: endOfLineNumber)
+    }
+    
+    func rangeOfBullet() -> NSRange {
+        return NSRange(location: NSNotFound, length: 0) 
     }
 }

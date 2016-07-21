@@ -47,6 +47,7 @@
 		D83E5B441CDA74BD0044F7A3 /* TaskListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B431CDA74BD0044F7A3 /* TaskListManager.swift */; };
 		D83E5B471CDA76400044F7A3 /* TaskListNameValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B461CDA76400044F7A3 /* TaskListNameValidator.swift */; };
 		D83E5B4D1CDA7A430044F7A3 /* NamedItemValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B4C1CDA7A430044F7A3 /* NamedItemValidator.swift */; };
+		D84EB0661D3F24C300CE7D14 /* Welcome to Ghostnote!.rtfd in Resources */ = {isa = PBXBuildFile; fileRef = D84EB0651D3F24C300CE7D14 /* Welcome to Ghostnote!.rtfd */; };
 		D84F16C51CC54ED6005612BB /* AppIconProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16C21CC54ED6005612BB /* AppIconProvider.swift */; };
 		D84F16C61CC54ED6005612BB /* AppNameProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16C31CC54ED6005612BB /* AppNameProvider.swift */; };
 		D84F16C71CC54ED6005612BB /* DocumentIconProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16C41CC54ED6005612BB /* DocumentIconProvider.swift */; };
@@ -161,6 +162,7 @@
 		D83E5B431CDA74BD0044F7A3 /* TaskListManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskListManager.swift; path = Models/TaskListManager.swift; sourceTree = "<group>"; };
 		D83E5B461CDA76400044F7A3 /* TaskListNameValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListNameValidator.swift; sourceTree = "<group>"; };
 		D83E5B4C1CDA7A430044F7A3 /* NamedItemValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamedItemValidator.swift; sourceTree = "<group>"; };
+		D84EB0651D3F24C300CE7D14 /* Welcome to Ghostnote!.rtfd */ = {isa = PBXFileReference; lastKnownFileType = wrapper.rtfd; path = "Welcome to Ghostnote!.rtfd"; sourceTree = "<group>"; };
 		D84F16C21CC54ED6005612BB /* AppIconProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIconProvider.swift; sourceTree = "<group>"; };
 		D84F16C31CC54ED6005612BB /* AppNameProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNameProvider.swift; sourceTree = "<group>"; };
 		D84F16C41CC54ED6005612BB /* DocumentIconProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentIconProvider.swift; sourceTree = "<group>"; };
@@ -471,6 +473,7 @@
 				D8D10ECF1CC48A9F00A434F6 /* Info.plist */,
 				D812818B1CCD9AA3001749E9 /* MainWindowController.swift */,
 				D812818C1CCD9AA3001749E9 /* MainWindowController.xib */,
+				D84EB0651D3F24C300CE7D14 /* Welcome to Ghostnote!.rtfd */,
 			);
 			path = "Ghostnote Browser";
 			sourceTree = "<group>";
@@ -666,6 +669,7 @@
 				D8BD62D81D382E0A00BD45AC /* customFonts in Resources */,
 				D81281881CCD97F2001749E9 /* ButtonNavViewController.xib in Resources */,
 				D8E380EC1CDC21000028D161 /* TaskCell.xib in Resources */,
+				D84EB0661D3F24C300CE7D14 /* Welcome to Ghostnote!.rtfd in Resources */,
 				D8FF023C1D0A6CC9004AE6E2 /* HeaderCell.xib in Resources */,
 				D8D10ECB1CC48A9F00A434F6 /* Assets.xcassets in Resources */,
 				D803FEBA1D21C88100360741 /* CustomRowView.xib in Resources */,

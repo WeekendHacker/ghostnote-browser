@@ -34,6 +34,11 @@ class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
                                                              name: NSTextViewDidChangeTypingAttributesNotification,
                                                              object: nil)
             
+            NSNotificationCenter.defaultCenter().addObserver(self,
+                                                             selector: #selector(updateUIForSelectionChange(_:)),
+                                                             name: NSTextViewDidChangeSelectionNotification,
+                                                             object: nil)
+            
             noteTextView?.linkTextAttributes = [NSForegroundColorAttributeName : NSColor.gnBlue()]
             textProcessor.textView = noteTextView
         }
@@ -47,7 +52,6 @@ class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
             
         }
     }
-    
     
     func enableUI() {
         noteTextView?.hidden = false
@@ -115,7 +119,7 @@ class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
 
         }
     }
-    
+
     
     // Actions
     
@@ -135,6 +139,19 @@ class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
         textProcessor.toggleTaskList()
     }
 
+    func updateUIForSelectionChange(notif:NSNotification) {
+        if let selection = noteTextView?.selectedRange() {
+            if selection.location < noteTextView?.textStorage?.length {
+                 let lineRange = ((noteTextView?.textStorage!.string)! as NSString).lineRangeForRange(selection)
+                    if let attributedLine = noteTextView?.textStorage?.attributedSubstringFromRange(lineRange) {
+
+                            todoListButton?.highlight(attributedLine.hasCheckBox())
+                            numberedListButton?.highlight(attributedLine.hasLineNumber())
+                    }
+            }
+        }
+    }
+    
     func updateUIForTypingAttributes(notif:NSNotification) {
         if let attribs = noteTextView?.typingAttributes {
             if let font = attribs["NSFont"] as? NSFont {

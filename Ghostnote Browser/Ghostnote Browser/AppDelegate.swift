@@ -23,6 +23,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var menuController:MainMenuController?
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
+//        NSUserDefaults.standardUserDefaults().setBool(false, forKey: "hasCreatedWelcomeNote")
+
+        if !NSUserDefaults.standardUserDefaults().boolForKey("hasCreatedWelcomeNote") {
+            NoteManager.shared.copyWelcomeNoteFile()
+        }
+        
+        if !NSUserDefaults.standardUserDefaults().boolForKey("hasCreatedWelcomeTasks") {
+            TaskListManager.shared.createWelcomeTaskList()
+        }
+        
         configureRealm()
         menuController = MainMenuController(menuItem: newMenuItem)
         showUI()

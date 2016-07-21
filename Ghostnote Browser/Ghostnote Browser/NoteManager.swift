@@ -28,6 +28,48 @@ class NoteManager {
         }
     }
     
+    func copyWelcomeNoteFile() {
+        print("copyWelcomNotefile")
+        createNotesFolderIfNeeded()
+        let path = appSupportDir.first!
+        
+        let docsURL = NSURL(fileURLWithPath: path).URLByAppendingPathComponent("com.ghostnoteapp.Ghostnote-Browser").URLByAppendingPathComponent("Notes", isDirectory: true)
+        let welcomeBundleURL = NSBundle.mainBundle().URLForResource("Welcome to Ghostnote!", withExtension: "rtfd")
+        
+        let destinationURL = docsURL.URLByAppendingPathComponent("Welcome to Ghostnote!").URLByAppendingPathExtension("rtfd")
+        do {
+            try NSFileManager.defaultManager().copyItemAtURL(welcomeBundleURL!, toURL: destinationURL)
+        }
+        catch {
+            print(error)
+        }
+        
+        
+        let note = Note()
+        // this should maybe bail if the file cant be created
+        
+        do {
+            try store.write({
+                note.name = "Welcome to Ghostnote!"
+                note.creationDate = NSDate()
+                note.filePath = destinationURL.path!
+                store.add(note)
+                print(note)
+                
+            })
+        }
+        catch {
+            print(error)
+        }
+        
+        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "hasCreatedWelcomeNote")
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("NoteAdded", object: note)
+
+        
+        
+    }
+    
     func createNoteWithName(name:String) {
         
         let note = Note()

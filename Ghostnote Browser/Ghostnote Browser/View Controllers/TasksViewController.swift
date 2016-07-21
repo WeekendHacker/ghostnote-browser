@@ -179,7 +179,7 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
                 if let hostingNoteCell = payload["hostingTaskListCell"] as? TaskListCell {
                     
                     let deleteVC = ConfirmDeleteViewController()
-                    deleteVC.promptText = "Delete \(taskListToDelete.title.withoutUniquePart()) ?"
+                    deleteVC.promptText = "Delete \"\(taskListToDelete.title.withoutUniquePart())\" ?"
                     deleteVC.yesBlock = {
                         TaskListManager.shared.deleteTaskList(taskListToDelete.title)
                         self.dismissViewController(deleteVC)
@@ -209,7 +209,7 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
                         
                         let deleteVC = ConfirmDeleteViewController()
 
-                        deleteVC.promptText = "Delete \(taskToDelete.title.withoutUniquePart()) ?"
+                        deleteVC.promptText = "Delete \"\(taskToDelete.title.withoutUniquePart())\" ?"
                         
                         deleteVC.yesBlock = {
                             containingTaskList.removeTask(taskToDelete)

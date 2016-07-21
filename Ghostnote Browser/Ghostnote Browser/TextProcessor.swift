@@ -15,8 +15,10 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
         
         didSet {
             textView?.processor = self
+            textView?.font = NSFont(name: "Helvetica", size: 12.0)
         }
     }
+    
     
     func toggleBold() {
         
@@ -171,10 +173,8 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
             lines.forEach { (attributedString) in
                 
                 if attributedString.hasCheckBox() {
-                    
+                    attributedString.removeAttribute("GNTaskList", range: NSRange(location: 0, length: attributedString.length))
                     attributedString.deleteCharactersInRange(NSRange(location: 0, length: 2))
-//                    let newLine = NSAttributedString(string: "\n")
-//                    attributedString.appendAttributedString(newLine)
                     replacementString.appendAttributedString(attributedString)
                     
                 }else {
@@ -188,8 +188,6 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
                             mutableAttribs[NSFontAttributeName] = NSFont(name: "Hellvetica", size: size)
                             let box = NSAttributedString.taskUncheckedStringWith(mutableAttribs)
                             attributedString.insertAttributedString(box, atIndex: 0)
-//                            let newLine = NSAttributedString(string: "\n")
-//                            attributedString.appendAttributedString(newLine)
                             replacementString.appendAttributedString(attributedString)
                         }
 
@@ -207,6 +205,7 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
     }
     
     func toggleTaskListAtInsertionPoint() {
+        print("toggleTaskListAtInsertionPoint")
         if let range = textView?.selectedRange() {
             
             let lineRange = (textView?.textStorage?.string as! NSString).lineRangeForRange(NSRange(location: range.location, length: 0))
@@ -251,6 +250,7 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
             let rangeToDelete = NSRange(location: range.location, length: 2)
             textView?.textStorage?.beginEditing()
             textView?.textStorage?.deleteCharactersInRange(rangeToDelete)
+            
             textView?.textStorage?.endEditing()
             textView?.didChangeText()
         }
@@ -320,8 +320,9 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
     func addLineNumberToLine(number:Int , range:NSRange) {
         
         let mutableAttribs = textView?.typingAttributes
-        let lineString = NSAttributedString(string: "\(number) ",attributes: mutableAttribs)
         
+        let lineString = NSAttributedString(string: "\(number) ",attributes: mutableAttribs)
+            // add attrib for ol
             if textView!.shouldChangeTextInRange(range, replacementString: lineString.string) {
                 textView?.textStorage?.beginEditing()
                 textView?.textStorage?.insertAttributedString(lineString, atIndex: range.location)
@@ -333,7 +334,7 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
     func removeLineNumberFromLine(range:NSRange) {
         
         if textView!.shouldChangeTextInRange(range, replacementString: "") {
-            
+            // remove attrib for ol?
             let rangeToDelete = NSRange(location: range.location, length: 2)
             textView?.textStorage?.beginEditing()
             textView?.textStorage?.deleteCharactersInRange(range)
@@ -342,6 +343,13 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
         }
     }
     
+    
+    //
+    // should make methods to add
+    // and remove list attributes to the whole range
+    // should maybe use text list?
+    // not sure
+    //
 
     // CustomTextViewDelegate
     func shouldMoveInsertionPointForClick(clickedIndex:Int) -> Bool {

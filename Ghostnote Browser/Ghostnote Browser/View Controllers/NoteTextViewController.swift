@@ -41,7 +41,7 @@ class NoteTextViewController: NSObject, NSTextViewDelegate {
                 noteTextView?.readRTFDFromFile(note.filePath)
             }
             else {
-                noteTextView?.string = ""
+                loadTips()
             }
             applyPlaceHolderState()
         }
@@ -86,5 +86,18 @@ class NoteTextViewController: NSObject, NSTextViewDelegate {
     
     func handleEditNote() {
         noteTextView?.window?.makeFirstResponder(noteTextView)
+    }
+    
+    func loadTips() {
+//        let path = NoteManager.shared.appSupportDir.first!
+//        let baseURL = NSURL(fileURLWithPath: path).URLByAppendingPathComponent("com.ghostnoteapp.Ghostnote-Browser")
+//        
+//        let tipsURL = baseURL.URLByAppendingPathComponent("Tips", isDirectory: true).URLByAppendingPathComponent("Tips.html")
+//        
+//
+//        if let htmlData = NSData(contentsOfURL: tipsURL) {
+//            noteTextView?.textStorage?.appendAttributedString(NSAttributedString(HTML: htmlData, baseURL: baseURL, documentAttributes: nil)!)
+//        }
+        
     }
 }

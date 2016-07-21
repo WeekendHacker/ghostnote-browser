@@ -26,6 +26,33 @@ class TaskListManager: NSObject {
         }
     }
     
+    
+    func createWelcomeTaskList() {
+        
+        let newList = TaskList()
+        
+        do {
+            try db.write({
+                let uniquePart = NSDate().timeIntervalSince1970
+                
+                newList.title = "Welcome to Ghostnote Browser !"
+                newList.creationDate = NSDate()
+                db.add(newList)
+            })
+        }
+        catch {
+            print(error)
+        }
+        
+        newList.addTask("Create task lists with command-l")
+        newList.addTask("Create tasks in the current list with command-t")
+        newList.addTask("Complete a task with the mouse or spacebar.")
+        newList.addTask("Delete tasks or task lists with the delete key")
+        newList.addTask("Checkout the Ghostnote Browser by clicking its icon on the left")
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("CreatedTaskList", object: newList)
+    }
+    
     func newTaskNameSuffix(inTaskList:TaskList) -> String {
         
         let count = inTaskList.tasks.filter { (taskList) -> Bool in

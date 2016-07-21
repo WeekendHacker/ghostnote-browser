@@ -25,8 +25,9 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
    
     func toggleBold() {
         print("toggleBold")
-        
-        if textView!.font!.isBold() {
+        let font = textView?.typingAttributes["NSFont"] as? NSFont
+
+        if font!.isBold() {
             
             tag = NSFontTraitMask.UnboldFontMask.rawValue
             
@@ -40,7 +41,10 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
     
     func toggleItalic() {
         print("toggleItalic")
-        if textView!.font!.isItalic() {
+        
+        let font = textView?.typingAttributes["NSFont"] as? NSFont
+        
+        if font!.isItalic() {
             
             tag = NSFontTraitMask.UnitalicFontMask.rawValue
             

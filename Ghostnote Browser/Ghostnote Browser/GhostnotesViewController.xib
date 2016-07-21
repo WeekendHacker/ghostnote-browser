@@ -7,16 +7,11 @@
         <customObject id="-2" userLabel="File's Owner" customClass="GhostnotesViewController" customModule="Ghostnote_Browser" customModuleProvider="target">
             <connections>
                 <outlet property="appsTableView" destination="5LJ-AF-fxE" id="h0k-ub-cbD"/>
-                <outlet property="boldButton" destination="tNE-4r-Eeu" id="5ow-rW-VEK"/>
-                <outlet property="bulletListButton" destination="CUD-VL-0S2" id="n4s-0u-svA"/>
                 <outlet property="docsTableView" destination="iBq-wR-WSp" id="PkF-rJ-ueP"/>
-                <outlet property="italicButton" destination="9nz-C8-7Wj" id="fWz-Q9-WXF"/>
                 <outlet property="noteIconImageView" destination="eEc-RT-4w5" id="j8h-1i-o97"/>
                 <outlet property="noteTextView" destination="e54-Cj-F06" id="xCQ-8o-61X"/>
                 <outlet property="noteTitleLabel" destination="PfQ-b6-Zsm" id="Ihj-BF-AAp"/>
-                <outlet property="numberedListButton" destination="53P-D7-ghn" id="k6B-RL-ByR"/>
                 <outlet property="splitView" destination="vo5-J5-L2U" id="uwn-Pz-L4X"/>
-                <outlet property="todoListButton" destination="1SR-a1-XSf" id="aZ7-wN-ETM"/>
                 <outlet property="view" destination="c22-O7-iKe" id="BfV-nq-59Y"/>
             </connections>
         </customObject>
@@ -258,56 +253,6 @@
                                         <constraint firstItem="PfQ-b6-Zsm" firstAttribute="centerX" secondItem="WdQ-qm-cYB" secondAttribute="centerX" id="vfa-tb-JPn"/>
                                     </constraints>
                                 </customView>
-                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tNE-4r-Eeu">
-                                    <rect key="frame" x="20" y="245" width="28" height="21"/>
-                                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="Bold" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="w2W-pa-nma">
-                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" metaFont="system"/>
-                                    </buttonCell>
-                                    <connections>
-                                        <action selector="boldClicked:" target="-2" id="nVP-ge-iqx"/>
-                                    </connections>
-                                </button>
-                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1SR-a1-XSf">
-                                    <rect key="frame" x="122" y="245" width="28" height="21"/>
-                                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="TaskList" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="hSf-GS-h2k">
-                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" metaFont="system"/>
-                                    </buttonCell>
-                                    <connections>
-                                        <action selector="todoListClicked:" target="-2" id="dm1-Hj-acA"/>
-                                    </connections>
-                                </button>
-                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="53P-D7-ghn">
-                                    <rect key="frame" x="154" y="245" width="28" height="21"/>
-                                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="NumberedList" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="Izd-Ld-dTO">
-                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" metaFont="system"/>
-                                    </buttonCell>
-                                    <connections>
-                                        <action selector="numberedListClicked:" target="-2" id="ZnT-ff-BZD"/>
-                                    </connections>
-                                </button>
-                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CUD-VL-0S2">
-                                    <rect key="frame" x="89" y="245" width="29" height="21"/>
-                                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="Bullet" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="syZ-PC-7df">
-                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" metaFont="system"/>
-                                    </buttonCell>
-                                    <connections>
-                                        <action selector="bulletListClicked:" target="-2" id="mIB-Tw-hhv"/>
-                                    </connections>
-                                </button>
-                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9nz-C8-7Wj">
-                                    <rect key="frame" x="52" y="245" width="29" height="21"/>
-                                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="Italic" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="Fkv-9P-AzI">
-                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" metaFont="system"/>
-                                    </buttonCell>
-                                    <connections>
-                                        <action selector="italicClicked:" target="-2" id="bmb-QK-eef"/>
-                                    </connections>
-                                </button>
                             </subviews>
                             <constraints>
                                 <constraint firstItem="WdQ-qm-cYB" firstAttribute="top" secondItem="HS3-XA-UR6" secondAttribute="bottom" id="1CI-vL-4wc"/>
@@ -337,11 +282,4 @@
             <point key="canvasLocation" x="297.5" y="186.5"/>
         </customView>
     </objects>
-    <resources>
-        <image name="Bold" width="10" height="16"/>
-        <image name="Bullet" width="14" height="14"/>
-        <image name="Italic" width="5" height="14"/>
-        <image name="NumberedList" width="14" height="16"/>
-        <image name="TaskList" width="16" height="15"/>
-    </resources>
 </document>

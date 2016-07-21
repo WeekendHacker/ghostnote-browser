@@ -12,6 +12,7 @@ import Cocoa
 extension NSAttributedString {
     
     static func taskCheckedStringWith(tailAttribs:[String:AnyObject]?, size:CGFloat) -> NSAttributedString {
+        
         let headFont = NSFont(name:"Hellvetica", size: size)
         let headAttribs:[String:AnyObject] = [NSFontAttributeName : headFont!,
                                               NSFontSizeAttribute : size]
@@ -35,6 +36,7 @@ extension NSAttributedString {
         
         let tail = NSAttributedString(string: " ", attributes: tailAttribs)
         
+        print(tailAttribs)
         let symbol:NSMutableAttributedString = NSMutableAttributedString(attributedString: head)
         symbol.appendAttributedString(tail)
         return symbol
@@ -237,9 +239,11 @@ extension NSAttributedString {
                 break
             }
         }
+        
         if endOfBullet ==  0 {
             return NSRange(location: NSNotFound, length: 0)
         }
+        
         return NSRange(location:endOfBullet , length: 1)
     }
 }

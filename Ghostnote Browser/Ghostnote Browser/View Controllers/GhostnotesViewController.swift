@@ -94,6 +94,10 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
         }
     }
     
+    override func awakeFromNib() {
+        print("\(noteTextView?.typingAttributes)")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Ghostnotes"

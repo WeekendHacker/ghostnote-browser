@@ -418,87 +418,6 @@
                   usesParentBreakpointCondition = "Yes"
                   offsetFromSymbolStart = "0">
                </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[ABShadowTextView resignFirstResponder]"
-                  moduleName = "AddressBook"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[ABNoteTextView resignFirstResponder]"
-                  moduleName = "AddressBook"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[WKView resignFirstResponder]"
-                  moduleName = "WebKit"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[NSViewServiceAccessoryView resignFirstResponder]"
-                  moduleName = "ViewBridge"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[NSRemoteViewBase resignFirstResponder]"
-                  moduleName = "ViewBridge"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[WebHTMLView resignFirstResponder]"
-                  moduleName = "WebKitLegacy"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[WebBaseNetscapePluginView resignFirstResponder]"
-                  moduleName = "WebKitLegacy"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[WebVideoFullscreenWindow resignFirstResponder]"
-                  moduleName = "WebCore"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[WebVideoFullscreenHUDWindow resignFirstResponder]"
-                  moduleName = "WebCore"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -509,11 +428,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ghostnote Browser/NSAttributesStringExtensions.swift"
-            timestampString = "490817054.166296"
+            timestampString = "490818117.347893"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
             landmarkName = "hasOnlyBullet()"
             landmarkType = "5">
          </BreakpointContent>
@@ -525,44 +444,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ghostnote Browser/TextProcessor.swift"
-            timestampString = "490817101.746436"
+            timestampString = "490817852.278281"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "201"
-            endingLineNumber = "201"
-            landmarkName = "toggleBulletAtInsertionPoint()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ghostnote Browser/TextProcessor.swift"
-            timestampString = "490817104.192647"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205"
-            landmarkName = "toggleBulletAtInsertionPoint()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ghostnote Browser/NSAttributesStringExtensions.swift"
-            timestampString = "490817128.663609"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "hasBullet()"
+            startingLineNumber = "284"
+            endingLineNumber = "284"
+            landmarkName = "addCheckboxToLine(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

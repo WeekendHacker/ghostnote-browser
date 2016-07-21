@@ -18,6 +18,8 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
         didSet {
             textView?.processor = self
             textView?.font = NSFont(name: "HelveticaNeue", size: 12.0)
+            textView?.textStorage?.font = textView?.font
+            
         }
     }
    

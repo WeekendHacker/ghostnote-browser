@@ -23,8 +23,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var menuController:MainMenuController?
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-//        NSUserDefaults.standardUserDefaults().setBool(false, forKey: "hasCreatedWelcomeNote")
-
+        resetWelcomeCreationMarker()
+        
+        
         if !NSUserDefaults.standardUserDefaults().boolForKey("hasCreatedWelcomeNote") {
             NoteManager.shared.copyWelcomeNoteFile()
         }
@@ -37,7 +38,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menuController = MainMenuController(menuItem: newMenuItem)
         showUI()
     }
-
+    
+    func resetWelcomeCreationMarker() {
+        NSUserDefaults.standardUserDefaults().setBool(false, forKey: "hasCreatedWelcomeNote")
+        NSUserDefaults.standardUserDefaults().setBool(false, forKey: "hasCreatedWelcomeTasks")
+    }
+    
     func configureRealm() {
         var config = Realm.Configuration()
         config.deleteRealmIfMigrationNeeded = true

@@ -33,8 +33,7 @@ class TaskListManager: NSObject {
         
         do {
             try db.write({
-                let uniquePart = NSDate().timeIntervalSince1970
-                
+               
                 newList.title = "Welcome to Ghostnote Browser !"
                 newList.creationDate = NSDate()
                 db.add(newList)
@@ -44,13 +43,15 @@ class TaskListManager: NSObject {
             print(error)
         }
         
-        newList.addTask("Create task lists with command-l")
-        newList.addTask("Create tasks in the current list with command-t")
+        newList.addTask("Create task lists with command-l.")
+        newList.addTask("Create tasks in the current list with command-t.")
         newList.addTask("Complete a task with the mouse or spacebar.")
-        newList.addTask("Delete tasks or task lists with the delete key")
-        newList.addTask("Checkout the Ghostnote Browser by clicking its icon on the left")
+        newList.addTask("Delete tasks or task lists with the delete key.")
+        newList.addTask("Browse & edit your Ghostnotes out of context by clicking the Ghost icon on the left.")
         
         NSNotificationCenter.defaultCenter().postNotificationName("CreatedTaskList", object: newList)
+        
+        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "hasCreatedWelcomeTasks")
     }
     
     func newTaskNameSuffix(inTaskList:TaskList) -> String {

@@ -17,12 +17,10 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
         
         didSet {
             textView?.processor = self
-            textView?.font = NSFont(name: "Helvetica", size: 12.0)
+            textView?.font = NSFont(name: "HelveticaNeue", size: 12.0)
         }
     }
-    
-    
-    
+   
     func toggleBold() {
         print("toggleBold")
         
@@ -156,31 +154,31 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
         }
     }
     
-    func toggleBoldAtInsertionPoint() {
-        if let font = textView?.typingAttributes["NSFont"] as? NSFont {
-            var newFont = font
-            
-            if font.isBold() {
-                newFont = font.nonBoldFont()
-            }else {
-                newFont = font.boldFont()
-            }
-            textView?.typingAttributes["NSFont"] = newFont
-        }
-    }
-    
-    func toggleItalicAtInsertionPoint() {
-        if let font = textView?.typingAttributes["NSFont"] as? NSFont {
-            var newFont = font
-            
-            if font.isItalic() {
-                newFont = font.nonItalicFont()
-            }else {
-                newFont = font.italicFont()
-            }
-            textView?.typingAttributes["NSFont"] = newFont
-        }
-    }
+//    func toggleBoldAtInsertionPoint() {
+//        if let font = textView?.typingAttributes["NSFont"] as? NSFont {
+//            var newFont = font
+//            
+//            if font.isBold() {
+//                newFont = font.nonBoldFont()
+//            }else {
+//                newFont = font.boldFont()
+//            }
+//            textView?.typingAttributes["NSFont"] = newFont
+//        }
+//    }
+//    
+//    func toggleItalicAtInsertionPoint() {
+//        if let font = textView?.typingAttributes["NSFont"] as? NSFont {
+//            var newFont = font
+//            
+//            if font.isItalic() {
+//                newFont = font.nonItalicFont()
+//            }else {
+//                newFont = font.italicFont()
+//            }
+//            textView?.typingAttributes["NSFont"] = newFont
+//        }
+//    }
     
     
     func toggleBulletOverRange(range:NSRange) {
@@ -302,6 +300,8 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
     }
     
     func addCheckboxToLine(range:NSRange) {
+        print("addCheckboxToLine:\(range)")
+        
         var mutableAttribs = textView?.typingAttributes
 
         if let currentFont = mutableAttribs![NSFontAttributeName] as? NSFont {
@@ -368,7 +368,7 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
     }
     
     func toggleLineNumberOverRange(range:NSRange) {
-        print("toggleLineNumberOverRange")
+        print("toggleLineNumberOverRange:\(range)")
         
         if let lines = textView?.textStorage?.attributedSubstringFromRange(range).mutableLines() where !lines.isEmpty {
             let replacementString = NSMutableAttributedString()
@@ -503,7 +503,7 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
                 removeCheckboxFromLine(NSRange(location: index! - 3, length: 3))
             }else {
                 print("previous had text, should continue")
-                addCheckboxToLine(NSRange(location: index! - 3, length: 3))
+                toggleTaskListAtInsertionPoint()
             }
             
         }else if previousLine.hasLineNumber() {

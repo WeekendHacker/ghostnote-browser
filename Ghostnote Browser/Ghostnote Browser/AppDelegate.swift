@@ -23,7 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var menuController:MainMenuController?
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        resetWelcomeCreationMarker()
+//        resetWelcomeCreationMarker()
         
         
         if !NSUserDefaults.standardUserDefaults().boolForKey("hasCreatedWelcomeNote") {

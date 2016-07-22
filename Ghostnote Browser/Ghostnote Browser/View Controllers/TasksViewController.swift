@@ -236,15 +236,10 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
     
     func handleSelectTaskListTableView() {
         
-        if let currentSelection = taskListController.currentTaskList {
-            if let row = TaskListManager.shared.taskLists.indexOf(currentSelection) {
-                if (TaskListManager.shared.taskLists.count > 0) {
-                    taskListTableView?.selectRowIndexes(NSIndexSet(index:row), byExtendingSelection: false)
-                    taskListTableView?.window?.makeFirstResponder(taskListTableView)
-                }
-            }
+        if let row = taskListTableView?.selectedRow where row != NSNotFound {
+            taskListTableView?.selectRowIndexes(NSIndexSet(index:row), byExtendingSelection: false)
+            taskListTableView?.window?.makeFirstResponder(taskListTableView)
         }
-       
     }
     
     func handleSelectTasksTableView() {

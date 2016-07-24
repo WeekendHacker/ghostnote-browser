@@ -109,6 +109,7 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
         super.viewDidAppear()
         appsTableViewController.reload()
         moveDidvdersToDefaultPosition()
+        selectFirstApp()
     }
 
     
@@ -162,9 +163,11 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
     // Selection automation 
     
     func selectFirstApp() {
-        appsTableView?.selectRowIndexes(NSIndexSet(index:0), byExtendingSelection: false)
-        appsTableView?.window?.makeFirstResponder(appsTableView)
-
+        
+        if GhostNoteManager.shared.allAppBundleIDs().count > 0 {
+            appsTableView?.selectRowIndexes(NSIndexSet(index:0), byExtendingSelection: false)
+            appsTableView?.window?.makeFirstResponder(appsTableView)
+        }
     }
     
     func selectFirstDoc() {

@@ -423,7 +423,7 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
             // remove attrib for ol?
             let rangeToDelete = NSRange(location: range.location, length: 2)
             textView?.textStorage?.beginEditing()
-            textView?.textStorage?.deleteCharactersInRange(range)
+            textView?.textStorage?.deleteCharactersInRange(rangeToDelete)
             textView?.textStorage?.endEditing()
             textView?.didChangeText()
         }

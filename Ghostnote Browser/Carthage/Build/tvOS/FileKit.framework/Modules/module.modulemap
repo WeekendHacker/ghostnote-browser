@@ -1,3 +1,0 @@
-framework module FileKit {
-    header "FileKit-Swift.h"
-}

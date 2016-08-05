@@ -8,6 +8,7 @@
 
 import Cocoa
 import RealmSwift
+import SwiftyBeaver
 
 class GhostNote: Object {
     
@@ -15,6 +16,7 @@ class GhostNote: Object {
     dynamic var themeName = ""
     dynamic var filePath = ""
     dynamic var appBundleID = ""
+    
     
     func urlForFilePath() -> NSURL? {
         
@@ -38,7 +40,7 @@ class GhostNote: Object {
                 }
             }
             catch {
-                print(error)
+                SwiftyBeaver.error(error)
             }
         }
         return ""

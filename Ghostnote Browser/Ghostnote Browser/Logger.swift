@@ -7,3 +7,9 @@
 //
 
 import Foundation
+import SwiftyBeaver
+
+class Logger {
+    
+    
+}

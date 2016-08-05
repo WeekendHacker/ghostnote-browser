@@ -8,6 +8,7 @@
 
 import Cocoa
 import RealmSwift
+import SwiftyBeaver
 
 class Task: Object {
 
@@ -32,7 +33,7 @@ class Task: Object {
             })
         }
         catch {
-            print(error)
+            SwiftyBeaver.error(error)
         }
     }
     
@@ -47,7 +48,7 @@ class Task: Object {
             })
         }
         catch {
-            print(error)
+            SwiftyBeaver.error(error)
         }
     }
     

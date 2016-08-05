@@ -9,6 +9,7 @@
 import Cocoa
 import Foundation
 import RealmSwift
+import SwiftyBeaver
 
 class NoteManager {
     
@@ -29,7 +30,7 @@ class NoteManager {
     }
     
     func copyWelcomeNoteFile() {
-        print("copyWelcomNotefile")
+
         createNotesFolderIfNeeded()
         let path = appSupportDir.first!
         
@@ -41,7 +42,7 @@ class NoteManager {
             try NSFileManager.defaultManager().copyItemAtURL(welcomeBundleURL!, toURL: destinationURL)
         }
         catch {
-            print(error)
+            SwiftyBeaver.error(error)
         }
         
         
@@ -54,12 +55,12 @@ class NoteManager {
                 note.creationDate = NSDate()
                 note.filePath = destinationURL.path!
                 store.add(note)
-                print(note)
+                SwiftyBeaver.error(note)
                 
             })
         }
         catch {
-            print(error)
+            SwiftyBeaver.error(error)
         }
         
         NSUserDefaults.standardUserDefaults().setBool(true, forKey: "hasCreatedWelcomeNote")
@@ -82,12 +83,12 @@ class NoteManager {
                 note.creationDate = NSDate()
                 note.filePath = fileURL.path!
                 store.add(note)
-                print(note)
+                SwiftyBeaver.error(note)
                 
             })
         }
         catch {
-            print(error)
+            SwiftyBeaver.error(error)
         }
         
         NSNotificationCenter.defaultCenter().postNotificationName("NoteAdded", object: note)
@@ -106,7 +107,7 @@ class NoteManager {
 
         }
         catch {
-            print(error)
+            SwiftyBeaver.error(error)
         }
         
     }
@@ -137,7 +138,7 @@ class NoteManager {
                 try NSFileManager.defaultManager().createDirectoryAtURL(docsURL, withIntermediateDirectories: true, attributes: nil)
             }
             catch {
-                print(error)
+                SwiftyBeaver.error(error)
             }
 
         }
@@ -179,12 +180,12 @@ class NoteManager {
                  try wrapper.writeToURL(fileURL, options: .Atomic, originalContentsURL: nil)
             }
             catch{
-                print(error)
+                SwiftyBeaver.error(error)
             }
            
         }
         catch {
-            print(error)
+            SwiftyBeaver.error(error)
         }
 
         return fileURL
@@ -211,7 +212,7 @@ class NoteManager {
             try fileManager.moveItemAtPath(note.filePath, toPath: newPath )
         }
         catch {
-            print(error)
+            SwiftyBeaver.error(error)
         }
         return NSURL(fileURLWithPath: newPath)
     }
@@ -227,7 +228,7 @@ class NoteManager {
             try NSFileManager.defaultManager().removeItemAtURL(fileURL)
         }
         catch {
-            print(error)
+            SwiftyBeaver.error(error)
         }
     }
     

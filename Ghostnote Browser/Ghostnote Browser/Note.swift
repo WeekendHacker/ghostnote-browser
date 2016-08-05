@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import SwiftyBeaver
 
 class Note:Object {
     dynamic var id = NSUUID().UUIDString
@@ -38,7 +39,7 @@ class Note:Object {
                 }
             }
             catch {
-                print(error)
+                SwiftyBeaver.error(error)
             }
         }
         return ""

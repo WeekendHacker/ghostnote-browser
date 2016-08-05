@@ -8,10 +8,13 @@
 
 import Cocoa
 import RealmSwift
+import SwiftyBeaver
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+    let log = SwiftyBeaver.self
+    
     @IBOutlet var newMenuItem:NSMenuItem?
     var currentControllerID = ""
     var windowController = MainWindowController(windowNibName: "MainWindowController")
@@ -25,7 +28,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(aNotification: NSNotification) {
 //        resetWelcomeCreationMarker()
         
+        let console = ConsoleDestination()  // log to Xcode Console
+        let file = FileDestination()  // log to default swiftybeaver.log file
+        log.addDestination(console)
+        log.addDestination(file)
         
+        log.info("foo")
         if !NSUserDefaults.standardUserDefaults().boolForKey("hasCreatedWelcomeNote") {
             NoteManager.shared.copyWelcomeNoteFile()
         }

@@ -473,11 +473,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ghostnote Browser/NSAttributesStringExtensions.swift"
-            timestampString = "490818117.347893"
+            timestampString = "492074948.447779"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
             landmarkName = "hasOnlyBullet()"
             landmarkType = "5">
          </BreakpointContent>
@@ -489,11 +489,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ghostnote Browser/TextProcessor.swift"
-            timestampString = "490818659.8645"
+            timestampString = "492074948.447779"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "288"
-            endingLineNumber = "288"
+            startingLineNumber = "285"
+            endingLineNumber = "285"
             landmarkName = "addCheckboxToLine(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -505,13 +505,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ghostnote Browser/AppDelegate.swift"
-            timestampString = "491938701.336981"
+            timestampString = "492074354.576091"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "showWindow(_:)"
-            landmarkType = "5">
+            startingLineNumber = "114"
+            endingLineNumber = "114">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -36,7 +36,6 @@ extension NSAttributedString {
         
         let tail = NSAttributedString(string: " ", attributes: tailAttribs)
         
-        print(tailAttribs)
         let symbol:NSMutableAttributedString = NSMutableAttributedString(attributedString: head)
         symbol.appendAttributedString(tail)
         return symbol

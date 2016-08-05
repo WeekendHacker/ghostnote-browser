@@ -24,7 +24,7 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
     }
    
     func toggleBold() {
-        print("toggleBold")
+
         let font = textView?.typingAttributes["NSFont"] as? NSFont
 
         if font!.isBold() {
@@ -40,7 +40,7 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
     }
     
     func toggleItalic() {
-        print("toggleItalic")
+
         
         let font = textView?.typingAttributes["NSFont"] as? NSFont
         
@@ -57,7 +57,6 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
     
     
     func toggleBulletList() {
-        print("togglebulletList")
         
         if let ranges = textView?.selectedRanges {
             ranges.forEach({ (range) in
@@ -74,7 +73,7 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
     }
 
     func toggleNumberedList() {
-        print("toggleNumberedList")
+
         if let ranges = textView?.selectedRanges  {
             
             ranges.forEach({ (range) in
@@ -91,7 +90,6 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
     }
     
     func toggleTaskList() {
-        print("toggleTaskList")
         
         if let ranges = textView?.selectedRanges  {
             
@@ -256,7 +254,7 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
     }
     
     func toggleTaskListAtInsertionPoint() {
-        print("toggleTaskListAtInsertionPoint")
+
         if let range = textView?.selectedRange() {
             
             let lineRange = (textView?.textStorage?.string as! NSString).lineRangeForRange(NSRange(location: range.location, length: 0))
@@ -277,7 +275,6 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
     }
     
     func addCheckboxToLine(range:NSRange) {
-        print("addCheckboxToLine:\(range)")
         
         var mutableAttribs = textView?.typingAttributes
 
@@ -345,7 +342,6 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
     }
     
     func toggleLineNumberOverRange(range:NSRange) {
-        print("toggleLineNumberOverRange:\(range)")
         
         if let lines = textView?.textStorage?.attributedSubstringFromRange(range).mutableLines() where !lines.isEmpty {
             let replacementString = NSMutableAttributedString()
@@ -473,26 +469,20 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
         // should probably trimt whitespace form the line
         // to see if it is just the line symbol
         if previousLine.hasCheckBox() {
-            print("previous had box, maybe should continue")
 
             if previousLine.length == NSAttributedString.taskUncheckedStringWith(nil,size: 0).length + 1 {
-                print("previous had only box, should remove")
                 removeCheckboxFromLine(NSRange(location: index! - 3, length: 3))
             }else {
-                print("previous had text, should continue")
                 toggleTaskListAtInsertionPoint()
             }
             
         }else if previousLine.hasLineNumber() {
-            print("previous had number, maybe should continue")
             
             if let lineNumberString = previousLine.lineNumber() {
                 
                 if let lineNumber = Int(lineNumberString.string.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())) {
-                    print("previous number is \(lineNumber)")
                     
                     if previousLine.hasOnlyLineNumber() {
-                        print("should remove line number")
                         let loc:Int
                         if index == 0 {
                            loc = 0
@@ -502,7 +492,6 @@ class TextProcessor: NSObject, CustomTextViewDelegate, NSTextStorageDelegate {
                         let range = NSRange(location: loc , length: lineNumberString.length +  1)
                         removeLineNumberFromLine(range)
                     }else {
-                        print("continuing numbered list")
                         let range = NSRange(location: index!, length: 0)
                         addLineNumberToLine(lineNumber + 1, range: range)
                     }

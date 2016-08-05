@@ -45,7 +45,14 @@ class ButtonNavViewController: NSViewController {
             if let current = currentController {
                 if let title = current.title {
                    
-                    searchField?.placeholderString = "Search \(title)"
+                    if #available(OSX 10.10, *) {
+                        searchField?.placeholderString = "Search \(title)"
+                    } else {
+                        if let cell = searchField?.cell as? NSTextFieldCell {
+                            cell.placeholderString = ""
+                        }
+                    }
+                    
                     NSNotificationCenter.defaultCenter().postNotificationName("ControllerChanged", object: title)
 
                 }
@@ -91,7 +98,11 @@ class ButtonNavViewController: NSViewController {
 //    }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        if #available(OSX 10.10, *) {
+            super.viewDidLoad()
+        } else {
+            // Fallback on earlier versions
+        }
 
         notesButton?.wantsLayer = true
         tasksButton?.wantsLayer = true

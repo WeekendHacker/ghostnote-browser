@@ -35,11 +35,11 @@ class CustomRowView: NSTableRowView {
             
         }else {
             
-            if let ctx = NSGraphicsContext.currentContext()?.CGContext {
+            func drawWithContext(ctx:CGContext) {
                 
                 let borderColor = NSColor.gnWhite().CGColor
                 let selectedBorderColor = NSColor.gnBlue().CGColor
-
+                
                 let width = bounds.size.width
                 let height = bounds.size.height
                 let insetDistance:CGFloat = 4.0
@@ -56,7 +56,7 @@ class CustomRowView: NSTableRowView {
                 let origin = CGPoint(x: boxLeft, y: insetDistance)
                 let size = CGSize(width: width - boxLeft, height: height - doubleInset)
                 let rect = CGRect(origin: origin, size: size)
-
+                
                 //
                 CGContextSetLineWidth(ctx, 1.0)
                 
@@ -76,8 +76,20 @@ class CustomRowView: NSTableRowView {
                 CGContextClosePath (ctx);
                 CGContextStrokePath(ctx)
             }
+            
 
+            if #available(OSX 10.10, *) {
+                
+                if let ctx = NSGraphicsContext.currentContext()?.CGContext {
+                    drawWithContext(ctx)
+                }
+            }
+            else {
+                if let contextPointer = NSGraphicsContext.currentContext()?.graphicsPort {
+                    let ctx: CGContextRef = Unmanaged.fromOpaque(COpaquePointer(contextPointer)).takeUnretainedValue()
+                    drawWithContext(ctx)
+                }
+            }
         }
-       
     }
 }

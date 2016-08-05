@@ -52,7 +52,11 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
     
     // view life cycle
     override func viewDidLoad() {
-        super.viewDidLoad()
+        if #available(OSX 10.10, *) {
+            super.viewDidLoad()
+        } else {
+            // Fallback on earlier versions
+        }
        
         title = "Tasks"
         NSNotificationCenter.defaultCenter().addObserver(self,
@@ -79,7 +83,11 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
     }
     
     override func viewDidAppear() {
-        super.viewDidAppear()
+        if #available(OSX 10.10, *) {
+            super.viewDidAppear()
+        } else {
+            // Fallback on earlier versions
+        }
         splitView?.setPosition(160.0, ofDividerAtIndex: 0)
         selectFirstTaskList()
     }
@@ -111,7 +119,11 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
     }
 
     override func updateViewConstraints() {
-        super.updateViewConstraints()
+        if #available(OSX 10.10, *) {
+            super.updateViewConstraints()
+        } else {
+            // Fallback on earlier versions
+        }
         if let superView = view.superview {
             let top = NSLayoutConstraint(item: view,
                                          attribute: .Top,
@@ -182,18 +194,30 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
                     deleteVC.promptText = "Delete \"\(taskListToDelete.title.withoutUniquePart())\" ?"
                     deleteVC.yesBlock = {
                         TaskListManager.shared.deleteTaskList(taskListToDelete.title)
-                        self.dismissViewController(deleteVC)
+                        if #available(OSX 10.10, *) {
+                            self.dismissViewController(deleteVC)
+                        } else {
+                            // Fallback on earlier versions
+                        }
                     }
                     
                     deleteVC.noBlock = {
-                        self.dismissViewController(deleteVC)
+                        if #available(OSX 10.10, *) {
+                            self.dismissViewController(deleteVC)
+                        } else {
+                            // Fallback on earlier versions
+                        }
                     }
                     
-                    presentViewController(deleteVC,
-                                          asPopoverRelativeToRect: hostingNoteCell.bounds,
-                                          ofView: hostingNoteCell,
-                                          preferredEdge: .MaxX,
-                                          behavior: .Transient)
+                    if #available(OSX 10.10, *) {
+                        presentViewController(deleteVC,
+                                              asPopoverRelativeToRect: hostingNoteCell.bounds,
+                                              ofView: hostingNoteCell,
+                                              preferredEdge: .MaxX,
+                                              behavior: .Transient)
+                    } else {
+                        // Fallback on earlier versions
+                    }
                 }
             }
         }
@@ -213,18 +237,30 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
                         
                         deleteVC.yesBlock = {
                             containingTaskList.removeTask(taskToDelete)
-                            self.dismissViewController(deleteVC)
+                            if #available(OSX 10.10, *) {
+                                self.dismissViewController(deleteVC)
+                            } else {
+                                // Fallback on earlier versions
+                            }
                         }
                         
                         deleteVC.noBlock = {
-                            self.dismissViewController(deleteVC)
+                            if #available(OSX 10.10, *) {
+                                self.dismissViewController(deleteVC)
+                            } else {
+                                // Fallback on earlier versions
+                            }
                         }
                         
-                        presentViewController(deleteVC,
-                                              asPopoverRelativeToRect: hostingTaskCell.bounds,
-                                              ofView: hostingTaskCell,
-                                              preferredEdge: .MaxX,
-                                              behavior: .Transient)
+                        if #available(OSX 10.10, *) {
+                            presentViewController(deleteVC,
+                                                  asPopoverRelativeToRect: hostingTaskCell.bounds,
+                                                  ofView: hostingTaskCell,
+                                                  preferredEdge: .MaxX,
+                                                  behavior: .Transient)
+                        } else {
+                            // Fallback on earlier versions
+                        }
                         
                     }
 

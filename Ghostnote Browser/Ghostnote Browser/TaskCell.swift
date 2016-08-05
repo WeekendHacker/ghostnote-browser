@@ -27,7 +27,11 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
             if let t = task {
                 if let displayTitle = t.title.componentsSeparatedByString("<!").first {
                     textField?.delegate = self
-                    textField?.lineBreakMode = .ByTruncatingTail
+                    if #available(OSX 10.10, *) {
+                        textField?.lineBreakMode = .ByTruncatingTail
+                    } else {
+                        textField?.cell?.lineBreakMode = .ByTruncatingTail
+                    }
                     textField?.stringValue = displayTitle
                     textField?.toolTip = displayTitle
                     textField?.layer?.shadowColor = NSColor.blackColor().CGColor
@@ -92,25 +96,26 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
         }
     }
 
+    
     // Drawing
     override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
         
-        if let ctx = NSGraphicsContext.currentContext()?.CGContext {
+        func drawWithContext(ctx:CGContext) {
             
             let width = bounds.size.width
             let height = bounds.size.height
             let insetDistance:CGFloat = 4.0
             let doubleInset:CGFloat = 2.0 * insetDistance
             let boxLeft:CGFloat = 2.0
-
+            
             let boxFillcolor = NSColor.whiteColor().CGColor
-
+            
             CGContextSetFillColorWithColor(ctx, boxFillcolor)
             let origin = CGPoint(x: boxLeft, y: insetDistance)
             let size = CGSize(width: width - boxLeft, height: height - doubleInset)
             let rect = CGRect(origin: origin, size: size)
-
+            
             // start at origin
             CGContextMoveToPoint (ctx, CGRectGetMinX(rect), CGRectGetMinY(rect));
             
@@ -123,9 +128,23 @@ class TaskCell: NSTableCellView, NSTextFieldDelegate, SelectableCell
             // add top edge
             CGContextAddLineToPoint (ctx, CGRectGetMinX(rect), CGRectGetMaxY(rect));
             
-
+            
             CGContextClosePath(ctx)
             CGContextFillPath(ctx)
+
+        }
+        
+        if #available(OSX 10.10, *) {
+            
+            if let ctx = NSGraphicsContext.currentContext()?.CGContext {
+                drawWithContext(ctx)
+            }
+        }
+        else {
+            if let contextPointer = NSGraphicsContext.currentContext()?.graphicsPort {
+                let ctx: CGContextRef = Unmanaged.fromOpaque(COpaquePointer(contextPointer)).takeUnretainedValue()
+                drawWithContext(ctx)
+            }
         }
     }
 }

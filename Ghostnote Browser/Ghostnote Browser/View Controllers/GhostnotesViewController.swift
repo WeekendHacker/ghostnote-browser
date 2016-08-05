@@ -99,14 +99,22 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        if #available(OSX 10.10, *) {
+            super.viewDidLoad()
+        } else {
+            // Fallback on earlier versions
+        }
         title = "Ghostnotes"
         splitView?.dividerStyle = .Thin
         noteTextViewController.disableUI()
     }
 
     override func viewDidAppear() {
-        super.viewDidAppear()
+        if #available(OSX 10.10, *) {
+            super.viewDidAppear()
+        } else {
+            // Fallback on earlier versions
+        }
         appsTableViewController.reload()
         moveDidvdersToDefaultPosition()
         selectFirstApp()
@@ -119,7 +127,11 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
     }
     
     override func updateViewConstraints() {
-        super.updateViewConstraints()
+        if #available(OSX 10.10, *) {
+            super.updateViewConstraints()
+        } else {
+            // Fallback on earlier versions
+        }
         if let superView = view.superview {
             let top = NSLayoutConstraint(item: view,
                                          attribute: .Top,

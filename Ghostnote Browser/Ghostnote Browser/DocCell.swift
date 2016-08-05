@@ -13,7 +13,12 @@ class DocCell: NSTableCellView, SelectableCell {
        var doc:Document? {
         didSet {
             if let  myDoc = doc {
-                textField?.lineBreakMode = .ByTruncatingMiddle
+                if #available(OSX 10.10, *) {
+                    textField?.lineBreakMode = .ByTruncatingMiddle
+                } else {
+                    textField?.cell?.lineBreakMode = .ByTruncatingMiddle
+
+                }
                 textField?.stringValue = myDoc.note.docID
                 toolTip = myDoc.note.docID
                 

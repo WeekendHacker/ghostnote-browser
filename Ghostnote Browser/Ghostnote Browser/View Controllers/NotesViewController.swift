@@ -33,7 +33,11 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
         }
     }
     override func viewDidLoad() {
-        super.viewDidLoad()
+        if #available(OSX 10.10, *) {
+            super.viewDidLoad()
+        } else {
+            // Fallback on earlier versions
+        }
         title = "Notes"
         
         view.wantsLayer = true
@@ -48,13 +52,21 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
     }
 
     override func viewDidAppear() {
-        super.viewDidAppear()
+        if #available(OSX 10.10, *) {
+            super.viewDidAppear()
+        } else {
+            // Fallback on earlier versions
+        }
         splitView?.setPosition(160.0, ofDividerAtIndex: 0)
         selectFirstNote()
     }
 
     override func updateViewConstraints() {
-        super.updateViewConstraints()
+        if #available(OSX 10.10, *) {
+            super.updateViewConstraints()
+        } else {
+            // Fallback on earlier versions
+        }
         if let superView = view.superview {
             let top = NSLayoutConstraint(item: view,
                                          attribute: .Top,
@@ -171,18 +183,30 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
                     deleteVC.promptText = "Delete \"\(noteToDelete.name.withoutUniquePart())\" ?"
                     deleteVC.yesBlock = {
                         NoteManager.shared.deleteNote(noteToDelete)
-                        self.dismissViewController(deleteVC)
+                        if #available(OSX 10.10, *) {
+                            self.dismissViewController(deleteVC)
+                        } else {
+                            // Fallback on earlier versions
+                        }
                     }
                     
                     deleteVC.noBlock = {
-                        self.dismissViewController(deleteVC)
+                        if #available(OSX 10.10, *) {
+                            self.dismissViewController(deleteVC)
+                        } else {
+                            // Fallback on earlier versions
+                        }
                     }
 
-                    presentViewController(deleteVC,
-                                          asPopoverRelativeToRect: hostingNoteCell.bounds,
-                                          ofView: hostingNoteCell,
-                                          preferredEdge: .MaxX,
-                                          behavior: .Transient)
+                    if #available(OSX 10.10, *) {
+                        presentViewController(deleteVC,
+                                              asPopoverRelativeToRect: hostingNoteCell.bounds,
+                                              ofView: hostingNoteCell,
+                                              preferredEdge: .MaxX,
+                                              behavior: .Transient)
+                    } else {
+                        // Fallback on earlier versions
+                    }
                     
                 }
 

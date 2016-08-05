@@ -13,7 +13,11 @@ class AppCell: NSTableCellView, SelectableCell {
     var app:App? {
         didSet {
             if let myApp = app {
-                textField?.lineBreakMode = .ByTruncatingMiddle
+                if #available(OSX 10.10, *) {
+                    textField?.lineBreakMode = .ByTruncatingMiddle
+                } else {
+                    textField?.cell?.lineBreakMode = .ByTruncatingMiddle
+                }
                 textField?.stringValue = AppNameProvider.displayNameForBundleID(myApp.bundleID)
                 toolTip = myApp.bundleID
                 imageView?.image = AppIconProvider.iconImagefor(myApp.bundleID)

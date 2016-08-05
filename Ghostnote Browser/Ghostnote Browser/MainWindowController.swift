@@ -12,8 +12,12 @@ class MainWindowController: NSWindowController {
 
     override func windowDidLoad() {
         super.windowDidLoad()
-        window?.styleMask = (window?.styleMask)! | NSFullSizeContentViewWindowMask;
-        window?.titlebarAppearsTransparent = true
+        if #available(OSX 10.10, *) {
+            window?.styleMask = (window?.styleMask)! | NSFullSizeContentViewWindowMask;
+            window?.titlebarAppearsTransparent = true
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
 }

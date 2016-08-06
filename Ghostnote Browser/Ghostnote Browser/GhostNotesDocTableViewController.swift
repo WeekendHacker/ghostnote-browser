@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import SwiftyBeaver
 
 protocol GhostNotesDocTableViewControllerObserver {
     func selectedNote(note:GhostNote)
@@ -23,6 +24,7 @@ class GhostNotesDocTableViewController: NSObject, NSTableViewDelegate, NSTableVi
             reload()
         }
     }
+    let log = SwiftyBeaver.self
     
     var ghostnotes = Array<GhostNote>()
     
@@ -42,12 +44,17 @@ class GhostNotesDocTableViewController: NSObject, NSTableViewDelegate, NSTableVi
                 }
                 
                 tv.wantsLayer = true
-
+                let console = ConsoleDestination()  // log to Xcode Console
+                let file = FileDestination()  // log to default swiftybeaver.log file
+                log.addDestination(console)
+                log.addDestination(file)
             }
         }
     }
     
     func reload() {
+        log.info("")
+
         if let app = currentApp {
             ghostnotes = GhostNoteManager.shared.docNotesForApp(app.bundleID)
         }
@@ -56,6 +63,7 @@ class GhostNotesDocTableViewController: NSObject, NSTableViewDelegate, NSTableVi
     }
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
+        log.info("returning \(ghostnotes.count)")
         return ghostnotes.count
     }
     
@@ -65,8 +73,10 @@ class GhostNotesDocTableViewController: NSObject, NSTableViewDelegate, NSTableVi
     
     
     func tableView(tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
+        log.info("")
         if let rv = tableView.makeViewWithIdentifier("CustomRowView", owner: nil) as? CustomRowView {
             rv.forTasks = false
+            log.info("returnng \(rv)")
             return rv
         }
         return nil
@@ -74,11 +84,12 @@ class GhostNotesDocTableViewController: NSObject, NSTableViewDelegate, NSTableVi
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
-        let view = docsTableView?.makeViewWithIdentifier("DocCell", owner: nil) as! DocCell?
-        let gn =  ghostnotes[row]
-        view!.doc =  Document(note:gn)
-
-        return view
+        if let view = docsTableView?.makeViewWithIdentifier("DocCell", owner: nil) as! DocCell? {
+            view.doc =  Document(note: ghostnotes[row])
+            log.info("returning \(view)")
+            return view
+        }
+        return nil
     }
     
     //
@@ -92,14 +103,6 @@ class GhostNotesDocTableViewController: NSObject, NSTableViewDelegate, NSTableVi
             }else {
                 observer?.selectedNothing()
             }
-            
-//            tv.enumerateAvailableRowViewsUsingBlock({ (rowView, row) in
-//                
-//                if let cell = tv.viewAtColumn(0, row: row, makeIfNecessary: false) as? SelectableCell {
-//                    cell.select(rowView.selected)
-//                }
-//                
-//            })
         }
     }
 }

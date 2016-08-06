@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import SwiftyBeaver
 
 extension NSTableView {
     func hasSelection() -> Bool {

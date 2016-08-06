@@ -16,6 +16,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let log = SwiftyBeaver.self
     
     @IBOutlet var newMenuItem:NSMenuItem?
+    
     var currentControllerID = ""
     var windowController = MainWindowController(windowNibName: "MainWindowController")
     
@@ -53,6 +54,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func configureRealm() {
+        log.info("")
         var config = Realm.Configuration()
         config.deleteRealmIfMigrationNeeded = true
         realm = try! Realm(configuration: config)

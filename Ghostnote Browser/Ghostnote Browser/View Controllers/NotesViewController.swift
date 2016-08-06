@@ -7,9 +7,12 @@
 //
 
 import Cocoa
+import SwiftyBeaver
 
 class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegate {
 
+    let log = SwiftyBeaver.self
+    
     var notesTableController = NotesTableViewController()
     var noteTextViewController:NoteTextViewController = NoteTextViewController()
     
@@ -18,6 +21,7 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
             addNoteButton?.toolTip = "Add Note - command-n"
         }
     }
+    
     @IBOutlet weak var splitView:CustomSplitView?
     
     @IBOutlet var noteTextView:NSTextView?
@@ -34,6 +38,12 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let console = ConsoleDestination()  // log to Xcode Console
+        let file = FileDestination()  // log to default swiftybeaver.log file
+        log.addDestination(console)
+        log.addDestination(file)
+        
         title = "Notes"
         
         view.wantsLayer = true
@@ -185,7 +195,6 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
                                           behavior: .Transient)
                     
                 }
-
             }
         }
     }

@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import SwiftyBeaver
 
 protocol TaskListControllerObserver {
     func selectedList(taskList:TaskList)
@@ -16,10 +17,17 @@ protocol TaskListControllerObserver {
 class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
                           DeleteRowDelegate, InterTableKeyboardNavigationDelegate {
     
+    let log = SwiftyBeaver.self
+    
     override init() {
         super.init()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(handleTaskListCreation), name: "CreatedTaskList", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(handleTaskListDeletion), name: "DeletedTaskList", object: nil)
+        
+        let console = ConsoleDestination()  // log to Xcode Console
+        let file = FileDestination()  // log to default swiftybeaver.log file
+        log.addDestination(console)
+        log.addDestination(file)
     }
     
     var observer:TaskListControllerObserver?
@@ -74,6 +82,7 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
     // NSTableViewDatasource
     
     func tableView(tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
+        log.info("")
         let rowView = tableView.makeViewWithIdentifier("CustomRowView", owner: nil) as? NSTableRowView
         return rowView
     }
@@ -95,7 +104,7 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
     }
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        
+        log.info("")
         if TaskListManager.shared.searchController.isSearching {
             let taskList = TaskListManager.shared.searchController.results[row]
             
@@ -165,7 +174,6 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
                                                                   object: nil)
     }
     
-    
     func selectTaskList(taskList:TaskList) {
         
         if let tableView = taskListTableView {
@@ -184,29 +192,7 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
             })
         }
     }
-//    func beginEditingForNewTaskList(newTaskList:TaskList) {
-//        
-//        // should maybe get to a protocol and extension
-//        // for this maybe a CRUD tv controller with the HasIDString on the comparision below
-//        
-//        if let tableView = taskListTableView {
-//            
-//            tableView.enumerateAvailableRowViewsUsingBlock({ (rowView, row) in
-//                if let cell = rowView.viewAtColumn(0) as? TaskListCell {
-//                    if let cellTaskList = cell.taskList {
-//                        if cellTaskList.id == newTaskList.id {
-//                            tableView.scrollRowToVisible(row)
-//                            tableView.selectRowIndexes(NSIndexSet(index:row), byExtendingSelection: false)
-//                            cell.textField?.enterEditing()
-//                        }else {
-//                            cell.select(false)
-//                        }
-//                    }
-//                }
-//            })
-//        }
-//    }
-//    
+    
     // Notification Handlers
     
     func handleTaskListCreation(notif:NSNotification) {

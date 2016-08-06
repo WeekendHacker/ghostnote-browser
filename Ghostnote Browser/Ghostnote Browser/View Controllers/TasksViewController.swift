@@ -7,11 +7,13 @@
 //
 
 import Cocoa
+import SwiftyBeaver
 
 class TasksViewController: NSViewController, ButtonNavigable, TaskListControllerObserver, NSSplitViewDelegate {
 
     var taskListController = TaskListController()
     var taskController = TasksController()
+    let log = SwiftyBeaver.self
     
     @IBOutlet weak var addTaskListButton:NSButton? {
         didSet {
@@ -53,7 +55,11 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
     // view life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        let console = ConsoleDestination()  // log to Xcode Console
+        let file = FileDestination()  // log to default swiftybeaver.log file
+        log.addDestination(console)
+        log.addDestination(file)
+        
         title = "Tasks"
         NSNotificationCenter.defaultCenter().addObserver(self,
                                                          selector: #selector(handleTaskListDeleteRequest(_:)),

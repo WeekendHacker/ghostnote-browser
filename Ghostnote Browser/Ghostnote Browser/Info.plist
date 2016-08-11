@@ -33,6 +33,6 @@
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 	<key>SUFeedURL</key>
-	<string>https://www.ghostnoteapp.com/updates/dist_test/GhostnoteBrowserAppcast.xml</string>
+	<string>https://www.ghostnoteapp.com/updates/dist_test/GhostnoteBrowserAppcastTest.xml</string>
 </dict>
 </plist>

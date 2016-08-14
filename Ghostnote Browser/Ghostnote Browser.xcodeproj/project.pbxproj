@@ -72,6 +72,11 @@
 		D8931BF41D47BF9300C0D6ED /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8931BF21D47BF9300C0D6ED /* Sparkle.framework */; };
 		D8931BF51D47BF9300C0D6ED /* Sparkle.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = D8931BF31D47BF9300C0D6ED /* Sparkle.framework.dSYM */; };
 		D8931BF71D47BF9E00C0D6ED /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8931BF21D47BF9300C0D6ED /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D89F76A51D60E1140076BEA4 /* DocumentIconProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89F76A41D60E1140076BEA4 /* DocumentIconProviderTests.swift */; };
+		D89F76A71D60E44C0076BEA4 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D884C1A01CE27600003E15D2 /* Realm.framework */; };
+		D89F76A81D60E44C0076BEA4 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D884C1A11CE27600003E15D2 /* RealmSwift.framework */; };
+		D89F76A91D60E44C0076BEA4 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D845ABF81D54747C002B4010 /* SwiftyBeaver.framework */; };
+		D89F76AB1D60E6300076BEA4 /* AppIconProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89F76AA1D60E6300076BEA4 /* AppIconProviderTests.swift */; };
 		D8BD62D81D382E0A00BD45AC /* customFonts in Resources */ = {isa = PBXBuildFile; fileRef = D8BD62D71D382E0A00BD45AC /* customFonts */; };
 		D8C153B31D411A56001F5AE6 /* Welcome to Ghostnote!.rtfd in Resources */ = {isa = PBXBuildFile; fileRef = D8C153B21D411A56001F5AE6 /* Welcome to Ghostnote!.rtfd */; };
 		D8CC00AD1CE6793300D13331 /* GhostNoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC00AC1CE6793300D13331 /* GhostNoteManager.swift */; };
@@ -192,6 +197,8 @@
 		D884C1A11CE27600003E15D2 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/Mac/RealmSwift.framework; sourceTree = "<group>"; };
 		D8931BF21D47BF9300C0D6ED /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		D8931BF31D47BF9300C0D6ED /* Sparkle.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = Sparkle.framework.dSYM; sourceTree = "<group>"; };
+		D89F76A41D60E1140076BEA4 /* DocumentIconProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentIconProviderTests.swift; sourceTree = "<group>"; };
+		D89F76AA1D60E6300076BEA4 /* AppIconProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIconProviderTests.swift; sourceTree = "<group>"; };
 		D8BD62D11D3811F800BD45AC /* Hellvetica-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hellvetica-Regular.otf"; sourceTree = "<group>"; };
 		D8BD62D51D382CFE00BD45AC /* Hellvetica-Regular-2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hellvetica-Regular-2.otf"; sourceTree = "<group>"; };
 		D8BD62D71D382E0A00BD45AC /* customFonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = customFonts; sourceTree = "<group>"; };
@@ -239,6 +246,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D89F76A71D60E44C0076BEA4 /* Realm.framework in Frameworks */,
+				D89F76A81D60E44C0076BEA4 /* RealmSwift.framework in Frameworks */,
+				D89F76A91D60E44C0076BEA4 /* SwiftyBeaver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +455,19 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		D89F76A61D60E3A10076BEA4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D845ABF81D54747C002B4010 /* SwiftyBeaver.framework */,
+				D845ABF91D54747C002B4010 /* SwiftyBeaver.framework.dSYM */,
+				D8931BF21D47BF9300C0D6ED /* Sparkle.framework */,
+				D8931BF31D47BF9300C0D6ED /* Sparkle.framework.dSYM */,
+				D884C1A01CE27600003E15D2 /* Realm.framework */,
+				D884C1A11CE27600003E15D2 /* RealmSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D8BD62D41D382CFE00BD45AC /* customFonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -457,17 +480,12 @@
 		D8D10EB91CC48A9F00A434F6 = {
 			isa = PBXGroup;
 			children = (
-				D845ABF81D54747C002B4010 /* SwiftyBeaver.framework */,
-				D845ABF91D54747C002B4010 /* SwiftyBeaver.framework.dSYM */,
+				D89F76A61D60E3A10076BEA4 /* Frameworks */,
 				D8931BFB1D47E3D700C0D6ED /* Resources */,
-				D8931BF21D47BF9300C0D6ED /* Sparkle.framework */,
-				D8931BF31D47BF9300C0D6ED /* Sparkle.framework.dSYM */,
 				D8C153B21D411A56001F5AE6 /* Welcome to Ghostnote!.rtfd */,
 				D8BD62D71D382E0A00BD45AC /* customFonts */,
 				D8BD62D41D382CFE00BD45AC /* customFonts */,
 				D8BD62D11D3811F800BD45AC /* Hellvetica-Regular.otf */,
-				D884C1A01CE27600003E15D2 /* Realm.framework */,
-				D884C1A11CE27600003E15D2 /* RealmSwift.framework */,
 				D8D10EC41CC48A9F00A434F6 /* Ghostnote Browser */,
 				D8D10ED71CC48A9F00A434F6 /* Ghostnote BrowserTests */,
 				D8D10EE21CC48A9F00A434F6 /* Ghostnote BrowserUITests */,
@@ -513,6 +531,8 @@
 				D8D10ED81CC48A9F00A434F6 /* Ghostnote_BrowserTests.swift */,
 				D8D10EDA1CC48A9F00A434F6 /* Info.plist */,
 				D824C8DD1D18E45C00246E8C /* NotesSearchControllerTests.swift */,
+				D89F76A41D60E1140076BEA4 /* DocumentIconProviderTests.swift */,
+				D89F76AA1D60E6300076BEA4 /* AppIconProviderTests.swift */,
 			);
 			path = "Ghostnote BrowserTests";
 			sourceTree = "<group>";
@@ -803,6 +823,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D824C8DE1D18E45C00246E8C /* NotesSearchControllerTests.swift in Sources */,
+				D89F76AB1D60E6300076BEA4 /* AppIconProviderTests.swift in Sources */,
+				D89F76A51D60E1140076BEA4 /* DocumentIconProviderTests.swift in Sources */,
 				D8D10ED91CC48A9F00A434F6 /* Ghostnote_BrowserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -970,6 +992,10 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = "Ghostnote BrowserTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ghostnote.Ghostnote-BrowserTests";
@@ -983,6 +1009,10 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = "Ghostnote BrowserTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ghostnote.Ghostnote-BrowserTests";

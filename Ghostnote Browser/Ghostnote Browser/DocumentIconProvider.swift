@@ -11,8 +11,13 @@ import Cocoa
 class DocumentIconProvider: NSObject {
 
     static func iconImageForDocumentPath(path:String) -> NSImage {
-        let url = NSURL.fileURLWithPath(path)
         
-        return  NSWorkspace.sharedWorkspace().iconForFileType((url.pathExtension)!)
+        let url = NSURL.fileURLWithPath(path)
+        if let pathExtension = url.pathExtension {
+            return  NSWorkspace.sharedWorkspace().iconForFileType(pathExtension)
+        }
+        
+        return NSWorkspace.sharedWorkspace().iconForFileType(NSFileTypeForHFSTypeCode(OSType(kGenericDocumentIcon)))
+        
     }
 }

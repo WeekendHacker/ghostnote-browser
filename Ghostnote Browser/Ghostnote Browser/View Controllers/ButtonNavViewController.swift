@@ -35,16 +35,20 @@ class ButtonNavViewController: NSViewController {
     @IBOutlet weak var tasksButton:NSButton?
     @IBOutlet weak var ghostnotesButton:NSButton?
     
-    var notesController = NotesViewController()
-    var tasksController = TasksViewController()
-    var ghostnotesController = GhostnotesViewController()
+    var notesController = NotesViewController(nibName:"NotesViewController",
+                                              bundle: NSBundle.mainBundle())
+    
+    var tasksController = TasksViewController(nibName:"TasksViewController",
+                                              bundle: NSBundle.mainBundle())
+    var ghostnotesController = GhostnotesViewController(nibName:"GhostnotesViewController",
+                                                        bundle: NSBundle.mainBundle())
     
     var currentController:NSViewController? {
         didSet {
 
             if let current = currentController {
                 if let title = current.title {
-                   
+                   print("set \(current)")
                     searchField?.placeholderString = "Search \(title)"
                     NSNotificationCenter.defaultCenter().postNotificationName("ControllerChanged", object: title)
 
@@ -129,36 +133,40 @@ class ButtonNavViewController: NSViewController {
                 NoteManager.shared.searchController.isSearching = !sf.stringValue.isEmpty
                 NoteManager.shared.searchController.searchText = sf.stringValue
                 
-                notesController.notesTableView?.reloadData()
-                notesController.noteTextViewController.currentNote = nil
+            
+                notesController?.notesTableView?.reloadData()
+                notesController?.noteTextViewController.currentNote = nil
                 
             }else if currentController == tasksController  {
                 
                 TaskListManager.shared.searchController.isSearching = !sf.stringValue.isEmpty
                 TaskListManager.shared.searchController.searchText = sf.stringValue
                 
-                tasksController.selectedNoList()
-                tasksController.taskListTableView?.reloadData()
+                tasksController?.selectedNoList()
+                tasksController?.taskListTableView?.reloadData()
                 
             }else if currentController == ghostnotesController {
                 
                 GhostNoteManager.shared.searchController.isSearching = !sf.stringValue.isEmpty
                 GhostNoteManager.shared.searchController.searchText = sf.stringValue
                 
-                ghostnotesController.appsTableViewController.reload()
-                ghostnotesController.docsTableViewController.reload()
+                ghostnotesController?.appsTableViewController.reload()
+                ghostnotesController?.docsTableViewController.reload()
             }
         }
     }
     
     @IBAction func notesButtonClicked(sender:AnyObject?) {
         
-        tasksController.deactivate()
-        ghostnotesController.deactivate()
+        tasksController?.deactivate()
+        ghostnotesController?.deactivate()
         
-        if !notesController.isActive() {
-            contentView?.addSubview(notesController.view)
+        if let n = notesController  {
+            if !n.isActive() {
+                contentView?.addSubview(n.view)
+            }
         }
+        
         
         currentController = notesController
         
@@ -168,12 +176,14 @@ class ButtonNavViewController: NSViewController {
     
     @IBAction func tasksButtonClicked(sender:AnyObject?) {
         
-        notesController.deactivate()
-        ghostnotesController.deactivate()
-        
-        if !tasksController.isActive() {
-            contentView?.addSubview(tasksController.view)
+        notesController?.deactivate()
+        ghostnotesController?.deactivate()
+        if let t = tasksController {
+            if !t.isActive() {
+                contentView?.addSubview(t.view)
+            }
         }
+        
         currentController = tasksController
         updateNavButtonState()
         NSUserDefaults.standardUserDefaults().setInteger(1, forKey: "selectedTab")
@@ -182,12 +192,15 @@ class ButtonNavViewController: NSViewController {
     
     @IBAction func ghostnotesButtonClicked(sender:AnyObject?) {
         
-        notesController.deactivate()
-        tasksController.deactivate()
+        notesController?.deactivate()
+        tasksController?.deactivate()
         
-        if !ghostnotesController.isActive() {
-            contentView?.addSubview(ghostnotesController.view)
+        if let g = ghostnotesController {
+            if !g.isActive() {
+                contentView?.addSubview(g.view)
+            }
         }
+        
         currentController = ghostnotesController
         updateNavButtonState()
         NSUserDefaults.standardUserDefaults().setInteger(2, forKey: "selectedTab")
@@ -196,23 +209,33 @@ class ButtonNavViewController: NSViewController {
 
     func updateNavButtonState() {
         
-        if notesController.isActive() {
-            notesButton?.image = NSImage(imageLiteral: "Notes-Active")
-        }else {
-            notesButton?.image = NSImage(imageLiteral: "Notes-Inactive")
-        }
-        
-        if tasksController.isActive() {
-            tasksButton?.image =  NSImage(imageLiteral: "Tasks-Active")
-        }else {
-            tasksButton?.image =  NSImage(imageLiteral: "Tasks-Inactive")
-        }
-        
-        if ghostnotesController.isActive() {
-            ghostnotesButton?.image =  NSImage(imageLiteral: "Ghostnotes-Active")
+        if let n = notesController {
+            
+            if n.isActive() {
+                notesButton?.image = NSImage(imageLiteral: "Notes-Active")
+            }else {
+                notesButton?.image = NSImage(imageLiteral: "Notes-Inactive")
+            }
 
-        }else {
-            ghostnotesButton?.image =  NSImage(imageLiteral: "Ghostnotes-Inactive")
+        }
+        
+        if let t = tasksController {
+            
+            if t.isActive() {
+                tasksButton?.image =  NSImage(imageLiteral: "Tasks-Active")
+            }else {
+                tasksButton?.image =  NSImage(imageLiteral: "Tasks-Inactive")
+            }
+        }
+       
+        if let g = ghostnotesController {
+            
+            if g.isActive() {
+                ghostnotesButton?.image =  NSImage(imageLiteral: "Ghostnotes-Active")
+                
+            }else {
+                ghostnotesButton?.image =  NSImage(imageLiteral: "Ghostnotes-Inactive")
+            }
         }
     }
 }

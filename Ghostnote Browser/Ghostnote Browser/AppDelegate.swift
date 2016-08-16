@@ -63,7 +63,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func showUI() {
         
         if let contentView = windowController.window?.contentView {
-            buttonNavViewController = ButtonNavViewController(nibName: "ButtonNavViewController", bundle: nil)
+            buttonNavViewController = ButtonNavViewController(nibName: "ButtonNavViewController",
+                                                              bundle: nil)
             
             if let navConView = buttonNavViewController?.view {
                 contentView.addSubview(navConView)

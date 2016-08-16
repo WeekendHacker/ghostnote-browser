@@ -676,6 +676,7 @@
 					D8D10EC11CC48A9F00A434F6 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = H37GZ9FGMS;
+						ProvisioningStyle = Manual;
 					};
 					D8D10ED31CC48A9F00A434F6 = {
 						CreatedOnToolsVersion = 7.3;
@@ -959,6 +960,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ghostnoteapp.Ghostnote-Browser";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = H37GZ9FGMS/;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -980,6 +982,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ghostnoteapp.Ghostnote-Browser";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = H37GZ9FGMS/;
 			};
 			name = Release;
 		};

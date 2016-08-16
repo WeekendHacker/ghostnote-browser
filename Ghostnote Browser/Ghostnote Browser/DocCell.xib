@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
@@ -25,11 +25,11 @@
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="XaU-Cf-ajB"/>
                 </imageView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uDO-a2-eGT">
-                    <rect key="frame" x="22" y="7" width="452" height="17"/>
+                    <rect key="frame" x="22" y="7" width="41" height="17"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="17" id="wLH-dq-0po"/>
                     </constraints>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="qc6-TN-eVK">
+                    <textFieldCell key="cell" lineBreakMode="truncatingMiddle" selectable="YES" refusesFirstResponder="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Label" id="qc6-TN-eVK">
                         <font key="font" metaFont="systemThin" size="15"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -38,7 +38,7 @@
             </subviews>
             <constraints>
                 <constraint firstItem="uDO-a2-eGT" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="4h6-EX-xWk"/>
-                <constraint firstAttribute="trailing" secondItem="uDO-a2-eGT" secondAttribute="trailing" constant="8" id="5jF-Ds-QUS"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uDO-a2-eGT" secondAttribute="trailing" constant="8" id="5jF-Ds-QUS"/>
                 <constraint firstItem="aiG-pR-YtO" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="BCc-lh-ALE"/>
                 <constraint firstItem="uDO-a2-eGT" firstAttribute="leading" secondItem="aiG-pR-YtO" secondAttribute="trailing" constant="8" id="NIK-Kl-cO8"/>
                 <constraint firstItem="aiG-pR-YtO" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="i8S-K9-b8E"/>

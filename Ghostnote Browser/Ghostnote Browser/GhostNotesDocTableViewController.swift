@@ -35,6 +35,8 @@ class GhostNotesDocTableViewController: NSObject, NSTableViewDelegate, NSTableVi
                 tv.setDataSource(self)
                 
                 tv.selectionHighlightStyle = .Regular
+                tv.target = self
+                tv.doubleAction = #selector(doubleClickedAction(_:))
                 
                 if let nib =  NSNib(nibNamed: "DocCell",bundle: nil) {
                     tv.registerNib(nib, forIdentifier: "DocCell")
@@ -48,6 +50,19 @@ class GhostNotesDocTableViewController: NSObject, NSTableViewDelegate, NSTableVi
                 let file = FileDestination()  // log to default swiftybeaver.log file
                 log.addDestination(console)
                 log.addDestination(file)
+            }
+        }
+    }
+    
+    
+    func doubleClickedAction(sender:AnyObject?) {
+        log.info("")
+        if let tv = sender as? NSTableView {
+            let row = tv.selectedRow
+            if row != NSNotFound {
+                let ghostnote = ghostnotes[row]
+                NoteSourceOpener.openSourceOf(ghostnote)
+
             }
         }
     }
@@ -86,7 +101,6 @@ class GhostNotesDocTableViewController: NSObject, NSTableViewDelegate, NSTableVi
         
         if let view = docsTableView?.makeViewWithIdentifier("DocCell", owner: nil) as! DocCell? {
             view.doc =  Document(note: ghostnotes[row])
-            log.info("returning \(view)")
             return view
         }
         return nil

@@ -47,6 +47,7 @@
 		D83E5B441CDA74BD0044F7A3 /* TaskListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B431CDA74BD0044F7A3 /* TaskListManager.swift */; };
 		D83E5B471CDA76400044F7A3 /* TaskListNameValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B461CDA76400044F7A3 /* TaskListNameValidator.swift */; };
 		D83E5B4D1CDA7A430044F7A3 /* NamedItemValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B4C1CDA7A430044F7A3 /* NamedItemValidator.swift */; };
+		D83F01FD1D63960F00948E67 /* NoteLocationOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83F01FC1D63960F00948E67 /* NoteLocationOpener.swift */; };
 		D845ABFA1D54747C002B4010 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D845ABF81D54747C002B4010 /* SwiftyBeaver.framework */; };
 		D845ABFB1D54747C002B4010 /* SwiftyBeaver.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = D845ABF91D54747C002B4010 /* SwiftyBeaver.framework.dSYM */; };
 		D845ABFC1D547500002B4010 /* SwiftyBeaver.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D845ABF81D54747C002B4010 /* SwiftyBeaver.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -175,6 +176,7 @@
 		D83E5B431CDA74BD0044F7A3 /* TaskListManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskListManager.swift; path = Models/TaskListManager.swift; sourceTree = "<group>"; };
 		D83E5B461CDA76400044F7A3 /* TaskListNameValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListNameValidator.swift; sourceTree = "<group>"; };
 		D83E5B4C1CDA7A430044F7A3 /* NamedItemValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamedItemValidator.swift; sourceTree = "<group>"; };
+		D83F01FC1D63960F00948E67 /* NoteLocationOpener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteLocationOpener.swift; sourceTree = "<group>"; };
 		D845ABF81D54747C002B4010 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/Mac/SwiftyBeaver.framework; sourceTree = "<group>"; };
 		D845ABF91D54747C002B4010 /* SwiftyBeaver.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwiftyBeaver.framework.dSYM; path = Carthage/Build/Mac/SwiftyBeaver.framework.dSYM; sourceTree = "<group>"; };
 		D84F16C21CC54ED6005612BB /* AppIconProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIconProvider.swift; sourceTree = "<group>"; };
@@ -398,6 +400,7 @@
 				D81281AB1CCEB660001749E9 /* Managers */,
 				D8FF02321D07D5AD004AE6E2 /* View Models */,
 				D812819A1CCDDE93001749E9 /* GNTheme.swift */,
+				D83F01FC1D63960F00948E67 /* NoteLocationOpener.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -760,6 +763,7 @@
 				D83E5B421CDA74180044F7A3 /* Task.swift in Sources */,
 				D83E5B401CDA737A0044F7A3 /* TaskList.swift in Sources */,
 				D84F16C71CC54ED6005612BB /* DocumentIconProvider.swift in Sources */,
+				D83F01FD1D63960F00948E67 /* NoteLocationOpener.swift in Sources */,
 				D83E5B4D1CDA7A430044F7A3 /* NamedItemValidator.swift in Sources */,
 				D824C8DA1D1873AA00246E8C /* TasksSearchController.swift in Sources */,
 				D803FEBC1D21C8A700360741 /* CustomRowView.swift in Sources */,

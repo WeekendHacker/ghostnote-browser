@@ -24,6 +24,8 @@ class GhostNotesAppTableViewController: NSObject , NSTableViewDelegate , NSTable
             appsTableView?.setDelegate(self)
             appsTableView?.setDataSource(self)
             appsTableView?.selectionHighlightStyle = .Regular
+            appsTableView?.target = self
+            appsTableView?.doubleAction = #selector(doubleClickedAction(_:))
             
             if let appCellNib = NSNib(nibNamed: "AppCell", bundle: nil) {
                 appsTableView?.registerNib(appCellNib, forIdentifier: "AppCell")
@@ -42,6 +44,17 @@ class GhostNotesAppTableViewController: NSObject , NSTableViewDelegate , NSTable
                                                                         selector: #selector(handleNoteDeletion),
                                                                         name: "GhostnoteDeletedNote",
                                                                         object: nil)
+        }
+    }
+    
+    func doubleClickedAction(sender:AnyObject?) {
+        SwiftyBeaver.info("")
+        if let tv = sender as? NSTableView {
+            let row = tv.selectedRow
+            if row != NSNotFound {
+                let app = apps[row]
+                NoteSourceOpener.open(app.bundleID)
+            }
         }
     }
     
@@ -112,5 +125,9 @@ class GhostNotesAppTableViewController: NSObject , NSTableViewDelegate , NSTable
                 observer?.selectedNothing()
             }
         }
+    }
+    
+    deinit {
+        NSDistributedNotificationCenter.defaultCenter().removeObserver(self)
     }
 }

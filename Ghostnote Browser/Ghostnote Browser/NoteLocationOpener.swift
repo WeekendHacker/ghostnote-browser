@@ -16,6 +16,7 @@ class NoteSourceOpener {
         if note.isAppNote() {
             open(note.appBundleID)
         }else {
+            
             let fileURL = NSURL(fileURLWithPath:note.docID)
             if let path = fileURL.path {
                 if !path.isEmpty {

@@ -99,6 +99,8 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
         title = "Ghostnotes"
         splitView?.dividerStyle = .Thin
         noteTextViewController.disableUI()
+        
+        registerForNotifications()
     }
 
     override func viewDidAppear() {
@@ -210,6 +212,61 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
     func rightArrow() {
         if docsTableViewController.ghostnotes.count > 0 {
             selectFirstDoc()
+        }
+    }
+    
+    // Notifications
+    
+    func registerForNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(handleDeleteGhostnoteRequest(_:)),
+                                                         name: "DeleteGhostnoteRequest",
+                                                         object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(handleGhostnoteDeleted),
+                                                         name: "GhostnoteDeleted",
+                                                         object: nil)
+    }
+    
+    func handleGhostnoteDeleted() {
+        noteTextViewController.currentNote = nil
+    }
+    
+    func handleDeleteGhostnoteRequest(notif:NSNotification) {
+        if let payload = notif.object as? Dictionary<String,AnyObject> {
+            
+            let deleteVC = ConfirmDeleteViewController()
+            if let noteToDelete = payload["noteToDelete"] as? GhostNote,
+                let hostingCell = payload["hostingCell"] as? NSTableCellView {
+                
+                var promptName = ""
+
+                if noteToDelete.isAppNote() {
+                   promptName = AppNameProvider.displayNameForBundleID(noteToDelete.appBundleID)
+                }else {
+                    promptName = noteToDelete.docID
+                }
+                
+                deleteVC.promptText = "Delete Note for \"\(promptName)\" ?"
+
+                deleteVC.yesBlock = {
+                    GhostNoteManager.shared.delete(noteToDelete)
+                    self.dismissViewController(deleteVC)
+                }
+                
+                deleteVC.noBlock = {
+                    self.dismissViewController(deleteVC)
+                }
+                
+                
+                
+                presentViewController(deleteVC,
+                                      asPopoverRelativeToRect: hostingCell.bounds,
+                                      ofView: hostingCell,
+                                      preferredEdge: .MaxX,
+                                      behavior: .Transient)
+            }
         }
     }
     

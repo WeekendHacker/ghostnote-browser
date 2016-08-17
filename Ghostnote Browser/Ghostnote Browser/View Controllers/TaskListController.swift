@@ -139,7 +139,8 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
         payload["taskListToDelete"] = selectedList
         payload["hostingTaskListCell"] = hostingCell
         
-        NSNotificationCenter.defaultCenter().postNotificationName("DeleteTaskListRequest", object: payload)
+        NSNotificationCenter.defaultCenter().postNotificationName("DeleteTaskListRequest",
+                                                                  object: payload)
 
     }
 

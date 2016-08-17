@@ -36,6 +36,7 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
             noteTextViewController.placeholderLabel = textViewPlaceholderLabel
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -202,5 +203,9 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
                 }
             }
         }
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 }

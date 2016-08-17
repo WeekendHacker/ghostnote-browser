@@ -55,33 +55,16 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
     // view life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let console = ConsoleDestination()  // log to Xcode Console
         let file = FileDestination()  // log to default swiftybeaver.log file
         log.addDestination(console)
         log.addDestination(file)
         
         title = "Tasks"
-        NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: #selector(handleTaskListDeleteRequest(_:)),
-                                                         name: "DeleteTaskListRequest",
-                                                         object: nil)
-        
-        NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: #selector(handleTaskDeletionRequest),
-                                                         name: "DeleteTaskRequest",
-                                                         object: nil)
-        
-        NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: #selector(handleSelectTasksTableView),
-                                                         name: "SelectTasksTableView",
-                                                         object: nil)
-        
-        NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: #selector(handleSelectTaskListTableView),
-                                                         name: "SelectTaskListTableView",
-                                                         object: nil)
         
         splitView?.dividerStyle = .Thin
+        registerForNotifications()
     }
     
     override func viewDidAppear() {
@@ -177,6 +160,29 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
         taskController.selectedTaskList = nil
     }
     
+    func registerForNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(handleTaskListDeleteRequest(_:)),
+                                                         name: "DeleteTaskListRequest",
+                                                         object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(handleTaskDeletionRequest),
+                                                         name: "DeleteTaskRequest",
+                                                         object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(handleSelectTasksTableView),
+                                                         name: "SelectTasksTableView",
+                                                         object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(handleSelectTaskListTableView),
+                                                         name: "SelectTaskListTableView",
+                                                         object: nil)
+
+    }
+    
     // Notification Handlers
     func handleTaskListDeleteRequest(notif:NSNotification) {
         if let payload = notif.object as? Dictionary<String,AnyObject> {
@@ -250,5 +256,9 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
     
     func handleSelectTasksTableView() {
         selectFirstTask()
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 }

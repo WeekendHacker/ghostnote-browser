@@ -52,7 +52,6 @@ class GhostNoteManager: NSObject {
         for note in ghostNotes {
             if note.appBundleID == bundleID {
                 if !note.isAppNote() {
-                                        
                     notes.append(note)
                 }
             }
@@ -71,5 +70,26 @@ class GhostNoteManager: NSObject {
             }
         }
         return nil
+    }
+    
+    func delete(ghostnote:GhostNote) {
+        
+        let removedFile = RTFFileManager.shared.removeFileForNote(ghostnote.appBundleID,
+                                                                  docID: ghostnote.docID)
+        if removedFile {
+            
+            do {
+                try store.write({
+                    store.delete(ghostnote)
+
+                })
+                NSNotificationCenter.defaultCenter().postNotificationName("GhostnoteDeleted",
+                                                                          object: nil)
+            }
+            catch {
+                print(error)
+            }
+        }
+        
     }
 }

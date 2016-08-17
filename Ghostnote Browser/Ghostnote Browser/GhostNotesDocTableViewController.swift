@@ -15,7 +15,7 @@ protocol GhostNotesDocTableViewControllerObserver {
 }
 
 
-class GhostNotesDocTableViewController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
+class GhostNotesDocTableViewController: NSObject, NSTableViewDelegate, NSTableViewDataSource, DeleteRowDelegate {
 
     var observer:GhostNotesDocTableViewControllerObserver?
     
@@ -28,16 +28,18 @@ class GhostNotesDocTableViewController: NSObject, NSTableViewDelegate, NSTableVi
     
     var ghostnotes = Array<GhostNote>()
     
-    @IBOutlet weak var docsTableView:NSTableView? {
+    @IBOutlet weak var docsTableView:DeletableTableView? {
         didSet {
             if let tv = docsTableView {
                 tv.setDelegate(self)
                 tv.setDataSource(self)
-                
+                tv.deleteDelegate = self
+
                 tv.selectionHighlightStyle = .Regular
                 tv.target = self
                 tv.doubleAction = #selector(doubleClickedAction(_:))
-                
+                tv.wantsLayer = true
+
                 if let nib =  NSNib(nibNamed: "DocCell",bundle: nil) {
                     tv.registerNib(nib, forIdentifier: "DocCell")
                 }
@@ -45,7 +47,10 @@ class GhostNotesDocTableViewController: NSObject, NSTableViewDelegate, NSTableVi
                     tv.registerNib(rowViewNib, forIdentifier: "CustomRowView")
                 }
                 
-                tv.wantsLayer = true
+                NSNotificationCenter.defaultCenter().addObserver(self,
+                                                                 selector: #selector(reload),
+                                                                 name: "GhostnoteDeleted",
+                                                                 object: nil)
                 let console = ConsoleDestination()  // log to Xcode Console
                 let file = FileDestination()  // log to default swiftybeaver.log file
                 log.addDestination(console)
@@ -118,6 +123,22 @@ class GhostNotesDocTableViewController: NSObject, NSTableViewDelegate, NSTableVi
                 observer?.selectedNothing()
             }
         }
+    }
+    
+    // MARK DeleteRowDelegate
+    
+    func deleteRow(row: Int) {
+        
+        let noteToDelete = ghostnotes[row]
+        
+        if let cell = docsTableView?.viewAtColumn(0, row: row, makeIfNecessary: false) {
+            let payload = ["noteToDelete" : noteToDelete,
+                           "hostingCell" : cell]
+            
+            NSNotificationCenter.defaultCenter().postNotificationName("DeleteGhostnoteRequest",
+                                                                      object: payload)
+        }
+       
     }
 }
  

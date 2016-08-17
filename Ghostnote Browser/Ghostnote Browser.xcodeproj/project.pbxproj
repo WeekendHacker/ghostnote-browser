@@ -61,6 +61,8 @@
 		D84F16E61CC71215005612BB /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16E41CC71215005612BB /* NotesViewController.swift */; };
 		D84F16EB1CC7123E005612BB /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16E91CC7123E005612BB /* TasksViewController.swift */; };
 		D84F16F01CC71260005612BB /* GhostnotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16EE1CC71260005612BB /* GhostnotesViewController.swift */; };
+		D86847961D640F5A00BCDAF6 /* RTFFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86847951D640F5A00BCDAF6 /* RTFFileManager.swift */; };
+		D86847981D640FA900BCDAF6 /* URLProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86847971D640FA900BCDAF6 /* URLProvider.swift */; };
 		D86A9FBA1D148FCC00F6DFF9 /* CustomSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86A9FB91D148FCC00F6DFF9 /* CustomSplitView.swift */; };
 		D86DC3831D0407E30013DFC8 /* DocCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D86DC3821D0407E30013DFC8 /* DocCell.xib */; };
 		D86FA0471D35F01200FFEC80 /* NSColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86FA0461D35F01200FFEC80 /* NSColorExtensions.swift */; };
@@ -189,6 +191,8 @@
 		D84F16E41CC71215005612BB /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotesViewController.swift; path = "View Controllers/NotesViewController.swift"; sourceTree = "<group>"; };
 		D84F16E91CC7123E005612BB /* TasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TasksViewController.swift; path = "View Controllers/TasksViewController.swift"; sourceTree = "<group>"; };
 		D84F16EE1CC71260005612BB /* GhostnotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GhostnotesViewController.swift; path = "View Controllers/GhostnotesViewController.swift"; sourceTree = "<group>"; };
+		D86847951D640F5A00BCDAF6 /* RTFFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTFFileManager.swift; sourceTree = "<group>"; };
+		D86847971D640FA900BCDAF6 /* URLProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLProvider.swift; sourceTree = "<group>"; };
 		D86A9FB91D148FCC00F6DFF9 /* CustomSplitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSplitView.swift; sourceTree = "<group>"; };
 		D86DC3821D0407E30013DFC8 /* DocCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocCell.xib; sourceTree = "<group>"; };
 		D86FA0461D35F01200FFEC80 /* NSColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSColorExtensions.swift; sourceTree = "<group>"; };
@@ -299,6 +303,7 @@
 				D81281A91CCEB60B001749E9 /* NoteManager.swift */,
 				D83E5B431CDA74BD0044F7A3 /* TaskListManager.swift */,
 				D8CC00AC1CE6793300D13331 /* GhostNoteManager.swift */,
+				D86847951D640F5A00BCDAF6 /* RTFFileManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -343,7 +348,6 @@
 				D803FEBD1D220E4400360741 /* NSTableViewExtensions.swift */,
 				D8CD4DB01D317269008C7427 /* NSImageExtensions.swift */,
 				D86FA0461D35F01200FFEC80 /* NSColorExtensions.swift */,
-				D8FEA3CA1D3A99C400DA822F /* TextProcessor.swift */,
 				D8FEA3CC1D3AA17F00DA822F /* NSFontExtensions.swift */,
 				D8FEA3CF1D3B38B000DA822F /* NSAttributesStringExtensions.swift */,
 			);
@@ -367,6 +371,7 @@
 				D84F16C21CC54ED6005612BB /* AppIconProvider.swift */,
 				D84F16C31CC54ED6005612BB /* AppNameProvider.swift */,
 				D84F16C41CC54ED6005612BB /* DocumentIconProvider.swift */,
+				D86847971D640FA900BCDAF6 /* URLProvider.swift */,
 			);
 			name = Providers;
 			sourceTree = "<group>";
@@ -396,6 +401,7 @@
 		D84F16D21CC5539D005612BB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D8FEA3CA1D3A99C400DA822F /* TextProcessor.swift */,
 				D83E5B451CDA761E0044F7A3 /* Validators */,
 				D81281AB1CCEB660001749E9 /* Managers */,
 				D8FF02321D07D5AD004AE6E2 /* View Models */,
@@ -779,6 +785,7 @@
 				D8CC00AD1CE6793300D13331 /* GhostNoteManager.swift in Sources */,
 				D84F16DF1CC60EEE005612BB /* DocCell.swift in Sources */,
 				D8FEA3CD1D3AA17F00DA822F /* NSFontExtensions.swift in Sources */,
+				D86847961D640F5A00BCDAF6 /* RTFFileManager.swift in Sources */,
 				D84F16D41CC553B3005612BB /* App.swift in Sources */,
 				D84F16EB1CC7123E005612BB /* TasksViewController.swift in Sources */,
 				D824C8EA1D1902BE00246E8C /* HasIDString.swift in Sources */,
@@ -791,6 +798,7 @@
 				D81281991CCDCFD8001749E9 /* NotesTableViewController.swift in Sources */,
 				D807C1C61D302353007F3BD6 /* CustomTextView.swift in Sources */,
 				D80001B41CD88BDC00255E54 /* NoteTextViewController.swift in Sources */,
+				D86847981D640FA900BCDAF6 /* URLProvider.swift in Sources */,
 				D8CD4DB11D317269008C7427 /* NSImageExtensions.swift in Sources */,
 				D81281AA1CCEB60B001749E9 /* NoteManager.swift in Sources */,
 				D8151CC41D027F6A00F04C24 /* DeletableTableView.swift in Sources */,

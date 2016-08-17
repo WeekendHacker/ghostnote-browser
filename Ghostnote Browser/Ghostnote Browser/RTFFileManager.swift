@@ -71,6 +71,38 @@ class RTFFileManager:NSObject {
         return fileURL
     }
     
+    func canRemove(url:NSURL) -> Bool {
+        do {
+            if try NSFileManager.defaultManager().contentsOfDirectoryAtURL(url,
+                                                                           includingPropertiesForKeys: nil,
+                                                                           options: NSDirectoryEnumerationOptions.SkipsHiddenFiles).isEmpty {
+                    return true
+            }else {
+                return false
+            }
+        }
+        catch {
+            print(error)
+            return false
+        }
+
+    }
+    
+    func ifEmptyRemoveDirectoryFor(bundleID:String) {
+        
+        let url = appcontainerURLForBundleID(bundleID)
+        
+        if canRemove(url) {
+            do {
+                try NSFileManager.defaultManager().removeItemAtURL(url)
+            }
+            catch {
+                print(error)
+            }
+        }
+        
+    }
+    
     func removeFileForNote(bundleID:String, docID:String) -> Bool {
         do {
             try NSFileManager.defaultManager().removeItemAtURL(fileURLFor(bundleID,

@@ -73,8 +73,8 @@ class GhostNoteManager: NSObject {
     }
     
     func delete(ghostnote:GhostNote) {
-        
-        let removedFile = RTFFileManager.shared.removeFileForNote(ghostnote.appBundleID,
+        let bundleID = ghostnote.appBundleID
+        let removedFile = RTFFileManager.shared.removeFileForNote(bundleID,
                                                                   docID: ghostnote.docID)
         if removedFile {
             
@@ -89,6 +89,8 @@ class GhostNoteManager: NSObject {
             catch {
                 print(error)
             }
+            
+             RTFFileManager.shared.ifEmptyRemoveDirectoryFor(bundleID)
         }
         
     }

@@ -15,18 +15,18 @@ protocol GhostNotesAppTableViewControllerObserver {
     func selectedNothing()
 }
 
-class GhostNotesAppTableViewController: NSObject , NSTableViewDelegate , NSTableViewDataSource {
+class GhostNotesAppTableViewController: NSObject , NSTableViewDelegate , NSTableViewDataSource, DeleteRowDelegate {
 
     var observer:GhostNotesAppTableViewControllerObserver?
     
-    @IBOutlet weak var appsTableView:NSTableView? {
+    @IBOutlet weak var appsTableView:DeletableTableView? {
         didSet {
             appsTableView?.setDelegate(self)
             appsTableView?.setDataSource(self)
             appsTableView?.selectionHighlightStyle = .Regular
             appsTableView?.target = self
             appsTableView?.doubleAction = #selector(doubleClickedAction(_:))
-            
+            appsTableView?.deleteDelegate = self
             if let appCellNib = NSNib(nibNamed: "AppCell", bundle: nil) {
                 appsTableView?.registerNib(appCellNib, forIdentifier: "AppCell")
             }
@@ -35,6 +35,12 @@ class GhostNotesAppTableViewController: NSObject , NSTableViewDelegate , NSTable
                 appsTableView?.registerNib(rowViewNib, forIdentifier: "CustomRowView")
             }
 
+            
+            NSNotificationCenter.defaultCenter().addObserver(self,
+                                                             selector: #selector(reload),
+                                                             name: "GhostnoteDeleted",
+                                                             object: nil)
+            
             NSDistributedNotificationCenter.defaultCenter().addObserver(self,
                                                                         selector: #selector(handleNoteCreation),
                                                                         name: "GhostnoteCreatedNote",
@@ -125,6 +131,22 @@ class GhostNotesAppTableViewController: NSObject , NSTableViewDelegate , NSTable
                 observer?.selectedNothing()
             }
         }
+    }
+    
+    // MARK DeleteRowDelegate
+    
+    func deleteRow(row: Int) {
+        let app = apps[row]
+        if let appNote = GhostNoteManager.shared.appNoteForApp(app.bundleID) {
+            if let cell = appsTableView?.viewAtColumn(0, row: row, makeIfNecessary: false) {
+                let payload = ["noteToDelete" : appNote,
+                               "hostingCell" : cell]
+                
+                NSNotificationCenter.defaultCenter().postNotificationName("DeleteGhostnoteRequest",
+                                                                          object: payload)
+            }
+        }
+  
     }
     
     deinit {

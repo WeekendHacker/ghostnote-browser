@@ -219,28 +219,30 @@ class TasksViewController: NSViewController, ButtonNavigable, TaskListController
                 if let containingTaskList = payload["containingTaskList"] as? TaskList {
                     if let taskToDelete = payload["taskToDelete"] as? Task {
                         
-                        let deleteVC = ConfirmDeleteViewController()
-
-                        deleteVC.promptText = "Delete \"\(taskToDelete.title.withoutUniquePart())\" ?"
-                        
-                        deleteVC.yesBlock = {
-                            containingTaskList.removeTask(taskToDelete)
-                            self.dismissViewController(deleteVC)
+                        if let deleteVC = ConfirmDeleteViewController(nibName: "ConfirmDeleteViewController",
+                                                                      bundle: NSBundle.mainBundle()) {
+                            deleteVC.promptText = "Delete \"\(taskToDelete.title.withoutUniquePart())\" ?"
+                            
+                            deleteVC.yesBlock = {
+                                containingTaskList.removeTask(taskToDelete)
+                                self.dismissViewController(deleteVC)
+                            }
+                            
+                            deleteVC.noBlock = {
+                                self.dismissViewController(deleteVC)
+                            }
+                            
+                            presentViewController(deleteVC,
+                                                  asPopoverRelativeToRect: hostingTaskCell.bounds,
+                                                  ofView: hostingTaskCell,
+                                                  preferredEdge: .MaxX,
+                                                  behavior: .Transient)
+                            
                         }
-                        
-                        deleteVC.noBlock = {
-                            self.dismissViewController(deleteVC)
-                        }
-                        
-                        presentViewController(deleteVC,
-                                              asPopoverRelativeToRect: hostingTaskCell.bounds,
-                                              ofView: hostingTaskCell,
-                                              preferredEdge: .MaxX,
-                                              behavior: .Transient)
-                        
+  
                     }
 
-                    }
+                }
             }
 
         }

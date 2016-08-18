@@ -236,36 +236,38 @@ class GhostnotesViewController: NSViewController, ButtonNavigable,
     func handleDeleteGhostnoteRequest(notif:NSNotification) {
         if let payload = notif.object as? Dictionary<String,AnyObject> {
             
-            let deleteVC = ConfirmDeleteViewController()
-            if let noteToDelete = payload["noteToDelete"] as? GhostNote,
-                let hostingCell = payload["hostingCell"] as? NSTableCellView {
-                
-                var promptName = ""
-
-                if noteToDelete.isAppNote() {
-                   promptName = AppNameProvider.displayNameForBundleID(noteToDelete.appBundleID)
-                }else {
-                    promptName = noteToDelete.docID
+            if let deleteVC = ConfirmDeleteViewController(nibName: "ConfirmDeleteViewController",
+                                                       bundle: NSBundle.mainBundle()) {
+                if let noteToDelete = payload["noteToDelete"] as? GhostNote,
+                    let hostingCell = payload["hostingCell"] as? NSTableCellView {
+                    
+                    var promptName = ""
+                    
+                    if noteToDelete.isAppNote() {
+                        promptName = AppNameProvider.displayNameForBundleID(noteToDelete.appBundleID)
+                    }else {
+                        promptName = noteToDelete.docID
+                    }
+                    
+                    deleteVC.promptText = "Delete Note for \"\(promptName)\" ?"
+                    
+                    deleteVC.yesBlock = {
+                        GhostNoteManager.shared.delete(noteToDelete)
+                        self.dismissViewController(deleteVC)
+                    }
+                    
+                    deleteVC.noBlock = {
+                        self.dismissViewController(deleteVC)
+                    }
+                    
+                    
+                    
+                    presentViewController(deleteVC,
+                                          asPopoverRelativeToRect: hostingCell.bounds,
+                                          ofView: hostingCell,
+                                          preferredEdge: .MaxX,
+                                          behavior: .Transient)
                 }
-                
-                deleteVC.promptText = "Delete Note for \"\(promptName)\" ?"
-
-                deleteVC.yesBlock = {
-                    GhostNoteManager.shared.delete(noteToDelete)
-                    self.dismissViewController(deleteVC)
-                }
-                
-                deleteVC.noBlock = {
-                    self.dismissViewController(deleteVC)
-                }
-                
-                
-                
-                presentViewController(deleteVC,
-                                      asPopoverRelativeToRect: hostingCell.bounds,
-                                      ofView: hostingCell,
-                                      preferredEdge: .MaxX,
-                                      behavior: .Transient)
             }
         }
     }

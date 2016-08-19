@@ -8,7 +8,7 @@
 
 import Cocoa
 import RealmSwift
-import SwiftyBeaver
+import XCGLogger
 
 class GhostNote: Object {
     
@@ -40,7 +40,7 @@ class GhostNote: Object {
                 }
             }
             catch {
-                SwiftyBeaver.error(error)
+                XCGLogger.error("\(error)")
             }
         }
         return ""

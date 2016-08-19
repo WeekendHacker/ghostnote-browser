@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-import SwiftyBeaver
+import XCGLogger
 
 protocol TaskListControllerObserver {
     func selectedList(taskList:TaskList)
@@ -17,17 +17,14 @@ protocol TaskListControllerObserver {
 class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
                           DeleteRowDelegate, InterTableKeyboardNavigationDelegate {
     
-    let log = SwiftyBeaver.self
+    let log = XCGLogger(identifier: "TasksController", includeDefaultDestinations: true)
     
     override init() {
         super.init()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(handleTaskListCreation), name: "CreatedTaskList", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(handleTaskListDeletion), name: "DeletedTaskList", object: nil)
         
-        let console = ConsoleDestination()  // log to Xcode Console
-        let file = FileDestination()  // log to default swiftybeaver.log file
-        log.addDestination(console)
-        log.addDestination(file)
+
     }
     
     var observer:TaskListControllerObserver?
@@ -104,7 +101,6 @@ class TaskListController: NSObject, NSTableViewDelegate, NSTableViewDataSource,
     }
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        log.info("")
         if TaskListManager.shared.searchController.isSearching {
             let taskList = TaskListManager.shared.searchController.results[row]
             

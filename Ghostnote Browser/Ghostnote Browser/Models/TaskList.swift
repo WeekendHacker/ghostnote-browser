@@ -8,7 +8,7 @@
 
 import Cocoa
 import RealmSwift
-import SwiftyBeaver
+import XCGLogger
 
 class TaskList: Object {
     dynamic var id = NSUUID().UUIDString
@@ -37,7 +37,7 @@ class TaskList: Object {
             NSNotificationCenter.defaultCenter().postNotificationName("TaskAdded", object: task)
         }
         catch {
-            SwiftyBeaver.error(error)
+            XCGLogger.error("\(error)")
         }
     }
     
@@ -53,7 +53,7 @@ class TaskList: Object {
 
         }
         catch {
-            SwiftyBeaver.error(error)
+            XCGLogger.error("\(error)")
         }
 
     }

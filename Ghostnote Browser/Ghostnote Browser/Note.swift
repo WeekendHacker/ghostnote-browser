@@ -8,7 +8,7 @@
 
 import Foundation
 import RealmSwift
-import SwiftyBeaver
+import XCGLogger
 
 class Note:Object {
     dynamic var id = NSUUID().UUIDString
@@ -39,7 +39,7 @@ class Note:Object {
                 }
             }
             catch {
-                SwiftyBeaver.error(error)
+                XCGLogger.error("\(error)")
             }
         }
         return ""

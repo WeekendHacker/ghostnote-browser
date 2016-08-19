@@ -8,7 +8,7 @@
 
 import Cocoa
 import RealmSwift
-import SwiftyBeaver
+import XCGLogger
 
 class TaskListManager: NSObject {
 
@@ -41,7 +41,7 @@ class TaskListManager: NSObject {
             })
         }
         catch {
-            SwiftyBeaver.error(error)
+            XCGLogger.error("\(error)")
         }
         
         newList.addTask("Create task lists with command-l.")
@@ -98,7 +98,7 @@ class TaskListManager: NSObject {
             })
         }
         catch {
-            SwiftyBeaver.error(error)
+            XCGLogger.error("\(error)")
         }
 
         newList.addTask("New Task")
@@ -122,7 +122,7 @@ class TaskListManager: NSObject {
 
             }
             catch {
-                SwiftyBeaver.error(error)
+                XCGLogger.error("\(error)")
             }
         }
     }
@@ -137,7 +137,7 @@ class TaskListManager: NSObject {
             })
         }
         catch {
-            SwiftyBeaver.error(error)
+            XCGLogger.error("\(error)")
         }
         NSNotificationCenter.defaultCenter().postNotificationName("TaskListRenamed", object: taskList)
     }
@@ -155,7 +155,7 @@ class TaskListManager: NSObject {
             NSNotificationCenter.defaultCenter().postNotificationName("TaskRenamed", object: nil)
         }
         catch {
-            SwiftyBeaver.error(error)
+            XCGLogger.error("\(error)")
         }
     }
 }

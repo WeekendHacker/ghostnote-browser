@@ -34,5 +34,7 @@
 	<string>NSApplication</string>
 	<key>SUFeedURL</key>
 	<string>https://www.ghostnoteapp.com/updates/test/GhostnoteBrowserAppcastBeta.xml</string>
+	<key>SUPublicDSAKeyFile</key>
+	<string>dsa_pub.pem</string>
 </dict>
 </plist>

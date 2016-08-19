@@ -9,11 +9,12 @@
 import Cocoa
 import RealmSwift
 import Sparkle
+import XCGLogger
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate, SUUpdaterDelegate, SUVersionComparison {
+class AppDelegate: NSObject, NSApplicationDelegate, SUUpdaterDelegate {
 
-    let log = SwiftyBeaver.self
+    let log = XCGLogger(identifier: "AppDelegate", includeDefaultDestinations: true)
     let updater = SUUpdater(forBundle: NSBundle.mainBundle())
     
     @IBOutlet var newMenuItem:NSMenuItem?
@@ -123,37 +124,45 @@ class AppDelegate: NSObject, NSApplicationDelegate, SUUpdaterDelegate, SUVersion
     func updater(updater: SUUpdater!, didFinishLoadingAppcast appcast: SUAppcast!) {
         
         if let ac = appcast {
-            
+            XCGLogger.info("Fetched update info from \(updater!.feedURL)")
+
             if let items = ac.items as? Array<SUAppcastItem> {
                 var output = ""
                 
-                output = "found \(items.count) versions."
-//                for item in items {
-//                    output += "\n------------\n"
-//                    output += "\(item.propertiesDictionary)"
-//                    output += "\n------------\n"
-//                }
-//                log.info("retrieved \(output)")
+                XCGLogger.info("found \(items.count) versions.")
+                for item in items {
+                    output += "\n------------\n"
+                    output += "pubDate: \(item.date)" + "\n"
+                    output += "item description: \(item.itemDescription)" + "\n"
+                    output += "update URL: \(item.fileURL)"
+                    output += "\n------------\n"
+                }
+                log.info("retrieved \(output)")
             }
             
         }
-    }
-    
-    func updater(updater: SUUpdater!, didAbortWithError error: NSError!) {
         
     }
     
+    func updater(updater: SUUpdater!, didAbortWithError error: NSError!) {
+        log.error("\(error)")
+    }
+    
     func updater(updater: SUUpdater!, didFindValidUpdate item: SUAppcastItem!) {
-
+        log.info("found valid update")
     }
     
-    func versionComparatorForUpdater(updater: SUUpdater!) -> SUVersionComparison! {
-        return self
+    func updater(updater: SUUpdater!, failedToDownloadUpdate item: SUAppcastItem!, error: NSError!) {
+        XCGLogger.error("\(error)")
     }
     
-    func compareVersion(versionA: String!, toVersion versionB: String!) -> NSComparisonResult {
-        return NSComparisonResult.OrderedDescending
-    }
+//    func versionComparatorForUpdater(updater: SUUpdater!) -> SUVersionComparison! {
+//        return self
+//    }
+    
+//    func compareVersion(versionA: String!, toVersion versionB: String!) -> NSComparisonResult {
+//        return NSComparisonResult.OrderedAscending
+//    }
     
     
 }

@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-import SwiftyBeaver
+import XCGLogger
 
 extension NSTableView {
     func hasSelection() -> Bool {

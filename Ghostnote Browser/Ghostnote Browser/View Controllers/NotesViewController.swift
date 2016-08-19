@@ -7,11 +7,11 @@
 //
 
 import Cocoa
-import SwiftyBeaver
+import XCGLogger
 
 class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegate {
 
-    let log = SwiftyBeaver.self
+    let log = XCGLogger(identifier: "NotesVC", includeDefaultDestinations: true)
     
     var notesTableController = NotesTableViewController()
     var noteTextViewController:NoteTextViewController = NoteTextViewController()
@@ -39,12 +39,6 @@ class NotesViewController: NSViewController, ButtonNavigable, NSSplitViewDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let console = ConsoleDestination()  // log to Xcode Console
-        let file = FileDestination()  // log to default swiftybeaver.log file
-        log.addDestination(console)
-        log.addDestination(file)
-        
         title = "Notes"
         
         view.wantsLayer = true

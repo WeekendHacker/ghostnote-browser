@@ -9,7 +9,7 @@
 import Cocoa
 import Foundation
 import RealmSwift
-import SwiftyBeaver
+import XCGLogger
 
 class NoteManager {
     
@@ -42,7 +42,7 @@ class NoteManager {
             try NSFileManager.defaultManager().copyItemAtURL(welcomeBundleURL!, toURL: destinationURL)
         }
         catch {
-            SwiftyBeaver.error(error)
+            XCGLogger.error("\(error)")
         }
         
         
@@ -55,12 +55,11 @@ class NoteManager {
                 note.creationDate = NSDate()
                 note.filePath = destinationURL.path!
                 store.add(note)
-                SwiftyBeaver.error(note)
                 
             })
         }
         catch {
-            SwiftyBeaver.error(error)
+            XCGLogger.error("\(error)")
         }
         
         NSUserDefaults.standardUserDefaults().setBool(true, forKey: "hasCreatedWelcomeNote")
@@ -83,12 +82,11 @@ class NoteManager {
                 note.creationDate = NSDate()
                 note.filePath = fileURL.path!
                 store.add(note)
-                SwiftyBeaver.error(note)
                 
             })
         }
         catch {
-            SwiftyBeaver.error(error)
+            XCGLogger.error("\(error)")
         }
         
         NSNotificationCenter.defaultCenter().postNotificationName("NoteAdded", object: note)
@@ -107,7 +105,7 @@ class NoteManager {
 
         }
         catch {
-            SwiftyBeaver.error(error)
+            XCGLogger.error("\(error)")
         }
         
     }
@@ -138,7 +136,7 @@ class NoteManager {
                 try NSFileManager.defaultManager().createDirectoryAtURL(docsURL, withIntermediateDirectories: true, attributes: nil)
             }
             catch {
-                SwiftyBeaver.error(error)
+                XCGLogger.error("\(error)")
             }
 
         }
@@ -180,12 +178,12 @@ class NoteManager {
                  try wrapper.writeToURL(fileURL, options: .Atomic, originalContentsURL: nil)
             }
             catch{
-                SwiftyBeaver.error(error)
+                XCGLogger.error("\(error)")
             }
            
         }
         catch {
-            SwiftyBeaver.error(error)
+            XCGLogger.error("\(error)")
         }
 
         return fileURL
@@ -212,7 +210,7 @@ class NoteManager {
             try fileManager.moveItemAtPath(note.filePath, toPath: newPath )
         }
         catch {
-            SwiftyBeaver.error(error)
+            XCGLogger.error("\(error)")
         }
         return NSURL(fileURLWithPath: newPath)
     }
@@ -228,7 +226,7 @@ class NoteManager {
             try NSFileManager.defaultManager().removeItemAtURL(fileURL)
         }
         catch {
-            SwiftyBeaver.error(error)
+            XCGLogger.error("\(error)")
         }
     }
     

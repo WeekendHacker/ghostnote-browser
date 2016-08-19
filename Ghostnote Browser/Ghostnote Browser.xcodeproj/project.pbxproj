@@ -64,11 +64,13 @@
 		D86DC3831D0407E30013DFC8 /* DocCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D86DC3821D0407E30013DFC8 /* DocCell.xib */; };
 		D86FA0471D35F01200FFEC80 /* NSColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86FA0461D35F01200FFEC80 /* NSColorExtensions.swift */; };
 		D872BA761D0BDCBF00C0C556 /* SelectableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872BA751D0BDCBF00C0C556 /* SelectableCell.swift */; };
-		D87B80CD1D66B3BF0079E053 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87B80C91D66B3A70079E053 /* Sparkle.framework */; };
-		D87B80D11D66B4EF0079E053 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87B80CF1D66B4EF0079E053 /* Sparkle.framework */; };
 		D87B80D21D66B4EF0079E053 /* Sparkle.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = D87B80D01D66B4EF0079E053 /* Sparkle.framework.dSYM */; };
 		D87B80D31D66B50E0079E053 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87B80CF1D66B4EF0079E053 /* Sparkle.framework */; };
 		D87B80D41D66B50E0079E053 /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D87B80CF1D66B4EF0079E053 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D87B80D71D66B9B90079E053 /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87B80D51D66B9B90079E053 /* XCGLogger.framework */; };
+		D87B80D81D66B9B90079E053 /* XCGLogger.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = D87B80D61D66B9B90079E053 /* XCGLogger.framework.dSYM */; };
+		D87B80DA1D66BBF60079E053 /* XCGLogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D87B80D51D66B9B90079E053 /* XCGLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D87B80E21D66C6760079E053 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = D87B80E11D66C6760079E053 /* dsa_pub.pem */; };
 		D884C1A31CE27600003E15D2 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D884C1A01CE27600003E15D2 /* Realm.framework */; };
 		D884C1A81CE2760A003E15D2 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D884C1A01CE27600003E15D2 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D884C1A91CE2760A003E15D2 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D884C1A11CE27600003E15D2 /* RealmSwift.framework */; };
@@ -126,6 +128,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				D884C1A81CE2760A003E15D2 /* Realm.framework in Embed Frameworks */,
+				D87B80DA1D66BBF60079E053 /* XCGLogger.framework in Embed Frameworks */,
 				D884C1AA1CE2760A003E15D2 /* RealmSwift.framework in Embed Frameworks */,
 				D87B80D41D66B50E0079E053 /* Sparkle.framework in Embed Frameworks */,
 			);
@@ -192,9 +195,11 @@
 		D86DC3821D0407E30013DFC8 /* DocCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocCell.xib; sourceTree = "<group>"; };
 		D86FA0461D35F01200FFEC80 /* NSColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSColorExtensions.swift; sourceTree = "<group>"; };
 		D872BA751D0BDCBF00C0C556 /* SelectableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectableCell.swift; sourceTree = "<group>"; };
-		D87B80C91D66B3A70079E053 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = "/Users/jimmyhoughjr/workspace/ghostnote-browser/Ghostnote Browser/Carthage/Build/Mac/Sparkle.framework"; sourceTree = "<absolute>"; };
 		D87B80CF1D66B4EF0079E053 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Carthage/Build/Mac/Sparkle.framework; sourceTree = "<group>"; };
 		D87B80D01D66B4EF0079E053 /* Sparkle.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Sparkle.framework.dSYM; path = Carthage/Build/Mac/Sparkle.framework.dSYM; sourceTree = "<group>"; };
+		D87B80D51D66B9B90079E053 /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/Mac/XCGLogger.framework; sourceTree = "<group>"; };
+		D87B80D61D66B9B90079E053 /* XCGLogger.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = XCGLogger.framework.dSYM; path = Carthage/Build/Mac/XCGLogger.framework.dSYM; sourceTree = "<group>"; };
+		D87B80E11D66C6760079E053 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = SOURCE_ROOT; };
 		D884C1A01CE27600003E15D2 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/Mac/Realm.framework; sourceTree = "<group>"; };
 		D884C1A11CE27600003E15D2 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/Mac/RealmSwift.framework; sourceTree = "<group>"; };
 		D89F76A41D60E1140076BEA4 /* DocumentIconProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentIconProviderTests.swift; sourceTree = "<group>"; };
@@ -237,9 +242,8 @@
 			files = (
 				D884C1A31CE27600003E15D2 /* Realm.framework in Frameworks */,
 				D87B80D31D66B50E0079E053 /* Sparkle.framework in Frameworks */,
-				D87B80D11D66B4EF0079E053 /* Sparkle.framework in Frameworks */,
-				D87B80CD1D66B3BF0079E053 /* Sparkle.framework in Frameworks */,
 				D884C1A91CE2760A003E15D2 /* RealmSwift.framework in Frameworks */,
+				D87B80D71D66B9B90079E053 /* XCGLogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +458,7 @@
 		D8931BFB1D47E3D700C0D6ED /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D87B80E11D66C6760079E053 /* dsa_pub.pem */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -461,6 +466,8 @@
 		D89F76A61D60E3A10076BEA4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D87B80D51D66B9B90079E053 /* XCGLogger.framework */,
+				D87B80D61D66B9B90079E053 /* XCGLogger.framework.dSYM */,
 				D87B80CF1D66B4EF0079E053 /* Sparkle.framework */,
 				D87B80D01D66B4EF0079E053 /* Sparkle.framework.dSYM */,
 				D884C1A01CE27600003E15D2 /* Realm.framework */,
@@ -723,12 +730,14 @@
 				D8C153B31D411A56001F5AE6 /* Welcome to Ghostnote!.rtfd in Resources */,
 				D8FF023C1D0A6CC9004AE6E2 /* HeaderCell.xib in Resources */,
 				D8D10ECB1CC48A9F00A434F6 /* Assets.xcassets in Resources */,
+				D87B80E21D66C6760079E053 /* dsa_pub.pem in Resources */,
 				D803FEBA1D21C88100360741 /* CustomRowView.xib in Resources */,
 				D86DC3831D0407E30013DFC8 /* DocCell.xib in Resources */,
 				D81281941CCDB9DC001749E9 /* GhostnotesViewController.xib in Resources */,
 				D8FF02351D08C516004AE6E2 /* TaskListCell.xib in Resources */,
 				D8FEA3CE1D3AB52200DA822F /* Hellvetica-Regular.otf in Resources */,
 				D8D30DB11D02A73D004009F7 /* AppCell.xib in Resources */,
+				D87B80D81D66B9B90079E053 /* XCGLogger.framework.dSYM in Resources */,
 				D812818E1CCD9AA3001749E9 /* MainWindowController.xib in Resources */,
 				D8151CC21D00C2CC00F04C24 /* NoteCell.xib in Resources */,
 				D8D10ECE1CC48A9F00A434F6 /* MainMenu.xib in Resources */,

@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import XCGLogger
 import RealmSwift
 
 class Task: Object {
@@ -32,7 +33,7 @@ class Task: Object {
             })
         }
         catch {
-            SwiftyBeaver.error(error)
+            XCGLogger.error("\(error)")
         }
     }
     
@@ -47,7 +48,7 @@ class Task: Object {
             })
         }
         catch {
-            SwiftyBeaver.error(error)
+            XCGLogger.error("\(error)")
         }
     }
     

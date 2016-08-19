@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-import SwiftyBeaver
+import XCGLogger
 
 protocol GhostNotesAppTableViewControllerObserver {
 
@@ -54,7 +54,6 @@ class GhostNotesAppTableViewController: NSObject , NSTableViewDelegate , NSTable
     }
     
     func doubleClickedAction(sender:AnyObject?) {
-        SwiftyBeaver.info("")
         if let tv = sender as? NSTableView {
             let row = tv.selectedRow
             if row != NSNotFound {

@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-import SwiftyBeaver
+import XCGLogger
 
 protocol GhostNotesDocTableViewControllerObserver {
     func selectedNote(note:GhostNote)
@@ -24,7 +24,7 @@ class GhostNotesDocTableViewController: NSObject, NSTableViewDelegate, NSTableVi
             reload()
         }
     }
-    let log = SwiftyBeaver.self
+    let log = XCGLogger(identifier: "GNDocsTVC", includeDefaultDestinations: true)
     
     var ghostnotes = Array<GhostNote>()
     
@@ -51,10 +51,7 @@ class GhostNotesDocTableViewController: NSObject, NSTableViewDelegate, NSTableVi
                                                                  selector: #selector(reload),
                                                                  name: "GhostnoteDeleted",
                                                                  object: nil)
-                let console = ConsoleDestination()  // log to Xcode Console
-                let file = FileDestination()  // log to default swiftybeaver.log file
-                log.addDestination(console)
-                log.addDestination(file)
+
             }
         }
     }

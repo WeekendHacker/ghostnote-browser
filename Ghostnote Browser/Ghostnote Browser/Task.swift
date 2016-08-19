@@ -8,7 +8,6 @@
 
 import Cocoa
 import RealmSwift
-import SwiftyBeaver
 
 class Task: Object {
 

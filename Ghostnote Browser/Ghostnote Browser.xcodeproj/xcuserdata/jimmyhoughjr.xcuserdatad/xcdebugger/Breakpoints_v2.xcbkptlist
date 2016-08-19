@@ -498,5 +498,101 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ghostnote Browser/AppDelegate.swift"
+            timestampString = "493271066.845249"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
+            landmarkName = "updater(_:didFinishLoadingAppcast:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ghostnote_Browser.AppDelegate.updater (Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.SUUpdater&gt;, didFinishLoadingAppcast : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.SUAppcast&gt;) -&gt; ()"
+                  moduleName = "Ghostnote Browser"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jimmyhoughjr/workspace/ghostnote-browser/Ghostnote%20Browser/Ghostnote%20Browser/AppDelegate.swift"
+                  timestampString = "493271111.073864"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "138"
+                  endingLineNumber = "138"
+                  offsetFromSymbolStart = "332">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ghostnote_Browser.AppDelegate.updater (Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.SUUpdater&gt;, didFinishLoadingAppcast : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.SUAppcast&gt;) -&gt; ()"
+                  moduleName = "Ghostnote Browser"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jimmyhoughjr/workspace/ghostnote-browser/Ghostnote%20Browser/Ghostnote%20Browser/AppDelegate.swift"
+                  timestampString = "493271111.073959"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "138"
+                  endingLineNumber = "138"
+                  offsetFromSymbolStart = "547">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ghostnote Browser/AppDelegate.swift"
+            timestampString = "493271066.845249"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "updater(_:didFinishLoadingAppcast:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ghostnote_Browser.AppDelegate.updater (Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.SUUpdater&gt;, didFinishLoadingAppcast : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.SUAppcast&gt;) -&gt; ()"
+                  moduleName = "Ghostnote Browser"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jimmyhoughjr/workspace/ghostnote-browser/Ghostnote%20Browser/Ghostnote%20Browser/AppDelegate.swift"
+                  timestampString = "493271111.074593"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "136"
+                  endingLineNumber = "136"
+                  offsetFromSymbolStart = "277">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ghostnote_Browser.AppDelegate.updater (Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.SUUpdater&gt;, didFinishLoadingAppcast : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.SUAppcast&gt;) -&gt; ()"
+                  moduleName = "Ghostnote Browser"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jimmyhoughjr/workspace/ghostnote-browser/Ghostnote%20Browser/Ghostnote%20Browser/AppDelegate.swift"
+                  timestampString = "493271111.074683"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "136"
+                  endingLineNumber = "136"
+                  offsetFromSymbolStart = "316">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

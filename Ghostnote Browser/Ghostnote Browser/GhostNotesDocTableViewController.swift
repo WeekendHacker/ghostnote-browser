@@ -83,7 +83,6 @@ class GhostNotesDocTableViewController: NSObject, NSTableViewDelegate, NSTableVi
     }
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
-        log.info("returning \(ghostnotes.count)")
         return ghostnotes.count
     }
     

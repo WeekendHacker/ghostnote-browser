@@ -8,12 +8,13 @@
 
 import Cocoa
 import RealmSwift
-import SwiftyBeaver
+import Sparkle
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, SUUpdaterDelegate, SUVersionComparison {
 
     let log = SwiftyBeaver.self
+    let updater = SUUpdater(forBundle: NSBundle.mainBundle())
     
     @IBOutlet var newMenuItem:NSMenuItem?
     
@@ -28,13 +29,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
 //        resetWelcomeCreationMarker()
+        updater.delegate = self
         
-        let console = ConsoleDestination()  // log to Xcode Console
-        let file = FileDestination()  // log to default swiftybeaver.log file
-        log.addDestination(console)
-        log.addDestination(file)
-        
-        log.info("foo")
         if !NSUserDefaults.standardUserDefaults().boolForKey("hasCreatedWelcomeNote") {
             NoteManager.shared.copyWelcomeNoteFile()
         }
@@ -112,5 +108,53 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         windowController.showWindow(self);
     }
+    
+    
+    @IBAction func checkForUpdates(sender:AnyObject) {
+        updater.checkForUpdates(self)
+    }
+    
+    // SUUpdaterDelegate
+    
+    func updaterDidNotFindUpdate(updater: SUUpdater!) {
+        log.warning("")
+    }
+    
+    func updater(updater: SUUpdater!, didFinishLoadingAppcast appcast: SUAppcast!) {
+        
+        if let ac = appcast {
+            
+            if let items = ac.items as? Array<SUAppcastItem> {
+                var output = ""
+                
+                output = "found \(items.count) versions."
+//                for item in items {
+//                    output += "\n------------\n"
+//                    output += "\(item.propertiesDictionary)"
+//                    output += "\n------------\n"
+//                }
+//                log.info("retrieved \(output)")
+            }
+            
+        }
+    }
+    
+    func updater(updater: SUUpdater!, didAbortWithError error: NSError!) {
+        
+    }
+    
+    func updater(updater: SUUpdater!, didFindValidUpdate item: SUAppcastItem!) {
+
+    }
+    
+    func versionComparatorForUpdater(updater: SUUpdater!) -> SUVersionComparison! {
+        return self
+    }
+    
+    func compareVersion(versionA: String!, toVersion versionB: String!) -> NSComparisonResult {
+        return NSComparisonResult.OrderedDescending
+    }
+    
+    
 }
 

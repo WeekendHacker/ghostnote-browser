@@ -48,9 +48,6 @@
 		D83E5B471CDA76400044F7A3 /* TaskListNameValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B461CDA76400044F7A3 /* TaskListNameValidator.swift */; };
 		D83E5B4D1CDA7A430044F7A3 /* NamedItemValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B4C1CDA7A430044F7A3 /* NamedItemValidator.swift */; };
 		D83F01FD1D63960F00948E67 /* NoteLocationOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83F01FC1D63960F00948E67 /* NoteLocationOpener.swift */; };
-		D845ABFA1D54747C002B4010 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D845ABF81D54747C002B4010 /* SwiftyBeaver.framework */; };
-		D845ABFB1D54747C002B4010 /* SwiftyBeaver.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = D845ABF91D54747C002B4010 /* SwiftyBeaver.framework.dSYM */; };
-		D845ABFC1D547500002B4010 /* SwiftyBeaver.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D845ABF81D54747C002B4010 /* SwiftyBeaver.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D84F16C51CC54ED6005612BB /* AppIconProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16C21CC54ED6005612BB /* AppIconProvider.swift */; };
 		D84F16C61CC54ED6005612BB /* AppNameProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16C31CC54ED6005612BB /* AppNameProvider.swift */; };
 		D84F16C71CC54ED6005612BB /* DocumentIconProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16C41CC54ED6005612BB /* DocumentIconProvider.swift */; };
@@ -67,17 +64,18 @@
 		D86DC3831D0407E30013DFC8 /* DocCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D86DC3821D0407E30013DFC8 /* DocCell.xib */; };
 		D86FA0471D35F01200FFEC80 /* NSColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86FA0461D35F01200FFEC80 /* NSColorExtensions.swift */; };
 		D872BA761D0BDCBF00C0C556 /* SelectableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872BA751D0BDCBF00C0C556 /* SelectableCell.swift */; };
+		D87B80CD1D66B3BF0079E053 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87B80C91D66B3A70079E053 /* Sparkle.framework */; };
+		D87B80D11D66B4EF0079E053 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87B80CF1D66B4EF0079E053 /* Sparkle.framework */; };
+		D87B80D21D66B4EF0079E053 /* Sparkle.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = D87B80D01D66B4EF0079E053 /* Sparkle.framework.dSYM */; };
+		D87B80D31D66B50E0079E053 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87B80CF1D66B4EF0079E053 /* Sparkle.framework */; };
+		D87B80D41D66B50E0079E053 /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D87B80CF1D66B4EF0079E053 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D884C1A31CE27600003E15D2 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D884C1A01CE27600003E15D2 /* Realm.framework */; };
 		D884C1A81CE2760A003E15D2 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D884C1A01CE27600003E15D2 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D884C1A91CE2760A003E15D2 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D884C1A11CE27600003E15D2 /* RealmSwift.framework */; };
 		D884C1AA1CE2760A003E15D2 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D884C1A11CE27600003E15D2 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D8931BF41D47BF9300C0D6ED /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8931BF21D47BF9300C0D6ED /* Sparkle.framework */; };
-		D8931BF51D47BF9300C0D6ED /* Sparkle.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = D8931BF31D47BF9300C0D6ED /* Sparkle.framework.dSYM */; };
-		D8931BF71D47BF9E00C0D6ED /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8931BF21D47BF9300C0D6ED /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D89F76A51D60E1140076BEA4 /* DocumentIconProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89F76A41D60E1140076BEA4 /* DocumentIconProviderTests.swift */; };
 		D89F76A71D60E44C0076BEA4 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D884C1A01CE27600003E15D2 /* Realm.framework */; };
 		D89F76A81D60E44C0076BEA4 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D884C1A11CE27600003E15D2 /* RealmSwift.framework */; };
-		D89F76A91D60E44C0076BEA4 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D845ABF81D54747C002B4010 /* SwiftyBeaver.framework */; };
 		D89F76AB1D60E6300076BEA4 /* AppIconProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89F76AA1D60E6300076BEA4 /* AppIconProviderTests.swift */; };
 		D8BD62D81D382E0A00BD45AC /* customFonts in Resources */ = {isa = PBXBuildFile; fileRef = D8BD62D71D382E0A00BD45AC /* customFonts */; };
 		D8C153B31D411A56001F5AE6 /* Welcome to Ghostnote!.rtfd in Resources */ = {isa = PBXBuildFile; fileRef = D8C153B21D411A56001F5AE6 /* Welcome to Ghostnote!.rtfd */; };
@@ -127,10 +125,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D845ABFC1D547500002B4010 /* SwiftyBeaver.framework in Embed Frameworks */,
 				D884C1A81CE2760A003E15D2 /* Realm.framework in Embed Frameworks */,
-				D8931BF71D47BF9E00C0D6ED /* Sparkle.framework in Embed Frameworks */,
 				D884C1AA1CE2760A003E15D2 /* RealmSwift.framework in Embed Frameworks */,
+				D87B80D41D66B50E0079E053 /* Sparkle.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,8 +176,6 @@
 		D83E5B461CDA76400044F7A3 /* TaskListNameValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListNameValidator.swift; sourceTree = "<group>"; };
 		D83E5B4C1CDA7A430044F7A3 /* NamedItemValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamedItemValidator.swift; sourceTree = "<group>"; };
 		D83F01FC1D63960F00948E67 /* NoteLocationOpener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteLocationOpener.swift; sourceTree = "<group>"; };
-		D845ABF81D54747C002B4010 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/Mac/SwiftyBeaver.framework; sourceTree = "<group>"; };
-		D845ABF91D54747C002B4010 /* SwiftyBeaver.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwiftyBeaver.framework.dSYM; path = Carthage/Build/Mac/SwiftyBeaver.framework.dSYM; sourceTree = "<group>"; };
 		D84F16C21CC54ED6005612BB /* AppIconProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIconProvider.swift; sourceTree = "<group>"; };
 		D84F16C31CC54ED6005612BB /* AppNameProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNameProvider.swift; sourceTree = "<group>"; };
 		D84F16C41CC54ED6005612BB /* DocumentIconProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentIconProvider.swift; sourceTree = "<group>"; };
@@ -197,10 +192,11 @@
 		D86DC3821D0407E30013DFC8 /* DocCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocCell.xib; sourceTree = "<group>"; };
 		D86FA0461D35F01200FFEC80 /* NSColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSColorExtensions.swift; sourceTree = "<group>"; };
 		D872BA751D0BDCBF00C0C556 /* SelectableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectableCell.swift; sourceTree = "<group>"; };
+		D87B80C91D66B3A70079E053 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = "/Users/jimmyhoughjr/workspace/ghostnote-browser/Ghostnote Browser/Carthage/Build/Mac/Sparkle.framework"; sourceTree = "<absolute>"; };
+		D87B80CF1D66B4EF0079E053 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Carthage/Build/Mac/Sparkle.framework; sourceTree = "<group>"; };
+		D87B80D01D66B4EF0079E053 /* Sparkle.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Sparkle.framework.dSYM; path = Carthage/Build/Mac/Sparkle.framework.dSYM; sourceTree = "<group>"; };
 		D884C1A01CE27600003E15D2 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/Mac/Realm.framework; sourceTree = "<group>"; };
 		D884C1A11CE27600003E15D2 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/Mac/RealmSwift.framework; sourceTree = "<group>"; };
-		D8931BF21D47BF9300C0D6ED /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
-		D8931BF31D47BF9300C0D6ED /* Sparkle.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = Sparkle.framework.dSYM; sourceTree = "<group>"; };
 		D89F76A41D60E1140076BEA4 /* DocumentIconProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentIconProviderTests.swift; sourceTree = "<group>"; };
 		D89F76AA1D60E6300076BEA4 /* AppIconProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIconProviderTests.swift; sourceTree = "<group>"; };
 		D8BD62D11D3811F800BD45AC /* Hellvetica-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hellvetica-Regular.otf"; sourceTree = "<group>"; };
@@ -240,8 +236,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D884C1A31CE27600003E15D2 /* Realm.framework in Frameworks */,
-				D845ABFA1D54747C002B4010 /* SwiftyBeaver.framework in Frameworks */,
-				D8931BF41D47BF9300C0D6ED /* Sparkle.framework in Frameworks */,
+				D87B80D31D66B50E0079E053 /* Sparkle.framework in Frameworks */,
+				D87B80D11D66B4EF0079E053 /* Sparkle.framework in Frameworks */,
+				D87B80CD1D66B3BF0079E053 /* Sparkle.framework in Frameworks */,
 				D884C1A91CE2760A003E15D2 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,7 +249,6 @@
 			files = (
 				D89F76A71D60E44C0076BEA4 /* Realm.framework in Frameworks */,
 				D89F76A81D60E44C0076BEA4 /* RealmSwift.framework in Frameworks */,
-				D89F76A91D60E44C0076BEA4 /* SwiftyBeaver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,10 +461,8 @@
 		D89F76A61D60E3A10076BEA4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D845ABF81D54747C002B4010 /* SwiftyBeaver.framework */,
-				D845ABF91D54747C002B4010 /* SwiftyBeaver.framework.dSYM */,
-				D8931BF21D47BF9300C0D6ED /* Sparkle.framework */,
-				D8931BF31D47BF9300C0D6ED /* Sparkle.framework.dSYM */,
+				D87B80CF1D66B4EF0079E053 /* Sparkle.framework */,
+				D87B80D01D66B4EF0079E053 /* Sparkle.framework.dSYM */,
 				D884C1A01CE27600003E15D2 /* Realm.framework */,
 				D884C1A11CE27600003E15D2 /* RealmSwift.framework */,
 			);
@@ -722,11 +716,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D845ABFB1D54747C002B4010 /* SwiftyBeaver.framework.dSYM in Resources */,
 				D8BD62D81D382E0A00BD45AC /* customFonts in Resources */,
 				D81281881CCD97F2001749E9 /* ButtonNavViewController.xib in Resources */,
+				D87B80D21D66B4EF0079E053 /* Sparkle.framework.dSYM in Resources */,
 				D8E380EC1CDC21000028D161 /* TaskCell.xib in Resources */,
-				D8931BF51D47BF9300C0D6ED /* Sparkle.framework.dSYM in Resources */,
 				D8C153B31D411A56001F5AE6 /* Welcome to Ghostnote!.rtfd in Resources */,
 				D8FF023C1D0A6CC9004AE6E2 /* HeaderCell.xib in Resources */,
 				D8D10ECB1CC48A9F00A434F6 /* Assets.xcassets in Resources */,

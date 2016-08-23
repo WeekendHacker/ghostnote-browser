@@ -10,6 +10,7 @@ import Foundation
 import Cocoa
 
 extension NSImage {
+    
     func appIconIfGeneric(usingBundleID:String) -> NSImage {
         
         let appIcon = AppIconProvider.iconImagefor(usingBundleID)

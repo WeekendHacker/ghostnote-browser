@@ -163,7 +163,5 @@ class AppDelegate: NSObject, NSApplicationDelegate, SUUpdaterDelegate {
 //    func compareVersion(versionA: String!, toVersion versionB: String!) -> NSComparisonResult {
 //        return NSComparisonResult.OrderedAscending
 //    }
-    
-    
 }
 

@@ -7,8 +7,8 @@
 //
 
 import Cocoa
-import XCGLogger
 import RealmSwift
+import XCGLogger
 
 class Task: Object {
 

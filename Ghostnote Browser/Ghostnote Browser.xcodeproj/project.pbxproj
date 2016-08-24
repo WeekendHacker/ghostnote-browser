@@ -31,14 +31,6 @@
 		D81281AA1CCEB60B001749E9 /* NoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81281A91CCEB60B001749E9 /* NoteManager.swift */; };
 		D8151CC21D00C2CC00F04C24 /* NoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8151CC11D00C2CC00F04C24 /* NoteCell.xib */; };
 		D8151CC41D027F6A00F04C24 /* DeletableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8151CC31D027F6A00F04C24 /* DeletableTableView.swift */; };
-		D820F5E91D6D38BE002D84A1 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D820F5E51D6D38BE002D84A1 /* Realm.framework */; };
-		D820F5EA1D6D38BE002D84A1 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D820F5E61D6D38BE002D84A1 /* RealmSwift.framework */; };
-		D820F5EB1D6D38BE002D84A1 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D820F5E71D6D38BE002D84A1 /* Sparkle.framework */; };
-		D820F5EC1D6D38BE002D84A1 /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D820F5E81D6D38BE002D84A1 /* XCGLogger.framework */; };
-		D820F5ED1D6D3C7B002D84A1 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D820F5E51D6D38BE002D84A1 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D820F5EE1D6D3C7B002D84A1 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D820F5E61D6D38BE002D84A1 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D820F5EF1D6D3C7B002D84A1 /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D820F5E71D6D38BE002D84A1 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D820F5F01D6D3C7B002D84A1 /* XCGLogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D820F5E81D6D38BE002D84A1 /* XCGLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D824C8D81D18739C00246E8C /* NoteSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D824C8D71D18739C00246E8C /* NoteSearchController.swift */; };
 		D824C8DA1D1873AA00246E8C /* TasksSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D824C8D91D1873AA00246E8C /* TasksSearchController.swift */; };
 		D824C8DC1D1873BB00246E8C /* GhostnotesSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D824C8DB1D1873BB00246E8C /* GhostnotesSearchController.swift */; };
@@ -50,6 +42,14 @@
 		D8265A651CDBE37E0054AF57 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8265A641CDBE37E0054AF57 /* TaskCell.swift */; };
 		D8265A671CDC10210054AF57 /* TaskNameValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8265A661CDC10210054AF57 /* TaskNameValidator.swift */; };
 		D82F61B81D13C2F000721EB6 /* NSTextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82F61B71D13C2F000721EB6 /* NSTextFieldExtensions.swift */; };
+		D83B18B81D6D4E7700624CC6 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D83B18B41D6D4E7700624CC6 /* Realm.framework */; };
+		D83B18B91D6D4E7700624CC6 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D83B18B51D6D4E7700624CC6 /* RealmSwift.framework */; };
+		D83B18BA1D6D4E7700624CC6 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D83B18B61D6D4E7700624CC6 /* Sparkle.framework */; };
+		D83B18BB1D6D4E7700624CC6 /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D83B18B71D6D4E7700624CC6 /* XCGLogger.framework */; };
+		D83B18BC1D6D4E8000624CC6 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D83B18B41D6D4E7700624CC6 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D83B18BD1D6D4E8000624CC6 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D83B18B51D6D4E7700624CC6 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D83B18BE1D6D4E8000624CC6 /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D83B18B61D6D4E7700624CC6 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D83B18BF1D6D4E8000624CC6 /* XCGLogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D83B18B71D6D4E7700624CC6 /* XCGLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D83E5B401CDA737A0044F7A3 /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B3F1CDA737A0044F7A3 /* TaskList.swift */; };
 		D83E5B421CDA74180044F7A3 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B411CDA74180044F7A3 /* Task.swift */; };
 		D83E5B441CDA74BD0044F7A3 /* TaskListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B431CDA74BD0044F7A3 /* TaskListManager.swift */; };
@@ -123,10 +123,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D820F5ED1D6D3C7B002D84A1 /* Realm.framework in Embed Frameworks */,
-				D820F5EE1D6D3C7B002D84A1 /* RealmSwift.framework in Embed Frameworks */,
-				D820F5EF1D6D3C7B002D84A1 /* Sparkle.framework in Embed Frameworks */,
-				D820F5F01D6D3C7B002D84A1 /* XCGLogger.framework in Embed Frameworks */,
+				D83B18BC1D6D4E8000624CC6 /* Realm.framework in Embed Frameworks */,
+				D83B18BD1D6D4E8000624CC6 /* RealmSwift.framework in Embed Frameworks */,
+				D83B18BE1D6D4E8000624CC6 /* Sparkle.framework in Embed Frameworks */,
+				D83B18BF1D6D4E8000624CC6 /* XCGLogger.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -158,10 +158,6 @@
 		D81281A91CCEB60B001749E9 /* NoteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteManager.swift; sourceTree = "<group>"; };
 		D8151CC11D00C2CC00F04C24 /* NoteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteCell.xib; sourceTree = "<group>"; };
 		D8151CC31D027F6A00F04C24 /* DeletableTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeletableTableView.swift; sourceTree = "<group>"; };
-		D820F5E51D6D38BE002D84A1 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Ghostnote Browser/Frameworks/Realm.framework"; sourceTree = "<group>"; };
-		D820F5E61D6D38BE002D84A1 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "Ghostnote Browser/Frameworks/RealmSwift.framework"; sourceTree = "<group>"; };
-		D820F5E71D6D38BE002D84A1 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = "Ghostnote Browser/Frameworks/Sparkle.framework"; sourceTree = "<group>"; };
-		D820F5E81D6D38BE002D84A1 /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = "Ghostnote Browser/Frameworks/XCGLogger.framework"; sourceTree = "<group>"; };
 		D824C8D71D18739C00246E8C /* NoteSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteSearchController.swift; sourceTree = "<group>"; };
 		D824C8D91D1873AA00246E8C /* TasksSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksSearchController.swift; sourceTree = "<group>"; };
 		D824C8DB1D1873BB00246E8C /* GhostnotesSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GhostnotesSearchController.swift; sourceTree = "<group>"; };
@@ -173,6 +169,10 @@
 		D8265A641CDBE37E0054AF57 /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		D8265A661CDC10210054AF57 /* TaskNameValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskNameValidator.swift; sourceTree = "<group>"; };
 		D82F61B71D13C2F000721EB6 /* NSTextFieldExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTextFieldExtensions.swift; sourceTree = "<group>"; };
+		D83B18B41D6D4E7700624CC6 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/Mac/Realm.framework; sourceTree = "<group>"; };
+		D83B18B51D6D4E7700624CC6 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/Mac/RealmSwift.framework; sourceTree = "<group>"; };
+		D83B18B61D6D4E7700624CC6 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Carthage/Build/Mac/Sparkle.framework; sourceTree = "<group>"; };
+		D83B18B71D6D4E7700624CC6 /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/Mac/XCGLogger.framework; sourceTree = "<group>"; };
 		D83E5B3F1CDA737A0044F7A3 /* TaskList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskList.swift; path = Models/TaskList.swift; sourceTree = "<group>"; };
 		D83E5B411CDA74180044F7A3 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		D83E5B431CDA74BD0044F7A3 /* TaskListManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskListManager.swift; path = Models/TaskListManager.swift; sourceTree = "<group>"; };
@@ -234,10 +234,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D820F5EA1D6D38BE002D84A1 /* RealmSwift.framework in Frameworks */,
-				D820F5EC1D6D38BE002D84A1 /* XCGLogger.framework in Frameworks */,
-				D820F5EB1D6D38BE002D84A1 /* Sparkle.framework in Frameworks */,
-				D820F5E91D6D38BE002D84A1 /* Realm.framework in Frameworks */,
+				D83B18B81D6D4E7700624CC6 /* Realm.framework in Frameworks */,
+				D83B18B91D6D4E7700624CC6 /* RealmSwift.framework in Frameworks */,
+				D83B18BA1D6D4E7700624CC6 /* Sparkle.framework in Frameworks */,
+				D83B18BB1D6D4E7700624CC6 /* XCGLogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,10 +467,10 @@
 		D8D10EB91CC48A9F00A434F6 = {
 			isa = PBXGroup;
 			children = (
-				D820F5E51D6D38BE002D84A1 /* Realm.framework */,
-				D820F5E61D6D38BE002D84A1 /* RealmSwift.framework */,
-				D820F5E71D6D38BE002D84A1 /* Sparkle.framework */,
-				D820F5E81D6D38BE002D84A1 /* XCGLogger.framework */,
+				D83B18B41D6D4E7700624CC6 /* Realm.framework */,
+				D83B18B51D6D4E7700624CC6 /* RealmSwift.framework */,
+				D83B18B61D6D4E7700624CC6 /* Sparkle.framework */,
+				D83B18B71D6D4E7700624CC6 /* XCGLogger.framework */,
 				D8931BFB1D47E3D700C0D6ED /* Resources */,
 				D8C153B21D411A56001F5AE6 /* Welcome to Ghostnote!.rtfd */,
 				D8BD62D71D382E0A00BD45AC /* customFonts */,
@@ -945,11 +945,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SRCROOT)/Frameworks/",
-					"$(PROJECT_DIR)/Ghostnote",
-					Browser/Frameworks,
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/Mac";
 				INFOPLIST_FILE = "Ghostnote Browser/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -968,11 +964,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SRCROOT)/Frameworks/",
-					"$(PROJECT_DIR)/Ghostnote",
-					Browser/Frameworks,
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/Mac";
 				INFOPLIST_FILE = "Ghostnote Browser/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;

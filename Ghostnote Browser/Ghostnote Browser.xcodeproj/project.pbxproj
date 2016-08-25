@@ -16,6 +16,99 @@
 		D803FEBE1D220E4400360741 /* NSTableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D803FEBD1D220E4400360741 /* NSTableViewExtensions.swift */; };
 		D803FEC11D2219B900360741 /* ConfirmDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D803FEBF1D2219B900360741 /* ConfirmDeleteViewController.swift */; };
 		D803FEC21D2219B900360741 /* ConfirmDeleteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D803FEC01D2219B900360741 /* ConfirmDeleteViewController.xib */; };
+		D807B6CD1D6F73ED00225AB9 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D807B6CB1D6F73ED00225AB9 /* Realm.framework */; };
+		D807B6CE1D6F73ED00225AB9 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D807B6CC1D6F73ED00225AB9 /* RealmSwift.framework */; };
+		D807B6CF1D6F743600225AB9 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D807B6CB1D6F73ED00225AB9 /* Realm.framework */; };
+		D807B6D01D6F743600225AB9 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D807B6CB1D6F73ED00225AB9 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D807B6D11D6F743600225AB9 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D807B6CC1D6F73ED00225AB9 /* RealmSwift.framework */; };
+		D807B6D21D6F743600225AB9 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D807B6CC1D6F73ED00225AB9 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D807B6D51D6F760400225AB9 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B411CDA74180044F7A3 /* Task.swift */; };
+		D807B6D61D6F760400225AB9 /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B3F1CDA737A0044F7A3 /* TaskList.swift */; };
+		D807B6D71D6F760400225AB9 /* DocumentIconProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16C41CC54ED6005612BB /* DocumentIconProvider.swift */; };
+		D807B6D81D6F760400225AB9 /* NoteLocationOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83F01FC1D63960F00948E67 /* NoteLocationOpener.swift */; };
+		D807B6D91D6F760400225AB9 /* NamedItemValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B4C1CDA7A430044F7A3 /* NamedItemValidator.swift */; };
+		D807B6DA1D6F760400225AB9 /* TasksSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D824C8D91D1873AA00246E8C /* TasksSearchController.swift */; };
+		D807B6DB1D6F760400225AB9 /* CustomRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D803FEBB1D21C8A700360741 /* CustomRowView.swift */; };
+		D807B6DC1D6F760400225AB9 /* AppNameProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16C31CC54ED6005612BB /* AppNameProvider.swift */; };
+		D807B6DD1D6F760400225AB9 /* TextProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEA3CA1D3A99C400DA822F /* TextProcessor.swift */; };
+		D807B6DE1D6F760400225AB9 /* GhostnotesSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D824C8DB1D1873BB00246E8C /* GhostnotesSearchController.swift */; };
+		D807B6DF1D6F760400225AB9 /* TaskListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80001B51CD957C200255E54 /* TaskListController.swift */; };
+		D807B6E01D6F760400225AB9 /* NoteNameValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80001AD1CD7F98A00255E54 /* NoteNameValidator.swift */; };
+		D807B6E11D6F760400225AB9 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81281A71CCEB3B2001749E9 /* Note.swift */; };
+		D807B6E21D6F760400225AB9 /* TaskListNameValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B461CDA76400044F7A3 /* TaskListNameValidator.swift */; };
+		D807B6E31D6F760400225AB9 /* TaskListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B431CDA74BD0044F7A3 /* TaskListManager.swift */; };
+		D807B6E41D6F760400225AB9 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D803FEB71D21A5FD00360741 /* StringExtensions.swift */; };
+		D807B6E51D6F760400225AB9 /* GhostNoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC00AC1CE6793300D13331 /* GhostNoteManager.swift */; };
+		D807B6E61D6F760400225AB9 /* DocCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16DE1CC60EEE005612BB /* DocCell.swift */; };
+		D807B6E71D6F760400225AB9 /* NSFontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEA3CC1D3AA17F00DA822F /* NSFontExtensions.swift */; };
+		D807B6E81D6F760400225AB9 /* RTFFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86847951D640F5A00BCDAF6 /* RTFFileManager.swift */; };
+		D807B6E91D6F760400225AB9 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16D31CC553B3005612BB /* App.swift */; };
+		D807B6EA1D6F760400225AB9 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16E91CC7123E005612BB /* TasksViewController.swift */; };
+		D807B6EB1D6F760400225AB9 /* HasIDString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D824C8E91D1902BE00246E8C /* HasIDString.swift */; };
+		D807B6EC1D6F760400225AB9 /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D824C8E61D18F27200246E8C /* MainMenuController.swift */; };
+		D807B6ED1D6F760400225AB9 /* GhostnotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16EE1CC71260005612BB /* GhostnotesViewController.swift */; };
+		D807B6EE1D6F760400225AB9 /* GhostNoteTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC00B01CE67B6D00D13331 /* GhostNoteTextViewController.swift */; };
+		D807B6EF1D6F760400225AB9 /* GNTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D812819A1CCDDE93001749E9 /* GNTheme.swift */; };
+		D807B6F01D6F760400225AB9 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D812818B1CCD9AA3001749E9 /* MainWindowController.swift */; };
+		D807B6F11D6F760400225AB9 /* GhostNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC00AE1CE6798600D13331 /* GhostNote.swift */; };
+		D807B6F21D6F760400225AB9 /* NotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81281981CCDCFD8001749E9 /* NotesTableViewController.swift */; };
+		D807B6F31D6F760400225AB9 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D807C1C51D302353007F3BD6 /* CustomTextView.swift */; };
+		D807B6F41D6F760400225AB9 /* NoteTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80001B31CD88BDC00255E54 /* NoteTextViewController.swift */; };
+		D807B6F51D6F760400225AB9 /* URLProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86847971D640FA900BCDAF6 /* URLProvider.swift */; };
+		D807B6F61D6F760400225AB9 /* NSImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CD4DB01D317269008C7427 /* NSImageExtensions.swift */; };
+		D807B6F71D6F760400225AB9 /* NoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81281A91CCEB60B001749E9 /* NoteManager.swift */; };
+		D807B6F81D6F760400225AB9 /* DeletableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8151CC31D027F6A00F04C24 /* DeletableTableView.swift */; };
+		D807B6F91D6F760400225AB9 /* TaskNameValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8265A661CDC10210054AF57 /* TaskNameValidator.swift */; };
+		D807B6FA1D6F760400225AB9 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16E41CC71215005612BB /* NotesViewController.swift */; };
+		D807B6FB1D6F760400225AB9 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16D51CC553DC005612BB /* Document.swift */; };
+		D807B6FC1D6F760400225AB9 /* GhostNotesDocTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D30DAE1D02A1D3004009F7 /* GhostNotesDocTableViewController.swift */; };
+		D807B6FD1D6F760400225AB9 /* NSTextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82F61B71D13C2F000721EB6 /* NSTextFieldExtensions.swift */; };
+		D807B6FE1D6F760400225AB9 /* TasksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8265A601CDB15F00054AF57 /* TasksController.swift */; };
+		D807B6FF1D6F760400225AB9 /* SelectableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872BA751D0BDCBF00C0C556 /* SelectableCell.swift */; };
+		D807B7001D6F760400225AB9 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FF023D1D0A6D6C004AE6E2 /* HeaderCell.swift */; };
+		D807B7011D6F760400225AB9 /* CustomSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86A9FB91D148FCC00F6DFF9 /* CustomSplitView.swift */; };
+		D807B7021D6F760400225AB9 /* NoteSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D824C8D71D18739C00246E8C /* NoteSearchController.swift */; };
+		D807B7031D6F760400225AB9 /* NSAttributesStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEA3CF1D3B38B000DA822F /* NSAttributesStringExtensions.swift */; };
+		D807B7041D6F760400225AB9 /* TaskListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8265A621CDB18760054AF57 /* TaskListCell.swift */; };
+		D807B7051D6F760400225AB9 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8265A641CDBE37E0054AF57 /* TaskCell.swift */; };
+		D807B7061D6F760400225AB9 /* ConfirmDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D803FEBF1D2219B900360741 /* ConfirmDeleteViewController.swift */; };
+		D807B7071D6F760400225AB9 /* AppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16DC1CC60EB6005612BB /* AppCell.swift */; };
+		D807B7081D6F760400225AB9 /* NSTableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D803FEBD1D220E4400360741 /* NSTableViewExtensions.swift */; };
+		D807B7091D6F760400225AB9 /* NSColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86FA0461D35F01200FFEC80 /* NSColorExtensions.swift */; };
+		D807B70A1D6F760400225AB9 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81281951CCDCE6C001749E9 /* NoteCell.swift */; };
+		D807B70B1D6F760400225AB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D10EC51CC48A9F00A434F6 /* AppDelegate.swift */; };
+		D807B70C1D6F760400225AB9 /* AppIconProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F16C21CC54ED6005612BB /* AppIconProvider.swift */; };
+		D807B70D1D6F760400225AB9 /* ButtonNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81281891CCD98C0001749E9 /* ButtonNavViewController.swift */; };
+		D807B70E1D6F760400225AB9 /* GhostNotesAppTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D30DAC1D02A1BD004009F7 /* GhostNotesAppTableViewController.swift */; };
+		D807B7101D6F760400225AB9 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D807B6CB1D6F73ED00225AB9 /* Realm.framework */; };
+		D807B7111D6F760400225AB9 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D83B18B61D6D4E7700624CC6 /* Sparkle.framework */; };
+		D807B7131D6F760400225AB9 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D807B6CC1D6F73ED00225AB9 /* RealmSwift.framework */; };
+		D807B7141D6F760400225AB9 /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D83B18B71D6D4E7700624CC6 /* XCGLogger.framework */; };
+		D807B7171D6F760400225AB9 /* customFonts in Resources */ = {isa = PBXBuildFile; fileRef = D8BD62D71D382E0A00BD45AC /* customFonts */; };
+		D807B7181D6F760400225AB9 /* ButtonNavViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D81281871CCD97F2001749E9 /* ButtonNavViewController.xib */; };
+		D807B7191D6F760400225AB9 /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E380EB1CDC21000028D161 /* TaskCell.xib */; };
+		D807B71A1D6F760400225AB9 /* Welcome to Ghostnote!.rtfd in Resources */ = {isa = PBXBuildFile; fileRef = D8C153B21D411A56001F5AE6 /* Welcome to Ghostnote!.rtfd */; };
+		D807B71B1D6F760400225AB9 /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8FF023B1D0A6CC9004AE6E2 /* HeaderCell.xib */; };
+		D807B71C1D6F760400225AB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8D10ECA1CC48A9F00A434F6 /* Assets.xcassets */; };
+		D807B71D1D6F760400225AB9 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = D87B80E11D66C6760079E053 /* dsa_pub.pem */; };
+		D807B71E1D6F760400225AB9 /* CustomRowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D803FEB91D21C88100360741 /* CustomRowView.xib */; };
+		D807B71F1D6F760400225AB9 /* DocCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D86DC3821D0407E30013DFC8 /* DocCell.xib */; };
+		D807B7201D6F760400225AB9 /* GhostnotesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D81281931CCDB9DC001749E9 /* GhostnotesViewController.xib */; };
+		D807B7211D6F760400225AB9 /* TaskListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8FF02341D08C516004AE6E2 /* TaskListCell.xib */; };
+		D807B7221D6F760400225AB9 /* Hellvetica-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8BD62D11D3811F800BD45AC /* Hellvetica-Regular.otf */; };
+		D807B7231D6F760400225AB9 /* AppCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8D30DB01D02A73D004009F7 /* AppCell.xib */; };
+		D807B7241D6F760400225AB9 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D812818C1CCD9AA3001749E9 /* MainWindowController.xib */; };
+		D807B7251D6F760400225AB9 /* NoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8151CC11D00C2CC00F04C24 /* NoteCell.xib */; };
+		D807B7261D6F760400225AB9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8D10ECC1CC48A9F00A434F6 /* MainMenu.xib */; };
+		D807B7271D6F760400225AB9 /* NotesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D812818F1CCD9BEC001749E9 /* NotesViewController.xib */; };
+		D807B7281D6F760400225AB9 /* ConfirmDeleteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D803FEC01D2219B900360741 /* ConfirmDeleteViewController.xib */; };
+		D807B7291D6F760400225AB9 /* TasksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D81281911CCDB9CE001749E9 /* TasksViewController.xib */; };
+		D807B72B1D6F760400225AB9 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D807B6CB1D6F73ED00225AB9 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D807B72C1D6F760400225AB9 /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D83B18B61D6D4E7700624CC6 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D807B72D1D6F760400225AB9 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D807B6CC1D6F73ED00225AB9 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D807B72E1D6F760400225AB9 /* XCGLogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D83B18B71D6D4E7700624CC6 /* XCGLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D807B7351D6F7C2E00225AB9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8D10ECF1CC48A9F00A434F6 /* Info.plist */; };
+		D807B7361D6F7C4900225AB9 /* Ghostnote Browser Beta-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D807B7331D6F760500225AB9 /* Ghostnote Browser Beta-Info.plist */; };
 		D807C1C61D302353007F3BD6 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D807C1C51D302353007F3BD6 /* CustomTextView.swift */; };
 		D81281881CCD97F2001749E9 /* ButtonNavViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D81281871CCD97F2001749E9 /* ButtonNavViewController.xib */; };
 		D812818A1CCD98C0001749E9 /* ButtonNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81281891CCD98C0001749E9 /* ButtonNavViewController.swift */; };
@@ -42,12 +135,8 @@
 		D8265A651CDBE37E0054AF57 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8265A641CDBE37E0054AF57 /* TaskCell.swift */; };
 		D8265A671CDC10210054AF57 /* TaskNameValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8265A661CDC10210054AF57 /* TaskNameValidator.swift */; };
 		D82F61B81D13C2F000721EB6 /* NSTextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82F61B71D13C2F000721EB6 /* NSTextFieldExtensions.swift */; };
-		D83B18B81D6D4E7700624CC6 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D83B18B41D6D4E7700624CC6 /* Realm.framework */; };
-		D83B18B91D6D4E7700624CC6 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D83B18B51D6D4E7700624CC6 /* RealmSwift.framework */; };
 		D83B18BA1D6D4E7700624CC6 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D83B18B61D6D4E7700624CC6 /* Sparkle.framework */; };
 		D83B18BB1D6D4E7700624CC6 /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D83B18B71D6D4E7700624CC6 /* XCGLogger.framework */; };
-		D83B18BC1D6D4E8000624CC6 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D83B18B41D6D4E7700624CC6 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D83B18BD1D6D4E8000624CC6 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D83B18B51D6D4E7700624CC6 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D83B18BE1D6D4E8000624CC6 /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D83B18B61D6D4E7700624CC6 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D83B18BF1D6D4E8000624CC6 /* XCGLogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D83B18B71D6D4E7700624CC6 /* XCGLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D83E5B401CDA737A0044F7A3 /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E5B3F1CDA737A0044F7A3 /* TaskList.swift */; };
@@ -117,15 +206,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		D807B72A1D6F760400225AB9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D807B72B1D6F760400225AB9 /* Realm.framework in Embed Frameworks */,
+				D807B72C1D6F760400225AB9 /* Sparkle.framework in Embed Frameworks */,
+				D807B72D1D6F760400225AB9 /* RealmSwift.framework in Embed Frameworks */,
+				D807B72E1D6F760400225AB9 /* XCGLogger.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D8E659151CC49A40002CEA9B /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D83B18BC1D6D4E8000624CC6 /* Realm.framework in Embed Frameworks */,
-				D83B18BD1D6D4E8000624CC6 /* RealmSwift.framework in Embed Frameworks */,
+				D807B6D01D6F743600225AB9 /* Realm.framework in Embed Frameworks */,
 				D83B18BE1D6D4E8000624CC6 /* Sparkle.framework in Embed Frameworks */,
+				D807B6D21D6F743600225AB9 /* RealmSwift.framework in Embed Frameworks */,
 				D83B18BF1D6D4E8000624CC6 /* XCGLogger.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -143,6 +246,10 @@
 		D803FEBD1D220E4400360741 /* NSTableViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTableViewExtensions.swift; sourceTree = "<group>"; };
 		D803FEBF1D2219B900360741 /* ConfirmDeleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmDeleteViewController.swift; sourceTree = "<group>"; };
 		D803FEC01D2219B900360741 /* ConfirmDeleteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmDeleteViewController.xib; sourceTree = "<group>"; };
+		D807B6CB1D6F73ED00225AB9 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/Mac/Realm.framework; sourceTree = "<group>"; };
+		D807B6CC1D6F73ED00225AB9 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/Mac/RealmSwift.framework; sourceTree = "<group>"; };
+		D807B7321D6F760400225AB9 /* Ghostnote Browser Beta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ghostnote Browser Beta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D807B7331D6F760500225AB9 /* Ghostnote Browser Beta-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Ghostnote Browser Beta-Info.plist"; path = "/Users/jimmyhoughjr/workspace/ghostnote-browser/Ghostnote Browser/Ghostnote Browser Beta-Info.plist"; sourceTree = "<absolute>"; };
 		D807C1C51D302353007F3BD6 /* CustomTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 		D81281871CCD97F2001749E9 /* ButtonNavViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ButtonNavViewController.xib; path = Views/ButtonNavViewController.xib; sourceTree = "<group>"; };
 		D81281891CCD98C0001749E9 /* ButtonNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonNavViewController.swift; path = "View Controllers/ButtonNavViewController.swift"; sourceTree = "<group>"; };
@@ -169,8 +276,6 @@
 		D8265A641CDBE37E0054AF57 /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		D8265A661CDC10210054AF57 /* TaskNameValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskNameValidator.swift; sourceTree = "<group>"; };
 		D82F61B71D13C2F000721EB6 /* NSTextFieldExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTextFieldExtensions.swift; sourceTree = "<group>"; };
-		D83B18B41D6D4E7700624CC6 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/Mac/Realm.framework; sourceTree = "<group>"; };
-		D83B18B51D6D4E7700624CC6 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/Mac/RealmSwift.framework; sourceTree = "<group>"; };
 		D83B18B61D6D4E7700624CC6 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Carthage/Build/Mac/Sparkle.framework; sourceTree = "<group>"; };
 		D83B18B71D6D4E7700624CC6 /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/Mac/XCGLogger.framework; sourceTree = "<group>"; };
 		D83E5B3F1CDA737A0044F7A3 /* TaskList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskList.swift; path = Models/TaskList.swift; sourceTree = "<group>"; };
@@ -230,14 +335,27 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D807B70F1D6F760400225AB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D807B7101D6F760400225AB9 /* Realm.framework in Frameworks */,
+				D807B7111D6F760400225AB9 /* Sparkle.framework in Frameworks */,
+				D807B7131D6F760400225AB9 /* RealmSwift.framework in Frameworks */,
+				D807B7141D6F760400225AB9 /* XCGLogger.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D8D10EBF1CC48A9F00A434F6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D83B18B81D6D4E7700624CC6 /* Realm.framework in Frameworks */,
-				D83B18B91D6D4E7700624CC6 /* RealmSwift.framework in Frameworks */,
+				D807B6CD1D6F73ED00225AB9 /* Realm.framework in Frameworks */,
 				D83B18BA1D6D4E7700624CC6 /* Sparkle.framework in Frameworks */,
+				D807B6D11D6F743600225AB9 /* RealmSwift.framework in Frameworks */,
+				D807B6CE1D6F73ED00225AB9 /* RealmSwift.framework in Frameworks */,
 				D83B18BB1D6D4E7700624CC6 /* XCGLogger.framework in Frameworks */,
+				D807B6CF1D6F743600225AB9 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,8 +585,8 @@
 		D8D10EB91CC48A9F00A434F6 = {
 			isa = PBXGroup;
 			children = (
-				D83B18B41D6D4E7700624CC6 /* Realm.framework */,
-				D83B18B51D6D4E7700624CC6 /* RealmSwift.framework */,
+				D807B6CB1D6F73ED00225AB9 /* Realm.framework */,
+				D807B6CC1D6F73ED00225AB9 /* RealmSwift.framework */,
 				D83B18B61D6D4E7700624CC6 /* Sparkle.framework */,
 				D83B18B71D6D4E7700624CC6 /* XCGLogger.framework */,
 				D8931BFB1D47E3D700C0D6ED /* Resources */,
@@ -480,6 +598,7 @@
 				D8D10ED71CC48A9F00A434F6 /* Ghostnote BrowserTests */,
 				D8D10EE21CC48A9F00A434F6 /* Ghostnote BrowserUITests */,
 				D8D10EC31CC48A9F00A434F6 /* Products */,
+				D807B7331D6F760500225AB9 /* Ghostnote Browser Beta-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -489,6 +608,7 @@
 				D8D10EC21CC48A9F00A434F6 /* Ghostnote Browser.app */,
 				D8D10ED41CC48A9F00A434F6 /* Ghostnote BrowserTests.xctest */,
 				D8D10EDF1CC48A9F00A434F6 /* Ghostnote BrowserUITests.xctest */,
+				D807B7321D6F760400225AB9 /* Ghostnote Browser Beta.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -601,6 +721,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D807B6D31D6F760400225AB9 /* Ghostnote Browser Beta */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D807B72F1D6F760400225AB9 /* Build configuration list for PBXNativeTarget "Ghostnote Browser Beta" */;
+			buildPhases = (
+				D807B6D41D6F760400225AB9 /* Sources */,
+				D807B70F1D6F760400225AB9 /* Frameworks */,
+				D807B7161D6F760400225AB9 /* Resources */,
+				D807B72A1D6F760400225AB9 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Ghostnote Browser Beta";
+			productName = "Ghostnote Browser";
+			productReference = D807B7321D6F760400225AB9 /* Ghostnote Browser Beta.app */;
+			productType = "com.apple.product-type.application";
+		};
 		D8D10EC11CC48A9F00A434F6 /* Ghostnote Browser */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8D10EE81CC48A9F00A434F6 /* Build configuration list for PBXNativeTarget "Ghostnote Browser" */;
@@ -665,6 +803,9 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Ghostnnote HQ";
 				TargetAttributes = {
+					D807B6D31D6F760400225AB9 = {
+						DevelopmentTeam = H37GZ9FGMS;
+					};
 					D8D10EC11CC48A9F00A434F6 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = H37GZ9FGMS;
@@ -696,15 +837,44 @@
 				D8D10EC11CC48A9F00A434F6 /* Ghostnote Browser */,
 				D8D10ED31CC48A9F00A434F6 /* Ghostnote BrowserTests */,
 				D8D10EDE1CC48A9F00A434F6 /* Ghostnote BrowserUITests */,
+				D807B6D31D6F760400225AB9 /* Ghostnote Browser Beta */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D807B7161D6F760400225AB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D807B7361D6F7C4900225AB9 /* Ghostnote Browser Beta-Info.plist in Resources */,
+				D807B7171D6F760400225AB9 /* customFonts in Resources */,
+				D807B7181D6F760400225AB9 /* ButtonNavViewController.xib in Resources */,
+				D807B7191D6F760400225AB9 /* TaskCell.xib in Resources */,
+				D807B71A1D6F760400225AB9 /* Welcome to Ghostnote!.rtfd in Resources */,
+				D807B71B1D6F760400225AB9 /* HeaderCell.xib in Resources */,
+				D807B71C1D6F760400225AB9 /* Assets.xcassets in Resources */,
+				D807B71D1D6F760400225AB9 /* dsa_pub.pem in Resources */,
+				D807B71E1D6F760400225AB9 /* CustomRowView.xib in Resources */,
+				D807B71F1D6F760400225AB9 /* DocCell.xib in Resources */,
+				D807B7201D6F760400225AB9 /* GhostnotesViewController.xib in Resources */,
+				D807B7211D6F760400225AB9 /* TaskListCell.xib in Resources */,
+				D807B7221D6F760400225AB9 /* Hellvetica-Regular.otf in Resources */,
+				D807B7231D6F760400225AB9 /* AppCell.xib in Resources */,
+				D807B7241D6F760400225AB9 /* MainWindowController.xib in Resources */,
+				D807B7251D6F760400225AB9 /* NoteCell.xib in Resources */,
+				D807B7261D6F760400225AB9 /* MainMenu.xib in Resources */,
+				D807B7271D6F760400225AB9 /* NotesViewController.xib in Resources */,
+				D807B7281D6F760400225AB9 /* ConfirmDeleteViewController.xib in Resources */,
+				D807B7291D6F760400225AB9 /* TasksViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D8D10EC01CC48A9F00A434F6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D807B7351D6F7C2E00225AB9 /* Info.plist in Resources */,
 				D8BD62D81D382E0A00BD45AC /* customFonts in Resources */,
 				D81281881CCD97F2001749E9 /* ButtonNavViewController.xib in Resources */,
 				D8E380EC1CDC21000028D161 /* TaskCell.xib in Resources */,
@@ -744,6 +914,71 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D807B6D41D6F760400225AB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D807B6D51D6F760400225AB9 /* Task.swift in Sources */,
+				D807B6D61D6F760400225AB9 /* TaskList.swift in Sources */,
+				D807B6D71D6F760400225AB9 /* DocumentIconProvider.swift in Sources */,
+				D807B6D81D6F760400225AB9 /* NoteLocationOpener.swift in Sources */,
+				D807B6D91D6F760400225AB9 /* NamedItemValidator.swift in Sources */,
+				D807B6DA1D6F760400225AB9 /* TasksSearchController.swift in Sources */,
+				D807B6DB1D6F760400225AB9 /* CustomRowView.swift in Sources */,
+				D807B6DC1D6F760400225AB9 /* AppNameProvider.swift in Sources */,
+				D807B6DD1D6F760400225AB9 /* TextProcessor.swift in Sources */,
+				D807B6DE1D6F760400225AB9 /* GhostnotesSearchController.swift in Sources */,
+				D807B6DF1D6F760400225AB9 /* TaskListController.swift in Sources */,
+				D807B6E01D6F760400225AB9 /* NoteNameValidator.swift in Sources */,
+				D807B6E11D6F760400225AB9 /* Note.swift in Sources */,
+				D807B6E21D6F760400225AB9 /* TaskListNameValidator.swift in Sources */,
+				D807B6E31D6F760400225AB9 /* TaskListManager.swift in Sources */,
+				D807B6E41D6F760400225AB9 /* StringExtensions.swift in Sources */,
+				D807B6E51D6F760400225AB9 /* GhostNoteManager.swift in Sources */,
+				D807B6E61D6F760400225AB9 /* DocCell.swift in Sources */,
+				D807B6E71D6F760400225AB9 /* NSFontExtensions.swift in Sources */,
+				D807B6E81D6F760400225AB9 /* RTFFileManager.swift in Sources */,
+				D807B6E91D6F760400225AB9 /* App.swift in Sources */,
+				D807B6EA1D6F760400225AB9 /* TasksViewController.swift in Sources */,
+				D807B6EB1D6F760400225AB9 /* HasIDString.swift in Sources */,
+				D807B6EC1D6F760400225AB9 /* MainMenuController.swift in Sources */,
+				D807B6ED1D6F760400225AB9 /* GhostnotesViewController.swift in Sources */,
+				D807B6EE1D6F760400225AB9 /* GhostNoteTextViewController.swift in Sources */,
+				D807B6EF1D6F760400225AB9 /* GNTheme.swift in Sources */,
+				D807B6F01D6F760400225AB9 /* MainWindowController.swift in Sources */,
+				D807B6F11D6F760400225AB9 /* GhostNote.swift in Sources */,
+				D807B6F21D6F760400225AB9 /* NotesTableViewController.swift in Sources */,
+				D807B6F31D6F760400225AB9 /* CustomTextView.swift in Sources */,
+				D807B6F41D6F760400225AB9 /* NoteTextViewController.swift in Sources */,
+				D807B6F51D6F760400225AB9 /* URLProvider.swift in Sources */,
+				D807B6F61D6F760400225AB9 /* NSImageExtensions.swift in Sources */,
+				D807B6F71D6F760400225AB9 /* NoteManager.swift in Sources */,
+				D807B6F81D6F760400225AB9 /* DeletableTableView.swift in Sources */,
+				D807B6F91D6F760400225AB9 /* TaskNameValidator.swift in Sources */,
+				D807B6FA1D6F760400225AB9 /* NotesViewController.swift in Sources */,
+				D807B6FB1D6F760400225AB9 /* Document.swift in Sources */,
+				D807B6FC1D6F760400225AB9 /* GhostNotesDocTableViewController.swift in Sources */,
+				D807B6FD1D6F760400225AB9 /* NSTextFieldExtensions.swift in Sources */,
+				D807B6FE1D6F760400225AB9 /* TasksController.swift in Sources */,
+				D807B6FF1D6F760400225AB9 /* SelectableCell.swift in Sources */,
+				D807B7001D6F760400225AB9 /* HeaderCell.swift in Sources */,
+				D807B7011D6F760400225AB9 /* CustomSplitView.swift in Sources */,
+				D807B7021D6F760400225AB9 /* NoteSearchController.swift in Sources */,
+				D807B7031D6F760400225AB9 /* NSAttributesStringExtensions.swift in Sources */,
+				D807B7041D6F760400225AB9 /* TaskListCell.swift in Sources */,
+				D807B7051D6F760400225AB9 /* TaskCell.swift in Sources */,
+				D807B7061D6F760400225AB9 /* ConfirmDeleteViewController.swift in Sources */,
+				D807B7071D6F760400225AB9 /* AppCell.swift in Sources */,
+				D807B7081D6F760400225AB9 /* NSTableViewExtensions.swift in Sources */,
+				D807B7091D6F760400225AB9 /* NSColorExtensions.swift in Sources */,
+				D807B70A1D6F760400225AB9 /* NoteCell.swift in Sources */,
+				D807B70B1D6F760400225AB9 /* AppDelegate.swift in Sources */,
+				D807B70C1D6F760400225AB9 /* AppIconProvider.swift in Sources */,
+				D807B70D1D6F760400225AB9 /* ButtonNavViewController.swift in Sources */,
+				D807B70E1D6F760400225AB9 /* GhostNotesAppTableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D8D10EBE1CC48A9F00A434F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -855,6 +1090,43 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D807B7301D6F760400225AB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/Mac";
+				INFOPLIST_FILE = "$(SRCROOT)/Ghostnote Browser Beta-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ghostnoteapp.Ghostnote-Browser";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = H37GZ9FGMS/;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D807B7311D6F760400225AB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/Mac";
+				INFOPLIST_FILE = "$(SRCROOT)/Ghostnote Browser Beta-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ghostnoteapp.Ghostnote-Browser";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = H37GZ9FGMS/;
+			};
+			name = Release;
+		};
 		D8D10EE61CC48A9F00A434F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1037,6 +1309,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D807B72F1D6F760400225AB9 /* Build configuration list for PBXNativeTarget "Ghostnote Browser Beta" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D807B7301D6F760400225AB9 /* Debug */,
+				D807B7311D6F760400225AB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D8D10EBD1CC48A9F00A434F6 /* Build configuration list for PBXProject "Ghostnote Browser" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

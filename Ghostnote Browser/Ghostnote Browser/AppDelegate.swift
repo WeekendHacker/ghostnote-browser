@@ -14,6 +14,7 @@ import XCGLogger
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, SUUpdaterDelegate {
 
+    let isBeta = true
     let log = XCGLogger(identifier: "AppDelegate", includeDefaultDestinations: true)
     let updater = SUUpdater(forBundle: NSBundle.mainBundle())
     
@@ -116,6 +117,15 @@ class AppDelegate: NSObject, NSApplicationDelegate, SUUpdaterDelegate {
     }
     
     // SUUpdaterDelegate
+    
+    func feedURLStringForUpdater(updater: SUUpdater!) -> String! {
+        if isBeta {
+            return "https://www.ghostnoteapp.com/updates/test/GhostnoteBrowserAppcastBeta.xml"
+        }else {
+            return "https://www.ghostnoteapp.com/updates/GhostnoteBrowserAppcastBeta.xml"
+        }
+        
+    }
     
     func updaterDidNotFindUpdate(updater: SUUpdater!) {
         log.warning("")

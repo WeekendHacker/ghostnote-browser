@@ -32,6 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SUUpdaterDelegate {
     func applicationDidFinishLaunching(aNotification: NSNotification) {
 //        resetWelcomeCreationMarker()
         updater.delegate = self
+               
         
         if !NSUserDefaults.standardUserDefaults().boolForKey("hasCreatedWelcomeNote") {
             NoteManager.shared.copyWelcomeNoteFile()
@@ -120,11 +121,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, SUUpdaterDelegate {
     
     func feedURLStringForUpdater(updater: SUUpdater!) -> String! {
         if isBeta {
-            return "https://www.ghostnoteapp.com/updates/test/GhostnoteBrowserAppcastBeta.xml"
+            return "https://www.ghostnoteapp.com/updates/beta/GhostnoteBrowserAppcast.xml"
         }else {
-            return "https://www.ghostnoteapp.com/updates/GhostnoteBrowserAppcastBeta.xml"
+            return "https://www.ghostnoteapp.com/updates/GhostnoteBrowserAppcast.xml"
         }
-        
     }
     
     func updaterDidNotFindUpdate(updater: SUUpdater!) {
@@ -166,12 +166,5 @@ class AppDelegate: NSObject, NSApplicationDelegate, SUUpdaterDelegate {
         XCGLogger.error("\(error)")
     }
     
-//    func versionComparatorForUpdater(updater: SUUpdater!) -> SUVersionComparison! {
-//        return self
-//    }
-    
-//    func compareVersion(versionA: String!, toVersion versionB: String!) -> NSComparisonResult {
-//        return NSComparisonResult.OrderedAscending
-//    }
 }
 

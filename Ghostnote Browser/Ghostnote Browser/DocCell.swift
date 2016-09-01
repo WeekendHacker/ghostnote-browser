@@ -18,7 +18,7 @@ class DocCell: NSTableCellView, SelectableCell {
 
                 toolTip = myDoc.note.docID
                 
-                imageView?.image = DocumentIconProvider.iconImageForDocumentPath(myDoc.path)
+                imageView?.image = DocumentIconProvider.iconImageForDocumentPath(myDoc.path, bundleID: myDoc.note.appBundleID)
 
                 textField?.font = NSFont(name: "HelveticaNeue", size: 12.0)
             }

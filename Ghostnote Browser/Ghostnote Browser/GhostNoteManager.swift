@@ -9,6 +9,7 @@
 import Cocoa
 import Foundation
 import RealmSwift
+import XCGLogger
 
 class GhostNoteManager: NSObject {
     
@@ -17,7 +18,20 @@ class GhostNoteManager: NSObject {
     
     override init() {
         var  config = Realm.Configuration()
-        config.fileURL =  NSURL(fileURLWithPath: appSupportDir.first!).URLByAppendingPathComponent("com.ghostnoteapp.Ghostnote-Paddle/Default.realm")
+        let newURL =  NSURL(fileURLWithPath: appSupportDir.first!).URLByAppendingPathComponent("com.ghostnoteapp.Ghostnote/Default.realm")
+        let oldURL =  NSURL(fileURLWithPath: appSupportDir.first!).URLByAppendingPathComponent("com.ghostnoteapp.Ghostnote-Paddle/Default.realm")
+
+        config.fileURL = newURL
+
+        if !NSFileManager.defaultManager().fileExistsAtPath(newURL.path!) {
+            XCGLogger.error("new Ghostnote realm does not exist.")
+            XCGLogger.warning("You should run the latest Ghostnote to correct this.")
+            XCGLogger.warning("Old Ghosnote realm is being used instead")
+            
+            config.fileURL = oldURL
+        }
+        
+        XCGLogger.info("configuring GhostNotes realm to use \(config)")
         store = try! Realm(configuration: config)
     }
     

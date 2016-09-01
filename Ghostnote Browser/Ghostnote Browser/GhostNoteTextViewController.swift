@@ -89,7 +89,7 @@ class GhostNoteTextViewController: NSObject, NSTextViewDelegate {
                 noteTitleLabel?.stringValue = AppNameProvider.displayNameForBundleID(appID)
                 noteTitleLabel?.toolTip = appID
             }else {
-                noteIconImageView?.image = DocumentIconProvider.iconImageForDocumentPath(docID)
+                noteIconImageView?.image = DocumentIconProvider.iconImageForDocumentPath(docID, bundleID: appID)
                 noteTitleLabel?.stringValue = docID
                 noteTitleLabel?.toolTip = docID
             }

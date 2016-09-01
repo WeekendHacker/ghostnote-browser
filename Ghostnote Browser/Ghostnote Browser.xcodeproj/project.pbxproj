@@ -107,7 +107,6 @@
 		D807B72C1D6F760400225AB9 /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D83B18B61D6D4E7700624CC6 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D807B72D1D6F760400225AB9 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D807B6CC1D6F73ED00225AB9 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D807B72E1D6F760400225AB9 /* XCGLogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D83B18B71D6D4E7700624CC6 /* XCGLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D807B7351D6F7C2E00225AB9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8D10ECF1CC48A9F00A434F6 /* Info.plist */; };
 		D807B7361D6F7C4900225AB9 /* Ghostnote Browser Beta-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D807B7331D6F760500225AB9 /* Ghostnote Browser Beta-Info.plist */; };
 		D807C1C61D302353007F3BD6 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D807C1C51D302353007F3BD6 /* CustomTextView.swift */; };
 		D81281881CCD97F2001749E9 /* ButtonNavViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D81281871CCD97F2001749E9 /* ButtonNavViewController.xib */; };
@@ -179,6 +178,8 @@
 		D8D30DAF1D02A1D3004009F7 /* GhostNotesDocTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D30DAE1D02A1D3004009F7 /* GhostNotesDocTableViewController.swift */; };
 		D8D30DB11D02A73D004009F7 /* AppCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8D30DB01D02A73D004009F7 /* AppCell.xib */; };
 		D8E380EC1CDC21000028D161 /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E380EB1CDC21000028D161 /* TaskCell.xib */; };
+		D8F18B031D73EF3700D602EC /* NSURLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F18B021D73EF3700D602EC /* NSURLExtensions.swift */; };
+		D8F18B041D73EFCD00D602EC /* NSURLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F18B021D73EF3700D602EC /* NSURLExtensions.swift */; };
 		D8FEA3CB1D3A99C400DA822F /* TextProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEA3CA1D3A99C400DA822F /* TextProcessor.swift */; };
 		D8FEA3CD1D3AA17F00DA822F /* NSFontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEA3CC1D3AA17F00DA822F /* NSFontExtensions.swift */; };
 		D8FEA3CE1D3AB52200DA822F /* Hellvetica-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8BD62D11D3811F800BD45AC /* Hellvetica-Regular.otf */; };
@@ -202,6 +203,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = D8D10EC11CC48A9F00A434F6;
 			remoteInfo = "Ghostnote Browser";
+		};
+		D8DF3FFC1D77C5E8000B72F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8D10EBA1CC48A9F00A434F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D807B6D31D6F760400225AB9;
+			remoteInfo = "Ghostnote Browser Beta";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -326,6 +334,7 @@
 		D8D30DAE1D02A1D3004009F7 /* GhostNotesDocTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GhostNotesDocTableViewController.swift; sourceTree = "<group>"; };
 		D8D30DB01D02A73D004009F7 /* AppCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppCell.xib; sourceTree = "<group>"; };
 		D8E380EB1CDC21000028D161 /* TaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TaskCell.xib; path = Views/TaskCell.xib; sourceTree = "<group>"; };
+		D8F18B021D73EF3700D602EC /* NSURLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLExtensions.swift; sourceTree = "<group>"; };
 		D8FEA3CA1D3A99C400DA822F /* TextProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextProcessor.swift; sourceTree = "<group>"; };
 		D8FEA3CC1D3AA17F00DA822F /* NSFontExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSFontExtensions.swift; sourceTree = "<group>"; };
 		D8FEA3CF1D3B38B000DA822F /* NSAttributesStringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributesStringExtensions.swift; sourceTree = "<group>"; };
@@ -460,6 +469,7 @@
 				D86FA0461D35F01200FFEC80 /* NSColorExtensions.swift */,
 				D8FEA3CC1D3AA17F00DA822F /* NSFontExtensions.swift */,
 				D8FEA3CF1D3B38B000DA822F /* NSAttributesStringExtensions.swift */,
+				D8F18B021D73EF3700D602EC /* NSURLExtensions.swift */,
 			);
 			name = "UI Extensions";
 			sourceTree = "<group>";
@@ -769,6 +779,7 @@
 			);
 			dependencies = (
 				D8D10ED61CC48A9F00A434F6 /* PBXTargetDependency */,
+				D8DF3FFD1D77C5E8000B72F3 /* PBXTargetDependency */,
 			);
 			name = "Ghostnote BrowserTests";
 			productName = "Ghostnote BrowserTests";
@@ -813,7 +824,7 @@
 					};
 					D8D10ED31CC48A9F00A434F6 = {
 						CreatedOnToolsVersion = 7.3;
-						TestTargetID = D8D10EC11CC48A9F00A434F6;
+						TestTargetID = D807B6D31D6F760400225AB9;
 					};
 					D8D10EDE1CC48A9F00A434F6 = {
 						CreatedOnToolsVersion = 7.3;
@@ -874,7 +885,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D807B7351D6F7C2E00225AB9 /* Info.plist in Resources */,
 				D8BD62D81D382E0A00BD45AC /* customFonts in Resources */,
 				D81281881CCD97F2001749E9 /* ButtonNavViewController.xib in Resources */,
 				D8E380EC1CDC21000028D161 /* TaskCell.xib in Resources */,
@@ -943,6 +953,7 @@
 				D807B6EB1D6F760400225AB9 /* HasIDString.swift in Sources */,
 				D807B6EC1D6F760400225AB9 /* MainMenuController.swift in Sources */,
 				D807B6ED1D6F760400225AB9 /* GhostnotesViewController.swift in Sources */,
+				D8F18B041D73EFCD00D602EC /* NSURLExtensions.swift in Sources */,
 				D807B6EE1D6F760400225AB9 /* GhostNoteTextViewController.swift in Sources */,
 				D807B6EF1D6F760400225AB9 /* GNTheme.swift in Sources */,
 				D807B6F01D6F760400225AB9 /* MainWindowController.swift in Sources */,
@@ -1008,6 +1019,7 @@
 				D824C8EA1D1902BE00246E8C /* HasIDString.swift in Sources */,
 				D824C8E71D18F27200246E8C /* MainMenuController.swift in Sources */,
 				D84F16F01CC71260005612BB /* GhostnotesViewController.swift in Sources */,
+				D8F18B031D73EF3700D602EC /* NSURLExtensions.swift in Sources */,
 				D8CC00B11CE67B6D00D13331 /* GhostNoteTextViewController.swift in Sources */,
 				D812819B1CCDDE93001749E9 /* GNTheme.swift in Sources */,
 				D812818D1CCD9AA3001749E9 /* MainWindowController.swift in Sources */,
@@ -1075,6 +1087,11 @@
 			isa = PBXTargetDependency;
 			target = D8D10EC11CC48A9F00A434F6 /* Ghostnote Browser */;
 			targetProxy = D8D10EE01CC48A9F00A434F6 /* PBXContainerItemProxy */;
+		};
+		D8DF3FFD1D77C5E8000B72F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D807B6D31D6F760400225AB9 /* Ghostnote Browser Beta */;
+			targetProxy = D8DF3FFC1D77C5E8000B72F3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1261,7 +1278,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ghostnote.Ghostnote-BrowserTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ghostnote Browser.app/Contents/MacOS/Ghostnote Browser";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ghostnote Browser Beta.app/Contents/MacOS/Ghostnote Browser Beta";
 			};
 			name = Debug;
 		};
@@ -1278,7 +1295,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ghostnote.Ghostnote-BrowserTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ghostnote Browser.app/Contents/MacOS/Ghostnote Browser";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ghostnote Browser Beta.app/Contents/MacOS/Ghostnote Browser Beta";
 			};
 			name = Release;
 		};

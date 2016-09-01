@@ -13,13 +13,5 @@ import XCTest
 class DocumentIconProviderTests: XCTestCase {
 
     let genericDocImageTiff = NSWorkspace.sharedWorkspace().iconForFileType(NSFileTypeForHFSTypeCode(OSType(kGenericDocumentIcon))).TIFFRepresentation
-    
-    func testThat_PathWithoutPathExtensionsReturnsGenericDocImage() {
-        
-        let path = ""
-        
-        let result = DocumentIconProvider.iconImageForDocumentPath(path)
-        
-        XCTAssertTrue(genericDocImageTiff == result.TIFFRepresentation)
-    }
+
 }

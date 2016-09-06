@@ -142,7 +142,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SUUpdaterDelegate {
                 XCGLogger.info("found \(items.count) versions.")
                 for item in items {
                     output += "\n------------\n"
-                    output += "pubDate: \(item.date)" + "\n"
+                    output += "pubDate: \(item.dateString)" + "\n"
                     output += "item description: \(item.itemDescription)" + "\n"
                     output += "update URL: \(item.fileURL)"
                     output += "\n------------\n"

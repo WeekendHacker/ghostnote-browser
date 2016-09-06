@@ -3,11 +3,15 @@
 //
 
 #import "SUUnarchiver.h"
+#import "SUBinaryDeltaUnarchiver.h"
 #import "SUPipedUnarchiver.h"
 #import "SUBinaryDeltaCommon.h"
 #import "SUFileManager.h"
 #import "SUAppcast.h"
 #import "SUAppcastItem.h"
+#import "SUBasicUpdateDriver.h"
+#import "SUVersionComparisonProtocol.h"
+#import "SUStandardVersionComparator.h"
 
 // Duplicated to avoid exporting a private symbol from SUFileManager
 static const char *SUAppleQuarantineIdentifier = "com.apple.quarantine";
@@ -19,7 +23,11 @@ static const char *SUAppleQuarantineIdentifier = "com.apple.quarantine";
 - (BOOL)_itemExistsAtURL:(NSURL *)fileURL;
 - (BOOL)_itemExistsAtURL:(NSURL *)fileURL isDirectory:(BOOL *)isDirectory;
 
-- (BOOL)_makeDirectoryAtURL:(NSURL *)url error:(NSError * __autoreleasing *)error;
+@end
+
+@interface SUBasicUpdateDriver (Private)
+
++ (SUAppcastItem *)bestItemFromAppcastItems:(NSArray *)appcastItems getDeltaItem:(SUAppcastItem * __autoreleasing *)deltaItem withHostVersion:(NSString *)hostVersion comparator:(id<SUVersionComparison>)comparator;
 
 @end
 
@@ -28,3 +36,8 @@ static const char *SUAppleQuarantineIdentifier = "com.apple.quarantine";
 - (NSArray *)parseAppcastItemsFromXMLFile:(NSURL *)appcastFile error:(NSError *__autoreleasing*)errorp;
 @end
 
+@interface SUBinaryDeltaUnarchiver (Private)
+
++ (void)updateSpotlightImportersAtBundlePath:(NSString *)targetPath;
+
+@end

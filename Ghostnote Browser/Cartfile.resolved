@@ -1,3 +1,3 @@
-github "sparkle-project/Sparkle" "1c8d54166b7829ec12dc659983c66be2b347d98e"
-github "DaveWoodCom/XCGLogger" "Version_3.5"
+github "sparkle-project/Sparkle" "23ae527b964208a16de6436b0f158579d13b33a7"
+github "DaveWoodCom/XCGLogger" "Version_3.5.1"
 github "realm/realm-cocoa" "v1.0.2"
